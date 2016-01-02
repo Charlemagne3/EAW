@@ -25,3 +25,6 @@ Where do I edit all other factions?
 
 FACTIONS.XML
 
+Where do I edit squadron compositions?
+
+SQUADRONS.XML

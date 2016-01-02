@@ -372,7 +372,7 @@
 		<Is_Bomber>no</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>10</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>30</Build_Cost_Credits>
 		<Build_Time_Seconds>5</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
