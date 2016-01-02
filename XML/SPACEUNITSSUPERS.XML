@@ -28,7 +28,7 @@
 		<Required_Planets />
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
-		<Build_Cost_Credits>20000</Build_Cost_Credits>
+		<Build_Cost_Credits>100000</Build_Cost_Credits>
 		<Build_Time_Seconds>310</Build_Time_Seconds> <!-- 310 = 5 minutes 10 seconds (to hear 5 minutes until complete V/O -->
 		<Build_Tab_Special_Structures>Yes</Build_Tab_Special_Structures>
 		<Autoresolve_Health>5</Autoresolve_Health>

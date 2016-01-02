@@ -106,9 +106,9 @@
 
 		<Political_Faction>Empire</Political_Faction>
 		<Squadron_Capacity>40</Squadron_Capacity>
-		<Build_Cost_Credits>15000</Build_Cost_Credits>
+		<Build_Cost_Credits>50000</Build_Cost_Credits>
 		<AI_Combat_Power>45000</AI_Combat_Power>
-		<Build_Time_Seconds>90</Build_Time_Seconds>
+		<Build_Time_Seconds>300</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Size_Value>8</Size_Value>
 		
