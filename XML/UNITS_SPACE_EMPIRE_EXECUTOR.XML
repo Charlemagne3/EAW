@@ -92,14 +92,14 @@
 		<Required_Timeline>0</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>5</Required_Star_Base_Level>
-		<Damage>70</Damage>
-		<Autoresolve_Health>18000</Autoresolve_Health>
-		<Shield_Points>7000</Shield_Points>
+		<Damage>100</Damage>
+		<Autoresolve_Health>20000</Autoresolve_Health>
+		<Shield_Points>10000</Shield_Points>
 		
-		<Tactical_Health>9000</Tactical_Health>
+		<Tactical_Health>10000</Tactical_Health>
 		
-		<Shield_Refresh_Rate>150</Shield_Refresh_Rate>
-		<Energy_Capacity>99000</Energy_Capacity>
+		<Shield_Refresh_Rate>100</Shield_Refresh_Rate>
+		<Energy_Capacity>100000</Energy_Capacity>
 		<Energy_Refresh_Rate>1000</Energy_Refresh_Rate>
 		<Ship_Class>super</Ship_Class>
 		<Surface_Bombardment_Capable>yes</Surface_Bombardment_Capable>
@@ -107,7 +107,7 @@
 		<Political_Faction>Empire</Political_Faction>
 		<Squadron_Capacity>40</Squadron_Capacity>
 		<Build_Cost_Credits>50000</Build_Cost_Credits>
-		<AI_Combat_Power>45000</AI_Combat_Power>
+		<AI_Combat_Power>50000</AI_Combat_Power>
 		<Build_Time_Seconds>300</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Size_Value>8</Size_Value>
@@ -244,7 +244,7 @@
 	      </Unit_Ability>
 	      <Unit_Ability>
                 <Type>DEPLOY_SQUAD</Type>
-	            <Recharge_Seconds>5</Recharge_Seconds>
+	            <Recharge_Seconds>10</Recharge_Seconds>
 	            <SFXEvent_GUI_Unit_Ability_Activated> Unit_Deploy_Squad_Vader_Executor </SFXEvent_GUI_Unit_Ability_Activated>
           </Unit_Ability>
 	   </Unit_Abilities_Data>
