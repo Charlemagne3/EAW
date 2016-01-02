@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<CIN_FighterUnits>
+	
+
+	<Cin_SpaceUnit Name="CIN_TIE_Fighter_Intro">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>TIE_Fighter</Variant_Of_Existing_Type>
+		<Max_Speed>12.0</Max_Speed>
+		<Min_Speed>6</Min_Speed>
+		<Targeting_Max_Attack_Distance>1500.0</Targeting_Max_Attack_Distance>
+		<Projectile_Fire_Pulse_Count>6</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.3</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Fire_Recharge_Seconds>0.1</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Types>Proj_Ship_Small_Laser_Cannon_Green_Fast</Projectile_Types>
+		<Fire_Inaccuracy_Distance> Fighter, 0.0 </Fire_Inaccuracy_Distance>
+		<Fire_Inaccuracy_Distance> Corvette, 50.0 </Fire_Inaccuracy_Distance>
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+	</Cin_SpaceUnit>
+
+
+	<Cin_SpaceUnit Name="Cin_X-Wing">
+ 
+  		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+ 
+  		<Variant_Of_Existing_Type>X-WING</Variant_Of_Existing_Type>
+
+  		<Max_Speed>10</Max_Speed>
+  		<Min_Speed>10</Min_Speed>
+		<Max_Thrust>1.0</Max_Thrust>
+  		<Projectile_Types>Proj_Ship_Small_Laser_Cannon_Red_Fast</Projectile_Types>
+  		<Projectile_Fire_Pulse_Count>4</Projectile_Fire_Pulse_Count>
+  		<Projectile_Fire_Pulse_Delay_Seconds>0.3</Projectile_Fire_Pulse_Delay_Seconds>
+  		<Projectile_Fire_Recharge_Seconds>0.5</Projectile_Fire_Recharge_Seconds>
+  		<Targeting_Max_Attack_Distance>6000.0</Targeting_Max_Attack_Distance>
+
+  		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+  		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+  		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+  		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	</Cin_SpaceUnit>
+
+
+	<Cin_SpaceUnit Name="Cin_Tie-Fighter_slow">
+ 
+  		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+ 
+  		<Variant_Of_Existing_Type>TIE_FIGHTER</Variant_Of_Existing_Type>
+
+  		<Max_Speed>15</Max_Speed>
+  		<Min_Speed>15</Min_Speed>
+		<Max_Thrust>1.0</Max_Thrust>
+  		<Projectile_Types>Proj_Ship_Small_Laser_Cannon_Green_Fast</Projectile_Types>
+  		<Projectile_Fire_Pulse_Count>4</Projectile_Fire_Pulse_Count>
+  		<Projectile_Fire_Pulse_Delay_Seconds>0.3</Projectile_Fire_Pulse_Delay_Seconds>
+  		<Projectile_Fire_Recharge_Seconds>0.5</Projectile_Fire_Recharge_Seconds>
+  		<Targeting_Max_Attack_Distance>6000.0</Targeting_Max_Attack_Distance>
+
+  		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+  		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+  		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+  		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	</Cin_SpaceUnit>
+
+
+
+	<Cin_SpaceUnit Name="Cin_Y-Wing_Intro">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Y-Wing</Variant_Of_Existing_Type>
+		<Max_Speed>9.0</Max_Speed>
+		<Targeting_Max_Attack_Distance>800.0</Targeting_Max_Attack_Distance>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.0</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Fire_Recharge_Seconds>0.2</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Types>Proj_Ground_Proton_Torpedo_Fast</Projectile_Types>
+
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+	</Cin_SpaceUnit>
+
+
+	
+
+	<Cin_SpaceUnit Name="Cin_Z-95_Intro">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Z-95_Headhunter</Variant_Of_Existing_Type>
+		<Max_Speed>10</Max_Speed>
+		<Min_Speed>5</Min_Speed>
+		<Targeting_Max_Attack_Distance>1500.0</Targeting_Max_Attack_Distance>
+		<Projectile_Fire_Pulse_Count>2</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.3</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Fire_Recharge_Seconds>0.1</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Types>Proj_Ship_Small_Laser_Cannon_Red_Fast</Projectile_Types>
+		<Fire_Inaccuracy_Distance> Fighter, 0.0 </Fire_Inaccuracy_Distance>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+		
+
+	</Cin_SpaceUnit>
+
+	
+	
+	
+</CIN_FighterUnits>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" ?>
+
+
+
+<Story_Mode_Plots>
+	
+	<Lua_Script> Story_Underworld_ActI_M02_SPACE </Lua_Script>
+	<Active_Plot>Story_Underworld_M02_SPACE.xml</Active_Plot>
+
+</Story_Mode_Plots>

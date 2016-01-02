@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<FunctionSet>
+
+	<Garrison_Bunker>
+		<Goal>Garrison_Bunker</Goal>
+		<Function>Should_Garrison_Bunker</Function>
+	</Garrison_Bunker>
+
+	<Orbital_Bombardment>
+		<Goal>Orbital_Bombardment</Goal>
+		<Function>Should_Fire_Orbital_Bombardment</Function>
+	</Orbital_Bombardment>
+
+	<Deploy_Troop_Transports>
+		<Goal>Deploy_Troop_Transports</Goal>
+		<Function>Should_Deploy_Troop_Transports</Function>
+	</Deploy_Troop_Transports>
+
+	<Garrison_Transport>
+		<Goal>Garrison_Transport</Goal>
+		<Function>Should_Garrison_Transport</Function>
+	</Garrison_Transport>
+
+	<Build_Bunker>
+		<Goal>Build_Bunker</Goal>
+		<Function>Should_Build_Bunker</Function>
+	</Build_Bunker>
+	
+	<Skirmish_Generate_Magic_Cash_Drop_Land>
+		<Goal>Skirmish_Generate_Magic_Cash_Drop_Land</Goal>
+		<Function>Skirmish_Needs_Magic_Cash_Drop_Land</Function>
+	</Skirmish_Generate_Magic_Cash_Drop_Land>
+	
+</FunctionSet>

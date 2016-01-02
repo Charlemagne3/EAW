@@ -1,0 +1,169 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Pirate_Enlightenment_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PIRATE_ENLIGHTENMENT_NOTIFICATION_00</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Pirate_Enlightenment_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_01">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Prereq>Pirate_Enlightenment_00</Prereq>
+	</Event>
+	
+			<Event Name="Pirate_Enlightenment_01_Win">
+				<Event_Type>STORY_WIN_BATTLES</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Event_Param2>SPACE</Event_Param2>
+				<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+				<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+				<Story_Chapter>2</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Pirate_Enlightenment_01</Prereq>
+			</Event>
+				
+					<Event Name="Pirate_Enlightenment_01_Win_Disable_a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Lose</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Win</Prereq>
+					</Event>
+					
+					<Event Name="Pirate_Enlightenment_01_Win_Disable_b">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Retreat</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Win_Disable_a</Prereq>
+					</Event>
+			
+			<Event Name="Pirate_Enlightenment_01_Lose">
+				<Event_Type>STORY_LOSE_BATTLES</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Event_Param2>SPACE</Event_Param2>
+				<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+				<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+				<Story_Chapter>5</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Pirate_Enlightenment_01</Prereq>
+			</Event>
+			
+					<Event Name="Pirate_Enlightenment_01_Lose_Disable_a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Win</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Lose</Prereq>
+					</Event>
+					
+					<Event Name="Pirate_Enlightenment_01_Lose_Disable_b">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Retreat</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Lose_Disable_a</Prereq>
+					</Event>
+			
+			<Event Name="Pirate_Enlightenment_01_Retreat">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>RETREAT_COMPLETE</Event_Param1>
+				<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+				<Story_Chapter>3</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Pirate_Enlightenment_01</Prereq>
+			</Event>
+			
+					<Event Name="Pirate_Enlightenment_01_Retreat_Disable_a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Win</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Retreat</Prereq>
+					</Event>
+					
+					<Event Name="Pirate_Enlightenment_01_Retreat_Disable_b">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_01_Lose</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_01_Retreat_Disable_a</Prereq>
+					</Event>
+				
+	<Event Name="Pirate_Enlightenment_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>20</Event_Param1>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PIRATE_ENLIGHTENMENT_NOTIFICATION_01</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Pirate_Enlightenment_01_Win_Disable_b</Prereq>
+	</Event>
+	
+			<Event Name="Pirate_Enlightenment_02_Win">
+				<Event_Type>STORY_WIN_BATTLES</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Event_Param2>SPACE</Event_Param2>
+				<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+				<Reward_Type>CREDITS</Reward_Type>
+				<Reward_Param1></Reward_Param1>
+				<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+				<Story_Chapter>4</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Pirate_Enlightenment_02</Prereq>
+			</Event>
+			
+					<Event Name="Pirate_Enlightenment_02_Win_Disable_a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_02_Lose</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_02_Win</Prereq>
+					</Event>
+			
+			<Event Name="Pirate_Enlightenment_02_Lose">
+				<Event_Type>STORY_LOSE_BATTLES</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Event_Param2>SPACE</Event_Param2>
+				<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+				<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment</Story_Dialog>
+				<Story_Chapter>5</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Pirate_Enlightenment_02</Prereq>
+			</Event>
+					
+					<Event Name="Pirate_Enlightenment_02_Lose_Disable_a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+						<Reward_Param1>Pirate_Enlightenment_02_Win</Reward_Param1>
+						<Reward_Param2>1</Reward_Param2>
+						<Prereq>Pirate_Enlightenment_02_Lose</Prereq>
+					</Event>
+		
+	<Event Name="Pirate_Enlightenment_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PIRATE_ENLIGHTENMENT_NOTIFICATION_END</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Pirate_Enlightenment_01_Lose_Disable_b</Prereq>
+		<Prereq>Pirate_Enlightenment_01_Retreat_Disable_b</Prereq>
+		<Prereq>Pirate_Enlightenment_02_Win_Disable_a</Prereq>
+		<Prereq>Pirate_Enlightenment_02_Lose_Disable_a</Prereq>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Pirate_Enlightenment_Tag_00</Reward_Param1>
+		<Prereq>Pirate_Enlightenment_03</Prereq>
+	</Event>
+	
+</Story>

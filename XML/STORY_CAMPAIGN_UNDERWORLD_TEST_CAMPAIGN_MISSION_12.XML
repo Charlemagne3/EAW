@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_Test_Campaign_Mission_12_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Corellia</Reward_Param1>
+	</Event>
+
+	<Event Name="Mission_Lock_Kuat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Kuat</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Test_Campaign_Mission_12_Begin</Prereq>
+	</Event>
+
+	<!-- 
+		TASK: Form a large fleet from your best ships including Tyber Zann, and go to Kuat!
+	-->
+	<Event Name="Mission_Twelve_Task_Message_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_UW_ACT03_G21_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7>
+		<Prereq>Underworld_Test_Campaign_Mission_12_Begin</Prereq>
+	</Event>
+
+
+
+
+
+
+	<Event Name="Underworld_ActII_M12_Start">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Kuat</Event_Param1>
+		<Event_Param3>Tyber_Zann_Team</Event_Param3>
+		<Event_Param6>0</Event_Param6>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Kuat</Reward_Param1>
+		<Reward_Param2>SPACE</Reward_Param2>
+		<Reward_Param3>Underworld</Reward_Param3>
+		<Reward_Param4>UM12_The_Emperors_New_Weapon.TED</Reward_Param4>
+		<Reward_Param5>Empire</Reward_Param5>
+		<Reward_Param6></Reward_Param6>
+		<Reward_Param7>Story_Plots_Underworld_M12_SPACE.xml</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Reward_Param9>0</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Reward_Param11>0</Reward_Param11>
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Mission_Twelve_Task_Message_00</Prereq>
+        <Branch>BRANCH_UA03M12</Branch>
+	</Event>
+	
+	
+</Story>

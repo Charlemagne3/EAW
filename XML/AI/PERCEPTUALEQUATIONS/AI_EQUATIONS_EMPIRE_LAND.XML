@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<Equations>
+	<Should_Build_EM_Field_Generator>
+		50.0
+		*
+		((Variable_Target.FriendlyForce {Parameter_Category = GameObjectCategoryType[Structure]}
+		+
+		Variable_Target.FriendlyForce {Parameter_Category = GameObjectCategoryType[Vehicle]})		
+		+
+		(100.0 > Variable_Target.DistanceToNearestFriendly {Parameter_Type = "Empire_Mineral_Processor",
+															Parameter_Type = "Skirmish_Ground_Mining_Facility_E"}))
+	</Should_Build_EM_Field_Generator>
+
+	<Should_Build_Grenade_Mortar>
+		50.0
+		*
+		Variable_Target.EnemyForce {Parameter_Category = GameObjectCategoryType[Vehicle]}
+		*
+		Variable_Target.FriendlyForce		
+	</Should_Build_Grenade_Mortar>
+
+	<Should_Build_Offensive_Sensor_Node>
+		50.0
+		*
+		((Variable_Target.DistanceToNearestFriendly > 300.0) * (Variable_Target.DistanceToNearestEnemy > 300.0)
+		+
+		Variable_Target.EnemyForce {Parameter_Category = GameObjectCategoryType[Infantry]}
+		*
+		Variable_Target.FriendlyForce)
+	</Should_Build_Offensive_Sensor_Node>
+
+</Equations>

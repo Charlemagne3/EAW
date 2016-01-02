@@ -1,0 +1,435 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+   <Event Name="Tutorial_1_Space_00">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>4</Event_Param1>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_2</Reward_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_01">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>0</Event_Param1>
+      <Reward_Type>ENABLE_FOW</Reward_Type>
+      <Reward_Param1>1</Reward_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_02">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ENABLE_VICTORY</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_1_Space_01</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_10">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>2</Event_Param1>
+      <Reward_Type>FLASH_GUI</Reward_Type>
+      <Reward_Param1>radar</Reward_Param1>
+      <Prereq>Tutorial_1_Space_00</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_11">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_2</Event_Param1>
+      <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_20">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_3</Reward_Param1>
+      <Prereq>Tutorial_1_Space_11</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_21">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_3</Event_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_21a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_02</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_21</Prereq>
+   </Event>
+
+			<Event Name="Tutorial_1_Space_21b">
+				<Event_Type>STORY_SELECT_UNIT</Event_Type>
+				<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_02</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_21a</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_22">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_4</Reward_Param1>
+      <Prereq>Tutorial_1_Space_21b</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_30">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_4</Event_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_30a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_03</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_30</Prereq>
+   </Event>
+
+			<Event Name="Tutorial_1_Space_30b">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>drag_select</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_03</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_21a</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_31">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_5</Reward_Param1>
+      <Prereq>Tutorial_1_Space_30b</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_40">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_5</Event_Param1>
+   </Event>
+
+   <Event Name="Tutorial_1_Space_40a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_02</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_40</Prereq>
+   </Event>
+
+			<Event Name="Tutorial_1_Space_40b">
+				<Event_Type>STORY_SELECT_UNIT</Event_Type>
+				<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_02</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_40a</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_41">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_6</Reward_Param1>
+      <Prereq>Tutorial_1_Space_40b</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_50">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_6</Event_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_50a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_04</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_50</Prereq>
+   </Event>
+
+			<Event Name="Tutorial_1_Space_50b">
+				<Event_Type>STORY_COMMAND_UNIT</Event_Type>
+				<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_04</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_50a</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_51">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_7</Reward_Param1>
+      <Prereq>Tutorial_1_Space_50b</Prereq>
+   </Event>
+
+   <Event Name="Tutorial_1_Space_52">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_7</Event_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_52a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_05</Reward_Param1> <!-- Task: Move your fleet near the Imperial space station -->
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_52</Prereq>
+   </Event>
+   
+			<Event Name="Tutorial_1_Space_52b">
+				<Event_Type>STORY_COMMAND_UNIT</Event_Type>
+				<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+				<Event_Param2>Empire_Star_Base_1</Event_Param2>
+				<Event_Param3>4000</Event_Param3>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_05</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_52a</Prereq>
+			</Event>
+
+	<!-- Disabled until the escort command works again. -Eric_Y 6/7/5
+			<Event Name="Tutorial_1_Space_53">
+				<Event_Type>STORY_COMMAND_UNIT</Event_Type>
+				<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+				<Event_Param2>Empire_Star_Base_1</Event_Param2>
+				<Event_Param3>2100</Event_Param3>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>Tutorial_1_Part_9</Reward_Param1> < ! - - Voice over: Have your X wings escort your Y wings - - >
+				<Prereq>Tutorial_1_Space_52</Prereq>
+			</Event>
+
+
+			<Event Name="Tutorial_1_Space_54">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ENABLE_FOW</Reward_Type>
+				<Reward_Param1>0</Reward_Param1>
+				<Prereq>Tutorial_1_Space_53</Prereq>
+			</Event>
+
+
+			<Event Name="Tutorial_1_Space_66">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>Tutorial_1_Part_9</Event_Param1>
+			</Event>
+
+
+			<Event Name="Tutorial_1_Space_66a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_06</Reward_Param1>  < ! - - Click on the X-Wing then right click Y-wing - - >
+				<Reward_Param2>5</Reward_Param2>
+				<Prereq>Tutorial_1_Space_66</Prereq>
+			</Event>
+
+
+			<Event Name="Tutorial_1_Space_67">
+				<Event_Type>STORY_GUARD_UNIT</Event_Type>
+				<Event_Param1>X-WING</Event_Param1>
+				<Event_Param2>Y-WING</Event_Param2>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>Tutorial_1_Part_10</Reward_Param1>
+				<Prereq>Tutorial_1_Space_66</Prereq>
+			</Event>
+
+
+			<Event Name="Tutorial_1_Space_67a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_07</Reward_Param1>
+				<Reward_Param2>5</Reward_Param2>
+				<Prereq>Tutorial_1_Space_67</Prereq>
+			</Event>
+	-->
+
+
+			<Event Name="Tutorial_1_Space_67">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>Tutorial_1_Part_10</Reward_Param1>
+				<Prereq>Tutorial_1_Space_52b</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_1_Space_67a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SWITCH_CONTROL</Reward_Type>
+				<Reward_Param1>Empire</Reward_Param1>
+				<Reward_Param2>BasicEmpire</Reward_Param2>
+				<Prereq>Tutorial_1_Space_52b</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_70">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>5</Event_Param1>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_11</Reward_Param1>
+      <Prereq>Tutorial_1_Space_67a</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_80">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_11</Event_Param1>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_80a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_08</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_80</Prereq>
+   </Event>
+
+			<Event Name="Tutorial_1_Space_80b">
+				<Event_Type>STORY_ATTACK_HARDPOINT</Event_Type>
+				<Event_Param1>HP_STAR_DESTROYER_TRAINING_07</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_08</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_80a</Prereq>
+			</Event>
+
+   <Event Name="Tutorial_1_Space_82">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_12</Reward_Param1>
+      <Prereq>Tutorial_1_Space_80b</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_82a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_09</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_82</Prereq>
+   </Event>
+   
+			<Event Name="Tutorial_1_Space_82b">
+				<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+				<Event_Param1>TUTORIAL_STAR_DESTROYER</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_09</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+			</Event>
+
+
+   <Event Name="Tutorial_1_Space_90">
+      <Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+	  <Event_Param1>TUTORIAL_STAR_DESTROYER</Event_Param1>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_13</Reward_Param1>
+      <!--<Prereq>Tutorial_1_Space_82b</Prereq>      ...Once star destroyer is gone, we need to move on. -Eric_Y -->
+   </Event>
+
+				<Event Name="Tutorial_1_Space_90b">
+					<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+					<Event_Param1>TUTORIAL_STAR_DESTROYER</Event_Param1>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Tutorial_1_Space_82</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+				</Event>
+   
+				<Event Name="Tutorial_1_Space_90c">
+					<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+					<Event_Param1>TUTORIAL_STAR_DESTROYER</Event_Param1>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Tutorial_1_Space_82a</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+				</Event>
+
+
+   <Event Name="Tutorial_1_Space_91">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_13</Event_Param1>
+   </Event>
+
+   <Event Name="Tutorial_1_Space_92a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_10</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_91</Prereq>
+   </Event>
+   
+			<Event Name="Tutorial_1_Space_92b">
+				<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+				<Event_Param1>EMPIRE_STAR_BASE_1</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_10</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_92a</Prereq>
+			</Event>
+			
+   <Event Name="Tutorial_1_Space_93a">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_CHAP_01_11</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Prereq>Tutorial_1_Space_91</Prereq>
+   </Event>
+   
+			<Event Name="Tutorial_1_Space_93b">
+				<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+				<Event_Param1>EMPIRE_ORBITAL_LONG_RANGE_SCANNER</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_TUTORIAL_CHAP_01_11</Reward_Param1>
+				<Reward_Param4>REMOVE</Reward_Param4>
+				<Prereq>Tutorial_1_Space_93a</Prereq>
+			</Event>
+
+
+   <Event Name="Tutorial_1_Space_94">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>6</Event_Param1>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_14</Reward_Param1>
+      <Prereq>Tutorial_1_Space_91</Prereq>
+   </Event>
+
+   <Event Name="Tutorial_1_Space_102">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SPEECH</Reward_Type>
+      <Reward_Param1>Tutorial_1_Part_15</Reward_Param1>
+      <Prereq>Tutorial_1_Space_92b Tutorial_1_Space_93b</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_103">
+      <Event_Type>STORY_SPEECH_DONE</Event_Type>
+      <Event_Param1>Tutorial_1_Part_15</Event_Param1>
+      <Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_2_COMPLETE</Reward_Param1>
+      <Prereq>Tutorial_1_Space_102</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_104">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>DISABLE_MOVIES</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_1_Space_103</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_1_Space_110">
+      <Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>Continue_Tutorial</Event_Param1>
+      <Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+      <Reward_Param1>Tutorial_Three</Reward_Param1>
+      <Reward_Param2>0</Reward_Param2>
+   </Event>
+
+</Story>

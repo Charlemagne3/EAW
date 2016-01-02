@@ -1,0 +1,278 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Start Campaign -->
+	<Event Name="AetenII_Piracy_Mission_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>AetenII_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_Prevent_Retreat_Rebel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>AetenII_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_Prevent_Retreat_Empire">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>AetenII_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	
+
+
+<!-- Mission objectives
+ TEXT_KUAT_KIDNAPPING_OBJECTIVE_01						Bossk must survive
+ TEXT_STORY_AETENII_PIR_OBJECTIVE_01					Destroy the five Stygium Crystal Capsules.
+ TEXT_STORY_AETENII_PIR_OBJECTIVE_01a					Destroy four more Stygium Crystal Capsules.
+ TEXT_STORY_AETENII_PIR_OBJECTIVE_01b					Destroy three more Stygium Crystal Capsules.
+ TEXT_STORY_AETENII_PIR_OBJECTIVE_01c					Destroy two more Stygium Crystal Capsules.
+ TEXT_STORY_AETENII_PIR_OBJECTIVE_01d					Destroy the last Stygium Crystal Capsules.
+ -->
+		
+	<Event Name="AetenII_Piracy_ADD_OBJECTIVE_Bossk_Must_Survive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_KUAT_KIDNAPPING_OBJECTIVE_01</Reward_Param1>
+		<Prereq>AetenII_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<!-- TEXT_SPEECH_AETENII_PIR_OBJECTIVE_01 
+	Destroy the five Stygium Crystal Capsules.-->
+	<Event Name="AetenII_Piracy_ADD_OBJECTIVE_Destroy_The_Five_StygiumCapsules">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01</Reward_Param1>
+		<Prereq>AetenII_Piracy_ADD_OBJECTIVE_Bossk_Must_Survive</Prereq>
+	</Event>
+	
+<!-- Doing capsule objective manipulation here -->
+
+	<Event Name="AetenII_Piracy_Update_Container_Objective_One_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Update_Container_Objective_One_Destroyed_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<Event Name="Tutorial_II_UPDATE_OBJECTIVE_Destroy_The_Five_StygiumCapsules">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_AETENII_PIR_OBJECTIVE_01a</Reward_Param2>
+				<Prereq>AetenII_Piracy_Update_Container_Objective_One_Destroyed_AI_NOTIFICATION</Prereq>
+			</Event>  
+
+			
+	<Event Name="AetenII_Piracy_Update_Container_Objective_Two_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Update_Container_Objective_Two_Destroyed_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<Event Name="Tutorial_II_UPDATE_OBJECTIVE_Destroy_Four_More_StygiumCapsules">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01a</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_AETENII_PIR_OBJECTIVE_01b</Reward_Param2>
+				<Prereq>AetenII_Piracy_Update_Container_Objective_Two_Destroyed_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+			
+	<Event Name="AetenII_Piracy_Update_Container_Objective_Three_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Update_Container_Objective_Three_Destroyed_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<Event Name="Tutorial_II_UPDATE_OBJECTIVE_Destroy_Three_More_StygiumCapsules">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01b</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_AETENII_PIR_OBJECTIVE_01c</Reward_Param2>
+				<Prereq>AetenII_Piracy_Update_Container_Objective_Three_Destroyed_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AetenII_Piracy_Update_Container_Objective_Four_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Update_Container_Objective_Four_Destroyed_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<Event Name="Tutorial_II_UPDATE_OBJECTIVE_Destroy_Two_More_StygiumCapsules">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01c</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_AETENII_PIR_OBJECTIVE_01d</Reward_Param2>
+				<Prereq>AetenII_Piracy_Update_Container_Objective_Four_Destroyed_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+		
+			
+	<Event Name="AetenII_Piracy_Notice_Container_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Notice_Container_Destroyed_AI_NOTIFICATION</Event_Param2>
+		<Branch>BRANCH_Notice_Container_Destroyed</Branch>
+	</Event>
+	
+			<!-- TEXT_SPEECH_AETENII_PIR_OBJECTIVE_NOTICE
+			 NOTICE: Stygium Crystal Capsule destroyed.-->
+			<Event Name="AetenII_Piracy_Notice_Container_Destroyed_TEXT">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_NOTICE</Reward_Param1>
+				<Reward_Param2>8</Reward_Param2>
+				<Reward_Param7>System</Reward_Param7><!-- HINT color coding - green -->
+				<Prereq>AetenII_Piracy_Notice_Container_Destroyed_AI_NOTIFICATION</Prereq>
+				<Branch>BRANCH_Notice_Container_Destroyed</Branch>
+			</Event>
+			
+			<Event Name="AetenII_Piracy_Notice_Container_Destroyed_Reset_Branch">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>RESET_BRANCH</Reward_Type>
+				<Reward_Param1>BRANCH_Notice_Container_Destroyed</Reward_Param1>
+				<Prereq>AetenII_Piracy_Notice_Container_Destroyed_TEXT</Prereq>
+				<Branch>BRANCH_Notice_Container_Destroyed</Branch>
+			</Event>
+
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+<!-- ***************MISSION START Dialog Goes Here******************** -->
+	<!-- TEXT_SPEECH_AETENII_PIR_TACTICAL_COR02_02
+	Bossk: The Stygium Crystal storage containers will be well guarded. 
+	Destroying 5 containers and nearby enemy ships will help to secure our hold on the Aeten II system.    -->
+	<Event Name="AetenII_Piracy_Mission_Start_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Mission_Start_AI_NOTIFICATION</Event_Param2>
+	</Event>
+			<Event Name="AetenII_Piracy_Mission_Start_DIALOG">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_AETENII_PIR_TACTICAL_COR02_02</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Reward_Param7>ALIEN_SPEECH</Reward_Param7>
+				<Reward_Param8>AETENII_PIR_TACTICAL_COR02_02</Reward_Param8>
+				<Reward_Param9>Bossk_Loop</Reward_Param9>
+				<Reward_Param10>1</Reward_Param10>
+				<Prereq>AetenII_Piracy_Mission_Start_AI_NOTIFICATION</Prereq>
+			</Event>
+	
+				<Event Name="AetenII_Piracy_Mission_Start_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>AETENII_PIR_TACTICAL_COR02_02</Event_Param1> 
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_AETENII_PIR_TACTICAL_COR02_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>AetenII_Piracy_Mission_Start_DIALOG</Prereq>
+				</Event>
+
+				<Event Name="AetenII_Piracy_Mission_Start_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>AetenII_Piracy_Mission_Start_Remove_Text</Prereq>
+				</Event>
+				
+<!-- ***************WIN Dialog Goes Here******************** -->
+
+	<Event Name="AetenII_Piracy_Player_Wins_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Player_Wins_AI_NOTIFICATION</Event_Param2>
+	</Event>
+			
+					
+<!-- ***************LOSE Dialog Goes Here******************** -->
+	<Event Name="AetenII_Piracy_Player_Loses_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AetenII_Piracy_Player_Loses_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_RE_ENABLE_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>AetenII_Piracy_Player_Wins_AI_NOTIFICATION</Prereq>
+		<Prereq>AetenII_Piracy_Player_Loses_AI_NOTIFICATION</Prereq>
+	</Event>
+			
+<!-- *************************************************************** -->
+<!-- ***************Win Conditions******************** -->
+<!-- *************************************************************** -->
+
+	<Event Name="AetenII_Piracy_Player_Wins">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>AetenII_Piracy_Player_Wins_AI_NOTIFICATION</Prereq>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Player_Wins_STORY_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+	</Event>
+	
+			<!-- completing remaining objectives -->
+			<Event Name="AetenII_Piracy_COMPLETE_OBJECTIVE_Bossk_Must_Survive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_KUAT_KIDNAPPING_OBJECTIVE_01</Reward_Param1>
+				<Prereq>AetenII_Piracy_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			<!-- TEXT_SPEECH_AETENII_PIR_OBJECTIVE_01d 
+			Destroy the last Stygium Crystal Capsule.-->
+			<Event Name="AetenII_Piracy_COMPLETE_OBJECTIVE_Destroy_The_StygiumCapsules">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_AETENII_PIR_OBJECTIVE_01d</Reward_Param1>
+				<Prereq>AetenII_Piracy_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			
+					
+<!-- *************************************************************** -->
+<!-- ***************Loss Conditions******************** -->
+<!-- *************************************************************** -->
+	<Event Name="AetenII_Piracy_Mission_Loss_Rebel">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_REBEL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_Loss_Empire">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_EMPIRE</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+	</Event>
+	
+	<Event Name="AetenII_Piracy_Mission_Loss_Hutt">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_HUTTS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Hutt</Reward_Param1>
+	</Event>
+	
+			<Event Name="AetenII_Piracy_FAIL_OBJECTIVE_Bossk_Must_Survive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_KUAT_KIDNAPPING_OBJECTIVE_01</Reward_Param1>
+				<Prereq>AetenII_Piracy_Player_Loses_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+
+	
+
+
+</Story>

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Accumulate_Credits_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Accumulate_Credits_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Accumulate_Credits_01">
+		<Event_Type>STORY_ACCUMULATE</Event_Type>
+		<Event_Param1>10000</Event_Param1>
+		<Prereq>Accumulate_Credits_00</Prereq>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>	
+	
+	<Event Name="Accumulate_Credits_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Accumulate_Credits_01</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Accumulate_Credits_Tag_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Accumulate_Credits_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Accumulate_Credits_02</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>ACCUMULATE_CREDITS_NOTIFICATION_00</Reward_Param1>
+	</Event>
+	
+</Story>
+

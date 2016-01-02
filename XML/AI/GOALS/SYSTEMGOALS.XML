@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+
+<Goals>
+
+	<Debug_Goal_Galactic>
+		<AIGoalApplicationFlags> Friendly | Enemy | Neutral </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> NoBudget </Category>
+		<Reachability> Enemy_Undefended </Reachability>
+		<Time_Limit> 10.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	</Debug_Goal_Galactic>
+
+	<Debug_Goal_Galactic_2>
+		<AIGoalApplicationFlags> Friendly | Enemy | Neutral </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> NoBudget </Category>
+		<Reachability> Enemy_Undefended </Reachability>
+		<Time_Limit> 10.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	</Debug_Goal_Galactic_2>
+
+	 <Debug_Goal_Galactic_3>
+		<AIGoalApplicationFlags> Friendly | Enemy | Neutral </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> NoBudget </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 10.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	 </Debug_Goal_Galactic_3>
+
+	<AlwaysOff>
+		<AIGoalApplicationFlags> Friendly</AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> NoBudget </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>0</Build_Time_Delay_Tolerance>
+	</AlwaysOff>
+
+   
+</Goals>
+

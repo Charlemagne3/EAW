@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<HintSets>
+
+	<Test_Hint_Set>
+		<Chokepoint>0.0</Chokepoint>
+		<High_Ground>0.0</High_Ground>
+		<Base_Entry>0.0</Base_Entry>
+		<Base_Perch_Point>0.0</Base_Perch_Point>
+		<Base>0.0</Base>
+		<Retreat>0.0</Retreat>
+	</Test_Hint_Set>
+
+	<Galactic_Hints>
+		<Chokepoint>0.0</Chokepoint>
+		<OffenseDelayGround>0.0</OffenseDelayGround>
+		<OffenseDelaySpace>0.0</OffenseDelaySpace>
+		<PriorityTarget>0.0</PriorityTarget>
+	</Galactic_Hints>
+
+</HintSets>

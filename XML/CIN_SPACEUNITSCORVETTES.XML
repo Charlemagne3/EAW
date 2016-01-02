@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<CIN_SpaceCorvettes>
+
+	<Cin_SpaceUnit Name="CIN_Corvette_fast">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Corellian_Corvette</Variant_Of_Existing_Type>
+		<Max_Speed>10</Max_Speed>
+		<Projectile_Types>Proj_Ship_Small_Laser_Cannon_Red_Fast</Projectile_Types>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Fire_Recharge_Seconds>0.2</Projectile_Fire_Recharge_Seconds>
+		<Fire_Inaccuracy_Distance> Fighter, 0.0 </Fire_Inaccuracy_Distance>
+		<Target_Bones> Missile_Target_00, Missile_Target_01, Missile_Target_02, Missile_Target_03 </Target_Bones>
+
+		<Pause_During_Cinematic_Anim>no</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+		
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+	</Cin_SpaceUnit>
+	
+
+	
+</CIN_SpaceCorvettes>

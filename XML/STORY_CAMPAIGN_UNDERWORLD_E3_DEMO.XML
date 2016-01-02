@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_E3_Demo_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Hypori</Reward_Param1>
+	</Event>
+
+
+
+</Story>

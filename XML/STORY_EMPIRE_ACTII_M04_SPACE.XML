@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- Preliminary Setup -->
+
+	<Event Name="Empire_A02M04_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M04C_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M04_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event> 
+
+	<Event Name="Empire_A02M04_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A02M04_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+<!-- Intro Dialog -->
+<!-- Officer Speaks -->
+	<Event Name="Empire_A02M04_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FOUR_05</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Dialog_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FOUR_05</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_05</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M04_Dialog_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M04_Dialog_01</Prereq>
+	</Event>
+			
+<!-- jdg ADDING first mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21
+Destroy all Rebel ships and their Starbase.-->
+	<Event Name="Empire_A02M04_ADD_OBJECTIVE_Destroy_Everything">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21</Reward_Param1>
+		<Prereq>Empire_A02M04_Dialog_02</Prereq>
+	</Event>
+
+<!-- Check A list of destroyed items to see when Mon Cal Cruiser warps in -->
+	<Event Name="Empire_A02M04_Nebulon_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Nebulon_B_Frigate</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Corvette_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Corellian_Corvette</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Gunship_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Corellian_Gunboat</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Marauder_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Marauder_Missile_Cruiser</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Warp_in_MonCal_Cruiser_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Empire_A02M04_Corvette_Destroyed Empire_A02M04_Gunship_Destroyed Empire_A02M04_Marauder_Destroyed</Prereq>
+		<Prereq>Empire_A02M04_Nebulon_Destroyed Empire_A02M04_Corvette_Destroyed Empire_A02M04_Marauder_Destroyed</Prereq>
+		<Prereq>Empire_A02M04_Nebulon_Destroyed Empire_A02M04_Gunship_Destroyed Empire_A02M04_Marauder_Destroyed</Prereq>
+		<Prereq>Empire_A02M04_Nebulon_Destroyed Empire_A02M04_Corvette_Destroyed Empire_A02M04_Gunship_Destroyed</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M04_Warp_in_MonCal_Cruiser_Dialog">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_37</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_FOUR_37</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M04_Warp_in_MonCal_Cruiser_00</Prereq>
+	</Event>
+	
+	
+	
+	
+
+	<Event Name="Empire_A02M04_Warp_in_MonCal_Cruiser_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_37</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_37</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M04_Warp_in_MonCal_Cruiser_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Warp_in_MonCal_Cruiser_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M04_Warp_in_MonCal_Cruiser_01</Prereq>
+	</Event>
+			
+<!-- jdg ADDING second mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22
+Destroy the Mon Calamari Capital Ship.-->
+	<Event Name="Empire_A02M04_ADD_OBJECTIVE_Destroy_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22</Reward_Param1>
+		<Prereq>Empire_A02M04_Warp_in_MonCal_Cruiser_02</Prereq>
+	</Event>
+			
+<!-- jdg checking for destroyed event-->	
+	<Event Name="Empire_A02M04_MONCAL_CapitalShip_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Calamari_Cruiser</Event_Param1>
+		<Event_Param3>2</Event_Param3>
+		<Prereq>Empire_A02M04_ADD_OBJECTIVE_Destroy_Cruiser</Prereq>
+	</Event>
+	
+		<Event Name="Empire_A02M04_Enable_Retreat">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>DISABLE_RETREAT</Reward_Type>
+			<Reward_Param1>REBEL</Reward_Param1>
+			<Reward_Param2>0</Reward_Param2>
+			<Prereq>Empire_A02M04_MONCAL_CapitalShip_Destroyed</Prereq>
+		</Event> 
+						
+<!-- jdg COMPLETING second mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22
+Destroy the Mon Calamari Capital Ship.-->
+	<Event Name="Empire_A02M04_COMPLETE_OBJECTIVE_Destroy_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22</Reward_Param1>
+		<Prereq>Empire_A02M04_MONCAL_CapitalShip_Destroyed</Prereq>
+	</Event>
+
+<!-- VICTORY CONDITIONS -->
+	<Event Name="Empire_A02M04_Allow_Win">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+	
+	<!-- jdg COMPLETING first mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21
+Destroy all Rebel ships and their Starbase.-->
+	<Event Name="Empire_A02M04_COMPLETE_OBJECTIVE_Destroy_Everything">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21</Reward_Param1>
+		<Prereq>Empire_A02M04_Allow_Win</Prereq>
+	</Event>
+
+<!-- Officer Speaks -->
+	<Event Name="Empire_A02M04_End_Dialog_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>END_DIALOG</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FOUR_07</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Empire_A02M04_End_Dialog_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FOUR_07</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_07</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M04_End_Dialog_00</Prereq>
+	</Event>
+
+<!-- Tarkin Speaks -->
+	<Event Name="Empire_A02M04_End_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FOUR_08</Reward_Param8>
+		<Reward_Param9>Tarkin_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M04_End_Dialog_01a</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_End_Dialog_03">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FOUR_08</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_08</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M04_End_Dialog_02</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_End_Dialog_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M04_End_Dialog_03</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_End_Dialog_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_A02M04_End_Dialog_04</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M04_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A02M04_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+<!-- LOSS CONDITIONS -->
+	<Event Name="Empire_A02M04_Force_LOSS">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FOUR_18</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M04_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M04_Force_LOSS_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FOUR_18</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FOUR_18</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M04_Force_LOSS</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M04_Force_LOSS_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M04_Force_LOSS_01</Prereq>
+	</Event>
+	
+		<!-- jdg FAILING first mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21
+Destroy all Rebel ships and their Starbase.-->
+	<Event Name="Empire_A02M04_FAIL_OBJECTIVE_Destroy_Everything">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_21</Reward_Param1>
+		<Prereq>Empire_A02M04_Force_LOSS_02</Prereq>
+	</Event>
+	
+	<!-- jdg FAILING second mission objective here 
+TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22
+Destroy the Mon Calamari Capital Ship.-->
+	<Event Name="Empire_A02M04_FAIL_OBJECTIVE_Destroy_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FOUR_22</Reward_Param1>
+		<Prereq>Empire_A02M04_Force_LOSS_02 Empire_A02M04_Warp_in_MonCal_Cruiser_02</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M04_Force_LOSS_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_A02M04_Force_LOSS_02</Prereq>
+	</Event>
+
+</Story>

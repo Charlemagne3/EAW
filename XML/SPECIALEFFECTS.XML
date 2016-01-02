@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<SpecialEffects>
+
+    <SpecialEffect Name="Object_Highlight">
+        <Land_Model_Name>W_HILIGHT_FX.ALO</Land_Model_Name>
+        <Space_Model_Name>W_HILIGHT_FX.ALO</Space_Model_Name>
+        <Scale_Factor>1.0</Scale_Factor>
+        <Is_Decoration>Yes</Is_Decoration>
+        <Is_Discardable>No</Is_Discardable>
+        <Behavior>IDLE</Behavior>
+    </SpecialEffect>
+
+	 <SpecialEffect Name="Object_Highlight_Small">
+		  <Land_Model_Name>W_HILIGHT_FX_SMALL.ALO</Land_Model_Name>
+		  <Space_Model_Name>W_HILIGHT_FX_SMALL.ALO</Space_Model_Name>
+		  <Scale_Factor>1.0</Scale_Factor>
+		  <Is_Decoration>Yes</Is_Decoration>
+		  <Is_Discardable>No</Is_Discardable>
+		  <Behavior>IDLE</Behavior>
+	 </SpecialEffect>
+
+
+</SpecialEffects>

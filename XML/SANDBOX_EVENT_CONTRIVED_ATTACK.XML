@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Contrived_Attack_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Contrived_Attack_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Contrived_Attack_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Prereq>Contrived_Attack_00</Prereq>
+		<Event_Param2>CONTRIVED_ATTACK_NOTIFICATION_00</Event_Param2>
+		<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+		<Reward_Param1>Contrived_Attack_Tag_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Contrived_Attack_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Contrived_Attack_01</Prereq>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Contrived_Attack_Tag_01</Story_Tag>
+	</Event>
+	
+	<!-- Branch for winning -->
+		<Event Name="Contrived_Attack_03">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Prereq>Contrived_Attack_02</Prereq>
+			<Event_Param2>CONTRIVED_ATTACK_NOTIFICATION_01</Event_Param2>
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Contrived_Attack_Tag_01</Reward_Param1>	
+		</Event>
+		
+		<Event Name="Contrived_Attack_04">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Contrived_Attack_03</Prereq>
+			<Story_Chapter>2</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		</Event>
+		
+		<Event Name="Contrived_Attack_05">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Contrived_Attack_04</Prereq>
+			<Reward_Type>TRIGGER_AI</Reward_Type>
+			<Reward_Param1>CONTRIVED_ATTACK_NOTIFICATION_03</Reward_Param1>
+		</Event>
+		
+	<!-- Branch for losing -->
+	
+		<Event Name="Contrived_Attack_06">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Prereq>Contrived_Attack_02</Prereq>
+			<Event_Param2>CONTRIVED_ATTACK_NOTIFICATION_02</Event_Param2>
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Contrived_Attack_Tag_01</Reward_Param1>	
+		</Event>
+		
+		<Event Name="Contrived_Attack_07">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Contrived_Attack_06</Prereq>
+			<Story_Chapter>3</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		</Event>
+		
+		<Event Name="Contrived_Attack_08">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Contrived_Attack_07</Prereq>
+			<Reward_Type>TRIGGER_AI</Reward_Type>
+			<Reward_Param1>CONTRIVED_ATTACK_NOTIFICATION_03</Reward_Param1>
+		</Event>	
+	
+</Story>

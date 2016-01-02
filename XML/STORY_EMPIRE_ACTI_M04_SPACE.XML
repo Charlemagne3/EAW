@@ -1,0 +1,344 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Empire_M04_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M04B_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M04_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M04_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+
+    <!--  <Event Name="Empire_M04_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>-->
+
+	<Event Name="Empire_M04_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M04s_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M04_Turn_Tactical_AI_OFF">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SWITCH_CONTROL</Reward_Type>
+		<Reward_Param1>PIRATES</Reward_Param1>
+		<Reward_Param2>Human</Reward_Param2>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+
+	<!-- Waiting for Lua to finish processing its State_Empire_M04_Begin finction -->
+	<Event Name="Empire_A01_M04_Begin_End">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>LUA_FINSHED_BEGIN</Event_Param2>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>		
+
+			<!-- Trigger first screen text for accalamator commander -->
+			<Event Name="Empire_A01_M04_Intro_Text_00">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_05</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Prereq>Empire_A01_M04_Begin_End</Prereq>
+			</Event>
+			<!-- Trigger first speech for accalamator commander -->	
+			<Event Name="Empire_A01_M04_Intro_Speech_00">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>EMPIRE_ACT01_MISSION_FOUR_05</Reward_Param1>
+				<Prereq>Empire_A01_M04_Begin_End</Prereq>
+			</Event>
+			
+			<!-- Wait for the speech from above to finsh and remove the speech-->		
+			<Event Name="Empire_A01_M04_Intro_End_00">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_05</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_05</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_A01_M04_Intro_Speech_00</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01_M04_Intro_Lua_Finished_00">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>LUA_FINSHED_00</Event_Param2>
+				<Prereq>Empire_A01_M04_Intro_End_00</Prereq>
+			</Event>
+		
+			<!-- Imperial Acclamator officer speaks again -->
+			<Event Name="Empire_A01_M04_Intro_Text_01">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_06</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Prereq>Empire_A01_M04_Intro_Lua_Finished_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01_M04_Intro_Speech_01">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>EMPIRE_ACT01_MISSION_FOUR_06</Reward_Param1>
+				<Prereq>Empire_A01_M04_Intro_Lua_Finished_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01_M04_Intro_End_01">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_06</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_06</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_A01_M04_Intro_Speech_01</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01_M04_Intro_Lua_Finished_01">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>LUA_FINSHED_01</Event_Param2>
+				<Prereq>Empire_A01_M04_Intro_End_01</Prereq>
+			</Event>
+
+			<!-- Imperial Acclamator officer speaks again 
+			TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_08
+			Imperial Officer: It appears the Geonosians have allied themselves with the Rebellion. 
+			Send for reinforcements, this treachery needs to be dealt with immediately.-->
+			<Event Name="Empire_A01_M04_Intro_Text_03">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_08</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Prereq>Empire_A01_M04_Intro_Lua_Finished_01</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01_M04_Intro_Speech_03">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>EMPIRE_ACT01_MISSION_FOUR_08</Reward_Param1>
+				<Prereq>Empire_A01_M04_Intro_Lua_Finished_01</Prereq>
+			</Event>
+
+			<!-- Wait for the speech from above to finsh and remove the speech-->		
+			<Event Name="Empire_A01_M04_Intro_End_03">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_08</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_08</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_A01_M04_Intro_Speech_03</Prereq>
+			</Event>
+			
+			
+	<!-- jdg - Vader new 01
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_19
+Darth Vader: The Rebels are retreating to their base. Do not allow them to escape.-->	
+	<Event Name="Empire_A01_M04_Vader_Dialog_You_Cant_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_FOUR_19</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>0</Reward_Param10>
+		<Prereq>Empire_A01_M04_Intro_End_03</Prereq>
+	</Event>
+	
+			<Event Name="Empire_A01_M04_Vader_Dialog_You_Cant_Retreat_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_19</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_19</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_A01_M04_Vader_Dialog_You_Cant_Retreat</Prereq>
+			</Event>
+			
+		<!-- jdg - Vader new 02  Task message
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_20
+Darth Vader: Destroy the rebel starbase and push the traitors from the sector.-->	
+	<Event Name="Empire_A01_M04_Vader_Mission_Goal_Statement">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_FOUR_20</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>0</Reward_Param10>
+		<Prereq>Empire_A01_M04_Vader_Dialog_You_Cant_Retreat_Remove_Text</Prereq>
+	</Event>
+	
+			<Event Name="Empire_A01_M04_Vader_Mission_Goal_Statement_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_FOUR_20</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_FOUR_20</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_A01_M04_Vader_Mission_Goal_Statement</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01_M04_Vader_Mission_Goal_Statement_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Empire_A01_M04_Vader_Mission_Goal_Statement_Remove_Text</Prereq>
+			</Event>
+
+
+			
+			
+			
+			
+			
+<!-- jdg - adding in OBJECTIVE addition messages here 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66
+Darth Vader must survive.
+
+TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_33
+Destroy the Rebel Starbase.-->			
+				
+			
+			<Event Name="Empire_A01_M04_TASK_01">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+				<Prereq>Empire_A01_M04_Vader_Mission_Goal_Statement_Remove_Text</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01_M04_TASK_02">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_33</Reward_Param1>
+				<Prereq>Empire_A01_M04_Vader_Mission_Goal_Statement_Remove_Text</Prereq>
+			</Event>
+			
+<!-- WIN CONDITION -->
+
+
+	<Event Name="Empire_M04_Rebel_Station_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Rebel_Star_Base_3</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+	
+			<Event Name="Empire_M04_Vader_Survived_ObjectiveComplete">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+				<Prereq>Empire_M04_Rebel_Station_Destroyed</Prereq>
+			</Event>
+	
+			<Event Name="Empire_M04_Rebel_Station_Destroyed_ObjectiveComplete">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_33</Reward_Param1>
+				<Prereq>Empire_M04_Rebel_Station_Destroyed</Prereq>
+			</Event>
+			
+			
+	
+	
+
+	<Event Name="Empire_M04_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M04s_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+
+
+
+<!-- LOSS CONDITIONS -->
+
+
+	<Event Name="Empire_M04_All_Empire_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Empire</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+
+<!-- Loss Condition: Vader dies
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56
+Stormtrooper: Lord Vader has retreated! Fall back!-->
+	
+	<Event Name="Empire_M04_Vader_Dies_Speech">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>TIE_PROTOTYPE</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_56</Reward_Param8> <!-- Put speech file name here -->
+		<Prereq>Empire_M04_Begin</Prereq>
+	</Event>
+	
+			<Event Name="Empire_M04_Vader_Killed_ObjectiveFAILED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+				<Prereq>Empire_M04_Vader_Dies_Speech</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M04_Rebels_Win_ObjectiveFAILED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_33</Reward_Param1>
+				<Prereq>Empire_M04_Vader_Dies_Speech</Prereq>
+			</Event>
+	
+				<Event Name="Empire_M04_Vader_Dies_Speech_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_TWO_56</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M04_Vader_Dies_Speech</Prereq>
+			</Event>
+			
+	
+	
+	<Event Name="Empire_M04_Vader_Dies">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_M04_Vader_Dies_Speech_Remove_Text</Prereq>
+	</Event>
+
+
+
+
+
+
+
+</Story>

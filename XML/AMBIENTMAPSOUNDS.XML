@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<AmbientMapSounds>
+
+	<!-- The entries below are referenced from GameConstants.xml -->
+	<!-- Ambient Sound SFXEvents are in SFXEventsAmbient.xml -->
+	<!-- Entry: SFXEvent name, closest surround dist, farthest surround dist, min second delay, max second delay -->
+
+	<AmbientMapSound Name="Ambient_Map_Sounds_Swamp">
+		<!-- MBL STUB TEST DATA -->
+		<Ambient> Ambient_Test_Swamp_Cricket, 	30, 100, 		1, 5 		</Ambient>
+		<Ambient> Ambient_Test_Swamp_Frog, 		30, 100, 		5, 10 	</Ambient>
+		<Ambient> Ambient_Test_Swamp_Bird, 		30, 100, 		9, 15 	</Ambient>
+	</AmbientMapSound>
+
+	<Ambient_Map_Sound Name="Temperate">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+	<Ambient_Map_Sound Name="Arctic">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+	<Ambient_Map_Sound Name="Desert">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+	<Ambient_Map_Sound Name="Forest">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+	<Ambient_Map_Sound Name="Volcanic">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+	<Ambient_Map_Sound Name="Urban">
+		<!-- TO BE DETERMINED -->
+	</Ambient_Map_Sound>
+
+</AmbientMapSounds>
+

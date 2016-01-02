@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Empire_M02_Fondor_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Empire_M02_Fondor_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02A_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq>
+	</Event>
+	
+<!-- ensuring player his reinforcement ability back here -->
+	<Event Name="Empire_M02_Allow_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq>
+	</Event>
+	
+<!-- ensuring player his retreat ability back here -->	
+	<Event Name="Empire_M02_Allow_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq>
+	</Event>
+
+	<!-- jdg 9/04/05 giving player his reinforcement ability back here -->
+
+				<Event Name="Empire_A01M02_Fondor_Allow_Reinforcements">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+					<Reward_Param1>0</Reward_Param1>
+					<Prereq>Empire_M02_Fondor_Begin</Prereq>
+				</Event>
+			
+<!-- jdg 9/04/05 reinforcement point hint 
+TEXT_STORY_REBEL_ACT01_MISSION_TWO_47
+Hint: Push the reinforcement button, then click and drag a unit's icon to a clear area around the control point.-->	
+<Event Name="Empire_M2_FONDOR_HINT_GO">
+    <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>M2_FONDOR_HINT_GO</Event_Param2>
+   <Prereq>Empire_M02_Fondor_Begin</Prereq>
+</Event>
+
+	<Event Name="Empire_M02_Fondor_HINT">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_TWO_47</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_M2_FONDOR_HINT_GO</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Fondor_Highlight_Reinforcement_Button">	
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_reinforcement</Reward_Param1>
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Fondor_Highlight_Reinforcement_Button_Off">	
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Empire_M02_Fondor_Highlight_Reinforcement_Button</Prereq>
+	</Event>
+
+	<!-- TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_15 
+	Hint: The waves of native enemies can be halted 
+	by destroying their unique home structure.  -->
+	<Event Name="Empire_M02_Fondor_HINT02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_FOUR_15</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Flash_Rebel_Base">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>2000</Reward_Param3>		
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_RemoveFlash_Rebel_Base">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>30</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>2000</Reward_Param3>		
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_RemoveTask_Message01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_77</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>			
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_RemoveTask_Message02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_78</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>			
+		<Prereq>Empire_M02_Fondor_HINT</Prereq>
+	</Event>
+
+
+<!-- FONDOR TASK TEXT
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_77
+Task: Eradicate the Rebel presence on Fondor.  -->
+	<Event Name="Empire_M2_FONDOR_TASK_GO">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M2_FONDOR_TASK_GO</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_77</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param7>Task</Reward_Param7><!-- TASK color coding -->
+        <Prereq>Empire_M02_Fondor_Begin</Prereq>
+    </Event>
+    
+<!-- FONDOR TASK TEXT
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_78 
+Eliminate any trouble-making civilians you encounter.-->
+	<Event Name="Empire_M2_FONDOR_TASK2_GO">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M2_FONDOR_TASK2_GO</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_78</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param7>Task</Reward_Param7>
+        <Prereq>Empire_M02_Fondor_Begin</Prereq>
+    </Event>
+    
+    <!-- jdg new victory conditions...feeding back to lua for ending cine -->
+    <Event Name="Empire_M2_FONDOR_WIN_All_Rebels_Dead">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq> 
+	</Event>
+	
+	 <Event Name="Empire_M2_FONDOR_CUE_WIN">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_M2_FONDOR_WIN_All_Rebels_Dead</Prereq> 
+	</Event>
+
+    <Event Name="Empire_M2_FONDOR_WIN_All_Empire_Dead">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Empire</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Prereq>Empire_M02_Fondor_Begin</Prereq> 
+	</Event>
+	
+	 <Event Name="Empire_M2_FONDOR_CUE_LOSS">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_M2_FONDOR_WIN_All_Empire_Dead</Prereq> 
+	</Event>
+
+</Story>

@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Refugee_Escort_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>REFUGEE_ESCORT_NOTIFICATION_00</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Story_Dialog>Dialog_R_Intervention_Refugee_Escort</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Refugee_Escort_Tag_00</Story_Tag>
+	</Event>
+	
+			<Event Name="Refugee_Escort_00a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>REVEAL_PLANET</Reward_Type>
+				<Reward_Param1></Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Refugee_Escort_00</Prereq>
+			</Event>
+	
+			<Event Name="Refugee_Escort_00b">
+				<Event_Type>STORY_DESTROY</Event_Type>
+				<Event_Param1>Rebel_Refugee_Team</Event_Param1>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Refugee_Escort_01</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Story_Dialog>Dialog_R_Intervention_Refugee_Escort</Story_Dialog>
+				<Story_Chapter>2</Story_Chapter>
+				<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+				<Prereq>Refugee_Escort_00</Prereq>
+			</Event>
+				
+	<Event Name="Refugee_Escort_01">
+		<Event_Type>STORY_MOVE</Event_Type>
+		<Event_Param1>Rebel_Refugee</Event_Param1>
+		<Event_Param2></Event_Param2>
+		<Reward_Type>CREDITS</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Prereq>Refugee_Escort_00</Prereq>
+		<Story_Dialog>Dialog_R_Intervention_Refugee_Escort</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+		
+	<Event Name="Refugee_Escort_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>REFUGEE_ESCORT_NOTIFICATION_01</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Refugee_Escort_01</Prereq>
+	</Event>
+	
+	<Event Name="Refugee_Escort_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>REFUGEE_ESCORT_NOTIFICATION_02</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Refugee_Escort_02</Prereq>
+		<Prereq>Refugee_Escort_00b</Prereq>
+	</Event>
+	
+	<Event Name="Refugee_Escort_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Refugee_Escort_Tag_00</Reward_Param1>
+		<Prereq>Refugee_Escort_03</Prereq>
+	</Event>
+	
+</Story>

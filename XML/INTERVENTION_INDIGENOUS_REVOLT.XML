@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Indigenous_Revolt_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Indigenous_Revolt_Tag_00</Story_Tag>
+		<Reward_Type>SET_PLANET_SPAWN</Reward_Type>
+		<Reward_Param3>1.0</Reward_Param3>
+	</Event>
+	
+	<!-- Branch for capturing the planet -->
+		<Event Name="Indigenous_Revolt_01">
+			<Event_Type>STORY_CONQUER</Event_Type>
+			<Prereq>Indigenous_Revolt_00</Prereq>
+			<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+			<Reward_Param1>Indigenous_Revolt_05</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+		</Event>
+		
+		<Event Name="Indigenous_Revolt_02">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Indigenous_Revolt_01</Prereq>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Indigenous_Revolt_Tag_00</Reward_Param1>
+		</Event>	
+		
+		<Event Name="Indigenous_Revolt_03">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Indigenous_Revolt_02</Prereq>
+			<Reward_Type>TRIGGER_AI</Reward_Type>
+			<Reward_Param1>INDIGENOUS_REVOLT_NOTIFICATION_00</Reward_Param1>
+			<Story_Chapter>3</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		</Event>
+	
+	<!-- Warning for running out of time -->
+		<Event Name="Indigenous_Revolt_04">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Prereq>Indigenous_Revolt_00</Prereq>
+			<Event_Param1>200</Event_Param1>
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Indigenous_Revolt_Tag_00</Reward_Param1>
+		</Event>
+		
+		<Event Name="Indigenous_Revolt_05">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Indigenous_Revolt_04</Prereq>
+			<Story_Chapter>1</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+			<Story_Tag>Indigenous_Revolt_Tag_01</Story_Tag>
+		</Event>
+		
+	<!-- Time's up.  Kill the spawn rate -->
+		<Event Name="Indigenous_Revolt_06">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Prereq>Indigenous_Revolt_05</Prereq>
+			<Event_Param1>100</Event_Param1>
+			<Reward_Type>SET_PLANET_SPAWN</Reward_Type>
+			<Reward_Param3>0.0</Reward_Param3>
+		</Event>
+		
+		<Event Name="Indigenous_Revolt_07">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Indigenous_Revolt_06</Prereq>
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Indigenous_Revolt_Tag_01</Reward_Param1>
+		</Event>
+	
+		<Event Name="Indigenous_Revolt_08">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Prereq>Indigenous_Revolt_07</Prereq>
+			<Reward_Type>TRIGGER_AI</Reward_Type>
+			<Reward_Param1>INDIGENOUS_REVOLT_NOTIFICATION_00</Reward_Param1>
+			<Story_Chapter>2</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		</Event>
+	
+</Story>

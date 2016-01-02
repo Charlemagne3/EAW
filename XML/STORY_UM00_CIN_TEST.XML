@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Preliminary setup -->
+
+	<Event Name="Underworld_M00_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Underworld_M00_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Underworld_M00_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+	<Event Name="Underworld_M00_Turn_Off_Land_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_M00_Begin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_M00_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_M00_Begin</Prereq>
+	</Event>
+
+
+</Story>

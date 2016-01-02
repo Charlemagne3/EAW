@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Cin_GroundStructures>
+
+	<Cin_GroundStructure Name="CIN_Empire_AA_Turret">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		
+		<Variant_Of_Existing_Type>Empire_Anti_Aircraft_Turret</Variant_Of_Existing_Type>
+		<Targeting_Scan_Range>3800.0</Targeting_Scan_Range>
+		<Targeting_Max_Attack_Distance>3800.0</Targeting_Max_Attack_Distance>
+		<Projectile_Fire_Recharge_Seconds>0.1</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Turret_Rotate_Speed>0.5</Turret_Rotate_Speed>
+		<Targeting_Fire_Inaccuracy> Air, 40 </Targeting_Fire_Inaccuracy>
+		<Projectile_Types>Proj_Flak_Pod_Fast</Projectile_Types>
+
+	</Cin_GroundStructure>
+
+	
+
+</Cin_GroundStructures>

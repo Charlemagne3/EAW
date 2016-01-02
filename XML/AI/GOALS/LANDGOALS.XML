@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+
+<Goals>
+
+	<Clear_Infantry>
+		<AIGoalApplicationFlags> Tactical_Location </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> High_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Clear_Infantry>
+	
+	<Clear_Vehicles>
+		<AIGoalApplicationFlags> Tactical_Location </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Medium_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Clear_Vehicles>
+	
+	<Destroy_Land_Unit>
+		<AIGoalApplicationFlags> Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Low_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Destroy_Land_Unit>
+	
+	<Land_Scout_Area>
+		<AIGoalApplicationFlags> Tactical_Location </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Low_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Land_Scout_Area>
+	
+	<Hold_Position>
+		<AIGoalApplicationFlags> Friendly_Reinforcement_Point </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Low_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Hold_Position>
+	
+	<Destroy_Structure>
+		<AIGoalApplicationFlags> Enemy_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Low_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Destroy_Structure>
+
+	<Destroy_Turbolaser>
+		<AIGoalApplicationFlags> Enemy_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Destroy_Turbolaser>
+
+    <Land_Retreat>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 240.0 </Time_Limit>		
+   </Land_Retreat>
+   	
+	<Land_Escort>
+		<AIGoalApplicationFlags> Friendly_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Land_Escort>
+
+	<Airstrike>
+		<AIGoalApplicationFlags> Enemy_Structure | Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Airstrike</Global_Exclusions>
+	</Airstrike>
+
+	<Clean_Up>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Clean_Up>
+
+	<Fund_Tactical_Structures>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Untargeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Fund_Tactical_Structures>
+	
+	<Land_Bombing_Run>
+		<AIGoalApplicationFlags> Enemy_Structure | Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit>30.0</Time_Limit>
+		<Global_Exclusions>Land_Bombing_Run</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+		<Tracking_Duration>60.0</Tracking_Duration>
+		<Per_Failure_Desire_Adjust>-5.0</Per_Failure_Desire_Adjust>
+	</Land_Bombing_Run>
+
+	<Build_AntiVehicle_Turret>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Med_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Build_AntiVehicle_Turret</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+		<Tracking_Duration>120.0</Tracking_Duration>
+		<Per_Failure_Desire_Adjust>-15.0</Per_Failure_Desire_Adjust>
+	</Build_AntiVehicle_Turret>
+
+	<Build_AntiAir_Turret>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Med_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Build_AntiAir_Turret</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Build_AntiAir_Turret>
+
+	<Build_AntiInfantry_Turret>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Med_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Build_AntiInfantry_Turret</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+		<Tracking_Duration>120.0</Tracking_Duration>
+		<Per_Failure_Desire_Adjust>-15.0</Per_Failure_Desire_Adjust>
+	</Build_AntiInfantry_Turret>
+
+	<Build_Bacta_Tank>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Med_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Build_Bacta_Tank</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Build_Bacta_Tank>
+
+	<Build_Repair_Bay>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Med_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Build_Repair_Bay</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Build_Repair_Bay>
+
+	<Sell_Tactical_Structure>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Global_Exclusions>Sell_Tactical_Structure</Global_Exclusions>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Sell_Tactical_Structure>
+
+	<Steal_Vehicle>
+		<AIGoalApplicationFlags> Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Hero </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit>30.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Steal_Vehicle>
+
+	<Flame_Infantry>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Hero </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit>30.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Flame_Infantry>
+
+	<Patrol>
+		<AIGoalApplicationFlags> Friendly_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Defensive </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Patrol>
+
+	<Defend_Structure>
+		<AIGoalApplicationFlags> Friendly_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> High_Priority </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Defend_Structure>
+
+	<PreDefend_Structure>
+		<AIGoalApplicationFlags> Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+		<Global_Exclusions>PreDefend_Structure</Global_Exclusions>
+	</PreDefend_Structure>
+
+	<Ewok_Hunt>
+		<AIGoalApplicationFlags> Tactical_Location </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 0.0 </Time_Limit>
+		<Activation_Tracking_Duration>120</Activation_Tracking_Duration>
+	</Ewok_Hunt>
+
+	<Fire_Magnepulse>
+		<AIGoalApplicationFlags> Enemy_Unit </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 0.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Fire_Magnepulse>
+
+	<Tactical_Multiplayer_Build_Land_Units_Generic>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Tactical_Multiplayer_Build_Land_Units_Generic>
+
+	<Purchase_Land_Upgrades_Generic>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Purchase_Land_Upgrades_Generic>
+
+	<Purchase_Early_Land_Upgrades>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Purchase_Early_Land_Upgrades>
+
+	<Tactical_Multiplayer_Build_Basic_Structure>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Tactical_Multiplayer_Build_Basic_Structure>
+	
+	<Tactical_Multiplayer_Build_Barracks>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Tactical_Multiplayer_Build_Barracks>
+	
+	<Tactical_Multiplayer_Build_Command_Center>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Tactical_Multiplayer_Build_Command_Center>		
+
+	<Tactical_Multiplayer_Build_Infantry_Emergency>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>	
+	</Tactical_Multiplayer_Build_Infantry_Emergency>
+
+	<Build_Econ_Structure>
+		<AIGoalApplicationFlags> Friendly_Build_Pad </AIGoalApplicationFlags>
+		<GameMode>Land</GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-15.0</Per_Activation_Failure_Desire_Adjust>
+	</Build_Econ_Structure>
+
+
+	<!-- This plan is for claiming contestable build pads (enemy includes neutral pads).
+	-->
+	<Secure_Contestable>
+		<AIGoalApplicationFlags> Enemy_Build_Pad | Enemy_Reinforcement_Point | Enemy_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Map_Control </Category>
+		<Reachability> Low_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>60</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-5.0</Per_Activation_Failure_Desire_Adjust>
+	</Secure_Contestable>
+
+	<Secure_Contestable_Escorted>
+		<AIGoalApplicationFlags> Enemy_Build_Pad | Enemy_Reinforcement_Point | Enemy_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Map_Control </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Activation_Tracking_Duration>20</Activation_Tracking_Duration>
+		<Per_Activation_Failure_Desire_Adjust>-50.0</Per_Activation_Failure_Desire_Adjust>
+	</Secure_Contestable_Escorted>
+
+	<Burn_Units_Land>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Burn_Units_Land>
+
+	<Tech_Upgrade_Emergency>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Tech_Upgrade_Emergency>
+
+	<Droids>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Droids>
+
+	<ObiWanAssists>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</ObiWanAssists>
+
+	<HanSoloAssists>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</HanSoloAssists>
+
+	<VaderAssists>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</VaderAssists>
+
+	<PalpatineManager>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</PalpatineManager>
+
+	<Land_Heroes>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>Hero</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Land_Heroes>
+
+	<Defensive_Rush>
+		<AIGoalApplicationFlags>Global</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Defensive_Rush>
+	
+	<Secure_Victory_Control_Point>
+		<AIGoalApplicationFlags>Enemy_Reinforcement_Point</AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category>High_Priority</Category>
+		<Reachability>Any_Threat</Reachability>
+		<Time_Limit>0.0</Time_Limit>
+	</Secure_Victory_Control_Point>
+
+	<Debug_Goal_Land_1>
+		<AIGoalApplicationFlags> Friendly_Unit | Friendly_Structure </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 240.0 </Time_Limit>		
+	</Debug_Goal_Land_1>
+
+	<Debug_Goal_Land_2>
+		<AIGoalApplicationFlags> Tactical_Location </AIGoalApplicationFlags>
+		<GameMode> Land </GameMode>
+		<Category> Tactical_Targeted </Category>
+		<Reachability> Any_Threat </Reachability>
+		<Time_Limit> 240.0 </Time_Limit>		
+	</Debug_Goal_Land_2>
+
+</Goals>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TerrainDecals>
+	<Decal Name="Default">
+		<Category>DEFAULT</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.5</Intensity>
+		<Scale>20, 20</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,7</UV_Slot>
+		<Fadeout_Time>0</Fadeout_Time>
+		<Permanent>true</Permanent>
+	</Decal>
+	
+	<Decal Name="Shadow">
+		<Category>Footprints</Category>	
+		<Render_Mode>ADDITIVE</Render_Mode>
+		<Intensity>1</Intensity>
+		<Scale>100, 100</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>1,0</UV_Slot>
+		<Fadeout_Time>3</Fadeout_Time>
+		<Permanent>true</Permanent>
+	</Decal>
+	
+	<Decal Name="AT_AT_Footprint_Dirt">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.65</Intensity>
+		<Scale>25, 25</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,0</UV_Slot>
+		<Fadeout_Time>40</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+	
+	<Decal Name="AT_AT_Footprint_Grass">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.65</Intensity>
+		<Scale>25, 25</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,0</UV_Slot>
+		<Fadeout_Time>40</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+	
+	<Decal Name="AT_AT_Footprint_Snow">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>.4</Intensity>
+		<Scale>25, 25</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,0</UV_Slot>
+		<Fadeout_Time>40</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="AT_AT_Footprint_Concrete">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.15</Intensity>
+		<Scale>25, 25</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,0</UV_Slot>
+		<Fadeout_Time>1</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_TINY">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.33</Intensity>
+		<Scale>10, 10</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,3,   1,3</UV_Slot>
+		<Random_Size_Offset>0.1</Random_Size_Offset>
+		<Fadeout_Time>10</Fadeout_Time>
+		<Permanent>false</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_SMALL">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.40</Intensity>
+		<Scale>25, 30</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,3,   1,3</UV_Slot>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>15</Fadeout_Time>
+		<Permanent>false</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_MED">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.50</Intensity>
+		<Scale>50, 60</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,3,   1,3</UV_Slot>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>20</Fadeout_Time>
+		<Permanent>false</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_LARGE">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.75</Intensity>
+		<Scale>115, 150</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>2,3,   3,3   </UV_Slot>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>true</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_HUGE">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.75</Intensity>
+		<Scale>350,333</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>2,3,   3,3</UV_Slot>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>true</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_MASSIVE">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.99</Intensity>
+		<Scale>450,450</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>2,1</UV_Slot>
+		<Slot_Scale>2</Slot_Scale>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>99</Fadeout_Time>
+		<Permanent>true</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="EXPLOSION_SCORCH_MASSIVE_DARK">
+		<Category>Footprints</Category>	
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+		<Intensity>0.99</Intensity>
+		<Scale>450,450</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>1,2</UV_Slot>
+		<Random_Size_Offset>0.2</Random_Size_Offset>
+		<Fadeout_Time>99</Fadeout_Time>
+		<Permanent>true</Permanent>
+		<Random_Rotate>Yes</Random_Rotate>
+	</Decal>
+
+	<Decal Name="Rancor_Footprint_dirt">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.85</Intensity>
+		<Scale>12, 12</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>1,0</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="AT-AA_Footprint_dirt_left">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.75</Intensity>
+		<Scale>14, 14</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>3,0</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="AT-AA_Footprint_dirt_right">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.75</Intensity>
+		<Scale>14, 14</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>2,0</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="Pod_Walker_Footprint_dirt">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.85</Intensity>
+		<Scale>12, 12</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,1</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="AT-ST_Footprint_dirt">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.85</Intensity>
+		<Scale>25, 25</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>1,1</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	<Decal Name="SPMAT_Footprint_dirt">
+		<Category>Footprints</Category>	
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+		<Intensity>0.55</Intensity>
+		<Scale>9, 9</Scale>
+		<Z_Angle>0</Z_Angle>
+		<UV_Slot>0,0</UV_Slot>
+		<Fadeout_Time>30</Fadeout_Time>
+		<Permanent>false</Permanent>
+	</Decal>
+
+	
+	
+</TerrainDecals>

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<FunctionSet>
+	<Build_MDU_Repair_Facility>
+		<Goal>Build_MDU_Repair_Facility</Goal>
+		<Function>Should_Build_MDU_Repair_Facility</Function>
+	</Build_MDU_Repair_Facility>
+	
+	<Build_Mobile_Shield_Generator>
+		<Goal>Build_Mobile_Shield_Generator</Goal>
+		<Function>Should_Build_Mobile_Shield_Generator</Function>
+	</Build_Mobile_Shield_Generator>
+	
+	<Build_Rapid_Fire_Laser>
+		<Goal>Build_Rapid_Fire_Laser</Goal>
+		<Function>Should_Build_Rapid_Fire_Laser</Function>
+	</Build_Rapid_Fire_Laser>
+</FunctionSet>

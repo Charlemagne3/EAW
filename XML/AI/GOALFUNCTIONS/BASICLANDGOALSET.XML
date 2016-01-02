@@ -1,0 +1,240 @@
+<?xml version="1.0" ?>
+<FunctionSet>
+
+	<Clear_Infantry>
+		<Goal> Clear_Infantry </Goal>
+		<Function> Should_Clear_Infantry </Function>
+	</Clear_Infantry>
+
+	<Clear_Vehicles>
+		<Goal> Clear_Vehicles </Goal>
+		<Function> Should_Clear_Vehicles </Function>
+	</Clear_Vehicles>
+	
+	<Destroy_Land_Unit>
+		<Goal> Destroy_Land_Unit </Goal>
+		<Function> Should_Destroy_Land_Unit </Function>
+	</Destroy_Land_Unit>
+	
+	<Land_Scout_Area>
+		<Goal> Land_Scout_Area </Goal>
+		<Function> Land_Area_Needs_Scouting </Function>
+	</Land_Scout_Area>
+	
+	<Hold_Position>
+		<Goal> Hold_Position </Goal>
+		<Function> Should_Hold_Position </Function>
+	</Hold_Position>
+	
+	<Destroy_Structure>
+		<Goal> Destroy_Structure </Goal>
+		<Function> Should_Destroy_Structure </Function>
+	</Destroy_Structure>
+
+	<Destroy_Turbolaser>
+		<Goal> Destroy_Turbolaser </Goal>
+		<Function> Should_Destroy_Turbolaser </Function>
+	</Destroy_Turbolaser>
+
+	<Land_Retreat>
+		<Goal> Land_Retreat </Goal>
+		<Function> Should_Retreat_From_Land </Function>
+	</Land_Retreat>
+	
+	<Land_Escort>
+		<Goal> Land_Escort </Goal>
+		<Function> Zero </Function>
+	</Land_Escort>
+
+	<Airstrike>
+		<Goal> Airstrike </Goal>
+		<Function> One </Function>
+	</Airstrike>
+
+	<!-- the freestore anti-idle is handling this behavior -->
+	<Clean_Up>
+		<Goal> Clean_Up </Goal>
+		<Function> Zero </Function>
+	</Clean_Up>
+
+	<Land_Bombing_Run>
+		<Goal>Land_Bombing_Run</Goal>
+		<Function>Should_Bomb</Function>
+	</Land_Bombing_Run>
+
+	<Build_AntiVehicle_Turret>
+		<Goal>Build_AntiVehicle_Turret</Goal>
+		<Function>Need_AntiVehicle_Turret</Function>
+	</Build_AntiVehicle_Turret>
+
+	<Build_AntiAir_Turret>
+		<Goal>Build_AntiAir_Turret</Goal>
+		<Function>Need_AntiAir_Turret</Function>
+	</Build_AntiAir_Turret>
+
+	<Build_AntiInfantry_Turret>
+		<Goal>Build_AntiInfantry_Turret</Goal>
+		<Function>Need_AntiInfantry_Turret</Function>
+	</Build_AntiInfantry_Turret>
+
+	<Build_Bacta_Tank>
+		<Goal>Build_Bacta_Tank</Goal>
+		<Function>Need_Bacta_Tank</Function>
+	</Build_Bacta_Tank>
+
+	<Build_Repair_Bay>
+		<Goal>Build_Repair_Bay</Goal>
+		<Function>Need_Repair_Bay</Function>
+	</Build_Repair_Bay>
+
+	<Fund_Tactical_Structures>
+		<Goal>Fund_Tactical_Structures</Goal>
+		<Function>Need_For_Tactical_Funding</Function>
+	</Fund_Tactical_Structures>
+
+	<Sell_Tactical_Structure>
+		<Goal>Sell_Tactical_Structure</Goal>
+		<Function>Need_To_Sell_Tactical_Structure</Function>
+	</Sell_Tactical_Structure>
+
+	<Steal_Vehicle>
+		<Goal>Steal_Vehicle</Goal>
+		<Function>Need_To_Steal_Vehicle</Function>
+	</Steal_Vehicle>
+
+	<Flame_Infantry>
+		<Goal>Flame_Infantry</Goal>
+		<Function>ReallyBig</Function>
+	</Flame_Infantry>
+
+	<Droids>
+		<Goal>Droids</Goal>
+		<Function>ReallyBig</Function>
+	</Droids>
+
+	<ObiWanAssists>
+		<Goal>ObiWanAssists</Goal>
+		<Function>ReallyBig</Function>
+	</ObiWanAssists>
+
+	<HanSoloAssists>
+		<Goal>HanSoloAssists</Goal>
+		<Function>ReallyBig</Function>
+	</HanSoloAssists>
+
+	<PalpatineManager>
+		<Goal>PalpatineManager</Goal>
+		<Function>ReallyBig</Function>
+	</PalpatineManager>
+
+	<VaderAssists>
+		<Goal>VaderAssists</Goal>
+		<Function>ReallyBig</Function>
+	</VaderAssists>
+
+	<Land_Heroes>
+		<Goal>Land_Heroes</Goal>
+		<Function>Need_Heroes_Landed</Function>
+	</Land_Heroes>
+
+	<Patrol>
+		<Goal>Patrol</Goal>
+		<Function>Need_To_Patrol_Land</Function>
+	</Patrol>
+
+	<Defend_Structure>
+		<Goal>Defend_Structure</Goal>
+		<Function>Need_To_Defend_Structure</Function>
+	</Defend_Structure>
+
+	<PreDefend_Structure>
+		<Goal>PreDefend_Structure</Goal>
+		<Function>Need_To_PreDefend_Structure</Function>
+	</PreDefend_Structure>
+
+	<Fire_Magnepulse>
+		<Goal>Fire_Magnepulse</Goal>
+		<Function>ReallyBig</Function>
+	</Fire_Magnepulse>
+
+	<Tactical_Multiplayer_Build_Land_Units_Generic>
+		<Goal>Tactical_Multiplayer_Build_Land_Units_Generic</Goal>
+		<Function>Tactical_Multiplayer_Should_Build_Units_Generic_Land</Function>
+	</Tactical_Multiplayer_Build_Land_Units_Generic>
+
+	<Tactical_Multiplayer_Build_Basic_Structure>
+		<Goal>Tactical_Multiplayer_Build_Basic_Structure</Goal>
+		<Function>Tactical_Multiplayer_Should_Build_Basic_Structure</Function>
+	</Tactical_Multiplayer_Build_Basic_Structure>
+	
+	<Tactical_Multiplayer_Build_Barracks>
+		<Goal>Tactical_Multiplayer_Build_Barracks</Goal>
+		<Function>Tactical_Multiplayer_Should_Build_Barracks</Function>
+	</Tactical_Multiplayer_Build_Barracks>
+
+	<Tactical_Multiplayer_Build_Command_Center>
+		<Goal>Tactical_Multiplayer_Build_Command_Center</Goal>
+		<Function>Tactical_Multiplayer_Should_Build_Command_Center</Function>
+	</Tactical_Multiplayer_Build_Command_Center>
+
+	<Purchase_Land_Upgrades_Generic>
+		<Goal>Purchase_Land_Upgrades_Generic</Goal>
+		<Function>Should_Purchase_Ability_Generic_Land</Function>
+	</Purchase_Land_Upgrades_Generic>
+
+	<Purchase_Early_Land_Upgrades>
+		<Goal>Purchase_Early_Land_Upgrades</Goal>
+		<Function>Should_Purchase_Early_Land_Upgrades</Function>
+	</Purchase_Early_Land_Upgrades>
+
+	<Secure_Contestable>
+		<Goal>Secure_Contestable</Goal>
+		<Function>Need_To_Secure_Contestable_Land</Function>
+	</Secure_Contestable>
+
+	<Secure_Contestable_Escorted>
+		<Goal>Secure_Contestable</Goal>
+		<Function>Need_To_Secure_Contestable_Escorted_Land</Function>
+	</Secure_Contestable_Escorted>
+
+	<Build_Econ_Structure>
+		<Goal>Build_Econ_Structure</Goal>
+		<Function>Need_To_Build_Refinery_Land</Function>
+	</Build_Econ_Structure>
+
+	<Burn_Units_Land>
+		<Goal>Burn_Units_Land</Goal>
+		<Function>Should_Burn_Units_Land</Function>
+	</Burn_Units_Land>
+
+	<Tech_Upgrade_Emergency>
+		<Goal>Tech_Upgrade_Emergency</Goal>
+		<Function>Skirmish_Upgrade_Tech_With_Multiplier</Function>
+	</Tech_Upgrade_Emergency>
+
+	<Defensive_Rush>
+		<Goal>Defensive_Rush</Goal>
+		<Function>Should_Defensive_Rush</Function>
+	</Defensive_Rush>
+
+	<Tactical_Multiplayer_Build_Infantry_Emergency>
+		<Goal>Tactical_Multiplayer_Build_Infantry_Emergency</Goal>
+		<Function>Should_Build_Infantry_Emergency</Function>
+	</Tactical_Multiplayer_Build_Infantry_Emergency>
+
+	<Secure_Victory_Control_Point>
+		<Goal>Secure_Victory_Control_Point</Goal>
+		<Function>Should_Secure_Victory_Control_Point</Function>
+	</Secure_Victory_Control_Point>
+
+	<Debug_Goal_Land_1>
+		<Goal>Debug_Goal_Land_1</Goal>
+		<Function>Is_Initial_Skirmish_State_Established</Function>
+	</Debug_Goal_Land_1>
+
+	<Debug_Goal_Land_2>
+		<Goal>Debug_Goal_Land_2</Goal>
+		<Function>Space_Area_Is_Hidden</Function>
+	</Debug_Goal_Land_2>
+
+</FunctionSet>

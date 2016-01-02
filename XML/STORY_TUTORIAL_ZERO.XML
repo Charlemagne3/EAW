@@ -1,0 +1,610 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Tutorial_Zero_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+   <!-- Center camera on Bothawui -->
+   <Event Name="Tutorial_Zero_Center_Camera">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+
+   <!-- Disable zoom -->
+   <Event Name="Tutorial_Zero_Disable_Zoom">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>DISABLE_EVENT</Reward_Type>
+      <Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+
+   <!-- Set tutorial mode -->
+   <Event Name="Tutorial_Zero_Set_Tutorial">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+
+	<Event Name="Tutorial_Zero_Lock_Controls">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+   <!-- Center camera on Bothawui ... again -->
+   <Event Name="Tutorial_Zero_Center_Camera_No_Really">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+
+	<!-- Reset all the galactic filters -->
+   <Event Name="Tutorial_Zero_Turn_Off_Filters">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>RESET_GALACTIC_FILTERS</Reward_Type>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+	
+   <!-- Turn off advisor -->
+   <Event Name="Tutorial_Zero_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_Zero_Begin</Prereq>
+   </Event>
+   
+
+
+<!-- Reveal Planets -->
+
+	<Event Name="Tutorial_Zero_Reveal_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_Kuat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kuat</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_Corellia">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Corellia</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Reveal_Geonosis">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Geonosis</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+			
+
+<!-- Lock all available tech -->
+
+	<Event Name="Tutorial_Zero_Lock_Corellian_Corvette">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Corellian_Corvette</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Mining_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Ground_Mining_Facility</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Barracks">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>R_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Rebel_Infantry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Rebel_Tank_Buster_Squad">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Tank_Buster_Squad</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Communications_Array">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Communications_Array_R</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Z95_Headhunter_Rebel_Squadron">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Z95_Headhunter_Rebel_Squadron</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Rebel_Star_Base_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_Zero_Lock_Rebel_Star_Base_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_2</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Light_Vehicle_Factory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>R_Ground_Light_Vehicle_Factory</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>R_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Power_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_X-Wing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_Zero_Lock_Smuggler">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_UNIT</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>
+
+
+	<!-- Welcome to galactic mode. This mode represents the state of the Star Wars... -->
+	<Event Name="Tutorial_Zero_Welcome_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_01</Reward_Param8>
+		<Prereq>Tutorial_Zero_Begin</Prereq>
+	</Event>	
+
+		<!-- Go into galactic tour mode -->
+		<Event Name="Tutorial_Zero_Galactic_Tour_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>START_CINEMATIC_MODE</Reward_Type>
+			<Prereq>Tutorial_Zero_Welcome_01</Prereq>
+		</Event>
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Welcome_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_01</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_01</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Welcome_01</Prereq>
+		</Event>
+
+		<!-- End Galactic Tour -->
+		<Event Name="Tutorial_Zero_Galactic_Tour_02">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>0.125</Event_Param1>
+			<Reward_Type>STOP_CINEMATIC_MODE</Reward_Type>
+			<Prereq>Tutorial_Zero_Welcome_02</Prereq>
+		</Event>
+			
+
+	<!-- Move Fleets to capture planets -->
+	<!-- Move the rebel fleet from Corellia to capture Tatooine -->
+   <Event Name="Tutorial_Zero_Move_Fleets_01">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MOVE_FLEET</Reward_Type>
+      <Reward_Param1>Corellia</Reward_Param1>
+      <Reward_Param2>Tatooine</Reward_Param2>
+      <Reward_Param3>FILTER_FRIENDLY_ONLY</Reward_Param3>
+      <Prereq>Tutorial_Zero_Galactic_Tour_02</Prereq>
+   </Event>
+   
+  	<Event Name="Tutorial_Zero_Move_Fleets_02">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Tatooine</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+      <Reward_Param1>Tatooine</Reward_Param1>
+      <Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Tutorial_Zero_Move_Fleets_01</Prereq>
+	</Event>
+
+	<!-- Move the empire fleet from Nal Hutta to capture Bothawui -->
+   <Event Name="Tutorial_Zero_Move_Fleets_03">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MOVE_FLEET</Reward_Type>
+      <Reward_Param1>NalHutta</Reward_Param1>
+      <Reward_Param2>Bothawui</Reward_Param2>
+      <Reward_Param3>FILTER_ENEMY_ONLY</Reward_Param3>
+      <Prereq>Tutorial_Zero_Move_Fleets_02</Prereq>
+   </Event>
+   
+  	<Event Name="Tutorial_Zero_Move_Fleets_04">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Bothawui</Event_Param1>
+		<Event_Param2>FILTER_ENEMY_ONLY</Event_Param2>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Reward_Param2>Empire</Reward_Param2>
+		<Prereq>Tutorial_Zero_Move_Fleets_03</Prereq>
+	</Event>
+
+	<!-- This can be accomplished by either capturing  -->
+	<Event Name="Tutorial_Zero_How_To_Win_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_02</Reward_Param8>
+		<Prereq>Tutorial_Zero_Galactic_Tour_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_How_To_Win_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_02</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_02</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_How_To_Win_01</Prereq>
+		</Event>
+		
+	
+	<!-- Flash Tatooine -->
+	<!--
+	<Event Name="Tutorial_Zero_Flash_Tatooine_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>TATOOINE</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>	
+		<Prereq>Tutorial_Zero_How_To_Win_02</Prereq>
+	</Event>
+	-->
+
+	<!-- Every planet in the Star Wars galaxy is unique -->
+	<Event Name="Tutorial_Zero_Planet_Features_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_03</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_03</Reward_Param8>
+		<Prereq>Tutorial_Zero_How_To_Win_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Planet_Features_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_03</Event_Param1>
+			<!--<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>10</Event_Param1>-->
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_03</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Planet_Features_01</Prereq>
+		</Event>
+
+
+	<!-- Whenever a planet is captured, it grants access to resources, such as credits -->
+	<Event Name="Tutorial_Zero_Planet_Resources_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_04</Reward_Param8>
+		<Prereq>Tutorial_Zero_Planet_Features_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Planet_Resources_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_04</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_04</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Planet_Resources_01</Prereq>
+		</Event>
+
+		<!--
+      <Event Name="Tutorial_Zero_Planet_Resources_03">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+         <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+         <Prereq>Tutorial_Zero_Planet_Resources_01</Prereq>
+      </Event>
+      -->
+		
+		<!-- Turn on the credit filter -->
+		<Event Name="Tutorial_Zero_Planet_Resources_04">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+			<Reward_Param1>b_filters0</Reward_Param1>
+			<Prereq>Tutorial_Zero_Planet_Resources_01</Prereq>
+		</Event>
+
+		<!-- Flash the credit value for Tatooine -->
+		<Event Name="Tutorial_Zero_Planet_Resources_05">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+			<Reward_Param1>TATOOINE</Reward_Param1>
+			<Reward_Param2>FLASH_PLANET_VALUE</Reward_Param2>
+			<!--<Reward_Param4>planet_value</Reward_Param4>-->
+			<Prereq>Tutorial_Zero_Planet_Resources_01</Prereq>
+		</Event>
+
+	<!-- The passage of time within Galactic Mode is denoted by Galactic Cycles -->
+	<Event Name="Tutorial_Zero_Galactic_Cycle_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_05</Reward_Param8>
+		<Prereq>Tutorial_Zero_Planet_Resources_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Galactic_Cycle_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_05</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_05</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Galactic_Cycle_01</Prereq>
+		</Event>
+
+      <Event Name="Tutorial_Zero_Galactic_Cycle_03">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+         <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+         <Prereq>Tutorial_Zero_Galactic_Cycle_01</Prereq>
+      </Event>
+
+		<!-- Flash the galactic cycle meter -->
+		<!--
+		<Event Name="Tutorial_Zero_Galactic_Cycle_04">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>b_reinforcement</Reward_Param1>
+			<Prereq>Tutorial_Zero_Galactic_Cycle_01</Prereq>
+		</Event>
+		-->
+
+	<!-- The number of planets that you control is also related to the number of units you may build -->
+	<Event Name="Tutorial_Zero_Unit_Cap_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_06</Reward_Param8>
+		<Prereq>Tutorial_Zero_Galactic_Cycle_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Unit_Cap_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_06</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_06</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Unit_Cap_01</Prereq>
+		</Event>
+		
+		<!-- how to show this ?! -->
+		
+
+	<!-- Tool-tips are present for all planets, structions, units, fleets, and buttons. -->
+	<Event Name="Tutorial_Zero_Tool_Tips_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_07</Reward_Param8>
+		<Prereq>Tutorial_Zero_Unit_Cap_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Tool_Tips_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_07</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_07</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Tool_Tips_01</Prereq>
+		</Event>
+		
+		<!-- Simulate a tool-tip for a planet -->
+		
+
+	<!-- If you attempt to capture a planet that is already under the control of an enemy faction -->
+	<Event Name="Tutorial_Zero_Pending_Battle_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_08</Reward_Param8>
+		<Prereq>Tutorial_Zero_Tool_Tips_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Pending_Battle_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_08</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_08</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Pending_Battle_01</Prereq>
+		</Event>
+		
+		<!-- Simulate the pending battle interface -->
+
+		
+	<!-- Tactical battles can take place in space, above a planet, or on the surface -->
+	<Event Name="Tutorial_Zero_Battle_Can_Take_Place_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_09</Reward_Param8>
+		<Prereq>Tutorial_Zero_Pending_Battle_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Battle_Can_Take_Place_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_09</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_09</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Battle_Can_Take_Place_01</Prereq>
+		</Event>
+		
+		<!-- Show fleet slots on Kashyyyk an dhighlight them as they are mentioned -->
+	
+
+	<!-- Tactical battles can take place in space, above a planet, or on the surface -->
+	<Event Name="Tutorial_Zero_Empire_Assault_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_10</Reward_Param8>
+		<Prereq>Tutorial_Zero_Pending_Battle_02</Prereq>
+	</Event>	
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_Zero_Empire_Assault_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_10</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_10</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_Zero_Empire_Assault_01</Prereq>
+		</Event>
+		
+		<!-- Show fleet slots on Kashyyyk and highlight them as they are mentioned -->
+		
+
+
+<!-- Link to next tutorial -->
+
+	<Event Name="Tutorial_Zero_Done">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Prereq>Tutorial_Zero_Empire_Assault_02</Prereq>
+	</Event>
+
+   <Event Name="Tutorial_Zero_Next_Tutorial_00">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_2_COMPLETE</Reward_Param1>
+      <Prereq>Tutorial_Zero_Done</Prereq>
+   </Event>
+
+   <Event Name="Tutorial_Zero_Next_Tutorial_01">
+      <Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>Continue_Tutorial</Event_Param1>
+      <Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+      <Reward_Param1>Tutorial_One</Reward_Param1>
+      <Reward_Param2>1</Reward_Param2>
+   </Event>
+
+</Story>
+

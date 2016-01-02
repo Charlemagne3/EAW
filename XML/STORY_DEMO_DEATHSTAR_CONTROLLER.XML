@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+
+
+<!-- Preliminary Setup  -->
+
+	<Event Name="Demo_Start">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Demo_Executor_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>EXECUTOR_SUPER_STAR_DESTROYER</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Demo_Start</Prereq>
+	</Event>
+
+<!--*************Home One Cinematic COmmented out for now******************	
+	<Event Name="Demo_MonCal_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Calamari_Cruiser</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Demo_Start</Prereq>
+	</Event>
+
+		<Event Name="Demo_SuperLaser_Started">
+			<Event_Type>STORY_GENERIC</Event_Type>
+			<Event_Param1>super_laser_fired</Event_Param1>
+			<Prereq>Demo_MonCal_Destroyed</Prereq>
+			<Perpetual>True</Perpetual>
+		</Event>
+-->
+
+</Story>

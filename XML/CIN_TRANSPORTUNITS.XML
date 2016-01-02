@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<Cin_TransportUnits>
+	
+
+	<Cin_TransportUnit Name="CIN_Gallofree_Warp">
+
+		<Variant_Of_Existing_Type>Gallofree_Transport</Variant_Of_Existing_Type>
+		
+		<Pause_During_Cinematic_Anim>no</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>03</Cinematic_Anim_Index>
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+
+	</Cin_TransportUnit>
+
+
+	<Cin_TransportUnit Name="CIN_Gallofree_slow">
+
+  		<Variant_Of_Existing_Type>Gallofree_Transport</Variant_Of_Existing_Type>
+  		<Max_Speed>13.0</Max_Speed>
+  		
+  		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+  		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+  		<Cinematic_Anim_Index>04</Cinematic_Anim_Index>
+ 
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+
+ 	</Cin_TransportUnit>
+	
+
+</Cin_TransportUnits>

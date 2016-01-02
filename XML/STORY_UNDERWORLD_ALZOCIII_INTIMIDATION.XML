@@ -1,0 +1,339 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Start Campaign -->
+	<Event Name="AlzocIII_Intimidation_Mission_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Mission_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Mission_Prevent_Retreat_Rebel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>AlzocIII_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Mission_Prevent_Retreat_Empire">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>AlzocIII_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	
+
+	
+	
+<!-- Mission objectives
+ TEXT_MANDALORE_PIRACY_OBJECTIVE_01					Tyber Zann must survive
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01		Collect ten Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01a		Collect nine more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01b		Collect eight more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01c		Collect seven more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01d		Collect six more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01e		Collect five more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01f		Collect four more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01g		Collect three more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01h		Collect two more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01i		Collect one more Prize Shaak heads.
+ TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_02		Use Tyber to deliver the Shaak heads to the food Commisioner.-->
+		
+	<Event Name="AlzocIII_Intimidation_ADD_OBJECTIVE_Tyber_Must_Survive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_ADD_OBJECTIVE_Collect_Ten_Heads">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_ADD_OBJECTIVE_Tyber_Must_Survive</Prereq>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_ADD_OBJECTIVE_Deliver_The_Heads">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_02</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_COMPLETE_OBJECTIVE_ALL_HEADS_COLLECTED</Prereq>
+	</Event>
+
+<!-- Ten heads objective manipulations -->	
+
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_1_HEAD_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_1_HEAD_COLLECTED</Event_Param2>
+	</Event>	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_1_HEAD_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01a</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_1_HEAD_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_2_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_2_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_2_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01a</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01b</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_2_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_3_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_3_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_3_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01b</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01c</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_3_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_4_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_4_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_4_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01c</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01d</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_4_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_5_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_5_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_5_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01d</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01e</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_5_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_6_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_6_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_6_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01e</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01f</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_6_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_7_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_7_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_7_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01f</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01g</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_7_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_8_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_8_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_8_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01g</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01h</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_8_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_9_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_9_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_9_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01h</Reward_Param1>
+				<Reward_Param2>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01i</Reward_Param2>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_9_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+	<!-- objective done -->			
+	<Event Name="AlzocIII_Intimidation_UPDATE_OBJECTIVE_ALL_HEADS_COLLECTED_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_COMPLETE_ALL_HEADS_COLLECTED</Event_Param2>
+	</Event>
+	
+			<Event Name="AlzocIII_Intimidation_COMPLETE_OBJECTIVE_ALL_HEADS_COLLECTED">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01i</Reward_Param1>
+				<Prereq>AlzocIII_Intimidation_UPDATE_OBJECTIVE_ALL_HEADS_COLLECTED_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			<!-- remove objective to keep UI clean -->	
+			<Event Name="AlzocIII_Intimidation_REMOVE_OBJECTIVE_ALL_HEADS_COLLECTED">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>15</Event_Param1>
+				<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_01i</Reward_Param1>
+				<Prereq>AlzocIII_Intimidation_COMPLETE_OBJECTIVE_ALL_HEADS_COLLECTED</Prereq>
+			</Event>  
+	
+
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+<!-- ***************MISSION START Dialog Goes Here******************** -->
+	<!-- TEXT_SPEECH_ALZOCIII_INT_LOAD_COR03_01
+	Tyber Zann: Now that I'm down here we clearly have to kill some of those Shaaks, let's get ten heads.    -->
+	<Event Name="AlzocIII_Intimidation_Mission_Start_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AlzocIII_Intimidation_Mission_Start_AI_NOTIFICATION</Event_Param2>
+	</Event>
+			<Event Name="AlzocIII_Intimidation_Mission_Start_DIALOG">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_ALZOCIII_INT_LOAD_COR03_01</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>	
+				<Reward_Param8>ALZOCIII_INT_LOAD_COR03_01</Reward_Param8>
+				<Reward_Param9>Tyber_Loop</Reward_Param9>
+				<Reward_Param10>1</Reward_Param10>
+				<Prereq>AlzocIII_Intimidation_Mission_Start_AI_NOTIFICATION</Prereq>
+			</Event>
+	
+				<Event Name="AlzocIII_Intimidation_Mission_Start_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>ALZOCIII_INT_LOAD_COR03_01</Event_Param1> 
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_ALZOCIII_INT_LOAD_COR03_01</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>AlzocIII_Intimidation_Mission_Start_DIALOG</Prereq>
+				</Event>
+
+				<Event Name="AlzocIII_Intimidation_Mission_Start_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>AlzocIII_Intimidation_Mission_Start_Remove_Text</Prereq>
+				</Event>
+				
+<!-- ***************WIN Dialog Goes Here******************** -->
+
+	<Event Name="AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION</Event_Param2>
+	</Event>
+					
+<!-- ***************LOSE Dialog Goes Here******************** -->
+	<Event Name="AlzocIII_Intimidation_Player_Loses_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>AlzocIII_Intimidation_Player_Loses_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+	
+	<Event Name="AlzocIII_Intimidation_Mission_RE_ENABLE_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+		<Prereq>AlzocIII_Intimidation_Player_Loses_AI_NOTIFICATION</Prereq>
+	</Event>
+
+<!-- *************************************************************** -->
+<!-- ***************Win Conditions******************** -->
+<!-- *************************************************************** -->
+
+	<Event Name="AlzocIII_Intimidation_Player_Wins">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Player_Wins_STORY_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+	</Event>
+	
+			<!-- completing remaining objectives -->
+			<Event Name="AlzocIII_Intimidation_COMPLETE_OBJECTIVE_Tyber_Must_Live">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+				<Prereq>AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			<Event Name="AlzocIII_Intimidation_COMPLETE_OBJECTIVE_Tyber_Delivers_Heads">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_ALZOCIII_INTIMIDATION_OBJECTIVE_02</Reward_Param1>
+				<Prereq>AlzocIII_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+					
+<!-- *************************************************************** -->
+<!-- ***************Loss Conditions******************** -->
+<!-- *************************************************************** -->
+	<Event Name="AlzocIII_Intimidation_Mission_Loss_Rebel">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_REBEL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Mission_Loss_Empire">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_EMPIRE</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_Mission_Loss_Hutt">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_HUTTS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Hutt</Reward_Param1>
+	</Event>
+	
+	<Event Name="AlzocIII_Intimidation_FAIL_OBJECTIVE_Tyber_Must_Survive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>AlzocIII_Intimidation_Player_Loses_AI_NOTIFICATION</Prereq>
+
+	</Event>
+
+</Story>

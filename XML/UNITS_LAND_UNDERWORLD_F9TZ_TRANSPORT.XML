@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+
+
+<Cloaking_Transport_Data>
+
+
+
+
+
+	<GroundVehicle Name="F9TZ_Cloaking_Transport">
+
+		<Text_ID>TEXT_UNIT_F9TZ_TRANSPORT</Text_ID>
+		<Encyclopedia_Good_Against> Stormtrooper Rebel_Trooper </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> T4B_Tank M1_Repulsor_Tank </Encyclopedia_Vulnerable_To>
+  		<Encyclopedia_Text>TEXT_TOOLTIP_F9TZ_TRANSPORT</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_TRANSPORT</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_uv_f9tztransport.tga</Icon_Name>
+
+		<Select_Box_Scale>293</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+
+		<Land_Model_Name>UV_F9TZTransport.alo</Land_Model_Name>
+		<Mass>1.0</Mass>
+		<Scale_Factor>0.6</Scale_Factor>
+		<Deploys>Yes</Deploys>
+		<Affiliation>Underworld</Affiliation>
+		
+		<Max_Speed>2.0</Max_Speed>
+		<Movement_Animation_Speed> 2.3 </Movement_Animation_Speed>
+		<Max_Rate_Of_Turn>4.0</Max_Rate_Of_Turn>
+
+		<Armor_Type> Armor_T2B </Armor_Type>
+        <Shield_Armor_Type>Shield_Tank</Shield_Armor_Type>
+		<Size_Value>70</Size_Value>
+		<Damage>6</Damage>
+		<Shield_Points>300</Shield_Points>
+		<Tactical_Health>325</Tactical_Health>
+		<Shield_Refresh_Rate>8</Shield_Refresh_Rate>
+		<Energy_Capacity>999</Energy_Capacity>
+		<Energy_Refresh_Rate>999</Energy_Refresh_Rate>
+
+		<Behavior> SELECTABLE </Behavior>
+		<LandBehavior>AFFECTED_BY_SHIELD, ABILITY_COUNTDOWN, WALK_LOCOMOTOR, SHIELDED, POWERED, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, SURFACE_FX, TELEKINESIS_TARGET, STUNNABLE, WIND_DISTURBANCE, DAMAGE_TRACKING, GARRISON_VEHICLE, SQUASH</LandBehavior>
+
+		<Garrison_Category> Infantry, Vehicle </Garrison_Category>
+        <Num_Garrison_Slots>10</Num_Garrison_Slots>
+        <Garrison_Bone_Names>b_garrison_00</Garrison_Bone_Names>
+		<Garrison_Exit_Dist>0</Garrison_Exit_Dist>
+		<Garrison_Enter_Dist>0</Garrison_Enter_Dist>
+        <Garrison_Radius>30</Garrison_Radius>
+		
+		<Is_Squashable_By_Supercrusher>Yes</Is_Squashable_By_Supercrusher>
+		<Is_Affected_By_Gravity_Control_Field> Yes </Is_Affected_By_Gravity_Control_Field>
+		<SurfaceFX_Name>Hover</SurfaceFX_Name>
+		<Loop_Idle_Anim_00>No</Loop_Idle_Anim_00>
+
+		<Land_FOW_Reveal_Range>220.0</Land_FOW_Reveal_Range>
+		<Ranged_Target_Z_Adjust>13.0</Ranged_Target_Z_Adjust>
+
+		<Land_Damage_Thresholds>1, 0.66, 0.33</Land_Damage_Thresholds>
+		<Land_Damage_Alternates>0, 1, 2</Land_Damage_Alternates>
+		<Land_Damage_SFX>null,SFX_Grenade_Detonation, SFX_Grenade_Detonation</Land_Damage_SFX>
+
+		<Death_Explosions>Large_Explosion_Land</Death_Explosions>
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<Collidable_By_Projectile_Dead>Yes</Collidable_By_Projectile_Dead>
+        <Remove_Upon_Death>true</Remove_Upon_Death>
+        
+		<Wind_Disturbance_Radius>50</Wind_Disturbance_Radius>
+		<Wind_Disturbance_Strength>10</Wind_Disturbance_Strength>
+		<Wind_Disturbance_Sphere_Alpha>0.4</Wind_Disturbance_Sphere_Alpha>
+		<Base_Shield_Penetration_Particle>Shield_Penetration_Effect_Particle</Base_Shield_Penetration_Particle>
+
+		<SFXEvent_Fire>Unit_Tank_T2B_Fire</SFXEvent_Fire>
+		<SFXEvent_Select>Unit_Select_Cloaking_Transport</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Cloaking_Transport</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Cloaking_Transport</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Cloaking_Transport</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Cloaking_Transport</SFXEvent_Guard>
+		<SFXEvent_Turret_Rotating_Loop> Vehicle_Turret_Motor </SFXEvent_Turret_Rotating_Loop>
+		<SFXEvent_Assist_Move> Unit_Assist_Cloaking_Transport </SFXEvent_Assist_Move>		
+		<SFXEvent_Assist_Attack> Unit_Assist_Cloaking_Transport</SFXEvent_Assist_Attack>
+		<Death_SFXEvent_Start_Die>Unit_Tank_Death_SFX</Death_SFXEvent_Start_Die>
+		<SFXEvent_Engine_Idle_Loop> Unit_T2B_Idle_Engine_Loop </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop> Unit_T2B_Moving_Engine_Loop </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Unit_Lost> UHD_Unit_Destroyed </SFXEvent_Unit_Lost>
+		<SFXEvent_Tactical_Build_Started> UHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> UHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> UHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<No_Reflection_Below_Detail_Level>99</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>3</No_Refraction_Below_Detail_Level>
+		<Occlusion_Silhouette_Enabled>1</Occlusion_Silhouette_Enabled>
+
+		<Blob_Shadow_Below_Detail_Level>2</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>65.0, 50.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+
+		<CategoryMask> Vehicle </CategoryMask>
+		<Property_Flags> CanContainGarrison </Property_Flags>
+		<MovementClass>Hover</MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<Ground_Vehicle_Turret_Target> Yes </Ground_Vehicle_Turret_Target>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Overall_Length>125.0</Overall_Length> <!-- For vehicle pitching up and down on terrain -->
+		<Overall_Width>38.0</Overall_Width> <!-- For vehicle rolling left and right on terrain value -->
+		<Has_Land_Evaluator>Yes</Has_Land_Evaluator>
+		<AI_Combat_Power>5</AI_Combat_Power>
+
+		<Space_Layer> Land </Space_Layer>
+		<UnitCollisionClass> Giant Vehicle </UnitCollisionClass>
+		<OverrideAcceleration> .2 </OverrideAcceleration>
+		<OverrideDeceleration> .2 </OverrideDeceleration>
+		<FormationSpacing> 1.5 </FormationSpacing>
+		<FormationOrder> 4 </FormationOrder>
+		<FormationGrouping> Standard </FormationGrouping>
+		<FormationRaggedness> 2.4 </FormationRaggedness>
+		<MaxJiggleDistance> 6 </MaxJiggleDistance>
+		<MinimumPushReturnDistance> 100 </MinimumPushReturnDistance>
+		<UseSecondaryFacing> true </UseSecondaryFacing>
+		<SecondaryTurnInPlaceROTCoefficient> .5 </SecondaryTurnInPlaceROTCoefficient>
+		<SecondaryTurnAngle> 90 </SecondaryTurnAngle>
+		<MinSecondaryTurnROTCoefficient> .01 </MinSecondaryTurnROTCoefficient>
+		<MaxSecondaryTurnROTCoefficient> .7 </MaxSecondaryTurnROTCoefficient>
+		<SecondaryTurnLookaheadDistance> 0 </SecondaryTurnLookaheadDistance>
+		<!-- These extents have to be huge because of the scale factor-->
+		<Custom_Hard_XExtent> 100.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 50.0 </Custom_Hard_YExtent>
+        <Ranking_In_Category>7</Ranking_In_Category>
+
+		<Weather_Category>Hover</Weather_Category>
+        <Converted_To_Enemy_Die_Time_Seconds>45</Converted_To_Enemy_Die_Time_Seconds>
+		<Score_Cost_Credits>100</Score_Cost_Credits>
+		<Influences_Capture_Point> False </Influences_Capture_Point>
+		<Vehicle_Thief_Inside_Clone>F9TZ_Cloaking_Transport_Captured</Vehicle_Thief_Inside_Clone>
+		<Tactical_Bribe_Cost>500</Tactical_Bribe_Cost>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+		
+			<!-- Primary ability -->
+            <Unit_Ability>
+                <Type>STEALTH</Type>
+				<Alternate_Icon_Name>i_sa_stealth.tga</Alternate_Icon_Name>
+				<Alternate_Name_Text>TEXT_TOOLTIP_CLOAK</Alternate_Name_Text>
+                <GUI_Activated_Ability_Name>Stealth_F9TZ</GUI_Activated_Ability_Name> 
+                <Recharge_Seconds>10.0</Recharge_Seconds>
+				<Expiration_Seconds>120.0</Expiration_Seconds>
+                <SFXEvent_GUI_Unit_Ability_Activated>Unit_Cloak_Cloaking_Transport</SFXEvent_GUI_Unit_Ability_Activated>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+            </Unit_Ability>
+            
+		</Unit_Abilities_Data>
+
+        <Abilities SubObjectList="Yes">
+        
+            <Stealth_Ability Name="Stealth_F9TZ">
+                <Activation_Style> User_Input </Activation_Style>
+                <Stealth_Color>255, 255, 255, 255</Stealth_Color>
+                <Stealth_Transition_Time>.3</Stealth_Transition_Time>
+                <SFXEvent_Activate>Unit_Lightsaber_Projectile_Block</SFXEvent_Activate>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+			</Stealth_Ability>
+            
+		</Abilities>
+
+	</GroundVehicle>
+
+	<GroundVehicle Name="F9TZ_Cloaking_Transport_Captured">
+		<Variant_Of_Existing_Type>F9TZ_Cloaking_Transport</Variant_Of_Existing_Type>
+		<Icon_Name>i_button_chewbacca_uv_f9tztransport.tga</Icon_Name>
+	
+		<!-- MUST have same abilities PLUS EJECT_THIEF -->
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+		
+			<!-- Primary ability -->
+            <Unit_Ability>
+                <Type>STEALTH</Type>
+				<Alternate_Icon_Name>i_sa_stealth.tga</Alternate_Icon_Name>
+				<Alternate_Name_Text>TEXT_TOOLTIP_CLOAK</Alternate_Name_Text>
+                <GUI_Activated_Ability_Name>Stealth_F9TZ</GUI_Activated_Ability_Name> 
+                <Recharge_Seconds>10.0</Recharge_Seconds>
+				<Expiration_Seconds>120.0</Expiration_Seconds>
+                <SFXEvent_GUI_Unit_Ability_Activated>Unit_Cloak_Cloaking_Transport</SFXEvent_GUI_Unit_Ability_Activated>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+            </Unit_Ability>
+
+			<Unit_Ability>
+				<Type>EJECT_VEHICLE_THIEF</Type>
+				<Recharge_Seconds>10</Recharge_Seconds>
+			</Unit_Ability>
+			
+		</Unit_Abilities_Data>
+	</GroundVehicle>
+
+
+
+	<GroundCompany Name="F9TZ_Cloaking_Transport_Company">
+		<Text_ID>TEXT_F9TZ_TRANSPORT_COMPANY</Text_ID>
+		<Encyclopedia_Good_Against> Stormtrooper Rebel_Trooper </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> T4B_Tank M1_Repulsor_Tank </Encyclopedia_Vulnerable_To>
+  		<Encyclopedia_Text>TEXT_TOOLTIP_F9TZ_TRANSPORT</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_TRANSPORT</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_uv_f9tztransport.tga</Icon_Name>
+
+		<GUI_Row> 1 </GUI_Row>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>100</Damage>
+		<Autoresolve_Health>450</Autoresolve_Health>
+		
+		<Affiliation>Underworld</Affiliation>
+		<Build_Cost_Credits>1200</Build_Cost_Credits>
+		<Build_Time_Seconds>25</Build_Time_Seconds>
+		<Build_Time_Reduced_By_Multiple_Factories> Yes </Build_Time_Reduced_By_Multiple_Factories>
+		<Build_Tab_Land_Units>Yes</Build_Tab_Land_Units>
+		<Tech_Level>0</Tech_Level>
+		<Required_Timeline>0</Required_Timeline>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures>U_Ground_Vehicle_Factory</Required_Special_Structures>
+		<Required_Planets />
+		
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Formation_Priority>4</Formation_Priority>
+		<Is_Escort>no</Is_Escort>
+		<Ship_Class>walker</Ship_Class>
+		
+		<Company_Transport_Unit>Underworld_Vehicle_Transport</Company_Transport_Unit>
+		<Company_Units>F9TZ_Cloaking_Transport</Company_Units>
+		
+		<Score_Cost_Credits>1000</Score_Cost_Credits>
+		<Maintenance_Cost>0.05</Maintenance_Cost>
+		<Population_Value>1</Population_Value>
+
+		<Cheap_Bribe_Cost>50</Cheap_Bribe_Cost>
+		<Expensive_Bribe_Cost>100</Expensive_Bribe_Cost>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
+		<Tactical_Build_Cost_Multiplayer>1400</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>18</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>UC_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<!--<Build_Limit_Current_Per_Player>0</Build_Limit_Current_Per_Player>-->
+		<!--<Build_Limit_Lifetime_Per_Player>0</Build_Limit_Lifetime_Per_Player>-->  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<SFXEvent_Build_Started>UHD_Build_Vehicle</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Vehicle_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Select_Cloaking_Transport</SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Cloaking_Transport</SFXEvent_Fleet_Move>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+		
+			<!-- Primary ability -->
+            <Unit_Ability>
+                <Type>STEALTH</Type>
+				<Alternate_Icon_Name>i_sa_stealth.tga</Alternate_Icon_Name>
+                <GUI_Activated_Ability_Name>Stealth_F9TZ</GUI_Activated_Ability_Name> 
+                <Recharge_Seconds>10.0</Recharge_Seconds>
+				<Expiration_Seconds>120.0</Expiration_Seconds>
+                <SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+            </Unit_Ability>
+            
+		</Unit_Abilities_Data>
+
+        <Abilities SubObjectList="Yes">
+        
+            <Stealth_Ability Name="Stealth_F9TZ">
+                <Activation_Style> User_Input </Activation_Style>
+                <Stealth_Color>255, 255, 255, 255</Stealth_Color>
+                <Stealth_Transition_Time>.3</Stealth_Transition_Time>
+                <SFXEvent_Activate>Unit_Lightsaber_Projectile_Block</SFXEvent_Activate>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+			</Stealth_Ability>
+            
+		</Abilities>
+
+	</GroundCompany>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Cloaking_Transport_Data>

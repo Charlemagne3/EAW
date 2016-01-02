@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!--
+
+	Light source definitions.
+
+	Be careful with the light source names, they may have to co-exist with other "model names" in the game (e.g. all
+    of the ALO objects)
+    
+-->
+
+<LightSources>
+
+    <LightSource Name="LightSourceSmallGreen">
+        <Diffuse>0,1,0</Diffuse>
+        <Intensity>0.4</Intensity>
+        <Radius>40.0</Radius>
+        <Falloff_Start>20</Falloff_Start>
+        <Auto_Destruct_Time>0.4</Auto_Destruct_Time>        <!-- light goes away in this amount of time -->
+        <Auto_Destruct_Fade_Time>0.4</Auto_Destruct_Fade_Time>
+        <Blob_Radius>30.0</Blob_Radius>             <!-- often the terrain blob needs a smaller radius than the light -->
+        <Blob_Color>0,1,0</Blob_Color>
+        <Blob_Intensity>0.15</Blob_Intensity>       <!-- additive blob, probably should be very subtle! -->
+	</LightSource>
+
+</LightSources>

@@ -1,0 +1,607 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+
+		<Reward_Param7>Hint</Reward_Param7>
+-->
+
+	<Event Name="Tutorial_V_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+<!--
+<Event Name="Tutorial_V_Reveal_Kashyyyk">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>REVEAL_PLANET</Reward_Type>
+	<Reward_Param1>Kashyyyk</Reward_Param1>
+	<Reward_Param2>1</Reward_Param2>
+	<Prereq>Tutorial_V_Begin</Prereq>
+</Event>
+-->
+	
+	<Event Name="Tutorial_V_Reveal_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>o
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Reveal_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+<!-- Center camera -->
+	<Event Name="Tutorial_V_Center_Camera">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>0,-80,0</Reward_Param2>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+<!-- Lock Scrolling -->	
+	<Event Name="Tutorial_V_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Enable_Mission_Objectives">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Controls_At_Start">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+<!-- Disable Zoom -->
+	<Event Name="Tutorial_V_Disable_Zoom">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+<!-- Turn off advisor -->
+	<Event Name="Tutorial_V_Turn_Off_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+<!-- Turn off tutorial cursor on mouse clicks -->
+	<Event Name="Tutorial_V_Turn_Off_Cursor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+<!-- Set tutorial mode -->
+	<Event Name="Tutorial_V_Tutorial_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+<!-- Lock all available tech -->
+	<Event Name="Tutorial_V_Lock_Tartan_Patrol_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Tartan_Patrol_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Lock_Acclamator_Assault_Ship">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Lock_Broadside_Class_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Broadside_Class_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Lock_Probe_Droid">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Fleet_Com_Empire_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Fleet_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Bounty_Hunter_Team_E">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Bounty_Hunter_Team_E</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Field_Com_Empire_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Field_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Mining_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Ground_Mining_Facility</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Lock_E_Ground_Research_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Lock_Empire_Star_Base_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Lock_Empire_Star_Base_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_2</Reward_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+<!-- Start mission text -->
+	<Event Name="Tutorial_V_Intro_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Prereq>Tutorial_V_Begin</Prereq>
+	</Event>
+	
+<!-- Station Officer: Excellent, now consolidate the land and space fleets on Nal Hutta, 
+so that we may commence with the assault. -->
+	<Event Name="Tutorial_V_Combine_Fleets">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_37</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_37</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_V_Intro_Text</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_V_Combine_Fleets_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_37</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_37</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_V_Combine_Fleets</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_V_Combine_Fleets_02">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_V_Combine_Fleets_01</Prereq>
+		</Event>		
+
+<!-- Hint: Imperial forces have detected the Rebel presence here on the surface of Kashyyyk.  
+You will need to gather your troops and attack the Alliance base on this planet.
+	<Event Name="Tutorial_V_Combine_Fleets_02a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_26</Reward_Param8>
+		<Prereq>Tutorial_V_Combine_Fleets_02</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_V_Combine_Fleets_02b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_26</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_26</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_V_Combine_Fleets_02a</Prereq>
+		</Event>
+-->
+
+<!--Task: Combine all fleets located on Nal Hutta.-->
+	<Event Name="Tutorial_V_Combine_Fleets_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_60</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_V_Combine_Fleets_02</Prereq>
+	</Event>
+		
+	<Event Name="Tutorial_V_Combine_Fleets_03_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_38</Reward_Param1>
+		<Prereq>Tutorial_V_Combine_Fleets_03</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Combine_Fleets_At_NalHutta_HolocronEntry">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>6</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Combine_Fleets_At_NalHutta_HolocronEntry</Story_Tag>
+        <Prereq>Tutorial_V_Combine_Fleets_03_Objective</Prereq>
+    </Event>
+
+	<Event Name="Tutorial_V_Unlock_Controls_After_Start">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_V_Combine_Fleets_03_Objective</Prereq>
+	</Event>
+
+<!-- Flash land fleet -->
+	<Event Name="Tutorial_V_Combine_Fleets_Flash_Land">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>NALHUTTA</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>Tutorial_V_Combine_Fleets_03_Objective</Prereq> 
+	</Event>
+
+<!-- Flash destination fleet -->
+	<Event Name="Tutorial_V_Combine_Fleets_Flash_Space">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_FLEET_WITH_UNIT</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Reward_Param2>space_fleet</Reward_Param2>
+		<Prereq>Tutorial_V_Combine_Fleets_03_Objective</Prereq>
+	</Event>
+
+<!-- Wait for player to move up land fleet -->
+	<Event Name="Tutorial_V_Merge_Land_And_Space_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>merge_fleets</Event_Param1>		
+		<Prereq>Tutorial_V_Combine_Fleets_03_Objective</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_V_Combine_Fleets_At_NalHutta_HolocronEntry_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Combine_Fleets_At_NalHutta_HolocronEntry</Reward_Param1>
+		<Prereq>Tutorial_V_Merge_Land_And_Space_01</Prereq>
+    </Event>
+	
+	<Event Name="Tutorial_V_Merge_Land_And_Space_Lock_Controls">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_V_Merge_Land_And_Space_01</Prereq>
+	</Event>
+
+<!-- Send Fleet to Ryloth 
+Station Officer: Deploy units to the surface of Ryloth.  Take no prisoners!-->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_39</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_39</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_V_Merge_Land_And_Space_01</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_V_Fleet_To_Ryloth_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_39</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_39</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_V_Fleet_To_Ryloth_Text</Prereq>
+		</Event>	
+			
+		<Event Name="Tutorial_V_Fleet_To_Ryloth_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_V_Fleet_To_Ryloth_Remove_Text</Prereq>
+		</Event>
+	
+<!-- Objective complete -->
+	<Event Name="Tutorial_V_Merge_Forces">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_38</Reward_Param1>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Text</Prereq>
+	</Event>
+	
+<!-- Stop flashing the fleets -->
+	<Event Name="Tutorial_V_Merge_Forces_Stop_Flashing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>space_fleet</Reward_Param1>
+		<Prereq>Tutorial_V_Merge_Forces</Prereq>
+	</Event>
+
+<!-- Stop Flashing NalHutta -->
+	<Event Name="Tutorial_V_Merge_Forces_Stop_Flashing_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_V_Merge_Forces</Prereq>
+	</Event>
+
+<!-- Give task: Deploy land units to surface of Ryloth 
+Task: Deploy land units to the surface of Ryloth. -->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_61</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_V_Initiate_Land_Tactical_01</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_40</Reward_Param1>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Task</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Merge_Land_And_Space_UNLock_Controls">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Task_a</Prereq>
+	</Event>
+	        
+<!-- Flash Ryloth -->
+	<Event Name="Tutorial_Act_V_Flash_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Task</Prereq>
+	</Event>
+
+<!-- Hint: To initiate a Land Tactical battle, drag the fleet into the land slot on Ryloth.  
+Remember - while you have bomber units in orbit above the planet you will also have access to 
+Bombing Runs. -->
+	<Event Name="Tutorial_V_Initiate_Land_Tactical">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_41</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Remove_Movie</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_V_Initiate_Land_Tactical_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_41</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_41</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_V_Initiate_Land_Tactical</Prereq>
+		</Event>
+
+    <Event Name="Tutorial_V_Deploy_Land_Units_To_Ryloth">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>0</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Deploy_Land_Units_To_Ryloth</Story_Tag>
+        <Prereq>Tutorial_V_Initiate_Land_Tactical_01</Prereq>
+        <Prereq>Tutorial_V_Link_Tactical</Prereq>
+    </Event>
+
+	<!-- Wait for the fleet to arrive -->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Ryloth</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_Task</Prereq>
+	</Event>
+
+<!-- 
+	LINK_TACTICAL
+	<Reward_Param1> = Planet name
+	<Reward_Param2> = Planet location (space,land)
+	<Reward_Param3> = Attacking faction
+	<Reward_Param4> = Map name
+	<Reward_Param5> = Defending faction
+	<Reward_Param6> = Hero pathfinder name
+	<Reward_Param7> = Tactical script name
+	<Reward_Param8> = Use sandbox units
+	<Reward_Param9> = Enable Prebattle Cinematic
+	<Reward_Param10>= Start Scene Faded Out
+	<Reward_Param11>= Start Scene Letterboxed
+-->
+	
+	<Event Name="Tutorial_V_Link_Tactical">
+		<Event_Type>STORY_LAND_ON</Event_Type>
+		<Event_Param1>Ryloth</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Event_Param3>Field_Com_Empire_Team</Event_Param3>
+		<Event_Param4>acclamator_assault_ship</Event_Param4>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Empire</Reward_Param3>
+		<Reward_Param4>TM05_Imperial_Policy.ted</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param7>Story_Plots_Tutorial_M05_LAND.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Prereq>Tutorial_V_Begin</Prereq>
+		<Branch>BRANCH_TUTORIAL_M05</Branch>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_40</Reward_Param1>
+		<Prereq>Tutorial_V_Link_Tactical</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_V_Deploy_Land_Units_To_Ryloth_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Deploy_Land_Units_To_Ryloth</Reward_Param1>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_01</Prereq>
+		<Prereq>Tutorial_V_Link_Tactical Tutorial_V_Deploy_Land_Units_To_Ryloth</Prereq>
+    </Event>
+
+<!-- Stop Flashing Ryloth -->
+	<Event Name="Tutorial_V_Fleet_To_Ryloth_Stop_Flashing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_V_Fleet_To_Ryloth_01</Prereq>
+	</Event>
+
+<!-- Wait until the battle summary dialog is closed -->
+	<Event Name="Tutorial_V_Returned_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Prereq>Tutorial_V_Link_Tactical</Prereq>
+		<Branch>BRANCH_TUTORIAL_M05</Branch>
+	</Event>
+
+<!-- Tutorial 5 failed -->
+<!-- Detect mission 1 being lost.  Display text telling the player to try again -->
+	<Event Name="Tutorial_V_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Tutorial_M05_LAND.XML</Event_Param1>
+		<Prereq>Tutorial_V_Returned_01</Prereq>
+		<Branch>BRANCH_TUTORIAL_M05</Branch>
+	</Event>
+
+<!-- Re-enable mission -->
+	<Event Name="Tutorial_V_Failed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>RESET_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_TUTORIAL_M05</Reward_Param1>
+		<Prereq>Tutorial_V_Failed</Prereq>
+		<Branch>BRANCH_TUTORIAL_M05</Branch>
+	</Event>
+
+<!-- Mission 5 ends successfully -->
+	<Event Name="Tutorial_V_Completed">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Tutorial_M05_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Tutorial_V_Returned_01</Prereq>
+	</Event>
+
+<!-- Station Officer: Good… very good!  
+Not only has the Rebel base been destroyed, 
+but we now control all of the resources provided by Ryloth.  
+Grand Moff Tarkin will be pleased to hear of my success!  You are dismissed… -->
+	<Event Name="Tutorial_V_Exit_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_19</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_V_Completed</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_V_Exit_Text_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_19</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_18</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_V_Exit_Text</Prereq>
+		</Event>
+	
+		<Event Name="Tutorial_V_Exit_Text_02">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_V_Exit_Text_01</Prereq>
+		</Event>		
+
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_V_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_FIVE</Reward_Param1>
+	<Prereq>Tutorial_V_Completed</Prereq>
+</Event>
+
+<!-- Link to next tutorial -->
+	<Event Name="Tutorial_V_Next_Tutorial_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+		<Reward_Param1>TEXT_TUTORIAL_5_COMPLETE</Reward_Param1>
+		<Prereq>Tutorial_V_Exit_Text_02</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_V_Next_Tutorial_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>Continue_Tutorial</Event_Param1>
+		<Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+		<Reward_Param1>Tutorial_Six</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+	</Event>
+
+</Story>

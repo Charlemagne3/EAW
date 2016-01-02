@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Upgrade_Space_Station_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Upgrade_Space_Station_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Upgrade_Space_Station_01">
+		<Event_Type>STORY_CONSTRUCT_LEVEL</Event_Type>
+		<Event_Param3>SPACE</Event_Param3>
+		<Prereq>Upgrade_Space_Station_00</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Upgrade_Space_Station_Tag_00</Reward_Param1>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+	
+	<Event Name="Upgrade_Space_Station_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Upgrade_Space_Station_01</Prereq>
+		<Reward_Type>CREDITS</Reward_Type>
+		<Reward_Param1>1000</Reward_Param1>
+	</Event>	
+	
+	<Event Name="Upgrade_Space_Station_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Upgrade_Space_Station_03</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>UPGRADE_SPACE_STATION_NOTIFICATION_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Upgrade_Space_Station_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPGRADE_SPACE_STATION_NOTIFICATION_ABORT</Event_Param2>
+		<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+		<Reward_Param1>Upgrade_Space_Station_Tag_00</Reward_Param1>
+	</Event>
+</Story>

@@ -1,0 +1,971 @@
+<?xml version="1.0" ?>
+<Story>
+
+<!--
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+
+		<Reward_Param7>Hint</Reward_Param7>
+-->
+
+<!-- Setup -->
+	<Event Name="Tutorial_M05_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M05_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_M05_Disable_Retreat_Empire">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Disable_Retreat_Rebel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M05_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+<!-- Turn off advisor -->
+	<Event Name="Tutorial_M05_Turn_Off_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+<!-- Set tutorial mode -->
+	<Event Name="Tutorial_M05_Tutorial_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+
+<!-- Mid Mission Text & VO -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TAKE_REINFORCEMENT_POINT</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+<!-- Field Commander: This clearing is suitable for use as a Reinforcement Point.  
+Secure the area, and deploy our scouts.  
+We’ll launch the assault from this position. -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_01</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Take_Reinforcement_Text_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_01</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_01</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Take_Reinforcement_Text_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M05_Take_Reinforcement_Text_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Take_Reinforcement_Text_02</Prereq>
+		</Event>		
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_02</Reward_Param1>
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text_03A</Prereq>
+	</Event>
+	        
+<!-- Highlight Reiforcement Point -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_03_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_00</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text_03</Prereq>
+	</Event>
+
+<!-- Task: Capture the Reinforcement Point. -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_03A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_20</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text_05</Prereq>
+	</Event>
+
+<!-- Hint: The area surrounding a Reinforcement Point must be clear of enemies 
+before it may be captured.  Remember - you can use Build Pads to purchase defensive 
+structures in strategic areas, such as this Reinforcement Point.-->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_03</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_03</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text_02_Stop_Movie</Prereq>
+	</Event>
+				
+		<Event Name="Tutorial_M05_Take_Reinforcement_Text_05">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_03</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_03</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Take_Reinforcement_Text_04</Prereq>
+		</Event>
+
+    <Event Name="Tutorial_V_Capture_The_Reinforcement_Point">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>1</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Capture_The_Reinforcement_Point</Story_Tag>
+        <Prereq>Tutorial_M05_Take_Reinforcement_Text_05</Prereq>
+    </Event>
+
+<!-- Hint:  Speeder Bikes can use the Thermal Detonator ability for hit and run attacks.  
+To use this ability: select a Speeder Bike unit, 
+and then click on the Thermal Detonator ability icon, located on the command bar. -->
+	<Event Name="Tutorial_M05_Take_Reinforcement_Text_02a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_29</Reward_Param8>
+		<Prereq>Tutorial_M05_Take_Reinforcement_Text_03A</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Take_Reinforcement_Text_02b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_29</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_29</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_M05_Take_Reinforcement_Text_02a</Prereq>
+		</Event>
+	
+	<Event Name="Tutorial_M05_Deploy_Squads">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DEPLOY_SQUADS</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Take_Reinforcment_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_02</Reward_Param1>
+		<Prereq>Tutorial_M05_Deploy_Squads</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_V_Capture_The_Reinforcement_Point_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Capture_The_Reinforcement_Point</Reward_Param1>
+		<Prereq>Tutorial_M05_Take_Reinforcment_Done</Prereq>
+    </Event>
+
+<!-- Stop highlighting reinforcement point -->			
+	<Event Name="Tutorial_M05_Take_Reinforcment_Done_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_00</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Take_Reinforcment_Done</Prereq>
+	</Event>
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M05_Deploy_Squads_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_04</Reward_Param1>
+		<Prereq>Tutorial_M05_Take_Reinforcment_Done</Prereq>
+	</Event>
+			
+<!-- Task: Deploy All Reinforcements. -->
+	<Event Name="Tutorial_M05_Deploy_Squads_Task_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_21</Reward_Param1>
+		<Reward_param2>5</Reward_param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Deploy_Squads_Task</Prereq>
+	</Event>
+
+<!-- Flash Reinforce Button -->
+	<Event Name="Tutorial_M05_Deploy_Squads_Task_Flash_Reinforce">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_reinforcement</Reward_Param1>
+		<Prereq>Tutorial_M05_Deploy_Squads_Task_Objective</Prereq>
+	</Event>
+			
+	<Event Name="Tutorial_M05_Deploy_Squads_Task_Flash_Reinforce_01">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_reinforcement</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M05_Deploy_Squads_Task_Flash_Reinforce</Prereq>
+	</Event>
+			
+<!-- Hint: Land reinforcements can only be 
+Hint: Land reinforcements can only be deployed in controlled areas, 
+known as Reinforcement Points.-->
+	<Event Name="Tutorial_M05_Deploy_Squads_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_05</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Deploy_Squads</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Deploy_Squads_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_05</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_05</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Deploy_Squads_01</Prereq>
+		</Event>
+	
+<!-- Hint: When invading the surface of a planet, 
+it is vital you maintain control of as many Reinforcement Points as possible 
+since you can only deploy reinforcements near areas that you control.  
+If the defender gains control of a Reinforcement Point, 
+you will not be able to deploy reinforcements at that location. -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_10</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Deploy_Squads_02</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_M05_Destroy_Sand_Crawler_06">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_10</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_10</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Sand_Crawler_05</Prereq>
+		</Event>
+
+    <Event Name="Tutorial_V_Deploy_All_Reinforcements">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>2</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Deploy_All_Reinforcements</Story_Tag>
+        <Prereq>Tutorial_M05_Destroy_Sand_Crawler_06</Prereq>
+    </Event>
+
+	<Event Name="Tutorial_M05_Squads_Deployed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SQUADS_DEPLOYED</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Deploy_Squads_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_04</Reward_Param1>
+		<Prereq>Tutorial_V_Deploy_All_Reinforcements Tutorial_M05_Squads_Deployed</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Make_Sure_Reinforce_Flash_Is_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M05_Deploy_Squads_Done</Prereq>
+	</Event>
+	
+
+    <Event Name="Tutorial_V_Deploy_All_Reinforcements_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Deploy_All_Reinforcements</Reward_Param1>
+		<Prereq>Tutorial_M05_Deploy_Squads_Done</Prereq>
+    </Event>
+
+<!--Field Commander: A sandstorm!  It will, no doubt, prove to be a nuisance - 
+but it will not stop us from achieving victory!-->
+	<Event Name="Tutorial_M05_Sandstorm_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_06</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_V_Deploy_All_Reinforcements_Complete</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Sandstorm_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_06</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_06</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Sandstorm_01</Prereq>
+		</Event>
+		
+		<Event Name="Tutorial_M05_Sandstorm_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Sandstorm_02</Prereq>
+		</Event>		
+
+<!-- Hint: Foul weather can reduce the effectiveness of your units.  
+You must account for weather changes whenever you are engaged in battle on a planet's surface. -->
+	<Event Name="Tutorial_M05_Sandstorm_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_07</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Sandstorm_02_Stop_Movie</Prereq>
+	</Event>
+			
+		<Event Name="Tutorial_M05_Sandstorm_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Sandstorm_03</Prereq>
+		</Event>
+	
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DESTROY_SAND_CRAWLER</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+
+<!-- Field Commander: The locals are supporting the Rebel forces on this system.  
+Eliminate them - we cannot afford to lose control of the Reinforcement Point! -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_08</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Sandstorm_04</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Destroy_Sand_Crawler_03">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_08</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_08</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Sand_Crawler_02</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M05_Destroy_Sand_Crawler_03_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Destroy_Sand_Crawler_03</Prereq>
+		</Event>		
+
+<!-- Hint: Beware of indigenous units, such as Jawas.  
+These forces will continue to attack until their habitat has been destroyed.  
+Use your forces to destroy the Jawa Sandcrawler. -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_07">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_28</Reward_Param8>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_03_Stop_Movie</Prereq>
+		<branch>give_sandcrawler_task</branch>
+	</Event>
+
+		<Event Name="Tutorial_M05_Destroy_Sand_Crawler_08">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_28</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_28</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Sand_Crawler_07</Prereq>
+		</Event>
+
+    <Event Name="Tutorial_V_Destroy_The_Jawa_Sandcrawler">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>3</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Destroy_The_Jawa_Sandcrawler</Story_Tag>
+        <Prereq>Tutorial_M05_Destroy_Sand_Crawler_08</Prereq>
+    </Event>
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_09</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_03</Prereq>
+	</Event>
+			
+<!-- Highlight Sandcrawler -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Jawa_Sandcrawler</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_04</Prereq>
+		<branch>give_sandcrawler_task</branch>
+	</Event>
+			
+<!-- Task: Destroy the Jawa Sandcrawler. -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_04A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_22</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_08</Prereq>
+		<branch>give_sandcrawler_task</branch>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Sand_Crawler_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SAND_CRAWLER_DESTROYED</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_M05_Disable_Sandcrawler_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>give_sandcrawler_task</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M05_Sand_Crawler_Destroyed</Prereq>
+	</Event>	
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_09</Reward_Param1>
+		<Prereq>Tutorial_M05_Sand_Crawler_Destroyed Tutorial_M05_Destroy_Sand_Crawler_04</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_V_Destroy_The_Jawa_Sandcrawler_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Destroy_The_Jawa_Sandcrawler</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_Done</Prereq>
+    </Event>
+
+<!-- Highlight Sandcrawler Off -->
+	<Event Name="Tutorial_M05_Destroy_Sand_Crawler_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Jawa_Sandcrawler</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_Done</Prereq>
+	</Event>
+
+<!-- Field Commander: Good work!  They’ll think twice before interfering in Imperial affairs. 
+Now, about that Rebel base… -->
+	<Event Name="Tutorial_M05_Sand_Crawler_Destroyed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_11</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Sand_Crawler_Destroyed Tutorial_M05_Destroy_Sand_Crawler_03</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Sand_Crawler_Destroyed_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_11</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_11</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Sand_Crawler_Destroyed_01</Prereq>
+		</Event>
+		
+		<Event Name="Tutorial_M05_Sand_Crawler_Destroyed_03">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Sand_Crawler_Destroyed_02</Prereq>
+		</Event>
+			
+<!-- NOTE: This state triggers a script in Lua to show the Rebel Base -->
+<!-- Add objective -->
+	<Event Name="Tutorial_M05_Sand_Crawler_Destroyed_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_11A</Reward_Param1>
+		<Prereq>Tutorial_M05_Sand_Crawler_Destroyed_03</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_V_Advance_on_Base_HolocronEntry">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>7</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Advance_on_Base_HolocronEntry</Story_Tag>
+        <Prereq>Tutorial_M05_Sand_Crawler_Destroyed_04</Prereq>
+    </Event>
+			
+<!-- Highlight Rebel Base -->
+	<Event Name="Tutorial_M05_Advance_On_Base_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Sand_Crawler_Done</Prereq>
+	</Event>
+			
+<!-- Task: Advance on the Rebel base. -->
+	<Event Name="Tutorial_M05_Sand_Crawler_Destroyed_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_23</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Sand_Crawler_Destroyed_03</Prereq>
+	</Event>
+			
+	<Event Name="Tutorial_M05_Destroy_Power_Generator">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DESTROY_POWER_GENERATOR</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Advance_On_Rebel_Base_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_11A</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator</Prereq>
+	</Event>
+	
+	<!-- jdg advance on rebel base holocron over -->
+    <Event Name="Tutorial_V_Advance_on_Base_HolocronEntry_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Advance_on_Base_HolocronEntry</Reward_Param1>
+		<Prereq>Tutorial_M05_Advance_On_Rebel_Base_Done</Prereq>
+    </Event>
+
+<!-- Highlight Rebel Base Off -->
+	<Event Name="Tutorial_M05_Advance_On_Base_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Advance_On_Rebel_Base_Done</Prereq>
+	</Event>
+
+<!-- Field Commander: The Rebels apparently have a Base Shield Generator.  
+Clever, but it won’t stop us for long - 
+locate the Power Generator supplying power to that shield, and destroy it!-->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_12</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Destroy_Power_Generator_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_12</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_12</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Power_Generator_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M05_Destroy_Power_Generator_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Destroy_Power_Generator_02</Prereq>
+		</Event>		
+
+<!-- Add Objective -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_13</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_02</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>	
+			
+<!-- Highlight power generators -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_Highlight_On">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>POWER_GENERATOR_R_M1</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_03</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>
+
+<!-- Task: Destroy the Power Generator. -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_03A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_24</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_05</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>	
+			
+<!-- Hint: Base Shield Generators provide the defender with a significant advantage 
+by blocking enemy blaster fire and reducing the movement speed of enemy units.  
+Base Shield Generators require Power Generators in order to function.  
+This means that if you destroy the Power Generator, the Base Shield will be disabled. -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_14</Reward_Param8>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_02_Stop_Movie</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>
+				
+		<Event Name="Tutorial_M05_Destroy_Power_Generator_05">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_14</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_14</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Power_Generator_04</Prereq>
+		</Event>
+
+
+<!-- jdg power plant holocron start -->
+    <Event Name="Tutorial_V_Destroy_The_Power_Generator">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>4</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Destroy_The_Power_Generator</Story_Tag>
+        <Prereq>Tutorial_M05_Destroy_Power_Generator_05</Prereq>
+        <Prereq>Tutorial_M05_Destroy_Base</Prereq>
+    </Event>
+			
+			
+<!-- triggers when power plant is destroyed -->
+	<Event Name="Tutorial_M05_Destroy_Base">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DESTROY_BASE</Event_Param2>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_M05_Disable_Power_Generator_Instruction_Branch">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>power_generator_instruction</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M05_Destroy_Base</Prereq>
+	</Event>
+
+<!-- Turn off Highlight power generators -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>POWER_GENERATOR_R_M1</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Base</Prereq>
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_13</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Base Tutorial_M05_Destroy_Power_Generator_03</Prereq>
+	</Event>
+
+<!-- jdg power plant holocron end -->
+    <Event Name="Tutorial_V_Destroy_The_Power_Generator_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Destroy_The_Power_Generator</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_Done</Prereq>
+		<Prereq>Tutorial_M05_Destroy_Base Tutorial_V_Destroy_The_Power_Generator</Prereq>
+    </Event>
+			
+<!-- Field Commander: The Base Shield Generator is down!  
+All units - attack the Rebel base! -->
+	<Event Name="Tutorial_M05_Destroy_Base_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_16</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Destroy_Base</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_Destroy_Base_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_16</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_16</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Base_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M05_Destroy_Base_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_Destroy_Base_02</Prereq>
+		</Event>
+
+<!-- Add Objective -->
+	<Event Name="Tutorial_M05_Destroy_Base_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_17</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Base_02</Prereq>
+	</Event>	
+			
+<!-- Highlight Rebel Base -->
+	<Event Name="Tutorial_M05_Destroy_Base_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_Destroy_Base_03</Prereq>
+	</Event>
+
+<!-- Objective Task: Eliminate the Rebel base.-->
+	<Event Name="Tutorial_M05_Destroy_Base_03A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_25</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M05_Destroy_Base_02</Prereq>
+	</Event>	
+
+<!-- Hint: Since bombing-capable units are in orbit above this system, 
+Bombing Runs are available for use in this battle.  
+Select the Bombing Run icon on the command bar, 
+and then target a visible area to bomb by left-clicking on the battlefield. -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_06">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_15</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_05</Prereq>
+		<Branch>power_generator_instruction</Branch>
+	</Event>
+
+		<Event Name="Tutorial_M05_Destroy_Power_Generator_09">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_15</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_15</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Power_Generator_06</Prereq>
+		</Event>
+
+<!-- Flash Bombing Run Button -->
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_special_weapon</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_06</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M05_Destroy_Power_Generator_08">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_special_weapon</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M05_Destroy_Power_Generator_07</Prereq>
+	</Event>
+					
+<!-- Hint: Use your forces and special abilities, such as bombing runs, 
+to destroy enemy turrets, buildings, and other base defenses. -->
+	<Event Name="Tutorial_M05_Destroy_Base_04">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT05_18</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M05_Destroy_Base_03</Prereq>
+	</Event>
+				
+		<Event Name="Tutorial_M05_Destroy_Base_05">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT05_18</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT05_18</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_Destroy_Base_04</Prereq>
+		</Event>
+
+    <Event Name="Tutorial_V_Destroy_The_Rebel_Base">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_05</Story_Dialog>
+        <Story_Chapter>5</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_V_Destroy_The_Rebel_Base</Story_Tag>
+        <Prereq>Tutorial_M05_Destroy_Base_05</Prereq>
+    </Event>
+
+<!-- Empire Win: All Rebel units die -->
+	<Event Name="Tutorial_M05_All_Rebels_Die">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Remove_All_Objectives">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_ALL_OBJECTIVES</Reward_Type>
+		<Prereq>Tutorial_M05_All_Rebels_Die</Prereq>
+	</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M05_Destroy_Base_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT05_17</Reward_Param1>
+		<Prereq>Tutorial_M05_All_Rebels_Die</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_V_Destroy_The_Rebel_Base_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_V_Destroy_The_Rebel_Base</Reward_Param1>
+		<Prereq>Tutorial_M05_Destroy_Base_Done</Prereq>
+    </Event>
+		
+<!-- Stop Highlight Rebel Base -->
+	<Event Name="Tutorial_M05_Destroy_Base_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M05_All_Rebels_Die</Prereq>
+	</Event>
+
+<!-- Empire Loss: All empire units die -->
+	<Event Name="Tutorial_M05_All_Empire_Die">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Empire</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Prereq>Tutorial_M05_Begin</Prereq>
+	</Event>
+
+<!-- EMPIRE VICTORY: Set Flag -->
+	<Event Name="Tutorial_M05_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M05_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+</Story>

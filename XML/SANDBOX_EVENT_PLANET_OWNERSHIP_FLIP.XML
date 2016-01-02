@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Planet_Ownership_Flip_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+	</Event>
+	
+	<Event Name="Planet_Ownership_Flip_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Planet_Ownership_Flip_00</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PLANET_OWNERSHIP_FLIP_NOTIFICATION_00</Reward_Param1>
+	</Event>
+</Story>

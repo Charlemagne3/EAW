@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<Equations>
+
+	<Story_Empire_Trigger_Magic_Spawn_Pirates>
+		(Variable_Self.StoryTrigger {Parameter_Name = "ACT_2"} * (Variable_Self.StoryTrigger {Parameter_Name = "ACT_2_PIRATE_SPAWN_DISABLED"} == 0.0) +
+		Variable_Self.StoryTrigger {Parameter_Name = "ACT_3"} * (Variable_Self.StoryTrigger {Parameter_Name = "ACT_3_PIRATE_SPAWN_DISABLED"} == 0.0) +
+		Variable_Self.StoryTrigger {Parameter_Name = "ACT_4"} * (Variable_Self.StoryTrigger {Parameter_Name = "ACT_4_PIRATE_SPAWN_DISABLED"} == 0.0)) *
+		(Variable_Target.EnemyForce.HasSpaceForce == 0.0) *
+		(10000 > Variable_Target.FriendlyForce.SpaceTotalUnnormalized)
+	</Story_Empire_Trigger_Magic_Spawn_Pirates>
+
+	<Story_Empire_Is_Suitable_Falast_Spawn>
+		Function_Space_Contrast.Evaluate == 0
+	</Story_Empire_Is_Suitable_Falast_Spawn>
+
+	<!-- 
+	This is the backup case for not finding a space without Empire units.
+	Falast will just prefer to go to any Empire system with an interdictor and cut to the chase.
+	In the worst case, any system will be chosen.
+	-->
+	<Story_Empire_Is_Suitable_Falast_Backup_Spawn>
+		(Variable_Target.EnemyForce.HasSpaceUnitsBitfield {Parameter_Type = "Interdictor_Cruiser"} != 0)
+		+
+		1
+	</Story_Empire_Is_Suitable_Falast_Backup_Spawn>
+	
+
+</Equations>

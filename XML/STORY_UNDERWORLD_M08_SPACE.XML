@@ -1,0 +1,193 @@
+<?xml version="1.0" ?>
+
+
+<Story>
+
+<!-- Underworld Act II Mission 08: Rebel Eviction -->
+
+
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Underworld_A02M08_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Underworld_A02M08_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+	<Event Name="Underworld_A02M08_Turn_Off_Land_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_A02M08_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_A02M08_Disable_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+
+
+
+
+
+<!-- STARTING DIALOG -->
+
+
+
+	<!--
+		"Sir! Incoming Imperial taskforce!"
+	-->
+	<Event Name="Underworld_A02M08_Begin_Dialog_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UW_ACT02_G15_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>Rebel_Pilot_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+
+	<!--
+		"Excellent - Tyber's plan is working perfectly."
+	-->
+	<Event Name="Underworld_A02M08_Begin_Dialog_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UW_ACT02_G15_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>Urai_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_A02M08_Begin_Dialog_00</Prereq>
+	</Event>
+
+			<Event Name="Underworld_A02M09_Intro_Dialog_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_UW_ACT02_G15_10</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Underworld_A02M08_Begin_Dialog_01</Prereq>
+			</Event>
+
+			<Event Name="Underworld_A02M09_Intro_Dialog_02a">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>5</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_UW_ACT02_G15_11</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Underworld_A02M09_Intro_Dialog_01a</Prereq>
+			</Event>
+
+			<Event Name="Underworld_A02M09_Intro_Dialog_02b">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Underworld_A02M09_Intro_Dialog_02a</Prereq>
+			</Event>
+
+
+
+<!-- Give Mission Objectives -->
+
+	<Event Name="Underworld_A02M08_State_Misson_Goal_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_UW_ACT02_G15_13</Reward_Param1>
+		<Prereq>Underworld_A02M09_Intro_Dialog_02b</Prereq>
+	</Event>
+	
+
+
+
+
+
+
+
+<!-- All Rebels Destroyed -->
+
+	<Event Name="Underworld_A02M08_Destroy_All_Rebels">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+	</Event>
+
+			<Event Name="COMPLETE_OBJECTIVE_Destroy_All_Rebels">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_UW_ACT02_G15_13</Reward_Param1>
+				<Prereq>Underworld_A02M08_Destroy_All_Rebels</Prereq>
+			</Event>
+
+
+	<Event Name="Underworld_A02M08_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>Underworld_A02M08_Destroy_All_Rebels</Prereq>
+	</Event>
+
+			<Event Name="Underworld_A02M08_Re-Enable_Retreat">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_RETREAT</Reward_Type>
+				<Reward_Param1>UNDERWORLD</Reward_Param1>
+				<Reward_Param2>0</Reward_Param2>
+				<Prereq>Underworld_A02M08_Victory</Prereq>
+			</Event>
+
+	<Event Name="Underworld_A02M08_ReEnable_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Underworld_A02M08_Destroy_All_Rebels</Prereq>
+	</Event>
+
+	<Event Name="Underworld_A02M08_Victory_Achieved">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Underworld_Mission_08_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+
+
+
+
+
+	<!-- All Underworld Forces Defeated equals LOSS -->
+	
+	<Event Name="All_Fake_Empire_Stuff_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Prereq>Underworld_A02M08_Begin</Prereq>
+	</Event>
+
+
+
+
+</Story>

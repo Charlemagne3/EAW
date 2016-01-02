@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Tutorial_VI_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Tutorial_VI_Reveal_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_VI_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_VI_Lock_Controls_At_Start">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_VI_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_VI_Set_Skirmish_Rules">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SKIRMISH_RULES</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_VI_Begin</Prereq>
+	</Event>
+	
+   <!-- Turn off advisor -->
+   <Event Name="Tutorial_VI_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_VI_Begin</Prereq>
+   </Event>
+	
+<!-- 
+	 LINK_TACTICAL
+	 <Reward_Param1> = Planet name
+	 <Reward_Param2> = Planet location (space,land)
+	 <Reward_Param3> = Attacking faction
+	 <Reward_Param4> = Map name
+	 <Reward_Param5> = Defending faction
+	 <Reward_Param6> = Hero pathfinder name
+	 <Reward_Param7> = Tactical script name
+	 <Reward_Param8> = Use sandbox units
+	 <Reward_Param9> = Enable Prebattle Cinematic
+	 <Reward_Param10>= Start Scene Faded Out
+	 <Reward_Param11>= Start Scene Letterboxed
+	 <Reward_Param13>= don't show battle pending
+-->
+	
+	<Event Name="Tutorial_VI_Link_Tactical">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Endor</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Rebel</Reward_Param3>
+		<Reward_Param4>TM06_Land_Multiplayer.ted</Reward_Param4>
+		<Reward_Param5>Empire</Reward_Param5>
+		<Reward_Param7>Story_Plots_Tutorial_M06_LAND.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Reward_Param13>0</Reward_Param13> <!-- don't show battle pending dialog -->
+		<Prereq>Tutorial_VI_Reveal_Tatooine</Prereq>
+      <Branch>BRANCH_TUTORIAL_M06</Branch>
+	</Event>
+
+   <!-- Wait until the battle summary dialog is closed -->
+	<Event Name="Tutorial_VI_Returned_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>battle_end_closed</Event_Param1>
+		<Prereq>Tutorial_VI_Link_Tactical</Prereq>
+      <Branch>BRANCH_TUTORIAL_M06</Branch>
+	</Event>
+
+
+
+<!-- Tutorial failed -->
+
+   <!-- Detect mission being lost. Display text telling the player to try again -->
+   <!--
+	<Event Name="Tutorial_VI_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Tutorial_M06_LAND.XML</Event_Param1>
+      <Prereq>Tutorial_VI_Returned_01</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+	-->
+
+   <!-- Re-enable mission -->
+   <!--
+	<Event Name="Tutorial_VI_Failed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>RESET_BRANCH</Reward_Type>
+      <Reward_Param1>BRANCH_TUTORIAL_M01</Reward_Param1>
+		<Prereq>Tutorial_VI_Failed</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+	-->
+
+
+
+<!-- Mission ends successfully -->
+
+<!--
+	<Event Name="Tutorial_VI_Completed">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Tutorial_M06_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+      <Prereq>Tutorial_VI_Returned_01</Prereq>
+	</Event>
+-->
+
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_VI_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_SIX</Reward_Param1>
+	<Prereq>Tutorial_VI_Returned_01</Prereq>
+</Event>
+
+<!-- Link to next tutorial -->
+
+   <Event Name="Tutorial_VI_Next_Tutorial_00">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_6_COMPLETE</Reward_Param1>
+      <Prereq>Tutorial_VI_Returned_01</Prereq>
+   </Event>
+
+   <Event Name="Tutorial_VI_Next_Tutorial_01">
+      <Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>Continue_Tutorial</Event_Param1>
+      <Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+      <Reward_Param1>Tutorial_Seven</Reward_Param1>
+      <Reward_Param2>0</Reward_Param2>
+   </Event>
+
+</Story>

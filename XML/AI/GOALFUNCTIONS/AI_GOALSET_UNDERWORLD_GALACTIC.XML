@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+
+<FunctionSet>
+
+	<Corrupt_Planet>
+		<Goal>Corrupt_Planet</Goal>
+		<Function>Should_Corrupt_Planet</Function>
+	</Corrupt_Planet>
+
+	<Black_Market_Purchase>
+		<Goal>Black_Market_Purchase</Goal>
+		<Function>Should_Make_Black_Market_Purchase</Function>
+	</Black_Market_Purchase>
+	
+	<Hack_Super_Weapon>
+		<Goal>Hack_Super_Weapon</Goal>
+		<Function>Should_Hack_Super_Weapon</Function>
+	</Hack_Super_Weapon>
+	
+	<Sabotage_Planet>
+		<Goal>Sabotage_Planet</Goal>
+		<Function>Should_Sabotage_Planet</Function>
+	</Sabotage_Planet>
+
+	<Build_Underworld_Palace>
+		<Goal>Build_Underworld_Palace</Goal>
+		<Function>Should_Build_Underworld_Palace</Function>
+	</Build_Underworld_Palace>
+	
+	<Build_Underworld_Barracks>
+		<Goal>Build_Underworld_Barracks</Goal>
+		<Function>Should_Build_Underworld_Barracks</Function>
+	</Build_Underworld_Barracks>
+	
+	<Build_Underworld_Vehicle_Factory>
+		<Goal>Build_Underworld_Vehicle_Factory</Goal>
+		<Function>Should_Build_Underworld_Vehicle_Factory</Function>
+	</Build_Underworld_Vehicle_Factory>
+	
+	<Build_Underworld_Droid_Works>
+		<Goal>Build_Underworld_Droid_Works</Goal>
+		<Function>Should_Build_Underworld_Droid_Works</Function>
+	</Build_Underworld_Droid_Works>
+
+	<Build_Initial_Starbase_Only>
+		<Goal>Build_Initial_Starbase_Only</Goal>
+		<Function>Needs_Initial_Starbase</Function>
+	</Build_Initial_Starbase_Only>
+
+	<Build_Initial_Groundbase_Only>
+		<Goal>Build_Initial_Groundbase_Only</Goal>
+		<Function>Needs_Initial_Groundbase</Function>
+	</Build_Initial_Groundbase_Only>
+	
+	<Build_Underworld_Starbase>
+		<Goal>Upgrade_Starbase</Goal>
+		<Function>Should_Underworld_Build_Starbase</Function>
+	</Build_Underworld_Starbase>	
+
+</FunctionSet>

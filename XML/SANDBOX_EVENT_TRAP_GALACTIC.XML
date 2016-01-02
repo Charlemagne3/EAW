@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Trap_Galactic_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Trap_Galactic_Tag_00</Story_Tag>
+	</Event>
+	
+	<!-- Branch for missed opportunity -->
+		<Event Name="Trap_Galactic_01">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Prereq>Trap_Galactic_00</Prereq>
+			<Event_Param2>TRAP_GALACTIC_NOTIFICATION_00</Event_Param2>
+			<Story_Chapter>1</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Trap_Galactic_Tag_00</Reward_Param1>
+		</Event>
+	
+	<Event Name="Trap_Galactic_02">
+		<Event_Type>STORY_LAND_TACTICAL</Event_Type>
+		<Prereq>Trap_Galactic_00</Prereq>
+	</Event>
+	
+	<Event Name="Trap_Galactic_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Trap_Galactic_02</Prereq>
+		<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+		<Reward_Param1>Trap_Galactic_Tag_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Trap_Galactic_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Trap_Galactic_03</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>TRAP_GALACTIC_NOTIFICATION_01</Reward_Param1>
+	</Event>	
+	
+	<Event Name="Trap_Galactic_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Prereq>Trap_Galactic_04</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>TRAP_GALACTIC_NOTIFICATION_02</Reward_Param1>
+	</Event>
+	
+</Story>

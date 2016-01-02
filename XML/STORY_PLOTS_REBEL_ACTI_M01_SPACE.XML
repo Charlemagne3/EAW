@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+
+
+<Story_Mode_Plots>
+	<Lua_Script>Story_Rebel_ActI_M01_SPACE</Lua_Script>
+	<Active_Plot>Story_Rebel_ActI_M01_SPACE.XML</Active_Plot>
+</Story_Mode_Plots>

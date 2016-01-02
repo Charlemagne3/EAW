@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- IMPORTANT NOTE (Oksana [4/22/2005]):
+  
+ -  The phase name should be a valid weather type specified in LandModeClass::tLandWeather for weather types.
+    (for example see WeatherModifiers.xml). This is important for the weather modifiers to be applied properly.
+    All misspelled/incorrect names will be defaulted to "CLEAR" weather type.
+    Use only following values: [  CLEAR,  ASH,  RAIN,  SANDSTORM,  SNOW  ]
+   
+ -  Attribute "emitter_name": if you don't have an emitter, do not set emitter="", just skip this attribute altogether.   
+	Make sure your attribute doesn't have any extra whitespaces, since they will be read incorrectly
+	by our XML parser (i.e. emitter_name = "blah-blah"  is incorrect due to space before and after "=").	
+	
+ -  Maps will reference the scenarios by their names, so be carefull when changing those.
+	
+-->					
+<Weather_Scenarios>
+	
+	<Weather_Scenario name="Default_Always_Clear">
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>20</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+		</Phase>		
+		
+	</Weather_Scenario>
+	
+	
+	<Weather_Scenario name="Rain_Random" emitter_name="p_rain_med00.alo">
+		
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>
+		
+		<Phase name="RAIN">
+			<Emitter_Intensity>0.5</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>5</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.2</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="RAIN">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>90</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="RAIN">
+			<Emitter_Intensity>0.25</Emitter_Intensity>
+			<Lightning_Intensity>0.25</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>50</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>
+
+		<Phase name="RAIN">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.5</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>40</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Rain_Constant" emitter_name="p_rain_med00.alo">
+		
+		<Phase name="RAIN">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Blizzard_Random" emitter_name="P_Snowblizzard.alo">
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>0.2</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>50</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>60</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+		</Phase>
+
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>30</Duration>
+			<Ease_Out_Duration>2</Ease_Out_Duration>
+		</Phase>
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Blizzard_Constant" emitter_name="P_Snowblizzard.alo">
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+
+	<Weather_Scenario name="Snow_Random" emitter_name="P_SnowSleet.alo">
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>0.05</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>20</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+		</Phase>
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>20</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>60</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+		</Phase>
+
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Snow_Constant" emitter_name="P_SnowSleet.alo">
+		
+		<Phase name="SNOW">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Ash_Random" emitter_name="p_rain_of_ash.alo">
+		
+		<Phase name="ASH">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>20</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>
+
+		<Phase name="ASH">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>40</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>
+
+		<Phase name="ASH">
+			<Emitter_Intensity>0.05</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>20</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>40</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+		</Phase>
+	</Weather_Scenario>
+
+
+	<Weather_Scenario name="Ash_Constant" emitter_name="p_rain_of_ash.alo">
+		
+		<Phase name="ASH">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+	<Weather_Scenario name="Sandstorm_Random" emitter_name="p_dust_storm.alo">
+		
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>5</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>0.9</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>5</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.2</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>50</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>0.85</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>60</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>50</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>0.9</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>40</Duration>
+			<Ease_Out_Duration>10</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.2</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+		
+		<Phase name="CLEAR">
+			<Emitter_Intensity>0.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>10</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.0</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+	</Weather_Scenario>
+
+
+	<Weather_Scenario name="Sandstorm_Tutorial" emitter_name="p_dust_storm.alo">
+
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>1000</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+			<Fog_Plane_Interpolation_Alpha>0.3</Fog_Plane_Interpolation_Alpha>
+		</Phase>
+	
+	</Weather_Scenario>
+
+
+	<Weather_Scenario name="Sandstorm_Constant" emitter_name="p_dust_storm.alo">
+		
+		<Phase name="SANDSTORM">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.0</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+
+<!-- CUSTOM WEATHER FOR SPECIFIC PLANETS -->
+
+	<Weather_Scenario name="Rain_Jabiim" emitter_name="p_rain_med00.alo">
+		
+		<Phase name="RAIN">
+			<Emitter_Intensity>1.0</Emitter_Intensity>
+			<Lightning_Intensity>0.1</Lightning_Intensity>
+			<Duration>500</Duration>
+			<Ease_Out_Duration>5</Ease_Out_Duration>
+		</Phase>		
+
+	</Weather_Scenario>
+
+
+
+
+
+</Weather_Scenarios>

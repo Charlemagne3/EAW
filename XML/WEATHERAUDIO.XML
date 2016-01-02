@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+
+<WeatherAudio>
+
+	<!--                       -->
+	<!-- WEATHER AUDIO SECTION -->
+	<!--                       -->
+
+
+	<!-- Weather Clear (None) -->
+
+		<Weather_SFXEvent_Loop>         CLEAR, 0.00, None                                                </Weather_SFXEvent_Loop>
+
+		<Weather_SFXEvent_Intermittent> CLEAR, 0.00, None, 0.0, 0.0													 </Weather_SFXEvent_Intermittent>
+	
+
+
+
+
+	<!-- Weather Rain Loops-->            <!-- Weather type, intensity range, SFX event name-->
+
+		<!-- Heavy Rain -->
+		<Weather_SFXEvent_Loop>         RAIN, 0.75, Weather_Ambient_Heavy_Rain_Loop                     </Weather_SFXEvent_Loop> 
+
+		<!-- Medium Rain -->
+		<Weather_SFXEvent_Loop>         RAIN, 0.50, Weather_Ambient_Medium_Rain_Loop                    </Weather_SFXEvent_Loop>
+
+		<!-- Light Medium Rain -->
+		<Weather_SFXEvent_Loop>         RAIN, 0.25, Weather_Ambient_Light_Medium_Rain_Loop            </Weather_SFXEvent_Loop>
+
+		<!-- Light Rain -->
+		<Weather_SFXEvent_Loop>         RAIN, 0.01, Weather_Ambient_Light_Rain_Loop                     </Weather_SFXEvent_Loop>
+
+		<!-- No Rain -->
+		<Weather_SFXEvent_Loop>         RAIN, 0.00, None                                                </Weather_SFXEvent_Loop>
+
+	<!-- Weather Rain Intermittents -->     <!-- Weather type, intensity range, SFX event name, min seconds, max seconds-->
+
+		<!-- Heavy Rain -->
+		<Weather_SFXEvent_Intermittent> RAIN, 0.66, Weather_Ambient_Heavy_Rain_Intermittent, 8.0, 12.0   </Weather_SFXEvent_Intermittent>
+
+		<!-- Medium Rain -->
+		<Weather_SFXEvent_Intermittent> RAIN, 0.33, Weather_Ambient_Medium_Rain_Intermittent, 10.0, 15.0 </Weather_SFXEvent_Intermittent>
+
+		<!-- Light Rain -->
+		<Weather_SFXEvent_Intermittent> RAIN, 0.01, Weather_Ambient_Light_Rain_Intermittent, 10.0, 20.0  </Weather_SFXEvent_Intermittent>
+
+		<!-- No Rain -->
+		<Weather_SFXEvent_Intermittent> RAIN, 0.00, None, 0.0, 0.0                                      </Weather_SFXEvent_Intermittent>
+
+
+
+	<!-- Weather Snow Loops -->
+
+		<!-- Heavy Snow -->
+		<Weather_SFXEvent_Loop>         SNOW, 0.75, Weather_Ambient_Heavy_Snow_Loop                     </Weather_SFXEvent_Loop> 
+
+		<!-- Medium Snow -->
+		<Weather_SFXEvent_Loop>         SNOW, 0.50, Weather_Ambient_Medium_Snow_Loop                    </Weather_SFXEvent_Loop>
+
+		<!-- Light Medium Snow -->
+		<Weather_SFXEvent_Loop>         SNOW, 0.25, Weather_Ambient_Light_Medium_Snow_Loop            	</Weather_SFXEvent_Loop>
+
+		<!-- Light Snow -->
+		<Weather_SFXEvent_Loop>         SNOW, 0.01, Weather_Ambient_Light_Snow_Loop                     </Weather_SFXEvent_Loop>
+
+		<!-- No Snow -->
+		<Weather_SFXEvent_Loop>         SNOW, 0.00, Weather_Ambient_Clear_Snow_Loop                    </Weather_SFXEvent_Loop>
+
+	<!-- Weather Snow Intermittents -->
+
+		<!-- Heavy Snow -->
+		<Weather_SFXEvent_Intermittent> SNOW, 0.66, Weather_Ambient_Heavy_Snow_Intermittent, 5.0, 10.0   </Weather_SFXEvent_Intermittent>
+
+		<!-- Medium Snow -->
+		<Weather_SFXEvent_Intermittent> SNOW, 0.33, Weather_Ambient_Medium_Snow_Intermittent, 5.0, 10.0 </Weather_SFXEvent_Intermittent>
+
+		<!-- Light Snow -->
+		<Weather_SFXEvent_Intermittent> SNOW, 0.01, Weather_Ambient_Light_Snow_Intermittent, 5.0, 10.0  </Weather_SFXEvent_Intermittent>
+
+		<!-- No Snow -->
+		<Weather_SFXEvent_Intermittent> SNOW, 0.00, None, 0.0, 0.0                                      </Weather_SFXEvent_Intermittent>
+
+
+
+	<!-- Weather Sandstorm Loops -->
+
+		<!-- Heavy Sandstorm -->
+		<Weather_SFXEvent_Loop>         SANDSTORM, 0.75, Weather_Ambient_Heavy_Sandstorm_Loop           </Weather_SFXEvent_Loop> 
+
+		<!-- Medium Sandstorm -->
+		<Weather_SFXEvent_Loop>         SANDSTORM, 0.50, Weather_Ambient_Medium_Sandstorm_Loop          </Weather_SFXEvent_Loop>
+
+		<!-- Light Medium Sandstorm -->
+		<Weather_SFXEvent_Loop>         SANDSTORM, 0.25, Weather_Ambient_Light_Medium_Sandstorm_Loop    </Weather_SFXEvent_Loop>
+
+		<!-- Light Sandstorm -->
+		<Weather_SFXEvent_Loop>         SANDSTORM, 0.01, Weather_Ambient_Light_Sandstorm_Loop           </Weather_SFXEvent_Loop>
+
+		<!-- No Sandstorm -->
+		<Weather_SFXEvent_Loop>         SANDSTORM, 0.00, Weather_Ambient_Light_Sandstorm_Loop         </Weather_SFXEvent_Loop>
+
+
+	<!-- Weather Sandstorm Intermittents -->
+
+		<!-- Heavy Sandstorm -->
+		<Weather_SFXEvent_Intermittent> SANDSTORM, 0.66, Weather_Ambient_Heavy_Sandstorm_Intermittent, 5.0, 10.0   </Weather_SFXEvent_Intermittent>
+
+		<!-- Medium Sandstorm -->
+		<Weather_SFXEvent_Intermittent> SANDSTORM, 0.33, Weather_Ambient_Medium_Sandstorm_Intermittent, 5.0, 10.0 </Weather_SFXEvent_Intermittent>
+
+		<!-- Light Sandstorm -->
+		<Weather_SFXEvent_Intermittent> SANDSTORM, 0.01, Weather_Ambient_Light_Sandstorm_Intermittent, 5.0, 10.0  </Weather_SFXEvent_Intermittent>
+
+		<!-- No Sandstorm -->
+		<Weather_SFXEvent_Intermittent> SANDSTORM, 0.00, None, 0.0, 0.0                                           </Weather_SFXEvent_Intermittent>
+
+
+
+	<!-- Weather Ash Loops -->
+
+		<!-- Heavy Ash -->
+		<Weather_SFXEvent_Loop>         ASH, 0.66, Weather_Ambient_Heavy_Ash_Loop                     </Weather_SFXEvent_Loop> 
+
+		<!-- Medium Ash -->
+		<Weather_SFXEvent_Loop>         ASH, 0.33, Weather_Ambient_Medium_Ash_Loop                    </Weather_SFXEvent_Loop>
+
+		<!-- Light Ash -->
+		<Weather_SFXEvent_Loop>         ASH, 0.01, Weather_Ambient_Light_Ash_Loop                     </Weather_SFXEvent_Loop>
+
+		<!-- No Ash -->
+		<Weather_SFXEvent_Loop>         ASH, 0.00, Weather_Ambient_Clear_Ash_Loop                    </Weather_SFXEvent_Loop>
+
+	<!-- Weather Ash Intermittents -->
+
+		<!-- Heavy Ash -->
+		<Weather_SFXEvent_Intermittent> ASH, 0.66, Weather_Ambient_Heavy_Ash_Intermittent, 3.0, 8.0   </Weather_SFXEvent_Intermittent>
+
+		<!-- Medium Ash -->
+		<Weather_SFXEvent_Intermittent> ASH, 0.33, Weather_Ambient_Medium_Ash_Intermittent, 4.0, 8.0 </Weather_SFXEvent_Intermittent>
+
+		<!-- Light Ash -->
+		<Weather_SFXEvent_Intermittent> ASH, 0.01, Weather_Ambient_Light_Ash_Intermittent, 3.0, 7.0  </Weather_SFXEvent_Intermittent>
+
+		<!-- No Ash -->
+		<Weather_SFXEvent_Intermittent> ASH, 0.00, None, 0.0, 0.0                                     </Weather_SFXEvent_Intermittent>
+
+
+	<!--                           -->
+	<!-- END WEATHER AUDIO SECTION -->
+	<!--                           -->
+
+
+	<!--                           -->
+	<!-- AMBIENT MAP AUDIO SECTION -->
+	<!--                           -->
+	
+
+	<!-- Temperate Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		TEMPERATE, 	Weather_Ambient_Clear_Temperate_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Arctic Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		ARCTIC, 		Weather_Ambient_Clear_Ice_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Desert Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		DESERT, 		Weather_Ambient_Clear_Desert_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Forest Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		FOREST, 		Weather_Ambient_Clear_Temperate_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Swamp Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		SWAMP, 		Weather_Ambient_Clear_Swamp_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Volcanic Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		VOLCANIC, 	Weather_Ambient_Clear_Volcanic_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+	<!-- Urban Map Ambient Intermittents (when weather is clear) -->
+	<Ambient_SFXEvent_Intermittent>		URBAN, 		Weather_Ambient_Clear_Urban_Intermittent,	4.0,	8.0		</Ambient_SFXEvent_Intermittent>
+
+
+	<!--                               -->
+	<!-- END AMBIENT MAP AUDIO SECTION -->
+	<!--                               -->
+
+</WeatherAudio>

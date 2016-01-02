@@ -1,0 +1,1253 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- **** PRE-STROY SETUP ****  -->
+
+	<Event Name="Empire_M03_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M03_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+   <Event Name="Empire_M03_Turn_Off_Space_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Empire_M03_Begin</Prereq>
+   </Event>
+
+	<Event Name="Empire_M03_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M03_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M03_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+	
+	<!-- jdg 8/22/05 removing player reinforcement ability here -->
+	<Event Name="Empire_A01M03_Deny_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<!-- <Reward_Param2>EMPIRE</Reward_Param2> -->
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+
+
+<!-- INTRO DIALOG SEQUENCE -->
+
+		<Event Name="Empire_A01M03_Intro_Wait">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Event_Param2>M2_INTRO_DIALOGUE_GO</Event_Param2>
+			<Prereq>Empire_M03_Begin</Prereq>
+		</Event>
+		
+		<!-- No Command Bar movie as we are doing cinematics now -->
+
+		<!-- Show Fetts intro text on screen -->
+		<Event Name="Empire_A01M03_Intro_Fett_TEXT">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_06</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Prereq>Empire_A01M03_Intro_Wait</Prereq>
+		</Event>
+		<!-- Play Fetts speech -->
+		<Event Name="Empire_A01M03_Intro_Fett_SPEECH">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>SPEECH</Reward_Type>
+			<Reward_Param1>EMPIRE_ACT01_MISSION_THREE_06</Reward_Param1>
+			<Prereq>Empire_A01M03_Intro_Fett_TEXT</Prereq>
+		</Event>
+		<!-- Remove Fetts intro text from the screen -->	
+		<Event Name="Empire_A01M03_Intro_Fett_END">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_THREE_06</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_06</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_A01M03_Intro_Fett_SPEECH</Prereq>
+		</Event>
+		
+		
+		
+		<!-- Wait for Lua to finish handling Fetts intro 	
+		<Event Name="Empire_A01M03_Lua_Wait_Fett_Speech">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Event_Param2>LUA_FETT_SPEECH_HANDLED</Event_Param2>
+			<Prereq>Empire_M03_Begin</Prereq>
+		</Event>-->
+
+		<!-- Officer Speaks -->
+		<!-- Show the officer text on screen -->
+		<Event Name="Empire_A01M03_Intro_Officer_TEXT">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_07</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Prereq>Empire_A01M03_Intro_Fett_END</Prereq>
+		</Event>
+		<!-- Play the officer speech -->
+		<Event Name="Empire_A01M03_Intro_Officer_SPEECH">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>SPEECH</Reward_Type>
+			<Reward_Param1>EMPIRE_ACT01_MISSION_THREE_07</Reward_Param1>
+			<Prereq>Empire_A01M03_Intro_Officer_TEXT</Prereq>
+		</Event>
+		<!-- Remove the officer text from the screen when the speech finishes -->
+		<Event Name="Empire_A01M03_Intro_Officer_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_THREE_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_A01M03_Intro_Officer_SPEECH</Prereq>
+		</Event>
+		
+<!-- TASK line to keep fett alive -
+TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_63  
+Task: Use Boba Fett to destroy all the sensor pods.-->		
+		<Event Name="Empire_A01M03_TASK_Use_Fett_Against_Sensors">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_63</Reward_Param1>
+			<Reward_Param2>5</Reward_Param2>
+			<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+			<Prereq>Empire_A01M03_Intro_Officer_End</Prereq>
+		</Event>
+		
+		<Event Name="Empire_A01M03_AddObjective_Fett_Must_Survive">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+			<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_67</Reward_Param1>
+			<Prereq>Empire_A01M03_Intro_Officer_End</Prereq>
+		</Event>
+		
+		<Event Name="Empire_A01M03_AddObjective_Destroy_Sensors">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+			<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_66</Reward_Param1>
+			<Prereq>Empire_A01M03_Intro_Officer_End</Prereq>
+		</Event>
+
+
+<!-- FAKE Trigger to keep voice below from firing.  Remove once the LUA script is added -->
+
+			<Event Name="Empire_A01M03_Fake_Dialog_Trigger">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Prereq>Empire_A01M03_Fake_Dialog_Trigger</Prereq>
+			</Event>
+
+
+
+
+<!-- FETT TOO CLOSE TO PIRATE BASE DIALOG SEQUENCE 
+
+-->
+			<Event Name="Empire_A01M03_Too_Close_To_Base">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>BASE_PROX_WARNING</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+				<Perpetual>True</Perpetual>
+			</Event>
+	
+				<!-- Fett Speaks -->
+				<Event Name="Empire_A01M03_Too_Close_Dialog_00">
+					<Event_Type>STORY_ELAPSED</Event_Type>
+					<Event_Param1>2</Event_Param1>
+					<Reward_Type>COMMANDBAR_MOVIE</Reward_Type>
+					<Reward_Param1>Boba_Fett_Loop</Reward_Param1>
+					<Prereq>Empire_A01M03_Too_Close_To_Base</Prereq>
+				</Event>
+		
+				<Event Name="Empire_A01M03_Too_Close_Dialog_01">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_10</Reward_Param1>
+					<Reward_Param2>-1</Reward_Param2>
+					<Prereq>Empire_A01M03_Too_Close_Dialog_00</Prereq>
+				</Event>
+
+					<Event Name="Empire_A01M03_Too_Close_Dialog_01a">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>SPEECH</Reward_Type>
+						<Reward_Param1>EMPIRE_ACT01_MISSION_THREE_10</Reward_Param1>
+						<Prereq>Empire_A01M03_Too_Close_Dialog_00</Prereq>
+					</Event>
+
+				<Event Name="Empire_A01M03_Too_Close_Dialog_02">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>EMPIRE_ACT01_MISSION_THREE_10</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_10</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Empire_A01M03_Too_Close_Dialog_01a</Prereq>
+				</Event>
+				
+				<Event Name="Empire_A01M03_Too_Close_Dialog_02_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Empire_A01M03_Too_Close_Dialog_02</Prereq>
+				</Event>
+				
+		
+		
+<!-- disable events when player trips alarm 
+disable:
+Empire_A01M03_Bad_Reinforce_Dialog_00
+ on Empire_A01M03_Alarm_On-->		
+		<Event Name="Empire_A01M03_Disable_Bad_Reinforce_Dialog_00">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+			<Reward_Param1>Empire_A01M03_Bad_Reinforce_Dialog_00</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Empire_A01M03_Alarm_On</Prereq>
+		</Event>
+			
+				
+<!-- pirate dialog for when player is successful with Fett and is approaching the base 
+			<Event Name="Empire_A01M03_Fett_Success_Player_Approaching">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>BASE_PROX_POST_FETT_SUCCESS</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+			</Event>-->
+			
+			
+	
+			
+							
+<!-- jdg 8/24/05 adding pirate dialog for when pirate spawns and flees -->
+		<Event Name="Empire_A01M03_PirateSpawns">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Event_Param2>PIRATE_CAPTAIN_SPAWNS</Event_Param2>
+			<Prereq>Empire_M03_Begin</Prereq>
+		</Event>	
+		
+		<!--COMPLETING ingame objective text for attacking pirate base
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_68
+			Destroy the Pirate's Starbase to flush out their Leader. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Completed_PirateLeader">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_68</Reward_Param1>
+				<Prereq>Empire_A01M03_PirateSpawns</Prereq>
+			</Event>
+			
+	<!-- jdg disabling the Fett "Dont let him escape" dialog to prevent overlap -->		
+			<Event Name="Empire_A01_M03_Misson_Goal_Completed_PirateLeader_Disable_Fett_Dialog">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_BRANCH</Reward_Type>
+				<Reward_Param1>BRANCH_Pirate_Escaping_Dialog</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Empire_A01_M03_Misson_Goal_Completed_PirateLeader</Prereq>
+			</Event>
+	
+		
+<!-- TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14
+Boba Fett: There’s the pirate leader – don't let him escape!-->
+	<Event Name="Empire_A01M03_Fett_Sees_Pirate_Captain">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_14</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_PirateSpawns</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Fett_Sees_Pirate_Captain_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_14</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Fett_Sees_Pirate_Captain</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Fett_Sees_Pirate_Captain_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Fett_Sees_Pirate_Captain_RemoveText</Prereq>
+			</Event>		
+
+				
+							
+<!-- After Fett speaks, do the pirate captain dialog-->
+		
+<!-- TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_47
+Pirate Leader: Angle the deflector shields while the navi-computer 
+makes the calculations for hyperspace.  -->
+	<Event Name="Empire_A01M03_Pirate_Captain_Dialog_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_47</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_47</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Fett_Sees_Pirate_Captain_RemoveMovie</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Pirate_Captain_Dialog_01_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_47</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_47</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Pirate_Captain_Dialog_01</Prereq>
+			</Event>
+		
+	
+<!-- TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_48
+Pirate: Sir, we can't jump until we clear these asteroids. -->
+	<Event Name="Empire_A01M03_Pirate_Buddy_Dialog_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_48</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_48</Reward_Param8>
+		<Reward_Param9>Pirate2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Pirate_Captain_Dialog_01_RemoveText</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Pirate_Buddy_Dialog_01_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_48</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_48</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Fett_Sees_Pirate_Captain</Prereq>
+			</Event>
+
+
+<!-- TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_49
+Pirate Leader: Then get us clear! -->
+	<Event Name="Empire_A01M03_Pirate_Captain_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_49</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_49</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Pirate_Buddy_Dialog_01_RemoveText</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Pirate_Captain_Dialog_02_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_49</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_49</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Pirate_Captain_Dialog_02</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01M03_Pirate_Captain_Dialog_02_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Pirate_Captain_Dialog_02_RemoveText</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01_M03_Misson_Goal_Completed_PirateLeader_Enable_Fett_Dialog">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>RESET_BRANCH</Reward_Type>
+				<Reward_Param1>BRANCH_Pirate_Escaping_Dialog</Reward_Param1>
+				<Prereq>Empire_A01M03_Pirate_Captain_Dialog_02_Remove_Movie</Prereq>
+			</Event>
+
+						
+<!-- adding	the radar flag event for the pirate leader here -->
+		<Event Name="Empire_A01M03_Flag_the_Pirate_Leader_ON">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Event_Param2>FLAG_THE_LEADER</Event_Param2>
+			<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+			<Reward_Param1>Pirate_Frigate_Leader</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>		
+			<Reward_Param3>10</Reward_Param3>		
+			<Prereq>Empire_M03_Begin</Prereq>
+		</Event>
+		
+			<!--ADDING ingame objective text for attacking pirate leader 
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69
+			Attack the Pirate Leader until he submits. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Added_PirateLeader">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69</Reward_Param1>
+				<Prereq>Empire_A01M03_Flag_the_Pirate_Leader_ON</Prereq>
+			</Event>
+			
+			
+
+
+<!-- SATELLITE ALERT DIALOG SEQUENCE -->
+
+<Event Name="Empire_A01M03_Sat_Alert">
+	<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>SENSOR_RESPONSE</Event_Param2>
+	<Prereq>Empire_M03_Begin</Prereq>
+	<!-- <Perpetual>True</Perpetual> -->
+</Event>
+
+<!-- Fett Speaks 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_12
+Boba Fett: I’ve got to take out that satellite before it triggers an alert.  -->
+	<Event Name="Empire_A01M03_Sat_Alert_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_12</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Sat_Alert</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Sat_Alert_Dialog_00_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_12</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_12</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Sat_Alert_Dialog_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Sat_Alert_Dialog_00_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Sat_Alert_Dialog_00_RemoveText</Prereq>
+			</Event>					
+				
+				
+				
+				
+				
+
+
+<!-- jdg 8/22/05 - adding in sensor kill tally messages here -->
+
+	<Event Name="Empire_M03_First_Sensor_Destroyed_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_1_Sensor_Destroyed</Event_Param2>
+	</Event>
+	
+	<Event Name="Empire_M03_First_Sensor_Destroyed">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_40</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_40</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Sat_Alert_Dialog_00_RemoveMovie Empire_M03_First_Sensor_Destroyed_AI_Notification</Prereq>
+	</Event>
+	
+			<Event Name="Empire_M03_First_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_40</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_40</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_First_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_First_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_First_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+<!-- jdg 9/04/05 - adding in Boba Fett Seismic Charge HINT message here 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_59
+Hint: Use Boba Fett's Seismic Charge to destroy entire groups of enemy fighters.
+Boba Fett: I've got a little surprise for you.  -->
+
+	<Event Name="Empire_M03_HINT_Use_Seismic_Charge"> 
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_59</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_38</Reward_Param8>
+		<Prereq>Empire_A01M03_TASK_Use_Fett_Against_Sensors</Prereq>
+	</Event>
+	
+					<Event Name="Empire_M03_HINT_FLASH_Seismic_Charge">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>HARMONIC_BOMB</Reward_Param1>
+                        <Reward_Param2>flash_fett_harmonic_bomb</Reward_Param2>
+                        <Prereq>Empire_M03_HINT_Use_Seismic_Charge</Prereq>
+					 </Event>
+					 
+					 <Event Name="Empire_M03_HINT_REMOVEFLASH_Seismic_Charge">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>3</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_fett_harmonic_bomb</Reward_Param1>
+                        <Prereq>Empire_M03_HINT_FLASH_Seismic_Charge</Prereq>
+					 </Event>
+	
+	
+	
+			
+			
+			
+			
+	<Event Name="Empire_M03_Second_Sensor_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_2_Sensors_Destroyed</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_41</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Second_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_41</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_41</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Second_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Second_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Second_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+	<Event Name="Empire_M03_Third_Sensor_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_3_Sensors_Destroyed</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_42</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_42</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Third_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_42</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_42</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Third_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Third_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Third_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+	<Event Name="Empire_M03_Forth_Sensor_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_4_Sensors_Destroyed</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_42</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_42</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Forth_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_42</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_42</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Forth_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Forth_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Forth_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+	<Event Name="Empire_M03_Fifth_Sensor_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_5_Sensors_Destroyed</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_43</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_43</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Fifth_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_43</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_43</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Fifth_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Fifth_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Fifth_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+	<Event Name="Empire_M03_Sixth_Sensor_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Total_6_Sensors_Destroyed</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_44</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_44</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Sixth_Sensor_Destroyed_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_44</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_44</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Sixth_Sensor_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Sixth_Sensor_Destroyed_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Sixth_Sensor_Destroyed_Remove_Text</Prereq>
+			</Event>
+			
+			
+			
+<!-- JDG - this is fetts dialog regarding the hardpoints on the pirate base
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_64
+Boba Fett: Take out those turrets!  Target the asteroid's hardpoints!-->
+<Event Name="Empire_M03_Fett_Hint_Hardpoints">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FETT_TALKS_ABOUT_HARDPOINTS</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_64</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_64</Reward_Param8> <!-- xxx -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+	
+			<Event Name="Empire_M03_Fett_Hint_Hardpoints_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_64</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_64</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M03_Fett_Hint_Hardpoints</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Fett_Hint_Hardpoints_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_M03_Fett_Hint_Hardpoints_Remove_Text</Prereq>
+			</Event>
+			
+<!-- Proximity to Space Station Warning 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_46
+Pirate Leader: An Imperial fleet?  How did they find us?  Prepare my shuttle!-->
+	<Event Name="Empire_A01M03_Fett_Success_Player_Approaching_Dialog_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_46</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_46</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M03_Fett_Hint_Hardpoints_Remove_Text</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Fett_Success_Player_Approaching_Dialog_00_RemoveText">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_46</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_46</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Fett_Success_Player_Approaching_Dialog_00</Prereq>
+			</Event>
+			
+			<Event Name="Empire_A01M03_Fett_Success_Player_Approaching_Dialog_00_RemoveMovie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Fett_Success_Player_Approaching_Dialog_00_RemoveText</Prereq>
+			</Event>
+			
+			
+			
+			
+
+
+<!-- All Satellites destroyed by Fett Dialog Sequence -->
+			<Event Name="Empire_A01M03_Sat_Destroyed">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>ALL_SENSORS_DOWN</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+			</Event>
+			
+				<!--COMPLETING ingame objective text for destroying sensors here 
+				TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_66
+				Destroy all Sensor Nodes. -->
+				<Event Name="Empire_A01_M03_Misson_Goal_Complete_SensorsDestroyed">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+					<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_66</Reward_Param1>
+					<Prereq>Empire_A01M03_Sat_Destroyed</Prereq>
+				</Event>
+			
+
+	<!-- Fett Speaks 
+	TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_13
+	Boba Fett: The satellites are vaporized.  You can move in now. -->
+	<Event Name="Empire_A01M03_Sat_Destroyed_Dialog_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_13</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Sat_Destroyed</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Sat_Destroyed_Dialog_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_13</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_13</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Sat_Destroyed_Dialog_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Sat_Destroyed_Dialog_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Sat_Destroyed_Dialog_00_Remove_Text</Prereq>
+			</Event>
+			
+					
+	<!--ADDING ingame objective text for destroying pirate base 
+	TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_68
+	Destroy the Pirate's Starbase to flush out their Leader. -->
+	<Event Name="Empire_A01_M03_Misson_Goal_Added_PirateStarbase">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_68</Reward_Param1>
+		<Prereq>Empire_A01M03_Sat_Destroyed_Dialog_00_Remove_Movie</Prereq>
+	</Event>
+					
+
+					
+<!-- jdg 8/22/05 giving player his reinforcement ability back here -->
+	<Event Name="Empire_A01M03_Allow_Reinforcements">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ENABLE_REINFORCEMENTS</Event_Param2>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+				
+<!-- jdg 9/1/05 hint about reinforcements here 
+TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_65
+Hint: Boba Fett is no match for the pirate base.  
+Select the Reinforcement option, and drag your units from the reinforcement 
+window to a clear area in space.  -->
+
+			<Event Name="Empire_A01M03_Hint_About_Reinforcements">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_65</Reward_Param1>
+				<Reward_Param2>15</Reward_Param2>
+				<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+				<Prereq>Empire_A01M03_Allow_Reinforcements</Prereq>
+			</Event>
+
+					<Event Name="Empire_A01M03_Fett_No_Speak">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>DISABLE_STROY_EVENT</Reward_Type>
+						<Reward_Param1>Empire_A01M03_Too_Close_To_Base</Reward_Param1>
+						<Prereq>Empire_A01M03_Sat_Destroyed</Prereq>
+					</Event>
+					
+					<Event Name="Empire_A01M03_Fett_Highlight_Reinforcement_Button">	
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>FLASH_GUI</Reward_Type>
+						<Reward_Param1>b_reinforcement</Reward_Param1>
+						<Prereq>Empire_A01M03_Hint_About_Reinforcements</Prereq>
+					</Event>
+
+					<Event Name="Empire_A01M03_Fett_Highlight_Reinforcement_Button_Off">	
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>15</Event_Param1>
+						<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+						<Prereq>Empire_A01M03_Fett_Highlight_Reinforcement_Button</Prereq>
+					</Event>
+
+
+<!-- REINFORCE TOO SOON DIALOG SEQUENCE -->
+			<Event Name="Empire_A01M03_Bad_Reinforce">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>USED_SUPPORT_UNITS_TOO_EARLY</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+			</Event>
+
+	<!-- Fett Speaks 
+	TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_16
+	Boba Fett: Too soon.  The pirates know we’re here now.  -->
+	<Event Name="Empire_A01M03_Bad_Reinforce_Dialog_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_16</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Bad_Reinforce</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Bad_Reinforce_Dialog_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_16</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_16</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Bad_Reinforce_Dialog_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Bad_Reinforce_Dialog_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Bad_Reinforce_Dialog_00_Remove_Text</Prereq>
+			</Event>			
+				
+
+<!-- PIRATES INCOMING DIALOG -->
+	<Event Name="Empire_A01M03_Pirates_Incoming">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PIRATES_INCOMING</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+
+<!-- Imperial officer Speaks 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_15
+Imperial Officer: New pirate jump signatures detected on multiple vectors.  -->
+				
+	<Event Name="Empire_A01M03_Pirates_Incoming_Dialog_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_15</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Bad_Reinforce</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Pirates_Incoming_Dialog_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_15</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_15</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Pirates_Incoming_Dialog_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Pirates_Incoming_Dialog_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Pirates_Incoming_Dialog_00_Remove_Text</Prereq>
+			</Event>				
+				
+		
+
+
+<!-- CAPTAIN RETREATING DIALOG WHEN HE REACHES HIS FIRST WAY POINT AND STARTS TO HIS SECOND-->
+			<Event Name="Empire_A01M03_Captain_Retreating">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>CAPTAIN_RETREATING</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+			</Event>
+
+<!-- Fett Speaks 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14
+Boba Fett: There’s the pirate leader – don't let him escape!-->
+	<Event Name="Empire_A01M03_Captain_Retreating_Dialog">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_14</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+		<Prereq>Empire_A01M03_Captain_Retreating</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Captain_Retreating_Dialog_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_14</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+				<Prereq>Empire_A01M03_Captain_Retreating_Dialog</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Captain_Retreating_Dialog_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+				<Prereq>Empire_A01M03_Captain_Retreating_Dialog_Remove_Text</Prereq>
+			</Event>		
+			
+
+<!-- CAPTAIN RETREATING DIALOG WHEN HE REACHES HIS SECOND WAY POINT AND STARTS TO HIS LAST-->
+			<Event Name="Empire_A01M03_Captain_Retreating2">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>CAPTAIN_RETREATING2</Event_Param2>
+				<Prereq>Empire_M03_Begin</Prereq>
+			</Event>
+			
+<!-- Fett Speaks 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14
+Boba Fett: There’s the pirate leader – don't let him escape!-->
+	<Event Name="Empire_A01M03_Captain_Retreating2_Dialog">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_14</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+		<Prereq>Empire_A01M03_Captain_Retreating2</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Captain_Retreating2_Dialog_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_14</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_14</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+				<Prereq>Empire_A01M03_Captain_Retreating2_Dialog</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Captain_Retreating2_Dialog_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Branch>BRANCH_Pirate_Escaping_Dialog</Branch>
+				<Prereq>Empire_A01M03_Captain_Retreating2_Dialog_Remove_Text</Prereq>
+			</Event>	
+ 
+<!-- ALARM SOUNDED DIALOG SEQUENCE -->
+	<Event Name="Empire_A01M03_Alarm_On">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ALARM_TRIGGERED</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+			
+			<!--FAILING ingame objective text for destroying alarms 
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_66
+			Destroy all Sensor Nodes. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Failed_SensorsAlerted">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_66</Reward_Param1>
+				<Prereq>Empire_A01M03_Alarm_On</Prereq>
+			</Event>
+
+<!-- Fett Speaks 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_17
+Boba Fett: They know we’re here now.  
+We’ve got to act quickly before their leaders escape!-->
+	<Event Name="Empire_A01M03_Alarm_On_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_17</Reward_Param8>
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01M03_Alarm_On</Prereq>
+	</Event>
+
+			<Event Name="Empire_A01M03_Alarm_On_Dialog_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_17</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_17</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A01M03_Alarm_On_Dialog_00</Prereq>
+			</Event>
+
+			<Event Name="Empire_A01M03_Alarm_On_Dialog_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Empire_A01M03_Bad_Reinforce_Dialog_00_Remove_Text</Prereq>
+			</Event>			
+				
+
+<!-- End video and Victory -->
+
+
+	<!-- Another fake trigger.  This should fire when the pirate leader is disabled as per mission write-up -->
+	<Event Name="Empire_M03_Final_Dialog_Begin_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CAPTAIN_DISABLED</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+	
+			<!--COMPLETING ingame objective text for keeping Fett alive
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_67
+			Boba Fett must survive. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Complete_FettSurvived">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_67</Reward_Param1>
+				<Prereq>Empire_M03_Final_Dialog_Begin_00</Prereq>
+			</Event>
+	
+	
+			<!--COMPLETING ingame objective text for attacking pirate leader
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69
+			Attack the Pirate Leader until he submits. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Complete_PirateLeader">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69</Reward_Param1>
+				<Prereq>Empire_M03_Final_Dialog_Begin_00</Prereq>
+			</Event>
+	
+			<Event Name="Empire_M03_Cancel_Loss_Condition_LeaderEscapes">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Empire_M03_Pirate_Leader_Escapes</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Empire_M03_Final_Dialog_Begin_00</Prereq>
+			</Event>
+			
+			<Event Name="Empire_M03_Cancel_Loss_Condition_FettDies">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Empire_M03_Fett_Dies_Speech</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Empire_M03_Final_Dialog_Begin_00</Prereq>
+			</Event>
+	
+	
+	<Event Name="Empire_M03_Lock_Input">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Empire_M03_Final_Dialog_Begin_00</Prereq>
+	</Event>
+	
+	<!-- Wait for the end cinematic to be set up before continuing -->
+	<Event Name="Empire_A01M03_Ending_Wait">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M2_END_DIALOGUE_GO</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+		
+
+	<!-- Fett Speaks -->
+	<Event Name="Empire_A01M03_Final_Fett_TEXT">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Prereq>Empire_A01M03_Ending_Wait</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01M03_Final_Fett_SPEECH">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPEECH</Reward_Type>
+		<Reward_Param1>EMPIRE_ACT01_MISSION_THREE_08</Reward_Param1>
+		<Prereq>Empire_A01M03_Final_Fett_TEXT</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01M03_Final_Fett_END">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_08</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_08</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01M03_Final_Fett_SPEECH</Prereq>
+	</Event>
+	
+	
+	<!-- Wait for cinematic before continuing -->
+	<Event Name="Empire_A01M03_Ending_Wait_2">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M2_END_DIALOGUE_2_GO</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+			
+
+	<Event Name="Empire_A01M03_Final_Officer_TEXT">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Prereq>Empire_A01M03_Ending_Wait_2</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01M03_Final_Officer_SPEECH">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPEECH</Reward_Type>
+		<Reward_Param1>EMPIRE_ACT01_MISSION_THREE_09</Reward_Param1>
+		<Prereq>Empire_A01M03_Final_Officer_TEXT</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A01M03_Final_Officer_END">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_09</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_09</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01M03_Final_Officer_SPEECH</Prereq>
+	</Event>
+
+
+	<!-- Wait for cinematic before continuing -->
+	<Event Name="Empire_A01M03_Ending_Wait_3">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M2_END_DIALOGUE_3_GO</Event_Param2>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M03_Allow_Win">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_09</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_09</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01M03_Ending_Wait_3</Prereq>
+	</Event>
+
+	<Event Name="Empire_M03_Unlock_Input">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A01M03_Ending_Wait_3</Prereq>
+	</Event>
+
+	<Event Name="Empire_M03_Force_Win">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_M03_Unlock_Input</Prereq>
+	</Event>
+
+	<Event Name="Empire_M03_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M03_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+			
+
+
+<!-- Loss Condition: Boba Fett Dies 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_60
+Imperial Officer: The bounty-hunter has failed - all hands prepare for Hyperspace!-->
+	
+	<Event Name="Empire_M03_Fett_Dies_Speech">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Slave_I</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_60</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_60</Reward_Param8> <!-- Put speech file name here -->
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Empire_A01M03_FAILObjective_Fett_Must_Survive">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+					<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_67</Reward_Param1>
+					<Prereq>Empire_M03_Fett_Dies_Speech</Prereq>
+				</Event>
+	
+			<Event Name="Empire_M03_Fett_Dies_Player_Loss">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT01_MISSION_THREE_60</Event_Param1>
+				<Reward_Type>VICTORY</Reward_Type>
+				<Reward_Param1>PIRATES</Reward_Param1>
+				<Prereq>Empire_M03_Fett_Dies_Speech</Prereq>
+			</Event>
+
+
+
+<!-- LOSS CONDITION: Pirate leader escapes -->
+
+
+	<Event Name="Empire_M03_Pirate_Leader_Escapes">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FAILURE_CAPTAIN_RETREAT</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>PIRATES</Reward_Param1>
+		<Prereq>Empire_M03_Begin</Prereq>
+	</Event>
+	
+		<!--FAILING ingame objective text for attacking pirate leader 
+			TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69
+			Attack the Pirate Leader until he submits. -->
+			<Event Name="Empire_A01_M03_Misson_Goal_Failed_PirateLeader">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_69</Reward_Param1>
+				<Prereq>Empire_M03_Pirate_Leader_Escapes</Prereq>
+			</Event>
+
+
+
+
+
+
+
+</Story>

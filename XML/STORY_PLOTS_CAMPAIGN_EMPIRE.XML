@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<Story_Mode_Plots>
+
+	<Lua_Script>Story_Campaign_Empire_Act_I</Lua_Script>
+	<Active_Plot>Story_Campaign_Empire_Act_I.xml</Active_Plot>
+	<Suspended_Plot>Story_Campaign_Empire_Act_II.xml</Suspended_Plot>
+	<Lua_Script>Story_Campaign_Empire_Act_III</Lua_Script>
+	<Suspended_Plot>Story_Campaign_Empire_Act_III.xml</Suspended_Plot>
+	<Lua_Script>Story_Campaign_Empire_Act_IV</Lua_Script>
+	<Suspended_Plot>Story_Campaign_Empire_Act_IV.xml</Suspended_Plot>
+
+   <!-- Cheats such as mission skipping -->
+   <Active_Plot>Story_Campaign_Empire_Cheats.xml</Active_Plot>
+
+</Story_Mode_Plots>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Empire_Oppression_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Story_Dialog>Dialog_R_Intervention_Empire_Oppression</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Empire_Oppression_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Empire_Oppression_01">
+		<Event_Type>STORY_CONQUER</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Reward_Param2></Reward_Param2>
+		<Reward_Param3></Reward_Param3>
+		<Prereq>Empire_Oppression_00</Prereq>
+		<Story_Dialog>Dialog_R_Intervention_Empire_Oppression</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+		
+	<Event Name="Empire_Oppression_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Reward_Param2></Reward_Param2>
+		<Reward_Param3></Reward_Param3>
+		<Prereq>Empire_Oppression_01</Prereq>
+	</Event>
+	
+	<Event Name="Empire_Oppression_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>EMPIRE_OPPRESSION_NOTIFICATION_00</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Empire_Oppression_02</Prereq>
+	</Event>
+	
+	<Event Name="Empire_Oppression_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Empire_Oppression_Tag_00</Reward_Param1>
+		<Prereq>Empire_Oppression_03</Prereq>
+	</Event>
+
+</Story>

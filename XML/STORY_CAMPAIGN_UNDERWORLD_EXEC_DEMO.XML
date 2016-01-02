@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_Exec_Demo_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>endor</Reward_Param1>
+	</Event>
+
+	<Event Name="Underworld_Exec_Demo_ENDOR_Link_Tactical_Land">
+		<Event_Type>STORY_DEPLOY</Event_Type>
+		<Event_Param1>Tyber_Zann</Event_Param1>
+		<Event_Param2>endor</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>endor</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Underworld</Reward_Param3>
+		<Reward_Param4>Executive_Tactical_Demo.TED</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param6>Tyber_Zann</Reward_Param6>
+		<Reward_Param7> Story_Plots_Exec_Demo_Endor_Land_Tactical.XML </Reward_Param7>
+		<Reward_Param8>0</Reward_Param8>
+		<!-- Do we want the prebattle cinematic to play?-->
+		<Reward_Param9>0</Reward_Param9>
+		<!-- Do we want to start the scene faded out?-->
+		<Reward_Param10>1</Reward_Param10>
+		<!-- Do we want to start the scene in letter box mode-->
+		<Reward_Param11>1</Reward_Param11>
+		<!-- Show the Battle Pending dialog? -->
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Underworld_Exec_Demo_Begin</Prereq>
+	</Event>
+
+
+</Story>

@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+
+
+<CIN_Projectiles>
+
+	<Cin_Projectile Name="Proj_Ground_Proton_Torpedo_Fast">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Proj_Ground_Proton_Torpedo</Variant_Of_Existing_Type>
+		<Max_Speed>12.0</Max_Speed>
+		<Projectile_Max_Flight_Distance>2800.0</Projectile_Max_Flight_Distance>
+        	<Projectile_Max_Scan_Range>2800.0</Projectile_Max_Scan_Range>
+		<Projectile_Damage>1.0</Projectile_Damage>
+		
+	</Cin_Projectile>
+
+	<Cin_Projectile Name="Proj_Flak_Pod_Fast">
+		
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Proj_Flak_Pod</Variant_Of_Existing_Type>
+		<Max_Speed>100</Max_Speed>
+		<Projectile_Damage>1.0</Projectile_Damage>
+		<Projectile_Is_Missile>No</Projectile_Is_Missile>
+		<Projectile_Max_Flight_Distance>1500.0</Projectile_Max_Flight_Distance>
+            	<Projectile_Max_Scan_Range>1500.0</Projectile_Max_Scan_Range>
+		<Projectile_Absorbed_By_Shields_Particle>Flak_Pod_Explosion</Projectile_Absorbed_By_Shields_Particle>
+		<Max_Rate_Of_Turn>0.0</Max_Rate_Of_Turn>
+
+	</Cin_Projectile>
+
+
+
+	<Cin_Projectile Name="Proj_Ship_Small_Laser_Cannon_Green_Fast">
+		
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Projectile_Absorbed_By_Shields_Particle>Large_Damage_Space</Projectile_Absorbed_By_Shields_Particle>
+		<Variant_Of_Existing_Type>Proj_Ship_Small_Laser_Cannon_Green</Variant_Of_Existing_Type>
+		<Projectile_Absorbed_By_Shields_Particle>Small_Damage_Space</Projectile_Absorbed_By_Shields_Particle>
+		<Max_Speed>30</Max_Speed>
+
+
+	</Cin_Projectile>
+
+
+
+	<Cin_Projectile Name="Proj_Ship_Small_Laser_Cannon_Red_Fast">
+		
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Projectile_Absorbed_By_Shields_Particle>Large_Damage_Space</Projectile_Absorbed_By_Shields_Particle>
+		<Variant_Of_Existing_Type>Proj_Ship_Small_Laser_Cannon_Red</Variant_Of_Existing_Type>
+		<Projectile_Absorbed_By_Shields_Particle>Small_Damage_Space</Projectile_Absorbed_By_Shields_Particle>
+		<Max_Speed>30</Max_Speed>
+
+
+	</Cin_Projectile>
+
+	<Cin_Projectile Name="Cin_Proj_Ground_Proton_Torpedo">
+		
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Proj_Ground_Proton_Torpedo</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_p_proton_torpedo.alo</Land_Model_Name>
+		<Max_Speed>12</Max_Speed>
+		<Projectile_Max_Flight_Distance>1500.0</Projectile_Max_Flight_Distance>
+		<Projectile_Max_Scan_Range>15000.0</Projectile_Max_Scan_Range>
+		<Projectile_Rocket_Curve_Distance>300</Projectile_Rocket_Curve_Distance>
+		<Projectile_Rocket_Curve_Offset>20</Projectile_Rocket_Curve_Offset>
+		<Projectile_Rocket_Straight_Distance>500</Projectile_Rocket_Straight_Distance>
+		<Projectile_Damage>1.0</Projectile_Damage>
+
+	</Cin_Projectile>
+
+
+
+
+</CIN_Projectiles>

@@ -1,0 +1,480 @@
+<?xml version="1.0" ?>
+
+<Goals>
+
+	<Upgrade_Starbase>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Scanner,
+			Build_Initial_Starbase_Only,
+			Build_Jamming_Station
+		</Is_Like>
+	</Upgrade_Starbase>
+	
+	<Advance_Tech_Empire>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> MajorItem </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 120.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>1.3</Build_Time_Delay_Tolerance>
+	</Advance_Tech_Empire>
+
+	<Advance_Tech_Rebel>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Offensive </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 0.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	</Advance_Tech_Rebel>
+
+	<Flush_MajorItem_Budget>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Offensive </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 0.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	</Flush_MajorItem_Budget>
+
+	<Reclaim_Excess_MajorItem_Budget>
+		<AIGoalApplicationFlags> Global </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Offensive </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 0.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>		
+	</Reclaim_Excess_MajorItem_Budget>
+
+	<!-- Build a structure that will increase a planet's income -->
+	<Build_Economic_Structure>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>	
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Cantina,
+			Build_Arena,
+			Build_Hutt_Palace,
+			Build_Infiltrator_Facility,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Economic_Structure>
+
+	<!-- Build a starbase on a planet that currently has none -->
+	<Build_Initial_Starbase_Only>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Upgrade_Starbase,
+			Build_Scanner,
+			Build_Jamming_Station
+		</Is_Like>
+	</Build_Initial_Starbase_Only>
+
+	<!-- Build a groundbase on a planet that currently has none -->
+	<Build_Initial_Groundbase_Only>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Infiltrator_Facility,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Initial_Groundbase_Only>
+
+	<Build_Cantina>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Hutt_Palace,
+			Build_Infiltrator_Facility,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Cantina>
+	
+	<Build_Arena>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Infiltrator_Facility,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Arena>
+
+	<Build_Scanner>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Upgrade_Starbase,
+			Build_Initial_Starbase_Only,
+			Build_Jamming_Station
+		</Is_Like>
+	</Build_Scanner>
+
+	<Build_Hutt_Palace>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Arena,
+			Build_Infiltrator_Facility,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Hutt_Palace>
+
+	<Build_Infiltrator_Facility>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Arena,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Infiltrator_Facility>
+
+	<Build_Base_Component_Light_Vehicle_Factory>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Arena,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Base_Component_Light_Vehicle_Factory>
+
+	<Build_Base_Component_Heavy_Vehicle_Factory>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.5</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Arena,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers			
+		</Is_Like>
+	</Build_Base_Component_Heavy_Vehicle_Factory>
+
+	<Build_Base_Component_Advanced_Vehicle_Factory>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.5</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Arena,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers			
+		</Is_Like>
+	</Build_Base_Component_Advanced_Vehicle_Factory>
+
+	<Build_Base_Component_Power>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Base_Component_Power>
+
+	<Build_Base_Component_Officer_Academy>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Base_Component_Officer_Academy>
+
+	<Build_Base_Component_Research_Facility>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> MajorItem </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Research_Facility_2,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+		<Global_Exclusions>
+			Build_Base_Component_Research_Facility, 
+			Build_Base_Component_Research_Facility_2
+		</Global_Exclusions>
+	</Build_Base_Component_Research_Facility>
+
+	<Build_Base_Component_Research_Facility_2>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+		<Global_Exclusions>
+			Build_Base_Component_Research_Facility, 
+			Build_Base_Component_Research_Facility_2
+		</Global_Exclusions>
+	</Build_Base_Component_Research_Facility_2>
+
+
+	<Build_Base_Component_Comm_Array>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>1.2</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Base_Component_Barracks,
+			Build_Turbolasers
+		</Is_Like>
+	</Build_Base_Component_Comm_Array>
+
+	<Build_Base_Component_Barracks>
+		<AIGoalApplicationFlags> Friendly </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Infrastructure </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 30.0 </Time_Limit>		
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+		<Is_Like>
+			Build_Initial_Groundbase_Only,
+			Build_Economic_Structure,
+			Build_Cantina,
+			Build_Hutt_Palace,
+			Build_Base_Shield,
+			Build_Weapon,
+			Build_Base_Component_Comm_Array,
+			Build_Base_Component_Research_Facility,
+			Build_Base_Component_Officer_Academy,
+			Build_Base_Component_Light_Vehicle_Factory,
+			Build_Base_Component_Heavy_Vehicle_Factory,
+			Build_Base_Component_Advanced_Vehicle_Factory,
+			Build_Infiltrator_Facility,
+			Build_Turbolasers
+		</Is_Like>		
+	</Build_Base_Component_Barracks>
+
+</Goals>

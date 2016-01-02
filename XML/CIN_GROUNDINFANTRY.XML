@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<CIN_GroundInfantry_Units>
+
+	<CIN_GroundInfantry Name="CIN_Scout_Trooper">
+		<LOD_Bias>5</LOD_Bias>
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID>TEXT_UNIT_SCOUT_TROOPER</Text_ID>
+		<Land_Model_Name>EV_Bike.ALO</Land_Model_Name>
+		<Select_Box_Scale>20</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+		<Behavior> SELECTABLE </Behavior>
+		<LandBehavior> WALK_LOCOMOTOR, IDLE, TARGETING, WEAPON, REVEAL, HIDE_WHEN_FOGGED </LandBehavior>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Mass>1.0</Mass>
+
+		<Max_Speed>4.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+
+		<Scale_Factor>1.0</Scale_Factor>
+		<CanCellStack>yes</CanCellStack>
+		<Is_Sprite>No</Is_Sprite>
+		<Type>Hover</Type>
+		<Deploys>No</Deploys>
+		<Affiliation>Empire</Affiliation>
+		<Political_Control>0</Political_Control>
+		<Required_Timeline>0</Required_Timeline>
+		<Required_Ground_Base_Level>2</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures />
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Required_Planets />
+		<Build_Cost_Credits>150</Build_Cost_Credits>
+		<Build_Time_Seconds>25</Build_Time_Seconds>
+		<Size_Value>25</Size_Value>
+		<Damage>15</Damage>
+		<Sensor_Range>40</Sensor_Range>
+		<Shield_Points>0</Shield_Points>
+		<Tactical_Health>90</Tactical_Health>
+		<Shield_Refresh_Rate>0</Shield_Refresh_Rate>
+		<Energy_Capacity>50</Energy_Capacity>
+		<Energy_Refresh_Rate>10</Energy_Refresh_Rate>
+		<Stealth_Capable>No</Stealth_Capable>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<Projectile_Types>Proj_Blaster_Cannon_Green</Projectile_Types>
+		<Land_FOW_Reveal_Range>130.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>100.0</Targeting_Max_Attack_Distance>
+
+		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Projectile_Fire_Recharge_Seconds>3.0</Projectile_Fire_Recharge_Seconds>
+
+		<Targeting_Fire_Inaccuracy> Infantry, 12.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Vehicle, 12.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Air, 12.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Structure, 12.0 </Targeting_Fire_Inaccuracy>
+
+		<SFXEvent_Select>Unit_Select_Storm_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Storm_Trooper</SFXEvent_Move>
+		<SFXEvent_Attack>Unit_Attack_Storm_Trooper</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Storm_Trooper</SFXEvent_Guard>
+		<SFXEvent_Fire>Unit_Scout_Trooper_Fire</SFXEvent_Fire>
+        <Death_SFXEvent_Start_Die>Unit_Speeder_Bike_Death_SFX</Death_SFXEvent_Start_Die>
+
+		<MovementClass> Hover </MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Blob_Shadow_Below_Detail_Level>2</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>18.0, 7.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+		<Ground_Infantry_Turret_Target> Yes </Ground_Infantry_Turret_Target>
+		<Is_Squashable> Yes </Is_Squashable>
+		<Create_Team>Yes</Create_Team>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+	</CIN_GroundInfantry>
+
+	<CIN_GroundInfantry Name="CIN_Stormtrooper">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID>TEXT_UNIT_STORMTROOPER</Text_ID>
+		<Land_Model_Name>EI_TROOPER.ALO</Land_Model_Name>
+		<Behavior>SELECTABLE</Behavior>
+		<LandBehavior>WALK_LOCOMOTOR,IDLE,TARGETING,WEAPON,REVEAL,HIDE_WHEN_FOGGED</LandBehavior>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+        <Loop_Idle_Anim_00>No</Loop_Idle_Anim_00>
+        <Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<CanCellStack>yes</CanCellStack>
+		<Select_Box_Scale>10</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+		<Mass>1.0</Mass>
+		<Movement_Animation_Speed> 0.8 </Movement_Animation_Speed>
+		<Rotation_Animation_Speed> 20.0 </Rotation_Animation_Speed>
+		
+		<Max_Speed>0.8</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		
+		<Scale_Factor>1.0</Scale_Factor>
+		<Is_Sprite>No</Is_Sprite>
+		<Type>Walk</Type>
+		<Deploys>No</Deploys>
+		<Affiliation>Empire</Affiliation>
+		<Scale_Factor>1.0</Scale_Factor>
+		<Is_Sprite>No</Is_Sprite>
+		<Political_Control>0</Political_Control>
+		<Required_Timeline>0</Required_Timeline>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures />
+		<Required_Planets />
+		<Build_Cost_Credits>75</Build_Cost_Credits>
+		<Build_Time_Seconds>15</Build_Time_Seconds>
+		<Size_Value>10</Size_Value>
+		<Damage>8</Damage>
+		<Sensor_Range>20</Sensor_Range>
+		<Shield_Points>0</Shield_Points>
+		<Tactical_Health>40</Tactical_Health>
+		<Shield_Refresh_Rate>0</Shield_Refresh_Rate>
+		<Energy_Capacity>0</Energy_Capacity>
+		<Energy_Refresh_Rate>0</Energy_Refresh_Rate>
+		<Stealth_Capable>No</Stealth_Capable>
+		<Blob_Shadow_Below_Detail_Level>2</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>10.0, 10.0</Blob_Shadow_Scale>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<Projectile_Types>Proj_Hand_Blaster_Green</Projectile_Types>
+		<Land_FOW_Reveal_Range>130.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>100.0</Targeting_Max_Attack_Distance>
+
+		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Projectile_Fire_Recharge_Seconds>1.0</Projectile_Fire_Recharge_Seconds>
+
+		<Targeting_Fire_Inaccuracy> Infantry, 12.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Vehicle, 8.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Air, 12.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Structure, 12.0 </Targeting_Fire_Inaccuracy>
+
+		<SFXEvent_Select>Unit_Select_Storm_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Storm_Trooper</SFXEvent_Move>
+		<SFXEvent_Attack>Unit_Attack_Storm_Trooper</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Storm_Trooper</SFXEvent_Guard>
+		<SFXEvent_Fire>Unit_Storm_Trooper_Fire</SFXEvent_Fire>
+
+		<MovementClass> Infantry </MovementClass>
+
+		<OccupationStyle>1x1</OccupationStyle>
+		<Blob_Shadow_Below_Detail_Level>3</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>5.0, 5.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+        <Ground_Infantry_Turret_Target> Yes </Ground_Infantry_Turret_Target>
+		  <Is_Squashable> Yes </Is_Squashable>
+		<Create_Team>Yes</Create_Team>
+	</CIN_GroundInfantry>
+
+	<CIN_GroundInfantry Name="CIN_Prop_Rebel00">
+		<Text_ID>TEXT_NONE</Text_ID>
+		<Land_Model_Name>RI_infantry_dummy.alo</Land_Model_Name>
+		<Scale_Factor>2.0</Scale_Factor>
+		<!--<Is_Sprite>No</Is_Sprite>-->
+		<Is_Decoration>Yes</Is_Decoration>
+	</CIN_GroundInfantry>
+	
+	<CIN_GroundInfantry Name="CIN_Prop_Rebel01">
+		<Text_ID>TEXT_NONE</Text_ID>
+		<Land_Model_Name>RI_infantry_dummy2.alo</Land_Model_Name>
+		<Scale_Factor>2.0</Scale_Factor>
+		<!--<Is_Sprite>No</Is_Sprite>-->
+		<Is_Decoration>Yes</Is_Decoration>
+	</CIN_GroundInfantry>
+
+	<CIN_GroundInfantry Name="CIN_Prop_Destroyer02">
+		<Text_ID>TEXT_NONE</Text_ID>
+		<Land_Model_Name>UI_droideka_dummy.alo</Land_Model_Name>
+		<Scale_Factor>2.0</Scale_Factor>
+		<!--<Is_Sprite>No</Is_Sprite>-->
+		<Is_Decoration>Yes</Is_Decoration>
+	</CIN_GroundInfantry>
+
+	<CIN_GroundInfantry Name="CIN_Prop_Destroyer03">
+		<Text_ID>TEXT_NONE</Text_ID>
+		<Land_Model_Name>UI_droideka_dummy2.alo</Land_Model_Name>
+		<Scale_Factor>2.0</Scale_Factor>
+		<!--<Is_Sprite>No</Is_Sprite>-->
+		<Is_Decoration>Yes</Is_Decoration>
+	</CIN_GroundInfantry>
+
+</CIN_GroundInfantry_Units>

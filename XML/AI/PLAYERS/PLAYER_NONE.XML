@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!-- A file that defines the static data for an AI player type.  -->
+<AIPlayerType>
+
+	<Name>None</Name>
+
+	<Personality>
+		<Focus> .7 </Focus>
+		<Aggressiveness> .8 </Aggressiveness>
+	</Personality>
+
+	<SpaceFreeStoreScript>BusyTacticalFreeStore</SpaceFreeStoreScript>
+	<LandFreeStoreScript>BusyTacticalFreeStore</LandFreeStoreScript>
+
+	<GoalProposalFunctionSets>
+		BasicOffensiveSpaceSet
+		BasicLandGoalSet
+		AI_GoalSet_ExpansionGeneric_Land
+	</GoalProposalFunctionSets>
+    <Templates>
+        <Space>
+            Test_Space
+        </Space>
+        <Land>
+            Test_Land
+        </Land>
+        <Galactic>
+            None_Template
+        </Galactic>
+    </Templates>
+	
+	<Difficulty_Adjustments>
+		<Easy>Easy_Default</Easy>
+		<Normal>Normal_Default</Normal>
+		<Hard>Hard_Default</Hard>
+	</Difficulty_Adjustments>	
+	
+</AIPlayerType>

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+
+<AITemplates>
+
+<Underworld_Galactic_Default>
+
+	<Priority>1</Priority>
+	
+	<Trigger>One</Trigger>
+	
+	<Budget>
+		<Always>Zero</Always>
+		<Offensive>Underworld_Offensive_Budget_Allocation</Offensive>
+		<Defensive>Zero</Defensive>
+		<Infrastructure>Underworld_Infrastructure_Budget_Allocation</Infrastructure>
+		<Information>Zero</Information> 
+		<Hero>Zero</Hero>
+		<StoryArc>Zero</StoryArc>
+	</Budget>
+	
+	<Turn_Off>
+	
+		<Goals>
+			<Goal_Type>Remove_Corruption</Goal_Type>
+		</Goals>
+	
+		<Plans>
+			<Name>EmpireAdvanceTechPlan</Name>
+			<Name>PlantSpyPlan</Name>
+			<Name>RebelAdvanceTechPlan</Name>
+		</Plans>
+	</Turn_Off>
+
+	<Turn_On>
+		<Goals>
+			<Category>Always</Category>
+			<Category>Offensive</Category>
+			<Category>Defensive</Category>
+			<Category>Information</Category>
+			<Category>Infrastructure</Category>		
+			<Category>Hero</Category>
+			<Category>StoryArc</Category>
+		</Goals>
+		
+		<Plans>
+			<Goal_Category>Always</Goal_Category>
+			<Goal_Category>Offensive</Goal_Category>
+			<Goal_Category>Defensive</Goal_Category>
+			<Goal_Category>Infrastructure</Goal_Category>
+			<Goal_Category>Information</Goal_Category>
+			<Goal_Category>Hero</Goal_Category>
+			<Goal_Category>StoryArc</Goal_Category>
+		</Plans>
+	</Turn_On>
+	
+</Underworld_Galactic_Default>	
+
+</AITemplates>

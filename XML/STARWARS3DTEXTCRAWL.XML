@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StarWars3DTextScroll>
+
+
+	
+	<TextScroll name="HEADER_TEST">
+	
+	<!-- Make sure English is always defined first -->
+		<Data_Specifications language="English">
+			
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+			<!-- <Fadeout_End_Frame></Fadeout_End_Frame> -->
+
+			<!-- Text -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>1</Font_Stretch_Factor>	
+			<Text_IDs>TEXT_REBEL_ACT1_CRAWL_PART_1, TEXT_REBEL_ACT1_CRAWL_PART_2, TEXT_REBEL_ACT1_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>512</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+			
+			<!-- Header - these are the default values. -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_CRAWL_HEADER</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>100</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+		</Data_Specifications>
+		
+		<Data_Specifications language="Russian">
+			<!-- All other fields will be filled in from English -->
+			<Font_Size>10</Font_Size>
+		</Data_Specifications>
+		
+	
+	</TextScroll>
+	
+
+	<TextScroll name="REBEL_PROLOGE_1">
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+			<!-- <Fadeout_End_Frame></Fadeout_End_Frame> -->
+		
+			<!-- Header - these are the default values -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_CRAWL_HEADER</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>64</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+			
+			<!-- Text -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>0.7</Font_Stretch_Factor>
+			<Text_IDs>TEXT_REBEL_ACT1_CRAWL_PART_1, TEXT_REBEL_ACT1_CRAWL_PART_2, TEXT_REBEL_ACT1_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+		</Data_Specifications>
+	</TextScroll>
+	
+
+
+
+
+	<TextScroll name="REBEL_ACT_1">
+		
+		<Data_Specifications language="English">
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+			
+			<!-- Header - these are the default values -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_CRAWL_HEADER</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>64</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+
+			<!-- Text  -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>0.7</Font_Stretch_Factor>
+			<Text_IDs>TEXT_REBELS_ACT1_CRAWL_PART_1, TEXT_REBELS_ACT1_CRAWL_PART_2, TEXT_REBELS_ACT1_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+		
+		</Data_Specifications>
+		
+	
+		
+	</TextScroll>
+	
+	
+	
+	
+	
+	
+	<TextScroll name="EMPIRE_PROLOGE_1">
+		
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+		
+			<!-- Header - these are the default values -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_CRAWL_HEADER</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>64</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+
+			<!-- Text -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>0.7</Font_Stretch_Factor>	
+			<Text_IDs>TEXT_EMPIRE_PROLOG_CRAWL_PART_1, TEXT_EMPIRE_PROLOG_CRAWL_PART_2, TEXT_EMPIRE_PROLOG_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+		
+		</Data_Specifications>
+		
+
+	</TextScroll>
+	
+	
+	
+	
+	
+	<TextScroll name="EMPIRE_ACT_1">
+		
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+
+			<!-- Header - these are the default values -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_CRAWL_HEADER</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>64</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+
+			<!-- Text -->	
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>0.7</Font_Stretch_Factor>
+			<Text_IDs>TEXT_EMPIRE_ACT1_CRAWL_PART_1, TEXT_EMPIRE_ACT1_CRAWL_PART_2, TEXT_EMPIRE_ACT1_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+			
+		</Data_Specifications>
+		
+				
+	</TextScroll>
+
+
+
+
+	<TextScroll name="A_Long_Time_Ago">
+		
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextIntro.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			
+			<Fadeout_Start_Frame>210</Fadeout_Start_Frame>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>80</Fadein_End_Frame>
+			
+			<!-- Header - these are the default values -->
+			<Has_Header>No</Has_Header>
+			
+			<!-- Text -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>1</Font_Stretch_Factor>	
+			<Text_IDs>TEXT_A_LONG_TIME_AGO</Text_IDs>
+			<Font_Name>Arial</Font_Name>
+			<Font_Size>66</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>512</Texture_Height_Pow_2>
+		
+		</Data_Specifications>
+
+		<Data_Specifications language="German">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Russian">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Spanish">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+		
+	</TextScroll>
+
+
+	<TextScroll name="UNDERWORLD_TEXT_CRAWL">
+		
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextScroll.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>60</Fadein_End_Frame>
+			<Fadeout_Start_Frame>1000</Fadeout_Start_Frame>
+
+			<!-- Header - these are the default values -->
+			<Has_Header>Yes</Has_Header>
+			<Header_Text_IDs>TEXT_UNDERWORLD_ACT1_CRAWL_PART_TITLE</Header_Text_IDs>
+			<Header_Font_Name>Arial Bold</Header_Font_Name>
+			<Header_Font_Size>64</Header_Font_Size>
+			<Header_Texture_Width_Pow_2>1024</Header_Texture_Width_Pow_2>
+			<Header_Texture_Height_Pow_2>128</Header_Texture_Height_Pow_2>
+
+			<!-- Text -->	
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>0.7</Font_Stretch_Factor>
+			<Text_IDs>TEXT_UNDERWORLD_ACT1_CRAWL_PART_1, TEXT_UNDERWORLD_ACT1_CRAWL_PART_2, TEXT_UNDERWORLD_ACT1_CRAWL_PART_3</Text_IDs>
+			<Font_Name>Arial Bold</Font_Name>
+			<Font_Size>52</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>2048</Texture_Height_Pow_2>
+			
+		</Data_Specifications>
+
+		<Data_Specifications language="German">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Russian">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Spanish">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+	</TextScroll>
+
+
+
+	<TextScroll name="Underworld_Prolog">
+		
+		<Data_Specifications language="English">
+		
+			<!-- Settings -->
+			<Model_Name>W_TextIntro.alo</Model_Name>
+			<Polygon_Shader_Name>MeshAlpha</Polygon_Shader_Name>
+			<Polygon_Tex_Param_Name>BaseTexture</Polygon_Tex_Param_Name>
+			<Model_Camera_Bone_Name>camera</Model_Camera_Bone_Name>
+			
+			<Fadeout_Start_Frame>210</Fadeout_Start_Frame>
+			<Fadein_Start_Frame>0</Fadein_Start_Frame>
+			<Fadein_End_Frame>80</Fadein_End_Frame>
+			
+			<!-- Header - these are the default values -->
+			<Has_Header>No</Has_Header>
+			
+			<!-- Text -->
+			<Font_Character_Padding>0</Font_Character_Padding>
+			<Font_Stretch_Factor>1</Font_Stretch_Factor>	
+			<Text_IDs>TEXT_UNDERWORLD_PROLOGUE_TITLE</Text_IDs>
+			<Font_Name>Arial</Font_Name>
+			<Font_Size>66</Font_Size>
+			<Texture_Width_Pow_2>1024</Texture_Width_Pow_2>
+			<Texture_Height_Pow_2>512</Texture_Height_Pow_2>
+		
+		</Data_Specifications>
+
+		<Data_Specifications language="German">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Russian">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+
+		<Data_Specifications language="Spanish">
+			<Font_Size>60</Font_Size>
+		</Data_Specifications>
+		
+	</TextScroll>
+
+
+
+
+
+
+
+</StarWars3DTextScroll>

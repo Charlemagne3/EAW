@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--   -->
+<FunctionSet>
+
+	 <Debug_Goal_Galactic>
+		 <Goal>Debug_Goal_Galactic</Goal>
+		 <Function>Empire_Should_Upgrade_Tech</Function>
+	 </Debug_Goal_Galactic>
+
+	 <Debug_Goal_Galactic_2>
+		 <Goal>Debug_Goal_Galactic_2</Goal>
+		 <Function>Land_Tactical_Budget_Clamped</Function>
+	 </Debug_Goal_Galactic_2>
+	 
+ 	 <Debug_Goal_Galactic_3>
+		 <Goal>Debug_Goal_Galactic_3</Goal>
+		 <Function>Empire_Tech_Untrigger</Function>
+	 </Debug_Goal_Galactic_3>
+
+	 <AlwaysOff>
+		 <Goal>AlwaysOff</Goal>
+		 <Function>Zero</Function>
+	 </AlwaysOff>
+
+</FunctionSet>

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+
+
+<!-- Preliminary Setup  -->
+
+	<Event Name="Demo_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>BOMBARD_DELAY</Reward_Type>
+		<Reward_Param1>20</Reward_Param1>
+	</Event>
+
+	<Event Name="Demo_Bombard_Started">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>start_bombard</Event_Param1>
+		<Prereq>Demo_Begin</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+
+</Story>

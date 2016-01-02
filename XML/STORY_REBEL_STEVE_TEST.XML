@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<!-- Any Rebel units entering Coruscant should trigger this, 
+	which triggers the Test_Link_Tactical event, with Rebel sandbox
+	units in place.-->
+	<Event Name="Units_Enter_Coruscant">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Coruscant</Event_Param1>
+		<Reward_Param1>0</Reward_Param1>
+	</Event>
+
+
+	<Event Name="Test_Link_Tactical">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Coruscant</Reward_Param1>
+		<Reward_Param2>SPACE</Reward_Param2>
+		<Reward_Param3>Rebel</Reward_Param3>
+		<Reward_Param4>_Space_Bonadan_PM07_Merchant.ted</Reward_Param4>
+		<Reward_Param5>Empire</Reward_Param5>
+		<Reward_Param7></Reward_Param7>
+      <Reward_Param8>1</Reward_Param8>
+		<Prereq>Units_Enter_Coruscant</Prereq>
+	</Event>
+
+</Story>

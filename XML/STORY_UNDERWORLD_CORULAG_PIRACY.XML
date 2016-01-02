@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Start Campaign -->
+	<Event Name="Corulag_Piracy_Mission_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Add_Objective_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_00</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Add_Objective_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Complete_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_00</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Add_Objective_00</Prereq>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Complete_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Add_Objective_01</Prereq>
+	</Event>
+	
+			<Event Name="Corulag_Piracy_Mission_Complete_Victory_Trigger">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>VICTORY</Reward_Type>
+				<Reward_Param1>Underworld</Reward_Param1>
+				<Prereq>Corulag_Piracy_Mission_Complete_Objective_00</Prereq>
+			</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Fail_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FAIL_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_00</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Add_Objective_00</Prereq>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Fail_Objective_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_CORULAG_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Corulag_Piracy_Mission_Fail_Objective_00</Prereq>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Loss_Rebel">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_REBEL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Loss_Empire">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_EMPIRE</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+	</Event>
+	
+	<Event Name="Corulag_Piracy_Mission_Loss_Hutt">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_HUTTS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Hutt</Reward_Param1>
+	</Event>
+
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+
+<!-- TEXT_SPEECH_UW_CLD_??
+	 -->
+	<Event Name="Corulag_Piracy_Mission_Speech_Line_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UW_CLD_01</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_CORULAG_PIR_TACTICAL_COR13_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>CORULAG_PIR_TACTICAL_COR13_02</Reward_Param8>
+		<Reward_Param9>IG-88_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Corulag_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Corulag_Piracy_Mission_Speech_Line_00_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>CORULAG_PIR_TACTICAL_COR13_02</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_CORULAG_PIR_TACTICAL_COR13_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Corulag_Piracy_Mission_Speech_Line_00</Prereq>
+				</Event>
+
+				<Event Name="Corulag_Piracy_Mission_Speech_Line_00_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Corulag_Piracy_Mission_Speech_Line_00_Remove_Text</Prereq>
+				</Event>
+
+</Story>

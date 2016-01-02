@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_Exec_Demo_1_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+	</Event>
+
+	<!-- Reveal Kuat -->
+	<Event Name="Underworld_Exec_Demo_1_Reveal_Kuat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kuat</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+	</Event>
+	
+	<!-- Reveal Kashyyyk -->
+	<Event Name="Underworld_Exec_Demo_1_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+	</Event>
+	
+	<!--*****************Give player all black market tech*****************-->
+				<Event Name="Underworld_Exec_Demo_1_Give_Buzz_Droids">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Buzz_Droid_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Proximity_Mines">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Proximity_Mine_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Disruptors">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Disruptor_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Full_Salvo">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Full_Salvo_Sync</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Core_Overload">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Core_Overload_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Sensor_Jamming">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Sensor_Jamming_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Vehicle_Cloaking">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Vehicle_Cloaking_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Weaponized_Carbonite">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Weaponized_Carbonite_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Point_Defense_System">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Point_Defense_System_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_1_Give_Shield_Leech">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Shield_Leech_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_1_Begin</Prereq>
+				</Event>
+	
+</Story>

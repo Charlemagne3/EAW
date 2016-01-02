@@ -1,0 +1,668 @@
+<?xml version="1.0" ?>
+<Cin_GroundProps>
+	
+	<Cin_GroundProp Name="Cin_X-WingProp">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Prop_Rock_Cluster_00</Variant_Of_Existing_Type>
+		<Land_Model_Name>Cin_rv_XWingProp.alo</Land_Model_Name>
+		<LandBehavior>LAND_OBSTACLE, Selectable</LandBehavior>
+		<Obstacle_Width>30.0</Obstacle_Width>
+		<Obstacle_Height>30.0</Obstacle_Height>
+		<Obstacle_X_Offset>-10.0</Obstacle_X_Offset>
+		<Obstacle_Y_Offset>-10.0</Obstacle_Y_Offset>
+		
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+		
+
+		<User_Bound_Min>-3000, -3000, 0</User_Bound_Min>
+		<User_Bound_Max>3000, 3000, 3500</User_Bound_Max>
+
+	
+	</Cin_GroundProp>
+
+
+
+	<Cin_GroundProp Name="Cin_destroyed_Empire_Wall">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Land_Model_Name>EB_BaseWall-mid_dest.alo</Land_Model_Name>			
+		
+		<Obstacle_Width>1.0</Obstacle_Width>
+		<Obstacle_Height>1.0</Obstacle_Height>
+		<Obstacle_X_Offset>-1.0</Obstacle_X_Offset>
+		<Obstacle_Y_Offset>-1.0</Obstacle_Y_Offset>
+	
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+			
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_DeathStar_Hangar">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_DeathStar_Hangar.alo</Land_Model_Name>			
+	
+	</Cin_GroundProp>	
+
+	<Cin_GroundProp Name="Cin_sith_lefthall">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_lefthall.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="sith_master">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>0.5</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_carbonite_sith_master.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Cin_cave_door">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_cave_door.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_door">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_door.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_righthall">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_righthall.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Cin_sith_wall_arch">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_wall_arch.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_roof">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_roof.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_console">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>0.20</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_console.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_w_tile">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>0.50</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_tile.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_statue">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>2.5</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_cin_sith_statue.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_arch">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>1</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_arch.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_sith_column">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>0.75</Scale_Factor>
+		
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_sith_column.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="cin_carbonite_sith">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Scale_Factor>0.5</Scale_Factor>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>w_carbonite_sith.alo</Land_Model_Name>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Trooper_Row">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Trooper_Row.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Biker_Row">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Biker_Row.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Officer_Row">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Officer_Row.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_NavyTrooper_Row">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_NavyTrooper_Row.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Lambda_Mouth">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Lambda_Mouth.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Lambda_Head">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Lambda_Head.alo</Land_Model_Name>			
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="REb_CelebHall">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Reb_CelebHall.alo</Land_Model_Name>			
+		
+		<User_Bound_Min>-3000, -3000, 0</User_Bound_Min>
+		<User_Bound_Max>3000, 3000, 3500</User_Bound_Max>
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="REb_CelebCharacters">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_REb_CelebCharacters.alo</Land_Model_Name>	
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>		
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+		
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Cin_Rebel_NavyRow">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Rbel_NavyRow.alo</Land_Model_Name>		
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>	
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Rebel_soldier">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Rbel_Soldier.alo</Land_Model_Name>			
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+		
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Rebel_SoldierRow">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Rbel_Soldier_Group.alo</Land_Model_Name>			
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Rebel_Grey">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Rbel_grey.alo</Land_Model_Name>			
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+		
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Rebel_GreyGroup">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Rbel_GreyGroup.alo</Land_Model_Name>	
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>		
+		
+	</Cin_GroundProp>
+
+
+
+	<Cin_GroundProp Name="Lambda_Shuttle_150" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Land_Model_Name> Cin_EV_lambdaShuttle_150.alo </Land_Model_Name>
+		<Scale_Factor>1.0</Scale_Factor>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Lambda_Shuttle_150X6-9" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Land_Model_Name> Cin_EV_lambdaShuttle_150.alo </Land_Model_Name>
+		<Scale_Factor>1.0</Scale_Factor>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>
+
+
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Cin_Vader">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Land_Model_Name>Cin_EI_Vader.alo</Land_Model_Name>
+						
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+		
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Vader_Shot_6-9">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Cin_Vader</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>	
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+			
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Cin_Emperor_Shot_5">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+
+		<Variant_Of_Existing_Type>Cin_X-WingProp</Variant_Of_Existing_Type>
+		<Land_Model_Name>Cin_EI_Palpatine.alo</Land_Model_Name>
+				
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+		<Blob_Shadow_Below_Detail_Level>99r</Blob_Shadow_Below_Detail_Level>
+			
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Cin_Emperor_Shot_6-9">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Cin_Emperor_Shot_5</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>	
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_At-AT">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>AT_AT_Walker</Variant_Of_Existing_Type>
+		<Max_Speed>0.50 </Max_Speed>
+		<Scale_Factor>2</Scale_Factor>	
+		<Death_Clone>Damage_Normal, FIN_At-AT_Death</Death_Clone>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_At-AT_Death">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>AT_AT_Walker_Death_Clone_00</Variant_Of_Existing_Type>
+		<Scale_Factor>2</Scale_Factor>	
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+	
+
+	<Cin_GroundProp Name="FIN_MPTL">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>MPTL</Variant_Of_Existing_Type>
+		<Scale_Factor>1.5</Scale_Factor>
+		<Max_Speed>.6</Max_Speed>
+		<Targeting_Max_Attack_Distance>1500.0</Targeting_Max_Attack_Distance>
+		
+		<Projectile_Types>Cin_Proj_Ground_Proton_Torpedo</Projectile_Types>
+		
+		<Projectile_Fire_Recharge_Seconds>2.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>9</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Fire_Recharge_Seconds>2.5</Projectile_Fire_Recharge_Seconds>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_ATST">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>AT_ST_Walker</Variant_Of_Existing_Type>
+		<Max_Speed>1.2</Max_Speed>
+		<Scale_Factor>1.25</Scale_Factor>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_SPMAT">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Variant_Of_Existing_Type>SPMAT_Walker</Variant_Of_Existing_Type>
+		<Max_Speed>0.8</Max_Speed>
+		<Scale_Factor>1.25</Scale_Factor>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_T4B_Tank">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>T4B_Tank</Variant_Of_Existing_Type>
+		<Max_Speed>1.00</Max_Speed>
+		<Scale_Factor>1.4</Scale_Factor>
+		<Tactical_Health>200</Tactical_Health>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_TIE_Crawler">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>TIE_Crawler</Variant_Of_Existing_Type>
+		<Max_Speed>2.40</Max_Speed>
+		<Scale_Factor>1.25</Scale_Factor>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_Scout_Trooper">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Scout_Trooper</Variant_Of_Existing_Type>
+		<Max_Speed>5.0</Max_Speed>
+		
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_Stormtrooper">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Stormtrooper</Variant_Of_Existing_Type>
+		<Max_Speed>2.40</Max_Speed>
+		<Movement_Animation_Speed> 0.8 </Movement_Animation_Speed>
+		<Rotation_Animation_Speed> 20.0 </Rotation_Animation_Speed>
+		<Walk_Animation_Speed> .366 </Walk_Animation_Speed>
+		<Max_Speed>0.8</Max_Speed>
+		<Max_Rate_Of_Turn>10.0</Max_Rate_Of_Turn>
+		<Scale_Factor>1.5</Scale_Factor>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_Plex_Soldier">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Plex_Soldier</Variant_Of_Existing_Type>
+		<Movement_Animation_Speed> 0.55 </Movement_Animation_Speed>	
+		<Max_Speed>0.8</Max_Speed>
+		<Max_Rate_Of_Turn>10.0</Max_Rate_Of_Turn>
+		<Scale_Factor>1.5</Scale_Factor>
+		<Land_Model_Name>RI_PlexS_Forest.alo</Land_Model_Name>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_Rebel_Trooperr">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Rebel_Trooper</Variant_Of_Existing_Type>
+		<Movement_Animation_Speed> 0.65 </Movement_Animation_Speed>
+		<Max_Speed> 1.1 </Max_Speed> <!-- inc from 0.8 -->
+		<Max_Rate_Of_Turn> 10.0 </Max_Rate_Of_Turn>
+		<Scale_Factor>1.5</Scale_Factor> 
+		<Land_Model_Name>RI_Infantry_forest.alo</Land_Model_Name>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_SnowSpeeder_fast">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Snowspeeder</Variant_Of_Existing_Type>
+		<Max_Speed>10.0</Max_Speed>
+		<Max_Rate_Of_Turn>5.0</Max_Rate_Of_Turn>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="FIN_TIE_Bomber_Bombing_Run">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>TIE_Bomber_Bombing_Run</Variant_Of_Existing_Type>
+		<Max_Speed>20.0</Max_Speed>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>		
+		
+	</Cin_GroundProp>
+
+
+	<Cin_GroundProp Name="Fin_Fire_Huge">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Fire_Huge.alo</Land_Model_Name>			
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Fin_Fire_Medium">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Fire_Medium.alo</Land_Model_Name>			
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+					
+	</Cin_GroundProp>
+
+	<Cin_GroundProp Name="Empire_Droid">
+			
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Cin_destroyed_Empire_Wall</Variant_Of_Existing_Type>
+		<Land_Model_Name>CIN_Probe_Droid.alo</Land_Model_Name>			
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+					
+	</Cin_GroundProp>
+	
+	
+</Cin_GroundProps>

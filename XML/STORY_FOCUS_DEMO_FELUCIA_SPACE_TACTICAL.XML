@@ -1,0 +1,228 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Underworld_FocusDemo_Felucia_Space_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Underworld_FocusDemo_Felucia_Disable_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+	</Event>
+	
+	<!-- Felucia space intro speech  -->
+	<Event Name="Underworld_FocusDemo_Felucia_Asteroid_Speech">
+        <Event_Type>STORY_ELAPSED</Event_Type>
+        <Event_Param1>4</Event_Param1>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_30</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>
+        <Reward_Param8>FOCUS_DEMO_30</Reward_Param8>
+        <Reward_Param9>Tyber_Loop</Reward_Param9>
+        <Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+    </Event>
+    
+						<Event Name="Underworld_Focus_Demo_Felucia_Asteroid_Speech_Done">
+							<Event_Type>STORY_SPEECH_DONE</Event_Type>
+							<Event_Param1>FOCUS_DEMO_30</Event_Param1>
+							<Reward_Type>SCREEN_TEXT</Reward_Type>
+							<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_30</Reward_Param1>
+							<Reward_Param4>remove</Reward_Param4>
+							<Prereq>Underworld_FocusDemo_Felucia_Asteroid_Speech</Prereq>
+						</Event>
+						
+									<Event Name="Underworld_Focus_Demo_Felucia_Asteroid_Remove_Movie">
+										<Event_Type>STORY_TRIGGER</Event_Type>
+										<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+										<Prereq>Underworld_Focus_Demo_Felucia_Asteroid_Speech_Done</Prereq>
+									</Event>
+	
+<!-- Vengeance PRESENT:  Flashing Stealth Ability -->
+					<Event Name="Underworld_FocusDemo_Felucia_Flash_Cloak">
+						<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+						<Event_Param2>FLASH_CLOAK</Event_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+					</Event>
+					
+<!-- Felucia space Cloaking Tech Speech  -->
+					<Event Name="Underworld_FocusDemo_Felucia_Cloaking_Speech">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_22</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_22</Reward_Param8>
+						<Reward_Param9>Tyber_Loop</Reward_Param9>
+						<Prereq>Underworld_FocusDemo_Felucia_Flash_Cloak</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Felucia_Cloaking_Speech_Done">
+											<Event_Type>STORY_SPEECH_DONE</Event_Type>
+											<Event_Param1>FOCUS_DEMO_22</Event_Param1>
+											<Reward_Type>SCREEN_TEXT</Reward_Type>
+											<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_22</Reward_Param1>
+											<Reward_Param4>remove</Reward_Param4>
+											<Prereq>Underworld_FocusDemo_Felucia_Cloaking_Speech</Prereq>
+										</Event>
+										
+													<Event Name="Underworld_Focus_Demo_Felucia_Cloaking_Remove_Movie">
+														<Event_Type>STORY_TRIGGER</Event_Type>
+														<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+														<Prereq>Underworld_Focus_Demo_Felucia_Cloaking_Speech_Done</Prereq>
+													</Event>
+					
+					<Event Name="Underworld_FocusDemo_Felucia_Flash_Cloak_Ability">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+						<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+						<Reward_Param1>STEALTH</Reward_Param1>
+						<Reward_Param2>flash_vengeance_stealth</Reward_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Flash_Cloak</Prereq>
+					</Event>
+				    
+					<Event Name="Underworld_FocusDemo_Felucia_REMOVEFLASH_Stealth">
+                        <Event_Type>STORY_GENERIC</Event_Type>
+						<Event_Param1>click</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_vengeance_stealth</Reward_Param1>
+                        <Prereq>Underworld_FocusDemo_Felucia_Flash_Cloak_Ability</Prereq>
+					 </Event>
+					 
+
+<!-- Bombers PRESENT:  Giving bomber text -->
+					<Event Name="Underworld_FocusDemo_Felucia_Bomber_Notification">
+						<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+						<Event_Param2>BOMBERS</Event_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+					</Event>
+					
+<!-- Felucia space Bomber Speech  -->
+					<Event Name="Underworld_FocusDemo_Felucia_Bomber_Speech">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_23</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_23</Reward_Param8>
+						<Reward_Param9>Tyber_Loop</Reward_Param9>
+						<Prereq>Underworld_FocusDemo_Felucia_Bomber_Notification</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Felucia_Bomber_Speech_Done">
+											<Event_Type>STORY_SPEECH_DONE</Event_Type>
+											<Event_Param1>FOCUS_DEMO_23</Event_Param1>
+											<Reward_Type>SCREEN_TEXT</Reward_Type>
+											<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_23</Reward_Param1>
+											<Reward_Param4>remove</Reward_Param4>
+											<Prereq>Underworld_FocusDemo_Felucia_Bomber_Speech</Prereq>
+										</Event>
+										
+													<Event Name="Underworld_Focus_Demo_Felucia_Bomber_Remove_Movie">
+														<Event_Type>STORY_TRIGGER</Event_Type>
+														<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+														<Prereq>Underworld_Focus_Demo_Felucia_Bomber_Speech_Done</Prereq>
+													</Event>
+													
+					<Event Name="Underworld_FocusDemo_Felucia_Flash_Defense_Ability">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+						<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+						<Reward_Param1>LASER_DEFENSE</Reward_Param1>
+						<Reward_Param2>flash_crusader_defense</Reward_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Bomber_Notification</Prereq>
+					</Event>
+				    
+					<Event Name="Underworld_FocusDemo_Felucia_REMOVEFLASH_Defense">
+                        <Event_Type>STORY_GENERIC</Event_Type>
+						<Event_Param1>click</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_crusader_defense</Reward_Param1>
+                        <Prereq>Underworld_FocusDemo_Felucia_Flash_Defense_Ability</Prereq>
+					 </Event>
+			
+<!-- Near Base:  Giving base text -->
+					<Event Name="Underworld_FocusDemo_Felucia_Base_Notification">
+						<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+						<Event_Param2>BASE</Event_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+					</Event>
+					
+<!-- Felucia space Bomber Speech  -->
+					<Event Name="Underworld_FocusDemo_Felucia_Base_Speech">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_31</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_31</Reward_Param8>
+						<Reward_Param9>Tyber_Loop</Reward_Param9>
+						<Prereq>Underworld_FocusDemo_Felucia_Base_Notification</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Felucia_Base_Speech_Done">
+											<Event_Type>STORY_SPEECH_DONE</Event_Type>
+											<Event_Param1>FOCUS_DEMO_31</Event_Param1>
+											<Reward_Type>SCREEN_TEXT</Reward_Type>
+											<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_31</Reward_Param1>
+											<Reward_Param4>remove</Reward_Param4>
+											<Prereq>Underworld_FocusDemo_Felucia_Base_Speech</Prereq>
+										</Event>
+										
+													<Event Name="Underworld_Focus_Demo_Felucia_Base_Remove_Movie">
+														<Event_Type>STORY_TRIGGER</Event_Type>
+														<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+														<Prereq>Underworld_Focus_Demo_Felucia_Base_Speech_Done</Prereq>
+													</Event>
+													
+					<Event Name="Underworld_FocusDemo_Felucia_Flash_Leech_Ability">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+						<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+						<Reward_Param1>LEECH_SHIELDS</Reward_Param1>
+						<Reward_Param2>flash_kedalbe_leech</Reward_Param2>
+						<Prereq>Underworld_FocusDemo_Felucia_Base_Notification</Prereq>
+					</Event>
+				    
+					<Event Name="Underworld_FocusDemo_Felucia_REMOVEFLASH_Leech">
+                       <Event_Type>STORY_GENERIC</Event_Type>
+						<Event_Param1>click</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_kedalbe_leech</Reward_Param1>
+                        <Prereq>Underworld_FocusDemo_Felucia_Flash_Leech_Ability</Prereq>
+					 </Event>
+													
+<!-- Felucia space Path Clear  -->
+					<Event Name="Underworld_FocusDemo_Felucia_Path_Clear_Speech">
+						<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+						<Event_Param2>PATH_CLEAR</Event_Param2>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_47</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_47</Reward_Param8>
+						<Reward_Param9>Tyber_Loop</Reward_Param9>
+						<Prereq>Underworld_FocusDemo_Felucia_Space_Begin</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Felucia_Path_Clear_Speech_Done">
+											<Event_Type>STORY_SPEECH_DONE</Event_Type>
+											<Event_Param1>FOCUS_DEMO_47</Event_Param1>
+											<Reward_Type>SCREEN_TEXT</Reward_Type>
+											<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_47</Reward_Param1>
+											<Reward_Param4>remove</Reward_Param4>
+											<Prereq>Underworld_FocusDemo_Felucia_Path_Clear_Speech</Prereq>
+										</Event>
+										
+													<Event Name="Underworld_Focus_Demo_Felucia_Path_Clear_Remove_Movie">
+														<Event_Type>STORY_TRIGGER</Event_Type>
+														<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+														<Prereq>Underworld_Focus_Demo_Felucia_Path_Clear_Speech_Done</Prereq>
+													</Event>
+													
+
+</Story>

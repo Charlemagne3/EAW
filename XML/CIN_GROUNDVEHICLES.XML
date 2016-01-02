@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+
+
+<CIN_GroundVehicles>
+
+	
+
+
+
+	<Cin_GroundVehicle Name="Cin_Gallofree_Y-Wing">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Y-Wing_Intro_Ground</Variant_Of_Existing_Type>
+		<Land_Model_Name>RV_TRANSPORT.ALO</Land_Model_Name>
+		<Max_Speed>6</Max_Speed>
+		<Min_Speed>6</Min_Speed>
+				
+	</Cin_GroundVehicle>
+
+
+	<Cin_GroundVehicle Name="CIN_Gallofree_IntroOpen">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Max_Speed>3.0</Max_Speed>
+		<Variant_Of_Existing_Type>Gallofree_Ground_Fly</Variant_Of_Existing_Type>
+		<Max_Thrust>0.1</Max_Thrust>
+		<Layer_Z_Adjust>100.0</Layer_Z_Adjust>
+		<Hover_Offset>220.0</Hover_Offset>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		<Obstacle_Width>0.01</Obstacle_Width>
+      		<Obstacle_Height>0.01</Obstacle_Height>
+      		<Obstacle_X_Offset>0.01</Obstacle_X_Offset>
+      		<Obstacle_Y_Offset>0.01</Obstacle_Y_Offset>
+
+
+	</Cin_GroundVehicle>
+
+	<Cin_GroundVehicle Name="CIN_Gallofree_IntroOpen_01">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>CIN_Gallofree_IntroOpen</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>
+
+	</Cin_GroundVehicle>
+
+	<Cin_GroundVehicle Name="CIN_Gallofree_IntroOpen_02">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>CIN_Gallofree_IntroOpen</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>02</Cinematic_Anim_Index>
+		<User_Bound_Min>-3000, -3000, 0</User_Bound_Min>
+		<User_Bound_Max>3000, 3000, 3500</User_Bound_Max>
+
+
+	</Cin_GroundVehicle>
+
+
+
+	<Cin_GroundVehicle Name="Y-Wing_Intro_Ground">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Y-Wing_bombing</Variant_Of_Existing_Type>
+		<Max_Speed>8</Max_Speed>
+		<Min_Speed>8</Min_Speed>
+		<Max_Rate_Of_Turn>1</Max_Rate_Of_Turn>
+		<Projectile_Types>Proj_Ground_Proton_Torpedo_Fast</Projectile_Types>
+		<Targeting_Max_Attack_Distance>1800.0</Targeting_Max_Attack_Distance>
+		<Turret_Rotate_Extent_Degrees>50</Turret_Rotate_Extent_Degrees>
+		<Turret_Elevate_Extent_Degrees>50</Turret_Elevate_Extent_Degrees>
+		<Projectile_Fire_Pulse_Count>6</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.1</Projectile_Fire_Pulse_Delay_Seconds>
+		<Damage_Hit_Particles>Medium_Explosion_Land</Damage_Hit_Particles>
+		<Projectile_Fire_Recharge_Seconds>3</Projectile_Fire_Recharge_Seconds>
+		<Hover_Offset>100.0</Hover_Offset>
+		
+		<Custom_Soft_Footprint_Radius>0.1</Custom_Soft_Footprint_Radius>
+		
+	</Cin_GroundVehicle>
+
+
+	<Cin_GroundVehicle Name="Y-Wing_Intro_GroundH">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Y-Wing_bombing</Variant_Of_Existing_Type>
+		<Max_Speed>9</Max_Speed>
+		<Min_Speed>9</Min_Speed>
+		<Max_Rate_Of_Turn>3</Max_Rate_Of_Turn>
+		<Targeting_Max_Attack_Distance>2600.0</Targeting_Max_Attack_Distance>
+		<Turret_Rotate_Extent_Degrees>50</Turret_Rotate_Extent_Degrees>
+		<Turret_Elevate_Extent_Degrees>50</Turret_Elevate_Extent_Degrees>
+		<Projectile_Fire_Pulse_Count>3</Projectile_Fire_Pulse_Count>
+		<Damage_Hit_Particles>Medium_Explosion_Land</Damage_Hit_Particles>
+		<Hover_Offset>100.0</Hover_Offset>
+		<Projectile_Fire_Recharge_Seconds>10</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Types>Proj_Ground_Proton_Torpedo_Fast</Projectile_Types>
+		<Custom_Soft_Footprint_Radius>0.1</Custom_Soft_Footprint_Radius>
+
+	</Cin_GroundVehicle>
+
+
+
+
+	<Cin_GroundVehicle Name="Y-Wing_Intro_GroundLow">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>Y-Wing_bombing</Variant_Of_Existing_Type>
+		<Max_Speed>3</Max_Speed>
+		<Min_Speed>3</Min_Speed>
+		<Max_Rate_Of_Turn>3</Max_Rate_Of_Turn>
+		<Projectile_Types>Proj_Ground_Proton_Torpedo_Fast</Projectile_Types>
+		<Targeting_Max_Attack_Distance>800.0</Targeting_Max_Attack_Distance>
+		<Turret_Rotate_Extent_Degrees>50</Turret_Rotate_Extent_Degrees>
+		<Turret_Elevate_Extent_Degrees>50</Turret_Elevate_Extent_Degrees>
+		<Projectile_Fire_Pulse_Count>3</Projectile_Fire_Pulse_Count>
+		<Damage_Hit_Particles>Medium_Explosion_Land</Damage_Hit_Particles>
+		<Hover_Offset>50.0</Hover_Offset>
+		<Projectile_Fire_Recharge_Seconds>10</Projectile_Fire_Recharge_Seconds>
+		<Tactical_Health>1000</Tactical_Health>
+		
+	</Cin_GroundVehicle>
+
+
+
+
+	<Cin_GroundVehicle Name="CIN_MPTL_Intro">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>MPTL</Variant_Of_Existing_Type>
+		<Targeting_Max_Attack_Distance>50.0</Targeting_Max_Attack_Distance>
+		
+	</Cin_GroundVehicle>
+
+	<Cin_GroundVehicle Name="CIN_AT-AT_Vehicles">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>AT_AT_Walker</Variant_Of_Existing_Type>
+		<Turret_Targets_Ground_Infantry> 9999 </Turret_Targets_Ground_Infantry>
+		<Turret_Targets_Anything_Else> 9999 </Turret_Targets_Anything_Else>
+		<Turret_Targets_Air_Vehicles> 9999 </Turret_Targets_Air_Vehicles>
+		<Targeting_Max_Attack_Distance>270.0</Targeting_Max_Attack_Distance>
+		
+	</Cin_GroundVehicle>
+
+	<Cin_GroundVehicle Name="CIN_T-4B_Vehicles">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>T4B_Tank</Variant_Of_Existing_Type>
+		<Turret_Targets_Ground_Infantry> 9999 </Turret_Targets_Ground_Infantry>
+		<Turret_Targets_Anything_Else> 9999 </Turret_Targets_Anything_Else>
+		<Targeting_Max_Attack_Distance>220.0</Targeting_Max_Attack_Distance>
+		
+	</Cin_GroundVehicle>
+
+	<Cin_GroundVehicle Name="CIN_AT-ST">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Variant_Of_Existing_Type>AT_ST_Walker</Variant_Of_Existing_Type>
+		<Turret_Targets_Ground_Infantry> 9999 </Turret_Targets_Ground_Infantry>
+		<Turret_Targets_Anything_Else> 9999 </Turret_Targets_Anything_Else>
+		<Targeting_Max_Attack_Distance>100.0</Targeting_Max_Attack_Distance>
+		
+	</Cin_GroundVehicle>
+
+
+	<Cin_GroundVehicle Name="CIN_Gallofree">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Max_Speed>8</Max_Speed>
+		<Variant_Of_Existing_Type>Gallofree_Ground_Fly</Variant_Of_Existing_Type>
+		<Max_Thrust>0.1</Max_Thrust>
+		<Layer_Z_Adjust>100.0</Layer_Z_Adjust>
+		<Hover_Offset>2000.0</Hover_Offset>
+
+
+	</Cin_GroundVehicle>
+
+
+
+	
+
+	
+
+
+</CIN_GroundVehicles>

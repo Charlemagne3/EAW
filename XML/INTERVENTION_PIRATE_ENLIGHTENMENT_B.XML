@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Pirate_Enlightenment_b_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Reward_Param2>Pirates</Reward_Param2>
+		<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment_b</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Pirate_Enlightenment_b_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_b_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Reward_Param2>Empire</Reward_Param2>
+		<Prereq>Pirate_Enlightenment_b_00</Prereq>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_b_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PIRATE_ENLIGHTENMENT_B_NOTIFICATION_00</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Pirate_Enlightenment_b_01</Prereq>
+	</Event>
+				
+	<Event Name="Pirate_Enlightenment_b_02">
+		<Event_Type>STORY_CONQUER</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Story_Dialog>Dialog_R_Intervention_Pirate_Enlightenment_b</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Prereq>Pirate_Enlightenment_b_01a</Prereq>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_b_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>PIRATE_ENLIGHTENMENT_B_NOTIFICATION_END</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Pirate_Enlightenment_b_02</Prereq>
+	</Event>
+	
+	<Event Name="Pirate_Enlightenment_b_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Pirate_Enlightenment_b_Tag_00</Reward_Param1>
+		<Prereq>Pirate_Enlightenment_b_03</Prereq>
+	</Event>
+	
+</Story>

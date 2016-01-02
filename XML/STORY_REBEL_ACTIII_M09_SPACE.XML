@@ -1,0 +1,1094 @@
+<?xml version="1.0" ?>
+<Story>
+
+
+	<!-- Setup -->
+	
+	<Event Name="Rebel_A3_M09_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M09_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M3_M09_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M3_M09_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M09_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M3_M09_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+
+
+
+<!-- Pre-Mission Dialog -->
+
+    <!-- Cinematic line 01
+    TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_31
+    Rebel Pilot: It's like time just stopped here.-->
+    <Event Name="Rebel_M09_IntroCine_Dialog_Line_01">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M09_DIALOG_REBELPILOT_01</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_31</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_NINE_31</Reward_Param8>
+        <Reward_Param9>Rebel_Pilot_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M09_Begin</Prereq>
+    </Event>
+
+                        <Event Name="Rebel_M09_IntroCine_Dialog_Line_01_Remove_Text">
+                            <Event_Type>STORY_SPEECH_DONE</Event_Type>
+                            <Event_Param1>REBEL_ACT03_MISSION_NINE_31</Event_Param1>
+                            <Reward_Type>SCREEN_TEXT</Reward_Type>
+                            <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_31</Reward_Param1>
+                            <Reward_Param4>Remove</Reward_Param4>	
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_01</Prereq>
+                        </Event>
+
+                         <Event Name="Rebel_M09_IntroCine_Dialog_Line_01_Remove_Movie">
+                            <Event_Type>STORY_TRIGGER</Event_Type>
+                            <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_01_Remove_Text</Prereq>
+                        </Event>
+
+     <!-- Cinematic line 02
+    TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_32
+    Antilles: It's borrowed time at best.  When they get moving again, we better not be around-->
+    <Event Name="Rebel_M09_IntroCine_Dialog_Line_02">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M09_DIALOG_ANTILLES_01</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_32</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_NINE_32</Reward_Param8>
+        <Reward_Param9>Antillies_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M09_Begin</Prereq>
+    </Event>
+
+                        <Event Name="Rebel_M09_IntroCine_Dialog_Line_02_Remove_Text">
+                            <Event_Type>STORY_SPEECH_DONE</Event_Type>
+                            <Event_Param1>REBEL_ACT03_MISSION_NINE_32</Event_Param1>
+                            <Reward_Type>SCREEN_TEXT</Reward_Type>
+                            <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_32</Reward_Param1>
+                            <Reward_Param4>Remove</Reward_Param4>	
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_02</Prereq>
+                        </Event>
+
+                         <Event Name="Rebel_M09_IntroCine_Dialog_Line_02_Remove_Movie">
+                            <Event_Type>STORY_TRIGGER</Event_Type>
+                            <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_02_Remove_Text</Prereq>
+                        </Event>
+
+
+     <!-- Cinematic line 03
+    TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_33
+    Antilles: Boarding parties, get going.  Search the station and collect any data you can!  -->
+    <Event Name="Rebel_M09_IntroCine_Dialog_Line_03">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M09_DIALOG_ANTILLES_02</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_33</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_NINE_33</Reward_Param8>
+        <Reward_Param9>Antillies_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M09_Begin</Prereq>
+    </Event>
+
+                        <Event Name="Rebel_M09_IntroCine_Dialog_Line_03_Remove_Text">
+                            <Event_Type>STORY_SPEECH_DONE</Event_Type>
+                            <Event_Param1>REBEL_ACT03_MISSION_NINE_33</Event_Param1>
+                            <Reward_Type>SCREEN_TEXT</Reward_Type>
+                            <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_33</Reward_Param1>
+                            <Reward_Param4>Remove</Reward_Param4>	
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_03</Prereq>
+                        </Event>
+
+                         <Event Name="Rebel_M09_IntroCine_Dialog_Line_03_Remove_Movie">
+                            <Event_Type>STORY_TRIGGER</Event_Type>
+                            <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_03_Remove_Text</Prereq>
+                        </Event>
+  
+ <!-- Cinematic line 04
+    TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_34
+    Rebel Soldier: Yes, sir!  -->
+    <Event Name="Rebel_M09_IntroCine_Dialog_Line_04">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M09_DIALOG_REBELPILOT_02</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_34</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_NINE_34</Reward_Param8>
+        <Reward_Param9>Rebel_Pilot_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M09_Begin</Prereq>
+    </Event>
+
+                        <Event Name="Rebel_M09_IntroCine_Dialog_Line_04_Remove_Text">
+                            <Event_Type>STORY_SPEECH_DONE</Event_Type>
+                            <Event_Param1>REBEL_ACT03_MISSION_NINE_34</Event_Param1>
+                            <Reward_Type>SCREEN_TEXT</Reward_Type>
+                            <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_34</Reward_Param1>
+                            <Reward_Param4>Remove</Reward_Param4>	
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_04</Prereq>
+                        </Event>
+
+                         <Event Name="Rebel_M09_IntroCine_Dialog_Line_04_Remove_Movie">
+                            <Event_Type>STORY_TRIGGER</Event_Type>
+                            <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_04_Remove_Text</Prereq>
+                        </Event>
+
+
+     <!-- Cinematic line 05
+    TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_35
+    Antilles: That EMP didn't last as long as we thought!  Protect the boarding party and take out any ship that reactivates!  -->
+    <Event Name="Rebel_M09_IntroCine_Dialog_Line_05">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M09_DIALOG_ANTILLES_03</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_35</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_NINE_35</Reward_Param8>
+        <Reward_Param9>Antillies_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M09_Begin</Prereq>
+    </Event>
+
+                        <Event Name="Rebel_M09_IntroCine_Dialog_Line_05_Remove_Text">
+                            <Event_Type>STORY_SPEECH_DONE</Event_Type>
+                            <Event_Param1>REBEL_ACT03_MISSION_NINE_35</Event_Param1>
+                            <Reward_Type>SCREEN_TEXT</Reward_Type>
+                            <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_35</Reward_Param1>
+                            <Reward_Param4>Remove</Reward_Param4>	
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_05</Prereq>
+                        </Event>
+
+                         <Event Name="Rebel_M09_IntroCine_Dialog_Line_05_Remove_Movie">
+                            <Event_Type>STORY_TRIGGER</Event_Type>
+                            <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                            <Prereq>Rebel_M09_IntroCine_Dialog_Line_05_Remove_Text</Prereq>
+                        </Event>
+
+
+
+
+	<!-- Goal List -->
+
+	<Event Name="Rebel_A3_M09_Goal_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_08</Reward_Param1>
+		<Prereq>Rebel_M09_IntroCine_Dialog_Line_05_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_43</Reward_Param1>
+		<Prereq>Rebel_M09_IntroCine_Dialog_Line_05_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_44</Reward_Param1>
+		<Prereq>Rebel_M09_IntroCine_Dialog_Line_05_Remove_Text</Prereq>
+	</Event>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Transport desctruction -->
+
+	<!-- One Shuttle Lost -->
+	<Event Name="Rebel_A3_M09_Transport_Destroyed_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>RM09_ALLIANCE_SHUTTLE</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_09</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_09</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_09</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Transport_Destroyed_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_00a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Transport_Destroyed_00a</Prereq>
+            </Event>
+
+
+	<!-- Two Shuttles Lost -->
+	<Event Name="Rebel_A3_M09_Transport_Destroyed_01">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>RM09_ALLIANCE_SHUTTLE</Event_Param1>
+		<Event_Param3>2</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_09</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_01a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_09</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_09</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Transport_Destroyed_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_01a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Transport_Destroyed_01a</Prereq>
+            </Event>
+
+
+	<!-- Three Shuttles Lost -->
+	<Event Name="Rebel_A3_M09_Transport_Destroyed_02">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>RM09_ALLIANCE_SHUTTLE</Event_Param1>
+		<Event_Param3>3</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_10</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_02a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_10</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_10</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Transport_Destroyed_02</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_02a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Transport_Destroyed_02a</Prereq>
+            </Event>
+
+
+	<!-- LOSS CONDITION: Four Shuttles Lost -->
+	<Event Name="Rebel_A3_M09_Transport_Destroyed_03">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>RM09_ALLIANCE_SHUTTLE</Event_Param1>
+		<Event_Param3>4</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_11</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_03a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_11</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_11</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Transport_Destroyed_03</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Transport_Destroyed_03a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Transport_Destroyed_03a</Prereq>
+            </Event>
+
+<!-- All shuttles destroyed, lose mission -->
+
+	<Event Name="Rebel_A3_M09_Mission_Lost">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Transport_Destroyed_03a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_08">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_43</Reward_Param1>
+
+		<Prereq>Rebel_A3_M09_Mission_Lost</Prereq>
+	</Event>
+
+
+
+
+
+
+   <!-- LOSS CONDITION: Sundered heart destroyed -->
+
+	<Event Name="Rebel_A3_M09_SH_Destroyed_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Sundered_Heart</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_12</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_SH_Destroyed_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_12</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_12</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_SH_Destroyed_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_SH_Destroyed_00a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_SH_Destroyed_00a</Prereq>
+            </Event>
+
+	<Event Name="Rebel_A3_M09_Goal_09">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_44</Reward_Param1>
+		<Prereq>Rebel_A3_M09_SH_Destroyed_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_SH_Death">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Goal_09</Prereq>
+	</Event>
+
+
+
+
+
+<!-- LOSS CONDITION: Space Station Destroyed before Rebels have finsished Search -->
+
+	<Event Name="Rebel_A3_M09_Station_Death_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Empire_Star_Base_5</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+		<Branch>Station_Death</Branch>
+	</Event>
+		
+	<Event Name="Rebel_A3_M09_Station_Death_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_45</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_12</Reward_Param8> <!-- STUB VOICE! -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Station_Death_00</Prereq>
+		<Branch>Station_Death</Branch>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Station_Death_01a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_12</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_45</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Station_Death_01</Prereq>
+				<Branch>Station_Death</Branch>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Station_Death_01a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Station_Death_01a</Prereq>
+            </Event>
+
+	<Event Name="Rebel_A3_M09_Station_Death_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Station_Death_01a</Prereq>
+		<Branch>Station_Death</Branch>
+	</Event>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Ships waking up -->
+
+	<!-- Wake Up Event 1 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_13
+	Rebel Pilot: Another batch of ships are recovering from the EMP effect!  -->
+	<Event Name="Rebel_A3_M09_Wake_Up_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>batch_1_wake</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_13</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Wake_Up_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_13</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_13</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Wake_Up_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Wake_Up_00a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Wake_Up_00a</Prereq>
+            </Event>
+            
+   <!-- Searching on ship - Search One -->
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_18
+	Antilles: What's the status in there?  We've got Imperial ships waking up out here!  -->
+	<Event Name="Rebel_A3_M09_Search_1_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_18</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Wake_Up_00a_Remove_Movie</Prereq>
+	</Event>
+
+	<!-- Rebel Soldier Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_19
+	Rebel Soldier: We're completing our search of the lower level, moving up.  -->
+	<Event Name="Rebel_A3_M09_Search_1_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_18</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_19</Reward_Param8> 
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_1_00</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Search_1_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_18</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_1_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M09_Search_1_01b">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_19</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_19</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_1_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Search_1_01b_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Search_1_01b</Prereq>
+            </Event>
+            
+            
+            
+            
+            
+
+
+
+	<!-- Wake Up Event 2 -->
+	<Event Name="Rebel_A3_M09_Wake_Up_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>batch_2_wake</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_14</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Wake_Up_01a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_14</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_14</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Wake_Up_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Wake_Up_01a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Wake_Up_01a</Prereq>
+            </Event>
+            
+            
+   <!-- Searching on ship - Search Two -->
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_20
+	Antilles: What's your status, soldier?-->
+	<Event Name="Rebel_A3_M09_Search_2_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_20</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Wake_Up_01a_Remove_Movie</Prereq>
+	</Event>
+
+	<!-- Rebel Soldier Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_21
+	Rebel Soldier: Almost done with our sweep of the mid-levels.  
+	We've found some intel that looks promising... Stormtroopers!  Get down!  -->
+	<Event Name="Rebel_A3_M09_Search_2_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_20</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_21</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_21</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_2_00</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Search_2_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_20</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_2_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M09_Search_2_01b">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_21</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_21</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_2_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Search_2_01b_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Search_2_01b</Prereq>
+            </Event>
+
+
+
+	<!-- Wake Up Event 3 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_15
+	Rebel Pilot: Another group of ships have reactivated!  We've got incoming! -->
+	<Event Name="Rebel_A3_M09_Wake_Up_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>batch_3_wake</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_15</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>0</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Wake_Up_02a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_15</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_15</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Wake_Up_02</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Wake_Up_02a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Wake_Up_02a</Prereq>
+            </Event>
+            
+   <!-- Wake Up Event 4 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_16
+	Rebel Pilot: Most of the big ships are waking up!  We better hurry!  -->
+	<Event Name="Rebel_A3_M09_Wake_Up_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_16</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Wake_Up_02a_Remove_Movie</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Wake_Up_03a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_16</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_16</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Wake_Up_03</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Wake_Up_03a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Wake_Up_03a</Prereq>
+            </Event>
+            
+            
+   <!-- Searching on ship  - Search Three -->
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_22
+	Antilles: I hope you're almost done!  Things are getting rougher by the minute!  
+	-->
+	<Event Name="Rebel_A3_M09_Search_3_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_22</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_22</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Wake_Up_03a_Remove_Movie</Prereq>
+	</Event>
+
+	<!-- Rebel Soldier Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_23
+	Rebel Soldier: We've encountered some resistance in the upper levels.  
+	We've found some Mon Calamari here, including one named Ackbar who works for Tarkin! -->
+	<Event Name="Rebel_A3_M09_Search_3_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_22</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_23</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_23</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_3_00</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Search_3_01a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_23</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_23</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_3_01</Prereq>
+			</Event>
+
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_24
+	Antilles: Bring them back along with anything else you find!  -->
+	<Event Name="Rebel_A3_M09_Search_3_02">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_23</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_24</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_3_01</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Search_3_02b">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_24</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_24</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_3_02</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Search_3_02b_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Search_3_02b</Prereq>
+            </Event>
+
+
+
+	
+            
+   	<!-- Searching on ship - Search Four -->
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_25
+	Antilles: You had better be done soon - most of the sector is waking up!  -->
+	<Event Name="Rebel_A3_M09_Search_4_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_25</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_3_02b_Remove_Movie</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_26  
+Rebel Soldier: We've completed our sweep and are returning to the lower levels. 
+More resistance!  We'll be there as soon as we can!  -->
+	<Event Name="Rebel_A3_M09_Search_4_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_25</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_26</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Search_4_00</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Search_4_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_25</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_4_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M09_Search_4_01b">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_26</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_26</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Search_4_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Search_4_01b_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Search_4_01b</Prereq>
+            </Event>
+
+
+
+
+<!-- Turrets waking up 
+TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_17
+Rebel Pilot: The turrets are coming back online!  -->
+
+	<Event Name="Rebel_A3_M09_Sat_Wake_Up_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>sats_awake</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_17</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Sat_Wake_Up_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_17</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_17</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Sat_Wake_Up_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Sat_Wake_Up_00a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Sat_Wake_Up_00a</Prereq>
+            </Event>
+
+   <!-- Plans recovered -->
+
+
+	<!-- Rebel Soldier Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_27
+	Rebel Soldier: Mission complete!  
+	We're back on the shuttles and ready to get out of here!  -->
+	<Event Name="Rebel_A3_M09_Plans_Recovered_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_27</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_27</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Sat_Wake_Up_00a_Remove_Movie</Prereq>
+	</Event>
+	
+			<Event Name="Rebel_A3_M09_Plans_Recovered_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_27</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_27</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Plans_Recovered_00</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M09_Plans_Recovered_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A3_M09_Plans_Recovered_00_Remove_Text</Prereq>
+			</Event>
+	
+	
+	
+	
+	
+	
+
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_28
+	Antilles: All craft, make for the designated coordinates and get out of the system! -->
+	<Event Name="Rebel_A3_M09_Plans_Recovered_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_NINE_27</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_28</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M09_Plans_Recovered_00_Remove_Movie</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Plans_Recovered_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_27</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Plans_Recovered_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M09_Plans_Recovered_01b">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_28</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_28</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Plans_Recovered_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Plans_Recovered_01b_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Plans_Recovered_01b</Prereq>
+            </Event>
+
+	<Event Name="Rebel_A3_M09_Goal_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_08</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Plans_Recovered_01b</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_29</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Plans_Recovered_01b</Prereq>
+	</Event>
+
+	<!-- <Event Name="Rebel_A3_M09_Highlight_Escape_Point_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_16</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>	
+		<Reward_Param3>00</Reward_Param3>
+		<Prereq>Rebel_A3_M09_Goal_04</Prereq>
+	</Event> -->
+
+	<!-- Disable Space Station Destruct Loss -->
+	<Event Name="Rebel_A3_M09_Disable_Station_Loss_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Station_Death</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>	
+		<Prereq>Rebel_A3_M09_Plans_Recovered_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Disable_Station_Loss_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Rebel_A3_M09_Station_Death_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>	
+		<Prereq>Rebel_A3_M09_Plans_Recovered_00</Prereq>
+	</Event>
+
+
+<!-- Shuttles at exit, win mission 
+TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_30
+Antilles: Everyone jump to lightspeed!  Let's get out of here while we still can!  -->
+
+	<Event Name="Rebel_A3_M09_Shuttle_Escape_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>START_END_CINEMATIC</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_30</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_NINE_30</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+			<Event Name="Rebel_A3_M09_Shuttle_Escape_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_NINE_30</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_NINE_30</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M09_Shuttle_Escape_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M09_Shuttle_Escape_00a_Remove_Movie">
+                <Event_Type>STORY_TRIGGER</Event_Type>
+                <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+                <Prereq>Rebel_A3_M09_Shuttle_Escape_00a</Prereq>
+            </Event>
+            
+    <Event Name="Rebel_A3_M09_Disable_Antilles_Killed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DISABLE_ANTILLES_KILLED</Event_Param2>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Rebel_A3_M09_SH_Destroyed_00</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Shuttle_Escape_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>MISSION_09_VICTORY</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_29</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Shuttle_Escape_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_43</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Shuttle_Escape_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M09_Goal_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_NINE_44</Reward_Param1>
+		<Prereq>Rebel_A3_M09_Shuttle_Escape_00</Prereq>
+	</Event>
+
+
+<!-- REBEL VICTORY: Set Flag -->
+	<Event Name="Rebel_A3_M09_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M09_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+
+
+
+
+
+
+
+
+</Story>
+	

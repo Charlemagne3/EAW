@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<GroundBuildables>
+
+	<!-- ========================================== -->
+	<!-- GROUND-BASED TACTICAL BUILD PADS - PIRATE  -->
+	<!-- ========================================== -->
+
+	<GroundBuildable Name="Pirate_Build_Pad">
+
+		<Behavior> TACTICAL_BUILD_OBJECTS, REVEAL </Behavior>
+
+		<!-- This is a list of the buildable objects at this pad (defined below) - that will be under construction -->
+		<Tactical_Buildable_Objects_Campaign>
+			Pirates,
+				UC_Pirate_Buildable_Anti_Aircraft_Turret,
+				UC_Pirate_Buildable_Anti_Vehicle_Turret,
+				UC_Pirate_Buildable_Anti_Infantry_Turret,
+				UC_Pirate_Buildable_Bacta_Tank,
+				UC_Pirate_Buildable_Repair_Facility
+		</Tactical_Buildable_Objects_Campaign>
+		
+		<Tactical_Buildable_Objects_Multiplayer>
+			Pirates,
+				UC_Pirate_Buildable_Anti_Aircraft_Turret,
+				UC_Pirate_Buildable_Anti_Vehicle_Turret, 
+				UC_Pirate_Buildable_Anti_Infantry_Turret,
+				UC_Pirate_Buildable_Bacta_Tank,
+				UC_Pirate_Buildable_Repair_Facility
+		</Tactical_Buildable_Objects_Multiplayer>
+
+		<Text_ID> TEXT_PIRATE_BUILD_PAD </Text_ID>
+		<Land_Model_Name> NB_BasePad.alo </Land_Model_Name>
+		<Capture_Point_Radius>0</Capture_Point_Radius>
+		<Loop_Idle_Anim_00> No </Loop_Idle_Anim_00>
+		<Collidable_By_Projectile_Living> No </Collidable_By_Projectile_Living>
+		<Is_Visible_On_Radar> No </Is_Visible_On_Radar>
+		<Select_Box_Scale> 50 </Select_Box_Scale>
+
+		<Space_Layer> Land </Space_Layer>	
+		<UnitCollisionClass> Build Pad </UnitCollisionClass>	
+		<Custom_Hard_XExtent> 10.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 10.0 </Custom_Hard_YExtent>
+		
+		<Scale_Factor> 1.0 </Scale_Factor>
+		<Shield_Points> 0 </Shield_Points>
+		<Tactical_Health> 10000 </Tactical_Health>
+		<Affiliation> Pirates </Affiliation>
+		<Base_Level_Available> 1 </Base_Level_Available>
+		<Required_Ground_Base_Level> 0 </Required_Ground_Base_Level>
+		<Reveal_During_Setup_Phase> False </Reveal_During_Setup_Phase>
+		<Reveal_During_Setup_Phase_Only> False </Reveal_During_Setup_Phase_Only>
+		<Land_FOW_Reveal_Range>100.0</Land_FOW_Reveal_Range>
+		<Victory_Relevant> No </Victory_Relevant>
+		<No_Reflection_Below_Detail_Level> 1 </No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level> 1 </No_Refraction_Below_Detail_Level>
+		<CategoryMask> Structure </CategoryMask>
+		<GUI_Bracket_Width> 20 </GUI_Bracket_Width>
+		<GUI_Bracket_Height> 0 </GUI_Bracket_Height>
+		<GUI_Bracket_Size> 1 </GUI_Bracket_Size> 
+		<Has_Land_Evaluator>True</Has_Land_Evaluator>
+		<Radar_Icon_Size>0.05  0.05</Radar_Icon_Size>
+
+		<Influences_Capture_Point> False </Influences_Capture_Point>
+		<Immune_To_Damage>True</Immune_To_Damage>
+
+	</GroundBuildable>
+
+
+
+	<!-- ============================================================================ -->
+	<!-- UNDER CONSTRUCTION GROUND-BASED BUILDABLE TACTICAL BASE STRUCTURES - PIRATES -->
+	<!-- ============================================================================ -->
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Abstract_Type">
+
+		<!-- NOTE: TACTICAL_UNDER_CONSTRUCTION does not work as a Land_Behavior, since the type->Behaves_Like() fails for some reason when it should not - need to fix -->
+		<Behavior> TACTICAL_UNDER_CONSTRUCTION, SELECTABLE, REVEAL, HIDE_WHEN_FOGGED </Behavior>
+		<LandBehavior> EARTHQUAKE_TARGET </LandBehavior>
+		
+		<Space_Layer> Land </Space_Layer>	
+		<UnitCollisionClass> Vehicle </UnitCollisionClass>	
+		<Custom_Hard_XExtent> 10.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 10.0 </Custom_Hard_YExtent>
+
+		<SFXEvent_Build_Cancelled>RHD_Building_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>RHD_Construction_Complete</SFXEvent_Build_Complete>
+
+		<Loop_Idle_Anim_00> No </Loop_Idle_Anim_00>
+		<Collidable_By_Projectile_Living> Yes </Collidable_By_Projectile_Living>
+		<Death_Explosions>Large_Explosion_Land</Death_Explosions>
+		<Death_SFXEvent_Start_Die> Unit_Generic_Building_Death_SFX </Death_SFXEvent_Start_Die>
+		<Ranged_Target_Z_Adjust> 10.0 </Ranged_Target_Z_Adjust>
+		<Is_Visible_On_Radar> Yes </Is_Visible_On_Radar>
+		<Land_FOW_Reveal_Range> 0.0 </Land_FOW_Reveal_Range>
+		<Dense_FOW_Reveal_Range_Multiplier> 0.0 </Dense_FOW_Reveal_Range_Multiplier>
+		<Select_Box_Scale> 50 </Select_Box_Scale>
+			
+		<Scale_Factor> 1.00 </Scale_Factor>
+		<Shield_Points> 0 </Shield_Points>
+		<Affiliation> Pirates </Affiliation>
+		<Base_Level_Available> 1 </Base_Level_Available>
+		<Required_Ground_Base_Level> 1 </Required_Ground_Base_Level>
+		<Armor_Type> Armor_Structure </Armor_Type>
+		<Reveal_During_Setup_Phase> False </Reveal_During_Setup_Phase>
+		<Victory_Relevant> No </Victory_Relevant>
+		<No_Reflection_Below_Detail_Level> 1 </No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level> 1 </No_Refraction_Below_Detail_Level>
+		<CategoryMask> Structure </CategoryMask>
+		<GUI_Bracket_Width> 20 </GUI_Bracket_Width>
+		<GUI_Bracket_Height> 0 </GUI_Bracket_Height>
+		<GUI_Bracket_Size> 0 </GUI_Bracket_Size> 
+		<Radar_Icon_Size>0.1  0.1</Radar_Icon_Size>
+		<Influences_Capture_Point> False </Influences_Capture_Point>
+		
+	</GroundBuildable>
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Repair_Facility">
+
+		<Variant_Of_Existing_Type> UC_Pirate_Buildable_Abstract_Type </Variant_Of_Existing_Type>
+
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_STRUCTURE</Encyclopedia_Unit_Class>
+
+		<Tactical_Buildable_Constructed> Pirate_Buildable_Repair_Facility </Tactical_Buildable_Constructed>		
+		<Tactical_Build_Cost_Multiplayer> 2500 </Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds> 35 </Tactical_Build_Time_Seconds>
+		<Tactical_Build_Start_Lower_Z> 0 </Tactical_Build_Start_Lower_Z>
+		<Tactical_Health> 100 </Tactical_Health>
+
+		<Text_ID> TEXT_STRUCTURE_PIRATE_BUILDABLE_REPAIR_FACILITY_UC </Text_ID>
+		<Land_Model_Name> NB_RepairFacility.alo </Land_Model_Name>
+
+		<SFXEvent_Build_Started>RHD_Repair_Station_Build</SFXEvent_Build_Started>
+		<SFXEvent_Select>Structure_Repair_Select_SFX</SFXEvent_Select>
+		
+		<Scale_Factor> 0.75 </Scale_Factor>
+
+		<Icon_Name>i_button_r_repair_facility.tga</Icon_Name>
+		
+	</GroundBuildable>
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Bacta_Tank">
+
+		<Variant_Of_Existing_Type> UC_Pirate_Buildable_Abstract_Type </Variant_Of_Existing_Type>
+
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_STRUCTURE</Encyclopedia_Unit_Class>
+
+		<Tactical_Buildable_Constructed> Pirate_Buildable_Bacta_Tank </Tactical_Buildable_Constructed>		
+		<Tactical_Build_Cost_Multiplayer> 1500 </Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds> 35 </Tactical_Build_Time_Seconds>
+		<Tactical_Build_Start_Lower_Z> 0 </Tactical_Build_Start_Lower_Z>
+		<Tactical_Health> 100 </Tactical_Health>
+
+		<Text_ID> TEXT_STRUCTURE_PIRATE_BUILDABLE_BACTA_TANK_UC </Text_ID>
+		<Land_Model_Name> NB_BactaTank.alo </Land_Model_Name>
+
+		<SFXEvent_Build_Started>RHD_Bacta_Tank_Build</SFXEvent_Build_Started>
+		<SFXEvent_Select>Structure_Bacta_Select_SFX</SFXEvent_Select>
+
+		<Icon_Name>i_button_bacta_tank.tga</Icon_Name>
+
+	</GroundBuildable>
+
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Anti_Infantry_Turret">
+
+		<Variant_Of_Existing_Type> UC_Pirate_Buildable_Abstract_Type </Variant_Of_Existing_Type>
+
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_TURRET</Encyclopedia_Unit_Class>
+
+		<Tactical_Buildable_Constructed> Pirate_Anti_Infantry_Turret </Tactical_Buildable_Constructed>		<!-- Defined in GroundTurrets.xml -->
+		<Tactical_Build_Cost_Multiplayer> 800 </Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds> 30 </Tactical_Build_Time_Seconds>
+		<Tactical_Build_Start_Lower_Z> 0 </Tactical_Build_Start_Lower_Z>
+		<Tactical_Health> 150 </Tactical_Health>
+
+		<Text_ID> TEXT_STRUCTURE_TURRET_AI_UC </Text_ID>
+		<Land_Model_Name> RB_TURRET.ALO </Land_Model_Name>
+
+		<Scale_Factor> 1.30 </Scale_Factor>
+
+		<SFXEvent_Build_Started>RHD_Turret_Build</SFXEvent_Build_Started>
+		<SFXEvent_Select>Structure_Turret_Select_SFX</SFXEvent_Select>
+
+		<Icon_Name>i_button_r_anti_infantry.tga</Icon_Name>
+
+	</GroundBuildable>
+
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Anti_Vehicle_Turret">
+
+		<Variant_Of_Existing_Type> UC_Pirate_Buildable_Abstract_Type </Variant_Of_Existing_Type>
+
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_TURRET</Encyclopedia_Unit_Class>
+
+		<Tactical_Buildable_Constructed> Pirate_Anti_Vehicle_Turret </Tactical_Buildable_Constructed>		<!-- Defined in GroundTurrets.xml -->
+		<Tactical_Build_Cost_Multiplayer> 1000 </Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds> 30 </Tactical_Build_Time_Seconds>
+		<Tactical_Build_Start_Lower_Z> 0 </Tactical_Build_Start_Lower_Z>
+		<Tactical_Health> 150 </Tactical_Health>
+
+		<Text_ID> TEXT_STRUCTURE_TURRET_AV_UC </Text_ID>
+		<Land_Model_Name> RB_VEHICLETURRET.ALO </Land_Model_Name>
+
+		<SFXEvent_Build_Started>RHD_Turret_Build</SFXEvent_Build_Started>
+		<SFXEvent_Select>Structure_Turret_Select_SFX</SFXEvent_Select>
+
+		<Death_Explosions>Medium_Explosion_Land</Death_Explosions>
+		
+		<Scale_Factor>1.0 </Scale_Factor>
+		<Armor_Type> Armor_Turret </Armor_Type>
+
+		<Icon_Name>i_button_r_anti_vehicle.tga</Icon_Name>
+
+	</GroundBuildable>
+
+	<GroundBuildable Name="UC_Pirate_Buildable_Anti_Aircraft_Turret">
+
+		<Variant_Of_Existing_Type> UC_Pirate_Buildable_Abstract_Type </Variant_Of_Existing_Type>
+
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_TURRET</Encyclopedia_Unit_Class>
+		<Encyclopedia_Text>TEXT_TOOLTIP_AA_TURRET</Encyclopedia_Text>
+
+		<Tactical_Buildable_Constructed> Pirate_Anti_Aircraft_Turret </Tactical_Buildable_Constructed>		<!-- Defined in GroundTurrets.xml -->
+		<Tactical_Build_Cost_Multiplayer> 800 </Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Cost_Campaign>20</Tactical_Build_Cost_Campaign>
+		<Tactical_Build_Time_Seconds> 18 </Tactical_Build_Time_Seconds>
+		<Tactical_Build_Start_Lower_Z> 0 </Tactical_Build_Start_Lower_Z>
+		<Tactical_Health> 175 </Tactical_Health>
+
+		<Text_ID> TEXT_STRUCTURE_TURRET_AA_UC </Text_ID>
+		<Land_Model_Name> RB_AA-TURRET.ALO </Land_Model_Name>
+		<Scale_Factor>0.95</Scale_Factor>
+
+		<SFXEvent_Build_Started>RHD_Turret_Build</SFXEvent_Build_Started>
+		<SFXEvent_Select>Structure_Turret_Select_SFX</SFXEvent_Select>
+
+		<Armor_Type> Armor_Turret </Armor_Type>
+
+		<Icon_Name>i_button_r_anti_aircraft.tga</Icon_Name>
+
+	</GroundBuildable>
+
+
+
+
+</GroundBuildables>
+
+
+

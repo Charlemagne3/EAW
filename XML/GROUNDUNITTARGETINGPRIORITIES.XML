@@ -1,0 +1,374 @@
+<?xml version="1.0" ?>
+
+<Targeting_Priority_Sets>
+	<!-- DEFAULT PRIORITY SETS FOR BOTH AI AND HUMAN PLAYERS ==================================
+	The default priority set for each class will favor units that 
+	the unit has good RPS advantage over.  These should not contain
+	many exclusions or any hard point target priorities.
+	-->
+
+	<Priority_Set Name="AntiInfantry">
+		<Attack_Priorities>
+			LandHero, 0.5,	Infantry, 1.0,		Turret, 2.0,		Vehicle, 3.0,   TacticalStructure, 4.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="AntiVehicle">
+		<Attack_Priorities>
+			Vehicle, 1.0,  LandHero, 1.5,	   Turret, 2.0,      Infantry, 3.0,     TacticalStructure, 4.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+    <Priority_Set Name="AntiVehicleStructure">
+        <Attack_Priorities>
+            Vehicle, 1.0,  LandHero, 1.5,	   Turret, 2.0,      Infantry, 3.0, Structure, 4.0,     TacticalStructure, 4.0
+        </Attack_Priorities>
+        <Category_Exclusions>
+            Wall, Air
+        </Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+    </Priority_Set>
+
+	<Priority_Set Name="AntiAir">
+		<Attack_Priorities>
+			Air, 1.0, Vehicle, 2.0,	Turret, 3.0,	Infantry, 4.0,  TacticalStructure, 5.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+    <Priority_Set Name="ATATAntiEverything">
+        <Attack_Priorities>
+            Vehicle, 1.0,  LandHero, 2.5,	Turret, 2.0,  Infantry, 4.0, Structure, 3.0,     TacticalStructure, 4.0
+        </Attack_Priorities>
+        <Category_Exclusions>
+            Wall
+        </Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+   </Priority_Set>
+
+
+	<Priority_Set Name="Lancet_TP">
+		<Attack_Priorities>
+			Air, 1.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+
+	<Priority_Set Name="Vornskr_Attack_Priority">
+		<Attack_Priorities>
+			LandHero, 1.0,	Infantry, 2.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air, Vehicle
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Empire_Anti_Infantry_Turret, Rebel_Anti_Infantry_Turret, Pirate_Anti_Infantry_Turret, Underworld_Mass_Driver_Turret, Underworld_Torpedo_Turret
+		</Unit_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Destroyer_Droid_Attack_Priority">
+		<Attack_Priorities>
+			LandHero, 1.0,	Infantry, 2.0, Vehicle, 3.0, Turret, 4.0, TacticalStructure, 5.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Rocket_Infantry_Attack_Priority">
+        <Attack_Priorities>
+            Vehicle, 1.0, 
+            LandHero, 2.0, 
+            Turret, 3.0,
+            Air, 4.0,
+            Infantry, 5.0, 
+            Structure, 6.0,     
+            TacticalStructure, 6.0
+        </Attack_Priorities>
+        <Category_Exclusions>
+            Wall
+        </Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>		
+	</Priority_Set>
+	
+	<Priority_Set Name="Rocket_Vehicle_Attack_Priority"> <!-- used only by MAL, air removed -->
+        <Attack_Priorities>
+            Vehicle, 1.0, 
+            Turret, 2.0,
+            LandHero, 3.0,
+            Infantry, 4.0, 
+            Structure, 5.0,     
+            TacticalStructure, 5.0
+        </Attack_Priorities>
+        <Category_Exclusions>
+            Wall, Air
+        </Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>				
+	</Priority_Set>
+
+	<Priority_Set Name="Anti_All_Attack_Priority"> <!-- used only by Canderous -->
+        <Attack_Priorities>
+            Vehicle, 1.0, 
+            Turret, 2.0,
+			Air, 3.0,
+            Structure, 4.0,     
+            TacticalStructure, 4.0,
+            LandHero, 5.0,
+            Infantry, 6.0
+        </Attack_Priorities>
+        <Category_Exclusions>
+            Wall
+        </Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>				
+	</Priority_Set>
+
+	<Priority_Set Name="Felucia_Plant_Attack_Priority">
+		<Attack_Priorities>
+			LandHero, 1.0,	Infantry, 2.0,		Vehicle, 3.0,
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>		
+	</Priority_Set>
+
+	<!-- Prevent Rancors in Dathomir mission from attacking night sister units -->
+	<Priority_Set Name="Rancor_Dark_Ally_Attack_Priority">
+		<Attack_Priorities>
+			LandHero, 0.5,	Infantry, 1.0,	TacticalStructure, 2.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>
+		<Unit_Exclusions>
+			UM06_Night_Sister,
+			Prisoner_Night_Sister,
+			Silri	
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<!-- Allow indigenous Vornskr to attack vehicles -->
+	<Priority_Set Name="Indigenous_Vornskr_Attack_Priority">
+		<Attack_Priorities>
+			LandHero, 1.0,	Infantry, 2.0,	Vehicle, 3.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Empire_Anti_Infantry_Turret, Rebel_Anti_Infantry_Turret, Pirate_Anti_Infantry_Turret, Underworld_Mass_Driver_Turret, Underworld_Torpedo_Turret
+		</Unit_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+
+	<!-- AI SPECIFIC TARGETING PRIORITY SETS ===================================================
+	These should never be assigned as the unit defaults, because 
+	they would affect the human player -->
+
+	<!-- No_Structure means no threatening structure, i.e. even though turrets 
+	are technically structures, we'll not exclude them.
+	-->
+
+	<Priority_Set Name="AntiStructure">
+		<Attack_Priorities>
+			Turret, 1.0,	Vehicle, 2.0,	Infantry, 3.0,	TacticalStructure, 4.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="AntiInfantry_No_Structures">
+		<Attack_Priorities>
+			LandHero, 0.5,	Infantry, 1.0,	TacticalStructure, 2.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="AntiVehicle_No_Structures">
+		<Attack_Priorities>
+			Vehicle, 1.0,	LandHero, 1.5,	TacticalStructure, 2.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="AvoidAntiInfantryTurrets">
+		<Attack_Priorities>
+			LandHero, 0.5,	Infantry, 1.0,		Turret, 2.0,		Vehicle, 3.0,     TacticalStructure, 4.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Structure, Air
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Empire_Anti_Infantry_Turret, Rebel_Anti_Infantry_Turret, Pirate_Anti_Infantry_Turret
+		</Unit_Exclusions>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Infantry_Attack_Move">
+		<Attack_Priorities>
+			LandHero, 1.0,	
+			Infantry, 2.0,     
+			Vehicle, 3.0,
+			Turret, 4.0,
+			TacticalStructure, 5.0,
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Air
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Empire_Anti_Infantry_Turret, 
+			Rebel_Anti_Infantry_Turret, 
+			Pirate_Anti_Infantry_Turret,
+		</Unit_Exclusions>
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Rocket_Infantry_Attack_Move">
+		<Attack_Priorities>
+			MPTL, 1.0,	
+			SPMAT_Walker, 1.0,
+			MAL_Rocket_Vehicle, 1.0,
+			Vehicle, 2.0,
+			Turret, 3.0,    
+			TacticalStructure, 4.0,
+			Air, 5.0,
+			LandHero, 6.0,
+			Infantry, 7.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Empire_Anti_Infantry_Turret, 
+			Rebel_Anti_Infantry_Turret, 
+			Pirate_Anti_Infantry_Turret,
+		</Unit_Exclusions>		
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Air_Attack_Move">
+		<Attack_Priorities>
+			SPMAT_Walker, 1.0,
+			Vehicle, 2.0,
+			Turret, 3.0,     
+			TacticalStructure, 4.0,
+			Air, 5.0,
+			LandHero, 6.0,
+			Infantry, 7.0,
+			Structure, 8.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			AT_AA_Walker
+			MPTL,	
+			MAL_Rocket_Vehicle,			
+			Empire_Anti_Aircraft_Turret, 
+			Rebel_Anti_Aircraft_Turret, 
+			Pirate_Anti_Aircraft_Turret,
+			Underworld_Torpedo_Turret,
+		</Unit_Exclusions>
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Heavy_Vehicle_Attack_Move">
+		<Attack_Priorities>
+			MPTL, 1.0,	
+			SPMAT_Walker, 1.0,
+			MAL_Rocket_Vehicle, 1.0,
+			Vehicle, 2.0,
+			Turret, 3.0,    
+			TacticalStructure, 4.0,
+			LandHero, 5.0,
+			Infantry, 6.0
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Air
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Plex_Soldier_Team,
+			Empire_Anti_Vehicle_Turret, 
+			Rebel_Anti_Vehicle_Turret, 
+			Pirate_Anti_Vehicle_Turret,
+			Underworld_Mass_Driver_Turret,
+		</Unit_Exclusions>		
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+	</Priority_Set>
+	
+	<Priority_Set Name="Light_Vehicle_Attack_Move">
+		<Attack_Priorities>
+			LandHero, 1.0,
+			Infantry, 2.0,
+			Vehicle, 3.0,
+			Turret, 4.0,
+			TacticalStructure, 5.0,
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Air
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Plex_Soldier_Team,
+			Empire_Anti_Vehicle_Turret, 
+			Rebel_Anti_Vehicle_Turret, 
+			Pirate_Anti_Vehicle_Turret,
+			Underworld_Mass_Driver_Turret,
+		</Unit_Exclusions>		
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>		
+	</Priority_Set>
+
+	<Priority_Set Name="Artillery_Attack_Move">
+		<Attack_Priorities>
+			Turret, 1.0,
+			TacticalStructure, 2.0,
+			Vehicle, 3.0,
+			Structure, 4.0,
+			LandHero, 5.0,
+			Infantry, 6.0,
+		</Attack_Priorities>
+		<Category_Exclusions>
+			Wall, Air
+		</Category_Exclusions>
+		<Property_Exclusions>
+			NotOpportunityTarget
+		</Property_Exclusions>
+	</Priority_Set>
+
+</Targeting_Priority_Sets>

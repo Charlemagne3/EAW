@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<GameConstants>
+	<Credits_Accumulation_Factor_Rebel>.0003</Credits_Accumulation_Factor_Rebel>
+	<Credits_Accumulation_Factor_Empire>.0003</Credits_Accumulation_Factor_Empire>
+	<Hyperspace_Speed_Factor_Rebel>2.5</Hyperspace_Speed_Factor_Rebel>
+	<Hyperspace_Speed_Factor_Empire>2.5</Hyperspace_Speed_Factor_Empire>
+	<Production_Speed_Factor>0.2</Production_Speed_Factor>
+	<Starting_Galactic_Camera_Position>0.0, 0.0, 0.0</Starting_Galactic_Camera_Position>
+	<Camera_Stop_Left>-50.0f</Camera_Stop_Left>
+	<Camera_Stop_Right>50.0f</Camera_Stop_Right>
+	<Camera_Z_Position>-80.0</Camera_Z_Position>
+	<Fleet_Movement_Line_Texture_Name>w_galaxy_line.tga</Fleet_Movement_Line_Texture_Name>
+	<Fleet_Hyperspace_Band_Texture_Name>w_galaxy_line.tga</Fleet_Hyperspace_Band_Texture_Name>
+	<Good_Fleet_Maintenance_Cost_Factor>1.0</Good_Fleet_Maintenance_Cost_Factor>
+	<Evil_Fleet_Maintenance_Cost_Factor>1.0</Evil_Fleet_Maintenance_Cost_Factor>
+	<Good_Starship_Maintenance_Cost_Factor>0.0000</Good_Starship_Maintenance_Cost_Factor>
+	<Evil_Starship_Maintenance_Cost_Factor>0.03</Evil_Starship_Maintenance_Cost_Factor>
+	<Fleet_Maintenance_Update_Delay_Seconds>10.0</Fleet_Maintenance_Update_Delay_Seconds>
+	<Space_Auto_Resolve_Delay_Seconds>1.0</Space_Auto_Resolve_Delay_Seconds>
+	<Land_Auto_Resolve_Delay_Seconds>1.0</Land_Auto_Resolve_Delay_Seconds>
+	<Political_Control_Change_Time_Seconds>7</Political_Control_Change_Time_Seconds>
+	<TacticalEdgeScrollRegion>2</TacticalEdgeScrollRegion>
+	<TacticalMaxScrollSpeed>2000</TacticalMaxScrollSpeed>
+	<TacticalMinScrollSpeed>1000</TacticalMinScrollSpeed>
+	<TacticalOffscreenScrollRegion>50</TacticalOffscreenScrollRegion>
+    <Landbase_Health_Quadratic>1,600,3,2400,5,9600</Landbase_Health_Quadratic>
+	<Landbase_Damage_Quadratic>5,10,10</Landbase_Damage_Quadratic>
+	<Starbase_Health_Quadratic>1,600,3,2400,5,9600</Starbase_Health_Quadratic>
+	<Starbase_Damage_Quadratic>5,10,10</Starbase_Damage_Quadratic>
+	<Political_Income_Quadratic>0,1,0</Political_Income_Quadratic>
+    <GMC_InitialiLookatDistanceFromOrigin>250.0</GMC_InitialiLookatDistanceFromOrigin>
+    <GMC_InitialLookdownPullbackDistance>1200.0</GMC_InitialLookdownPullbackDistance>
+    <GMC_InitialDesiredLookdownPullbackDistance>1100.0</GMC_InitialDesiredLookdownPullbackDistance>
+    <GMC_InitialLookdownAngleDegrees>-160.0</GMC_InitialLookdownAngleDegrees>
+    <GMC_InitialDiscRotationAngleDegrees>100.0</GMC_InitialDiscRotationAngleDegrees>
+    <GMC_MinLookdownAngle>45.0</GMC_MinLookdownAngle>
+    <GMC_MaxLookdownAngle>45.0</GMC_MaxLookdownAngle>
+    <GMC_MaxRollAngle>15.0</GMC_MaxRollAngle>
+    <GMC_MaxRotationAngle>0.0</GMC_MaxRotationAngle>
+    <GMC_MinPullbackDistance>1200.0</GMC_MinPullbackDistance>
+    <GMC_MaxPullbackDistance>1200.0</GMC_MaxPullbackDistance>
+    <GMC_PullbackFromOriginDistFactor>100.0</GMC_PullbackFromOriginDistFactor>
+    <GMC_LookdownPullbackRate>5.0</GMC_LookdownPullbackRate>
+    <GMC_EdgeHorizontalRotateRate>0.0</GMC_EdgeHorizontalRotateRate>
+    <GMC_EdgeVerticalTiltRate>0.010</GMC_EdgeVerticalTiltRate>
+    <MaximumPoliticalControl> 5 </MaximumPoliticalControl>
+    <MaximumStarbaseLevel> 5 </MaximumStarbaseLevel>
+    <MaximumGroundbaseLevel> 5 </MaximumGroundbaseLevel>
+    <MaximumSpecialStructures> 5 </MaximumSpecialStructures>
+    <MaximumFleetMovementDistance> 150.0 </MaximumFleetMovementDistance>
+	<TradeRouteMovementFactor> 1.0 </TradeRouteMovementFactor>
+	<Tooltip_Delay>500</Tooltip_Delay>
+	<ShieldRechargeIntervalInSecs>5.0</ShieldRechargeIntervalInSecs>
+	<EnergyRechargeIntervalInSecs>5.0</EnergyRechargeIntervalInSecs>
+	<EnergyToShieldExchangeRate>1.0</EnergyToShieldExchangeRate>
+	<AIUsesFogOfWar> false </AIUsesFogOfWar>
+	<AutomaticAutoResolve> true </AutomaticAutoResolve>
+	<MaxInfluenceTransitionAlignmentBonus>0.50</MaxInfluenceTransitionAlignmentBonus>
+	<MaxInfluenceTransitionAlignmentPenalty>0.50</MaxInfluenceTransitionAlignmentPenalty>
+	<MaxCreditIncomeAlignmentBonus>0.50</MaxCreditIncomeAlignmentBonus>
+	<MaxCreditIncomeAlignmentPenalty>0.50</MaxCreditIncomeAlignmentPenalty>
+	<MaxCombatAccuracyAlignmentBonus>0.25</MaxCombatAccuracyAlignmentBonus>
+	<MaxCombatDamageAlignmentBonus>0.25</MaxCombatDamageAlignmentBonus>
+	<MaxCombatSensorRangeAlignmentBonus>0.25</MaxCombatSensorRangeAlignmentBonus>
+    <Max_Galactic_Zoom_Distance>350</Max_Galactic_Zoom_Distance>
+    <Min_Galactic_Zoom_Speed>200</Min_Galactic_Zoom_Speed>
+    <Max_Galactic_Zoom_Speed>1500</Max_Galactic_Zoom_Speed>
+    <Galactic_Zoom_Acceleration>1500</Galactic_Zoom_Acceleration>
+</GameConstants>

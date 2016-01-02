@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<Story_Mode_Plots>
+	
+	<Lua_Script>Story_Campaign_Underworld_Test_Campaign</Lua_Script>
+	<Active_Plot>Story_Campaign_Underworld_Test_Campaign.xml</Active_Plot>
+
+</Story_Mode_Plots>
+

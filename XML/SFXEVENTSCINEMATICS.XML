@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+
+<SFXEvents>
+
+
+<!-- Rebel Space Win Cinematic -->
+
+	<SFXEvent Name="Rebel_Space_Win_Line_1">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_GRS1504_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GRS_NEAR_VICTORY_4</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Rebel_Space_Win_Line_2">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples> U000_GRS1505_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GRS_NEAR_VICTORY_5</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Rebel_Space_Win_Line_3">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_NEB0701_ENG.wav</Samples>
+            <Localize> Yes </Localize>
+				<Play_Sequentially> Yes </Play_Sequentially>
+            <Text_ID>TEXT_SFX_NEB_BARRAGE_1</Text_ID>
+    </SFXEvent>
+
+	<SFXEvent Name="Rebel_Space_Win_Line_4">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_VAD0506_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_VAD_PUSH_6</Text_ID>
+	 </SFXEvent>
+
+<!-- Rebel_Space_Win_Line_5  is a speech event -->
+
+	<SFXEvent Name="Rebel_Space_Win_Line_6">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_XW52203_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_XW5_CHATTER_3</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Rebel_Space_Win_Line_7">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_AAF0701_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_AAF_BARRAGE_1</Text_ID>
+	 </SFXEvent>
+
+
+
+
+
+
+
+<!-- Empire Land Win Cinematic -->
+
+
+	<SFXEvent Name="Empire_Land_Win_Line_1">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_GES1102_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GES_SEE_ENEMY_2</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Empire_Land_Win_Line_2">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_ATT0701_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_ATT_TANKS_1</Text_ID>
+	 </SFXEvent>
+
+<!-- Empire_Land_Win_Line_3  is Speech Event -->
+
+	<SFXEvent Name="Empire_Land_Win_Line_4">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_GRS1218_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GRS_SEE_ENEMY_18</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Empire_Land_Win_Line_5">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_GES0503_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GES_ENEMY_RETREAT_3</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Empire_Land_Win_Line_6">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_AW52203_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_AW5_CHATTER_3</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Empire_Land_Win_Line_7">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_GRS1215_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_GRS_SEE_ENEMY_15</Text_ID>
+	 </SFXEvent>
+
+<!-- Empire_Land_Win_Line_8  is Speech Event -->
+
+	<SFXEvent Name="Empire_Land_Win_Line_9">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_VAD0803_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_VAD_INTERACT_3</Text_ID>
+	 </SFXEvent>
+
+	<SFXEvent Name="Empire_Land_Win_Line_10">
+			<Use_Preset>Preset_UR_MOVIE</Use_Preset>
+			<Samples>U000_VAD0806_ENG.wav</Samples>
+				<Localize> Yes </Localize>
+				<Text_ID>TEXT_SFX_VAD_INTERACT_6</Text_ID>
+	 </SFXEvent>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+</SFXEvents>

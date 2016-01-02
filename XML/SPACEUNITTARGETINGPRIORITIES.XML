@@ -1,0 +1,329 @@
+<?xml version="1.0" ?>
+
+<Targeting_Priority_Sets>
+	<!-- DEFAULT PRIORITY SETS FOR BOTH AI AND HUMAN PLAYERS 
+	The default priority set for each class will favor units that 
+	the unit has good RPS advantage over.  These should not contain
+	exclusions or hard point target priorities.
+	-->
+
+	<Priority_Set Name="Transport">
+		<Attack_Priorities>
+			Transport, 1.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Fighter">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Fighter, 3.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Bomber">
+		<Attack_Priorities>
+			SpaceHero, 0.5,
+			Capital, 1.0,
+			Frigate, 2.0,
+			Corvette, 3.0,
+			Transport, 4.0,
+			Bomber, 5.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Corvette">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Fighter, 3.0,
+			SpaceHero, 4.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Frigate">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Corvette, 3.0,
+			SpaceHero, 3.5,
+			Fighter, 4.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Capital">
+		<Attack_Priorities>
+			Transport, 7.0,
+			Frigate, 1.0,
+			Capital, 2.0,
+			SpaceHero, 6.0,
+			Corvette, 3.0,
+			Bomber, 4.0,
+			Fighter, 5.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="SpaceArtillery">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Corvette, 2.0,
+			SpaceHero, 2.5,
+			Frigate, 3.0,
+			Capital, 4.0,
+			Bomber, 5.0,
+			Fighter, 6.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Vengeance_TP">
+		<Attack_Priorities>
+			Transport, 7.0,
+			Frigate, 1.0,
+			Capital, 2.0,
+			SpaceHero, 4.0,
+			Corvette, 3.0,
+			Bomber, 5.0,
+			Fighter, 6.0
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Arc_Hammer_TP">
+		<Attack_Priorities>
+			Transport, 7.0,
+			Frigate, 2.0,
+			Capital, 6.0,
+			SpaceHero, 3.0,
+			Corvette, 4.0,
+			Bomber, 1.0,
+			Fighter, 5.0,
+		</Attack_Priorities>
+		<Property_Exclusions>NotOpportunityTarget</Property_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+
+
+	<!-- AI SPECIFIC TARGETING PRIORITY SETS 
+	These should never be assigned as the unit defaults, because 
+	they would affect the human player -->
+
+	<Priority_Set Name="Fighter_Attack_Move">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Fighter, 3.0,
+			SpaceHero, 4.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator, Engine, FIGHTER_BAY, WEAPON_LASER, WEAPON_ION_CANNON, TRACTOR_BEAM
+		</Hard_Point_Priorities>
+		<Category_Exclusions>
+			Frigate, Capital
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Bomber_Attack_Move">
+		<Attack_Priorities>
+			Corvette, 3.0,
+			Transport, 4.0,
+			SpaceHero, 4.5,
+			Bomber, 5.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator, Engine, FIGHTER_BAY, WEAPON_LASER, WEAPON_ION_CANNON, TRACTOR_BEAM
+		</Hard_Point_Priorities>
+		<Category_Exclusions>
+			Frigate, Capital
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Corvette_Attack_Move">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Fighter, 3.0,
+			SpaceHero, 4.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator, Engine, FIGHTER_BAY, WEAPON_LASER, WEAPON_ION_CANNON, TRACTOR_BEAM
+		</Hard_Point_Priorities>
+		<Category_Exclusions>
+			Frigate, Capital
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="Frigate_Attack_Move">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Bomber, 2.0,
+			Corvette, 3.0,
+			SpaceHero, 3.5,
+			Fighter, 4.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator, Engine, FIGHTER_BAY, WEAPON_LASER, WEAPON_ION_CANNON, TRACTOR_BEAM
+		</Hard_Point_Priorities>
+		<Category_Exclusions>
+			Capital
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="Capital_Attack_Move">
+		<Attack_Priorities>
+			Transport, 1.0,
+			Frigate, 2.0,
+			SpaceHero, 2.5,
+			Corvette, 3.0,
+			Bomber, 4.0,
+			Fighter, 5.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator, Engine, FIGHTER_BAY, WEAPON_LASER, WEAPON_ION_CANNON, TRACTOR_BEAM
+		</Hard_Point_Priorities>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<!-- When using hit and run tactics, we don't want hardpoint priorities.
+	This way, the bombers will simply attack the first hardpoint in range.
+	On a large starbase, for example this will help keep the bombers out of range
+	of other hard points and make it easier to run away.  Also, we want no
+	exclusions, so that the bombers will gain new targets, rather than flying through them.
+	-->
+	<Priority_Set Name="Bomber_Hit_And_Run">
+		<Attack_Priorities>
+			SpaceHero, 0.5,
+			Capital, 1.0,
+			Frigate, 2.0,
+			Corvette, 3.0,
+			Transport, 4.0,
+		</Attack_Priorities>
+		<Hard_Point_Priorities>
+			Shield_Generator
+		</Hard_Point_Priorities>
+		<Category_Exclusions>
+			Fighter, Bomber
+		</Category_Exclusions>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+	<Priority_Set Name="AntiBomber">
+		<Attack_Priorities>
+			Bomber, 1.0,
+		</Attack_Priorities>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>	
+
+	<Priority_Set Name="AntiHero">
+		<Attack_Priorities>
+			SpaceHero, 0.5,
+			Capital, 1.0,
+		</Attack_Priorities>
+		<Unit_Exclusions>
+			Destroyable_Asteroid_Small,
+			Destroyable_Asteroid_Medium,
+			Destroyable_Asteroid_Large,
+			Destroyable_Asteroid_Huge
+		</Unit_Exclusions>
+	</Priority_Set>
+
+</Targeting_Priority_Sets>

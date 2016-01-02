@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" ?>
+
+<Story_Mode_Plots>
+	<Lua_Script>Story_Empire_ActI_M04_SPACE</Lua_Script>
+	<Active_Plot>Story_Empire_ActI_M04_SPACE.XML</Active_Plot>
+</Story_Mode_Plots>

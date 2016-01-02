@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+
+<SFXEvents>
+	
+ 
+<!-- 	<SFXEvent Name="Test_Tone_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> Test_Tone_Loop_1.wav </Samples>
+	</SFXEvent>    -->
+
+
+
+	<!-- Ambient Weather Events: Loops and Intermittent  -->
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Rain_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_Rain_Heavy.wav </Samples>
+		<Min_Volume>40</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Rain_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_Rain_Medium.wav </Samples>
+		<Min_Volume>40</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Medium_Rain_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_Rain_Light_Medium.wav </Samples>
+		<Min_Volume>50</Min_Volume>
+		<Max_Volume>50</Max_Volume>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Rain_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_Rain_Light.wav </Samples>
+		<Min_Volume>50</Min_Volume>
+		<Max_Volume>50</Max_Volume>
+	</SFXEvent>
+
+
+
+
+
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Temperate_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_TMP_Bird_1.wav AMB_TMP_Bird_2.wav AMB_TMP_Bird_3.wav AMB_TMP_Bird_4.wav AMB_TMP_Bird_5.wav AMB_TMP_Bird_6.wav AMB_TMP_Bird_7.wav AMB_TMP_Bird_8.wav AMB_TMP_Bird_9.wav AMB_TMP_Bird_10.wav AMB_TMP_Bird_11.wav AMB_TMP_Bird_12.wav AMB_TMP_Bird_13.wav AMB_TMP_Bird_14.wav AMB_TMP_Cricket_1.wav AMB_TMP_Cricket_2.wav AMB_TMP_Cricket_3.wav AMB_TMP_Cricket_4.wav AMB_TMP_Cricket_5.wav AMB_TMP_Cricket_6.wav AMB_TMP_Cricket_7.wav</Samples>
+		<Min_Volume>30</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+	</SFXEvent>
+
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Swamp_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_SWA_Creature_1.wav AMB_SWA_Creature_2.wav AMB_SWA_Creature_3.wav AMB_SWA_Creature_4.wav AMB_SWA_Creature_5.wav AMB_SWA_Creature_6.wav</Samples>
+		<Min_Volume>20</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+		</SFXEvent>
+
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Desert_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_DES_Clear_1.wav AMB_DES_Clear_1.wav</Samples>
+		<Min_Volume>30</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+		</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Clear_Ice_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_ICE_Clear_1.wav AMB_ICE_Clear_1.wav</Samples>
+		<Min_Volume>30</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+		</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Clear_Urban_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_URB_Ship_1.wav AMB_URB_Ship_2.wav AMB_URB_Ship_3.wav AMB_URB_Ship_4.wav</Samples>
+		<Min_Volume>30</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+		</SFXEvent>
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Volcanic_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_VOL_Clear_1.wav AMB_VOL_Clear_2.wav</Samples>
+		<Min_Volume>30</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+		</SFXEvent>
+
+
+
+
+
+
+
+
+
+
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Rain_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_Thunder_Heavy_1.wav AMB_Thunder_Heavy_2.wav AMB_Thunder_Heavy_3.wav</Samples>
+		<Probability>40</Probability>
+		<Min_Volume>60</Min_Volume>
+		<Max_Volume>60</Max_Volume>
+		</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Rain_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_Thunder_Medium_1.wav AMB_Thunder_Medium_2.wav AMB_Thunder_Medium_3.wav</Samples>
+		<Probability>40</Probability>
+		<Min_Volume>60</Min_Volume>
+		<Max_Volume>60</Max_Volume>
+		</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Rain_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples> AMB_Thunder_Light_1.wav AMB_Thunder_Light_2.wav AMB_Thunder_Light_3.wav</Samples>
+		<Probability>40</Probability>
+		<Min_Volume>60</Min_Volume>
+		<Max_Volume>60</Max_Volume>
+		</SFXEvent>
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Snow_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_ICE_Wind_Loop_4.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Snow_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_ICE_Wind_Loop_3.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Medium_Snow_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_ICE_Wind_Loop_2.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Snow_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_ICE_Wind_Loop_1.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Clear_Snow_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_ICE_Wind_Loop_0.wav </Samples>
+	</SFXEvent>
+
+
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Snow_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Snow_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Snow_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Sandstorm_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_DES_Wind_Loop_4.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Sandstorm_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_DES_Wind_Loop_3.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Medium_Sandstorm_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_DES_Wind_Loop_2.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Sandstorm_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_DES_Wind_Loop_1.wav </Samples>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Clear_Sandstorm_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples> AMB_DES_Clear_Loop_1.wav </Samples>
+	</SFXEvent>
+
+
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Sandstorm_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Sandstorm_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Sandstorm_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_DES_Sand_Gust_1.wav AMB_DES_Sand_Gust_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Ash_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples>AMB_VOL_Ash_Loop_3.wav</Samples>
+		<Min_Volume>90</Min_Volume>
+		<Max_Volume>90</Max_Volume>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Ash_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples>AMB_VOL_Ash_Loop_2.wav</Samples>
+		<Min_Volume>80</Min_Volume>
+		<Max_Volume>80</Max_Volume>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Ash_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples>AMB_VOL_Ash_Loop_1.wav</Samples>
+	</SFXEvent>
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Ash_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples>AMB_VOL_Loop_2.wav</Samples>
+		<Min_Volume>90</Min_Volume>
+		<Max_Volume>90</Max_Volume>
+	</SFXEvent>
+
+
+
+
+	<SFXEvent Name="Weather_Ambient_Heavy_Ash_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_VOL_Burst_1.wav AMB_VOL_Burst_2.wav</Samples>
+		<Probability>50</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Medium_Ash_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_VOL_Burst_1.wav AMB_VOL_Ash_2.wav</Samples>
+		<Probability>40</Probability>
+	</SFXEvent>
+
+	<SFXEvent Name="Weather_Ambient_Light_Ash_Intermittent">
+		<Use_Preset>Preset_AMB_3D</Use_Preset>
+		<Samples>AMB_VOL_Ash_1.wav AMB_VOL_Ash_2.wav</Samples>
+		<Probability>30</Probability>
+	</SFXEvent>
+
+
+
+	<SFXEvent Name="Weather_Ambient_Clear_Urban_Loop">
+		<Use_Preset>Preset_AMB_2D_Loop</Use_Preset>
+		<Samples>AMB_URB_Clear_Loop_1.wav</Samples>
+	</SFXEvent>
+
+
+
+
+	<SFXEvent Name="Ambient_Waterfall_Loop">
+		<Use_Preset>Preset_AMB_3D_Loop</Use_Preset>
+		<Samples>AMB_Waterfall_Loop_1.wav</Samples>
+	</SFXEvent>
+
+
+
+
+</SFXEvents>
+

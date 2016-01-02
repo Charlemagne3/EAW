@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<AIPlayerType>
+
+	<Name> BasicEmpireNoGalacticAI </Name>
+	
+	<Personality>
+		<Focus> .5 </Focus>
+		<Aggressiveness> .5 </Aggressiveness>
+	</Personality>
+	
+	<GoalProposalFunctionSets>
+		BasicOffensiveSpaceSet
+		BasicLandGoalSet
+		AI_GoalSet_ExpansionGeneric_Land
+		AI_GoalSet_Empire_Land
+	</GoalProposalFunctionSets>
+	
+	<Templates>
+		<Space>
+			Test_Space
+		</Space>
+		<Land>
+			Test_Land
+		</Land>
+		<Galactic>
+			None_Template
+		</Galactic>
+	</Templates>
+	
+	<Difficulty_Adjustments>
+		<Easy>Easy_Default</Easy>
+		<Normal>Normal_Default</Normal>
+		<Hard>Hard_Default</Hard>
+	</Difficulty_Adjustments>
+
+</AIPlayerType>

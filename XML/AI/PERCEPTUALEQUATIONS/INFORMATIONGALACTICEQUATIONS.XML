@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<Equations>
+	
+	<!-- How good an invasion target is this planet? -->
+	<!-- Bonus for planets that divide my territory -->
+	<!-- Empire bonus for planets near Coruscant -->
+	<!-- Entire value modulated by how recently this planet was scouted -->
+	<Needs_Scouting>
+		(Function_Is_Good_Invasion_Target.Evaluate) *
+		Variable_Target.EnemyForce.GroundTotal.TimeLastSeen
+	</Needs_Scouting>
+	
+	<!-- Non-pirate/neutral planets that need scouting -->
+	<Is_Good_Slice_Target>
+		(1.0 - Variable_Target.IsFaction {Parameter_Faction = "Pirates", Parameter_Faction = "Neutral"})
+	</Is_Good_Slice_Target>
+	
+	<!-- Average age of scouting data -->
+	<Global_Scout_Need>
+		Variable_Self.AverageAgeOfSpaceIntelligence + Variable_Self.AverageAgeOfGroundIntelligence
+	</Global_Scout_Need>
+	
+	<!-- Positive when average age of scouting data is above a fixed threshold -->
+	<Information_Is_Scarce>
+		Function_Global_Scout_Need.Evaluate > 1.0
+	</Information_Is_Scarce>
+
+	<!-- Don't delete me; I'm used in a story script.
+	-->
+	<Has_Mon_Mothma>
+	(
+		(Variable_Target.EnemyForce.HasSpaceUnitsBitfield {Parameter_Type = "Mon_Mothma"} != 0)
+		+
+		(Variable_Target.EnemyForce.HasGroundUnitsBitfield {Parameter_Type = "Mon_Mothma"} != 0)
+	)
+	> 0
+	</Has_Mon_Mothma>
+
+</Equations>

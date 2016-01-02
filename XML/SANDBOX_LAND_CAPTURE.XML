@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+   <!-- Wait for two seconds before setting up all the objectives -->
+   <Event Name="Sandbox_Set_Sandbox_Objectives">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>2</Event_Param1>
+      <Reward_Type>SET_SANDBOX_OBJECTIVES</Reward_Type>
+   </Event>
+
+   <!-- Win the battle objective -->
+   <!-- Add objective -->
+   <Event Name="Sandbox_Objective_1">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+      <Reward_Param1></Reward_Param1>
+      <Prereq>Sandbox_Set_Sandbox_Objectives</Prereq>
+   </Event>
+
+         <!-- Objective complete -->
+         <Event Name="Sandbox_Objective_1_Complete">
+            <Event_Type>STORY_VICTORY</Event_Type>
+            <Event_Param1></Event_Param1>
+            <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+            <Reward_Param1></Reward_Param1>
+            <Prereq>Sandbox_Objective_1</Prereq>
+         </Event>
+
+
+   <!-- Capture the building objective -->
+   <!-- Add objective -->
+   <Event Name="Sandbox_Objective_2">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+      <Reward_Param1></Reward_Param1>
+      <Prereq>Sandbox_Objective_1</Prereq>
+   </Event>
+
+         <!-- Objective complete -->
+         <Event Name="Sandbox_Objective_2_Complete">
+            <Event_Type>STORY_CAPTURE_STRUCTURE</Event_Type>
+            <Event_Param1></Event_Param1>
+            <Event_Param2></Event_Param2>
+            <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+            <Reward_Param1></Reward_Param1>
+            <Prereq>Sandbox_Objective_2</Prereq>
+         </Event>
+
+
+
+   <!-- Turn on objective display -->
+   <Event Name="Sandbox_Objective_Display">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+      <Prereq>Sandbox_Objective_1</Prereq>
+   </Event>
+
+
+
+   <!-- Protect leader -->
+   <!-- This first event is triggered through code -->
+   <Event Name="Sandbox_Objective_3_Enable">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+   </Event>
+
+   <!-- Only trigger this if the first objective has been added and we've enabled it through code -->
+   <Event Name="Sandbox_Objective_3">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+      <Reward_Param1></Reward_Param1>
+      <Prereq>Sandbox_Objective_1 Sandbox_Objective_3_Enable</Prereq>
+   </Event>
+
+         <!-- Objective complete -->
+         <Event Name="Sandbox_Objective_3_Complete">
+            <Event_Type>STORY_TRIGGER</Event_Type>
+            <Event_Param1></Event_Param1>
+            <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+            <Reward_Param1></Reward_Param1>
+            <Prereq>Sandbox_Objective_3 Sandbox_Objective_1_Complete</Prereq>
+         </Event>
+
+         <!-- Check for objective failed -->
+         <Event Name="Sandbox_Objective_3_Failed">
+            <Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+            <Event_Param1></Event_Param1>
+            <Event_Param3></Event_Param3>
+            <Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+            <Reward_Param1></Reward_Param1>
+            <Prereq>Sandbox_Objective_3</Prereq>
+         </Event>
+
+
+   <!-- Kill leader -->
+   <!-- This first event is triggered through code -->
+   <Event Name="Sandbox_Objective_4_Enable">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+   </Event>
+
+   <!-- Only trigger this if the first objective has been added and we've enabled it through code -->
+   <Event Name="Sandbox_Objective_4">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+      <Reward_Param1></Reward_Param1>
+      <Prereq>Sandbox_Objective_2 Sandbox_Objective_4_Enable</Prereq>
+   </Event>
+
+         <!-- Objective complete -->
+         <Event Name="Sandbox_Objective_4_Complete">
+            <Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+            <Event_Param1></Event_Param1>
+            <Event_Param3></Event_Param3>
+            <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+            <Reward_Param1></Reward_Param1>
+            <Prereq>Sandbox_Objective_4</Prereq>
+         </Event>
+
+</Story>

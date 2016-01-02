@@ -1,0 +1,697 @@
+<?xml version="1.0" ?>
+
+
+
+<!--****** This story file is used to automatically set some things that would normally happen ******-->
+<!--****** in story mode for the full campaign.  This file should be generic enough to use for  ******-->
+<!--****** any sandbox campaign set.                                                           ******-->
+
+
+
+<Story>
+
+	<Event Name="Universal_Story_Start">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Dialog>Dialog_E_FocusDemo</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+	</Event>
+
+
+<!-- Empire Hero Release -->
+	<!--
+	<Event Name="Empire_AI_Heroes_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Grand_Moff_Tarkin_Team</Reward_Param1>
+		<Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	-->
+
+	<Event Name="Empire_AI_Heroes_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Emperor_Palpatine_Team</Reward_Param1>
+		<Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+
+	<Event Name="Empire_AI_Unlock_Research_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>BUILDABLE_UNIT</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<!-- Restrict Ilum and Bothawui from fleet movement -->
+	
+	<Event Name="Restrict_Ilum">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Ilum</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<Event Name="Restrict_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<!-- Lock out the player and AI so that the player and the AI can't interrupt the story -->
+	
+	<Event Name="FocusDemo_Lock_Controls">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>CLOSE_STORY_DIALOG</Event_Param1>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_Turn_Off_AI">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SWITCH_CONTROL</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Reward_Param2>None</Reward_Param2>
+		<Prereq>FocusDemo_Lock_Controls</Prereq>
+	</Event>
+	
+	<!-- ************************************************************ -->
+	<!-- *****************BOBA FETT MISSION SETUP******************** -->
+	<!-- ************************************************************ -->
+	
+	<!-- For when the player moves an inappropriate fleet to Ilum. -->
+	<Event Name="FocusDemo_Ilum_Bounced">
+		<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+		<Event_Param1>Ilum</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_62</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_62</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Restrict_Ilum</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+	
+	<Event Name="FocusDemo_Ilum_Bounced_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_62</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_62</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_Ilum_Bounced</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="FocusDemo_Ilum_Bounced_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>FocusDemo_Ilum_Bounced_Remove_Text</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+	
+	<!-- Vader Speaks 02   
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_55 
+Darth Vader: The Empire is willing to pay a considerable fee for disposing of defense systems orbiting the Ilum system.-->	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_55</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_55</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_Lock_Controls</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader02_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_55</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_55</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader02</Prereq>
+	</Event>
+			
+<!-- Fett Speaks 02   
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_56 
+Boba Fett: Is my target one of the filthy pirates in that sector?-->	
+	<Event Name="FocusDemo_First_Fett_Dialog_BobaFett02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_56</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_56</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader02_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_First_Fett_Dialog_BobaFett02_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_56</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_56</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_First_Fett_Dialog_BobaFett02</Prereq>
+	</Event>	
+			
+<!-- Vader Speaks 03   
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_57 
+Darth Vader: Your target is the defenses, the Imperial fleet will take care of the rest.-->	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_57</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_57</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_First_Fett_Dialog_BobaFett02_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader03_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_57</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_57</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader03</Prereq>
+	</Event>		
+			
+<!-- Fett Speaks 02   
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_70 
+Boba Fett: If there's no target, there's no deal.-->	
+	<Event Name="FocusDemo_First_Fett_Dialog_BobaFett03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_70</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_70</Reward_Param8> <!-- Put CORRECT speech file here when new audio comes -->
+		<Reward_Param9>Boba_Fett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader03_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_First_Fett_Dialog_BobaFett03_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_70</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_70</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_First_Fett_Dialog_BobaFett03</Prereq>
+	</Event>
+	
+	<!-- Vader Speaks 04
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_71 
+Darth Vader: Do not overestimate your value to the Empire, Fett. 
+But your services are required here. Our target is the pirate leader, and he will be taken alive. -->	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader04">		
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_71</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_71</Reward_Param8> <!-- Put CORRECT speech file here when new audio comes -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_First_Fett_Dialog_BobaFett03_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader04_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_71</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_71</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04</Prereq>
+	</Event>
+
+	<Event Name="FocusDemo_First_Fett_Dialog_Vader04_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04_Remove_Text</Prereq>
+	</Event>
+	
+	<!-- Unlock the player and AI -->
+	
+	<Event Name="FocusDemo_Unlock_Controls">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04_Stop_Movie</Prereq>
+	</Event>
+	
+	<Event Name="FocusDemo_Turn_On_AI">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SWITCH_CONTROL</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Reward_Param2>BasicRebel</Reward_Param2>
+		<Prereq>FocusDemo_Unlock_Controls</Prereq>
+	</Event>
+	
+	
+	<!-- Task: Build a fleet and escort Boba Fett to Ilum.-->		
+	<Event Name="FocusDemo_Fett_Hint_Message">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_THREE_32</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04_Stop_Movie</Prereq>
+	</Event>	
+	
+	<!-- jdg - adding in flash new flash for ilum -->
+	<Event Name="FocusDemo_Flash_Ilum_For_Fett">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>Ilum</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Reward_Param4>Ilum_for_Fett</Reward_Param4>
+		<Prereq>FocusDemo_Fett_Hint_Message</Prereq>
+		<!--<Prereq>Empire_ActI_Mission_Three_Failed_01</Prereq>-->
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+
+	<Event Name="FocusDemo_Mission_Three_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>FocusDemo_Fett_Hint_Message</Prereq>
+		<Story_Dialog>Dialog_Empire_ActI_M03</Story_Dialog>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Empire_A01M03a_Start</Story_Tag>
+	</Event>
+	
+	<Event Name="FocusDemo_Start_Boba_Mission">
+		<Event_Type>STORY_MOVE</Event_Type>
+		<Event_Param1>Boba_Fett</Event_Param1>
+		<Event_Param2>Ilum</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Ilum</Reward_Param1>
+		<Reward_Param2>SPACE</Reward_Param2>
+		<Reward_Param3>Empire</Reward_Param3>
+		<Reward_Param4>EM03_The_Pirate_Menace.TED</Reward_Param4>
+		<Reward_Param5>Pirates</Reward_Param5>
+		<Reward_Param6>Boba_Fett_Team</Reward_Param6>
+		<Reward_Param7>Story_Plots_Empire_ActI_M03_SPACE.xml</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Reward_Param9>0</Reward_Param9> 	<!-- Turns off pre battle cinematic -->
+		<Reward_Param10>1</Reward_Param10> 	<!-- Starts scene faded out -->
+		<Reward_Param11>0</Reward_Param11> 	<!-- Starts scene not letterboxed -->
+		<Prereq>Restrict_Ilum</Prereq>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+	
+	<!-- Mission 3 failed -->
+	<!-- Detect mission 3 being lost.  Display text telling the player to try again -->
+	<Event Name="FocusDemo_Boba_Mission_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Empire_ActI_M03_SPACE.xml</Event_Param1>
+		<Prereq>FocusDemo_Start_Boba_Mission</Prereq>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+	
+		<Event Name="FocusDemo_Boba_Mission_Failed_Respawn">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FORCE_RESPAWN</Reward_Type>
+			<Reward_Param1>Boba_Fett_Team</Reward_Param1>
+			<Prereq>FocusDemo_Boba_Mission_Failed</Prereq>
+			<Branch>BRANCH_EA01M03</Branch>
+		</Event>
+
+	
+	<!-- Wait until the battle summary dialog is closed 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_61
+Darth Vader: I will not tolerate mistakes, Fett. You are not living up to your reputation. 
+Bring the pirate leader's knowledge of the Rebellion to me.-->
+	<Event Name="FocusDemo_Boba_Mission_Failed_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_61</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_THREE_61</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_Boba_Mission_Failed</Prereq>
+		<Perpetual>True</Perpetual>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+
+	<Event Name="FocusDemo_Boba_Mission_Failed_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_THREE_61</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_THREE_61</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>FocusDemo_Boba_Mission_Failed_01</Prereq>
+		<Perpetual>True</Perpetual>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+
+	<Event Name="FocusDemo_Boba_Mission_Failed_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>FocusDemo_Boba_Mission_Failed_Remove_Text</Prereq>
+		<Perpetual>True</Perpetual>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+
+<!-- Re-enable mission 3 -->
+	<Event Name="FocusDemo_Boba_Mission_Failed_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>RESET_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_EA01M03</Reward_Param1>
+		<Prereq>FocusDemo_Boba_Mission_Failed_Stop_Movie</Prereq>
+		<Branch>BRANCH_EA01M03</Branch>
+	</Event>
+
+<!-- Mission 3 win -->
+	<Event Name="FocusDemo_Boba_Mission_08">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Empire_A01M03_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>FocusDemo_Start_Boba_Mission</Prereq>
+	</Event>
+	
+<!-- Ilum is now FULLY accessible -->
+	<Event Name="FocusDemo_Ilum_Accessible">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Ilum</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>FocusDemo_Boba_Mission_08</Prereq>
+	</Event>
+
+	<Event Name="FocusDemo_Disable_Ilum_Bounce_Message_Fett">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>FocusDemo_Ilum_Bounced</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>FocusDemo_Ilum_Accessible</Prereq>
+	</Event>
+
+	<Event Name="FocusDemo_Boba_Mission_09">
+		<!-- <Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>-->
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Prereq>FocusDemo_Boba_Mission_08</Prereq>
+		<Story_Dialog>Dialog_Empire_ActI_M03</Story_Dialog>
+		<Story_Chapter>3</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Empire_A01M03a_Finish</Story_Tag>
+	</Event>
+
+	<Event Name="FocusDemo_Final_Goal_Complete_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Empire_A01M03a_Start</Reward_Param1>
+		<Prereq>FocusDemo_Boba_Mission_09</Prereq>
+	</Event>
+
+	<Event Name="FocusDemo_Final_Goal_Complete_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Empire_A01M03a_Finish</Reward_Param1>
+		<Prereq>FocusDemo_Boba_Mission_09</Prereq>
+	</Event>
+	
+	<!-- ************************************************************ -->
+	<!-- ******************EMPEROR MISSION SETUP********************* -->
+	<!-- ************************************************************ -->
+	
+	<Event Name="Emperor_Mission_Bounce_Bothawui">
+		<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+		<Event_Param1>Bothawui</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT03_MISSION_NINE_14</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Emperor_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04_Remove_Text</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Emperor_Mission_Bounce_Bothawui_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_14</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_14</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Emperor_Mission_Bounce_Bothawui</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Emperor_Mission_Bounce_Bothawui_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Emperor_Mission_Bounce_Bothawui_Remove_Text</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+<!-- Flash Bothawui -->
+	<Event Name="Empire_ActIII_Mission_Nine_Flash_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>FocusDemo_First_Fett_Dialog_Vader04_Remove_Text</Prereq>
+	</Event>
+	
+	<!-- TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_02
+	 Task: Escort the Emperor to Bothawui and show the Bothans of the error of their ways.  -->
+	<Event Name="Empire_ActIII_Mission_Nine_Task_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_02</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Empire_ActIII_Mission_Nine_Flash_Bothawui</Prereq>
+	</Event>
+	
+<!-- MISSION 9: Errand with the Emperor (Emperor/Bothawui/Ground) -->
+
+	<Event Name="Empire_ActIII_Mission_Nine_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Empire_ActIII_Mission_Nine_Task_Bothawui</Prereq>
+		<Prereq>Mission_Nine</Prereq>
+		<Story_Dialog>Dialog_Empire_ActIII_M09</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Empire_A03M09_Start</Story_Tag>
+	</Event>
+
+	
+	<Event Name="Empire_ActIII_Mission_Nine_01">
+		<Event_Type>STORY_MOVE</Event_Type>
+		<Event_Param1>Emperor_Palpatine</Event_Param1>
+		<Event_Param2>Bothawui</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>GROUND</Reward_Param2>
+		<Reward_Param3>Empire</Reward_Param3>
+		<Reward_Param4>EM13_Errand_with_the_Emperor.TED</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param6>Emperor_Palpatine_Team</Reward_Param6>
+		<Reward_Param7>Story_Plots_Empire_ActIII_M09_LAND.xml</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Reward_Param9>0</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Reward_Param11>0</Reward_Param11>
+		<Prereq>Empire_ActIII_Mission_Nine_00</Prereq>
+      <Branch>BRANCH_EA03M09</Branch>
+	</Event>
+
+<!-- Mission 9 failed -->
+
+<!-- Detect mission 9 being lost.  Display text telling the player to try again -->
+	<Event Name="Empire_ActIII_Mission_Nine_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Empire_ActIII_M09_LAND.xml</Event_Param1>
+		<Prereq>Empire_ActIII_Mission_Nine_01</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+
+<!-- Galactic Reprimand  - Vader Speaks
+TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_12
+Darth Vader: Master, I sense you are wounded. Let me handle the Bothawui matter in your stead.-->
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT03_MISSION_NINE_12</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+		
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_12</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_12</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed_01</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+	
+<!-- Galactic Reprimand  - Emperor Speaks
+TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_13
+Emperor: A gracious but unnecessary gesture, Vader. 
+As you well know, matters of disloyalty must be tended to personally.-->				
+
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT03_MISSION_NINE_13</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Emperor_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed_01_Remove_Text</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+		
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_02_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_13</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_13</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed_02</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+	
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_02_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed_02</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+
+<!-- Re-enable mission 9 -->
+	<Event Name="Empire_ActIII_Mission_Nine_Failed_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>RESET_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_EA03M09</Reward_Param1>
+		<Prereq>Empire_ActIII_Mission_Nine_Failed_02_Remove_Text</Prereq>
+		<Branch>BRANCH_EA03M09</Branch>
+	</Event>
+
+<!-- Mission 9 win -->
+	<Event Name="Empire_ActIII_Mission_Nine_02">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Empire_A03M09_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Empire_ActIII_Mission_Nine_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_ActIII_Mission_Nine_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Empire_ActIII_Mission_Nine_02</Prereq>
+		<Story_Dialog>Dialog_Empire_ActIII_M09</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+
+	<Event Name="ActIII_M09_Final_Goal_Complete_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Empire_A03M09_Start</Reward_Param1>
+		<Prereq>Empire_ActIII_Mission_Nine_03</Prereq>
+	</Event>
+
+			<Event Name="Emperor_Mission_Unlock_Bothawui">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+				<Reward_Param1>Bothawui</Reward_Param1>
+				<Reward_Param2>0</Reward_Param2>
+				<Prereq>ActIII_M09_Final_Goal_Complete_00</Prereq>
+			</Event>
+	
+	<!-- ****** HERO SETUP ******-->	
+	<!-- Spawn Time Era 1 Heroes -->
+
+	<Event Name="Empire_AI_Heroes_03">
+		<Event_Type>STORY_TECH_LEVEL</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+	
+	<!--
+	<Event Name="Empire_AI_Heroes_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Darth_Team</Reward_Param1>
+		<Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Empire_AI_Heroes_03</Prereq>
+	</Event>
+	-->
+
+	<!-- Spawn Time Era 2 Heroes -->
+
+	<Event Name="Empire_AI_Heroes_05">
+		<Event_Type>STORY_TECH_LEVEL</Event_Type>
+		<Event_Param1>2</Event_Param1>
+	</Event>
+
+	<!--<Event Name="Empire_AI_Heroes_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>General_Veers_Team</Reward_Param1>
+		<Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Empire_AI_Heroes_05</Prereq>
+	</Event>
+
+	<Event Name="Empire_AI_Heroes_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Mara_Jade_Team</Reward_Param1>
+		<Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Empire_AI_Heroes_05</Prereq>
+	</Event>-->
+
+
+	<!-- Spawn Time Era 3 Heroes -->
+
+
+
+	<!-- Spawn Time Era 4 Heroes -->
+
+	<Event Name="Empire_AI_Heroes_08">
+		<Event_Type>STORY_TECH_LEVEL</Event_Type>
+		<Event_Param1>4</Event_Param1>
+	</Event>
+
+	<!--
+	<Event Name="Empire_AI_Heroes_09">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>UNIQUE_UNIT</Reward_Type>
+        <Reward_Param1>Accuser_Star_Destroyer</Reward_Param1>
+        <Reward_Param2>Coruscant</Reward_Param2>
+		<Prereq>Empire_AI_Heroes_08</Prereq>
+	</Event>
+	-->
+	
+	<Event Name="Empire_AI_Heroes_10">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Boba_Fett_Team</Reward_Param1>
+		<Reward_Param2>Anaxes</Reward_Param2>
+		<Prereq>Empire_AI_Heroes_08</Prereq>
+	</Event>
+
+
+
+</Story>

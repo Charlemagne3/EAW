@@ -1,0 +1,403 @@
+<?xml version="1.0" ?>
+
+
+<Story>
+
+
+<!-- Mission start setup -->
+
+	<Event Name="Rebel_A3_M07A_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M07A_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M07A_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+
+
+
+
+	<!-- Screen text messages 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_04
+	Imperial Officer: Smuggler scum!  We've got you now!  
+	Prepare to be boarded!  -->
+	<Event Name="Rebel_A3_M07A_Intro_OFFICER_DIALOG">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M7A_INTRO_OFFICER_DIALOG_GO</Event_Param2>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_SEVEN_A_04</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M07A_Intro_OFFICER_DIALOG_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_SEVEN_A_04</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_04</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M07A_Intro_OFFICER_DIALOG</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M07A_Intro_OFFICER_DIALOG_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A3_M07A_Intro_OFFICER_DIALOG_Remove_Text</Prereq>
+			</Event>
+
+<!-- Screen text messages 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_05
+	Han Solo: Now or never guys!  Get us out of here!    -->
+	<Event Name="Rebel_A3_M07A_Intro_HANSOLO_DIALOG">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M7A_INTRO_HANSOLO_DIALOG_GO</Event_Param2>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_SEVEN_A_05</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M07A_Intro_HANSOLO_DIALOG_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_SEVEN_A_05</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_05</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M07A_Intro_HANSOLO_DIALOG</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A3_M07A_Intro_HANSOLO_DIALOG_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A3_M07A_Intro_HANSOLO_DIALOG_Remove_Text</Prereq>
+			</Event>
+			
+<!-- Screen text messages 
+	TEXT_STORY_REBEL_ACT02_MISSION_7A_100
+	Task: Free the Millenium Falcon before it reaches the space station.    -->
+	<Event Name="Rebel_A3_M07A_TASK_TEXT">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M7A_INTRO_TASK_TEXT_GO</Event_Param2>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_7A_100</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>	
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+	
+<!-- Screen text messages 
+	TEXT_STORY_REBEL_ACT02_MISSION_7A_101
+	Warning: The Millenium Falcon is almost at the space station.    -->
+	<Event Name="Rebel_A3_M07A_WARNING_TEXT">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>60</Event_Param1>
+		<!-- <Event_Param2>M7A_INTRO_WARNING_TEXT_GO</Event_Param2>	 -->	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_7A_101</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>	
+		<Reward_Param7>System</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+			
+			
+			
+			
+			
+			
+			
+
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_06</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Intro_HANSOLO_DIALOG_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_19</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Intro_HANSOLO_DIALOG_Remove_Text</Prereq>
+	</Event>
+
+
+
+
+
+
+
+
+	<!-- Falcon Near Death 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_07
+	Han Solo: Sooner than later fellas!  
+	This ship isn't indestructible!  -->
+	<Event Name="Rebel_A3_M07A_Near_Death_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FALCON_NEAR_DEATH</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_SEVEN_A_07</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M07A_Near_Death_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_SEVEN_A_07</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_07</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M07A_Near_Death_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M07A_Near_Death_00a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A3_M07A_Near_Death_00a</Prereq>
+			</Event>
+
+
+
+
+
+
+
+
+
+	<!-- WIN CONDITION: Falcon Rescued 
+	TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_08
+	Han Solo: That did it!  
+	Now let's get out of here while we're still in one piece!  -->
+
+	<Event Name="Rebel_A3_M07A_Falcon_Free_Of_Tractor_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FALCON_FREE_OF_TRACTOR</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_SEVEN_A_08</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A3_M07A_Falcon_Free_Of_Tractor_00a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT03_MISSION_SEVEN_A_08</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_SEVEN_A_08</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A3_M07A_Falcon_Free_Of_Tractor_00</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A3_M07A_Falcon_Free_Of_Tractor_00a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A3_M07A_Falcon_Free_Of_Tractor_00a</Prereq>
+			</Event>
+			
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_06</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Free_Of_Tractor_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_19</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Rebel_Mission_Completed</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Rebel_Mission_Completed">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Free_Of_Tractor_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Rebels_Mission_Completed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A3_M07A_Rebel_Mission_Completed</Prereq>
+	</Event>
+		
+	<Event Name="Rebel_A3_M07A_Rebels_Escaped">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PLAYER_WINS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+	
+	<!-- Note: It would be cool to show the ships hyperspacing off the map... -->
+
+
+
+
+
+
+
+	<!-- LOSS CONDITION: Falcon Destroyed 
+	TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_11
+	Han Solo: Hey, can I get some assistance?
+	
+	TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_10
+	Han Solo: I could use a little help here!-->
+
+	<Event Name="Rebel_A3_M07A_Falcon_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FALCON_DESTROYED</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_09</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>System</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+	
+	 <!-- Disable the capture text event -->
+	
+	<Event Name="Rebel_A3_M07A_Falcon_Destroyed_Disable_Capture_Text">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FALCON_DESTROYED</Event_Param2>
+        <Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+        <Reward_Param1>Rebel_A3_M07A_Falcon_Captured</Reward_Param1>
+        <Reward_Param2>1</Reward_Param2>
+        <Prereq>Rebel_A3_M07A_Begin</Prereq>
+    </Event>
+	
+	<!--  
+TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_11
+Han Solo: Hey, can I get some assistance?-->
+<Event Name="Empire_A01M03_Bad_Reinforce_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_11</Reward_Param8>
+		<Prereq>Rebel_A3_M07A_Falcon_Destroyed</Prereq>
+	</Event>
+
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_19</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Destroyed</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_All_Falcon_Destroyed_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Destroyed</Prereq>
+	</Event>
+
+
+
+
+	<!-- LOSS CONDITION: Falcon Captured -->
+
+	<Event Name="Rebel_A3_M07A_Falcon_Captured_Notice">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FALCON_CAPTURED</Event_Param2>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M07A_Falcon_Captured">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_10</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>System</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Prereq>Rebel_A3_M07A_Falcon_Captured_Notice</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_Goal_Rescue_Falcon_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_SEVEN_A_06</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Captured</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M07A_All_Falcon_Captured_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Falcon_Captured</Prereq>
+	</Event>
+	
+
+
+
+	<!-- LOSS CONDITION: Rebels wiped out -->
+
+	<Event Name="Rebel_A3_M07A_All_Rebels_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_Begin</Prereq>
+	</Event>
+		
+	<Event Name="Rebel_A3_M07A_All_Rebels_Destroyed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A3_M07A_All_Rebels_Destroyed</Prereq>
+	</Event>
+
+
+	<!-- REBEL VICTORY: Set Flag -->
+	
+	<Event Name="Rebel_A3_M07A_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M07A_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+
+</Story>

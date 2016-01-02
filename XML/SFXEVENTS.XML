@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<SFXEvents>
+	
+	<!-- PLACEHOLDER - TEST ONLY -->
+	<SFXEvent Name="Test_Ambient_Wind_Event">
+		<Samples>Wind_Gust_1_Stereo.wav Wind_Gust_2_Stereo.wav Wind_Gust_3_Stereo.wav</Samples>
+		<Use_Preset>Preset_EGL</Use_Preset>
+		<Probability>100</Probability>
+		<Play_Count>1</Play_Count>
+		<Max_Instances>2</Max_Instances>
+		<Min_Pitch>90</Min_Pitch>
+		<Max_Pitch>120</Max_Pitch>
+		<Min_Volume>40</Min_Volume>
+		<Max_Volume>40</Max_Volume>
+	</SFXEvent>
+      
+	<!-- PLACEHOLDER - TEST ONLY -->
+	<SFXEvent Name="Test_Ambient_Intermittent">
+		<Samples> Bad_Sound.wav </Samples>
+	</SFXEvent>
+
+</SFXEvents>

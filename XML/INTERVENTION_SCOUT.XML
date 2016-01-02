@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Scout_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Scout_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Scout_01">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Event_Param5>1</Event_Param5>			<!--Allow stealth units -->
+		<Prereq>Scout_00</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>SCOUT_NOTIFICATION_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Scout_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SCOUT_NOTIFICATION_01</Event_Param2>
+		<Prereq>Scout_01</Prereq>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Scout_Tag_01</Story_Tag>
+		<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+		<Reward_Param1>Scout_Tag_00</Reward_Param1>		
+	</Event>
+	
+	<Event Name="Scout_03">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Event_Param5>1</Event_Param5>			<!--Allow stealth units -->
+		<Prereq>Scout_02</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Scout_Tag_01</Reward_Param1>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>	
+	
+	<Event Name="Scout_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Scout_03</Prereq>
+		<Prereq>Scout_06</Prereq>
+		<Reward_Type>CREDITS</Reward_Type>
+		<Reward_Param1>1000</Reward_Param1>
+	</Event>
+		
+	<Event Name="Scout_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Scout_04</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>SCOUT_NOTIFICATION_02</Reward_Param1>
+	</Event>
+	
+	<!-- Branch for the case where no secondary target can be found -->
+	<Event Name="Scout_06">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SCOUT_NOTIFICATION_03</Event_Param2>
+		<Prereq>Scout_01</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Scout_Tag_00</Reward_Param1>		
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>			
+	</Event>
+	
+</Story>

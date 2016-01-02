@@ -1,0 +1,832 @@
+<?xml version="1.0" ?>
+<Story>
+
+<!--
+
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- Setup -->
+	
+	<Event Name="Rebel_M06_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M06_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A02M06_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+<!--jdg - adding new opening dialog here
+Han Solo
+TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_28
+Han Solo: I don't know why you've decided to show up, but I'm not here for your crusade.  
+I'm just looking for a certain Wookiee.  Once I find him, I'm out of here.-->
+   <Event Name="Rebel_M06_Start_OpeningDialog_HanSolo_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M06_INTRO_DIALOG_HANSOLO_01_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FIVE_28</Reward_Param8> <!-- Put CORRECT speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Start_OpeningDialog_HanSolo_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FIVE_28</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_28</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_01</Prereq>
+	</Event>
+				
+<!-- Mon Mothma
+TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_29
+Mon Mothma: We are here simply to help in the liberation of the Wookiees.-->
+   <Event Name="Rebel_M06_Start_OpeningDialog_MonMothma_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M06_INTRO_DIALOG_MONMOTHMA_01_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FIVE_29</Reward_Param8> <!-- Put CORRECT speech file name here -->
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_01_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Start_OpeningDialog_MonMothma_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FIVE_29</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_29</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Start_OpeningDialog_MonMothma_01</Prereq>
+	</Event>
+   
+<!--Han Solo
+TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_30
+Han Solo: Help all you want, just don't get in my way.  
+I'm not here out of the kindness of my heart!-->
+   <Event Name="Rebel_M06_Start_OpeningDialog_HanSolo_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M06_INTRO_DIALOG_HANSOLO_02_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_30</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FIVE_30</Reward_Param8> <!-- Put CORRECT speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Start_OpeningDialog_MonMothma_01_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FIVE_30</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FIVE_30</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_02</Prereq>
+	</Event>  
+	
+	<Event Name="Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Text</Prereq>
+	</Event>
+   
+<!-- jdg ADDING mission objectives here 
+TEXT_STORY_REBEL_ACT02_MISSION_SIX_34
+Han Solo must survive.
+
+TEXT_STORY_REBEL_ACT02_MISSION_SIX_35
+Destroy four prisons.-->  
+
+	<Event Name="Rebel_M06_ADD_OBJECTIVE_Keep_HanSolo_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_34</Reward_Param1>
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Movie</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_ADD_OBJECTIVE_Destroy_four_Prisons">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_35</Reward_Param1>
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Movie</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Set_Goal">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_01</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Rebel_M06_Start_OpeningDialog_HanSolo_02_Remove_Movie</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Arm_Wookie_Text">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ARM_WOOKIE_TEXT</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_SCREEN_02</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>
+		<Prereq>Rebel_M06_Arm_Wookie_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_03</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>3</Reward_Param3>
+		<Prereq>Rebel_M06_Arm_Wookie_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_04</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>4</Reward_Param3>
+		<Prereq>Rebel_M06_Arm_Wookie_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_02_Off">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>
+		<Prereq>Rebel_M06_Highlight_Wookie_Tree_04</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_03_Off">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_03</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>3</Reward_Param3>
+		<Prereq>Rebel_M06_Highlight_Wookie_Tree_04</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Highlight_Wookie_Tree_04_Off">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_04</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>4</Reward_Param3>
+		<Prereq>Rebel_M06_Highlight_Wookie_Tree_04</Prereq>
+	</Event>
+
+<!-- Telling player to use Han Solo to blow the prisons -->
+	<Event Name="Rebel_M06_Prison_Attacked_Give_Hint">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>USE_HAN_HINT_TEXT</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_33</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>XML_PRISON_DELAY</Event_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_00a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_00b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>XML_PRISON_DELAY</Event_Param2>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_00b</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_01a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_01</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_01b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_01a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>XML_PRISON_DELAY</Event_Param2>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_01b</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_02a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_02</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_02b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_02a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>XML_PRISON_DELAY</Event_Param2>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_02b</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_03a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_03</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_03b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_03a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>XML_PRISON_DELAY</Event_Param2>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_03b</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_04a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_04</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Delayed_Explosion_04b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Rebel_M06_Prison_Delayed_Explosion_04a</Prereq>
+	</Event>
+	
+<!-- Prison Liberation Speech Events -->
+<!-- Han Solo - Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PRISON_DESTROYED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_16</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_16</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_16</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_00</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_00a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_00a</Prereq>
+	</Event>
+	
+<!-- Han Solo - After Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_20</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_00a_Stop_Movie</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_20</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_20</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_01</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_01a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_01a</Prereq>
+	</Event>
+	
+<!-- Han Solo - Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PRISON_DESTROYED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_17</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_01</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Prison_Destroyed_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_17</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_17</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_02</Prereq>
+	</Event>	
+			
+	<Event Name="Rebel_M06_Prison_Destroyed_02a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_02a</Prereq>
+	</Event>
+
+<!-- Han Solo - After Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_03">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_21</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_21</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_02a</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_M06_Prison_Destroyed_03a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_21</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_21</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_03</Prereq>
+	</Event>	
+			
+	<Event Name="Rebel_M06_Prison_Destroyed_03a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_03a</Prereq>
+	</Event>
+			
+<!-- Han Solo - Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PRISON_DESTROYED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_18</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_03</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_04a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_18</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_18</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_04</Prereq>
+	</Event>	
+					
+	<Event Name="Rebel_M06_Prison_Destroyed_04a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_04a</Prereq>
+	</Event>
+					
+<!-- Han Solo - After Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_22</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_22</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_04a</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_05a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_22</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_22</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_05</Prereq>
+	</Event>	
+					
+	<Event Name="Rebel_M06_Prison_Destroyed_05a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_05a</Prereq>
+	</Event>
+					
+<!-- Han Solo - Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_06">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PRISON_DESTROYED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_19</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_05</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_06a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_19</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_19</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_06</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_06a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_06a</Prereq>
+	</Event>
+							
+<!-- Han Solo - After Liberating a prison -->
+	<Event Name="Rebel_M06_Prison_Destroyed_07">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_23</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_23</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Prison_Destroyed_06a</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_07a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_23</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_23</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Prison_Destroyed_07</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_M06_Prison_Destroyed_07a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Prison_Destroyed_07a</Prereq>
+	</Event>
+
+<!-- Han is taking damage events -->
+<!-- Han is taking damage -->
+	<Event Name="Rebel_M06_Han_Damaged_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HAN_TAKING_DAMAGE</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_10</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Han_Damaged_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_10</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_10</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Han_Damaged_00</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_M06_Han_Damaged_00a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Han_Damaged_00a</Prereq>
+	</Event>
+
+<!-- Give the AI notification time to clear -->
+	<Event Name="Rebel_M06_Han_Damaged_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Prereq>Rebel_M06_Han_Damaged_00</Prereq>
+	</Event>
+
+<!-- Han is taking damage -->
+	<Event Name="Rebel_M06_Han_Damaged_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HAN_TAKING_DAMAGE</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_11</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Han_Damaged_01</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_M06_Han_Damaged_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_11</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Han_Damaged_02</Prereq>
+	</Event>	
+			
+	<Event Name="Rebel_M06_Han_Damaged_02a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Han_Damaged_02a</Prereq>
+	</Event>
+
+<!-- Give the AI notification time to clear -->
+	<Event Name="Rebel_M06_Han_Damaged_03">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Prereq>Rebel_M06_Han_Damaged_02</Prereq>
+	</Event>
+			
+<!-- Han is taking damage -->
+	<Event Name="Rebel_M06_Han_Damaged_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HAN_TAKING_DAMAGE</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_12</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Han_Damaged_03</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Han_Damaged_04a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_12</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_12</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Han_Damaged_04</Prereq>
+	</Event>	
+					
+	<Event Name="Rebel_M06_Han_Damaged_04a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_M06_Han_Damaged_04a</Prereq>
+	</Event>
+					
+<!-- Han is killed -->
+	<Event Name="Rebel_M06_Han_Killed_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HAN_KILLED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_17</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Han_Killed_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_17</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_17</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_M06_Han_Killed_01</Prereq>
+	</Event>	
+
+	<Event Name="Rebel_M06_Han_Killed_Player_Loses">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>    
+		<Prereq>Rebel_M06_Han_Killed_01a</Prereq>
+	</Event>
+		
+<!-- jdg FAILING mission objective here 
+TEXT_STORY_REBEL_ACT02_MISSION_SIX_34
+Han Solo must survive.
+-->  
+
+	<Event Name="Rebel_M06_FAIL_OBJECTIVE_Keep_HanSolo_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_34</Reward_Param1>
+		<Prereq>Rebel_M06_Han_Killed_01</Prereq>
+	</Event>
+
+<!-- Retreat Warning -->
+	<Event Name="Rebel_MO6_Retreat_Warning">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>retreat_clicked</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_24</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_MO6_Retreat_Warning_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_SIX_24</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_24</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_MO6_Retreat_Warning</Prereq>
+	</Event>	
+	
+	<Event Name="Rebel_MO6_Retreat_Warning_01_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_MO6_Retreat_Warning_01</Prereq>
+	</Event>
+	
+<!-- Wookiees liberated!  Starting End Cinemetic -->
+	<Event Name="Rebel_M06_Liberate_Wookies">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>WOOKIES_LIBERATED</Event_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Han_End_Cin_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_SIX_13</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_M06_Liberate_Wookies</Prereq>
+	</Event>
+	
+			<Event Name="Rebel_M06_Han_End_Cin_01a">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT02_MISSION_SIX_13</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_13</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>     
+				<Prereq>Rebel_M06_Han_End_Cin_01</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_M06_Han_End_Cin_01b">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Rebel_M06_Han_End_Cin_01</Prereq>
+			</Event>
+	
+	
+	
+<!-- Cinematic over, Trigger victory -->
+	<Event Name="Rebel_M06_Cinematic_Over">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CINEMATIC_COMPLETE</Event_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+<!-- jdg COMPLETING mission objectives here 
+TEXT_STORY_REBEL_ACT02_MISSION_SIX_34
+Han Solo must survive.
+TEXT_STORY_REBEL_ACT02_MISSION_SIX_35
+Destroy four prisons.-->  
+
+	<Event Name="Rebel_M06_COMPLETE_OBJECTIVE_Keep_HanSolo_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_34</Reward_Param1>
+		<Prereq>Rebel_M06_Cinematic_Over</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_COMPLETE_OBJECTIVE_Destroy_four_Prisons">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_SIX_35</Reward_Param1>
+		<Prereq>Rebel_M06_Cinematic_Over</Prereq>
+	</Event>
+				
+	<Event Name="Rebel_M06_OBJECTIVES_COMPLETE_PlayerWins">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Rebel_M06_COMPLETE_OBJECTIVE_Destroy_four_Prisons</Prereq>
+	</Event>
+
+	<Event Name="Rebel_M06_Arm_Wookies">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>WOOKIES_ARMED</Event_Param2>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_M06_Enable_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_M06_Cinematic_Over Rebel_M06_Arm_Wookies</Prereq>
+	</Event>
+
+<!-- Rebel Loss: All Rebel units die -->
+	<Event Name="Rebel_M06_LAND_All_Rebels_Die">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_M06_Begin</Prereq>
+	</Event>
+
+<!-- REBEL VICTORY: Set Flag -->
+	<Event Name="Rebel_A2_M04_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A02M06_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+</Story>

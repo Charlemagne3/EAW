@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<Equations>
+	<Should_Build_MDU_Repair_Facility>
+		50.0
+		*
+		Variable_Target.FriendlyForce {Parameter_Category = GameObjectCategoryType[Vehicle]}
+	</Should_Build_MDU_Repair_Facility>
+	
+	<Should_Build_Mobile_Shield_Generator>
+		50.0
+		*
+		(Variable_Target.FriendlyForce
+		+
+		(200.0 > Variable_Target.DistanceToNearestFriendly {Parameter_Type = "Rebel_Mineral_Processor",
+															Parameter_Type = "Skirmish_Ground_Mining_Facility_R"}))
+	</Should_Build_Mobile_Shield_Generator>
+	
+	<Should_Build_Rapid_Fire_Laser>
+		50.0
+		*
+		Variable_Target.EnemyForce
+		*
+		Variable_Target.FriendlyForce
+	</Should_Build_Rapid_Fire_Laser>
+</Equations>
+

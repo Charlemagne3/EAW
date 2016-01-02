@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<Scavenger_Droids_Data>
+
+
+
+
+	<GroundVehicle Name="Scavenger_Droid">
+		<LOD_Bias>4</LOD_Bias>
+		<Text_ID>TEXT_UNIT_SCAVENGER_DROID</Text_ID>
+		<Encyclopedia_Good_Against> TIE_Crawler T2B_Tank </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> Ground_Magnepulse_Cannon Plex_Soldier </Encyclopedia_Vulnerable_To>
+		<Encyclopedia_Text>TEXT_TOOLTIP_SCAVENGER_DROID</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_DROID</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_atst.tga</Icon_Name>
+
+		<Land_Model_Name>EV_AT-ST.ALO</Land_Model_Name>
+		<Select_Box_Scale>30</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+		<GUI_Bracket_Size>1</GUI_Bracket_Size>
+
+		<Behavior>SELECTABLE</Behavior>
+		<LandBehavior>ABILITY_COUNTDOWN, AFFECTED_BY_SHIELD, WALK_LOCOMOTOR,TARGETING,IDLE,WEAPON,POWERED,SHIELDED,REVEAL,HIDE_WHEN_FOGGED,UNIT_AI,TELEKINESIS_TARGET,STUNNABLE,DAMAGE_TRACKING, GARRISON_UNIT</LandBehavior>
+
+		<Is_Squashable_By_Supercrusher>Yes</Is_Squashable_By_Supercrusher>
+		<Garrison_Category> Vehicle </Garrison_Category>
+        <Ranking_In_Category>7</Ranking_In_Category>
+		<Mass>1.0</Mass>
+		<Scale_Factor>1.0</Scale_Factor>
+
+		<Movement_Animation_Speed> 0.8117 </Movement_Animation_Speed>
+		<Rotation_Animation_Speed> 2.2 </Rotation_Animation_Speed>
+		<Max_Speed>1.2</Max_Speed>
+		<Max_Rate_Of_Turn>7.5</Max_Rate_Of_Turn>
+		<Stopped_Rate_Of_Turn>7.5</Stopped_Rate_Of_Turn>
+		<Walk_Transition>Yes</Walk_Transition>
+		<Has_Pre_Turn_Anim> yes </Has_Pre_Turn_Anim>
+		<Min_Speed_Fraction_For_Turn> .1 </Min_Speed_Fraction_For_Turn>
+		<Space_Layer> Land </Space_Layer>
+		<UnitCollisionClass> Large Vehicle </UnitCollisionClass>
+		<Custom_Hard_XExtent> 8.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 6.0 </Custom_Hard_YExtent>
+		<MinimumPushReturnDistance> 100 </MinimumPushReturnDistance>
+		<FormationOrder> 4 </FormationOrder>
+		<FormationGrouping> Standard </FormationGrouping>
+		<FormationSpacing> 1 </FormationSpacing>
+		<FormationRaggedness> 2.5 </FormationRaggedness>
+		<MaxJiggleDistance> 5 </MaxJiggleDistance>
+
+		<Locomotor_Has_Animation_Priority>yes</Locomotor_Has_Animation_Priority>
+		<Attack_Animation_Is_Overlay>yes</Attack_Animation_Is_Overlay>
+
+		<Land_Damage_Thresholds>1, 0.66, 0.33</Land_Damage_Thresholds>
+		<Land_Damage_Alternates>0, 1, 2</Land_Damage_Alternates>
+		<Land_Damage_SFX>null,SFX_Grenade_Detonation, SFX_Grenade_Detonation</Land_Damage_SFX>
+
+		<Deploys>No</Deploys>
+		<Affiliation>Underworld</Affiliation>
+		<Size_Value>75</Size_Value>
+
+		<Armor_Type> Armor_ATST </Armor_Type>
+		<Damage_Type>Damage_ATST</Damage_Type>
+
+		<Damage>6</Damage>
+		<Shield_Points>50</Shield_Points>
+		<Tactical_Health>400</Tactical_Health>
+		<Shield_Refresh_Rate>5</Shield_Refresh_Rate>
+		<Energy_Capacity>999</Energy_Capacity>
+		<Energy_Refresh_Rate>999</Energy_Refresh_Rate>
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<Autoresolve_Health>200</Autoresolve_Health>
+
+		<Projectile_Types>Proj_ATST_Blaster_Cannon_Red</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>2.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>4</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+
+		<Land_FOW_Reveal_Range>250.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>240.0</Targeting_Max_Attack_Distance>
+		<Ranged_Target_Z_Adjust>30.0</Ranged_Target_Z_Adjust>  <!-- 18 -->
+
+		<Turret_Rotate_Extent_Degrees>90</Turret_Rotate_Extent_Degrees>
+		<Turret_Elevate_Extent_Degrees>45</Turret_Elevate_Extent_Degrees>
+
+		<Death_Explosions>Small_Explosion_Land</Death_Explosions>
+		<Death_SFXEvent_Start_Die>Unit_AT_ST_Death_SFX</Death_SFXEvent_Start_Die>
+
+		<SFXEvent_Select>Unit_Select_AT_ST</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_AT_ST</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_AT_ST</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_AT_ST</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_AT_ST</SFXEvent_Guard>
+		<SFXEvent_Fire>Unit_AT_ST_Fire</SFXEvent_Fire>
+
+		<SFXEvent_Assist_Move> Unit_Assist_Move_AT_ST </SFXEvent_Assist_Move>		
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_AT_ST </SFXEvent_Assist_Attack>
+
+		<SFXEvent_Unit_Lost> UHD_Unit_Destroyed </SFXEvent_Unit_Lost>
+		<SFXEvent_Tactical_Build_Started> UHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> UHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> UHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<CategoryMask> Vehicle | AntiVehicle</CategoryMask>
+		<MovementClass>Walker</MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<No_Reflection_Below_Detail_Level>99</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>3</No_Refraction_Below_Detail_Level>
+
+		<Occlusion_Silhouette_Enabled>1</Occlusion_Silhouette_Enabled>
+		
+		<Ground_Vehicle_Turret_Target> Yes </Ground_Vehicle_Turret_Target>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Overall_Length>20.0</Overall_Length> <!-- Hand tweaked for vehicle pitching up and down on terrain -->
+		<Overall_Width>0.0</Overall_Width> <!-- 0.0 means don't roll left and right on terrain -->
+		<Has_Land_Evaluator>Yes</Has_Land_Evaluator>
+		<AI_Combat_Power>70</AI_Combat_Power>
+
+		<Idle_Chase_Range>0.0</Idle_Chase_Range>
+		<Guard_Chase_Range>200.0</Guard_Chase_Range>
+		<Attack_Move_Response_Range>150.0</Attack_Move_Response_Range>
+		<Targeting_Stickiness_Time_Threshold>5.0</Targeting_Stickiness_Time_Threshold>
+		<Targeting_Priority_Set>AntiVehicleStructure</Targeting_Priority_Set>
+		<Autonomous_Move_Extension_Vs_Attacker>150.0</Autonomous_Move_Extension_Vs_Attacker>
+
+		<Weather_Category>Walker</Weather_Category>
+
+		<Blob_Shadow_Below_Detail_Level>2</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>50.0, 50.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+
+		<Score_Cost_Credits>37.5</Score_Cost_Credits>
+		<Influences_Capture_Point> False </Influences_Capture_Point>
+		<Base_Shield_Penetration_Particle>Shield_Penetration_Effect_Particle</Base_Shield_Penetration_Particle>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes"> </Unit_Abilities_Data>
+
+	</GroundVehicle>
+
+	<GroundCompany Name="Scavenger_Droid_Company">
+		<Text_ID>TEXT_SCAVENGER_DROID_COMPANY</Text_ID>
+		<Encyclopedia_Good_Against> TIE_Crawler T2B_Tank </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> Ground_Magnepulse_Cannon Plex_Soldier </Encyclopedia_Vulnerable_To>
+		<Encyclopedia_Text>TEXT_TOOLTIP_SCAVENGER_DROID</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_DROID</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_spha_t.tga</Icon_Name>
+		
+		<GUI_Row> 1 </GUI_Row>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>60</Damage>
+		<Autoresolve_Health>100</Autoresolve_Health>
+		<Affiliation>Underworld</Affiliation>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>80</Build_Time_Seconds>
+		<Build_Time_Reduced_By_Multiple_Factories> Yes </Build_Time_Reduced_By_Multiple_Factories>
+		<Build_Tab_Land_Units>Yes</Build_Tab_Land_Units>
+		<Tech_Level>99</Tech_Level>
+		<Required_Timeline>0</Required_Timeline>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures>U_Ground_Droid_Works</Required_Special_Structures>
+		<Required_Planets />
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Formation_Priority>6</Formation_Priority>
+		<Is_Escort>no</Is_Escort>
+		<Ship_Class>infantry</Ship_Class>
+		<Company_Transport_Unit>Underworld_Infantry_Droid_Shuttle</Company_Transport_Unit>
+		<Company_Units>Scavenger_Droid, Scavenger_Droid, Scavenger_Droid</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+
+		<SFXEvent_Build_Started>UHD_Build_Vehicle</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Vehicle_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Complete_SPMAT</SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_SPMAT</SFXEvent_Fleet_Move>
+		<Score_Cost_Credits>650</Score_Cost_Credits>
+		<Maintenance_Cost>0.05</Maintenance_Cost>
+		<Population_Value>1</Population_Value>
+
+		<Cheap_Bribe_Cost>50</Cheap_Bribe_Cost>
+		<Expensive_Bribe_Cost>100</Expensive_Bribe_Cost>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
+		<Tactical_Build_Cost_Multiplayer>1100</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>22</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>UC_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<!--<Build_Limit_Current_Per_Player>0</Build_Limit_Current_Per_Player>-->
+		<!--<Build_Limit_Lifetime_Per_Player>0</Build_Limit_Lifetime_Per_Player>-->  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+		
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes"> </Unit_Abilities_Data>
+	</GroundCompany>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Scavenger_Droids_Data>

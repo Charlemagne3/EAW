@@ -1,0 +1,4131 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+	<Event Name="Tutorial_II_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Tutorial_II_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Center camera -->
+	<Event Name="Tutorial_II_Center_Camera">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>0,-80,0</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Scroll lock -->
+	<Event Name="Tutorial_II_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Turn on objective display -->
+	<Event Name="Tutorial_II_Reveal_Kashyyyk_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Disable zoom -->
+	<Event Name="Tutorial_II_Reveal_Kashyyyk_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Set tutorial mode -->
+	<Event Name="Tutorial_II_Reveal_Kashyyyk_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+<!-- Turn off advisor -->
+	<Event Name="Tutorial_II_Turn_Off_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Restrict Tatooine (until after raid fleet instructions) -->
+	<Event Name="Tutorial_II_Restrict_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Lock planet selection -->
+	<Event Name="Tutorial_II_Lock_Planet_Selection">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_PLANET_SELECTION</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Turn off tutorial cursor on mouse clicks -->
+	<Event Name="Tutorial_II_Turn_Off_Cursor_On_Click">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Restrict Kashyyyk to allow raid fleet to land -->
+	<Event Name="Tutorial_II_Restrict_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+<!-- Lock all available tech -->
+	<Event Name="Tutorial_II_Lock_Barracks">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Shield_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Base_Shield</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Mining_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Ground_Mining_Facility</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Corellian_Corvette">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Corellian_Corvette</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Rebel_Infantry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Rebel_Tank_Buster_Squad">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Tank_Buster_Squad</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Communications_Array">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Communications_Array_R</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Z95_Headhunter_Rebel_Squadron">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Z95_Headhunter_Rebel_Squadron</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Rebel_Star_Base_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_Rebel_Star_Base_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_2</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Light_Vehicle_Factory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Light_Vehicle_Factory</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Power_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_X-Wing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Lock_Smuggler">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Lock_TurboLasers">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Galactic_Turbolaser_Tower_Defenses</Reward_Param1>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>
+
+<!-- Fleet Movement 
+Hint: Since you have successfully retreated from Kashyyyk 
+you can continue to command the surviving forces from that battle within the Galactic View.  
+This view allows you to manage the resources on all of your planets, 
+including your economy, bases, and units.-->
+	<Event Name="Tutorial_II_Task_Fleet_To_Space">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_01</Reward_Param8>
+		<Prereq>Tutorial_II_Reveal_Kashyyyk</Prereq>
+		<Branch>first_task</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Task_Fleet_To_Space_01a">
+      		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+      		<Event_Param1>TUTORIAL_REBEL_ACT02_01</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_01</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Fleet_To_Space</Prereq>
+		</Event>
+
+<!-- Patrol Leader: We need to evacuate Kashyyyk and reinforce the main Alliance fleet at Bothawui.  
+Prepare for departure by moving our ground forces into orbit above Kashyyyk.-->	
+    <Event Name="Tutorial_II_Task_Fleet_To_Space_01">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>MULTIMEDIA</Reward_Type>
+      	<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_02</Reward_Param1>
+      	<Reward_Param2>-1</Reward_Param2>
+      	<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_02</Reward_Param8>
+      	<Prereq>Tutorial_II_Task_Fleet_To_Space_01a</Prereq>
+		<Branch>first_task</Branch>
+    </Event>
+
+		<Event Name="Tutorial_II_Task_Fleet_To_Space_01b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_02</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_02</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Fleet_To_Space_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Task_Fleet_To_Space_01b_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_II_Task_Fleet_To_Space_01b</Prereq>
+		</Event>
+
+<!-- Give Hint: Units within the Galactic View are represented by stacks of units, known as Fleets.  
+The strongest unit within a Fleet is always displayed on top.  
+Move these ground forces into orbit, by dragging them from the surface of Kashyyyk 
+into one of the available slots located above the planet.  
+This will prepare them for space travel.-->
+	<Event Name="Tutorial_II_Task_Fleet_To_Space_03">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_04</Reward_Param8>
+		<Prereq>Tutorial_II_Task_Fleet_To_Space_01b_Remove_Movie</Prereq>
+		<Branch>first_task</Branch>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Fleet_To_Space_03a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_04</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_04</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Fleet_To_Space_03</Prereq>
+		</Event>
+
+<!-- First Holocron Entry -->
+    <Event Name="Tutorial_II_Move_Fleet_Into_Orbit_Above_Kashyyyk">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>0</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Move_Fleet_Into_Orbit_Above_Kashyyyk</Story_Tag>
+        <Prereq>Tutorial_II_Task_Fleet_To_Space_03a</Prereq>
+    </Event>
+
+<!-- Give Task: Move fleet into orbit above Kashyyyk.-->
+	<Event Name="Tutorial_II_Task_Fleet_To_Space_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_55</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Task_Fleet_To_Space_03a</Prereq>
+		<Branch>first_task</Branch>
+	</Event>
+
+<!-- Add Objective 1 -->
+	<Event Name="Tutorial_II_Task_Fleet_To_Space_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_03</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Fleet_To_Space_02</Prereq>
+		<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_d</Prereq>
+	</Event>
+	            
+	<Event Name="Tutorial_II_Kashyyyk_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>KASHYYYK</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Reward_Param4>kashyyyk</Reward_Param4>
+		<Prereq>Tutorial_II_Task_Fleet_To_Space_02</Prereq> 
+		<Branch>first_task</Branch>
+	</Event>
+		
+	<Event Name="Tutorial_II_Kashyyyk_Highlight_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>start_land_drag</Event_Param1>
+		<Prereq>Tutorial_II_Kashyyyk_Highlight</Prereq> 
+	</Event>
+
+	<Event Name="Tutorial_II_Kashyyyk_Highlight_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>kashyyyk</Reward_Param1>
+		<Prereq>Tutorial_II_Kashyyyk_Highlight_01</Prereq> 
+		<Prereq>Tutorial_II_Kashyyyk_Highlight Tutorial_II_Task_Fleet_To_Bothawui</Prereq> 
+	</Event>
+
+<!-- Task completed.  Fleet moved to space -->
+	<Event Name="Tutorial_II_Task_Fleet_To_Bothawui">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>land_to_space</Event_Param1>		
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>first_task</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Task_Fleet_To_Space</Prereq>
+	</Event>	
+
+<!-- Patrol Leader: Good work. I’ll transmit the system coordinates for Bothawui to you now… stand by.-->
+	<Event Name="Tutorial_II_Task_Fleet_To_Bothawui_d">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_05</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Task_Fleet_To_Bothawui</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_II_Task_Fleet_To_Bothawui_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_05</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_05</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_d</Prereq>
+		</Event>
+		
+		<Event Name="Tutorial_II_Task_Fleet_To_Bothawui_a_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_a</Prereq>
+		</Event>
+	        
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Task_Fleet_To_Bothawui_c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_03</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Fleet_To_Bothawui Tutorial_II_Task_Fleet_To_Space_02a</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Move_Fleet_Into_Orbit_Above_Kashyyyk_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Move_Fleet_Into_Orbit_Above_Kashyyyk</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_c</Prereq>
+    </Event>
+
+<!--
+<Event Name="Tutorial_II_Task_Fleet_To_Bothawui_c_0">
+<Event_Type>STORY_TRIGGER</Event_Type>
+<Reward_Type>MULTIMEDIA</Reward_Type>
+<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_03</Reward_Param1>
+<Reward_Param4>1</Reward_Param4>
+<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_c</Prereq>
+</Event>
+-->
+
+<!-- Reveal Bothawui -->
+	<Event Name="Tutorial_II_Reveal_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Task_Fleet_To_Bothawui_a_Remove_Movie</Prereq>
+	</Event>
+	
+<!-- Change faction of Bothawui -->
+	<Event Name="Tutorial_II_Bothawui_To_Rebels">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Tutorial_II_Reveal_Bothawui</Prereq>
+	</Event>
+			
+<!-- Spawn units on Bothawui -->			
+	<Event Name="Tutorial_II_Spawn_At_Bothawui_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Corellian_Corvette</Reward_Param1>
+		<Reward_Param2>Bothawui</Reward_Param2>
+		<Prereq>Tutorial_II_Bothawui_To_Rebels</Prereq>
+	</Event>
+	  		
+<!-- Create a power generator, we shouldn't have to do this, but perhaps the GUI changes are not complete. -Eric_Y -->
+	<Event Name="Tutorial_II_Spawn_At_Bothawui_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Reward_Param2>Bothawui</Reward_Param2>
+		<Prereq>Tutorial_II_Spawn_At_Bothawui_01</Prereq>
+	</Event>
+
+  	<Event Name="Tutorial_II_Spawn_At_Bothawui_06">
+  		<Event_Type>STORY_TRIGGER</Event_Type>
+  		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+  		<Reward_Param1>Ground_Cantina_R</Reward_Param1>
+  		<Reward_Param2>Bothawui</Reward_Param2>
+  		<Prereq>Tutorial_II_Spawn_At_Bothawui_04</Prereq>
+  	</Event>
+	
+<!-- Highlight Bothawui -->
+	<Event Name="Tutorial_II_Bothawui_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>BOTHAWUI</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Reward_Param4>bothawui</Reward_Param4>
+		<Prereq>Tutorial_II_Reveal_Bothawui</Prereq> 
+	</Event>
+
+<!-- Patrol Leader: There it is… direct all fleets located on Kashyyyk to move to Bothawui. -->
+	<Event Name="Tutorial_II_Reveal_Bothawui_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_07</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Reveal_Bothawui</Prereq>
+		<Branch>second_task</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Reveal_Bothawui_00_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Reveal_Bothawui_00</Prereq>
+		</Event>
+
+<!-- Patrol Leader: The main Alliance fleet should be within sight once we arrive. -->
+	<Event Name="Tutorial_II_Reveal_Bothawui_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_11</Reward_Param8>
+		<Prereq>Tutorial_II_Reveal_Bothawui_00_Remove_Text</Prereq>
+		<Branch>second_task</Branch>
+	</Event>	
+
+		<Event Name="Tutorial_II_Reveal_Bothawui_01b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_11</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_11</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Reveal_Bothawui_01</Prereq>
+		</Event>
+		    
+		<Event Name="Tutorial_II_Reveal_Bothawui_01b_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_II_Reveal_Bothawui_01b</Prereq>
+		</Event>
+
+	<Event Name="Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_09</Reward_Param8>
+		<Prereq>Tutorial_II_Reveal_Bothawui_01b_Remove_Movie</Prereq>
+		<Branch>second_task</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_09</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_09</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint</Prereq>
+		</Event>
+
+<!-- Second Holocron Entry -->
+    <Event Name="Tutorial_II_Move_Fleet_To_Bothawui">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>1</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Move_Fleet_To_Bothawui</Story_Tag>
+        <Prereq>Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint_Remove_Text</Prereq>
+    </Event>
+
+	<Event Name="Tutorial_II_Reveal_Bothawui_Select_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Prereq>Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint</Prereq>
+		<Branch>second_task</Branch>
+	</Event>         
+
+<!-- Give Task: Move fleet to Bothawui.-->
+	<Event Name="Tutorial_II_Reveal_Bothawui_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_56</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Reveal_Bothawui_Travel_Distance_Hint_Remove_Text Tutorial_II_Task_Fleet_To_Space_02a</Prereq>
+		<Branch>second_task</Branch>
+	</Event>
+
+<!-- Add objective Objective 2 -->
+	<Event Name="Tutorial_II_Reveal_Bothawui_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_08</Reward_Param1>
+		<Prereq>Tutorial_II_Reveal_Bothawui_02</Prereq>
+	</Event>
+
+<!-- Detect start of hyperspace jump -->
+	<Event Name="Tutorial_II_Jump_To_Bothawui">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>start_hyperspace</Event_Param1>
+		<Prereq>Tutorial_II_Reveal_Bothawui</Prereq>
+	</Event>	
+
+<!-- Remove cursor -->
+	<Event Name="Tutorial_II_Bothawui_Highlight_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Jump_To_Bothawui</Prereq> 
+		<Prereq>Tutorial_II_Wait_For_Fleet</Prereq> 
+	</Event>
+
+<!-- Arrived at Bothawui 
+Patrol Leader: There they are!  Now we need to join them.  
+Give the order, and we'll combine our fleets.-->
+	<Event Name="Tutorial_II_Wait_For_Fleet_Start_Dialog">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Bothawui</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>second_task</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Jump_To_Bothawui</Prereq>
+	</Event>
+		
+	<Event Name="Tutorial_II_Wait_For_Fleet">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_12</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Wait_For_Fleet_Start_Dialog</Prereq>
+		<Branch>second_branch</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Wait_For_Fleet_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_12</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_12</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Wait_For_Fleet</Prereq>
+		</Event>
+	        
+		<Event Name="Tutorial_II_Wait_For_Fleet_a_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_II_Wait_For_Fleet_a</Prereq>
+		</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Wait_For_Fleet_c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_08</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Fleet_Start_Dialog</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Move_Fleet_To_Bothawui_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Move_Fleet_To_Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Fleet_c</Prereq>
+    </Event>
+
+<!--
+<Event Name="Tutorial_II_Wait_For_Fleet_c_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_08</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Wait_For_Fleet_c</Prereq>
+</Event>
+-->
+
+<!-- Fleet Management -->
+<!-- Give Task: Combine fleets at Bothawui. -->
+	<Event Name="Tutorial_II_Task_Merge_Fleet">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_57</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7>
+		<Prereq>Tutorial_II_Task_Merge_Fleet_02</Prereq>
+		<Branch>second_branch</Branch>
+	</Event>
+	
+<!-- Give hint: 
+Hint: Combining two fleets will create a single fleet that is larger and more powerful.  
+To combine your fleets, simply drag and drop one fleet icon onto another. -->
+	<Event Name="Tutorial_II_Task_Merge_Fleet_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_68</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_68</Reward_Param8>
+		<Prereq>Tutorial_II_Wait_For_Fleet_a_Remove_Movie</Prereq>
+		<Branch>second_branch</Branch>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merge_Fleet_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_68</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_68</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merge_Fleet_01</Prereq>
+		</Event>
+
+<!-- Third Holocron Entry -->
+    <Event Name="Tutorial_II_Combine_Fleets_At_Bothawui">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>2</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Combine_Fleets_At_Bothawui</Story_Tag>
+        <Prereq>Tutorial_II_Task_Merge_Fleet_02</Prereq>
+    </Event>
+
+<!-- Highlight the fleets -->
+	<Event Name="Tutorial_II_Fleet_Combine_Highlight_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>FLASH_FLEET</Reward_Param2>
+		<Reward_Param3>0</Reward_Param3>
+		<Reward_Param4>fleet0</Reward_Param4>
+		<Prereq>Tutorial_II_Task_Merge_Fleet_01</Prereq> 
+		<Branch>second_branch</Branch>
+	</Event>
+
+	<Event Name="Tutorial_II_Fleet_Combine_Highlight_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_FLEET_WITH_UNIT</Reward_Type>
+		<Reward_Param1>Squad_Rebel_Trooper</Reward_Param1>
+		<Reward_Param2>fleet1</Reward_Param2>
+		<Prereq>Tutorial_II_Task_Merge_Fleet_01</Prereq> 
+		<Branch>second_branch</Branch>
+	</Event>
+
+<!-- Add objective: Objective 3 Combine Fleets at Bothawui -->
+	<Event Name="Tutorial_II_Task_Merge_Fleet_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_13</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Merge_Fleet</Prereq>
+		<Prereq>Tutorial_II_Task_Wait_Merge</Prereq>
+	</Event>
+	        
+<!-- Fleets merged -->
+	<Event Name="Tutorial_II_Task_Wait_Merge">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>merge_fleets</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>second_branch</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_II_Fleet_Highlight_Off_01">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+      	<Reward_Param1>fleet0</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Wait_Merge Tutorial_II_Fleet_Combine_Highlight_01</Prereq>
+	</Event>
+	    
+	<Event Name="Tutorial_II_Fleet_Highlight_Off_02">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+      	<Reward_Param1>fleet1</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Wait_Merge Tutorial_II_Fleet_Combine_Highlight_02</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Task_Wait_Merge_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_13</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Wait_Merge Tutorial_II_Task_Merge_Fleet_a</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Combine_Fleets_At_Bothawui_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Combine_Fleets_At_Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Wait_Merge Tutorial_II_Task_Merge_Fleet_a</Prereq>
+    </Event>
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Task_Wait_Merge_00_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_13</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Task_Wait_Merge_00</Prereq>
+</Event>
+-->
+
+<!-- Patrol leader 
+Patrol Leader: Reporting for duty!-->
+	<Event Name="Tutorial_II_Task_Merged">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_15</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Task_Wait_Merge</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_15</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_15</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged</Prereq>
+		</Event>	
+	
+<!-- Mon Mothma: Welcome. I am relieved to see that you survived the Empire's assault on Kashyyyk -->
+	<Event Name="Tutorial_II_Task_Merged_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_16</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Task_Merged_Remove_Text</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_01_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_16</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_16</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged_01</Prereq>
+		</Event>         
+
+<!-- Select Bothawui -->
+	<Event Name="Tutorial_II_Task_Merged_01_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Fleet_Start_Dialog</Prereq>
+	</Event>         
+
+<!-- Mon Mothma: As you can see, the Rebel Alliance currently controls Bothawui -->
+	<Event Name="Tutorial_II_Task_Merged_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_17</Reward_Param8>
+		<Prereq>Tutorial_II_Task_Merged_01_a</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_02_b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_17</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_17</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged_02</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Task_Merged_02_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Task_Merged_02_b</Prereq>
+		</Event>
+
+<!-- Highlight credit supply -->
+	<Event Name="Tutorial_II_Hilite_Bothawui_Credit_Supply">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>Text_Planetary_Income</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Merged_02</Prereq>
+	</Event>
+
+<!-- Turn off highlight -->         
+	<Event Name="Tutorial_II_Hilite_Bothawui_Credit_Supply_Off">
+	    <Event_Type>STORY_TRIGGER</Event_Type>
+	    <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_II_Task_Merged_02_b</Prereq>
+	</Event>			
+	        
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+<!-- Hint: To obtain more resources, it will be necessary for you to claim another planet. -->
+	<Event Name="Tutorial_II_Capture_Ryloth_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_108</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_108</Reward_Param8>
+		<Prereq>Tutorial_II_Task_Merged_02_b</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_II_Capture_Ryloth_00a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_108</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_108</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Capture_Ryloth_00</Prereq>
+		</Event>
+
+<!-- Give Task: Move fleet into orbit above Ryloth. -->
+	<Event Name="Tutorial_II_Capture_Ryloth_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_112</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Capture_Ryloth_01b</Prereq>
+	</Event>
+	
+<!-- Hint: Ryloth is currently unoccupied.  
+This means that it should be an easy planet to capture.  
+Begin the process of capturing Ryloth by moving your forces into orbit above Ryloth. -->
+	<Event Name="Tutorial_II_Capture_Ryloth_01a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_109</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_109</Reward_Param8>
+		<Prereq>Tutorial_II_Capture_Ryloth_00a</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_II_Capture_Ryloth_01b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_109</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_109</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Capture_Ryloth_01a</Prereq>
+		</Event>
+
+<!-- Fourth Holocron Entry -->
+    <Event Name="Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>3</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth</Story_Tag>
+        <Prereq>Tutorial_II_Capture_Ryloth_01b</Prereq>
+    </Event>
+    
+<!-- Add Objective 4 -->
+	<Event Name="Tutorial_II_Capture_Ryloth_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_111</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_01</Prereq>
+	</Event>
+
+<!-- Reveal Ryloth -->
+	<Event Name="Tutorial_II_Reveal_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Capture_Ryloth_02</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Highlight_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>RYLOTH</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Reward_Param4>ryloth</Reward_Param4>
+		<Prereq>Tutorial_II_Reveal_Ryloth</Prereq> 
+	</Event>
+
+<!-- Detect fleet entering Ryloth -->
+	<Event Name="Tutorial_II_Capture_Ryloth_06">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Ryloth</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Prereq>Tutorial_II_Capture_Ryloth_02</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Capture_Ryloth_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_111</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_06</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_07</Prereq>
+    </Event>
+
+<!-- Restrict Bothawui, so player doesn't muddle smuggler and droid tasks by sending fleets back. -->
+	<Event Name="Tutorial_II_Restrict_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Capture_Ryloth_07</Prereq>
+	</Event>
+
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+<!-- Hint: Your forces must occupy the surface of a planet in order to capture it.  
+To do this, simply move your fleet into the ground slot located near the center of the planet. -->
+	<Event Name="Tutorial_II_Capture_Ryloth_Surface_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_110</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_110</Reward_Param8>
+		<Prereq>Tutorial_II_Capture_Ryloth_07</Prereq>
+		<Branch>ryloth_surface</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_II_Capture_Ryloth_Surface_00a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_110</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_110</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Capture_Ryloth_Surface_00</Prereq>
+		</Event>
+
+<!-- Fifth Holocron Entry -->
+    <Event Name="Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>4</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth</Story_Tag>
+        <Prereq>Tutorial_II_Capture_Ryloth_Surface_00a</Prereq>
+    </Event>
+    
+<!-- Give task: Move fleet to the surface of Ryloth -->
+	<Event Name="Tutorial_II_Capture_Ryloth_Surface_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_114</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_00a</Prereq>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_06</Prereq>
+		<!--<Branch>ryloth_surface</Branch>-->
+	</Event>
+
+<!-- Add objective  Objective 5  -->
+	<Event Name="Tutorial_II_Capture_Ryloth_Surface_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_113</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_01</Prereq>
+	</Event>
+
+<!-- Detect fleet landing on Ryloth surface -->
+	<Event Name="Tutorial_II_Capture_Ryloth_Surface_06">
+		<Event_Type>STORY_LAND_ON</Event_Type>
+		<Event_Param1>Ryloth</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>ryloth_surface</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Capture_Ryloth_Surface_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_113</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_06 Tutorial_II_Capture_Ryloth_Surface_02</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_07</Prereq>
+    </Event>
+
+<!-- Restrict Ryloth so player doesn't try to send droids or smuggler there. -->
+	<Event Name="Tutorial_II_Restrict_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_07</Prereq>
+	</Event>
+
+<!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+
+<!-- Hint: Let's take a closer look at Ryloth.  
+To access a more detailed view of a planet, select the planet, 
+and then click on the Zoom-In icon, located on the Mini-Map. -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_115</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_115</Reward_Param8>
+		<Prereq>Tutorial_II_Capture_Ryloth_Surface_06</Prereq>
+		<Branch>zoom_into_ryloth</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_II_Zoom_In_Ryloth_00a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_115</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_115</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Zoom_In_Ryloth_00</Prereq>
+		</Event>
+
+<!-- Sixth Holocron Entry -->
+    <Event Name="Tutorial_II_Zoom_In_On_Ryloth">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>5</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Zoom_In_On_Ryloth</Story_Tag>
+        <Prereq>Tutorial_II_Zoom_In_Ryloth_00a</Prereq>
+    </Event>
+
+<!-- Give task: Zoom in on Ryloth -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_97</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_00a</Prereq>
+		<Branch>zoom_into_ryloth</Branch>
+	</Event>
+
+<!-- Add Objective 6 -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_96</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_01</Prereq>
+	</Event>
+
+<!-- Scroll lock Off -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_05a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_02</Prereq>
+	</Event>
+
+<!-- Select Ryloth -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_05b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_02</Prereq>
+	</Event>
+
+<!-- Hilite zoom -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_zoom</Reward_Param1>
+		<Reward_Param2>CLICK_ZOOM</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_02</Prereq>
+		<Branch>zoom_into_ryloth</Branch>
+	</Event>
+	
+<!-- Enable zoom -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_06</Prereq>
+	</Event>
+
+<!-- Detect zoom in -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_08">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>zoomed_in</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>zoom_into_ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_07</Prereq>
+	</Event>	
+	
+<!-- Disable zoom -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_08a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_08</Prereq>
+	</Event>
+
+<!-- Disable sell -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_08b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>g_ground_sell</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_08a</Prereq>
+	</Event>
+	
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_09">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_96</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_08</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Zoom_In_On_Ryloth_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Zoom_In_On_Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_09</Prereq>
+    </Event>
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_10">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_09</Prereq>
+	</Event>
+
+<!-- lock out the UI -->
+	<Event Name="Tutorial_II_Zoom_In_Ryloth_11">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_10</Prereq>
+	</Event>
+
+<!-- Give task: Select land production -->
+	<Event Name="Tutorial_II_Select_Land_Production_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_86</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Land_Production_01b</Prereq>
+	</Event>
+
+<!-- Hint: You will need to build a Barracks before you can recruit infantry.  
+Building a Barracks will provide you with basic ground defenses, 
+as well as the ability to recruit infantry units.  
+Switch to ground production mode by selecting the ground production tab.  
+Then, build a Barracks by clicking on the Barracks icon. -->
+	<Event Name="Tutorial_II_Select_Land_Production_01a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_72</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_72</Reward_Param8>
+		<Prereq>Tutorial_II_Zoom_In_Ryloth_11</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Land_Production_01b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_72</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_72</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Select_Land_Production_01a</Prereq>
+		</Event>
+
+<!-- Seventh Holocron Entry -->
+    <Event Name="Tutorial_II_Build_A_Barracks">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>6</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Build_A_Barracks</Story_Tag>
+        <Prereq>Tutorial_II_Land_Production_01b</Prereq>
+    </Event>
+
+<!-- Add objective: Objective 7 select land production -->
+	<Event Name="Tutorial_II_Select_Land_Production_Timeout_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_85</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Land_Production_01</Prereq>
+	</Event>
+	        
+<!-- Hilight land tab -->
+	<Event Name="Tutorial_II_Select_Land_Production_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Reward_Param2>LAND_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Select_Land_Production_01</Prereq>
+	</Event>
+
+<!-- Unlock the land tab -->
+	<Event Name="Tutorial_II_Select_Land_Production_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_planet_tab</Reward_Param2>
+		<Prereq>Tutorial_II_Select_Land_Production_02</Prereq>
+	</Event>
+			
+<!-- land production click -->
+	<Event Name="Tutorial_II_Select_Land_Production_03">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_planet_tab</Event_Param1>
+		<Prereq>Tutorial_II_Select_Land_Production_Timeout_01</Prereq>
+	</Event>	
+
+<!-- objective complete -->
+	<Event Name="Tutorial_II_Select_Land_Production_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_85</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Land_Production_03</Prereq>
+	</Event>
+
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_II_Select_Land_Production_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Land_Production_04</Prereq>
+	</Event>
+
+<!-- task: build baracks -->
+	<Event Name="Tutorial_II_Build_Barracks">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_101</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Select_Land_Production_04</Prereq>
+	</Event>	
+	
+<!-- Add objective:  Objective 8 build barracks -->
+	<Event Name="Tutorial_II_Build_Barracks_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_100</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Barracks</Prereq>
+	</Event>
+	        
+<!-- Briefly lock out the UI -->
+	<Event Name="Tutorial_II_Build_Barracks_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Barracks_01</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_Build_Barracks_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Barracks_02</Prereq>
+	</Event>	
+
+<!-- Select Ryloth -->
+	<Event Name="Tutorial_II_Build_Barracks_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Barracks_03</Prereq>
+	</Event>
+
+<!-- Unlock the UI -->
+	<Event Name="Tutorial_II_Build_Barracks_08">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_05</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Barracks_03</Prereq>
+	</Event>
+
+<!-- Hilight barracks -->
+	<Event Name="Tutorial_II_Build_Barracks_09">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_05</Reward_Param1>
+		<Reward_Param2>barracks</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Barracks_08</Prereq>
+	</Event>
+
+<!-- Detect a build event -->
+    <Event Name="Tutorial_II_Click_Barracks">
+      	<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_05</Event_Param1>
+		<Prereq>Tutorial_II_Build_Barracks_09</Prereq>
+    </Event>	
+
+<!-- Remove Barracks Tech -->
+	<Event Name="Tutorial_II_Build_Barracks_10">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.5</Event_Param1>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_II_Click_Barracks</Prereq>
+	</Event>
+
+<!-- Stop hilighting barracks -->
+	<Event Name="Tutorial_II_Build_Barracks_Stop_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>barracks</Reward_Param1>
+		<Prereq>Tutorial_II_Click_Barracks</Prereq>
+	</Event>
+
+<!-- Wait for barracks to be built -->
+	<Event Name="Tutorial_II_Barracks_Built">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>R_Ground_Barracks</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Build_Barracks_Stop_Highlight</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Build_Barracks_Objective_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_100</Reward_Param1>
+		<Prereq>Tutorial_II_Barracks_Built</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Build_A_Barracks_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Build_A_Barracks</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Barracks_Objective_Complete</Prereq>
+    </Event>
+
+<!-- Hint: Constructing multiple buildings of the same type on a planet 
+will give you bonuses, such as faster build times for specific units, 
+but remember - each planet has a limited capacity for structures. -->
+	<Event Name="Tutorial_II_Build_Barracks_11">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_80</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_80</Reward_Param8>
+		<!--<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>-->
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Barracks_Built</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Build_Barracks_12">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_80</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_80</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_II_Build_Barracks_11</Prereq>
+		</Event>
+
+<!-- Give task: Recruit two infantry platoons -->
+	<Event Name="Tutorial_II_Build_Infantry_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_59</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Build_Infantry_03</Prereq>
+	</Event>	
+	
+<!-- Hint: Now that you have built a barracks, you may build infantry units -->
+	<Event Name="Tutorial_II_Build_Infantry_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_70</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_70</Reward_Param8>
+		<Prereq>Tutorial_II_Build_Barracks_12</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Build_Infantry_03">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_70</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_70</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Build_Infantry_02</Prereq>
+		</Event>
+
+<!-- Eight Holocron Entry -->
+    <Event Name="Tutorial_II_Recruit_Two_Infantry_Platoons">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>7</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Recruit_Two_Infantry_Platoons</Story_Tag>
+        <Prereq>Tutorial_II_Build_Infantry_03</Prereq>
+    </Event>
+	
+<!-- Add objective:  Objective 9 Recruit 2 infantry platoons -->
+	<Event Name="Tutorial_II_Build_Infantry_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_27</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Infantry_01</Prereq>
+	</Event>
+	        
+<!-- Briefly lock out the UI -->
+	<Event Name="Tutorial_II_Build_Infantry_08">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Infantry_04</Prereq>
+	</Event>
+
+<!-- Select land production -->
+	<Event Name="Tutorial_II_Build_Infantry_09">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Infantry_08</Prereq>
+	</Event>
+
+<!-- Hilite land tab -->
+	<Event Name="Tutorial_II_Build_Infantry_10">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Reward_Param2>LAND_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Infantry_09</Prereq>
+	</Event>
+
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_II_Build_Infantry_11">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.75</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Infantry_10</Prereq>
+	</Event>
+
+<!-- Unlock the UI -->
+	<Event Name="Tutorial_II_Build_Infantry_12">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_00</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Infantry_11</Prereq>
+	</Event>
+
+<!-- Hilite troopers -->
+	<Event Name="Tutorial_II_Build_Infantry_13">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_00</Reward_Param1>
+		<Reward_Param2>TROOPER_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Infantry_12</Prereq>
+	</Event>
+
+<!-- Unit Production -->
+<!-- Build infantry -->
+	<Event Name="Tutorial_II_Give_Infantry_Tech">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Infantry_13</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_II_Infantry_Flag">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>INFANTRY_PRODUCTION</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>	
+
+<!-- Detect a build event -->
+    <Event Name="Tutorial_II_Click_Infantry">
+      	<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_00</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>INFANTRY_PRODUCTION</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Perpetual>True</Perpetual>
+		<Prereq>Tutorial_II_Give_Infantry_Tech</Prereq>
+    </Event>	
+	
+    <Event Name="Tutorial_II_Click_Infantry_00">
+      	<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>INFANTRY_PRODUCTION</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Tutorial_II_Click_Infantry</Prereq>
+    </Event>	
+
+    <Event Name="Tutorial_II_Click_Infantry_00_a">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Tutorial_II_Click_Infantry</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Click_Infantry_00</Prereq>
+    </Event>	
+	    
+<!-- Remove the trooper build option -->
+    <Event Name="Tutorial_II_Click_Infantry_03">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+      	<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+      	<Prereq>Tutorial_II_Click_Infantry_00_a</Prereq>
+    </Event>
+
+<!-- Stop hilite troopers -->
+	<Event Name="Tutorial_II_Click_Infantry_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>TROOPER_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Click_Infantry_03</Prereq>
+	</Event>
+
+<!-- Detect construction of two infantry -->
+	<Event Name="Tutorial_II_Wait_For_Infantry">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Rebel_Infantry_Squad</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Give_Infantry_Tech</Prereq>
+	</Event>	
+
+<!-- Note: If the player clicks off two infantry very fast, the above events won't get
+fired in time. This will make sure the highlight is turned off along with the build options. -Eric_Y -->
+<!-- Remove the trooper build option -->
+    <Event Name="Tutorial_II_Wait_For_Infantry_01">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+      	<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+      	<Prereq>Tutorial_II_Wait_For_Infantry</Prereq>
+    </Event>
+
+<!-- Stop hilite troopers -->
+	<Event Name="Tutorial_II_Wait_For_Infantry_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>TROOPER_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Infantry</Prereq>
+	</Event>
+	        
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Done_Infantry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_27</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Infantry</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Recruit_Two_Infantry_Platoons_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Recruit_Two_Infantry_Platoons</Reward_Param1>
+		<Prereq>Tutorial_II_Done_Infantry</Prereq>
+    </Event>
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Done_Infantry_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_27</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Done_Infantry</Prereq>
+</Event>
+-->
+
+<!-- Build Space Station -->
+<!-- Give task - click on space production -->
+	<Event Name="Tutorial_II_Select_Space_Production_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_88</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Build_Space_Station_Hint_02</Prereq>
+	</Event>	
+
+<!-- Hint: To construct space structures -->
+	<Event Name="Tutorial_II_Build_Space_Station_Hint_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_79</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_79</Reward_Param8>
+		<Prereq>Tutorial_II_Done_Infantry</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Build_Space_Station_Hint_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_79</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_79</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Build_Space_Station_Hint_01</Prereq>
+		</Event>
+
+<!-- Ninth Holocron Entry -->
+    <Event Name="Tutorial_II_Construct_Space_Station_On_Ryloth">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>8</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Construct_Space_Station_On_Ryloth</Story_Tag>
+        <Prereq>Tutorial_II_Build_Space_Station_Hint_02</Prereq>
+    </Event>
+
+<!-- Add objective Objective 10 -->
+	<Event Name="Tutorial_II_Select_Space_Production_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_87</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Space_Production_00</Prereq>
+	</Event>
+	        
+<!-- lock out the UI -->
+	<Event Name="Tutorial_II_Select_Space_Production_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Space_Production_01</Prereq>
+	</Event>
+	
+<!-- Hilite space tab -->
+	<Event Name="Tutorial_II_Select_Space_Production_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Space_Production_01a</Prereq>
+	</Event>
+
+<!-- Unlock the space tab -->
+	<Event Name="Tutorial_II_Select_Space_Production_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_space_tab</Reward_Param2>
+		<Prereq>Tutorial_II_Select_Space_Production_02</Prereq>
+	</Event>
+
+<!-- Detect space tab click -->
+    <Event Name="Tutorial_II_Select_Space_Production_04">
+      	<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_space_tab</Event_Param1>
+		<Prereq>Tutorial_II_Select_Space_Production_03</Prereq>
+    </Event>	
+
+	<Event Name="Tutorial_II_Select_Space_Production_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_87</Reward_Param1>
+		<Prereq>Tutorial_II_Select_Space_Production_04</Prereq>
+	</Event>
+
+<!-- Stop hilite space tab -->
+	<Event Name="Tutorial_II_Select_Space_Production_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_II_Select_Space_Production_05</Prereq>
+	</Event>
+
+<!-- Give task - build a space station -->
+	<Event Name="Tutorial_II_Build_Space_Station_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_103</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Select_Space_Production_05</Prereq>
+	</Event>	
+
+<!-- Add objective  Objective 11 -->
+	<Event Name="Tutorial_II_Build_Space_Station_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_102</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Space_Station_00</Prereq>
+	</Event>
+	        
+<!-- Briefly lock out the UI -->
+	<Event Name="Tutorial_II_Build_Space_Station_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Space_Station_01</Prereq>
+	</Event>
+
+<!-- Give Space Station tech -->
+	<Event Name="Tutorial_II_Build_Space_Station_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Space_Station_02</Prereq>
+	</Event>	
+
+<!-- Unlock the UI -->
+	<Event Name="Tutorial_II_Build_Space_Station_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_01</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Space_Station_02a</Prereq>
+	</Event>
+
+<!-- Hilite Space Station -->
+	<Event Name="Tutorial_II_Build_Space_Station_08">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_01</Reward_Param1>
+		<Reward_Param2>SPACE_STATION_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Space_Station_07</Prereq>
+	</Event>
+
+<!-- Detect a build event -->
+    <Event Name="Tutorial_II_Build_Space_Station_09">
+      	<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_01</Event_Param1>
+		<Prereq>Tutorial_II_Build_Space_Station_08</Prereq>
+    </Event>	
+
+<!-- Stop hilite space station -->
+	<Event Name="Tutorial_II_Build_Space_Station_10">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>SPACE_STATION_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Space_Station_09</Prereq>
+	</Event>
+	        
+<!-- Don't let the player cancel production -->
+	<Event Name="Tutorial_II_Build_Space_Station_11">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>queue00</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Space_Station_10</Prereq>
+	</Event>
+
+<!-- Wait for space station to be built -->
+	<Event Name="Tutorial_II_Space_Station_Built">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Rebel_Star_Base_1</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Build_Space_Station_11</Prereq>
+	</Event>
+			
+<!-- Re-disable starbase 1 -->
+	<Event Name="Tutorial_II_Disable_Rebel_Star_Base_1_After_Built">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_II_Space_Station_Built</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Space_Station_Objective_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_102</Reward_Param1>
+		<Prereq>Tutorial_II_Space_Station_Built</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Construct_Space_Station_On_Ryloth_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Construct_Space_Station_On_Ryloth</Reward_Param1>
+		<Prereq>Tutorial_II_Space_Station_Objective_Complete</Prereq>
+    </Event>
+
+<!-- Build X-Wings -->
+<!-- Mon Mothma 
+Mon Mothma: Good.  We will also need several space units.-->
+	<Event Name="Tutorial_II_Wait_Infantry_Built">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_29</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9> <!--obscures the space station we just built -->
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Space_Station_Built</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Wait_Infantry_Built_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_29</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_29</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Wait_Infantry_Built</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Wait_Infantry_Built_b">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Wait_Infantry_Built_a</Prereq>
+		</Event>
+
+<!-- Give hint 
+Hint:  You will also need to create a space fleet in order to protect 
+the space around the planet.  
+Now that you have created a fully operational space station, 
+you have the ability to build ships. 
+Switch to space production mode by selecting the space production tab.  
+Then, build two X-Wing Fighter squadrons by clicking twice on the X-Wing Fighter icon.-->
+	<Event Name="Tutorial_II_Give_X-Wing_Tech_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_71</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_71</Reward_Param8>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_b</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Give_X-Wing_Tech_01a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_71</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_71</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Give_X-Wing_Tech_01</Prereq>
+		</Event>
+
+<!-- Tenth Holocron Entry -->
+    <Event Name="Tutorial_II_Construct_Two_XWing_Squadrons">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>9</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Construct_Two_XWing_Squadrons</Story_Tag>
+        <Prereq>Tutorial_II_Give_X-Wing_Tech_01a</Prereq>
+    </Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_60</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Give_X-Wing_Tech_01a</Prereq>
+	</Event>	
+
+<!-- Add Objective 12 -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_Objective_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_30</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01</Prereq>
+	</Event>
+
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_One">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_03</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_Objective_a</Prereq>
+	</Event>         
+
+<!-- Briefly lock out the UI -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01</Prereq>
+	</Event>
+
+<!-- Select space production -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01a</Prereq>
+	</Event>
+
+<!-- Hilite space tab -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Reward_Param2>XWING_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01c</Prereq>
+	</Event>
+	        
+<!-- Stop hilite space tab -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01e">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.75</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>XWING_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01d</Prereq>
+	</Event>
+
+<!-- Unlock the UI -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_00</Reward_Param2>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01e</Prereq>
+	</Event>
+
+<!-- Hilite X-Wings -->
+	<Event Name="Tutorial_II_Wait_Infantry_Built_01g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_00</Reward_Param1>
+		<Reward_Param2>XWING_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01f</Prereq>
+	</Event>
+
+<!-- Unlock X-wings -->
+	<Event Name="Tutorial_II_Give_X-Wing_Tech">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_Infantry_Built_01</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_II_XWing_Flag">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>XWING_PRODUCTION</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_II_Begin</Prereq>
+	</Event>	
+
+
+<!-- Detect a build event -->
+	<Event Name="Tutorial_II_Click_XWing">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_00</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>XWING_PRODUCTION</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Give_X-Wing_Tech</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>	
+
+	<Event Name="Tutorial_II_Click_XWing_00">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>XWING_PRODUCTION</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Tutorial_II_Click_XWing</Prereq>
+	</Event>	
+	    
+	<Event Name="Tutorial_II_Click_XWing_00_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Tutorial_II_Click_XWing</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Click_XWing_00</Prereq>
+	</Event>	               
+
+<!-- Remove the xwing build option -->
+	<Event Name="Tutorial_II_Click_XWing_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_II_Click_XWing_00</Prereq>
+	</Event>
+
+<!-- Don't let the player cancel production -->
+	<Event Name="Tutorial_II_Click_XWing_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>queue00</Reward_Param2>
+		<Prereq>Tutorial_II_Click_XWing_03</Prereq>
+	</Event>
+
+<!-- X-wings built -->
+	<Event Name="Tutorial_II_Wait_X_Wing_Production">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Rebel_X-Wing_Squadron</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Give_X-Wing_Tech</Prereq>
+	</Event>	
+	
+<!-- Note: if the user double clicks on X-wing production too fast, these may not happen
+this is a failsafe to make sure the highlight and build options are turned off -->
+<!-- Remove the xwing build option -->
+	<Event Name="Tutorial_II_Wait_X_Wing_Production_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_X_Wing_Production</Prereq>
+	</Event>
+
+<!-- Stop hilite xwings -->
+	<Event Name="Tutorial_II_Wait_X_Wing_Production_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>XWING_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_X_Wing_Production</Prereq>
+	</Event>
+	
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Wait_X_Wing_Production_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_30</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_X_Wing_Production</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Construct_Two_XWing_Squadrons_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Construct_Two_XWing_Squadrons</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_X_Wing_Production_01</Prereq>
+    </Event>
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Wait_X_Wing_Production_01_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_30</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Wait_X_Wing_Production_01</Prereq>
+</Event>
+-->
+
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_Description">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_73</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_73</Reward_Param8>
+		<Prereq>Tutorial_II_Wait_X_Wing_Production_01</Prereq>
+		<Branch>zoom_out_task</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_Description_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT02_73</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_73</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_Description</Prereq>
+	</Event>
+
+<!-- Time to zoom out -->
+<!-- Give task -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_99</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_Description_Remove_Text</Prereq>
+		<Branch>zoom_out_task</Branch>
+	</Event>
+
+<!-- Add Objective 13 -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_98</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_01</Prereq>
+	</Event>
+	
+	
+	<!-- new Holocron Entry 01-->
+    <Event Name="Tutorial_II_Zoom_Out_From_Ryloth_HolocronEntry">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>17</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Zoom_Out_From_Ryloth_HolocronEntry</Story_Tag>
+        <Prereq>Tutorial_II_Ryloth_Zoom_Out_a</Prereq>
+    </Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Two">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_08</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_a</Prereq>
+	</Event>
+	        
+<!-- Hilite zoom -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_zoom</Reward_Param1>
+		<Reward_Param2>CLICK_Ryloth_Zoom_Out</Reward_Param2>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+		<Branch>zoom_out_task</Branch>
+	</Event>
+
+<!-- Enable zoom -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+	</Event>
+
+<!-- Enable zoom button -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_zoom</Reward_Param2>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+	</Event>
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_03">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_zoom</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_Ryloth_Zoom_Out</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+	</Event>
+
+<!-- Detect zoom out -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_04">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>zoomed_out</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>zoom_out_task</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out</Prereq>
+	</Event>
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_Ryloth_Zoom_Out</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_04</Prereq>
+	</Event>
+				
+<!-- Now that we are zoomed out again, turn on scroll lock -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_04</Prereq>
+	</Event>   
+
+<!-- Disable zoom -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_06a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_06</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Ryloth_Zoom_Out_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_98</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_04</Prereq>
+	</Event>
+	
+	 <Event Name="Tutorial_II_Zoom_Out_From_Ryloth_HolocronEntry_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Zoom_Out_From_Ryloth_HolocronEntry</Reward_Param1>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_07</Prereq>
+    </Event>
+
+<!-- Hint: Whenever you capture a planet, you will be rewarded with credits.  
+Credits can be used to purchase new units, structures, and upgrades. -->
+	<Event Name="Tutorial_II_Hint_Planet_Captured_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_83</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_83</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Ryloth_Zoom_Out_07</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Hint_Planet_Captured_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_83</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_83</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Hint_Planet_Captured_01</Prereq>
+		</Event>
+
+<!-- Hint: You will receive money from all of the planets under your control at the end of each Galactic Day.  
+The more planets that you control, the more credits you will receive. -->
+	<Event Name="Tutorial_II_Hint_Galactic_Cycles_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_84</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_84</Reward_Param8>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Hint_Planet_Captured_02</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Hint_Galactic_Cycles_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_84</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_84</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Hint_Galactic_Cycles_01</Prereq>
+		</Event>
+
+<!-- Reveal Nal Hutta -->
+	<Event Name="Tutorial_II_Reveal_Nal_Hutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Hint_Galactic_Cycles_02</Prereq>
+	</Event>
+
+<!-- Restrict Nal Hutta -->
+	<Event Name="Tutorial_II_Restrict_Nal_Hutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Reveal_Nal_Hutta</Prereq>
+	</Event>
+
+<!-- Mon Mothma: Unlike the Empire, we do not prey on other systems to support our cause.  
+Instead, we prefer to acquire the bulk of our tactical resources 
+in a way that undermines the Empire itself. -->
+	<Event Name="Tutorial_II_Task_Merged_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_20</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Restrict_Nal_Hutta</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_05_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_20</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_20</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged_05</Prereq>
+		</Event>
+
+<!-- Mon Mothma -->
+	<Event Name="Tutorial_II_Task_Merged_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_21</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_21</Reward_Param8>
+		<Prereq>Tutorial_II_Task_Merged_05_a</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_06_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_21</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_21</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged_06</Prereq>
+		</Event>
+
+<!-- Select Bothawui -->
+	<Event Name="Tutorial_II_Select_Bothawui_For_Smuggler">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Merged_06_a</Prereq>
+	</Event>
+
+<!-- Mon Mothma: A smuggler on Bothawui has agreed to support our cause, 
+and can be deployed to Nal Hutta.  
+Direct our smuggler to siphon credits from Nal Hutta. -->
+<Event Name="Tutorial_II_Task_Merged_08">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_23</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>
+	<Reward_Param8>TUTORIAL_REBEL_ACT02_23</Reward_Param8>
+	<Prereq>Tutorial_II_Select_Bothawui_For_Smuggler</Prereq>
+</Event>	
+
+		<Event Name="Tutorial_II_Task_Merged_08_b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_23</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_23</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Merged_08</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Task_Merged_08_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Task_Merged_08_b</Prereq>
+		</Event>
+
+<!-- Eleventh Holocron Entry -->
+    <Event Name="Tutorial_II_Recruit_Smuggler_On_Bothawui">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>10</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Recruit_Smuggler_On_Bothawui</Story_Tag>
+        <Prereq>Tutorial_II_Recruit_Smuggler_00</Prereq>
+    </Event>
+
+<!-- Give task: Recruit a smuggler on Bothawui -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_95</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Task_Merged_08_c</Prereq>
+	</Event>	
+
+<!-- Add objective  Objective 14 -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_94</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_00</Prereq>
+	</Event>
+
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Three">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_13</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_01</Prereq>
+	</Event>         
+
+<!-- Select land production -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_01</Prereq>
+	</Event>
+
+<!-- Give Smuggler Tech -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_02</Prereq>
+	</Event>
+
+<!-- Hilite zoom -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_00</Reward_Param1>
+		<Reward_Param2>smuggler_production</Reward_Param2>
+		<Prereq>Tutorial_II_Recruit_Smuggler_03</Prereq>
+	</Event>
+
+<!-- Detect a build event -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_09">
+      	<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_00</Event_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_03</Prereq>
+	</Event>
+
+<!-- Detect recruitment of smuggler -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_10">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Generic_Smuggler_R</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Recruit_Smuggler_03</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_II_Recruit_Smuggler_11">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+      	<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>smuggler_production</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_10</Prereq>
+		<Prereq>Tutorial_II_Recruit_Smuggler_09</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Recruit_Smuggler_12">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_94</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_11</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Recruit_Smuggler_On_Bothawui_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Recruit_Smuggler_On_Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_12</Prereq>
+    </Event>
+		
+<!-- Re-disable Smuggler -->
+	<Event Name="Tutorial_II_Disable_Smuggler_After_Built">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Prereq>Tutorial_II_Recruit_Smuggler_12</Prereq>
+	</Event>
+		
+<!-- Give task 
+Task: Siphon Credits from Nal Hutta.-->
+	<Event Name="Tutorial_II_Task_Move_Smuggler">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_58</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Task_Move_Smuggler_Hint_02</Prereq>
+	</Event>	
+
+<!-- Hint: Smugglers are spy units that can provide additional income. -->
+	<Event Name="Tutorial_II_Task_Move_Smuggler_Hint_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_69</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_69</Reward_Param8>
+		<Prereq>Tutorial_II_Disable_Smuggler_After_Built</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Task_Move_Smuggler_Hint_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_69</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_69</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Task_Move_Smuggler_Hint_01</Prereq>
+		</Event>
+
+<!-- Twelfth Holocron Entry -->
+    <Event Name="Tutorial_II_Siphon_Credits_From_NalHutta">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>11</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Siphon_Credits_From_NalHutta</Story_Tag>
+        <Prereq>Tutorial_II_Task_Move_Smuggler_Hint_02</Prereq>
+    </Event>
+
+<!-- Add Objective 15 -->
+	<Event Name="Tutorial_II_Task_Move_Smuggler_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_24</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Move_Smuggler</Prereq>
+	</Event>
+
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Four">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_111</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Move_Smuggler_a</Prereq>
+	</Event>         
+
+<!-- Show the smuggler slot on Nal Hutta -->
+	<Event Name="Tutorial_II_Flash_Smuggler_Slot_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SHOW_SMUGGLE_SLOT</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Task_Move_Smuggler_a</Prereq>
+	</Event>
+
+<!-- Flash the smuggler slot on Nal Hutta -->
+	<Event Name="Tutorial_II_Flash_Smuggler_Slot_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+		<Prereq>Tutorial_II_Flash_Smuggler_Slot_01</Prereq>
+	</Event>
+	
+<!-- Bounce from Nal Hutta 
+TEXT_STORY_TUTORIAL_REBEL_ACT02_58 was TEXT_SPEECH_TUTORIAL_REBEL_ACT02_24
+Task: Siphon Credits from Nal Hutta.-->
+<Event Name="Tutorial_II_Restrict_Nal_Hutta_Bounce">
+	<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_58</Reward_Param1>
+	<Reward_Param2>5</Reward_Param2>
+	<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+	<Prereq>Tutorial_II_Task_Move_Smuggler_a</Prereq>
+	<Perpetual>True</Perpetual>
+</Event>
+
+<!-- Use smuggler -->
+	<Event Name="Tutorial_II_Wait_For_Smuggling">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>activate_deployed_ability</Event_Param1>		
+		<Prereq>Tutorial_II_Task_Move_Smuggler_a</Prereq>
+	</Event>
+
+<!-- Disable the bounce message -->
+	<Event Name="Tutorial_II_Wait_For_Smuggling_a">
+      	<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Tutorial_II_Restrict_Nal_Hutta_Bounce</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+      	<Prereq>Tutorial_II_Wait_For_Smuggling</Prereq>
+	</Event>
+
+<!-- Hide smuggle slot -->
+	<Event Name="Tutorial_II_Hide_Smuggler_Slot">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_SMUGGLE_SLOT</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Smuggling</Prereq>
+	</Event>
+	    
+<!-- The rectriction code needs this event to work -->
+	<Event Name="Tutorial_II_Wait_For_Smuggling_01">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>NalHutta</Event_Param1>		
+		<Event_Param3>Smuggler_Team_R</Event_Param3>		
+		<Event_Param6>1</Event_Param6>
+		<Prereq>Tutorial_II_Task_Move_Smuggler_a</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Done_Smuggling">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_24</Reward_Param1>
+		<Prereq>Tutorial_II_Wait_For_Smuggling</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Siphon_Credits_From_NalHutta_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Siphon_Credits_From_NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Done_Smuggling</Prereq>
+    </Event>
+
+<!-- Make sure the task display is removed -->
+	<Event Name="Tutorial_II_Done_Smuggling_0">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_24</Reward_Param1>
+		<Reward_Param4>1</Reward_Param4>
+		<Prereq>Tutorial_II_Done_Smuggling</Prereq>
+	</Event>
+
+<!-- Mon Mothma: Good. As long as our smuggler is deployed at Nal Hutta, we can expect to see an increase -->
+	<Event Name="Tutorial_II_Done_Smuggling_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_25</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Wait_For_Smuggling</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Done_Smuggling_01_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_25</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_25</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Done_Smuggling_00</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Done_Smuggling_01_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Done_Smuggling_01_a</Prereq>
+		</Event>
+	        
+<!-- Mon Mothma: We have built all that we can with our current resources. -->
+	<Event Name="Tutorial_II_Droid_Intro_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_33</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_33</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Done_Smuggling_01_c</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Droid_Intro_01_b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_33</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_33</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Droid_Intro_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Droid_Intro_01_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Droid_Intro_01_b</Prereq>
+		</Event>
+
+	<Event Name="Tutorial_II_Spawn_Droids">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPAWN_HERO</Reward_Type>
+		<Reward_Param1>Droids_Team</Reward_Param1>
+		<Reward_Param2>Bothawui</Reward_Param2>
+		<Prereq>Tutorial_II_Droid_Intro_01_c</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_M09_Remove_Smugglers">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_UNIT</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Reward_Param3>True</Reward_Param3>
+		<Prereq>Tutorial_II_Spawn_Droids</Prereq>
+	</Event>
+
+
+<!-- Hint: The Rebel Alliance gains new technology by stealing it directly from 
+Imperial planets.  Move R2-D2 and C-3PO to the Steal slot on Nal Hutta to steal 
+technology from the Empire.-->
+<Event Name="Tutorial_II_Droid_Hint">
+	<Event_Type>STORY_ELAPSED</Event_Type>
+	<Event_Param1>2</Event_Param1>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_35</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>
+	<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+	<Reward_Param8>TUTORIAL_REBEL_ACT02_35</Reward_Param8>
+	<Prereq>Tutorial_II_Spawn_Droids</Prereq>
+	<Branch>droid_slicing</Branch>
+</Event>
+
+		<Event Name="Tutorial_II_Droid_Hint_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_35</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_35</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Droid_Hint</Prereq>
+		</Event>
+
+<!-- Thirteenth Holocron Entry -->
+    <Event Name="Tutorial_II_Steal_Technology_From_NalHutta">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>12</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Steal_Technology_From_NalHutta</Story_Tag>
+        <Prereq>Tutorial_II_Droid_Hint_a</Prereq>
+    </Event>
+
+<!-- Show the steal slot on Nal Hutta -->
+	<Event Name="Tutorial_II_Show_Steal_Slot">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>SHOW_STEAL_SLOT</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Droid_Hint</Prereq>
+	</Event>
+
+<!-- Rebel Technology Advancement -->
+<!-- Give Task: Steal technology from Nal Hutta.-->
+	<Event Name="Tutorial_II_Slice_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_61</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Droid_Hint_a</Prereq>
+		<Branch>droid_slicing</Branch>
+	</Event>	
+
+<!-- Flash the steal slot on Nal Hutta -->
+	<Event Name="Tutorial_II_Flash_Steal_Slot">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Task</Prereq>
+		<Branch>droid_slicing</Branch>
+	</Event>
+
+<!-- Add Objective 16 -->
+	<Event Name="Tutorial_II_Slice_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_34</Reward_Param1>
+		<Prereq>Tutorial_II_Slice_Task</Prereq>
+	</Event>
+
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Five">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_113</Reward_Param1>
+		<Prereq>Tutorial_II_Slice_Task_a</Prereq>
+	</Event>         
+	        
+	<Event Name="Tutorial_II_Spawn_Droids_Highlight">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.125</Event_Param1>   <!-- Give system time to create fleet -->
+		<Reward_Type>FLASH_FLEET_WITH_UNIT</Reward_Type>
+		<Reward_Param1>Droid_R2D2</Reward_Param1>
+		<Reward_Param2>smuggler_fleet</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Task</Prereq> 
+	</Event>
+	
+	<Event Name="Tutorial_II_Spawn_Droids_Highlight_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>start_fleet_drag</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>smuggler_fleet</Reward_Param1>
+		<Prereq>Tutorial_II_Spawn_Droids_Highlight</Prereq> 
+	</Event>
+
+<!-- Make it so the droids can enter Nal Hutta -->
+	<Event Name="Tutorial_II_Spawn_Droids_01">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>NalHutta</Event_Param1>
+		<Event_Param3>Droids_Team</Event_Param3>
+		<Event_Param6>1</Event_Param6>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>droid_slicing</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Task</Prereq>
+	</Event>
+
+<!-- Disable the bounce message -->
+	<Event Name="Tutorial_II_Spawn_Droids_01_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Tutorial_II_Restrict_Nal_Hutta_Bounce_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Spawn_Droids_01</Prereq>
+	</Event>
+
+<!-- Bounce from Nal Hutta 
+TEXT_STORY_TUTORIAL_REBEL_ACT02_61 was TEXT_STORY_TUTORIAL_REBEL_ACT02_34-->
+<Event Name="Tutorial_II_Restrict_Nal_Hutta_Bounce_01">
+	<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_61</Reward_Param1>
+	<Reward_Param2>5</Reward_Param2>
+	<Reward_Param7>Task</Reward_Param7>
+	<Prereq>Tutorial_II_Spawn_Droids</Prereq>
+	<Perpetual>True</Perpetual>
+</Event>
+
+<!-- Hint: Hover the mouse cursor over any item that you wish to receive detailed information 
+for and a tool-tip will be displayed.  
+Choose a technology to steal from the Empire by selecting it from the available list.  
+Whenever the Rebel faction exhausts all possible technology options, 
+they will advance to the next technology level. -->
+	<Event Name="Tutorial_II_Slice_Dialog">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>slice_dialog</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_54</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_54</Reward_Param8>
+		<Prereq>Tutorial_II_Spawn_Droids_01</Prereq>
+		<Branch>steal_tech</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Slice_Dialog_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_54</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_54</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+		</Event>
+	        
+<!-- Unlock the slice buttons in the dialog box -->
+	<Event Name="Tutorial_II_Slice_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0000</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Slice_Dialog_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0001</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Slice_Dialog_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0100</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Slice_Dialog_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0101</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Slice_Dialog_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0200</Reward_Param2>
+		<Prereq>Tutorial_II_Slice_Dialog</Prereq>
+	</Event>
+
+	        
+<!-- Detect Nal Hutta slice -->
+	<Event Name="Tutorial_II_Slice">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>slice</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>steal_tech</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Spawn_Droids</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Slice_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_34</Reward_Param1>
+		<Prereq>Tutorial_II_Slice</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Steal_Technology_From_NalHutta_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Steal_Technology_From_NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Slice_01</Prereq>
+    </Event>
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Slice_01_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_34</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Slice_01</Prereq>
+</Event>
+-->
+
+	<Event Name="Tutorial_II_M09_Remove_Droids_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>REMOVE_UNIT</Reward_Type>
+		<Reward_Param1>Droids_Team</Reward_Param1>
+		<Reward_Param3>True</Reward_Param3>
+		<Prereq>Tutorial_II_Steal_Technology_From_NalHutta_Complete</Prereq>
+	</Event>
+	        
+<!-- Hide the steal slot on Nal Hutta -->
+	<Event Name="Tutorial_II_Hide_Steal_Slot">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>HIDE_STEAL_SLOT</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Prereq>Tutorial_II_Slice</Prereq>
+	</Event>
+	        
+<!-- Remove the ion cannon build option -->
+	<Event Name="Tutorial_II_Remove_Ion">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>GROUND_ION_CANNON</Reward_Param1>
+		<Prereq>Tutorial_II_Slice_01</Prereq>
+	</Event>
+
+<!-- Remove the mining facility build option -->
+	<Event Name="Tutorial_II_Remove_Mining">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>REBEL_GROUND_MINING_FACILITY</Reward_Param1>
+		<Prereq>Tutorial_II_Slice_01</Prereq>
+	</Event>
+
+<!-- Base Building -->
+<!-- Mon Mothma: We must improve our hold on Bothawui by constructing defensive structures -->
+	<Event Name="Tutorial_II_Build_Defense">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_36</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_36</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Slice_01</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Build_Defense_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_36</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_36</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Build_Defense</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Build_Defense_b">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Build_Defense_a</Prereq>
+		</Event>
+	
+<!-- Hint: A Power Generator will be built automatically for any structures 
+that require power to function, including Base Shield Generators.  
+Remember - you can zoom-in on a planet to see any units and structures that you may have built. -->
+	<Event Name="Tutorial_II_Build_Defense_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_38</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_38</Reward_Param8>
+		<Prereq>Tutorial_II_Build_Defense_b</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_II_Build_Defense_02a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_38</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_38</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Build_Defense_02</Prereq>
+		</Event>
+
+<!-- Fourteenth Holocron Entry -->
+    <Event Name="Tutorial_II_Construct_Base_Shield_Generator">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>13</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Construct_Base_Shield_Generator</Story_Tag>
+        <Prereq>Tutorial_II_Build_Defense_02a</Prereq>
+    </Event>
+
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_II_Build_Defense_02a</Prereq>
+	</Event>
+
+<!-- Select Bothawui -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator</Prereq>
+	</Event>
+	    
+<!-- Select land production -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_a</Prereq>
+	</Event>
+	        
+<!-- Unlock shield generator -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_b1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Base_Shield</Reward_Param1>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_b</Prereq>
+	</Event>
+			
+<!-- Unlock the b_Create_01 button -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_b2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_01</Reward_Param2>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_b1</Prereq>
+	</Event>	
+	
+	<!-- Unlock the b_Create_03 button 
+	this is for if/when the player steals the ion cannon...which comes in at button 01-->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_b3">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_03</Reward_Param2>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_b1</Prereq>
+	</Event>		
+	    
+<!-- Hilite shield generator -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.125</Event_Param1>      <!-- Need the build options to refresh first after unlocking -->
+		<Reward_Type>FLASH_PRODUCTION_CHOICE</Reward_Type>
+		<Reward_Param1>R_Ground_Base_Shield</Reward_Param1>
+		<Reward_Param2>POWER_PROD</Reward_Param2>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_b1</Prereq>
+	</Event>
+	    
+<!-- Stop hilite shield generator -->
+	<Event Name="Tutorial_II_Setup_For_Shield_Generator_d">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_01</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>POWER_PROD</Reward_Param1>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator_c</Prereq>
+	</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_II_Build_Base_Shield">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_63</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator</Prereq>
+	</Event>	
+
+<!-- Add objective:  Objective 17 build shield generator -->
+	<Event Name="Tutorial_II_Build_Base_Shield_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_37A</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Base_Shield</Prereq>
+	</Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Six">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_96</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Base_Shield_a</Prereq>
+	</Event>         
+
+	<Event Name="Tutorial_II_Wait_For_Shield_Generator">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>R_Ground_Base_Shield</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_II_Setup_For_Shield_Generator</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Base_Structures_Built">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+	<Prereq>Tutorial_II_Wait_For_Shield_Generator</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Base_Structures_Built_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_37A</Reward_Param1>
+		<Prereq>Tutorial_II_Base_Structures_Built</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Construct_Base_Shield_Generator_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Construct_Base_Shield_Generator</Reward_Param1>
+		<Prereq>Tutorial_II_Base_Structures_Built_01</Prereq>
+    </Event>
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Base_Structures_Built_01_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_37A</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Base_Structures_Built_01</Prereq>
+</Event>
+-->
+
+<!-- Rebel Raid Groups -->
+<!-- Mon Mothma 
+Mon Mothma: Now that our defenses are in place we should take steps 
+to reinforce the neighboring planet of Tatooine.  
+Unfortunately, the space above Tatooine has been blockaded by an Imperial fleet, 
+so we will need to make use of a Raid fleet.-->
+	<Event Name="Tutorial_II_Raid_Intro">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_39</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_39</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Base_Structures_Built_01</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_39</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_39</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Intro</Prereq>
+		</Event>
+
+<!-- Mon Mothma: Unlike normal fleets, Raid fleets do not initiate space combat on 
+enemy systems.  Using Raid fleets allow us to reinforce or assault systems which are 
+blockaded by enemy fleets. -->
+	<Event Name="Tutorial_II_Raid_Intro_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_40</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_40</Reward_Param8>
+		<Prereq>Tutorial_II_Raid_Intro_Remove_Text</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_00_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_40</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_40</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Intro_00</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_00_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Raid_Intro_00_a</Prereq>
+		</Event>
+
+<!-- Unlock the UI -->
+	<Event Name="Tutorial_II_Unlock_UI">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Intro_00_c</Prereq>
+	</Event>
+	        
+<!-- Disable zoom -->
+	<Event Name="Tutorial_II_Unlock_UI_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Unlock_UI</Prereq>
+	</Event>
+	        
+<!-- Disable sell -->
+	<Event Name="Tutorial_II_Unlock_UI_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>g_ground_sell</Reward_Param2>
+		<Prereq>Tutorial_II_Unlock_UI</Prereq>
+	</Event>
+
+<!-- Restrict Tatooine -->
+	<Event Name="Tutorial_II_Reveal_Tatooine_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Reveal_Tatooine</Prereq>
+	</Event>
+
+<!-- Bounce Tatooine -->
+	<Event Name="Tutorial_II_Reveal_Tatooine_04_a">
+		<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_INVALID_ACTION</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Prereq>Tutorial_II_Reveal_Tatooine_04</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+<!-- Allow raid fleet in -->
+	<Event Name="Tutorial_II_Reveal_Tatooine_05">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>TATOOINE</Event_Param1>
+		<Event_Param7>1</Event_Param7>         <!-- Allow only raid fleets in -->
+		<Prereq>Tutorial_II_Reveal_Tatooine</Prereq>
+	</Event>
+
+<!-- Hint: The Rebel Alliance can use Raid Fleets to bypass space battles within 
+enemy territory by moving directly to a planet's surface.  
+This allows the Rebel Alliance to reinforce friendly planets blocked by enemy space units, 
+or even capture undefended enemy planets.-->
+	<Event Name="Tutorial_II_Raid_Intro_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_41</Reward_Param8>
+		<Prereq>Tutorial_II_Raid_Intro_00_c</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_01_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_41</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_41</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Intro_01</Prereq>
+		</Event>
+
+<!-- Mon Mothma: Create a Raid fleet using some of our newly-recruited infantry, 
+and reinforce the defenses on Tatooine. -->
+	<Event Name="Tutorial_II_Raid_Intro_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_42</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_42</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Raid_Intro_01_a</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_02_b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_42</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_42</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Intro_02</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_02_c">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Raid_Intro_02_b</Prereq>
+		</Event>
+
+<!-- Remove R2 and C3PO --> 
+	<Event Name="Tutorial_II_Remove_Droids">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_UNIT</Reward_Type>
+		<Reward_Param1>NON_COMBAT_GALLOFREE</Reward_Param1>
+		<Reward_Param2>DROIDS_TEAM</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_II_Raid_Intro_02_c</Prereq>
+	</Event>
+
+<!-- Have player zoom into planet -->
+<!-- Task: Zoom-In to Bothawui -->
+	<Event Name="Tutorial_II_Raid_Intro_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_65</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Raid_Intro_02_00_Remove_Text</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>	
+
+<!-- Add objective:  Objective 18 zoom into bothawui -->
+	<Event Name="Tutorial_II_Raid_Intro_03a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_47</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Intro_03</Prereq>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Seven">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_85</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Intro_03a</Prereq>
+	</Event>         
+	        
+<!-- Hilite zoom -->
+	<Event Name="Tutorial_II_Hilite_Zoom">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_zoom</Reward_Param1>
+		<Reward_Param2>CLICK_ZOOM</Reward_Param2>
+		<Prereq>Tutorial_II_Raid_Intro_03</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+	
+<!-- Enable zoom -->
+	<Event Name="Tutorial_II_Enable_Zoom">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Hilite_Zoom</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Enable_Zoom_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_II_Enable_Zoom</Prereq>
+	</Event>   
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Hilite_Zoom_01">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_zoom</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Hilite_Zoom</Prereq>
+	</Event>
+
+<!-- Give hint -->
+<!-- Moved from start of tutorial to here 
+Hint: To access a more detailed view of a selected planet, 
+click on the zoom-in icon, located on the Mini-Map.-->
+	<Event Name="Tutorial_II_Raid_Intro_02_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_06</Reward_Param8>
+		<Prereq>Tutorial_II_Remove_Droids</Prereq>
+		<Branch>ZOOM_BRANCH</Branch>
+	</Event>
+
+		<Event Name="Tutorial_II_Raid_Intro_02_00_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_06</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_06</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Intro_02_00</Prereq>
+			<Branch>ZOOM_BRANCH</Branch>
+		</Event>
+
+<!-- Fifteenth Holocron Entry -->
+    <Event Name="Tutorial_II_Zoom_Into_Bothawui_02">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>14</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Zoom_Into_Bothawui_02</Story_Tag>
+        <Prereq>Tutorial_II_Raid_Intro_02_00_Remove_Text</Prereq>
+    </Event>
+
+<!-- Detect zoom in -->
+	<Event Name="Tutorial_II_Zoom_In">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>zoomed_in</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>ZOOM_BRANCH</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Raid_Intro_00</Prereq>
+	</Event>	
+
+<!-- Spawn Units on Bothawui -->			
+	<Event Name="Tutorial_II_Spawn_At_Bothawui_01_Again">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+		<Reward_Param2>Bothawui</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>
+
+<!-- Stop hilite zoom (make sure) could happen if player uses mouse wheel instead. -->
+	<Event Name="Tutorial_II_Hilite_Zoom_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Zoom_In_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_47</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In Tutorial_II_Raid_Intro_03a</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Zoom_Into_Bothawui_02_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Zoom_Into_Bothawui_02</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In_01</Prereq>
+    </Event>
+
+<!-- Disable zoom -->
+	<Event Name="Tutorial_II_Keep_Zoomed_In">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>
+
+<!-- Give hint 
+Hint: Create a raid fleet by dragging the ground units shown here into orbit.  
+To move a unit into orbit, 
+simply drag and drop the units to the desired fleet position.-->
+	<Event Name="Tutorial_II_Zoom_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_50</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_50</Reward_Param8>
+		<Branch>RAID_BUILD_BRANCH</Branch>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Zoom_02_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_50</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_50</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Zoom_02</Prereq>
+		</Event>	
+
+<!-- Sixteenth Holocron Entry -->
+    <Event Name="Tutorial_II_Create_A_Raid_Fleet">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>15</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Create_A_Raid_Fleet</Story_Tag>
+        <Prereq>Tutorial_II_Zoom_02_Remove_Text</Prereq>
+    </Event>
+
+<!-- Give task 
+Task: Create a Raid Fleet. -->
+	<Event Name="Tutorial_II_Build_Raid">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_64</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Zoom_02_Remove_Text</Prereq>
+		<Branch>RAID_BUILD_BRANCH</Branch>
+	</Event>	
+
+<!-- Add Objective 19 -->
+	<Event Name="Tutorial_II_Build_Raid_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_43</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Raid</Prereq>
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+	</Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Eight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_100</Reward_Param1>
+		<Prereq>Tutorial_II_Build_Raid_a</Prereq>
+	</Event>         
+	        
+<!-- Hilite land slot -->
+	<Event Name="Tutorial_II_Hilite_Land_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>Pad_00</Reward_Param1>
+		<Reward_Param2>LAND_SLOT_0</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Raid</Prereq>
+		<Branch>RAID_BUILD_BRANCH</Branch>
+	</Event>
+
+<!-- Hilite fleet slot -->
+	<Event Name="Tutorial_II_Hilite_Fleet_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>q1_0203</Reward_Param1>
+		<Reward_Param2>FLEET_SLOT_0</Reward_Param2>
+		<Prereq>Tutorial_II_Build_Raid</Prereq>
+		<Branch>RAID_BUILD_BRANCH</Branch>
+	</Event>
+
+<!-- Detect raid creation -->
+	<Event Name="Tutorial_II_Raid_Created">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>drag_land_to_space</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>RAID_BUILD_BRANCH</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_In</Prereq>
+	</Event>	
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Raid_Created_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_43</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Created Tutorial_II_Build_Raid_a</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Create_A_Raid_Fleet_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Create_A_Raid_Fleet</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Created_01</Prereq>
+    </Event>
+
+<!-- Stop hilite land slot -->
+	<Event Name="Tutorial_II_Hilite_Land_00_0">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_SLOT_0</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+	</Event>
+
+<!-- Stop hilite fleet slot -->
+	<Event Name="Tutorial_II_Hilite_Fleet_00_0">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>FLEET_SLOT_0</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+	</Event>
+
+<!-- Enable zoom -->
+	<Event Name="Tutorial_II_Let_Zoom_Out">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+	</Event>
+
+<!-- Time to zoom out -->
+<!-- Give Task: Zoom-Out from Bothawui-->
+	<Event Name="Tutorial_II_Zoom_Out">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_66</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+		<Branch>ZOOM_OUT_BRANCH</Branch>
+	</Event>	
+
+<!-- Add Objective 20 -->
+	<Event Name="Tutorial_II_Zoom_Out_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_51</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out</Prereq>
+		<Prereq>Tutorial_II_Zoom_Out_01</Prereq>
+	</Event>
+	
+	<!-- new Holocron Entry 02-->
+    <Event Name="Tutorial_II_Zoom_Out_From_Bothawui_HolocronEntry">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>18</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Zoom_Out_From_Bothawui_HolocronEntry</Story_Tag>
+        <Prereq>Tutorial_II_Zoom_Out_a</Prereq>
+    </Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Nine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_27</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out_a</Prereq>
+	</Event>         
+	        
+<!-- Hilite zoom -->
+	<Event Name="Tutorial_II_Hilite_Zoom_Out">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_zoom</Reward_Param1>
+		<Reward_Param2>CLICK_ZOOM_OUT</Reward_Param2>
+		<Prereq>Tutorial_II_Zoom_Out</Prereq>
+		<Branch>ZOOM_OUT_BRANCH</Branch>
+	</Event>
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Hilite_Zoom_Out_01">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_zoom</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_ZOOM_OUT</Reward_Param1>
+		<Prereq>Tutorial_II_Hilite_Zoom_Out</Prereq>
+	</Event>
+
+<!-- Stop hilite zoom -->
+	<Event Name="Tutorial_II_Hilite_Zoom_Out_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>CLICK_ZOOM_OUT</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out_01</Prereq>
+	</Event>
+
+<!-- Detect zoom out -->
+	<Event Name="Tutorial_II_Zoom_Out_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>zoomed_out</Event_Param1>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>ZOOM_OUT_BRANCH</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Raid_Created</Prereq>
+	</Event>
+	
+<!-- Now that we are zoomed out again, turn on scroll lock -->
+	<Event Name="Tutorial_II_Zoom_Out_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out_01</Prereq>
+	</Event>   
+	
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Zoom_Out_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_51</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out_01 Tutorial_II_Zoom_Out_a</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_II_Zoom_Out_From_Bothawui_HolocronEntry_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Zoom_Out_From_Bothawui_HolocronEntry</Reward_Param1>
+		<Prereq>Tutorial_II_Zoom_Out_02</Prereq>
+    </Event>
+
+<!-- Move the raid fleet -->
+<!-- Give Task: Deploy a Raid fleet to Tatooine.-->
+	<Event Name="Tutorial_II_Move_Raid">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_67</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Branch>RAID_MOVE_BRANCH</Branch>
+		<Prereq>Tutorial_II_Move_Raid_01_Remove_Text</Prereq>
+	</Event>	
+
+<!-- Reveal Tatooine -->
+   	<Event Name="Tutorial_II_Reveal_Tatooine">
+   		<Event_Type>STORY_TRIGGER</Event_Type>
+   		<Reward_Type>REVEAL_PLANET</Reward_Type>
+   		<Reward_Param1>Tatooine</Reward_Param1>
+   		<Reward_Param2>1</Reward_Param2>
+   		<Prereq>Tutorial_II_Move_Raid</Prereq>
+   	</Event>
+
+<!-- Flash Tatooine -->
+	<Event Name="Tutorial_II_Move_Raid_Highlight_Tatooine">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>TATOOINE</Reward_Param1>
+		<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+		<Prereq>Tutorial_II_Move_Raid</Prereq> 
+	</Event>
+	        
+<!-- Show the raid slot on Tatooine -->
+	<Event Name="Tutorial_II_Move_Raid_Show_Slot">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SHOW_RAID_SLOT</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Prereq>Tutorial_II_Move_Raid_Highlight_Tatooine</Prereq>
+	</Event>         
+
+<!-- Add objective Objective 21 -->
+	<Event Name="Tutorial_II_Move_Raid_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_52</Reward_Param1>
+		<Prereq>Tutorial_II_Move_Raid</Prereq>
+		<Prereq>Tutorial_II_Raid_Landed</Prereq>
+	</Event>
+	        
+<!-- Remove objective -->
+	<Event Name="Tutorial_II_Remove_Objective_Ten">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_87</Reward_Param1>
+		<Prereq>Tutorial_II_Move_Raid_a</Prereq>
+	</Event>         
+
+<!-- Unrestrict Tatooine to allow raid fleet to land -->
+	<Event Name="Tutorial_II_Unrestrict_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_II_Move_Raid</Prereq>
+	</Event>
+
+<!-- Give hint 
+Hint: You will now need to bypass the Empire space units positioned above Tatooine.  
+To do this, simply drag the Rebel Raid Fleet from Bothawui to the Raid slot located on Tatooine.  
+This will place the infantry units directly on the surface of Tatooine.-->
+	<Event Name="Tutorial_II_Move_Raid_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_53</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_53</Reward_Param8>
+		<Branch>RAID_MOVE_BRANCH</Branch>
+		<Prereq>Tutorial_II_Zoom_Out_01</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Move_Raid_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_53</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_53</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Move_Raid_01</Prereq>
+		</Event>	
+
+<!-- Seventeenth Holocron Entry -->
+    <Event Name="Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Story_Dialog>Dialog_Tutorial_02</Story_Dialog>
+        <Story_Chapter>16</Story_Chapter>
+        <Story_Dialog_Popup>False</Story_Dialog_Popup>
+        <Story_Tag>Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine</Story_Tag>
+        <Prereq>Tutorial_II_Move_Raid_01_Remove_Text</Prereq>
+    </Event>
+
+<!-- Raid fleet landed -->
+	<Event Name="Tutorial_II_Raid_Landed">
+		<Event_Type>STORY_LAND_ON</Event_Type>
+		<Event_Param1>Tatooine</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>RAID_MOVE_BRANCH</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_II_Reveal_Tatooine</Prereq>
+	</Event>
+
+<!-- Stop flashing Tatooine -->
+	<Event Name="Tutorial_II_Raid_Landed_Hide_Tutorial_Cursor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_II_Raid_Landed</Prereq> 
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_II_Raid_Landed_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_52</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Landed Tutorial_II_Move_Raid_a</Prereq>
+	</Event>
+
+    <Event Name="Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Landed_00</Prereq>
+    </Event>
+
+<!-- Hide the raid slot on Tatooine -->
+	<Event Name="Tutorial_II_Move_Raid_Hide_Slot">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_RAID_SLOT</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Prereq>Tutorial_II_Raid_Landed_00</Prereq>
+	</Event>         
+
+<!--
+Make sure the task display is removed
+<Event Name="Tutorial_II_Raid_Landed_00_0">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT02_52</Reward_Param1>
+	<Reward_Param4>1</Reward_Param4>
+	<Prereq>Tutorial_II_Raid_Landed_00</Prereq>
+</Event>
+-->	    
+
+<!-- Mon Mothma: Well done.  The additional support at Tatooine should allow our 
+forces there to endure any sudden Imperial attacks. -->
+	<Event Name="Tutorial_II_Raid_Landed_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_45</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_REBEL_ACT02_45</Reward_Param8>
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_II_Raid_Landed</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_II_Raid_Landed_01_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT02_45</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT02_45</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_II_Raid_Landed_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_II_Raid_Landed_01_b">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_II_Raid_Landed_01_a</Prereq>
+		</Event>
+
+<!-- Remove objectives -->
+	<Event Name="Tutorial_II_Raid_Landed_01_c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REMOVE_ALL_OBJECTIVES</Reward_Type>
+		<Prereq>Tutorial_II_Raid_Landed_01_b</Prereq>
+	</Event>
+
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_II_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_TWO</Reward_Param1>
+	<Prereq>Tutorial_II_Raid_Landed_01_c</Prereq>
+</Event>
+
+<!-- Link to next tutorial -->
+<Event Name="Tutorial_II_Next_Tutorial_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+	<Reward_Param1>TEXT_TUTORIAL_2_COMPLETE</Reward_Param1>
+	<Prereq>Tutorial_II_Raid_Landed_01_c</Prereq>
+</Event>
+
+<Event Name="Tutorial_II_Next_Tutorial_01">
+	<Event_Type>STORY_GENERIC</Event_Type>
+	<Event_Param1>Continue_Tutorial</Event_Param1>
+	<Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+	<Reward_Param1>Tutorial_Three</Reward_Param1>
+	<Reward_Param2>1</Reward_Param2>
+</Event>
+
+<!-- jdg these are safety catches for the holocrons not completing -->
+
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_01">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Move_Fleet_Into_Orbit_Above_Kashyyyk</Reward_Param1>
+				<Prereq>Tutorial_II_Move_Fleet_To_Bothawui</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_02">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Move_Fleet_To_Bothawui</Reward_Param1>
+				<Prereq>Tutorial_II_Combine_Fleets_At_Bothawui</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_03">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Combine_Fleets_At_Bothawui</Reward_Param1>
+				<Prereq>Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_04">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Move_Fleet_Into_Orbit_Above_Ryloth</Reward_Param1>
+				<Prereq>Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_05">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Move_Fleet_To_Surface_Of_Ryloth</Reward_Param1>
+				<Prereq>Tutorial_II_Zoom_In_On_Ryloth</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_06">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Zoom_In_On_Ryloth</Reward_Param1>
+				<Prereq>Tutorial_II_Build_A_Barracks</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_07">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Build_A_Barracks</Reward_Param1>
+				<Prereq>Tutorial_II_Recruit_Two_Infantry_Platoons</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_08">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Recruit_Two_Infantry_Platoons</Reward_Param1>
+				<Prereq>Tutorial_II_Construct_Space_Station_On_Ryloth</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_09">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Construct_Space_Station_On_Ryloth</Reward_Param1>
+				<Prereq>Tutorial_II_Construct_Two_XWing_Squadrons</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_10">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Construct_Two_XWing_Squadrons</Reward_Param1>
+				<Prereq>Tutorial_II_Recruit_Smuggler_On_Bothawui</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_11">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Recruit_Smuggler_On_Bothawui</Reward_Param1>
+				<Prereq>Tutorial_II_Siphon_Credits_From_NalHutta</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_12">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Siphon_Credits_From_NalHutta</Reward_Param1>
+				<Prereq>Tutorial_II_Steal_Technology_From_NalHutta</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_13">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Steal_Technology_From_NalHutta</Reward_Param1>
+				<Prereq>Tutorial_II_Construct_Base_Shield_Generator</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_14">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Construct_Base_Shield_Generator</Reward_Param1>
+				<Prereq>Tutorial_II_Zoom_Into_Bothawui_02</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_15">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Zoom_Into_Bothawui_02</Reward_Param1>
+				<Prereq>Tutorial_II_Create_A_Raid_Fleet</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_16">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Create_A_Raid_Fleet</Reward_Param1>
+				<Prereq>Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_II_SafetyCatch_CompleteHolocron_17">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_II_Deploy_A_Raid_Fleet_To_Tatooine</Reward_Param1>
+				<Prereq>Tutorial_II_Raid_Landed_01_c</Prereq>
+			</Event>
+
+
+
+
+    
+
+
+    
+
+
+</Story>

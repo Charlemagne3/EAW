@@ -1,0 +1,2070 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Setup -->
+	<Event Name="Tutorial_M01_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M01_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_M01_Disable_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M01_Disable_Retreat</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Disable_Retreat_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+<!-- Turning off for testing purposes...need to uncomment (jdg)-->
+	<Event Name="Tutorial_M01_Lock_Controls_For_Intro">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+	
+   <!-- Turn off advisor -->
+   <Event Name="Tutorial_M01_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_M01_Begin</Prereq>
+   </Event>
+	
+	<!-- Hide the Autoresolve interface -->
+	<Event Name="Tutorial_M01_Hide_Autoresolve">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+	
+   <!-- Set tutorial mode -->
+   <Event Name="Tutorial_M01_Tutorial_Player">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Prereq>Tutorial_M01_Begin</Prereq>
+   </Event>
+	
+
+
+<!-- Intro VO Sequence -->
+
+	<!-- Hint: Imperial forces have detected the Rebel presence here on the surface of Kashyyyk.  
+	You will need to gather your troops and defend the Alliance base on this planet. -->
+	<Event Name="Tutorial_M01_Intro_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_FIRST_INTRO_DIALOG</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_78</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_78</Reward_Param8>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Intro_02">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_78</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_78</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Intro_01</Prereq>
+	</Event>
+
+
+	<!-- Hint: To accomplish this, you must command ground units, 
+	like these Rebel Soldiers who are currently on patrol, 
+	to eliminate the enemy invaders; but before you begin, 
+	it is critical that you also understand how to use the command bar. -->
+	<Event Name="Tutorial_M01_Intro_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_SECOND_INTRO_DIALOG</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_79</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_79</Reward_Param8>
+		<Prereq>Tutorial_M01_Intro_02</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Intro_04">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_79</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_79</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Intro_03</Prereq>
+	</Event>
+
+	<!-- Hint: To view the entire battlefield, use the mini-map located in the bottom left corner of the screen.  
+	Friendly units on the mini-map are displayed in green, while enemy units are red. -->
+	<Event Name="Tutorial_M01_Intro_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_80</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_80</Reward_Param8>
+		<Prereq>Tutorial_M01_Intro_04</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Intro_06">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_80</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_80</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Intro_05</Prereq>
+	</Event>
+	
+		<!-- Flash the mini map -->
+		<Event Name="Tutorial_M01_Intro_05_Flash_Map">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>radar</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_05</Prereq>
+		</Event>
+				
+
+	<!-- Note: This state is hooked up to a block of Lua script! -->
+	<!-- Hint: The highlighted buttons represent advanced movement options, 
+	which are not covered in this tutorial. 
+	Please refer to the manual for a detailed description of their functions. -->
+	<Event Name="Tutorial_M01_Intro_07">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_81</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_81</Reward_Param8>
+		<Prereq>Tutorial_M01_Intro_06</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Intro_08">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_81</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_81</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Intro_07</Prereq>
+	</Event>
+	
+      <Event Name="Tutorial_M01_Intro_08_Flash_Map_Off">
+         <Event_Type>STORY_TRIGGER</Event_Type>
+         <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+         <Prereq>Tutorial_M01_Intro_07</Prereq>
+      </Event>
+	
+		<!-- Flash the command buttons -->
+		<Event Name="Tutorial_M01_Intro_Flash_Button_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button00</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_08_Flash_Map_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_01_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_01</Prereq>
+         </Event>
+
+		<Event Name="Tutorial_M01_Intro_Flash_Button_02">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button01</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_Flash_Button_01_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_02_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_02</Prereq>
+         </Event>
+
+		<Event Name="Tutorial_M01_Intro_Flash_Button_03">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button02</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_Flash_Button_02_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_03_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_03</Prereq>
+         </Event>
+         
+		<Event Name="Tutorial_M01_Intro_Flash_Button_04">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button03</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_Flash_Button_03_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_04_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_04</Prereq>
+         </Event>
+
+		<Event Name="Tutorial_M01_Intro_Flash_Button_05">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button04</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_Flash_Button_04_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_05_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_05</Prereq>
+         </Event>
+
+		<Event Name="Tutorial_M01_Intro_Flash_Button_06">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>c_button05</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_Flash_Button_05_Off</Prereq>
+		</Event>
+		
+         <Event Name="Tutorial_M01_Intro_Flash_Button_06_Off">
+            <Event_Type>STORY_ELAPSED</Event_Type>
+            <Event_Param1>1.5</Event_Param1>
+            <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+            <Prereq>Tutorial_M01_Intro_Flash_Button_06</Prereq>
+         </Event>
+
+	<!-- Hint: Select the Rebel soldiers by left-clicking on them.  
+	Whenever a unit has been selected, an icon for that unit will be displayed on the command bar.  
+	You may view the status your units, 
+	or activate special unit abilities from within this area. -->
+	<Event Name="Tutorial_M01_Intro_09">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_82</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_82</Reward_Param8>
+		<Prereq>Tutorial_M01_Intro_08</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Intro_10">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_82</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_82</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Intro_09</Prereq>
+	</Event>
+
+		<!-- Flash the command bar -->
+		<Event Name="Tutorial_M01_Intro_10_Flash">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>6</Event_Param1>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>i_main_skirmish</Reward_Param1>
+			<Prereq>Tutorial_M01_Intro_09</Prereq>
+		</Event>
+
+		
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_01
+ Base Dispatch: Be advised - the last transmission we received from the lost patrol squad 
+ came from a position near your current location.-->
+	<Event Name="Tutorial_M01_Set_Highlight_01_On">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_01</Reward_Param8>
+		<Prereq>Tutorial_M01_Intro_10</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_Speech_Done">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_01</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_01</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_02
+Patrol Leader: They can't be far from here - let's find them!  -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_02</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_Speech_Done</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_02</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_02</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_00</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Set_Highlight_01_On_00a_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Set_Highlight_01_On_00a</Prereq>
+			</Event>
+
+
+
+
+
+<!-- Give hint: Select your units by left clicking on them 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_04
+Hint: Use your squad to search for the lost patrol by selecting them with the left-mouse-button, 
+and then right-clicking on the location where you want them to move.-->
+	<Event Name="Tutorial_M01_Give_Hint_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_04</Reward_Param8>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_00a_Stop_Movie</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Give_Hint_00_Done">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_04</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_04</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_00</Prereq>
+	</Event>
+	
+	<!-- first holocron entry re: finding lost patrol-->
+	<Event Name="Tutorial_M01_Find_Lost_Patrol_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Find_Lost_Patrol_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_00_Done</Prereq>
+	</Event>
+	
+	
+	
+	
+	
+	
+<!-- Give hint: 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_06
+Hint: You can review mission objectives at any time by selecting the Mission Holocron option, 
+located on the Command Bar.-->
+	<Event Name="Tutorial_M01_Give_Hint_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_06</Reward_Param8>
+		<Prereq>Tutorial_M01_Give_Hint_00_Done</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Give_Hint_01_Done">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_06</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_06</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_01</Prereq>
+	</Event>
+	
+	<!-- Flash the HOLOCRON button -->
+		<Event Name="Tutorial_M01_Intro_Flash_Holocron_Button">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>b_story_arc_t</Reward_Param1>
+			<Reward_Param2>flash_event_holocron_button</Reward_Param2>
+			<Prereq>Tutorial_M01_Give_Hint_01</Prereq>
+		</Event>
+		
+		<Event Name="Tutorial_M01_Intro_STOP_Flashing_Holocron_Button">
+      		<Event_Type>STORY_TRIGGER</Event_Type>
+      		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+			<Reward_Param1>flash_event_holocron_button</Reward_Param1>
+			<Prereq>Tutorial_M01_Give_Hint_01_Done</Prereq>
+		</Event>
+	
+	<!-- Give task: Find the patrol squad. -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_03</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Give_Hint_01_Done</Prereq>
+	</Event>
+	
+				<Event Name="Tutorial_M01_Unlock_Controls">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>0</Reward_Param1>
+					<Prereq>Tutorial_M01_Set_Highlight_01_On_01</Prereq>
+				</Event>
+				
+	<!-- Add objective -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_01c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_66</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_01</Prereq>
+	</Event>
+	
+
+<!-- Highlight destination -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_On_01d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_01</Prereq>
+	</Event>
+
+
+<!-- First task complete! -->
+<!-- Remove the hilite arrow -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_Off">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HIGHLIGHT_ZONE_TWO</Event_Param2>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_01</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>
+		<Prereq>Tutorial_M01_Set_Highlight_01_On_01d</Prereq> <!-- wait for highlight to go on! -->
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Set_Highlight_01_Off_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_66</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_01_Off</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Find_Lost_Patrol_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Find_Lost_Patrol_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Set_Highlight_01_Off_00</Prereq>
+			</Event> 
+	
+				<Event Name="Tutorial_M01_Disable_Find_Squad_Branch">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_BRANCH</Reward_Type>
+					<Reward_Param1>Find_Squad</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Tutorial_M01_Set_Highlight_01_Off</Prereq>
+				</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_09
+Rebel trooper: Our transmission are being jammed, sir! -->
+	<Event Name="Tutorial_M01_Task_Two_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_09</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_01_Off</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Two_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_09</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_09</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Two_01</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Two_01a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Two_01a</Prereq>
+			</Event>
+	
+<!-- Hint: Click and drag over the units to selec more than one -->
+	<Event Name="Tutorial_M01_Task_Two_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_10</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Two_01a</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Two_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_10</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_10</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Two_02</Prereq>
+	</Event>
+	
+	<!-- second holocron entry re: finding jamming device-->
+	<Event Name="Tutorial_M01_Find_Jamming_Device_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Find_Jamming_Device_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Task_Two_02a</Prereq>
+	</Event>
+
+
+<!-- Give task: Locate the source of the interference -->
+	<Event Name="Tutorial_M01_Task_Locate_Interference_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_76</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Task_Two_02a</Prereq>
+	</Event>
+
+<!-- Highlight destination (Comm_Jammer) -->
+	<Event Name="Tutorial_M01_Task_Two_04d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<!-- <Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>-->
+		<Prereq>Tutorial_M01_Task_Locate_Interference_01</Prereq>
+	</Event>
+
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Locate_Interference_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_77</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Locate_Interference_01</Prereq>
+	</Event>
+
+	
+		
+
+	
+
+
+<!-- Speech: Patrol Leader: That device is causing the interference 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_11
+Patrol Leader: There's the jamming device. We must destroy it!-->
+	<Event Name="Tutorial_M01_Task_Two_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>JAMMER_SPOTTED</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_11</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Two_03a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_11</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Two_03</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Two_03a_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Two_03a</Prereq>
+			</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Task_Locate_Interference_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_77</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Two_03</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Find_Jamming_Device_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Find_Jamming_Device_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Task_Locate_Interference_Done</Prereq>
+			</Event> 
+
+
+
+<!-- Give hint -->
+	<Event Name="Tutorial_M01_Give_Hint_11">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_13</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Two_03a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_11a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_13</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_13</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_11</Prereq>
+	</Event>
+	
+	<!-- third holocron entry re: destroying jamming device-->
+	<Event Name="Tutorial_M01_Destroy_Jamming_Device_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Destroy_Jamming_Device_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_11a</Prereq>
+	</Event>
+	
+	<!-- Give task -->
+	<Event Name="Tutorial_M01_Task_Two_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_12</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Give_Hint_11a</Prereq>
+	</Event>
+	
+	<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Two_04c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_67</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Two_04</Prereq>
+	</Event>
+
+<!-- Task 2 complete! -->
+	<Event Name="Tutorial_M01_Set_Highlight_02_Off">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HIGHLIGHT_ZONE_THREE</Event_Param2>
+		<!--<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>-->
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Task_Complete_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_67</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_02_Off Tutorial_M01_Task_Two_04c</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Destroy_Jamming_Device_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Destroy_Jamming_Device_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Task_Complete_00</Prereq>
+			</Event> 
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_16
+Rebel Soldier: Sir!  This jamming device has Imperial markings!   -->
+   <Event Name="Tutorial_M01_Task_Three_01">
+      <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>JAMMER_VICTORY</Event_Param2>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_16</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>	
+      <Reward_Param8>TUTORIAL_REBEL_ACT01_16</Reward_Param8>
+      <Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+	  <Reward_Param10>1</Reward_Param10>
+   </Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Three_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_16</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_16</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Three_01</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Three_01a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Three_01a</Prereq>
+			</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_18
+Base Dispatch: Acknowledged, squad three.  All units, return to base!   -->
+	<Event Name="Tutorial_M01_Task_Three_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_18</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Three_01a_Remove_Movie</Prereq>
+	</Event>
+	
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Three_03a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_18</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_18</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Three_03</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Three_03a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Three_03a</Prereq>
+			</Event>
+			
+	<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Three_04c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_68</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Three_03a_Remove_Movie</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Task_Three_04d">
+   		<Event_Type>STORY_TRIGGER</Event_Type>
+   		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_03</Reward_Param1>
+   		<Reward_Param2>1</Reward_Param2>
+   		<Reward_Param3>3</Reward_Param3>
+   		<Prereq>Tutorial_M01_Task_Three_04c</Prereq>
+   </Event>
+
+<!-- Give hint 
+Hint: To move your selected troops to the Rebel base, you can give them movement orders 
+by right-clicking directly on the battlefield map or on the mini-map.-->
+   <Event Name="Tutorial_M01_Give_Hint_20">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_21</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+      <Reward_Param8>TUTORIAL_REBEL_ACT01_21</Reward_Param8>
+      <Prereq>Tutorial_M01_Task_Three_03a_Remove_Movie</Prereq>
+   </Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_20a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_21</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_21</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_20</Prereq>
+	</Event>
+	
+	<!-- forth holocron entry re: advance to rebel base-->
+	<Event Name="Tutorial_M01_Head_Back_To_Base_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>3</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Head_Back_To_Base_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_20a</Prereq>
+	</Event>
+	
+	
+	<!-- Give task -->
+   <Event Name="Tutorial_M01_Task_Three_04">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SCREEN_TEXT</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_19</Reward_Param1>
+      <Reward_Param2>5</Reward_Param2>
+      <Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+      <Prereq>Tutorial_M01_Give_Hint_20a</Prereq>
+   </Event>
+   
+
+
+   
+
+<!-- Task 3 complete! -->
+	<Event Name="Tutorial_M01_Set_Highlight_03_Off">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HIGHLIGHT_OFF_03</Event_Param2>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_03</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>3</Reward_Param3>
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Task_Complete_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_68</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_03_Off</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Head_Back_To_Base_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Head_Back_To_Base_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Task_Complete_01</Prereq>
+			</Event> 
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_24
+Base Dispatch: Were tracking multiple Imperial transports from the east -->
+	<Event Name="Tutorial_M01_Task_Four_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_24</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_03_Off</Prereq>
+	</Event>
+
+   <Event Name="Tutorial_M01_Task_Four_00_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_24</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_24</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Four_00</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Four_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Four_00_Remove_Text</Prereq>
+			</Event>
+
+<!-- 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_25
+Patrol Leader: Get those defensive structures online, now!-->
+	<Event Name="Tutorial_M01_Task_Four_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_25</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Four_00_Remove_Text</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Four_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_25</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_25</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Four_01</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Task_Four_01a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Tutorial_M01_Task_Four_01a</Prereq>
+	</Event>
+
+
+
+<!-- Highlight object: turret build pad -->
+	<Event Name="Tutorial_M01_Task_Four_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M01_Task_Four_01a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Four_02c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_69</Reward_Param1>		
+		<Prereq>Tutorial_M01_Task_Four_01a_Stop_Movie</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Four_03a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_26A</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Four_01a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Give hint 
+Hint: Build defensive structures to prepare for the incoming Imperial attack by 
+right-clicking on the Build Pads located near the base walls, 
+and then selecting a defensive structure to be built.  
+Currently, you can build a turret and a bacta healing station, 
+but more structures will be available later in the game.-->
+   <Event Name="Tutorial_M01_Give_Hint_32">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_28</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+      <Reward_Param8>TUTORIAL_REBEL_ACT01_28</Reward_Param8>
+      <Prereq>Tutorial_M01_Task_Four_01a_Stop_Movie</Prereq>
+   </Event>
+   
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_32a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_28</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_28</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_32</Prereq>
+	</Event>
+	
+<!-- fifth holocron entry re: build turrets-->
+	<Event Name="Tutorial_M01_Build_Turrets_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>4</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Build_Turrets_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_32a</Prereq>
+	</Event>
+	
+<!-- Give task: construct Bacta Tank and Turret -->
+	<Event Name="Tutorial_M01_Task_Four_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_26</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Give_Hint_32a</Prereq>
+	</Event>
+	
+	
+	
+	<!-- Give hint 
+Hint: Bacta Healing Stations heal infantry units when they are within range of the station.  
+To see the healing range of a Bacta Healing Station, simply left-click on the station.-->
+	<Event Name="Tutorial_M01_Construct_01_a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_30</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_30</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Four_02</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+    <Event Name="Tutorial_M01_Construct_01_b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_30</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_30</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+        <Prereq>Tutorial_M01_Construct_01_a</Prereq>
+    </Event>
+    
+    <!-- Give hint 
+Hint: If your Build Pad structures are destroyed, they can be rebuilt; but remember - 
+all nearby enemies must be eliminated before you may reuse a Build Pad.-->
+	<Event Name="Tutorial_M01_Construct_Done_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_32</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_32</Reward_Param8>
+		<Prereq>Tutorial_M01_Construct_01_b</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Construct_Done_b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_32</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_32</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Construct_Done_a</Prereq>
+	</Event>
+    
+    
+    
+    
+    
+      
+<!-- Detect construction of ai turrets -->
+	<Event Name="Tutorial_M01_Construct">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>REBEL_ANTI_INFANTRY_TURRET</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+<!-- turn off highlight over turret -->
+	<Event Name="Tutorial_M01_Construct_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M01_Construct</Prereq>
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Construct_c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_26A</Reward_Param1>
+		<Prereq>Tutorial_M01_Construct</Prereq>
+	</Event>
+	
+			
+
+<!-- Detect construction of Bacta tank -->
+	<Event Name="Tutorial_M01_Construct_01">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Rebel_Buildable_Bacta_Tank</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+<!-- turn off highlight over bacta tank -->
+	<Event Name="Tutorial_M01_Construct_Bacta_Highlight_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M01_Construct_01</Prereq>
+	</Event>
+
+
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Construct_01_c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_69</Reward_Param1>
+		<Prereq>Tutorial_M01_Construct_01</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Construct_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M01_Construct Tutorial_M01_Construct_01</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Build_Turrets_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Build_Turrets_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Construct_Done</Prereq>
+			</Event> 
+	
+	<!-- feeds back to lua for attack on base -->
+	<Event Name="Tutorial_M01_Give_Clearance_For_Imperial_Attack">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.5</Event_Param1>
+		<Prereq>Tutorial_M01_Construct Tutorial_M01_Construct_01 Tutorial_M01_Construct_Done_b</Prereq>
+	</Event>
+
+
+
+<!-- Task 4 complete, start imperial assault -->
+	<Event Name="Tutorial_M01_Imperial_Assault">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>IMPERIAL_ASSAULT</Event_Param2>
+	</Event>
+		
+<!-- Stormtrooper speaks: Rebel Scum! -->
+	<Event Name="Tutorial_M01_Task_Five_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_33</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_33</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Imperial_Assault</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Task_Five_00_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_33</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_33</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Five_00</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Task_Five_00_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Tutorial_M01_Task_Five_00_Remove_Text</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_34
+Base Dispatch: Incoming Imperial forces!   -->
+	<Event Name="Tutorial_M01_Task_Five_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_34</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_34</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Five_00_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Five_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_34</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_34</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Five_01</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Five_01a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Five_01a</Prereq>
+			</Event>
+
+<!-- Give task: Defend rebel base -->
+	<Event Name="Tutorial_M01_Task_Five_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_35</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Task_Five_01a</Prereq>
+	</Event>
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Five_02c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_70</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Five_02</Prereq>
+	</Event>	
+	
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_36
+Patrol Leader: Remember your training - take cover!  -->
+<Event Name="Tutorial_M01_Patrol_SpreadOut_Dialog">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5.5</Event_Param1>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_36</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_36</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Five_02c</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Patrol_SpreadOut_Dialog_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_REBEL_ACT01_36</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_36</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Tutorial_M01_Patrol_SpreadOut_Dialog</Prereq>
+			</Event>
+			
+			<Event Name="Tutorial_M01_Patrol_SpreadOut_Dialog_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Patrol_SpreadOut_Dialog_Remove_Text</Prereq>
+			</Event>
+			
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_37
+Hint:  Infantry units have the Take Cover ability.  To use this ability: select an Infantry unit, 
+and then click on the Take Cover ability icon located on the command bar. -->
+<Event Name="Tutorial_M01_Patrol_SpreadOut_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_37</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_37</Reward_Param8>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Prereq>Tutorial_M01_Patrol_SpreadOut_Dialog_Remove_Movie</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Patrol_SpreadOut_Hint_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_REBEL_ACT01_37</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_37</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Tutorial_M01_Patrol_SpreadOut_Hint</Prereq>
+			</Event>
+			
+					<Event Name="Tutorial_M01_Patrol_SpreadOut_Hint_FLASH_Spreadout">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>SPREAD_OUT</Reward_Param1>
+                        <Reward_Param2>flash_spread_out</Reward_Param2>
+                        <Prereq>Tutorial_M01_Patrol_SpreadOut_Hint</Prereq>
+					 </Event>
+					 
+					 <Event Name="Tutorial_M01_Patrol_SpreadOut_Hint_Remove_FLASH_Spreadout">
+						<Event_Type>STORY_GENERIC</Event_Type>
+						<Event_Param1>click</Event_Param1>
+						<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+						<Reward_Param1>flash_spread_out</Reward_Param1>
+						<Prereq>Tutorial_M01_Patrol_SpreadOut_Hint_FLASH_Spreadout</Prereq>
+					</Event>
+			
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_38
+Hint: As an infantry squad takes casualties, the health meter for that squad will be reduced.  
+Use the Bacta Healing Station to heal any wounded infantry units. -->
+<Event Name="Tutorial_M01_Use_BactaTanks_When_Damaged_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_38</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_38</Reward_Param8>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Prereq>Tutorial_M01_Patrol_SpreadOut_Hint_Remove_Text</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Use_BactaTanks_When_Damaged_Hint_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_REBEL_ACT01_38</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_38</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Tutorial_M01_Use_BactaTanks_When_Damaged_Hint</Prereq>
+			</Event>
+			
+
+			
+
+
+<!-- Assault continues.  AT-STs attack -->
+
+	<Event Name="Tutorial_M01_ATST_Assault">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ATST_ASSAULT</Event_Param2>
+	</Event>
+		
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_40
+Base Dispatch: Incoming walkers!   -->
+	<Event Name="Tutorial_M01_Task_Six_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_40</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_40</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_ATST_Assault</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Six_00_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_40</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_40</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Six_00</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Six_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Six_00_Remove_Text</Prereq>
+			</Event>
+
+<!-- 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_41
+Patrol Leader: All PLEX Soldiers, attack!  -->
+	<Event Name="Tutorial_M01_Task_Six_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_41</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Six_00_Remove_Text</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Six_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_41</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_41</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Six_01</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Task_Six_01a_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Six_01a</Prereq>
+			</Event>
+
+<!-- Give hint Hint: Every unit has strengths and weaknesses that can be exploited to win battles.  
+PLEX Rocket Soldiers are strong against lightly armored units, like these AT-ST walkers.  
+Command your PLEX Soldiers to attack the AT-ST units.-->
+	<Event Name="Tutorial_M01_Give_Hint_50">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_42</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_42</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Six_01a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_50a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_42</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_42</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_50</Prereq>
+	</Event>
+	
+	<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_27
+Hint: To view this battle from a cinematic perspective - select the cinematic camera option, 
+located on the command bar. -->
+<Event Name="Tutorial_M01_Use_CinematicView_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_27</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_27</Reward_Param8>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Prereq>Tutorial_M01_Give_Hint_50a</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Use_CinematicView_Hint_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_REBEL_ACT01_27</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_27</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Tutorial_M01_Use_CinematicView_Hint</Prereq>
+			</Event>
+
+<!-- Go take the reinforcement points! -->
+	<Event Name="Tutorial_M01_Set_Highlight_04_On">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HIGHLIGHT_ZONE_FOUR</Event_Param2>
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_M01_Task_Complete_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_70</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_04_On</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_43
+Base Dispatch: The base is secure!  -->
+	<Event Name="Tutorial_M01_Task_Seven_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_43</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_43</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_04_On Tutorial_M01_Use_CinematicView_Hint_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Seven_00_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_43</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_43</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Seven_00</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Seven_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Seven_00_Remove_Text</Prereq>
+			</Event>
+
+<!-- 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_44
+Patrol Leader: We need to reclaim all Reinforcement Points to our east.  
+Otherwise, the Imperials will continue to attack our position.-->
+	<Event Name="Tutorial_M01_Task_Seven_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_44</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_44</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Seven_00_Remove_Text</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Seven_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_44</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_44</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Seven_01</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Seven_01a_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Seven_01a</Prereq>
+			</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_M01_Task_Seven_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_65</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Task_Seven_01a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Add objective: Capture Reinforcements points (0 of 2) 
+jdg add new reinforcement objective here xxx
+new text line = TEXT_STORY_TUTORIAL_REBEL_ACT01_86 -->
+	<Event Name="Tutorial_M01_Task_Seven_02c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_86</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Seven_02</Prereq>
+	</Event>
+	
+		<!-- Hint: Capturing the Reinforcement points will prevent the enemy from landing 
+	even more troops.  To capture a Reinforcement Point, you must eliminate all enemy units 
+	in the area and remain near the Reinforcement point until it turns green.  
+	Note that every Reinforcement Point has a limit to how many units it can accomodate, 
+	denoted by the number shown.  In Tutorial 5, we'll give you the opportunity to bring 
+	reinforcements into a land battle. -->
+	<Event Name="Tutorial_M01_Give_Hint_62">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>6</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_50</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_50</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Seven_02</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_62a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_50</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_50</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_62</Prereq>
+	</Event>
+	
+	<!-- sixth holocron entry re: capturing reinforcement points -->
+	<Event Name="Tutorial_M01_Capture_RPs_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>5</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Capture_RPs_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_62a</Prereq>
+	</Event>
+	
+		<!-- Plays when rebel troopers land from reinforcements -->
+		<!-- Incoming Imperials! Open Fire! -->
+			<Event Name="Tutorial_M01_Transports_Inbound_Two_01">
+				<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+				<Event_Param2>TROOP_TRANSPORT_2</Event_Param2>
+			</Event>
+				
+			<Event Name="Tutorial_M01_Transports_Inbound_Two_02">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>5</Event_Param1>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_54</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>	
+				<Reward_Param8>TUTORIAL_REBEL_ACT01_54</Reward_Param8>
+				<!--<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>-->
+				<Reward_Param10>1</Reward_Param10>
+				<Prereq>Tutorial_M01_Transports_Inbound_Two_01</Prereq>
+			</Event>
+
+		<!-- Remove text string -->
+			<Event Name="Tutorial_M01_Transports_Inbound_Two_03">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_REBEL_ACT01_54</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_54</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Tutorial_M01_Transports_Inbound_Two_02</Prereq>
+			</Event>
+
+<!-- Highlight both reinforcement points -->
+	<Event Name="Tutorial_M01_Task_Seven_02d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_04</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>4</Reward_Param3>
+		<Prereq>Tutorial_M01_Task_Seven_02</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Task_Seven_02e">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_05</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>5</Reward_Param3>
+		<Prereq>Tutorial_M01_Task_Seven_02d</Prereq>
+	</Event>
+
+	
+<!-- =============================== LOGIC TO CONTROL THE REINFORCEMENT HIGHLIGHTS =============================== -->
+
+	<Event Name="Tutorial_M01_Stop_Highlight_RP1">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>STOP_HIGHLIGHT_RP1</Event_Param2>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_04</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>4</Reward_Param3>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Stop_Highlight_RP2">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>STOP_HIGHLIGHT_RP2</Event_Param2>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_05</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>5</Reward_Param3>
+	</Event>	
+	
+<!-- =============================== LOGIC TO CONTROL THE REINFORCEMENT HIGHLIGHTS =============================== -->
+
+<!-- First reinforcement point captured -->
+	<Event Name="Tutorial_M01_Set_Highlight_04_Off">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FIRST_REINFORCE_CAPTURED</Event_Param2>
+	</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_M01_Task_Eight_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_71</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Set_Highlight_04_Off</Prereq>
+	</Event>
+
+<!-- Add objective 
+	<Event Name="Tutorial_M01_Task_Eight_00a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_46</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Eight_00</Prereq>
+	</Event>-->
+
+
+<!-- Remove objective   
+	<Event Name="Tutorial_M01_Task_Eight_00b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_45</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Eight_00</Prereq>
+	</Event>-->
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_55
+Patrol Leader: Area secure!  Let’s keep moving!   -->
+	<Event Name="Tutorial_M01_Task_Eight_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_55</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_55</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_04_Off Tutorial_M01_Give_Hint_62a</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Eight_01b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_55</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_55</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Eight_01</Prereq>
+	</Event>
+     
+			<Event Name="Tutorial_M01_Task_Eight_01b_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Eight_01b</Prereq>
+			</Event>
+
+<!-- Second reinforcement captured -->
+	<Event Name="Tutorial_M01_Set_Highlight_05_Off">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>MISSION_COMPLETE</Event_Param2>
+	</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_M01_Task_Nine_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M01_Set_Highlight_05_Off</Prereq>
+	</Event>
+
+<!-- Add objective 
+	Capture Reinforcement Points (2 of 2).
+	
+	<Event Name="Tutorial_M01_Task_Nine_00a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_47</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Nine_00</Prereq>
+	</Event>	-->
+
+<!-- Remove objective Capture Reinforcement Points (1 of 2).
+	<Event Name="Tutorial_M01_Task_Nine_00b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_46</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Nine_00</Prereq>
+	</Event>-->
+
+<!-- Objective complete (immediately) 
+old objective - TEXT_STORY_TUTORIAL_REBEL_ACT01_45
+Add new reinforce objective complete here xxx
+now TEXT_STORY_TUTORIAL_REBEL_ACT01_86-->
+	<Event Name="Tutorial_M01_Task_Nine_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_86</Reward_Param1>
+		<Prereq>Tutorial_M01_Set_Highlight_05_Off</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Capture_RPs_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Capture_RPs_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Task_Nine_00c</Prereq>
+			</Event> 
+
+<!-- Rebel trooper speaks 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_56
+Patrol Leader: Area secure!  That’s all of them!  -->
+	<Event Name="Tutorial_M01_Task_Nine_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_56</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_56</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Nine_00</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Nine_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_56</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_56</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Nine_01</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Nine_01_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Tutorial_M01_Task_Nine_01_Remove_Text</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_57
+Base Dispatch: Sir, I’m receiving reports that a massive Imperial Fleet 
+is en route to Kashyyyk!   -->
+	<Event Name="Tutorial_M01_Task_Nine_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_57</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_57</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper3_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Nine_01_Remove_Text</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Nine_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_57</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_57</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Nine_02</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Nine_02a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Nine_02a</Prereq>
+			</Event>
+
+<!-- Rebel trooper speaks 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_58
+Patrol Leader: This system is no longer secure.  We need to evacuate this base immediately.-->
+	<Event Name="Tutorial_M01_Task_Nine_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_58</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_58</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Nine_02a_Remove_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Nine_03a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_58</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_58</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Nine_03</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Nine_03a_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Nine_03a</Prereq>
+			</Event>
+
+<!-- Give hint 
+Hint: Retreating allows you to save your units from certain destruction whenever you are faced 
+with overwhelming odds.  Remember - you can always return to a battle later with additional units.  Select the retreat button on your command bar to take your remaining forces and regroup them on another planet.-->
+	<Event Name="Tutorial_M01_Give_Hint_80">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_60</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_60</Reward_Param8>
+		<Prereq>Tutorial_M01_Task_Nine_03a_Stop_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Give_Hint_80a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_60</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_60</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_80</Prereq>
+	</Event>
+	
+	<!-- seventh holocron entry re: retreat from Kashyyyk -->
+	<Event Name="Tutorial_M01_Retreat_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_01</Story_Dialog>
+		<Story_Chapter>6</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_M01_Retreat_Entry</Story_Tag>
+		<Prereq>Tutorial_M01_Give_Hint_80a</Prereq>
+	</Event>
+	
+
+<!-- Give task: Retreat from Kashyyyk -->
+	<Event Name="Tutorial_M01_Task_Nine_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_59</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M01_Give_Hint_80a</Prereq>
+	</Event>
+
+<!-- Add objective -->
+	<Event Name="Tutorial_M01_Task_Nine_04a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_73</Reward_Param1>
+		<Prereq>Tutorial_M01_Task_Nine_04</Prereq>
+	</Event>
+
+		<!-- Re-enable the retreat button -->	
+		<Event Name="Tutorial_M01_Enable_Retreat_Button">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>ENABLE_EVENT</Reward_Type>
+			<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+			<Reward_Param2>b_retreat</Reward_Param2>
+			<Prereq>Tutorial_M01_Task_Nine_04a</Prereq>
+		</Event>
+	
+		<!-- Flash retreat button -->
+		<Event Name="Tutorial_M01_Flash_Retreat_Button">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>b_retreat</Reward_Param1>
+			<Prereq>Tutorial_M01_Task_Nine_04a</Prereq>
+		</Event>
+	
+<!-- Enable retreat -->
+	<Event Name="Tutorial_M01_Task_Nine_04b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_M01_Task_Nine_04</Prereq>
+	</Event>
+
+<!-- Retreat button pressed -->
+<!-- Rebel trooper speaks 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_61
+Patrol Leader: Inform the main Alliance fleet that the Empire is aware of our presence on Kashyyyk.  
+The rest of you - prepare for evacuation!-->
+	<Event Name="Tutorial_M01_Task_Ten_00">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>retreat_clicked</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_61</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_61</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Set_Highlight_05_Off</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M01_Flash_Retreat_Button_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M01_Task_Ten_00</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Ten_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_61</Event_Param1>
+ 		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_61</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+	    <Prereq>Tutorial_M01_Task_Ten_00</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_M01_Task_Ten_01_Stop_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Tutorial_M01_Task_Ten_01</Prereq>
+			</Event>
+
+
+<!-- TEXT_SPEECH_TUTORIAL_REBEL_ACT01_62
+ Rebel Soldier: Yes, sir!  -->
+	<Event Name="Tutorial_M01_Task_Ten_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_62</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_62</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Ten_01_Stop_Movie</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Ten_01a_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_62</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_62</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Ten_01a</Prereq>
+	</Event>
+	
+			<Event Name="Tutorial_M01_Task_Ten_01a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Tutorial_M01_Task_Ten_01a_Remove_Text</Prereq>
+			</Event>
+
+<!-- Rebel trooper speaks 
+TEXT_SPEECH_TUTORIAL_REBEL_ACT01_64
+Patrol Leader: I can only hope that the Imperials haven’t uncovered any other Alliance outposts.  -->
+	<Event Name="Tutorial_M01_Task_Ten_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_64</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_REBEL_ACT01_64</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper2_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M01_Task_Ten_01a_Remove_Movie</Prereq>
+	</Event>
+
+<!-- Remove text string -->
+	<Event Name="Tutorial_M01_Task_Ten_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT01_64</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_64</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Task_Ten_02</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M01_Task_Ten_02a_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Tutorial_M01_Task_Ten_02a</Prereq>
+	</Event>
+
+
+<!-- Rebel Win Steps -->
+<!-- Rebel Loss: All Rebel units die -->
+	<Event Name="Tutorial_M01_All_Rebels_Die">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+<!-- Rebel Loss: All rebel infantry units die -->
+	<Event Name="Tutorial_M01_All_Rebel_Infantry_Die">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>REBELS_LOSE</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Tutorial_M01_Begin</Prereq>
+	</Event>
+
+<!-- Rebel win: Mission Complete -->
+	<Event Name="Tutorial_M01_Mission_Complete">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>MISSION_COMPLETE</Event_Param2>
+	</Event>
+	
+   <Event Name="Tutorial_M01_Mission_Complete_01">
+      <Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>retreat_complete</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2> <!-- disable You Are Victorious -->
+      <Prereq>Tutorial_M01_Task_Ten_00</Prereq>
+   </Event>
+
+<!-- Objective finished -->
+   <Event Name="Tutorial_M01_Task_Complete_04">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_REBEL_ACT01_73</Reward_Param1>
+      <Prereq>Tutorial_M01_Mission_Complete_01</Prereq>
+   </Event>
+   
+			<Event Name="Tutorial_M01_Retreat_Entry_Completed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+				<Reward_Param1>Tutorial_M01_Retreat_Entry</Reward_Param1>
+				<Prereq>Tutorial_M01_Task_Complete_04</Prereq>
+			</Event> 
+
+<!-- REBEL VICTORY: Set Flag -->
+	<Event Name="Rebel_A2_M04_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M01_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+<!-- Cleanup for erroneous text -->
+
+   <Event Name="Tutorial_M01_Give_Hint_31_Override">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HINT_OVERRIDE</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_27</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+   </Event>
+
+	<Event Name="Tutorial_M01_Give_Hint_31_Override_A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT01_28</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M01_Give_Hint_31_Override</Prereq>
+	</Event>
+
+</Story>

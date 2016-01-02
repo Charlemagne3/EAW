@@ -1,0 +1,158 @@
+<?xml version="1.0" ?>
+
+
+<Story>
+
+
+<!-- Underworld Act I Mission 01A: Striking Back at Jabba -->
+
+
+<!-- Mission start setup -->
+
+	<Event Name="Underworld_A01AM01_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Underworld_A01M01_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+
+	<!-- Turn off advisor -->
+	<Event Name="Underworld_A01M01_Turn_Off_Land_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_A01M01_Prevent_Player_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_A01M01_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_A01M01_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Destroy all Hutts to win -->
+	
+	<Event Name="All_Hutt_Stuff_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Hutts</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+	
+	
+	
+	<Event Name="Underworld_M01A_Set_Victory_Flag">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Underworld_Mission_01A_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+			<Event Name="Underworld_A01M01A_Re-Enable_Retreat">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_RETREAT</Reward_Type>
+				<Reward_Param1>UNDERWORLD</Reward_Param1>
+				<Reward_Param2>0</Reward_Param2>
+				<Prereq>All_Hutt_Stuff_Destroyed</Prereq>
+			</Event>
+	
+	
+	
+	
+	
+	
+	<!-- All Underworld Forces Defeated equals LOSS -->
+	
+	<Event Name="All_Underworld_Stuff_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Hutts</Reward_Param1>
+		<Prereq>Underworld_A01AM01_Begin</Prereq>
+	</Event>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</Story>

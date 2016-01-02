@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<CIN_SpaceUnitsFrigates>
+
+	<Cin_SpaceUnit Name="Cin_Nebulon_B_Warp">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+
+		<Variant_Of_Existing_Type>Nebulon_B_Frigate</Variant_Of_Existing_Type>
+		
+		<Pause_During_Cinematic_Anim>no</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		<User_Bound_Min>-5000,-5000,-3500</User_Bound_Min>
+		<User_Bound_Max>5000,5000,5000</User_Bound_Max>
+
+	</Cin_SpaceUnit>
+
+</CIN_SpaceUnitsFrigates>

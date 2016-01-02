@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<Story>
+
+	<Event Name="Hero_Gathering_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Hero_Gathering_Tag_00</Story_Tag>
+	</Event>
+	
+	<!-- Branch for missed opportunity -->
+		<Event Name="Hero_Gathering_01">
+			<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+			<Prereq>Hero_Gathering_00</Prereq>
+			<Event_Param2>HERO_GATHERING_NOTIFICATION_00</Event_Param2>
+			<Story_Chapter>1</Story_Chapter>
+			<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+			<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+			<Reward_Param1>Hero_Gathering_Tag_00</Reward_Param1>
+		</Event>
+
+	<Event Name="Hero_Gathering_02">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Prereq>Hero_Gathering_00</Prereq>
+		<Event_Param1>Darth_Vader, Obi_Wan_Kenobi</Event_Param1>
+	</Event>
+	
+	<Event Name="Hero_Gathering_03">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Prereq>Hero_Gathering_00</Prereq>
+		<Event_Param1>Boba_Fett,Han_Solo_Team</Event_Param1>
+	</Event>
+	
+	<Event Name="Hero_Gathering_04">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Prereq>Hero_Gathering_00</Prereq>
+		<Event_Param1>General_Veers,Droids_Team</Event_Param1>
+	</Event>
+	
+	<Event Name="Hero_Gathering_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Hero_Gathering_01,Hero_Gathering_02,Hero_Gathering_03</Prereq>
+		<Reward_Type>REMOVE_STORY_GOAL</Reward_Type>
+		<Reward_Param1>Hero_Gathering_Tag_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Hero_Gathering_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Hero_Gathering_05</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>HERO_GATHERING_NOTIFICATION_01</Reward_Param1>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+
+</Story>

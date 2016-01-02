@@ -1,0 +1,561 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Start Campaign -->
+	<Event Name="Underworld_Tutorial_Piracy_Mission_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+<!-- Lock out the droid log button -->
+	<Event Name="Underworld_Tutorial_Piracy_Lock_Droid_Log">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_droid_help_tactical</Reward_Param2>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Tutorial_Piracy_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Tutorial_Piracy_Mission_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Disable Retreat -->
+	<Event Name="Underworld_Tutorial_Piracy_Disable_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Recieve message for Highlight Buzz Droid Ability -->
+	<Event Name="Underworld_Tutorial_Buzz_Droid_Lua_Message">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>HIGHLIGHT_BUZZ</Event_Param2>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+
+<!-- Highlight Buzz Droid Ability -->
+	<Event Name="Underworld_Tutorial_Piracy_Highlight_Buzz">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>.5</Event_Param1>
+		<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+		<Reward_Param1>BUZZ_DROIDS</Reward_Param1>
+		<Reward_Param2>flash_buzz_droids</Reward_Param2>
+		<Prereq>Underworld_Tutorial_Buzz_Droid_Lua_Message</Prereq>
+	</Event>
+	
+<!-- Highlight Buzz Droid Ability -->
+			<Event Name="Underworld_Tutorial_Piracy_Highlight_Buzz_Remove">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>click</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Reward_Param1>flash_buzz_droids</Reward_Param1>
+				<Prereq>Underworld_Tutorial_Piracy_Highlight_Buzz</Prereq>
+			</Event>
+	
+<!-- Add Objective to kill all V-wings -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_00</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Complete Objective to kill all V-wings -->
+	<Event Name="Underworld_Tutorial_Piracy_Complete_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_00</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_00</Prereq>
+	</Event>
+	
+<!-- Add Objective to destroy the engines -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_01</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_01</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Complete Objective to destroy the engines -->
+	<Event Name="Underworld_Tutorial_Piracy_Complete_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_01</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_01</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_01</Prereq>
+	</Event>
+	
+<!-- Add Objective to move the shuttle to the strategist -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_02</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_02</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Complete Objective to move the shuttle to the strategist -->
+	<Event Name="Underworld_Tutorial_Piracy_Complete_Objective_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_02</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_02</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_02</Prereq>
+	</Event>
+
+<!-- Add Objective to Protect the Boarding Shuttle -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_CORELLIA_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Add Objective to Protect Tyber's Escort -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_Protect_Escort">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_04</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_03</Prereq>
+	</Event>
+	
+<!-- Complete Objective to Protect the Boarding Shuttle -->
+	<Event Name="Underworld_Tutorial_Piracy_Complete_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_CORELLIA_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_03</Prereq>
+	</Event>
+	
+<!-- Fail Objective to Protect the Boarding Shuttle -->
+	<Event Name="Underworld_Tutorial_Piracy_Fail_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FAIL_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_CORELLIA_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_03</Prereq>
+	</Event>
+	
+<!-- Player lost all forces but shuttle - Fail -->
+	<Event Name="Underworld_Tutorial_Piracy_Fail_No_Forces">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FAIL_NO_FORCES</Event_Param2>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_04</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_Protect_Escort</Prereq>
+	</Event>
+	
+<!-- Add Objective to destroy the strategists escort -->
+	<Event Name="Underworld_Tutorial_Piracy_Add_Objective_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_04</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_03</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+<!-- Complete Objective to destroy the strategists escort -->
+	<Event Name="Underworld_Tutorial_Piracy_Complete_Objective_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_04</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PIRACY_TUTORIAL_03</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_04</Prereq>
+	</Event>
+	
+<!-- Notice to the player that their shuttle was lost and they have failed. -->
+			<Event Name="Underworld_Tutorial_Piracy_Shuttle_Lost">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_UW_ACT03_M12_GOAL_21</Reward_Param1>
+				<Reward_Param2>10</Reward_Param2>
+				<Reward_Param7>System</Reward_Param7><!-- SYSTEM color coding - RED -->
+				<Reward_Param8></Reward_Param8>
+				<Reward_Param9></Reward_Param9>
+				<Reward_Param10></Reward_Param10>
+				<Prereq>Underworld_Tutorial_Piracy_Fail_Objective_03</Prereq>
+			</Event>
+			
+<!-- RTrigger Loss from failing Objective 3 -->
+				<Event Name="Underworld_Tutorial_Piracy_Loss_Trigger">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>VICTORY</Reward_Type>
+					<Reward_Param1>Hutts</Reward_Param1>
+					<Prereq>Underworld_Tutorial_Piracy_Fail_Objective_03</Prereq>
+					<Prereq>Underworld_Tutorial_Piracy_Fail_No_Forces</Prereq>
+				</Event>
+				
+<!-- Re-enable Retreat on loss -->
+				<Event Name="Underworld_Tutorial_Piracy_Re-Enable_Retreat_Loss">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_RETREAT</Reward_Type>
+					<Reward_Param1>UNDERWORLD</Reward_Param1>
+					<Reward_Param2>0</Reward_Param2>
+					<Prereq>Underworld_Tutorial_Piracy_Fail_Objective_03</Prereq>
+				</Event>
+
+<!-- Recieve Victory condition from lua -->
+	<Event Name="Underworld_Tutorial_Piracy_Victory_Trigger">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SEND_VICTORY</Event_Param2>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Add_Objective_01</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Tutorial_Piracy_Mission_Victory_Reward">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>Underworld_Tutorial_Piracy_Victory_Trigger</Prereq>
+	</Event>
+	
+<!-- Re-enable Retreat on victory -->
+				<Event Name="Underworld_Tutorial_Piracy_Re-Enable_Retreat_Win">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_RETREAT</Reward_Type>
+					<Reward_Param1>UNDERWORLD</Reward_Param1>
+					<Reward_Param2>0</Reward_Param2>
+					<Prereq>Underworld_Tutorial_Piracy_Mission_Victory_Reward</Prereq>
+				</Event>
+	
+	
+<!-- killing opening dialog for escape key cine skipping -->		
+	<Event Name="Underworld_Prologue_Mandalore_ESC_Prevent_Intro_Dialog_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PROLOGUE_MANDALORE_ESC_PREVENT_INTRO_DIALOG_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Mandalore_ESC_Prevent_Intro_Dialog">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Prologue_Mandalore_ESC_Prevent_Intro_Dialog_AI_Notification</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Mandalore_ESC_Kill_Hologram">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Underworld_Prologue_Mandalore_ESC_Prevent_Intro_Dialog</Prereq>
+	</Event>
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_00
+Tyber Zann: We have concealed ourselves in a small asteroid belt near our destination.  
+			One of the advantages that Zann Consortium ships posses is the ability to 
+			indefinately hide in asteroid fields without taking any damage.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_00</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_00</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_00</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+		<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_00_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_00</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_00</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_00</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_00_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_00_Remove_Text</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_01
+Tyber Zann: We are here to establish corruption on Mandalore, not conquer it.  Corrupting 
+			planets will increase our notoriety throughout the galaxy, and allow us to further 
+			the interests of the Zann Consortium.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_01</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_01</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+		<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_01_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_01</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_01</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_01</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_01_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_01_Remove_Text</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_02
+Tyber Zann: To establish piracy on Mandalore, we will need to kill Mandalore's supreme strategist.  
+			He will be approaching shortly enroute to the Hutt asteroid base orbiting Mandalore.  
+			He has set up a perimiter of V-wings to prepare for his arrival.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_02</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_02</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+		<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_02_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_02</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_02</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_02_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_02_Remove_Text</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_03
+Tyber Zann: Those V-wing fighters should be no match for our buzz droid equipped fighters.  
+			Use our fighters buzz droid special ability to clear out the V-wings before the 
+			supreme strategist arrives.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_03</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_03</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_03</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+		<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_03_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_03</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_03</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_03</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_03_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_03_Remove_Text</Prereq>
+					<Branch>BRANCH_MANDALORE_PROLOGUE_INTRO_DIALOG</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_04
+Tyber Zann: Good.  Now we will ambush the supreme strategist when he arrives and show the galaxy 
+			that the Zann Consortium is a force to be reconed with.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_04</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_04</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_04_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_04</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_04</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_04</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_04_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_04_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_05
+Tyber Zann: There he is!  Eliminate him to establish piracy at Mandalore.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_05">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_05</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_05</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_05_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_05</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_05</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_05</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_05_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_05_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_06
+Tyber Zann: Well done, we've now established piracy on Mandalore.  This corruption will pave 
+			the way for communicating with the black market on Nal Hutta.   -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_06">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_06</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_06</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_06_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_06</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_06</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_06</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_06_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_06_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_07
+Supreme Strategist: It's an ambush!  All hands to battle stations!  We'll teach these pirate 
+					scum not to mess with us.    -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_07">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_07</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PIRACY_TUTORIAL_07</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_07_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PIRACY_TUTORIAL_07</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PIRACY_TUTORIAL_07</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_07</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_07_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_07_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_100
+Hint: Buzz droids will swarm an enemy unit and begin tearing through its hull. Activate 
+	  this ability buy selecting the highlighted button and targeting an area near your 
+	  desired target.    -->
+	<Event Name="Underworld_Tutorial_Piracy_Speech_Line_100">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_100</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_100</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>UNDERWORLD_TUTORIAL_100</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Tutorial_Piracy_Mission_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_100_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_100</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_100</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_100</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Tutorial_Piracy_Speech_Line_100_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Tutorial_Piracy_Speech_Line_100_Remove_Text</Prereq>
+				</Event>
+
+</Story>

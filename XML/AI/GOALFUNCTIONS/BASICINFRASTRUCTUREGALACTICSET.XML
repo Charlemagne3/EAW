@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+
+<FunctionSet>
+
+	<DevelopStarbase>
+		<Goal>Upgrade_Starbase</Goal>
+		<Function>Needs_Starbase_Upgrade</Function>
+	</DevelopStarbase>
+	
+	<Advance_Tech_Empire>
+		<Goal>Advance_Tech_Empire</Goal>
+		<Function>One</Function>
+	</Advance_Tech_Empire>
+
+	<Advance_Tech_Rebel>
+		<Goal>Advance_Tech_Rebel</Goal>
+		<Function>Can_Afford_Steal_Tech</Function>
+	</Advance_Tech_Rebel>
+
+	<BuildEconomicStructure>
+		<Goal>Build_Economic_Structure</Goal>
+		<Function>Needs_Mining_Facility</Function>
+	</BuildEconomicStructure>
+	
+	<Build_Cantina>
+		<Goal>Build_Cantina</Goal>
+		<Function>Needs_Cantina</Function>
+	</Build_Cantina>
+
+	<Build_Scanner>
+		<Goal>Build_Scanner</Goal>
+		<Function>Needs_Scanner</Function>
+	</Build_Scanner>
+
+	<Build_Hutt_Palace>
+		<Goal>Build_Hutt_Palace</Goal>
+		<Function>Needs_Hutt_Palace</Function>
+	</Build_Hutt_Palace>
+
+	<Build_Infiltrator_Facility>
+		<Goal>Build_Infiltrator_Facility</Goal>
+		<Function>Needs_Ground_Infiltrator_Facility</Function>
+	</Build_Infiltrator_Facility>
+	
+	<Build_Initial_Starbase_Only>
+		<Goal>Build_Initial_Starbase_Only</Goal>
+		<Function>Needs_Initial_Starbase</Function>
+	</Build_Initial_Starbase_Only>
+
+	<Build_Initial_Groundbase_Only>
+		<Goal>Build_Initial_Groundbase_Only</Goal>
+		<Function>Needs_Initial_Groundbase</Function>
+	</Build_Initial_Groundbase_Only>
+
+	<Build_Base_Component_Light_Vehicle_Factory>
+		<Goal>Build_Base_Component_Light_Vehicle_Factory</Goal>
+		<Function>Need_Light_Vehicle_Factory</Function>
+	</Build_Base_Component_Light_Vehicle_Factory>
+
+	<Build_Base_Component_Heavy_Vehicle_Factory>
+		<Goal>Build_Base_Component_Heavy_Vehicle_Factory</Goal>
+		<Function>Need_Heavy_Vehicle_Factory</Function>
+	</Build_Base_Component_Heavy_Vehicle_Factory>
+
+	<Build_Base_Component_Advanced_Vehicle_Factory>
+		<Goal>Build_Base_Component_Advanced_Vehicle_Factory</Goal>
+		<Function>Need_Advanced_Vehicle_Factory</Function>
+	</Build_Base_Component_Advanced_Vehicle_Factory>
+
+	<Build_Base_Component_Officer_Academy>
+		<Goal>Build_Base_Component_Officer_Academy</Goal>
+		<Function>Need_Officer_Academy</Function>
+	</Build_Base_Component_Officer_Academy>
+
+	<Build_Base_Component_Research_Facility>
+		<Goal>Build_Base_Component_Research_Facility</Goal>
+		<Function>Need_First_Research_Facility</Function>
+	</Build_Base_Component_Research_Facility>
+
+	<Build_Base_Component_Research_Facility_2>
+		<Goal>Build_Base_Component_Research_Facility_2</Goal>
+		<Function>Need_Research_Facility</Function>
+	</Build_Base_Component_Research_Facility_2>
+
+	<Build_Base_Component_Comm_Array>
+		<Goal>Build_Base_Component_Comm_Array</Goal>
+		<Function>Need_Comm_Array</Function>
+	</Build_Base_Component_Comm_Array>
+	
+	<Build_Base_Component_Barracks>
+		<Goal>Build_Base_Component_Barracks</Goal>
+		<Function>Need_Barracks</Function>		
+	</Build_Base_Component_Barracks>
+
+</FunctionSet>

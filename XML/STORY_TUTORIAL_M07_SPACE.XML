@@ -1,0 +1,650 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Setup -->
+	<Event Name="Tutorial_M07_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Tutorial_M07_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M07_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_M07_Disable_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M07_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M07_Disable_Retreat</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M07_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M07_Disable_Retreat_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M07_Lock_Controls_At_Start">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>
+	
+   <!-- lock out the UI -->
+   <!--
+   <Event Name="Tutorial_M07_Lock_UI">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>DISABLE_EVENT</Reward_Type>
+      <Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+      <Prereq>Tutorial_M07_Begin</Prereq>
+   </Event>	
+   -->
+
+	<!-- Scroll Lock -->
+	<Event Name="Tutorial_M07_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_M07_Begin</Prereq>
+	</Event>
+	
+   <!-- Set tutorial mode -->
+   <Event Name="Tutorial_M07_Tutorial_Player">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Prereq>Tutorial_M07_Begin</Prereq>
+   </Event>
+   
+   <!-- Turn off advisor -->
+   <Event Name="Tutorial_M07_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_M07_Begin</Prereq>
+   </Event>
+   
+
+	
+
+<!-- Start the demo sequence...  -->
+
+		<Event Name="Tutorial_M07_Start_Demo">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>4</Event_Param1>
+			<Prereq>Tutorial_M07_Begin</Prereq>
+		</Event>
+
+		<!-- This non-interactive tutorial will provice you with the information -->
+		<Event Name="Tutorial_M07_Lets_Begin_Text_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_01</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_01</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Start_Demo</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Lets_Begin_Text_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_01</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_01</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Lets_Begin_Text_01</Prereq>
+		</Event>
+		
+
+		<!-- Note: this is hooked up to a LUA script! -->		
+		<Event Name="Tutorial_M07_Select_Space_Station">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Prereq>Tutorial_M07_Lets_Begin_Text_02</Prereq>
+		</Event>
+		
+
+		<Event Name="Tutorial_M07_Building_Units_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+			<Reward_Param1>Skirmish_Rebel_Star_Base_1</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Reward_Param3>1</Reward_Param3>
+			<Prereq>Tutorial_M07_Lets_Begin_Text_02</Prereq>
+		</Event>
+
+
+		<!-- Hint: Let's begin with unit production. Acquiring units is critical -->
+		<Event Name="Tutorial_M07_Building_Units_02">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_02</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_02</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Building_Units_01</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M07_Building_Units_03">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_02</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_02</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Building_Units_02</Prereq>
+		</Event>
+
+			<!-- Flash unit production -->
+			<Event Name="Tutorial_M07_Building_Units_04">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>2</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>s_select_00</Reward_Param1>
+				<Prereq>Tutorial_M07_Building_Units_02</Prereq>
+			</Event>
+
+			<!-- Stop flashing unit production -->
+			<Event Name="Tutorial_M07_Building_Units_05">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>3</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Tutorial_M07_Building_Units_04</Prereq>
+			</Event>
+
+			<!-- Click on a unit -->			
+			<Event Name="Tutorial_M06_Units_Go_In_Pool_05a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+				<Reward_Param1>s_select_00</Reward_Param1>
+				<Prereq>Tutorial_M07_Building_Units_05</Prereq>
+			</Event>
+
+
+
+		
+		<!-- Hint: Whenever a unit has been built, it will appear within your reinforcement pool -->
+		<Event Name="Tutorial_M07_Building_Units_06">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_03</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_03</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Building_Units_03</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Building_Units_07">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_03</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_03</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Building_Units_06</Prereq>
+		</Event>
+
+			<!-- Flash reinforcement button -->
+			<Event Name="Tutorial_M07_Building_Units_08">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>b_reinforcement</Reward_Param1>
+				<Prereq>Tutorial_M07_Building_Units_06</Prereq>
+			</Event>
+
+			<!-- Stop flashing reinforcement button -->
+			<Event Name="Tutorial_M07_Building_Units_09">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>3</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Tutorial_M07_Building_Units_08</Prereq>
+			</Event>
+		
+			<!-- Click to open reinforcement window -->			
+			<Event Name="Tutorial_M07_Building_Units_10">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+				<Reward_Param1>b_reinforcement</Reward_Param1>
+				<Prereq>Tutorial_M07_Building_Units_09</Prereq>
+			</Event>
+
+			<!-- Wait for a while and close the reinforcement window -->
+			<Event Name="Tutorial_M07_Building_Units_11">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>5</Event_Param1>
+				<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+				<Reward_Param1>r_close</Reward_Param1>
+				<Prereq>Tutorial_M07_Building_Units_10</Prereq>
+			</Event>
+		
+
+		<!-- Hint: To purchase an upgrade, simply click on any of the available -->
+		<Event Name="Tutorial_M07_Upgrade_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_04</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_04</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Building_Units_11</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Upgrade_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_04</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_04</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Upgrade_01</Prereq>
+		</Event>
+
+			<!-- Flash upgrade button -->
+			<Event Name="Tutorial_M07_Upgrade_03">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>s_select_03</Reward_Param1>
+				<Prereq>Tutorial_M07_Upgrade_01</Prereq>
+			</Event>
+
+			<!-- Stop flashing button -->
+			<Event Name="Tutorial_M07_Upgrade_04">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>2</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Tutorial_M07_Upgrade_03</Prereq>
+			</Event>
+			
+			<!-- Flash upgrade button -->
+			<Event Name="Tutorial_M07_Upgrade_05">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>s_select_04</Reward_Param1>
+				<Prereq>Tutorial_M07_Upgrade_04</Prereq>
+			</Event>
+
+			<!-- Stop flashing button -->
+			<Event Name="Tutorial_M07_Upgrade_06">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>2</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Tutorial_M07_Upgrade_05</Prereq>
+			</Event>
+
+			<!-- Build an upgrade -->
+			<Event Name="Tutorial_M07_Upgrade_06a">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+				<Reward_Param1>s_select_04</Reward_Param1>
+				<Prereq>Tutorial_M07_Upgrade_06</Prereq>
+			</Event>
+
+		<!-- Flash tech-upgrade icon -->      
+		<Event Name="Tutorial_M07_Tech_Upgrade_06b">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>6</Event_Param1>
+			<Reward_Type>FLASH_GUI</Reward_Type>
+			<Reward_Param1>skirmish_upgrade</Reward_Param1>
+			<Reward_Param2>FLASH_TECH_UPGRADE</Reward_Param2>
+			<Prereq>Tutorial_M07_Upgrade_06a</Prereq>
+		</Event>
+
+				<!-- Stop flashing button -->
+				<Event Name="Tutorial_M07_Tech_Upgrade_06c">
+					<Event_Type>STORY_ELAPSED</Event_Type>
+					<Event_Param1>7</Event_Param1>
+					<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+					<Reward_Param1>FLASH_TECH_UPGRADE</Reward_Param1>
+					<Prereq>Tutorial_M07_Tech_Upgrade_06b</Prereq>
+				</Event>
+
+		<!-- Hint: During team games. all upgrades are shared among teammates. -->
+		<Event Name="Tutorial_M07_Upgrade_07">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_05</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_05</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Upgrade_06a</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Upgrade_08">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_05</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_05</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Upgrade_07</Prereq>
+		</Event>
+
+		<!-- Hint: Whenever your space station is destroyed, all upgrades created at that base will also be destroyed. -->
+		<Event Name="Tutorial_M07_Upgrade_09">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_07</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_07</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Upgrade_08</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Upgrade_10">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Upgrade_09</Prereq>
+		</Event>
+
+
+		<!-- Hint: Advancing your technology level is also extrememly important -->
+		<Event Name="Tutorial_M07_Tech_Advance_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_08</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_08</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Upgrade_10</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Tech_Advance_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_08</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_08</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Tech_Advance_01</Prereq>
+		</Event>
+
+		<!-- Hint: To upgrade your station simply click on the space station upgrade icon -->
+		<Event Name="Tutorial_M07_Tech_Advance_02a">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_09</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_09</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Tech_Advance_02</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Tech_Advance_02b">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_09</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_09</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Tech_Advance_02a</Prereq>
+		</Event>
+		
+			<!-- Flash Starbase build option -->
+			<Event Name="Tutorial_M07_Tech_Advance_03">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>1</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>s_select_04</Reward_Param1>
+				<Prereq>Tutorial_M07_Tech_Advance_02b</Prereq>
+			</Event>
+
+			<!-- Stop flashing button -->
+			<Event Name="Tutorial_M07_Tech_Advance_04">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>3</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Tutorial_M07_Tech_Advance_03</Prereq>
+			</Event>
+		
+			<!-- Click to advance! -->			
+			<Event Name="Tutorial_M07_Tech_Advance_05">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+				<Reward_Param1>s_select_04</Reward_Param1>
+				<Prereq>Tutorial_M07_Tech_Advance_04</Prereq>
+			</Event>
+		
+		<!-- Hint: When a technology upgrade is under construction, it will occupy a slot within your unit production queue -->
+		<Event Name="Tutorial_M07_Tech_Advance_06">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_10</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_10</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Tech_Advance_05</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Tech_Advance_07">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_10</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_10</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Tech_Advance_06</Prereq>
+		</Event>
+
+		<!-- Note! this event is connected to a lua script! -->
+		<!-- Scroll over to an asteroid! -->
+		<Event Name="Tutorial_M07_Scroll_To_Mining_Facility">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Prereq>Tutorial_M07_Tech_Advance_07</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M07_Scroll_To_Mining_Facility_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+			<Reward_Param1>STORY_TRIGGER_ZONE_01</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Reward_Param3>1</Reward_Param3>
+			<Prereq>Tutorial_M07_Scroll_To_Mining_Facility</Prereq>
+		</Event>
+
+		<!-- Hint: During a space based skirmish game, your income is generated from Asteroid Mining Facilities -->
+		<Event Name="Tutorial_M07_Mining_Facility_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_12</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_12</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Scroll_To_Mining_Facility</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Mining_Facility_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_12</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_12</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Mining_Facility_01</Prereq>
+		</Event>
+
+
+		<!-- Hint: Asteroid Mining Facilities distribute Credits equally to all players -->
+		<Event Name="Tutorial_M07_Mining_Facility_03">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_13</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_13</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Mining_Facility_02</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Mining_Facility_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_13</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_13</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Mining_Facility_03</Prereq>
+		</Event>
+		
+
+		<!-- Hint: To activate an Asteroid Mining Facility, left click on the -->
+		<Event Name="Tutorial_M07_Mining_Facility_05">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_14</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_14</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Mining_Facility_04</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Mining_Facility_06">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>8</Event_Param1>
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_14</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_14</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Mining_Facility_05</Prereq>
+		</Event>
+
+
+		<!-- Hint: Unlike ground battles, reinforcements are not limited to Reinforcement Points -->
+		<Event Name="Tutorial_M07_Reinforcement_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_15</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_15</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Mining_Facility_06</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Reinforcement_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_15</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_15</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Reinforcement_01</Prereq>
+		</Event>
+
+		<!-- Hint: Lastly, to achieve victory in a sapce based skirmish game -->
+		<Event Name="Tutorial_M07_Reinforcement_03">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_16</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_16</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Reinforcement_02</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Reinforcement_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_16</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_16</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Reinforcement_03</Prereq>
+		</Event>
+
+
+		<!-- Hint: Good Luck Soldier! -->
+		<Event Name="Tutorial_M07_Good_Luck_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_17</Reward_Param1>
+			<Reward_Param2>-1</Reward_Param2>
+			<Reward_Param8>TUTORIAL_MP_ACT07_17</Reward_Param8>		<!-- put VO here -->
+			<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+			<Reward_Param9></Reward_Param9>		<!-- cmd bar movie -->
+			<Reward_Param10>1</Reward_Param10>
+			<Prereq>Tutorial_M07_Reinforcement_04</Prereq>
+		</Event>
+				
+		<Event Name="Tutorial_M07_Good_Luck_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_MP_ACT07_17</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_MP_ACT07_17</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M07_Good_Luck_01</Prereq>
+		</Event>
+
+
+
+<!-- Rebel Win -->
+
+	<Event Name="Tutorial_M07_Done">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2> <!-- disable You Are Victorious -->
+		<Prereq>Tutorial_M07_Reinforcement_04</Prereq>
+	</Event>
+
+
+</Story>

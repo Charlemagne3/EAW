@@ -1,0 +1,1459 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- Mission start setup -->
+	<Event Name="Tutorial_M03_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Tutorial_M03_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Prevent_Retreat_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M03_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- Turn off advisor -->
+	<Event Name="Tutorial_M03_Turn_Off_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- Set tutorial mode -->
+	<Event Name="Tutorial_M03_Tutorial_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+	<!-- locking out player control -->
+	<Event Name="Tutorial_M03_Lock_Controls_For_Intro">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- Text Events -->
+	<Event Name="Tutorial_M03_Follow_Imperial_Officer">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FOLLOW_COMMANDER</Event_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_06
+Hint: To take control of the space above Kashyyyk, 
+you will need to eliminate all of the enemy forces and base structures.  
+You will be escorted by an Imperial officer on this mission.  
+This officer will provide you strategic advice from the safety of his shuttle craft.-->
+	<Event Name="Tutorial_M03_Follow_Imperial_Officer_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_06</Reward_Param8>
+		<Prereq>Tutorial_M03_Follow_Imperial_Officer</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_M03_Follow_Imperial_Officer_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_06</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_06</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Follow_Imperial_Officer_01</Prereq>
+		</Event>
+	
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_07
+Tartan Officer: Welcome to the front line.  We've pinpointed their base of operations and are standing by.  
+Our orders are to eliminate this station by any means necessary.-->
+	<Event Name="Tutorial_M03_Imperial_Officer_Speaks_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_07</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Follow_Imperial_Officer_02</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Imperial_Officer_Speaks_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Imperial_Officer_Speaks_00</Prereq>
+		</Event>
+		
+		<!--<Event Name="Tutorial_M03_Imperial_Officer_Speaks_01_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M03_Imperial_Officer_Speaks_01</Prereq>
+		</Event>
+		
+-->
+				
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_10
+Tartan Officer: We will need to navigate through this hazardous terrain to reach our destination.  
+Stay away from the asteroid fields, and stay alert - this area is ripe for an ambush, 
+and we can’t afford to take any losses!  Follow me…-->
+	<Event Name="Tutorial_M03_Imperial_Officer_Speaks_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_10</Reward_Param8>
+		<!--<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>-->
+		<Prereq>Tutorial_M03_Imperial_Officer_Speaks_01</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_M03_Imperial_Officer_Speaks_07">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_10</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_10</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Imperial_Officer_Speaks_06</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_M03_Imperial_Officer_Speaks_08">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M03_Imperial_Officer_Speaks_07</Prereq>
+		</Event>		
+
+<!-- Tells the script to send the commander forward -->
+	<Event Name="Follow_Through_Asteroids">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M03_Lets_Go_Objective</Prereq>
+	</Event>		
+	
+<!-- Task: Follow the Imperial officer through the Asteroid Field -->
+	<Event Name="Tutorial_M03_Lets_Go_Waypoint_Zero_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_46</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Lets_Go_Waypoint_Zero_03</Prereq>
+	</Event>	
+	
+<!--Hint: Select your units by left-clicking on them, and then issue a move command 
+by right-clicking on the desired map location.  
+Scroll the tactical display by moving your cursor to the edge of the screen, 
+or by using the keyboard arrow keys.-->
+	<Event Name="Tutorial_M03_Lets_Go_Waypoint_Zero_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_54</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_54</Reward_Param8>
+		<Prereq>Tutorial_M03_Imperial_Officer_Speaks_08</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_M03_Lets_Go_Waypoint_Zero_03">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_54</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_54</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Lets_Go_Waypoint_Zero_02</Prereq>
+		</Event>
+		
+		<!-- second holocron entry re: follow the leader -->
+	<Event Name="Tutorial_III_Follow_Leader_01_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Follow_Leader_01_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Lets_Go_Waypoint_Zero_03</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_III_Unlock_Controls_Tactical">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>LOCK_CONTROLS</Reward_Type>
+			<Reward_Param1>0</Reward_Param1>
+			<Prereq>Tutorial_III_Follow_Leader_01_Entry</Prereq>
+		</Event>
+	
+<!-- Add Objective: Follow imperial officer xxx first and now only follow leader event-->
+	<Event Name="Tutorial_M03_Lets_Go_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_11</Reward_Param1>
+		<Prereq>Tutorial_M03_Lets_Go_Waypoint_Zero_03</Prereq>
+	</Event>	
+	
+	<Event Name="Tutorial_M03_Lets_Go_Objective_Highlight">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1000</Reward_Param3>
+		<Prereq>Tutorial_M03_Lets_Go_Objective</Prereq>
+	</Event>
+	
+<!-- Tartan Officer: Good job.  Watch out for those nebula fields… they'll wreak havoc on our auxiliary systems.  -->
+	<Event Name="Tutorial_M03_Lets_Go_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PLAYER_FOLLOWING</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_17</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+		<Event Name="Tutorial_M03_Lets_Go_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_17</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_17</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Lets_Go_03</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Lets_Go_04_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Lets_Go_04</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_19
+Hint: Nebula Fields are swirling clouds of gas and dust that can be found in space.  
+These fields do not damage ships, but they do disable the use of unit abilities, 
+such as the Power to Weapons ability.  -->
+	<Event Name="Tutorial_M03_Lets_Go_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_19</Reward_Param8>
+		<Prereq>Tutorial_M03_Lets_Go_04</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_M03_Lets_Go_06">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_19</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_19</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Lets_Go_05</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Task: Eliminate enemy fighter units.  -->
+	<Event Name="Tutorial_M03_Eliminate_Fighters">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ELIMINATE_FIGHTERS</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_47</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Begin</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+<!-- Objective finished 
+	<Event Name="Tutorial_M03_Lets_Go_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_11</Reward_Param1>
+		<Prereq>Tutorial_M03_Eliminate_Fighters Tutorial_M03_Lets_Go_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Follow_Leader_01_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Follow_Leader_01_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Lets_Go_Done</Prereq>
+   	</Event>-->
+
+<!-- Add Objective -->
+	<Event Name="Tutorial_M03_Eliminate_Fighters_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_14</Reward_Param1>
+		<Prereq>Tutorial_M03_Eliminate_Fighters</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_13
+Tartan Officer: Incoming hostiles!  Remember your training - divert power to weapons!-->
+	<Event Name="Tutorial_M03_Eliminate_Fighters_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_13</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_Objective</Prereq>
+		<Branch>Eliminate_Fighters_Instruction</Branch>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Eliminate_Fighters_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_13</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_13</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Eliminate_Fighters_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Eliminate_Fighters_02_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Eliminate_Fighters_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Note: This state is hooked up to a lua script! -->
+<!-- Use the power to weapons ability of the Tartan Cruiser 
+TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_16
+Hint: Use the Tartan Cruiser's Power to Weapons ability to increase the ship's rate of fire 
+and destroy the fighter squadrons blocking your path.  
+Select your Tartan Cruiser units, then click on the Power to Weapons ability icon, 
+located on the command bar.-->
+	<Event Name="Tutorial_M03_Eliminate_Fighters_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_16</Reward_Param8>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_02</Prereq>
+		<Branch>Eliminate_Fighters_Instruction</Branch>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_M03_Eliminate_Fighters_07">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_16</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_16</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Eliminate_Fighters_06</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+		
+	<!-- third holocron entry re: destroy fighters-->
+	<Event Name="Tutorial_III_Destroy_Fighters_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Destroy_Fighters_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_Objective</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Flash Power To Weapons Button -->
+	<Event Name="Tutorial_M03_Eliminate_Fighters_06a">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.25</Event_Param1>
+		<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+		<Reward_Param1>POWER_TO_WEAPONS</Reward_Param1>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_06</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Eliminate_Fighters_06b">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_06a</Prereq>
+	</Event>
+					
+	<Event Name="Tutorial_M03_Follow_To_Frigate">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FIGHTERS_ELIMINATED</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Eliminate_Fighters_Instruction</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M03_Eliminate_Fighters_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_14</Reward_Param1>
+		<Prereq>Tutorial_M03_Follow_To_Frigate Tutorial_M03_Eliminate_Fighters_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Destroy_Fighters_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Destroy_Fighters_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Eliminate_Fighters_Done</Prereq>
+   	</Event> 
+
+	<Event Name="Tutorial_M03_Eliminate_Fighters_Done_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1000</Reward_Param3>
+		<Prereq>Tutorial_M03_Eliminate_Fighters_Done</Prereq>
+	</Event>
+		
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_21
+Tartan Officer: Imperial scouts reported a Frigate ship 
+along with a bomber squadron in the vicinity.  
+Take a moment to allow our shields to regenerate before advancing.-->
+	<Event Name="Tutorial_M03_Follow_To_Frigate_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_21</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_21</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Follow_To_Frigate Tutorial_M03_Eliminate_Fighters_07</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Follow_To_Frigate_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_21</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_21</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Follow_To_Frigate_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Follow_To_Frigate_02_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Follow_To_Frigate_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_22
+Hint: Shield status is reflected by a blue bar on a ship's health meter.  
+Shields regenerate over time for most space units.  
+Hull status is reflected by a green meter.  
+Unlike shield damage, hull damage does not regenerate over time.  
+If a ship’s hull is destroyed, the ship will be destroyed.  -->
+	<Event Name="Tutorial_M03_Follow_To_Frigate_03">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_22</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>HInt</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_22</Reward_Param8>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_02</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+			
+		<Event Name="Tutorial_M03_Follow_To_Frigate_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_22</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_22</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Follow_To_Frigate_03</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Let's move out... follow me 
+TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_23
+Tartan Officer: Okay, let’s move out… follow me.  -->
+	<Event Name="Tutorial_M03_Follow_To_Frigate_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_23</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_23</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_04</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+				
+		<Event Name="Tutorial_M03_Follow_To_Frigate_06">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_23</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_23</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Follow_To_Frigate_05</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Follow_To_Frigate_06_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Follow_To_Frigate_06</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+		
+	<!-- forth holocron entry re: follow leader #2
+	<Event Name="Tutorial_III_Follow_Leader_02_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Follow_Leader_02_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_06_Remove_Movie</Prereq>
+	</Event>-->
+
+<!--Task: Follow the Imperial Officer.  -->	
+	<Event Name="Tutorial_M03_Follow_To_Frigate_06A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_48</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Follow_To_Frigate_06</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Add Objective 
+Follow the Imperial Officer. 
+	<Event Name="Tutorial_M03_Follow_To_Frigate_06A_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_18</Reward_Param1>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_06</Prereq>
+	</Event>	 -->
+
+	<Event Name="Tutorial_M03_Follow_To_Frigate_06A_Objective_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>2000</Reward_Param3>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_06</Prereq>
+	</Event>
+
+<!-- Tells the script to send the commander forward -->
+	<Event Name="Follow_To_Frigate">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Tutorial_M03_Follow_To_Frigate_06</Prereq>
+	</Event>		
+
+	<Event Name="Tutorial_M03_Eliminate_Bombers">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ELIMINATE_BOMBERS</Event_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+	
+<!-- Objective finished 
+	<Event Name="Tutorial_M03_Follow_To_Frigate_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_18</Reward_Param1>
+		<Prereq>Tutorial_M03_Eliminate_Bombers Tutorial_M03_Follow_To_Frigate_06A_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Follow_Leader_02_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Follow_Leader_02_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Follow_To_Frigate_Done</Prereq>
+   	</Event> -->
+
+<!-- Disable Destroy Frigate instructions if it's already destroyed! -->
+	<Event Name="Tutorial_M03_Disable_Frigate_Instructions">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FRIGATE_DESTROYED</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Destroy_Frigate_Instructions</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>	
+
+<!-- There they are! It appears that the frigate has been damaged 
+TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_24
+Tartan Officer: There they are!   The frigate has been damaged - probably by one of our patrols.  
+If those bombers manage to attack us first, 
+their torpedoes will tear our hulls apart.  -->
+	<Event Name="Tutorial_M03_Eliminate_Bombers_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_24</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Eliminate_Bombers</Prereq>
+		<Branch>Destroy_Frigate_Instructions</Branch>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Eliminate_Bombers_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_24</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_24</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Eliminate_Bombers_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Eliminate_Bombers_02_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Eliminate_Bombers_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+<!-- Task: Eliminate the Frigate -->	
+	<Event Name="Tutorial_M03_Destroy_Frigate">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_50</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Destroy_Frigate_06</Prereq>
+		<Prereq>Tutorial_M03_Disable_Frigate_Instructions</Prereq> <!-- this is needed in case frigate is already destroyed -->
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Add Objective -->
+	<Event Name="Tutorial_M03_Destroy_Frigate_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_27</Reward_Param1>
+		<Prereq>Tutorial_M03_Destroy_Frigate</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Larger ships and structures have hard points 
+TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_29
+Hint: Destroy the hard-points on larger ships and space stations to disable 
+critical parts like weapons, shields, and engines.-->
+	<Event Name="Tutorial_M03_Destroy_Frigate_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_29</Reward_Param8>
+		<Prereq>Tutorial_M03_Eliminate_Bombers_02_Remove_Movie</Prereq>
+		<Branch>Destroy_Frigate_Instructions</Branch>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+			
+	<Event Name="Tutorial_M03_Destroy_Frigate_04">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_EMPIRE_ACT03_29</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_29</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M03_Destroy_Frigate_03</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+	<!-- fifth holocron entry re: destroy the frigate-->
+	<Event Name="Tutorial_III_Destroy_Frigate_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>3</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Destroy_Frigate_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Destroy_Frigate_04</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+<!-- Unless the shields of an enemy ship... 
+Hint: Only units with torpedo projectiles (such as bombers) 
+can attack hard-points on a ship or structure while the shields are functioning.-->
+	<Event Name="Tutorial_M03_Destroy_Frigate_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_30</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_30</Reward_Param8>
+		<Prereq>Tutorial_M03_Destroy_Frigate_04</Prereq>
+		<Branch>Destroy_Frigate_Instructions</Branch>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+				
+	<Event Name="Tutorial_M03_Destroy_Frigate_06">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_EMPIRE_ACT03_30</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_30</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M03_Destroy_Frigate_05</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Deploy_Reinforcements">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DEPLOY_REINFORCEMENTS</Event_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M03_Destroy_Frigate_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_27</Reward_Param1>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements Tutorial_M03_Destroy_Frigate_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Destroy_Frigate_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Destroy_Frigate_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Destroy_Frigate_Done</Prereq>
+   	</Event> 
+
+	<Event Name="Tutorial_M03_Destroy_Frigate_Done_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>2000</Reward_Param3>
+		<Prereq>Tutorial_M03_Destroy_Frigate_Done</Prereq>
+	</Event>
+
+<!-- Assault Fleet! This is Imperial Acclamator oh-one-niner. We are en-route 
+Acclamator Pilot: Assault fleet, this is Imperial Acclamator oh-one-niner.  
+We are en-route to reinforce your position and are awaiting your coordinates.  Confirm.  -->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_31</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_31</Reward_Param8>
+		<Reward_Param9>Veers_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Deploy_Reinforcements_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_31</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_31</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Deploy_Reinforcements_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+		
+		<Event Name="Tutorial_M03_Deploy_Reinforcements_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M03_Deploy_Reinforcements_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Good, We will need those reinforcements in order to commence with our 
+Tartan Officer: Good!  We will need reinforcements to commence with our assault.  
+Deploy our reinforcement ships and bring more firepower to bear against that space station.-->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_32</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_32</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_02_Stop_Movie</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+			
+		<Event Name="Tutorial_M03_Deploy_Reinforcements_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_32</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_32</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Deploy_Reinforcements_03</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Deploy_Reinforcements_04_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Deploy_Reinforcements_04</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+		
+<!-- Task: Deploy all reinforcements 
+Task: Deploy all reinforcement units.-->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_51</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_07</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+<!-- Note: LUA script hooked up to this event! -->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_05_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_33</Reward_Param1>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_05</Prereq>
+	</Event>
+
+<!-- FLASH REINFORCEMENT BUTTON -->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_05a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_reinforcement</Reward_Param1>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_05</Prereq>
+	</Event>
+						
+<!-- Hint: To bring reinforcements into a battle, select the reinforcement button, 
+then drag and release the ships into space from the reinforcement window.  
+Remember - reinforcements can only be released in open space, away from enemy structures 
+and other hazards.  -->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_06">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_34</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_34</Reward_Param8>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_04_Remove_Movie</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+					
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_07">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_EMPIRE_ACT03_34</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_34</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_06</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+	<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_08
+Hint: Double-click on any unit to select all visible units of that same type.  
+Smaller units, such as fighter squadrons, can be selected by clicking 
+on either the squadron icon or on the individual units.-->
+	<Event Name="Tutorial_M03_Imperial_Officer_Speaks_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_08</Reward_Param8>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_07</Prereq>
+	</Event>
+			
+		<Event Name="Tutorial_M03_Imperial_Officer_Speaks_03">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_08</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_08</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Imperial_Officer_Speaks_02</Prereq>
+		</Event>
+	
+	<!-- sixth holocron entry re: bring in reinforcements -->
+	<Event Name="Tutorial_III_Bring_In_Reinforcements_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>4</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Bring_In_Reinforcements_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_07</Prereq>
+	</Event>
+
+<!-- Task: Follow commander -->
+
+	<Event Name="Tutorial_M03_Follow_To_Starbase_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FOLLOW_TO_STARBASE</Event_Param2>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Follow_To_Starbase">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_53</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Follow_To_Starbase_AI_Notification Tutorial_M03_Imperial_Officer_Speaks_03</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_05b">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M03_Follow_To_Starbase</Prereq>
+	</Event>
+	
+	<!-- seventh holocron entry re: follow leader #3
+	<Event Name="Tutorial_III_Follow_Leader_03_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Follow_Leader_03_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Follow_To_Starbase</Prereq>
+	</Event>-->
+
+<!-- Add Objective 
+Follow the Imperial Officer.  
+	<Event Name="Tutorial_M03_Follow_To_Starbase_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_42</Reward_Param1>
+		<Prereq>Tutorial_M03_Follow_To_Starbase</Prereq>
+	</Event>-->	
+
+	<Event Name="Tutorial_M03_Follow_To_Starbase_Objective_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>3000</Reward_Param3>
+		<Prereq>Tutorial_M03_Follow_To_Starbase</Prereq>
+	</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_33</Reward_Param1>
+		<Prereq>Tutorial_M03_Follow_To_Starbase Tutorial_M03_Deploy_Reinforcements_05_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Bring_In_Reinforcements_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Bring_In_Reinforcements_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Deploy_Reinforcements_Done</Prereq>
+   	</Event> 
+	
+	<Event Name="Tutorial_M03_Deploy_Reinforcements_Done_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_M03_Deploy_Reinforcements_Done</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Near_Ion_Field">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>NEAR_ION_FIELD</Event_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+<!-- Tartan Officer: Watch out for those ion fields! -->
+	<Event Name="Tutorial_M03_Near_Ion_Field_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_35</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_35</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Near_Ion_Field Tutorial_M03_Follow_To_Starbase</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Near_Ion_Field_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_35</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_35</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Near_Ion_Field_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Near_Ion_Field_02_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Near_Ion_Field_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Hint: Ion Fields are swirling clouds of charged gas and dust that can be found in space.  
+These fields do not damage ships, but they do disable unit abilities and shield regeneration.   -->
+	<Event Name="Tutorial_M03_Near_Ion_Field_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_36</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_36</Reward_Param8>
+		<Prereq>Tutorial_M03_Near_Ion_Field_02</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+			
+		<Event Name="Tutorial_M03_Near_Ion_Field_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_36</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_36</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Near_Ion_Field_03</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+	<Event Name="Tutorial_M03_Destroy_Starbase">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DESTROY_STARBASE</Event_Param2>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+<!-- Tartan Officer: Be careful.  This doesn’t look like the work of space rabble… 
+the shields on that derelict space station have been restored.  
+Approach the station with Fighter Squadrons to draw its fire, 
+and use other units to eliminate the remaining hard-points. -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_37</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_37</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Destroy_Starbase</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+		
+		<Event Name="Tutorial_M03_Destroy_Starbase_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_37</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_37</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Destroy_Starbase_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+		<Event Name="Tutorial_M03_Destroy_Starbase_02_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_Destroy_Starbase_02</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Task: Eliminate the Rebel space station. -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_52</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_M03_Destroy_Starbase_02</Prereq>
+	</Event>
+	
+	<!-- eight holocron entry re: destroy space station -->
+	<Event Name="Tutorial_III_Destroy_Starbase_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>5</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Destroy_Starbase_Entry</Story_Tag>
+		<Prereq>Tutorial_M03_Destroy_Starbase_03</Prereq>
+	</Event>
+
+
+
+
+
+
+
+<!-- Hint: Acclamator ships contain TIE fighters and TIE bombers, 
+as well as the Power to Weapons ability to help you destroy the Rebel space station. -->
+	<Event Name="Tutorial_M03_Acclamator_Hint_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_57</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_57</Reward_Param8>
+		<Prereq>Tutorial_M03_Destroy_Starbase_03</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+		<Event Name="Tutorial_M03_Acclamator_Hint_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_57</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_57</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Acclamator_Hint_01</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Objective finished 
+	<Event Name="Tutorial_M03_Follow_To_Starbase_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_42</Reward_Param1>
+		<Prereq>Tutorial_M03_Destroy_Starbase_03</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Follow_Leader_03_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Follow_Leader_03_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Follow_To_Starbase_Done</Prereq>
+   	</Event> -->
+   	
+   	<Event Name="Tutorial_III_Follow_Leader_01_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Follow_Leader_01_Entry</Reward_Param1>
+        <Prereq>Tutorial_III_Destroy_Starbase_Entry</Prereq>
+   	</Event>
+
+<!-- Add Objective -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_03_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_38</Reward_Param1>
+		<Prereq>Tutorial_M03_Destroy_Starbase_02</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_M03_Destroy_Starbase_03_Objective_Highlight_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>SHUTTLE_TYDERIUM_TUTORIAL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>3000</Reward_Param3>
+		<Prereq>Tutorial_M03_Destroy_Starbase_03_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Destroy_Starbase_03_Objective_Highlight_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_Tutorial</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>4000</Reward_Param3>
+		<Prereq>Tutorial_M03_Destroy_Starbase_03_Objective_Highlight_01</Prereq>
+	</Event>
+	
+<!-- Hint: Small fighters are useful against space stations because of their speed and small size. -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_04">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_39</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_39</Reward_Param8>
+		<Prereq>Tutorial_M03_Acclamator_Hint_02</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+				
+		<Event Name="Tutorial_M03_Destroy_Starbase_05">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_39</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_39</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Destroy_Starbase_04</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- Hint: Destroy the shield generator hard-point for enemy ships and 
+space stations to disable their ability to regenerate shields.  
+This will make them more vulnerable to attack, and easier to destroy. -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_06">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_40</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_40</Reward_Param8>
+		<Prereq>Tutorial_M03_Destroy_Starbase_05</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+					
+		<Event Name="Tutorial_M03_Destroy_Starbase_07">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_40</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_40</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Destroy_Starbase_06</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+	
+<!-- Hint: To view this battle from a cinematic perspective - 
+select the cinematic camera option, located on the command bar. -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_08">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_58</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- SYSTEM color coding - Red -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_58</Reward_Param8>
+		<Prereq>Tutorial_M03_Destroy_Starbase_07</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+
+<!-- Flash cinematic button -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_08a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_camera_t</Reward_Param1>
+		<Prereq>Tutorial_M03_Destroy_Starbase_08</Prereq>
+		<Branch>Branch_Mission_Dialog</Branch>
+	</Event>
+					
+		<Event Name="Tutorial_M03_Destroy_Starbase_09">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_58</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_58</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_Destroy_Starbase_08</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+		<Event Name="Tutorial_M03_Destroy_Starbase_09a">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+			<Prereq>Tutorial_M03_Destroy_Starbase_09</Prereq>
+			<Branch>Branch_Mission_Dialog</Branch>
+		</Event>
+
+<!-- LOSS CONDITION: All Empire forces wiped out -->
+	<Event Name="Tutorial_M03_All_Empire_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Empire</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+<!-- LOSS CONDITION: All cruisers / frigates (except commander) lost -->
+	<Event Name="Tutorial_M03_All_Cruisers_Destroyed">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CRUISERS_DESTROYED</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+<!-- WIN CONDITION: Rebels wiped out 
+Tartan Officer: Excellent work!  Let’s return to base.  -->
+	<Event Name="Tutorial_M03_All_Rebels_Destroyed_00">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_41</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_M03_Begin</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_M03_All_Rebels_Destroyed_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_41</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_41</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M03_All_Rebels_Destroyed_00</Prereq>
+		</Event>
+	
+		<Event Name="Tutorial_M03_All_Rebels_Destroyed_01_Remove_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+			<Prereq>Tutorial_M03_All_Rebels_Destroyed_01</Prereq>
+		</Event>
+	
+<!-- Objective finished -->
+	<Event Name="Tutorial_M03_Destroy_Starbase_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_38</Reward_Param1>
+		<Prereq>Tutorial_M03_All_Rebels_Destroyed_00 Tutorial_M03_Destroy_Starbase_03_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Follow_Leader_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_11</Reward_Param1>
+		<Prereq>Tutorial_M03_All_Rebels_Destroyed_00 Tutorial_M03_Destroy_Starbase_03_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Destroy_Starbase_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Destroy_Starbase_Entry</Reward_Param1>
+        <Prereq>Tutorial_M03_Destroy_Starbase_Done</Prereq>
+   	</Event>  
+	
+	<Event Name="Tutorial_M03_Destroy_Starbase_Done_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_Tutorial</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>4000</Reward_Param3>
+		<Prereq>Tutorial_M03_Destroy_Starbase_Done</Prereq>
+	</Event>
+
+<!-- sometimes the audio doesn't seem to trigger the previous event, so this is a timeout -->
+<!--
+<Event Name="Tutorial_M03_All_Rebels_Destroyed_01A">
+	<Event_Type>STORY_ELAPSED</Event_Type>
+	<Event_Param1>5</Event_Param1>
+	<Reward_Type>SCREEN_TEXT</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_41</Reward_Param1>
+	<Reward_Param4>remove</Reward_Param4>
+	<Prereq>Tutorial_M03_All_Rebels_Destroyed_00</Prereq>
+</Event>
+-->
+	
+	<Event Name="Tutorial_M03_All_Rebels_Destroyed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_M03_All_Rebels_Destroyed_01</Prereq>
+		<!--<Prereq>Tutorial_M03_All_Rebels_Destroyed_01A</Prereq>-->
+	</Event>
+		
+	<Event Name="Tutorial_M03_All_Rebels_Destroyed_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Tutorial_M03_All_Rebels_Destroyed_02</Prereq>
+	</Event>
+
+<!-- EMPIRE VICTORY: Set Flag -->
+	<Event Name="Tutorial_M03_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Tutorial_M03_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+	<!-- jdg - new lose condition - player not following commander -->
+	<Event Name="Tutorial_M03_Player_Not_Following_Leader">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PLAYER_NOT_FOLLOWING_LEADER</Event_Param2>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Player_Not_Following_Leader_Disable_All_Speech">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Mission_Dialog</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_M03_Player_Not_Following_Leader</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M03_FAIL_Follow_Leader_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_11</Reward_Param1>
+		<Prereq>Tutorial_M03_Player_Not_Following_Leader</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M03_FAIL_Follow_Leader_Objective_LOSE_TEXT">
+		<Event_Type>STORY_TRIGGER</Event_Type>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_46</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>System</Reward_Param7>	
+		<Prereq>Tutorial_M03_FAIL_Follow_Leader_Objective</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_M03_Player_Loses_for_Not_Following">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Tutorial_M03_FAIL_Follow_Leader_Objective</Prereq>
+	</Event>
+	
+
+
+</Story>

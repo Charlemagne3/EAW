@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<Goals>
+
+	<Remove_Corruption>
+		<AIGoalApplicationFlags>Friendly</AIGoalApplicationFlags>
+		<GameMode>Galactic</GameMode>
+		<Category>Hero</Category>
+		<Reachability>Friendly_Only</Reachability>
+		<Time_Limit>60.0</Time_Limit>
+		<Build_Time_Delay_Tolerance>1.25</Build_Time_Delay_Tolerance>
+		<Global_Exclusions>Remove_Corruption</Global_Exclusions>
+	</Remove_Corruption>
+
+</Goals>

@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!-- Equations that define perception functions -->
+<Equations>
+
+	<!--Value planets based mostly on income and trade routes.  Also consider structure and base capabilities -->
+	<GenericPlanetValue>
+		( 15.0 * Variable_Target.BaseIncome +
+		  1.0 * Variable_Target.MaxStructureSlots + 
+		  2.0 * Variable_Target.MaxGroundbaseLevel + 
+		  2.0 * Variable_Target.MaxStarbaseLevel +
+		  10.0 * Variable_Target.TradeRoutes) / 30.0 
+	</GenericPlanetValue>
+
+	<FriendlySpaceForceStrength>
+		Variable_Target.FriendlyForce.SpaceTotal
+	</FriendlySpaceForceStrength>
+
+	<FriendlyForceNearUnit>
+		Variable_Target.Location.FriendlyForce
+	</FriendlyForceNearUnit>
+
+	<Is_Home_Planet>
+		Variable_Target.Type.Token == Variable_Self.HomePlanet.Type.Token
+	</Is_Home_Planet>
+
+	<One>
+		1.0
+	</One>
+
+    <ReallySmall>
+        0.000000001
+    </ReallySmall>
+
+	<ReallyBig>
+		50.0
+	</ReallyBig>
+
+	<Medium>
+		25.0
+	</Medium>
+
+	<Medium_High>
+		35.0
+	</Medium_High>
+
+	<High>
+		40.0
+	</High>
+
+	<Zero>
+		0.0
+	</Zero>
+
+	<Is_Empire>
+		Variable_Self.IsFaction {Parameter_Faction = "Empire"}
+	</Is_Empire>
+
+	<Is_Rebel>
+		Variable_Self.IsFaction {Parameter_Faction = "Rebel"}
+	</Is_Rebel>
+	
+	<Is_Underworld>
+		Variable_Self.IsFaction {Parameter_Faction = "Underworld"}
+	</Is_Underworld>
+
+	<Is_Campaign>
+		Game.IsCampaignGame
+	</Is_Campaign>
+
+</Equations>

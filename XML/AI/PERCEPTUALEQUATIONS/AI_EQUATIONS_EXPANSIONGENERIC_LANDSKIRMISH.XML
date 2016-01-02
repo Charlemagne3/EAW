@@ -1,0 +1,400 @@
+<?xml version="1.0" ?>
+
+<Equations>
+
+	<!-- Desire to build generic units in tactical-only games
+	Is it not a campaign game
+	AND SCALE UP
+		Small base desire
+		We don't have enough of a force advantage
+		Randomly, half of the time we get extra desire to build units
+
+
+	UNUSED  The Pop cap affecting reinforcement limits should take care of this
+	
+		AND
+			Do we not have too many reinforcements
+			OR
+			Do we have fewer reinforcements than we have fielded units
+		*
+		(
+			((2000 > Variable_Self.ReinforcementsUnnormalized)
+			+
+			((Variable_Self.FriendlyForceUnnormalized - Variable_Self.ReinforcementsUnnormalized) > Variable_Self.ReinforcementsUnnormalized))
+			> 0
+		)
+	-->
+	<Tactical_Multiplayer_Should_Build_Generic>
+		(Game.IsCampaignGame == 0)
+		*
+		(
+			1.0
+			+
+			15.0 * (Variable_Enemy.Force >= (0.8 * Variable_Self.Force))
+			+
+			5.0 * (0#1>0.5)
+		)	
+	</Tactical_Multiplayer_Should_Build_Generic>
+
+	<Is_Outpost_Pad>
+		Variable_Target.Type.IsType {Parameter_Type = "Skirmish_Outpost_Pad"}
+	</Is_Outpost_Pad>
+
+	<!-- Build units if
+		We're not saving for refineries
+		We don't need to upgrade tech level
+		We want units
+	-->
+	<Tactical_Multiplayer_Should_Build_Units_Generic_Land>
+		(1 - Function_Is_Saving_For_Refineries_Land.Evaluate)
+		*
+		(1 - Function_Skirmish_Upgrade_Tech.Evaluate)
+		*
+		Function_Is_Initial_Skirmish_State_Established.Evaluate
+		*
+		Function_Tactical_Multiplayer_Should_Build_Generic.Evaluate
+		*
+		(1.0 - Function_May_Lose_Land_Control_Game.Evaluate)		
+	</Tactical_Multiplayer_Should_Build_Units_Generic_Land>
+
+
+	<!--   
+	Generally want to build a base structure as long as there are no enemies around.
+	-->
+	<Tactical_Multiplayer_Should_Build_Structure_Generic_Land>
+		(1 - Function_Want_To_Retreat_From_Land.Evaluate)
+		*
+		(1 - Function_Is_Refinery_Pad.Evaluate)
+		*
+		(1 - Function_Is_Outpost_Pad.Evaluate)
+		*
+		(1 - Variable_Target.Type.IsType {Parameter_Type = "Skirmish_Build_Pad"
+											,Parameter_Type = "Rebel_Build_Pad" 
+											,Parameter_Type = "Empire_Build_Pad"
+											,Parameter_Type = "Underworld_Build_Pad"
+											,Parameter_Type = "Rebel_Build_Pad_Offensive"
+											,Parameter_Type = "Empire_Build_Pad_Offensive"
+											,Parameter_Type = "Underworld_Build_Pad_Offensive"
+											,Parameter_Type = "Rebel_Build_Pad_Defensive"
+											,Parameter_Type = "Empire_Build_Pad_Defensive"	
+											,Parameter_Type = "Underworld_Build_Pad_Defensive" })
+		*
+		(1 - Variable_Target.HasBuiltObject)
+		*
+		(
+			1
+			+
+			20
+			* 
+			(Function_Num_Refineries.Evaluate > 0)
+			*
+			(Variable_Target.Type.IsType {Parameter_Type = "Power_Generator_R_Build_Pad"
+												,Parameter_Type = "Power_Generator_E_Build_Pad"})
+			+
+			(1.0 - Function_Skirmish_Upgrade_Tech.Evaluate)
+			*
+			(30 * (Variable_Target.Location.EnemyForce == 0.0))
+			-
+			10 * (Variable_Target.Type.IsType {Parameter_Type = "Communications_Array_R_Build_Pad"
+												,Parameter_Type = "Communications_Array_E_Build_Pad"
+												,Parameter_Type = "E_Ground_Research_Facility_Build_Pad"
+												,Parameter_Type = "R_Ground_Research_Facility_Build_Pad"})
+		)
+		*
+		(1.0 - Function_May_Lose_Land_Control_Game.Evaluate)	
+	</Tactical_Multiplayer_Should_Build_Structure_Generic_Land>
+
+	<Tactical_Multiplayer_Should_Build_Basic_Structure>
+		Function_Tactical_Multiplayer_Should_Build_Structure_Generic_Land.Evaluate
+		*
+		(1 - Function_Is_Saving_For_Refineries_Land.Evaluate)
+		*
+		(1 - Variable_Target.Type.IsType {Parameter_Type = "E_Ground_Barracks_Build_Pad",
+											Parameter_Type = "R_Ground_Barracks_Build_Pad",
+											Parameter_Type = "U_Ground_Merc_Outpost_Build_Pad",
+											Parameter_Type = "Imperial_Command_Center_Build_Pad",
+											Parameter_Type = "Rebel_Command_Center_Build_Pad",
+											Parameter_Type = "Underworld_Palace_Build_Pad"})
+		*
+		Function_Is_Initial_Skirmish_State_Established.Evaluate						
+	</Tactical_Multiplayer_Should_Build_Basic_Structure>
+	
+	<Tactical_Multiplayer_Should_Build_Barracks>
+		Function_Tactical_Multiplayer_Should_Build_Structure_Generic_Land.Evaluate
+		*
+		Variable_Target.Type.IsType {Parameter_Type = "E_Ground_Barracks_Build_Pad",
+										Parameter_Type = "R_Ground_Barracks_Build_Pad",
+										Parameter_Type = "U_Ground_Merc_Outpost_Build_Pad"}
+		*
+		25.0
+		*
+		(1 + (Variable_Self.FriendlyForceUnnormalized {Parameter_Category = GameObjectCategoryType[Infantry | Hero]} == 0.0))
+	</Tactical_Multiplayer_Should_Build_Barracks>
+	
+	<Tactical_Multiplayer_Should_Build_Command_Center>
+		50.0
+		*
+		Function_Tactical_Multiplayer_Should_Build_Structure_Generic_Land.Evaluate
+		*
+		Variable_Target.Type.IsType {Parameter_Type = "Imperial_Command_Center_Build_Pad",
+										Parameter_Type = "Rebel_Command_Center_Build_Pad",
+										Parameter_Type = "Underworld_Palace_Build_Pad"}
+	</Tactical_Multiplayer_Should_Build_Command_Center>
+
+	<!-- Build upgraded abilities if
+		We're not saving for refineries
+		We don't need to upgrade tech level
+		We want upgraded abilities
+	-->
+	<Should_Purchase_Ability_Generic_Land>
+		(1 - Function_Is_Saving_For_Refineries_Land.Evaluate)
+		*
+		(1 - Function_Skirmish_Upgrade_Tech.Evaluate)
+		*
+		Function_Should_Purchase_Ability_Generic.Evaluate
+		*
+		(Function_Num_Refineries.Evaluate > 0)
+		*
+		(3 > Variable_Self.UnitSpaceAvailable)
+	</Should_Purchase_Ability_Generic_Land>
+
+	<!-- 
+	Do we have open build pads waiting to be built upon
+	AND
+		Do we have less than N refineries
+		OR
+		-Does the enemy have more refineries than we do
+	AND
+	Do we not have a surplus of cash
+
+	-->
+	<Is_Saving_For_Refineries_Land>
+		(Function_Num_Open_Land_Econ_Structure_Build_Locations.Evaluate > 0)
+		*
+		(4 > Variable_Self.TacticalBuiltStructureCount{Parameter_Type = "Rebel_Mineral_Processor"
+														,Parameter_Type = "Empire_Mineral_Processor"
+														,Parameter_Type = "Underworld_Mineral_Processor"
+														,Parameter_Type = "Skirmish_Ground_Mining_Facility_E"
+														,Parameter_Type = "Skirmish_Ground_Mining_Facility_R"
+														,Parameter_Type = "Skirmish_Ground_Mining_Facility_U"})
+		*
+		(1500 > Variable_Self.CreditsUnnormalized)
+		*
+		Function_Want_More_Resource_Structures_Land.Evaluate
+	</Is_Saving_For_Refineries_Land>
+
+
+	<Num_Refineries>
+		Variable_Self.TacticalBuiltStructureCount{Parameter_Type = "Rebel_Mineral_Processor"
+													,Parameter_Type = "Empire_Mineral_Processor"
+													,Parameter_Type = "Underworld_Mineral_Processor"
+													,Parameter_Type = "Skirmish_Ground_Mining_Facility_E"
+													,Parameter_Type = "Skirmish_Ground_Mining_Facility_R"
+													,Parameter_Type = "Skirmish_Ground_Mining_Facility_U"}
+	</Num_Refineries>
+
+	<Is_Refinery_Pad>
+		(Variable_Target.Type.IsType {Parameter_Type = "Skirmish_Mineral_Processor_Pad"}
+		+
+		Variable_Target.Type.IsType {Parameter_Type = "N_Ground_Mining_Facility_Build_Pad"}
+		+
+		Variable_Target.Type.IsType {Parameter_Type = "Empire_Ground_Mining_Facility_Build_Pad"}
+		*
+		Variable_Self.IsFaction {Parameter_Faction = "EMPIRE"}
+		+
+		Variable_Target.Type.IsType {Parameter_Type = "Rebel_Ground_Mining_Facility_Build_Pad"}
+		*
+		Variable_Self.IsFaction {Parameter_Faction = "REBEL"}) > 0
+	</Is_Refinery_Pad>
+
+	<Need_To_Build_Refinery_Land>
+		50.0 
+		*
+		(Function_Is_Refinery_Pad.Evaluate + Function_Is_Outpost_Pad.Evaluate)
+		*
+		(
+			0.2 >
+			(
+				Variable_Target.Location.EnemyForce /
+				(Variable_Target.Location.EnemyForce + Variable_Target.Location.FriendlyForce )
+			)
+		)
+		*
+		(Variable_Target.DistanceToNearestEnemy{Parameter_Category = GameObjectCategoryType[Structure]} > 500)
+	</Need_To_Build_Refinery_Land>
+
+	<!-- Upgrade tech in skirmish if
+		We're not already maxed out
+		AND
+		Our base isn't under attack (because we'd prefer spending on turrets or units, plus we might lose the tech we just bought)
+		AND
+			We're finding the need to burn units
+			OR
+			We have enough units on the field 
+			AND 
+				We have more force than the enemy
+				OR
+				Are we past due for a tech two upgrade  VERIFY THAT THIS WORKS
+				OR
+				Are we past due for a tech three upgrade
+	*
+	(1 - Script_AnyBaseStructuresThreatened.Evaluate)
+	-->
+	<Skirmish_Upgrade_Tech>
+		(1 - Function_Is_Skirmish_Tech_Maxed.Evaluate)
+		*
+		(
+			Function_Should_Burn_Units_Land.Evaluate
+			+
+			(Variable_Self.TacticalBuiltStructureCount {Parameter_Type = "Skirmish_Ground_Mining_Facility_E", 
+														Parameter_Type = "Skirmish_Ground_Mining_Facility_R",
+														Parameter_Type = "Skirmish_Ground_Mining_Facility_U",
+														Parameter_Type = "Empire_Mineral_Processor", 
+														Parameter_Type = "Rebel_Mineral_Processor",
+														Parameter_Type = "Underworld_Mineral_Processor"} >= 1)	
+			*
+			(Variable_Self.FriendlyForceUnnormalized > 400) 
+			* 
+			(
+				(Variable_Self.FriendlyForce > (0.65 * Variable_Self.EnemyForce))
+				*
+				(1 - Variable_Self.HasUnit{Parameter_Type = "RC_Level_Two_Tech_Upgrade", 
+											Parameter_Type = "EC_Level_Two_Tech_Upgrade",
+											Parameter_Type = "UC_Level_Two_Tech_Upgrade"})
+				+
+				(Variable_Self.FriendlyForce > 0.75 * Variable_Self.EnemyForce)
+				*
+				(Variable_Self.FriendlyForceUnnormalized > 3000)
+				* 
+				(1 - Variable_Self.HasUnit{Parameter_Type = "RC_Level_Three_Tech_Upgrade", 
+											Parameter_Type = "EC_Level_Three_Tech_Upgrade",
+											Parameter_Type = "UC_Level_Three_Tech_Upgrade"})
+			)
+		)
+		*
+		(1.0 - Function_May_Lose_Land_Control_Game.Evaluate)		
+		> 0
+	</Skirmish_Upgrade_Tech>
+
+	<Skirmish_Upgrade_Tech_With_Multiplier>
+		50.0 * Function_Skirmish_Upgrade_Tech.Evaluate
+	</Skirmish_Upgrade_Tech_With_Multiplier>
+
+
+	<Is_Skirmish_Tech_Maxed>
+		Variable_Self.HasUnit{Parameter_Type = "RC_Level_Three_Tech_Upgrade", 
+								Parameter_Type = "EC_Level_Three_Tech_Upgrade",
+								Parameter_Type = "UC_Level_Three_Tech_Upgrade"}
+	</Is_Skirmish_Tech_Maxed>
+	
+	<Need_Heroes_Landed>
+		50
+		*
+		(Game.IsCampaignGame == 0)
+		*
+		(Variable_Self.ReinforcementsUnnormalized {Parameter_Category = GameObjectCategoryType[LandHero]} > 0)
+	</Need_Heroes_Landed>	
+
+	<May_Lose_Land_Control_Game>
+		(Variable_Self.HasUnit {Parameter_Type = "Reinforcement_Point"} == 0)
+		*
+		Game.IsLandControlGame
+	</May_Lose_Land_Control_Game>
+	
+	<Should_Purchase_Early_Land_Upgrades>
+		Function_ReallyBig.Evaluate
+		*
+		Function_Is_Initial_Skirmish_State_Established.Evaluate
+		*
+		(1.0 - Function_May_Lose_Land_Control_Game.Evaluate)		
+	</Should_Purchase_Early_Land_Upgrades>
+	
+	<!-- Our initial comfort zone in skirmish requires...
+	We have a barracks (otherwise we can't build infantry to capture stuff)
+	AND
+	We have a source of income (either a command center or a refinery)
+	AND
+	We have some units
+	OR
+	We've ever reached a point where we managed to upgrade tech (don't want to regress and build low level infantry late game when we have other options)
+	-->
+	<Is_Initial_Skirmish_State_Established>
+		Variable_Self.HasUnit {Parameter_Type = "E_Ground_Barracks", 
+								Parameter_Type = "R_Ground_Barracks", 
+								Parameter_Type = "U_Ground_Barracks"}
+		*
+		Variable_Self.HasUnit {Parameter_Type = "Imperial_Command_Center", 
+								Parameter_Type = "Rebel_Command_Center",
+								Parameter_Type = "U_Ground_Palace"}
+		*
+		(Function_Num_Refineries.Evaluate > 0)
+		*
+		(Function_Non_Structure_Force_Unnormalized.Evaluate > 0.0)
+		+
+		Variable_Self.HasUnit{Parameter_Type = "RC_Level_Two_Tech_Upgrade", 
+											Parameter_Type = "EC_Level_Two_Tech_Upgrade",
+											Parameter_Type = "UC_Level_Two_Tech_Upgrade",
+											Parameter_Type = "RC_Level_Three_Tech_Upgrade", 
+											Parameter_Type = "EC_Level_Three_Tech_Upgrade",
+											Parameter_Type = "UC_Level_Three_Tech_Upgrade"}	
+	</Is_Initial_Skirmish_State_Established>
+
+	<Should_Build_Infantry_Emergency>
+		100.0
+		*
+		((200 > Function_Non_Structure_Force_Unnormalized.Evaluate)
+		*
+		(Function_Is_Initial_Skirmish_State_Established.Evaluate == 0)
+		+
+		Function_May_Lose_Land_Control_Game.Evaluate)
+	</Should_Build_Infantry_Emergency>
+	
+	<Should_Secure_Victory_Control_Point>
+		Game.IsLandControlGame
+		*
+		Variable_Target.Type.IsType {Parameter_Type = "Reinforcement_Point"} 
+		*
+		(30.0 + 30.0 * Function_May_Lose_Land_Control_Game.Evaluate)
+	</Should_Secure_Victory_Control_Point>	
+
+	<Num_Open_Land_Econ_Structure_Build_Locations>
+		(Variable_Self.OpenBuildPadCount{Parameter_Type = "Skirmish_Mineral_Processor_Pad"
+											,Parameter_Type = "N_Ground_Mining_Facility_Build_Pad"
+											,Parameter_Type = "Empire_Ground_Mining_Facility_Build_Pad"
+											,Parameter_Type = "Rebel_Ground_Mining_Facility_Build_Pad"
+											,Parameter_Type = "Skirmish_Outpost_Pad"})
+	</Num_Open_Land_Econ_Structure_Build_Locations>
+
+	<Should_Build_Bunker>
+		Variable_Target.Type.IsType {Parameter_Type = "Bunker_Pad" }
+		*
+		(1 - Variable_Target.HasBuiltObject)
+		*
+		Function_Is_Allowed_To_Build.Evaluate
+		*
+		15
+		*
+		(Game.Age > 60)		
+		*
+		(1.0 + Variable_Self.Force {Parameter_Category = GameObjectCategoryType[Infantry]})
+		*
+		(Variable_Self.FriendlyForceUnnormalized {Parameter_Category = GameObjectCategoryType[Infantry]} > 800.0)
+	</Should_Build_Bunker>
+
+	<Skirmish_Needs_Magic_Cash_Drop_Land>
+		50.0
+		*
+		Variable_Self.HasUnit {Parameter_Type = "Imperial_Command_Center", 
+								Parameter_Type = "Rebel_Command_Center",
+								Parameter_Type = "U_Ground_Palace"}
+		*
+		(3000.0 > Variable_Self.CreditsUnnormalized)
+		*
+		(Variable_Self.EnemyForceUnnormalized > Variable_Self.FriendlyForceUnnormalized)
+		*
+		(Game.Age > 180.0)		
+		*
+		(Game.IsCampaignGame == 0.0)
+	</Skirmish_Needs_Magic_Cash_Drop_Land>
+
+</Equations>

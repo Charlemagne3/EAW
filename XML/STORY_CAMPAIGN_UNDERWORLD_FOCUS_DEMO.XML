@@ -1,0 +1,1663 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_Focus_Demo_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Kashyyyk</Reward_Param1>
+	</Event>
+
+			<Event Name="Underworld_Focus_Demo_Lock_Controls_For_Intro">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>LOCK_CONTROLS</Reward_Type>
+				<Reward_Param1>1</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+			</Event>
+
+			<!-- Set tutorial mode -->
+			<Event Name="Underworld_Focus_Demo_Set_Tutorial_Mode">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+				<Reward_Param1>Underworld</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+			</Event>
+
+			<!-- Lock Scrolling -->	
+			<Event Name="Underworld_Focus_Demo_Scroll_Lock_00">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCROLL_LOCK</Reward_Type>
+				<Reward_Param1>1</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Lock_Controls_For_Intro</Prereq>
+			</Event>
+			
+			<!-- Disable fast forward -->
+			<Event Name="Underworld_Focus_Demo_Lock_Fast_Forward">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_EVENT</Reward_Type>
+				<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+				<Reward_Param2>b_fast_forward</Reward_Param2>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+			</Event>
+			
+			<!-- Disable Fleet Combining -->
+			<Event Name="Underworld_Focus_Demo_Disable_Fleet_Combine">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ENABLE_FLEET_COMBINE</Reward_Type>
+				<Reward_Param1>0</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+			</Event>
+			
+			<!-- Lock planet selection -->
+			<Event Name="Underworld_Focus_Demo_Lock_Planet_Selection">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>LOCK_PLANET_SELECTION</Reward_Type>
+				<Reward_Param1>1</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+			</Event>
+	
+<!-- We don't want the player attacking Kashyyyk.  Don't allow fleets to go there even though it's visible -->
+				<Event Name="Underworld_Focus_Demo_Kashyyyk_Off_Limits">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+					<Reward_Param1>Kashyyyk</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+<!-- We need to disable all land invasions on Kashyyyk.  Don't allow land forces to attack. -->
+				<Event Name="Underworld_Focus_Demo_Kashyyyk_Invasion_Off_Limits">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>ENABLE_INVASION</Reward_Type>
+					<Reward_Param1>Kashyyyk</Reward_Param1>
+					<Reward_Param2>0</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+<!-- We need to disable all land invasions on Felucia.  Don't allow land forces to attack. -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Invasion_Off_Limits">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>ENABLE_INVASION</Reward_Type>
+					<Reward_Param1>Felucia</Reward_Param1>
+					<Reward_Param2>0</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+<!-- For when the player moves an inappropriate fleet to Kashyyyk. -->
+					<Event Name="Underworld_Focus_Demo_Kashyyyk_Bounced">
+						<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+						<Event_Param1>Kashyyyk</Event_Param1>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_18</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_18</Reward_Param8>
+						<Reward_Param9>Tyber_Loop</Reward_Param9>
+						<Reward_Param10>1</Reward_Param10>
+						<Perpetual>True</Perpetual>
+					</Event>
+					
+							<Event Name="Underworld_Focus_Demo_Kashyyyk_Bounced_Speech_Done">
+								<Event_Type>STORY_SPEECH_DONE</Event_Type>
+								<Event_Param1>FOCUS_DEMO_18</Event_Param1>
+								<Reward_Type>SCREEN_TEXT</Reward_Type>
+								<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_18</Reward_Param1>
+								<Reward_Param4>remove</Reward_Param4>
+								<Prereq>Underworld_Focus_Demo_Kashyyyk_Bounced</Prereq>
+							</Event>
+					
+					<Event Name="Underworld_Focus_Demo_Kashyyyk_Allow_Saboteurs">
+						<Event_Type>STORY_ENTER</Event_Type>
+						<Event_Param1>Kashyyyk</Event_Param1>
+						<Event_Param3>Underworld_Saboteur_Team</Event_Param3>
+						<Event_Param6>1</Event_Param6>
+						<Prereq>Underworld_Focus_Demo_Kashyyyk_Off_Limits</Prereq>
+					</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Autoresolve_Off">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+	
+	<!--*****************Give player all black market tech but stealth*****************-->
+				<Event Name="Underworld_Focus_Demo_Give_Disruption">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Disruptor_Tech</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Destruct">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Strategic_Demolitions</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Weapon_Sync">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Weapon_Sync</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Point_Defense">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Point_Defense_System</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Sensor_Jamming">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Sensor_Jamming</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Concussion_Grenade">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Advanced_Concussion_Tech</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Defensive_Mine">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Defensive_Mine_Tech</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Shield_Leech">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Shield_Redistribution</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Give_Remote_Weapon">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Remote_Weapon_Systems</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Respawn_Silri_Cloaking">
+					<Event_Type>STORY_BUY_BLACK_MARKET</Event_Type>
+					<Event_Param1>Cloaking_Tech</Event_Param1>
+				</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Destroy_Silri_After_Purchase">
+					<Event_Type>STORY_ELAPSED</Event_Type>
+					<Event_Param1>1</Event_Param1>
+					<Reward_Type>REMOVE_UNIT</Reward_Type>
+					<Reward_Param1>Silri_Team</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Respawn_Silri_Cloaking</Prereq>
+				</Event>
+				
+							<Event Name="Underworld_Focus_Demo_Spawn_Silri_After_Purchase">
+								<Event_Type>STORY_TRIGGER</Event_Type>
+								<Prereq>Underworld_Focus_Demo_Destroy_Silri_After_Purchase</Prereq>
+							</Event>
+
+		<Event Name="Underworld_Focus_Demo_Reveal_00">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Kashyyyk</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+		</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Intro_Text_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_CAMPAIGN_SINGLE_FOCUS_INTRO_U</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>CAMPAIGN_SINGLE_FOCUS_INTRO_U</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Intro_Text_00_Speech_Done">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>CAMPAIGN_SINGLE_FOCUS_INTRO_U</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_CAMPAIGN_SINGLE_FOCUS_INTRO_U</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Focus_Demo_Intro_Text_00</Prereq>
+				</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Intro_Text_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_24</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Focus_Demo_Intro_Text_00_Speech_Done</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Intro_Text_01_Speech_Done">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>FOCUS_DEMO_24</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_24</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Focus_Demo_Intro_Text_01</Prereq>
+				</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Intro_Text_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_25</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Focus_Demo_Intro_Text_01_Speech_Done</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Intro_Text_02_Speech_Done">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>FOCUS_DEMO_25</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_25</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Focus_Demo_Intro_Text_02</Prereq>
+				</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Text_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_00</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_00</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Intro_Text_02_Speech_Done</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Text_00_Speech_Done">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>FOCUS_DEMO_00</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_00</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Focus_Demo_Text_00</Prereq>
+				</Event>
+				
+						<Event Name="Underworld_Focus_Demo_Text_00_Remove_Movie">
+							<Event_Type>STORY_TRIGGER</Event_Type>
+							<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+							<Prereq>Underworld_Focus_Demo_Text_00_Speech_Done</Prereq>
+						</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Text_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_01</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Text_00</Prereq>
+	</Event>
+	
+		<Event Name="Underworld_Focus_Demo_Flash_Saboteur">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+			<Reward_Param1>NalHutta</Reward_Param1>
+			<Reward_Param2>FLASH_FLEET</Reward_Param2>
+			<Reward_Param3>1</Reward_Param3>
+			<Prereq>Underworld_Focus_Demo_Text_00</Prereq>
+		</Event>
+		
+				<Event Name="Underworld_Focus_Demo_Flash_Saboteur_Remove">
+					<Event_Type>STORY_GENERIC</Event_Type>
+					<Event_Param1>start_fleet_drag</Event_Param1>
+					<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+					<Prereq>Underworld_Focus_Demo_Flash_Saboteur</Prereq>
+				</Event>
+		
+		<!-- Show the Spread Corruption Slot on Kashyyyk -->
+			<Event Name="Underworld_Focus_Demo_Spread_Corruption_Show_Slot">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+				<Reward_Param1>KASHYYYK</Reward_Param1>
+				<Reward_Param2>CORRUPTION_SLOT</Reward_Param2>
+				<Reward_Param3></Reward_Param3>
+				<Prereq>Underworld_Focus_Demo_Flash_Saboteur</Prereq>
+			</Event>
+		
+		<!-- Flash Kashyyyk Special Slot -->
+			<Event Name="Underworld_Focus_Demo_Spread_Corruption_Flash_Slot">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>0</Event_Param1>
+				<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+				<Reward_Param1>Kashyyyk</Reward_Param1>
+				<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+				<Prereq>Underworld_Focus_Demo_Spread_Corruption_Show_Slot</Prereq> 
+			</Event>
+				
+					<Event Name="Underworld_Focus_Demo_Spread_Corruption_Flash_Slot_Remove">
+						<Event_Type>STORY_GENERIC</Event_Type>
+						<Event_Param1>start_fleet_drag</Event_Param1>
+						<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Spread_Corruption_Flash_Slot</Prereq>
+					</Event>
+							
+				<Event Name="Underworld_Focus_Demo_Narrator_Text_37">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>MULTIMEDIA</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_37</Reward_Param1>
+					<Reward_Param2>-1</Reward_Param2>
+					<Reward_Param8>FOCUS_DEMO_37</Reward_Param8>
+					<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+					<Prereq>Underworld_Focus_Demo_Text_00_Speech_Done</Prereq>
+				</Event>
+				
+							<Event Name="Underworld_Focus_Demo_Narrator_Text_37_Speech_Done">
+								<Event_Type>STORY_SPEECH_DONE</Event_Type>
+								<Event_Param1>FOCUS_DEMO_37</Event_Param1>
+								<Reward_Type>SCREEN_TEXT</Reward_Type>
+								<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_37</Reward_Param1>
+								<Reward_Param4>remove</Reward_Param4>
+								<Prereq>Underworld_Focus_Demo_Narrator_Text_37</Prereq>
+							</Event>
+		
+				<Event Name="Underworld_Focus_Demo_Unlock_Controls_For_Intro">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>0</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Narrator_Text_37_Speech_Done</Prereq>
+				</Event>
+				
+						<!-- Unlock Scrolling -->	
+						<Event Name="Underworld_Focus_Demo_Scroll_Lock_01">
+							<Event_Type>STORY_TRIGGER</Event_Type>
+							<Reward_Type>SCROLL_LOCK</Reward_Type>
+							<Reward_Param1>0</Reward_Param1>
+							<Prereq>Underworld_Focus_Demo_Unlock_Controls_For_Intro</Prereq>
+						</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Increase_Corruption">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>increase_corruption</Event_Param1>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Flash_Saboteur</Prereq>
+	</Event>
+	
+	<!-- Hide the Spread Corruption Slot on Kashyyyk -->
+			<Event Name="Underworld_Focus_Demo_Spread_Corruption_Hide_Slot">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+				<Reward_Param1>Kashyyyk</Reward_Param1>
+				<Reward_Param2>CORRUPTION_SLOT</Reward_Param2>
+				<Reward_Param3>0</Reward_Param3>
+				<Prereq>Underworld_Focus_Demo_Increase_Corruption</Prereq>
+			</Event>
+	
+<!-- We don't want the player sending any saboteurs to Kashyyyk.  Disabling the event that allows them. -->
+				<Event Name="Underworld_Focus_Demo_Kashyyyk_Off_Limits_01">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Underworld_Focus_Demo_Kashyyyk_Allow_Saboteurs</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption</Prereq>
+				</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Spawn_Saboteur_00">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SPAWN_HERO</Reward_Type>
+					<Reward_Param1>Underworld_Saboteur_Team</Reward_Param1>
+					<Reward_Param2>NalHutta</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption</Prereq>
+				</Event>
+	
+				<!-- Lock Scrolling -->	
+				<Event Name="Underworld_Focus_Demo_Scroll_Lock_02">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SCROLL_LOCK</Reward_Type>
+					<Reward_Param1>1</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption</Prereq>
+				</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Reveal_01">
+		<Event_Type>STORY_CORRUPTION_INCREASED</Event_Type>		
+		<Event_Param1>Kashyyyk</Event_Param1>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Felucia</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_Increase_Corruption</Prereq>
+	</Event>
+	
+<!-- We're going to have a mission on Felucia.  Don't allow fleets to go there even though it's visible -->
+			<Event Name="Underworld_Focus_Demo_Felucia_Off_Limits">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+				<Reward_Param1>Felucia</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Underworld_Focus_Demo_Reveal_01</Prereq>
+			</Event>
+			
+			<!--
+			<Event Name="Underworld_Focus_Demo_FELUCIA_Setup_for_Space">
+				<Event_Type>STORY_SPACE_TACTICAL</Event_Type>
+				<Event_Param1>Story_Plots_Focus_Demo_Felucia_Space_Tactical.XML</Event_Param1>
+				<Event_Param2>Felucia</Event_Param2>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				<Perpetual>True</Perpetual>
+			</Event>
+			
+			<Event Name="Underworld_Focus_Demo_FELUCIA_Setup_for_Land">
+				<Event_Type>STORY_LAND_TACTICAL</Event_Type>
+				<Event_Param1>Story_Plots_Focus_Demo_Felucia_Land_Tactical.XML</Event_Param1>
+				<Event_Param2>Felucia</Event_Param2>
+				<Prereq>Underworld_Focus_Demo_Begin</Prereq>
+				<Perpetual>True</Perpetual>
+			</Event>
+			-->	
+	
+			<Event Name="Underworld_Focus_Demo_Corruption_Completed_00">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_01</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Reveal_01</Prereq>
+			</Event>
+			
+	
+	
+	<Event Name="Underworld_Focus_Demo_Lock_Controls_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Corruption_Completed_00</Prereq>
+	</Event>
+	
+				<!-- Lock Scrolling -->	
+				<Event Name="Underworld_Focus_Demo_Scroll_Lock_03">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SCROLL_LOCK</Reward_Type>
+					<Reward_Param1>1</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Lock_Controls_01</Prereq>
+				</Event>
+			
+	<Event Name="Underworld_Focus_Demo_Zoom_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>		
+		<Event_Param1>Felucia</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7></Reward_Param7>
+		<Reward_Param8>FOCUS_DEMO_26</Reward_Param8>
+		<Prereq>Underworld_Focus_Demo_Lock_Controls_01</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Select_Kashyyyk">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+						<Reward_Type>SELECT_PLANET</Reward_Type>
+						<Reward_Param1>kashyyyk</Reward_Param1>
+						<Prereq>Underworld_Focus_Demo_Zoom_Hint</Prereq>
+					</Event>
+					
+					<Event Name="Underworld_Focus_Demo_Zoom_In_00">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>ZOOM_IN</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Select_Kashyyyk</Prereq>
+					</Event>
+													
+					
+					<Event Name="Underworld_Focus_Demo_Zoom_In_01">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>3</Event_Param1>
+						<Reward_Type>ZOOM_IN</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Zoom_In_00</Prereq>
+					</Event>
+					
+		
+					<Event Name="Underworld_Focus_Demo_Zoom_Hint_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_26</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_26</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Zoom_Hint</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Zoom_Hint_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Zoom_Hint_Speech_Done</Prereq>
+										</Event>
+										
+					<Event Name="Underworld_Focus_Demo_Narrator_Text_38">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>2</Event_Param1>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_38</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_38</Reward_Param8>
+						<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+						<Prereq>Underworld_Focus_Demo_Zoom_Hint_Speech_Done</Prereq>
+					</Event>
+					
+								<Event Name="Underworld_Focus_Demo_Narrator_Text_38_Speech_Done">
+									<Event_Type>STORY_SPEECH_DONE</Event_Type>
+									<Event_Param1>FOCUS_DEMO_38</Event_Param1>
+									<Reward_Type>SCREEN_TEXT</Reward_Type>
+									<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_38</Reward_Param1>
+									<Reward_Param4>remove</Reward_Param4>
+									<Prereq>Underworld_Focus_Demo_Narrator_Text_38</Prereq>
+								</Event>
+										
+					<Event Name="Underworld_Focus_Demo_Zoom_Out_00">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>1</Event_Param1>
+						<Reward_Type>ZOOM_OUT</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Narrator_Text_38_Speech_Done</Prereq>
+					</Event>
+					
+					<Event Name="Underworld_Focus_Demo_Zoom_Out_01">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>1</Event_Param1>
+						<Reward_Type>ZOOM_OUT</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Zoom_Out_00</Prereq>
+					</Event>
+	
+	
+	
+	
+	<Event Name="Underworld_Focus_Demo_Saboteur_Deployed">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_02</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Zoom_Out_01</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Focus_Demo_Saboteur_Deployed_Speech_Done">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>FOCUS_DEMO_02</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+				</Event>
+							
+							<Event Name="Underworld_Focus_Demo_UnLock_Controls_01">
+								<Event_Type>STORY_TRIGGER</Event_Type>
+								<Reward_Type>LOCK_CONTROLS</Reward_Type>
+								<Reward_Param1>0</Reward_Param1>
+								<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_Speech_Done</Prereq>
+							</Event>
+							
+										<!-- Unlock Scrolling -->	
+										<Event Name="Underworld_Focus_Demo_Scroll_Lock_04">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>SCROLL_LOCK</Reward_Type>
+											<Reward_Param1>0</Reward_Param1>
+											<Prereq>Underworld_Focus_Demo_UnLock_Controls_01</Prereq>
+										</Event>
+				
+									<Event Name="Underworld_Focus_Demo_Saboteur_Deployed_Remove_Movie">
+										<Event_Type>STORY_TRIGGER</Event_Type>
+										<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+										<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_Speech_Done</Prereq>
+									</Event>
+									
+					<Event Name="Underworld_Focus_Demo_Flash_Silri">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>10</Event_Param1>
+						<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+						<Reward_Param1>NalHutta</Reward_Param1>
+						<Reward_Param2>FLASH_FLEET</Reward_Param2>
+						<Reward_Param3>2</Reward_Param3>
+						<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+					</Event>
+					
+									<!-- Show the Buy Slot on Kashyyyk -->
+									<Event Name="Underworld_Focus_Demo_Buy_Show_Slot">
+										<Event_Type>STORY_TRIGGER</Event_Type>
+										<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+										<Reward_Param1>KASHYYYK</Reward_Param1>
+										<Reward_Param2>BLACK_MARKET_SLOT</Reward_Param2>
+										<Reward_Param3></Reward_Param3>
+										<Prereq>Underworld_Focus_Demo_Flash_Silri</Prereq>
+									</Event>
+									
+									<!-- Flash Kashyyyk Special Slot -->
+									<Event Name="Underworld_Focus_Demo_Buy_Flash_Slot">
+										<Event_Type>STORY_ELAPSED</Event_Type>
+										<Event_Param1>0</Event_Param1>
+										<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+										<Reward_Param1>Kashyyyk</Reward_Param1>
+										<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+										<Prereq>Underworld_Focus_Demo_Buy_Show_Slot</Prereq> 
+									</Event>
+									
+												
+				
+					<Event Name="Underworld_Focus_Demo_Kashyyyk_Allow_Silri">
+						<Event_Type>STORY_ENTER</Event_Type>
+						<Event_Param1>Kashyyyk</Event_Param1>
+						<Event_Param3>Silri_Team</Event_Param3>
+						<Event_Param6>1</Event_Param6>
+						<Prereq>Underworld_Focus_Demo_Flash_Silri</Prereq>
+					</Event>
+				
+									<Event Name="Underworld_Focus_Demo_Flash_Silri_Remove">
+										<Event_Type>STORY_GENERIC</Event_Type>
+										<Event_Param1>start_fleet_drag</Event_Param1>
+										<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+										<Prereq>Underworld_Focus_Demo_Flash_Silri</Prereq>
+									</Event>
+
+<!--Highlight cloaking tech when window is opened.-->
+			<Event Name="Underworld_Focus_Demo_Highlight_Cloaking">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>open_black_market_menu</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>bm_0300</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+			</Event>
+			
+						<!-- Hide the Buy Slot on Kashyyyk -->
+						<Event Name="Underworld_Focus_Demo_Buy_Hide_Slot">
+							<Event_Type>STORY_TRIGGER</Event_Type>
+							<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+							<Reward_Param1>KASHYYYK</Reward_Param1>
+							<Reward_Param2>BLACK_MARKET_SLOT</Reward_Param2>
+							<Reward_Param3>0</Reward_Param3>
+							<Prereq>Underworld_Focus_Demo_Highlight_Cloaking</Prereq>
+						</Event>
+						
+								<Event Name="Underworld_Focus_Demo_Buy_Flash_Slot_Remove">
+									<Event_Type>STORY_TRIGGER</Event_Type>
+									<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+									<Prereq>Underworld_Focus_Demo_Buy_Hide_Slot</Prereq>
+								</Event>
+			
+<!--Lock Controls while the narrator describes the black market window.-->
+				<Event Name="Underworld_Focus_Demo_Lock_Controls_For_BM_Narrator">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>1</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Highlight_Cloaking</Prereq>
+				</Event>
+			
+					<Event Name="Underworld_Focus_Demo_Narrator_Text_39">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>0</Event_Param1>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_39</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_39</Reward_Param8>
+						<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+						<Prereq>Underworld_Focus_Demo_Highlight_Cloaking</Prereq>
+					</Event>
+					
+								<Event Name="Underworld_Focus_Demo_Narrator_Text_39_Speech_Done">
+									<Event_Type>STORY_SPEECH_DONE</Event_Type>
+									<Event_Param1>FOCUS_DEMO_39</Event_Param1>
+									<Reward_Type>SCREEN_TEXT</Reward_Type>
+									<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_39</Reward_Param1>
+									<Reward_Param4>remove</Reward_Param4>
+									<Prereq>Underworld_Focus_Demo_Narrator_Text_39</Prereq>
+								</Event>
+
+<!--Unlock controls after the narrator describes the black market window.-->				
+				<Event Name="Underworld_Focus_Demo_Unlock_Controls_For_BM_Narrator">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>0</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Narrator_Text_39_Speech_Done</Prereq>
+				</Event>
+			
+<!--Remove Highlight from cloaking-->
+			<Event Name="Underworld_Focus_Demo_Remove_Highlight_Cloaking">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>click</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Underworld_Focus_Demo_Highlight_Cloaking</Prereq>
+			</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Deploy_Zann">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_03</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Remove_Text_03">
+		<Event_Type>STORY_BUY_BLACK_MARKET</Event_Type>
+		<Event_Param1>Cloaking_Tech</Event_Param1>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_03</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+	</Event>
+	
+<!-- We don't want the player sending Silri to Kashyyyk.  Disabling the event that allows her to move to Kashyyyk. -->
+				<Event Name="Underworld_Focus_Demo_Kashyyyk_Off_Limits_02">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Underworld_Focus_Demo_Kashyyyk_Allow_Silri</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Remove_Text_03</Prereq>
+				</Event>
+	
+			<Event Name="Underworld_Focus_Demo_Black_Market_Text">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_27</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Reward_Param8>FOCUS_DEMO_27</Reward_Param8>
+				<Reward_Param9>Tyber_Loop</Reward_Param9>
+				<Reward_Param10>1</Reward_Param10>
+				<Prereq>Underworld_Focus_Demo_Remove_Text_03</Prereq>
+			</Event>
+			
+							<Event Name="Underworld_Focus_Demo_Black_Market_Text_Speech_Done">
+								<Event_Type>STORY_SPEECH_DONE</Event_Type>
+								<Event_Param1>FOCUS_DEMO_27</Event_Param1>
+								<Reward_Type>SCREEN_TEXT</Reward_Type>
+								<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_27</Reward_Param1>
+								<Reward_Param4>remove</Reward_Param4>
+								<Prereq>Underworld_Focus_Demo_Black_Market_Text</Prereq>
+							</Event>
+							
+												<Event Name="Underworld_Focus_Demo_Black_Market_Text_Remove_Movie">
+													<Event_Type>STORY_TRIGGER</Event_Type>
+													<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+													<Prereq>Underworld_Focus_Demo_Black_Market_Text_Speech_Done</Prereq>
+												</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Capture_Felucia">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_04</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Black_Market_Text_Speech_Done</Prereq>
+	</Event>
+	
+						<Event Name="Underworld_Focus_Demo_Capture_Felucia_Speech_Done">
+							<Event_Type>STORY_SPEECH_DONE</Event_Type>
+							<Event_Param1>FOCUS_DEMO_04</Event_Param1>
+							<Reward_Type>SCREEN_TEXT</Reward_Type>
+							<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_04</Reward_Param1>
+							<Reward_Param4>remove</Reward_Param4>
+							<Prereq>Underworld_Focus_Demo_Capture_Felucia</Prereq>
+						</Event>
+						
+												<Event Name="Underworld_Focus_Demo_Capture_Felucia_Remove_Movie">
+													<Event_Type>STORY_TRIGGER</Event_Type>
+													<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+													<Prereq>Underworld_Focus_Demo_Capture_Felucia_Speech_Done</Prereq>
+												</Event>
+	
+			<Event Name="Underworld_Focus_Demo_Spread_Corruption_Felucia">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_14</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Capture_Felucia</Prereq>
+			</Event>
+			
+			<!-- Allow Saboteurs to corrupt felucia -->
+			<Event Name="Underworld_Focus_Demo_Felucia_Allow_Saboteurs">
+				<Event_Type>STORY_ENTER</Event_Type>
+				<Event_Param1>Felucia</Event_Param1>
+				<Event_Param3>Underworld_Saboteur_Team</Event_Param3>
+				<Event_Param6>1</Event_Param6>
+				<Prereq>Underworld_Focus_Demo_Spread_Corruption_Felucia</Prereq>
+			</Event>
+			
+						<Event Name="Underworld_Focus_Demo_Flash_Saboteur_01">
+							<Event_Type>STORY_TRIGGER</Event_Type>
+							<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+							<Reward_Param1>NalHutta</Reward_Param1>
+							<Reward_Param2>FLASH_FLEET</Reward_Param2>
+							<Reward_Param3>1</Reward_Param3>
+							<Prereq>Underworld_Focus_Demo_Spread_Corruption_Felucia</Prereq>
+						</Event>
+						
+											<Event Name="Underworld_Focus_Demo_Flash_Saboteur_Remove_01">
+												<Event_Type>STORY_GENERIC</Event_Type>
+												<Event_Param1>start_fleet_drag</Event_Param1>
+												<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+												<Prereq>Underworld_Focus_Demo_Flash_Saboteur_01</Prereq>
+											</Event>
+											
+						<!-- Show the Corruption Slot on Felucia -->
+						<Event Name="Underworld_Focus_Demo_Felucia_Corruption_Show_Slot">
+							<Event_Type>STORY_ELAPSED</Event_Type>
+							<Event_Param1>2</Event_Param1>
+							<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+							<Reward_Param1>FELUCIA</Reward_Param1>
+							<Reward_Param2>CORRUPTION_SLOT</Reward_Param2>
+							<Reward_Param3></Reward_Param3>
+							<Prereq>Underworld_Focus_Demo_Spread_Corruption_Felucia</Prereq>
+						</Event>
+						
+						<!-- Flash Felucia Special Slot -->
+						<Event Name="Underworld_Focus_Demo_Felucia_Corruption_Flash_Slot">
+							<Event_Type>STORY_ELAPSED</Event_Type>
+							<Event_Param1>0</Event_Param1>
+							<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+							<Reward_Param1>Felucia</Reward_Param1>
+							<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+							<Prereq>Underworld_Focus_Demo_Felucia_Corruption_Show_Slot</Prereq> 
+						</Event>
+											
+		<Event Name="Underworld_Focus_Demo_Increase_Corruption_Felucia">
+			<Event_Type>STORY_GENERIC</Event_Type>
+			<Event_Param1>increase_corruption</Event_Param1>
+			<Reward_Type>LOCK_CONTROLS</Reward_Type>
+			<Reward_Param1>1</Reward_Param1>
+			<Prereq>Underworld_Focus_Demo_Spread_Corruption_Felucia</Prereq>
+		</Event>
+		
+				<Event Name="Underworld_Focus_Demo_Felucia_Allow_Saboteurs_01">
+					<Event_Type>STORY_ENTER</Event_Type>
+					<Event_Param1>Felucia</Event_Param1>
+					<Event_Param3>Underworld_Saboteur_Team</Event_Param3>
+					<Event_Param6>1</Event_Param6>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption_Felucia</Prereq>
+				</Event>
+		
+				<!-- Hide the Corruption Slot on Felucia -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Corruption_Hide_Slot">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+					<Reward_Param1>FELUCIA</Reward_Param1>
+					<Reward_Param2>CORRUPTION_SLOT</Reward_Param2>
+					<Reward_Param3>0</Reward_Param3>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption_Felucia</Prereq>
+				</Event>
+				
+				<!-- Remove Flash Felucia Special Slot -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Corruption_Flash_Slot_Remove">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption_Felucia</Prereq>
+				</Event>
+		
+				<!-- Lock Scrolling -->	
+				<Event Name="Underworld_Focus_Demo_Scroll_Lock_05">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SCROLL_LOCK</Reward_Type>
+					<Reward_Param1>1</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Increase_Corruption_Felucia</Prereq>
+				</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Remove_Text_04">
+			<Event_Type>STORY_CORRUPTION_INCREASED</Event_Type>		
+			<Event_Param1>Felucia</Event_Param1>
+			<Prereq>Underworld_Focus_Demo_Saboteur_Deployed</Prereq>
+		</Event>
+		
+			<Event Name="Underworld_Focus_Demo_Remove_Text_14">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_14</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Remove_Text_04</Prereq>
+			</Event>
+			
+	<Event Name="Underworld_Focus_Demo_Felucia_Corrupted">
+		<Event_Type>STORY_TRIGGER</Event_Type>		
+		<Event_Param1>Felucia</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_28</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Remove_Text_04</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Felucia_Corrupted_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_28</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_28</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Felucia_Corrupted</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Felucia_Corrupted_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Felucia_Corrupted_Speech_Done</Prereq>
+										</Event>
+<!--	
+	<Event Name="Underworld_Focus_Demo_Lock_Controls_For_Felucia_Zoom">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Felucia_Corrupted</Prereq>
+	</Event>
+-->	
+				
+										
+		<Event Name="Underworld_Focus_Demo_Select_Felucia">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>SELECT_PLANET</Reward_Type>
+			<Reward_Param1>felucia</Reward_Param1>
+			<Prereq>Underworld_Focus_Demo_Felucia_Corrupted</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Zoom_In_Felucia_00">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>ZOOM_IN</Reward_Type>
+			<Prereq>Underworld_Focus_Demo_Select_Felucia</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Zoom_In_Felucia_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>2</Event_Param1>
+			<Reward_Type>ZOOM_IN</Reward_Type>
+			<Prereq>Underworld_Focus_Demo_Zoom_In_Felucia_00</Prereq>
+		</Event>
+		
+				<Event Name="Underworld_Focus_Demo_Highlight_Ion_Cannon_Felucia_00">
+					<Event_Type>STORY_ELAPSED</Event_Type>
+					<Event_Param1>2</Event_Param1>
+					<Reward_Type>FLASH_ADVANCED_MAP_OBJECT</Reward_Type>
+					<Reward_Param1>Ground_Ion_Cannon</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Zoom_In_Felucia_01</Prereq>
+				</Event>
+				
+						<Event Name="Underworld_Focus_Demo_Highlight_Ion_Cannon_Remove">
+							<Event_Type>STORY_ELAPSED</Event_Type>
+							<Event_Param1>6</Event_Param1>
+							<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+							<Prereq>Underworld_Focus_Demo_Highlight_Ion_Cannon_Felucia_00</Prereq>
+						</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Zoom_Out_Felucia_00">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>10</Event_Param1>
+						<Reward_Type>ZOOM_OUT</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Zoom_In_Felucia_01</Prereq>
+					</Event>
+					
+					<Event Name="Underworld_Focus_Demo_Zoom_Out_Felucia_01">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>1</Event_Param1>
+						<Reward_Type>ZOOM_OUT</Reward_Type>
+						<Prereq>Underworld_Focus_Demo_Zoom_Out_Felucia_00</Prereq>
+					</Event>
+					
+			<!-- Unlock planet selection -->
+			<Event Name="Underworld_Focus_Demo_Unlock_Planet_Selection">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>LOCK_PLANET_SELECTION</Reward_Type>
+				<Reward_Param1>0</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Zoom_Out_Felucia_01</Prereq>
+			</Event>			
+		
+	<Event Name="Underworld_Focus_Demo_Saboteur_Deployed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_05</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Zoom_Out_Felucia_01</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Saboteur_Deployed_01_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_05</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_05</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_01</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Saboteur_Deployed_01_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_01_Speech_Done</Prereq>
+										</Event>
+										
+								<Event Name="Underworld_Focus_Demo_Unlock_Controls_For_Felucia_Zoom">
+									<Event_Type>STORY_TRIGGER</Event_Type>
+									<Reward_Type>LOCK_CONTROLS</Reward_Type>
+									<Reward_Param1>0</Reward_Param1>
+									<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_01_Speech_Done</Prereq>
+								</Event>
+								
+											<!-- unlock Scrolling -->	
+											<Event Name="Underworld_Focus_Demo_Scroll_Lock_06">
+												<Event_Type>STORY_TRIGGER</Event_Type>
+												<Reward_Type>SCROLL_LOCK</Reward_Type>
+												<Reward_Param1>0</Reward_Param1>
+												<Prereq>Underworld_Focus_Demo_Unlock_Controls_For_Felucia_Zoom</Prereq>
+											</Event>
+	
+		<Event Name="Underworld_Focus_Demo_Spawn_Saboteur_01">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>SPAWN_HERO</Reward_Type>
+			<Reward_Param1>Underworld_Saboteur_Team</Reward_Param1>
+			<Reward_Param2>NalHutta</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_01</Prereq>
+		</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Sabotage_Task_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_06</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Saboteur_Deployed_01_Speech_Done</Prereq>
+	</Event>
+	
+<!-- Show the Sabotage Slot on Felucia -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Sabotage_Show_Slot">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+					<Reward_Param1>FELUCIA</Reward_Param1>
+					<Reward_Param2>SABOTAGE_SLOT</Reward_Param2>
+					<Reward_Param3></Reward_Param3>
+					<Prereq>Underworld_Focus_Demo_Sabotage_Task_00</Prereq>
+				</Event>
+				
+				<!-- Flash Felucia Special Slot -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Sabotage_Flash_Slot">
+					<Event_Type>STORY_ELAPSED</Event_Type>
+					<Event_Param1>0</Event_Param1>
+					<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+					<Reward_Param1>Felucia</Reward_Param1>
+					<Reward_Param2>FLASH_ABILITY_SLOT</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Felucia_Sabotage_Show_Slot</Prereq> 
+				</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Flash_Saboteur_02">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+						<Reward_Param1>NalHutta</Reward_Param1>
+						<Reward_Param2>FLASH_FLEET</Reward_Param2>
+						<Reward_Param3>1</Reward_Param3>
+						<Prereq>Underworld_Focus_Demo_Spawn_Saboteur_01</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Flash_Saboteur_Remove_02">
+											<Event_Type>STORY_GENERIC</Event_Type>
+											<Event_Param1>start_fleet_drag</Event_Param1>
+											<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Flash_Saboteur_02</Prereq>
+										</Event>
+			
+			<!-- Remove the Sabotage Slot flash on Felucia -->				
+			<Event Name="Underworld_Focus_Demo_Felucia_Sabotage_Remove_Flash">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>open_galactic_sabotage_menu</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Underworld_Focus_Demo_Flash_Saboteur_Remove_02</Prereq>
+			</Event>
+			
+			<!-- Hide the Sabotage Slot on Felucia -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Sabotage_Hide_Slot">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>SHOW_SPECIAL_SLOT</Reward_Type>
+					<Reward_Param1>FELUCIA</Reward_Param1>
+					<Reward_Param2>SABOTAGE_SLOT</Reward_Param2>
+					<Reward_Param3>0</Reward_Param3>
+					<Prereq>Underworld_Focus_Demo_Felucia_Sabotage_Remove_Flash</Prereq>
+				</Event>
+	
+<!--Highlight Ion Cannon tech when sabotage window is opened.-->
+			<Event Name="Underworld_Focus_Demo_Highlight_Ion">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>open_galactic_sabotage_menu</Event_Param1>
+				<Prereq>Underworld_Focus_Demo_Sabotage_Task_00</Prereq>
+			</Event>
+			
+			<Event Name="Underworld_Focus_Demo_Highlight_Ion_Delay">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>.125</Event_Param1>
+				<Reward_Type>FLASH_GUI</Reward_Type>
+				<Reward_Param1>bm_0000</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Highlight_Ion</Prereq>
+			</Event>
+
+<!--Lock Controls while the narrator describes the Sabotage window.-->
+				<Event Name="Underworld_Focus_Demo_Lock_Controls_For_Sabotage_Narrator">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>1</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Highlight_Ion</Prereq>
+				</Event>
+			
+					<Event Name="Underworld_Focus_Demo_Narrator_Text_40">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>0</Event_Param1>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_40</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>
+						<Reward_Param8>FOCUS_DEMO_40</Reward_Param8>
+						<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+						<Prereq>Underworld_Focus_Demo_Highlight_Ion</Prereq>
+					</Event>
+					
+								<Event Name="Underworld_Focus_Demo_Narrator_Text_40_Speech_Done">
+									<Event_Type>STORY_SPEECH_DONE</Event_Type>
+									<Event_Param1>FOCUS_DEMO_40</Event_Param1>
+									<Reward_Type>SCREEN_TEXT</Reward_Type>
+									<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_40</Reward_Param1>
+									<Reward_Param4>remove</Reward_Param4>
+									<Prereq>Underworld_Focus_Demo_Narrator_Text_40</Prereq>
+								</Event>
+
+<!--Unlock controls after the narrator describes the black market window.-->				
+				<Event Name="Underworld_Focus_Demo_Unlock_Controls_For_Sabotage_Narrator">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>LOCK_CONTROLS</Reward_Type>
+					<Reward_Param1>0</Reward_Param1>
+					<Prereq>Underworld_Focus_Demo_Narrator_Text_40_Speech_Done</Prereq>
+				</Event>			
+
+<!--Remove Highlight from cloaking-->
+			<Event Name="Underworld_Focus_Demo_Remove_Highlight_Ion">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>click</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Prereq>Underworld_Focus_Demo_Highlight_Ion</Prereq>
+			</Event>
+	
+		<Event Name="Underworld_Focus_Demo_Sabotage_Task_Completed">
+			<Event_Type>STORY_GALACTIC_SABOTAGE</Event_Type>
+			<Event_Param1>Ground_Ion_Cannon</Event_Param1>
+			<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_06</Reward_Param1>
+			<Prereq>Underworld_Focus_Demo_Sabotage_Task_00</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Sabotage_Base_Shield">
+			<Event_Type>STORY_GALACTIC_SABOTAGE</Event_Type>
+			<Event_Param1>R_Ground_Base_Shield</Event_Param1>
+			<Perpetual>True</Perpetual>
+		</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Bribe_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_07</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Sabotage_Task_Completed</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Bribe_Text_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_07</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_07</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Bribe_Text</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Bribe_Text_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Bribe_Text_Speech_Done</Prereq>
+										</Event>
+
+		
+	<Event Name="Underworld_Focus_Demo_Bribe_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7></Reward_Param7>
+		<Reward_Param8>FOCUS_DEMO_08</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Bribe_Text_Speech_Done</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Bribe_Hint_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_08</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_08</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Bribe_Hint</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Bribe_Hint_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Bribe_Hint_Speech_Done</Prereq>
+										</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Attack_Felucia_Space">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_09</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Bribe_Hint</Prereq>
+	</Event>
+	
+<!--Flash space fleet to drag to felucia -->	
+				<Event Name="Underworld_Focus_Demo_Flash_Space_Fleet">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+					<Reward_Param1>NalHutta</Reward_Param1>
+					<Reward_Param2>FLASH_FLEET</Reward_Param2>
+					<Reward_Param3>0</Reward_Param3>
+					<Prereq>Underworld_Focus_Demo_Attack_Felucia_Space</Prereq>
+				</Event>
+				
+				<!-- For when the player moves an inappropriate fleet to Felucia. -->
+				<Event Name="Underworld_Focus_Demo_Felucia_Bounced">
+					<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+					<Event_Param1>Felucia</Event_Param1>
+					<Reward_Type>MULTIMEDIA</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_17</Reward_Param1>
+					<Reward_Param2>-1</Reward_Param2>
+					<Reward_Param8>FOCUS_DEMO_17</Reward_Param8>
+					<Reward_Param9>Tyber_Loop</Reward_Param9>
+					<Reward_Param10>1</Reward_Param10>
+					<Prereq>Underworld_Focus_Demo_Flash_Space_Fleet</Prereq>
+					<Perpetual>True</Perpetual>
+				</Event>
+				
+							<Event Name="Underworld_Focus_Demo_Felucia_Bounced_Speech_Done">
+								<Event_Type>STORY_SPEECH_DONE</Event_Type>
+								<Event_Param1>FOCUS_DEMO_17</Event_Param1>
+								<Reward_Type>SCREEN_TEXT</Reward_Type>
+								<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_17</Reward_Param1>
+								<Reward_Param4>remove</Reward_Param4>
+								<Prereq>Underworld_Focus_Demo_Felucia_Bounced</Prereq>
+							</Event>
+							
+										<Event Name="Underworld_Focus_Demo_Felucia_Bounced_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Felucia_Bounced_Speech_Done</Prereq>
+										</Event>
+				
+				<Event Name="Underworld_Focus_Demo_Felucia_Allow_Tyber">
+					<Event_Type>STORY_ENTER</Event_Type>
+					<Event_Param1>Felucia</Event_Param1>
+					<Event_Param3>Tyber_Zann_Team</Event_Param3>
+					<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+					<Reward_Param1>Felucia</Reward_Param1>
+					<Reward_Param2>0</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Flash_Space_Fleet</Prereq>
+				</Event>
+				
+				
+							<Event Name="Underworld_Focus_Demo_Flash_Space_Fleet_Remove">
+								<Event_Type>STORY_GENERIC</Event_Type>
+								<Event_Param1>start_fleet_drag</Event_Param1>
+								<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+								<Prereq>Underworld_Focus_Demo_Flash_Space_Fleet</Prereq>
+							</Event>
+
+<!--SPACE LINK_TACTIVAL SETUP FOR FELUCIA-->
+
+	<Event Name="Underworld_Focus_Demo_FELUCIA_Setup_for_Space">
+		<Event_Type>STORY_MOVE</Event_Type>
+		<Event_Param1>Tyber_Zann</Event_Param1>
+		<Event_Param2>felucia</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>felucia</Reward_Param1>
+		<Reward_Param2>SPACE</Reward_Param2>
+		<Reward_Param3>Underworld</Reward_Param3>
+		<Reward_Param4>_Space_Planet_Felucia_Tutorial.TED</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param6>Vengeance_Frigate</Reward_Param6>
+		<Reward_Param7>Story_Plots_Focus_Demo_Felucia_Space_Tactical.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<!-- Do we want the prebattle cinematic to play?-->
+		<Reward_Param9>0</Reward_Param9>
+		<!-- Do we want to start the scene faded out?-->
+		<Reward_Param10>0</Reward_Param10>
+		<!-- Do we want to start the scene in letter box mode-->
+		<Reward_Param11>0</Reward_Param11>
+		<Reward_Param12>RETREAT_AI</Reward_Param12>
+		<!-- Show the Battle Pending dialog? -->
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Underworld_Focus_Demo_Sabotage_Task_Completed</Prereq>
+	</Event>
+
+<!--LAND LINK_TACTIVAL SETUP FOR FELUCIA-->
+	<Event Name="Underworld_Focus_Demo_FELUCIA_Setup_Trigger_for_Land_00">
+		<Event_Type>STORY_LAND_ON</Event_Type>
+		<Event_Param1>felucia</Event_Param1>
+		<Event_Param2>FILTER_FRIENDLY_ONLY</Event_Param2>
+		<Prereq>Underworld_Focus_Demo_Attack_Felucia_Space</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_FELUCIA_Link_Tactical_Land">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>felucia</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Underworld</Reward_Param3>
+		<Reward_Param4>_Land_Planet_Felucia_Tutorial.TED</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param6>Tyber_Zann</Reward_Param6>
+		<Reward_Param7>Story_Plots_Focus_Demo_Felucia_Land_Tactical.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<!-- Do we want the prebattle cinematic to play?-->
+		<Reward_Param9>0</Reward_Param9>
+		<!-- Do we want to start the scene faded out?-->
+		<Reward_Param10>1</Reward_Param10>
+		<!-- Do we want to start the scene in letter box mode-->
+		<Reward_Param11>1</Reward_Param11>
+		<Reward_Param12>RETREAT_AI</Reward_Param12>
+		<!-- Show the Battle Pending dialog? -->
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Underworld_Focus_Demo_FELUCIA_Setup_Trigger_for_Land_00</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Felucia_Space_Captured">
+		<Event_Type>STORY_WIN_BATTLES</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Event_Param2>SPACE</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_09</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Attack_Felucia_Space</Prereq>
+	</Event>
+			
+			<Event Name="Underworld_Focus_Demo_Felucia_Allow_Reinforcements">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+				<Reward_Param1>0</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Felucia_Space_Captured</Prereq>
+			</Event>
+			
+			<!-- Enable Fleet Combining -->
+			<Event Name="Underworld_Focus_Demo_Enable_Fleet_Combine">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ENABLE_FLEET_COMBINE</Reward_Type>
+				<Reward_Param1>1</Reward_Param1>
+				<Prereq>Underworld_Focus_Demo_Felucia_Space_Captured</Prereq>
+			</Event>
+	
+				<!-- Disable fast forward -->
+				<Event Name="Underworld_Focus_Demo_Lock_Fast_Forward_01">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_EVENT</Reward_Type>
+					<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+					<Reward_Param2>b_fast_forward</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_Felucia_Space_Captured</Prereq>
+				</Event>
+				
+<!-- We need to enable land invasions on Felucia.  Don't allow land forces to attack. -->
+		<Event Name="Underworld_Focus_Demo_Felucia_Invasion_Turned_On">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>ENABLE_INVASION</Reward_Type>
+			<Reward_Param1>Felucia</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Felucia_Space_Captured</Prereq>
+		</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Attack_Felucia_Land">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_10</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Felucia_Space_Captured</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Attack_Felucia_Land_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_10</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_10</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Attack_Felucia_Land</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Attack_Felucia_Land_Remove_Movie">
+											<Event_Type>STORY_TRIGGER</Event_Type>
+											<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Attack_Felucia_Land_Speech_Done</Prereq>
+										</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Attack_Felucia_Land_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_11</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Attack_Felucia_Land</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Flash_Land_Forces">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+						<Reward_Param1>NalHutta</Reward_Param1>
+						<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+						<Prereq>Underworld_Focus_Demo_Attack_Felucia_Land_Objective</Prereq>
+					</Event>
+					
+					<Event Name="Underworld_Focus_Demo_Flash_Land_Slot">
+						<Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+						<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+						<Reward_Param1>FELUCIA</Reward_Param1>
+						<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+						<Reward_Param4>felucia</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Flash_Land_Forces</Prereq>
+					</Event>
+					
+										<Event Name="Underworld_Focus_Demo_Flash_Land_Forces_Remove">
+											<Event_Type>STORY_GENERIC</Event_Type>
+											<Event_Param1>click</Event_Param1>
+											<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+											<Prereq>Underworld_Focus_Demo_Flash_Land_Forces</Prereq>
+										</Event>
+	
+		<Event Name="Underworld_Focus_Demo_Conquer_Felucia">
+			<Event_Type>STORY_CONQUER</Event_Type>
+			<Event_Param1>Felucia</Event_Param1>
+			<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_11</Reward_Param1>
+			<Prereq>Underworld_Focus_Demo_Attack_Felucia_Land_Objective</Prereq>
+		</Event>
+		
+				<Event Name="Underworld_Focus_Demo_Conquer_Felucia_Battle_Dialog_Closed">
+					<Event_Type>STORY_GENERIC</Event_Type>
+					<Event_Param1>battle_end_closed</Event_Param1>
+					<Prereq>Underworld_Focus_Demo_Conquer_Felucia</Prereq>
+				</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Reveal_Galaxy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>FOCUS_DEMO_13</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Prereq>Underworld_Focus_Demo_Conquer_Felucia_Battle_Dialog_Closed</Prereq>
+	</Event>
+	
+					<Event Name="Underworld_Focus_Demo_Reveal_Galaxy_Speech_Done">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>FOCUS_DEMO_13</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_13</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>
+						<Prereq>Underworld_Focus_Demo_Reveal_Galaxy</Prereq>
+					</Event>
+					
+								<Event Name="Underworld_Focus_Demo_Reveal_Galaxy_Remove_Movie">
+									<Event_Type>STORY_TRIGGER</Event_Type>
+									<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+									<Prereq>Underworld_Focus_Demo_Reveal_Galaxy_Speech_Done</Prereq>
+								</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Tatooine">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Tatooine</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Galaxy</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Shola">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Shola</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Tatooine</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Kuat">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Kuat</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Shola</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_The_Maw">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>The_Maw</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Kuat</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Corellia">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Corellia</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_The_Maw</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_MonCalimari">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>MonCalimari</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Corellia</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Wayland">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Wayland</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_MonCalimari</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Geonosis">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Geonosis</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Wayland</Prereq>
+		</Event>
+		
+		<Event Name="Underworld_Focus_Demo_Reveal_Yavin">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>1</Event_Param1>
+			<Reward_Type>REVEAL_PLANET</Reward_Type>
+			<Reward_Param1>Yavin</Reward_Param1>
+			<Reward_Param2>1</Reward_Param2>
+			<Prereq>Underworld_Focus_Demo_Reveal_Geonosis</Prereq>
+		</Event>
+		
+	<Event Name="Underworld_Focus_Demo_Sabotage_Task_15">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_FOCUS_DEMO_15</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Reveal_Yavin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Remove_Display">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_Focus_Demo_Conquer_Felucia</Prereq>
+	</Event>
+	
+<!-- Disable fast forward -->
+	<Event Name="Underworld_Focus_Demo_Unlock_Fast_Forward">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_fast_forward</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_Conquer_Felucia</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_End_Goal">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_U_FocusDemo_Intro</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>
+		<Story_Tag>End_Tag</Story_Tag>		
+		<Prereq>Underworld_Focus_Demo_Sabotage_Task_15</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Turn_On_Empire_AI">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SWITCH_CONTROL</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Reward_Param2>BasicEmpire</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Turn_On_Rebel_AI">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SWITCH_CONTROL</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Reward_Param2>BasicRebel</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Focus_Demo_Disable_Land_Scripts">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Underworld_Focus_Demo_FELUCIA_Setup_for_Land</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+    </Event>
+    
+    <Event Name="Underworld_Focus_Demo_Disable_Space_Scripts">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Underworld_Focus_Demo_FELUCIA_Setup_for_Space</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+    </Event>
+	
+<!-- Allow Players to now attack Kashyyyk.-->
+			<Event Name="Underworld_Focus_Demo_Kashyyyk_unlock">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+				<Reward_Param1>Kashyyyk</Reward_Param1>
+				<Reward_Param2>0</Reward_Param2>
+				<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+			</Event>
+			
+<!-- We need to enable land invasions on Kashyyyk. -->
+				<Event Name="Underworld_Focus_Demo_Kashyyyk_Invasion_Turned_On">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>ENABLE_INVASION</Reward_Type>
+					<Reward_Param1>Kashyyyk</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Underworld_Focus_Demo_End_Goal</Prereq>
+				</Event>
+			
+</Story>

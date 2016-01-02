@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<Audio>
+
+	<!--                       -->
+	<!-- GENERAL AUDIO SECTION -->
+	<!--                       -->
+
+	<!-- Audio 3D distance factors for Galactic mode -->
+	<Audio_Galactic_3D_Saturation_Distance_Mod> 1.0 </Audio_Galactic_3D_Saturation_Distance_Mod>
+	<Audio_Galactic_3D_Rolloff_Distance_Mod> 1.0 </Audio_Galactic_3D_Rolloff_Distance_Mod>
+	<Audio_Galactic_3D_Listener_Z_Pullback_Dist> 0.0 </Audio_Galactic_3D_Listener_Z_Pullback_Dist>
+
+	<!-- Audio 3D distance factors for Space mode -->
+	<Audio_Space_3D_Saturation_Distance_Mod> 1.5 </Audio_Space_3D_Saturation_Distance_Mod>			<!-- The higher the multiplier, the larger the saturation distances are scaled -->
+	<Audio_Space_3D_Rolloff_Distance_Mod> 2.0 </Audio_Space_3D_Rolloff_Distance_Mod>					<!-- The higher the multiplier, the quicker the rolloff over distance -->
+	<Audio_Space_3D_Listener_Z_Pullback_Dist> 60.0 </Audio_Space_3D_Listener_Z_Pullback_Dist>	<!-- The higher the Z elevation, this higher above the map the listener is -->
+
+	<!-- Audio 3D distance factors for Land mode -->
+	<Audio_Land_3D_Saturation_Distance_Mod> 1.0 </Audio_Land_3D_Saturation_Distance_Mod>			<!-- The higher the multiplier, the larger the saturation distances are scaled -->
+	<Audio_Land_3D_Rolloff_Distance_Mod> 10.0 </Audio_Land_3D_Rolloff_Distance_Mod>  				<!-- The higher the multiplier, the sooner the rolloff over distance -->
+	<Audio_Land_3D_Listener_Z_Pullback_Dist> 60.0 </Audio_Land_3D_Listener_Z_Pullback_Dist>		<!-- The higher the Z elevation, this higher above the map the listener is -->
+	<!-- The higher the above number, the less "centered" on the screen the units SFX will be - advise not going over 100 -->
+
+	<!-- Mapping of enumated map environment types to ambient map SFX beds (map environment type to AmbientMapSound entry (see AmbientMapSounds.xml + SFXEventsAmbient.xml)  -->
+	<Ambient_Map_Sounds> Temperate, Ambient_Map_Sounds_Temperate </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Arctic, Ambient_Map_Sounds_Arctic </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Desert, Ambient_Map_Sounds_Desert </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Forest, Ambient_Map_Sounds_Forest </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Swamp, Ambient_Map_Sounds_Swamp </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Volcanic, Ambient_Map_Sounds_Volcanic </Ambient_Map_Sounds>
+	<Ambient_Map_Sounds> Urban, Ambient_Map_Sounds_Urban </Ambient_Map_Sounds>
+
+	<!-- SFX event to play when a player captures control of a planet an gets the one-time cash reward-->
+	<SFXEvent_Planet_Capture_Bonus_Reward> Unit_Light_Saber_On </SFXEvent_Planet_Capture_Bonus_Reward> 
+
+	<!-- General GUI SFXEvent for playing a bad / negative reinforcement sound -->
+	<SFXEvent_GUI_Negative_Feedback> GUI_Bad_Sound </SFXEvent_GUI_Negative_Feedback>
+
+	<!-- Planet revealed  -->
+	<SFXEvent_Planet_Revealed> GUI_Planet_Mouse_Over </SFXEvent_Planet_Revealed>	<!-- Plays anytime control is gained -->
+
+	<!-- Giving teamate credits in multiplayer -->
+	<SFXEvent_MP_Give_Teammate_Credits> GUI_Credits </SFXEvent_MP_Give_Teammate_Credits>
+
+	<!-- Delay duing "peace" to wait before transitioning tactical battle music back to ambient music -->
+	<Music_Land_Battle_To_Ambient_Peace_Seconds> 15.0 </Music_Land_Battle_To_Ambient_Peace_Seconds>
+	<Music_Space_Battle_To_Ambient_Peace_Seconds> 15.0 </Music_Space_Battle_To_Ambient_Peace_Seconds>
+
+	<!-- Battle load screen music -->
+	<Music_Event_Battle_Load_Screen> Tactical_Battle_Loading_Loop_Event </Music_Event_Battle_Load_Screen> 
+
+	<!-- Battle end summary screen music -->
+	<Music_Event_Battle_End_Summary_Screen_Win> </Music_Event_Battle_End_Summary_Screen_Win>
+	<Music_Event_Battle_End_Summary_Screen_Lose> </Music_Event_Battle_End_Summary_Screen_Lose>
+
+	<Telekinesis_SFXEvent_Loop>Unit_Force_Telekinesis</Telekinesis_SFXEvent_Loop>
+	<Telekinesis_SFXEvent_Damage>Unit_Force_Damage</Telekinesis_SFXEvent_Damage>
+	<Telekinesis_SFXEvent_Slam>Unit_Anim_Tank_Ground_Slam</Telekinesis_SFXEvent_Slam>
+
+	<!-- Command bar button command HUD V/O -->
+	<SFXEvent_Command_Bar_Attack> </SFXEvent_Command_Bar_Attack>
+	<SFXEvent_Command_Bar_Attack_Move> </SFXEvent_Command_Bar_Attack_Move>
+	<SFXEvent_Command_Bar_Move> </SFXEvent_Command_Bar_Move>
+	<SFXEvent_Command_Bar_Waypoint> </SFXEvent_Command_Bar_Waypoint>
+	<SFXEvent_Command_Bar_Stop> </SFXEvent_Command_Bar_Stop>
+	<SFXEvent_Command_Bar_Guard> </SFXEvent_Command_Bar_Guard>
+
+	<!-- Delay between base attack announcements -->
+	<Delay_Between_Space_Base_Attack_Announcement_Seconds> 60 </Delay_Between_Space_Base_Attack_Announcement_Seconds>
+	<Delay_Between_Land_Base_Attack_Announcement_Seconds> 60 </Delay_Between_Land_Base_Attack_Announcement_Seconds>
+
+	<!-- A testing value to turn off weapon behavior and hard point weapon firing SFX. Default is False. -->
+	<Test_Disable_Weapon_Fire_SFX> False </Test_Disable_Weapon_Fire_SFX>
+
+	<!-- List of supported 3D providers for Miles Sound System 6.6H / 6.6G -->
+	<MSS_3D_Provider_Name> "Miles Fast 2D Positional Audio" </MSS_3D_Provider_Name>
+	<MSS_3D_Provider_Name> "Creative Labs EAX 4 (TM)" </MSS_3D_Provider_Name>
+	<MSS_3D_Provider_Name> "Creative Labs EAX 3 (TM)" </MSS_3D_Provider_Name>
+	<MSS_3D_Provider_Name> "Creative Labs EAX 2 (TM)" </MSS_3D_Provider_Name>
+	<MSS_3D_Provider_Name> "Creative Labs EAX (TM)" </MSS_3D_Provider_Name>
+	<MSS_3D_Provider_Name> "Dolby Surround" </MSS_3D_Provider_Name>
+	<!-- Not supported per LucasArts...
+		<MSS_3D_Provider_Name> "Aureal A3D Interactive (TM)" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "Aureal A3D 2.0 (TM)" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "DirectSound3D Software Emulation" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "DirectSound3D Hardware Support" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "DirectSound3D 7+ Software - Pan and Volume" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "DirectSound3D 7+ Software - Light HRTF" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "DirectSound3D 7+ Software - Full HRTF" </MSS_3D_Provider_Name>
+		<MSS_3D_Provider_Name> "RAD Game Tools RSX 3D Audio" </MSS_3D_Provider_Name>
+	-->
+
+	<!-- MSS Mixahead settings for dealing with times of sustained disk I/O -->
+
+	<!-- From MSS 6.6G/H:
+	
+		DIG_DS_FRAGMENT_CNT
+			On Win32, this preference determines the maximum buffer fragments that the MSS mixer uses when it replaces the DirectSound mixer. 
+			This preference doesn't have any effect on latency - it just controls the maximum value that the DIG_DS_MIX_FRAGMENT_CNT can be set to. 
+			Units: Buffer fragments. 
+			Default Value: 96 on Win32
+	
+		DS_MIX_FRAGMENT_CNT
+			This preference determines the number of buffer fragments that the MSS mixer mixes ahead when it replaces the DirectSound mixer. 
+			This preference multiplied by the DIG_DS_FRAGMENT_SIZE determines the current digital latency. 
+			You can change this preference at runtime, so if you are getting skipping during a CPU intensive operation, you can bump up this preference, 
+			call AIL_serve to fill the digital buffers, run the CPU intensive operation, and then set this preference back to its default. 
+			This will eliminate virtually all skipping problems. 
+			This value must be less than DIG_DS_FRAGMENT_CNT. 
+			Units: Buffer fragments. 
+			Default Value: 8.
+		
+	-->
+
+	<Default_MSS_DIG_DS_MIX_FRAGMENT_CNT> 8 </Default_MSS_DIG_DS_MIX_FRAGMENT_CNT>					<!-- MSS Default is 8,  Must be less than DIG_DS_FRAGMENT_CNT -->
+	<Default_MSS_DIG_DS_FRAGMENT_CNT> 96 </Default_MSS_DIG_DS_FRAGMENT_CNT> 							<!-- MSS Default is 96, Must be more than DIG_DS_MIX_FRAGMENT_CNT -->
+
+	<Sustained_IO_MSS_DIG_DS_MIX_FRAGMENT_CNT> 200 </Sustained_IO_MSS_DIG_DS_MIX_FRAGMENT_CNT>	<!-- Must be less than DIG_DS_FRAGMENT_CNT (1000/8=125) -->
+	<Sustained_IO_MSS_DIG_DS_FRAGMENT_CNT> 200 </Sustained_IO_MSS_DIG_DS_FRAGMENT_CNT> 				<!-- Must be more than DIG_DS_MIX_FRAGMENT_CNT (1000/8=125) -->
+
+	<!--                           -->
+	<!-- END GENERAL AUDIO SECTION -->
+	<!--                           -->
+
+</Audio>

@@ -1,0 +1,239 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Start Campaign -->
+	<Event Name="Bothawui_Intimidation_Mission_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_Prevent_Retreat_Rebel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Bothawui_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_Prevent_Retreat_Empire">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Bothawui_Intimidation_Mission_Begin</Prereq>
+	</Event>
+	
+	
+
+	
+	
+<!-- Mission objectives
+ TEXT_MANDALORE_PIRACY_OBJECTIVE_01					Tyber Zann must survive
+ TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_01				Use Tyber Zann to rough up Senator Se'lab.
+ TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_02				Destroy Senator Se'lab's Palace to flush the Senator out.
+-->
+
+	<Event Name="Bothawui_Intimidation_ADD_OBJECTIVE_Rough_Up_The_Senator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_Mission_Begin</Prereq>
+	</Event>
+		
+	<Event Name="Bothawui_Intimidation_ADD_OBJECTIVE_Tyber_Must_Survive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_ADD_OBJECTIVE_Rough_Up_The_Senator</Prereq>
+	</Event>
+	
+	
+	
+	<!-- senator is now hiding...update rough up objective to destroy his house -->
+	<Event Name="Bothawui_Intimidation_Senator_Is_Hiding_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Bothawui_Intimidation_Senator_Is_Hiding_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<Event Name="Bothawui_Intimidation_Senator_Is_Hiding_UPDATE_OBJECTIVE">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_01</Reward_Param1>
+				<Reward_Param2>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_02</Reward_Param2>
+				<Prereq>Bothawui_Intimidation_Senator_Is_Hiding_AI_NOTIFICATION</Prereq>
+			</Event>  
+			
+			
+	<Event Name="Bothawui_Intimidation_Palace_Is_Destroyed_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Bothawui_Intimidation_Palace_Is_Destroyed_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+			<!-- completing remaining objectives -->
+			<Event Name="Bothawui_Intimidation_COMPLETE_OBJECTIVE_Destroy_The_Palace">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_02</Reward_Param1>
+				<Prereq>Bothawui_Intimidation_Palace_Is_Destroyed_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			<Event Name="Bothawui_Intimidation_RE-ADD_OBJECTIVE_Rough_Up_The_Senator">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_01</Reward_Param1>
+				<Prereq>Bothawui_Intimidation_COMPLETE_OBJECTIVE_Destroy_The_Palace</Prereq>
+			</Event>
+			
+			<!-- remove objective to keep UI clean -->	
+			<Event Name="Bothawui_Intimidation_REMOVE_OBJECTIVE_Destroy_The_Palace">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>15</Event_Param1>
+				<Reward_Type>REMOVE_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_02</Reward_Param1>
+				<Prereq>Bothawui_Intimidation_COMPLETE_OBJECTIVE_Destroy_The_Palace</Prereq>
+			</Event>  
+			
+
+	
+	
+	
+
+	
+	
+
+	
+
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+<!-- ***************MISSION START Dialog Goes Here******************** -->
+	<!-- TEXT_SPEECH_BOTHAWUI_INT_TACTICAL_COR09_02
+	Tyber Zann: Using intimidation on the good senator, 
+	I grasp a major political force that I can use for the consortium.   -->
+	<Event Name="Bothawui_Intimidation_Mission_Start_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Bothawui_Intimidation_Mission_Start_AI_NOTIFICATION</Event_Param2>
+	</Event>
+			<Event Name="Bothawui_Intimidation_Mission_Start_DIALOG">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>MULTIMEDIA</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_TACTICAL_COR09_02</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>	
+				<Reward_Param8>BOTHAWUI_INT_TACTICAL_COR09_02</Reward_Param8>
+				<Reward_Param9>Tyber_Loop</Reward_Param9>
+				<Reward_Param10>1</Reward_Param10>
+				<Prereq>Bothawui_Intimidation_Mission_Start_AI_NOTIFICATION</Prereq>
+			</Event>
+	
+				<Event Name="Bothawui_Intimidation_Mission_Start_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>BOTHAWUI_INT_TACTICAL_COR09_02</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_TACTICAL_COR09_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Bothawui_Intimidation_Mission_Start_DIALOG</Prereq>
+				</Event>
+
+				<Event Name="Bothawui_Intimidation_Mission_Start_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Bothawui_Intimidation_Mission_Start_Remove_Text</Prereq>
+				</Event>
+				
+<!-- ***************WIN Notification******************** -->
+
+	<Event Name="Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION</Event_Param2>
+	</Event>
+					
+<!-- ***************LOSE Notification******************** -->
+	<Event Name="Bothawui_Intimidation_Player_Loses_AI_NOTIFICATION">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>Bothawui_Intimidation_Player_Loses_AI_NOTIFICATION</Event_Param2>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_RE_ENABLE_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+		<Prereq>Bothawui_Intimidation_Player_Loses_AI_NOTIFICATION</Prereq>
+	</Event>
+
+<!-- *************************************************************** -->
+<!-- ***************Win Conditions******************** -->
+<!-- *************************************************************** -->
+
+	<Event Name="Bothawui_Intimidation_Player_Wins">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Player_Wins_STORY_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>Underworld</Event_Param1>
+	</Event>
+	
+			<!-- completing remaining objectives -->
+			<Event Name="Bothawui_Intimidation_COMPLETE_OBJECTIVE_Tyber_Must_Live">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+				<Prereq>Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+			<Event Name="Bothawui_Intimidation_COMPLETE_OBJECTIVE_Rough_Up_The_Senator">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_BOTHAWUI_INT_OBJECTIVE_01</Reward_Param1>
+				<Prereq>Bothawui_Intimidation_Player_Wins_AI_NOTIFICATION</Prereq>
+			</Event>
+			
+
+					
+<!-- *************************************************************** -->
+<!-- ***************Loss Conditions******************** -->
+<!-- *************************************************************** -->
+	<Event Name="Bothawui_Intimidation_Mission_Loss_Rebel">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_REBEL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_Loss_Empire">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_EMPIRE</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_Mission_Loss_Hutt">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_HUTTS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Hutt</Reward_Param1>
+	</Event>
+	
+	<Event Name="Bothawui_Intimidation_FAIL_OBJECTIVE_Tyber_Must_Survive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_MANDALORE_PIRACY_OBJECTIVE_01</Reward_Param1>
+		<Prereq>Bothawui_Intimidation_Player_Loses_AI_NOTIFICATION</Prereq>
+
+	</Event>
+
+</Story>

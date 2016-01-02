@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<!--
+
+    Lens flares
+
+-->
+
+<LensFlares>
+
+    <LensFlare Name="Lensflare0">
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 2.0 </Radius>
+            <Fraction> -0.1 </Fraction>
+            <Slot_X> 1 </Slot_X>
+            <Slot_Y> 0 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 2.0 </Radius>
+            <Fraction> 0.0 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 0 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <!-- Middle third of flares -->
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.3 </Radius>
+            <Fraction> 0.3 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.1 </Radius>
+            <Fraction> 0.4 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.75 </Radius>
+            <Fraction> 0.5 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.3 </Radius>
+            <Fraction> 0.6 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <!-- latter third of flares-->
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.3 </Radius>
+            <Fraction> 1.4 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.75 </Radius>
+            <Fraction> 1.5 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.1 </Radius>
+            <Fraction> 1.6 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 0.3 </Radius>
+            <Fraction> 1.7 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <!-- end rings-->
+
+        <Flare>
+            <Diffuse> 0.5, 0.5, 1.0</Diffuse>
+            <Radius> 2.0 </Radius>
+            <Fraction> 1.9 </Fraction>
+            <Slot_X> 0 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+
+        <Flare>
+            <Diffuse> 1.0, 1.0, 1.0</Diffuse>
+            <Radius> 2.0 </Radius>
+            <Fraction> 2.0 </Fraction>
+            <Slot_X> 1 </Slot_X>
+            <Slot_Y> 1 </Slot_Y>
+            <Num_Slots> 2 </Num_Slots>
+        </Flare>
+        
+    </LensFlare>
+
+</LensFlares>

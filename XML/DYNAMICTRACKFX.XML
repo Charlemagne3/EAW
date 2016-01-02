@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DynamicTracks>
+
+	<DynamicTrack name="Default">
+		<width>20.0f</width>
+		<opacity>1</opacity>
+		<segment_length>20</segment_length>
+        <fade_begin_distance>100.0</fade_begin_distance>
+        <fade_end_distance>150.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+        <texture_name>Trk_Dirt.tga</texture_name> 
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+        <min_geometry_lod>0.25</min_geometry_lod>
+        
+	</DynamicTrack>
+
+
+	<DynamicTrack name="Track_Grass">
+		<width>20.0f</width>
+		<texture_name>Trk_Grass.tga</texture_name>
+		<opacity>1</opacity>
+		<segment_length>20</segment_length>
+        <fade_begin_distance>100.0</fade_begin_distance>
+        <fade_end_distance>150.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+        <min_geometry_lod>0.25</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Track_Dirt">
+		<width>20.0f</width>
+		<texture_name>Trk_Dirt.tga</texture_name>
+		<opacity>1</opacity>
+		<segment_length>20</segment_length>
+        <fade_begin_distance>100.0</fade_begin_distance>
+        <fade_end_distance>150.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DIFFUSE_ALPHA</Render_Mode>
+        <min_geometry_lod>0.25</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Track_Bump">
+	
+		<width>5.0f</width>
+		<texture_name>w_tank_track_01.tga</texture_name>
+		<opacity>1</opacity>
+		<segment_length>7</segment_length>
+        <fade_begin_distance>200.0</fade_begin_distance>
+        <fade_end_distance>280.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+        <min_geometry_lod>0.25</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Track_Bump_Half">
+	
+		<width>2.5f</width>
+		<texture_name>w_tank_track_01.tga</texture_name>
+		<opacity>1</opacity>
+		<segment_length>7</segment_length>
+        <fade_begin_distance>220.0</fade_begin_distance>
+        <fade_end_distance>280.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+        <Render_Mode>DECAL_BUMP_ALPHA</Render_Mode>
+        <min_geometry_lod>0.25</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Track_Bump_Concrete">
+	
+		<width>5.0f</width>
+		<texture_name>w_tank_track_01.tga</texture_name>
+		<opacity>.1</opacity>
+		<segment_length>1</segment_length>
+        <fade_begin_distance>220.0</fade_begin_distance>
+        <fade_end_distance>280.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.75</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Track_Bump_Half_Concrete">
+	
+		<width>2.5f</width>
+		<texture_name>w_tank_track_01.tga</texture_name>
+		<opacity>.1</opacity>
+		<segment_length>1</segment_length>
+        <fade_begin_distance>220.0</fade_begin_distance>
+        <fade_end_distance>280.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.75</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Footprint_Bump">
+	
+		<width>3.0f</width>
+		<texture_name>w_footprint00.tga</texture_name>
+		<opacity>1</opacity>
+		<segment_length>6.0</segment_length>
+        <fade_begin_distance>75.0</fade_begin_distance>
+        <fade_end_distance>100.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.9</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="Footprint_Bump_Concrete">
+	
+		<width>3.0f</width>
+		<texture_name>w_footprint00.tga</texture_name>
+		<opacity>.1</opacity>
+		<segment_length>1</segment_length>
+        <fade_begin_distance>75.0</fade_begin_distance>
+        <fade_end_distance>100.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.9</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="R2D2_Tracks">
+	
+		<width>4.50f</width>
+		<texture_name>w_r2d2_tracks.tga</texture_name>
+		<opacity>0.75</opacity>
+		<segment_length>6.0</segment_length>
+        <fade_begin_distance>100.0</fade_begin_distance>
+        <fade_end_distance>150.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.0</min_geometry_lod>
+
+	</DynamicTrack>
+
+	<DynamicTrack name="R2D2_Tracks_Concrete">
+	
+		<width>4.5f</width>
+		<texture_name>w_r2d2_tracks.tga</texture_name>
+		<opacity>.1</opacity>
+		<segment_length>1</segment_length>
+        <fade_begin_distance>100.0</fade_begin_distance>
+        <fade_end_distance>150.0</fade_end_distance>
+        <fade_distance_per_second>10.0</fade_distance_per_second>
+		<Render_Mode>DECAL_BUMP_ALPHA</Render_Mode> 
+        <min_geometry_lod>0.0</min_geometry_lod>
+
+	</DynamicTrack>
+
+
+</DynamicTracks>

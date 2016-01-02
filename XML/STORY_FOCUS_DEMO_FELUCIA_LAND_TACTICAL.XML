@@ -1,0 +1,1060 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Underworld_Prologue_Felucia_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+<!-- Lock out the droid log button -->
+	<Event Name="Underworld_Prologue_Felucia_Lock_Droid_Log">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_droid_help_tactical</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Felucia_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+<!-- Don't allow victory to trigger -->
+	<Event Name="Underworld_Prologue_Felucia_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+<!-- disabling reinforcement ability here -->
+	<Event Name="Underworld_Prologue_Felucia_Disable_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+
+<!-- disabling retreat ability here -->
+	<Event Name="Underworld_Prologue_Felucia_Disable_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+<!-- add the first objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_00
+Garrison Your Troops in the Transoprt. -->
+	<Event Name="Underworld_Prologue_Felucia_Add_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_00</Reward_Param1>
+	</Event>
+	
+<!-- Complete the first objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_00
+Garrison Your Troops in the Transoprt. -->
+	<Event Name="Underworld_Prologue_Felucia_Complete_Objective_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_00</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_00</Reward_Param1>
+	</Event>
+
+<!-- add objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01
+Move Your Units to the Artifact. -->
+	<Event Name="Underworld_Prologue_Felucia_Add_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_01</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01</Reward_Param1>
+	</Event>
+	
+<!-- Complete objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01
+Move Your Units to the Artifact. -->
+	<Event Name="Underworld_Prologue_Felucia_Complete_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_01</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01</Reward_Param1>
+	</Event>
+	
+<!-- add objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_02
+Build a Missile Pod Turret on one of your MDUs. -->
+	<Event Name="Underworld_Prologue_Felucia_Add_Objective_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_02</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_02</Reward_Param1>
+	</Event>
+	
+<!-- Complete objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01 - Move Your Units to the Artifact.
+to TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_03 - Move Tyber and Urai to the Artifact. -->
+	<Event Name="Underworld_Prologue_Felucia_Update_Objective_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>UPDATE_OBJECTIVE_01</Event_Param2>
+		<Reward_Type>UPDATE_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_01</Reward_Param1>
+		<Reward_Param2>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_03</Reward_Param2>
+	</Event>
+	
+<!-- Update Objective TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_02
+Build a Missile Pod Turret on one of your MDUs. -->
+	<Event Name="Underworld_Prologue_Felucia_Complete_Objective_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_02</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_OBJECTIVE_UNDERWORLD_PROLOGE_FELUCIA_02</Reward_Param1>
+	</Event>
+	
+<!-- add objective TEXT_STORY_UW_ACT02_M06_47
+Tyber Zann and Urai Fen must survive -->
+	<Event Name="Underworld_Prologue_Felucia_Add_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ADD_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_UW_ACT02_M06_47</Reward_Param1>
+	</Event>
+	
+<!-- Complete objective TEXT_STORY_UW_ACT02_M06_47
+Tyber Zann and Urai Fen must survive -->
+	<Event Name="Underworld_Prologue_Felucia_Complete_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>COMPLETE_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_UW_ACT02_M06_47</Reward_Param1>
+	</Event>
+	
+<!-- Fail objective TEXT_STORY_UW_ACT02_M06_47
+Tyber Zann and Urai Fen must survive -->
+	<Event Name="Underworld_Prologue_Felucia_Fail_Objective_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FAIL_OBJECTIVE_03</Event_Param2>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_UW_ACT02_M06_47</Reward_Param1>
+	</Event>
+	
+			<!-- Give Victory to Empire upon mission fail -->		
+			<Event Name="Underworld_Prologue_Felucia_Victory_Empire">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Event_Param2>FAIL_OBJECTIVE_03</Event_Param2>
+				<Reward_Type>VICTORY</Reward_Type>
+				<Reward_Param1>Empire</Reward_Param1>
+				<Prereq>Underworld_Prologue_Felucia_Fail_Objective_03</Prereq>
+			</Event>
+	
+<!-- Flash Urai's Stealth Ability -->
+	<Event Name="Underworld_Prologue_Felucia_Flash_Cloak_Lua_Receive">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>FLASH_CLOAK</Event_Param2>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+		<Event Name="Underworld_Prologue_Felucia_Flash_Cloak_Ability">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>.5</Event_Param1>
+			<Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+			<Reward_Param1>STEALTH</Reward_Param1>
+			<Reward_Param2>flash_urai_stealth</Reward_Param2>
+			<Prereq>Underworld_Prologue_Felucia_Flash_Cloak_Lua_Receive</Prereq>
+		</Event>
+		
+			<Event Name="Underworld_Prologue_Felucia_REMOVEFLASH_Stealth">
+				<Event_Type>STORY_GENERIC</Event_Type>
+				<Event_Param1>click</Event_Param1>
+				<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+				<Reward_Param1>flash_urai_stealth</Reward_Param1>
+				<Prereq>Underworld_Prologue_Felucia_Flash_Cloak_Ability</Prereq>
+			</Event>
+			
+<!-- allow victory to trigger -->
+	<Event Name="Underworld_Prologue_Felucia_Allow_Victory">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>VICTORY_TRIGGER</Event_Param2>		
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>		
+	</Event>
+
+<!-- Trigger Victory from Lua -->
+	<Event Name="Underworld_Prologue_Felucia_Victory_Trigger">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Underworld</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_Allow_Victory</Prereq>
+	</Event>
+
+<!-- Set victory flag for galactic progression -->
+			<Event Name="Underworld_Prologue_Felucia_Set_Felucia_Victory_Flag">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>INCREMENT_FLAG</Reward_Type>
+				<Reward_Param1>UNDERWORLD_FELUCIA_VICTORY</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Underworld_Prologue_Felucia_Victory_Trigger</Prereq>
+			</Event>
+	
+<!-- ensuring player has his reinforcement ability back here -->
+	<Event Name="Underworld_Prologue_Felucia_Allow_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Underworld_Prologue_Felucia_Victory_Trigger</Prereq>
+	</Event>
+	
+<!-- disabling retreat ability here -->
+	<Event Name="Underworld_Prologue_Felucia_Allow_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>UNDERWORLD</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_Victory_Trigger</Prereq>
+	</Event>
+	
+	
+<!-- killing opening dialog for escape key cine skipping -->		
+	<Event Name="Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_AI_Notification_0">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PROLOGUE_FELUCIA_ESCAPEKEY_PREVENT_INTRO_DIALOG_AI_NOTIFICATION_0</Event_Param2>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_0">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_FELUCIA_INTRO_DIALOG_0</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_AI_Notification_0</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Felucia_ESC_Kill_Hologram_0">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_0</Prereq>
+	</Event>
+	
+	
+<!-- killing opening dialog for escape key cine skipping -->		
+	<Event Name="Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_AI_Notification_1">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>PROLOGUE_FELUCIA_ESCAPEKEY_PREVENT_INTRO_DIALOG_AI_NOTIFICATION_1</Event_Param2>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_FELUCIA_INTRO_DIALOG_1</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_AI_Notification_1</Prereq>
+	</Event>
+	
+	<Event Name="Underworld_Prologue_Felucia_ESC_Kill_Hologram_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Underworld_Prologue_Felucia_ESC_Prevent_Intro_Dialog_1</Prereq>
+	</Event>
+
+
+<!-- *************************************************************** -->
+<!-- ***************All Mission Dialog Goes Here******************** -->
+<!-- *************************************************************** -->
+
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_00
+Zann Consortium Soldier: Sir, we've located a small clearing near the Hutt Cartel's 
+						 landing party.  We're close enough to the Hutt landing area 
+						 that we won't look out of place and the landing area should 
+						 have enough cover to hide our forces.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_00</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_00</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_00</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+		<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_00_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_00</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_00</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_00</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_00_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_00_Remove_Text</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_01
+Tyber Zann: Excellent.  Ensure that we are not detected by the Hutt forces on the ground.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_01</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_01</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+		<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_01_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_01</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_01</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_01</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_01_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_01_Remove_Text</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_0</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_02
+Tyber Zann: Alpha squad, scout the area and make certain our path is clear.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_02</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_02</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+		<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_02_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_02</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_02</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_02</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_02_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_02_Remove_Text</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_03
+Tyber Zann: Looks like our ship will be a little lighter for the return trip.  Apparently, some 
+			of the local foliage isn't safe for infantry.  Bring out the transport!   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_03</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_03</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_03</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+		<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_03_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_03</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_03</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_03</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_03_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_03_Remove_Text</Prereq>
+					<Branch>BRANCH_FELUCIA_INTRO_DIALOG_1</Branch>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_04
+Tyber Zann:  I can garrison my troops inside the transport and protect them from those poisonous plants.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_04</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_04</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_04_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_04</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_04</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_04</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_04_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_04_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_05
+Hint: Select your troops and right click on the transport to garrison the selected units within it.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_05">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_05</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_05</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_05_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_05</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_05</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_05</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_05_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_05_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_06
+Tyber Zann: When everyone's inside the transport, we'll go to retrieve that artifact.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_06">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_06</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_06</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_06_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_06</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_06</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_06</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_06_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_06_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_07
+Tyber Zann: Blast it! The path ahead is traversable only with infantry.  
+			Everyone out!  We'll need to go the rest of the way on foot.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_07">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_07</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_07</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_07_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_07</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_07</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_07</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_07_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_07_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_08
+Tyber Zann: We're no match for those Anti-Infantry turrets.  Urai, we'll have to use our cloaking 
+			fields and sneak the rest of the way to the Hutt landing site.  We need to make sure we 
+			get there before our cloaking fields run out.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_08">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_08</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_08</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_08_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_08</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_08</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_08</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_08_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_08_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_09
+Hutt Mercenary: This place creeps me out.  I wish Jabba would…   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_09">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_09</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_09</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_09_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_09</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_09</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_09</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_09_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_09_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_10
+Hutt Soldier: Look out!  It's Urai Fen!   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_10">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_10</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_10</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_10_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_10</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_10</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_10</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_10_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_10_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_11
+Urai Fen: The artifact is ours! What is the next step?   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_11">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_11</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_11</Reward_Param8>
+		<Reward_Param9>Urai_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_11_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_11</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_11</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_11</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_11_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_11_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_12
+Tyber Zann: Get those troops back to cover!  Urai and I must go alone from here on.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_12">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_12</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_12</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Perpetual>True</Perpetual>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_12_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_12</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_12</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Perpetual>True</Perpetual>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_12</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_12_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Perpetual>True</Perpetual>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_12_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_13
+Tyber Zann: We need to protect our landing site from anyone who might stumble across it.  
+			Get out the MDUs and deploy them.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_13">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_13</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_13</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_13_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_13</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_13</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_13</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_13_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_13_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_14
+Hint: Deploy an MDU then Left-Click the unit to access its build menu.  Form there you can choose 
+	  what to build on top of the MDU.  The MDU cannot move again until the object on top is sold 
+	  or destroyed and the unit is un-deployed.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_14">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_14</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_14</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_14_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_14</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_14</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_14</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_14_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_14_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_15
+Hint: To eject units from a transport or garrisoned structure, select the transport or garrison 
+	  and Right-Click it to eject all troops.  While the transport or garrison is selected, you 
+	  can also click on the unit's icon from the selection menu to eject that unit from the garrison.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_15">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_15</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_15</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_15_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_15</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_15</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_15</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_15_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_15_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_16
+Hint: The MDU needs to remain at the landing area to protect the transport from attackers.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_16">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_16</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_16</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_16_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_16</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_16</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_16</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_16_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_16_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_17
+Hint: Your infantry units will be severely injured if they progress into the poisonous flowers.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_17">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_17</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_17</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_17_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_17</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_17</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_17</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_17_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_17_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_19
+Tyber Zann: Those guard towers will see right through our stealth fields.  If we try to go 
+			that way, we'll get chewed up by the anti-infantry turrets.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_19">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_19</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7></Reward_Param7>
+		<Reward_Param8>UNDERWORLD_PROLOGUE_FELUCIA_19</Reward_Param8>
+		<Reward_Param9>Tyber_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_19_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_PROLOGUE_FELUCIA_19</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_PROLOGUE_FELUCIA_19</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_19</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_19_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_19_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_59
+Jabba's Troops: We're under attack call for back up!   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_59">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_59</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_59</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_TUTORIAL_59</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_59_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_59</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_59</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_59</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_59_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_59_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_64
+Tyber Zann: Urai, you are the only one I would trust with this artifact. Take it and guard it 
+			with your life. I'll meet with you at the rendezvous point, where we can celebrate 
+			our victory.      -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_64">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_64</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_64</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_TUTORIAL_64</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_64_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_64</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_64</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_64</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_64_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_64_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_65
+Stormtrooper: Tyber Zann! You're under arrest for crimes against the Empire. Drop you weapons! 
+			  If you do not come peacefully, we are authorized to use force!    -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_65">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_65</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_65</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_TUTORIAL_65</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_65_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_65</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_65</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_65</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_65_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_65_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_66
+Tyber Zann: More like crimes against Jabba the Hutt. Oh, I'll go peacefully. But you won't 
+			hold me for long. On that, you have the word of Tyber Zann.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_66">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_66</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_66</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>UNDERWORLD_TUTORIAL_66</Reward_Param8>
+		<Reward_Param9>Pirate_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_66_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_66</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_66</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_66</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_66_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_66_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_97
+Hint: Be sure to make use of the special abilities of your units.  Using those abilities could 
+	  mean the difference between victory and defeat.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_97">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_97</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_97</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>UNDERWORLD_TUTORIAL_97</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_97_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_97</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_97</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_97</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_97_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_97_Remove_Text</Prereq>
+				</Event>
+				
+				
+<!-- TEXT_SPEECH_UNDERWORLD_TUTORIAL_101
+Hint: Note that Urai Fen has the innate ability to self heal.   -->
+	<Event Name="Underworld_Prologue_Felucia_Speech_Line_101">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>TEXT_SPEECH_UNDERWORLD_TUTORIAL_101</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_101</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>UNDERWORLD_TUTORIAL_101</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Underworld_Prologue_Felucia_Begin</Prereq>
+	</Event>
+	
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_101_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>UNDERWORLD_TUTORIAL_101</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_UNDERWORLD_TUTORIAL_101</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_101</Prereq>
+				</Event>
+
+				<Event Name="Underworld_Prologue_Felucia_Speech_Line_101_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Underworld_Prologue_Felucia_Speech_Line_101_Remove_Text</Prereq>
+				</Event>
+
+
+</Story>

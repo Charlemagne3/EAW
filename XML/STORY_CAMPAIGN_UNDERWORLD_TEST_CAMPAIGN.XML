@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Underworld_Test_Campaign_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Bespin</Reward_Param1>
+	</Event>
+
+	<Event Name="Mission_Lock_Bespin">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Bespin</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Underworld_Test_Campaign_Begin</Prereq>
+	</Event>
+
+	<Event Name="M07_Fleet_Bounced_Without_Tyber">
+		<Event_Type>STORY_INVASION_BOUNCED</Event_Type>
+		<Event_Param1>Bespin</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_UW_ACT02_G13_BOUNCE</Reward_Param1>
+		<Reward_Param2>6</Reward_Param2>	
+		<Perpetual>True</Perpetual>
+		<Prereq>Underworld_Test_Campaign_Begin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_ActII_M07_Tyber_Gets_To_Bespin">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Bespin</Event_Param1>
+		<Event_Param3>Tyber_Zann_Team_No_Peacebringer</Event_Param3>
+		<Event_Param6>0</Event_Param6>
+		<Prereq>Underworld_Test_Campaign_Begin</Prereq>
+	<!--	<Perpetual>True</Perpetual>-->
+	</Event>
+	
+	<Event Name="Underworld_ActII_M07_Urai_Gets_To_Bespin">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Bespin</Event_Param1>
+		<Event_Param3>Urai_Fen_Team</Event_Param3>
+		<Event_Param6>0</Event_Param6>
+		<Prereq>Underworld_Test_Campaign_Begin</Prereq>
+	<!--	<Perpetual>True</Perpetual>-->
+	</Event>
+
+	<Event Name="Underworld_ActII_M07_Tyber_And_Urai_At_Bespin">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>START_MISSION_7</Event_Param2>
+		<Reward_Type>INVADE_PLANET</Reward_Type>
+		<Reward_Param1>Bespin</Reward_Param1>
+		<Prereq>Underworld_ActII_M07_Urai_Gets_To_Bespin Underworld_ActII_M07_Tyber_Gets_To_Bespin</Prereq>
+	</Event>
+
+	<Event Name="Underworld_ActII_M07_Start">
+		<Event_Type>STORY_DEPLOY</Event_Type>
+		<Event_Param1>Tyber_Zann_Team_No_Peacebringer</Event_Param1>
+		<Event_Param2>BESPIN</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Bespin</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Underworld</Reward_Param3>
+		<Reward_Param4>UM07_Cloud_City_Conflict.ted</Reward_Param4>
+		<Reward_Param5>Empire</Reward_Param5>
+		<Reward_Param6>Tyber_Zann_Passenger</Reward_Param6>
+		<Reward_Param7>Story_Plots_Underworld_M07_LAND.xml</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<!-- Do we want the prebattle cinematic to play?-->
+		<Reward_Param9>0</Reward_Param9>
+		<!-- Do we want to start the scene faded out?-->
+		<Reward_Param10>1</Reward_Param10>
+		<!-- Do we want to start the scene in letter box mode-->
+		<Reward_Param11>1</Reward_Param11>
+		<Reward_Param12>RETREAT_PLAYER</Reward_Param12>
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Underworld_ActII_M07_Tyber_Gets_To_Bespin Underworld_ActII_M07_Urai_Gets_To_Bespin</Prereq>
+        <Branch>BRANCH_UA02M07</Branch>
+	</Event>
+	
+	
+</Story>

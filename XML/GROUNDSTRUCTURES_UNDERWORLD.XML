@@ -1,0 +1,131 @@
+﻿<?xml version="1.0"?>
+
+
+<GroundStructures>
+
+	
+	<GroundStructure Name="Destroyer_Spawn_House">
+		<Text_ID>TEXT_STRUCTURE_HUMAN_DWELLING</Text_ID>
+		<Land_Model_Name>NB_VCH.alo</Land_Model_Name>
+		<Icon_Name>i_button_W_Urban_CorBuild_A.tga</Icon_Name>
+
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<Death_Explosions>Large_Explosion_Land</Death_Explosions>
+		<Death_SFXEvent_Start_Die>Unit_Generic_Building_Death_SFX</Death_SFXEvent_Start_Die>
+		<Ranged_Target_Z_Adjust>5.0</Ranged_Target_Z_Adjust>
+		<LandBehavior>IDLE, SPACE_OBSTACLE, LAND_OBSTACLE, REVEAL, HIDE_WHEN_FOGGED, DAMAGE_TRACKING, EARTHQUAKE_TARGET, SPAWN_INDIGENOUS_UNITS, DUMMY_TOOLTIP</LandBehavior>
+		<Influences_Capture_Point>False</Influences_Capture_Point>
+
+		<Spawned_Indigenous_Units_Type> Destroyer_Droid_Attack </Spawned_Indigenous_Units_Type>
+		<Spawned_Indigenous_Units_Delay_Seconds>20.0</Spawned_Indigenous_Units_Delay_Seconds>
+		<Spawned_Indigenous_Units_Quantity>12</Spawned_Indigenous_Units_Quantity>
+		<Spawn_Indigenous_Units_In_Packs>No</Spawn_Indigenous_Units_In_Packs>
+		<Spawn_Indigenous_Units_Radius>150.0f</Spawn_Indigenous_Units_Radius>
+		<Spawn_Indigenous_Units_Chance>1.0f</Spawn_Indigenous_Units_Chance>
+		<Max_Distance_From_Spawner>180</Max_Distance_From_Spawner>
+		<Spawned_Indigenous_Pack_Type></Spawned_Indigenous_Pack_Type>
+
+		<Land_FOW_Reveal_Range>0.0</Land_FOW_Reveal_Range>
+		<Is_Visible_On_Radar>No</Is_Visible_On_Radar>
+		<Radar_Icon_Size>0.08  0.08</Radar_Icon_Size>
+		<Multisample_FOW_Check>Yes</Multisample_FOW_Check>
+		<Last_State_Visible_Under_FOW> Yes </Last_State_Visible_Under_FOW>
+		<Initial_State_Visible_Under_FOW>False</Initial_State_Visible_Under_FOW>
+		<Is_Branched_Map_Discardable>False</Is_Branched_Map_Discardable>
+
+		<Armor_Type> Armor_Structure </Armor_Type>
+		<Reveal_During_Setup_Phase> False </Reveal_During_Setup_Phase>
+
+		<Select_Box_Scale>180</Select_Box_Scale>
+		<Mass>1.0</Mass>
+		<Scale_Factor>1.5</Scale_Factor>
+		<Shield_Points>0</Shield_Points>
+		<Tactical_Health>500</Tactical_Health>
+		<Autoresolve_Health>500</Autoresolve_Health>
+		<Shield_Refresh_Rate>0</Shield_Refresh_Rate>
+		<Energy_Capacity>1000</Energy_Capacity>
+		<Energy_Refresh_Rate>50</Energy_Refresh_Rate>
+
+		<Loads_When_Faction_Present> True </Loads_When_Faction_Present>
+		<Affiliation>Underworld</Affiliation>
+		<Victory_Relevant>No</Victory_Relevant>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+		<CategoryMask>Structure</CategoryMask>
+
+		<Land_Damage_Thresholds>1, 0.66, 0.33, 0</Land_Damage_Thresholds>
+		<Land_Damage_Alternates>0, 1, 2, 3</Land_Damage_Alternates>
+		<Land_Damage_SFX>null,SFX_Grenade_Detonation, SFX_Grenade_Detonation,null</Land_Damage_SFX>
+
+		<GUI_Bracket_Size>2</GUI_Bracket_Size> 
+
+		<!-- The ground structures have this data which looks like it's space only because the
+		snowspeeders are using space style pathfinding which needs this information so that we won't
+		path speeders through structures -->
+		<Space_Obstacle_Offset> 0 0 0 </Space_Obstacle_Offset> 
+		<Space_Layer> Frigate | Corvette </Space_Layer>
+		<Has_Land_Evaluator>True</Has_Land_Evaluator>
+
+		<Score_Cost_Credits> 500 </Score_Cost_Credits>
+
+		<Encyclopedia_Text>TEXT_ENCYCLOPEDIA_HUMAN_SPAWNER</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_STRUCTURE</Encyclopedia_Unit_Class>
+
+	</GroundStructure>
+	
+	
+
+	<GroundStructure Name="Ysalamiri_Tree">
+		<GUI_Bounds_Scale>0.01</GUI_Bounds_Scale>
+		<Text_ID>TEXT_STRUCTURE_YSALAMIRI_TREE</Text_ID>
+		<Encyclopedia_Text>TEXT_ENCYCLOPEDIA_YSALAMIRI_TREE</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_ANIMAL_NEST</Encyclopedia_Unit_Class>
+
+		<Land_Model_Name>NB_YSALAMIRI_TREE.ALO</Land_Model_Name>
+		<Scale_Factor>1.0</Scale_Factor>
+		<Icon_Name>i_button_nb_Ewok_tree.tga</Icon_Name>
+		<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+
+		<Collidable_By_Projectile_Living>No</Collidable_By_Projectile_Living>
+		
+		<Behavior>DUMMY_TOOLTIP</Behavior>
+		<LandBehavior>IDLE, SPACE_OBSTACLE, LAND_OBSTACLE, DISABLE_FORCE_ABILITIES</LandBehavior>
+
+		<Influences_Capture_Point>False</Influences_Capture_Point>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<Is_Visible_On_Radar>No</Is_Visible_On_Radar>
+
+		<Multisample_FOW_Check>Yes</Multisample_FOW_Check>
+		<Last_State_Visible_Under_FOW> Yes </Last_State_Visible_Under_FOW>
+		<Initial_State_Visible_Under_FOW>False</Initial_State_Visible_Under_FOW>
+		<Is_Branched_Map_Discardable>False</Is_Branched_Map_Discardable>
+
+		<Reveal_During_Setup_Phase> False </Reveal_During_Setup_Phase>
+		<Mass>1.0</Mass>
+		<Scale_Factor>1.0</Scale_Factor>
+		
+		<Affiliation>Hostile</Affiliation>
+		
+		<Disable_Force_Abilities_Range>150</Disable_Force_Abilities_Range>
+
+		<Victory_Relevant>No</Victory_Relevant>
+		<No_Reflection_Below_Detail_Level>1</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>1</No_Refraction_Below_Detail_Level>
+
+		<Space_Obstacle_Offset> 0 0 0 </Space_Obstacle_Offset> 
+		<Space_Layer> Frigate | Corvette </Space_Layer>
+		<Has_Land_Evaluator>True</Has_Land_Evaluator>
+
+	</GroundStructure>
+
+
+
+
+
+
+
+
+
+
+
+</GroundStructures>

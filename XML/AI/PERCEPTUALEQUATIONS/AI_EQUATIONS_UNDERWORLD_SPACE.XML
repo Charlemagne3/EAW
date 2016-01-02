@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<Equations>
+
+	<Blast_Target_Score>
+		Variable_Target.Force {Parameter_Category = GameObjectCategoryType[Capital | Frigate]}
+	</Blast_Target_Score>
+
+</Equations>

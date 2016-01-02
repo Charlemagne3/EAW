@@ -1,0 +1,217 @@
+<?xml version="1.0" ?>
+
+<Campaigns>
+
+
+	<Campaign Name="P6_Validate_Victory_Conditions_Rebel">
+
+		<Campaign_Set> P6_Victory_Conditions_Set </Campaign_Set>
+
+		<Text_ID> TEXT_CAMPAIGN_P6_DEATH_STAR </Text_ID>
+
+		<Camera_Shift_X> 40.0 </Camera_Shift_X>
+		<Camera_Shift_Y> 0.0 </Camera_Shift_Y>
+		<Camera_Distance> 1200.0 </Camera_Distance>
+
+		<Locations> Galaxy_Core_Art_Model,  Alderaan, Anaxes, Coruscant, Kashyyyk, Yavin </Locations>
+
+		<Trade_Routes> Alderaan_Kashyyyk, Alderaan_Yavin,  Anaxes_Coruscant </Trade_Routes>
+
+		<Home_Location> Rebel, Yavin </Home_Location>
+		<Home_Location> Empire, Coruscant </Home_Location>
+
+		<Starting_Active_Player> Rebel </Starting_Active_Player>
+
+		<Starting_Credits> Rebel,  400000 </Starting_Credits>
+		<Starting_Tech_Level> Rebel, 4 </Starting_Tech_Level>                                               
+		
+		<Supports_Custom_Settings>False</Supports_Custom_Settings>		
+		
+		<Starting_Forces> Rebel, Yavin, R_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, R_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Ground_Cantina_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Power_Generator_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Star_Base_3 </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Ground_Ion_Cannon </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Tank_Buster_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Corellian_Corvette </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Calamari_Cruiser </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Y-Wing_Squadron </Starting_Forces>
+
+		<!-- All major and minor heroes for the Rebels -->
+
+		<Starting_Forces> Rebel, Yavin, Luke_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Tani_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Wedge_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Home_One </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Obi_Wan_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Mon_Mothma_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Katarn_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Han_Solo_Team </Starting_Forces>
+		
+		<Starting_Forces> Rebel, Yavin, Field_Com_Rebel_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Fleet_Com_Rebel_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Bounty_Hunter_Team_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Smuggler_Team_R </Starting_Forces>
+				
+		<Starting_Forces> Rebel, Alderaan, R_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, R_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Ground_Cantina_R </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Alliance_Assault_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Alliance_Assault_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Nebulon_B_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+
+		<Starting_Credits> Empire,  400000 </Starting_Credits>
+		<Starting_Tech_Level> Empire, 5 </Starting_Tech_Level>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Ground_Cantina_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Power_Generator_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Light_Vehicle_Factory </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Empire_Star_Base_5 </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Imperial_Stormtrooper_Squad </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Imperial_Stormtrooper_Squad </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Fighter_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Fighter_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Bomber_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Star_Destroyer </Starting_Forces>	
+		<Starting_Forces> Empire, Coruscant, Death_Star </Starting_Forces>
+		
+		<!-- All major and minor heroes for Empire -->
+		
+		<Starting_Forces> Empire, Coruscant, Emperor_Palpatine_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Accuser_Star_Destroyer </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Mara_Jade_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Grand_Moff_Tarkin_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, General_Veers_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Darth_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Boba_Fett_Team </Starting_Forces>
+				
+		<Starting_Forces> Empire, Coruscant, Field_Com_Empire_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Fleet_Com_Empire_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Bounty_Hunter_Team_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Probe_Droid_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Smuggler_Team_E </Starting_Forces>
+		
+		
+
+	</Campaign>
+
+	<Campaign Name="P6_Validate_Victory_Conditions_Empire">
+
+		<Campaign_Set> P6_Victory_Conditions_Set </Campaign_Set>
+
+		<Text_ID> TEXT_CAMPAIGN_P6_DEATH_STAR </Text_ID>
+
+		<Camera_Shift_X> 40.0 </Camera_Shift_X>
+		<Camera_Shift_Y> 0.0 </Camera_Shift_Y>
+		<Camera_Distance> 1200.0 </Camera_Distance>
+
+		<Locations> Galaxy_Core_Art_Model,  Alderaan, Anaxes, Coruscant, Kashyyyk, Yavin </Locations>
+
+		<Trade_Routes> Alderaan_Kashyyyk, Alderaan_Yavin, Anaxes_Coruscant </Trade_Routes>
+
+		<Home_Location> Rebel, Yavin </Home_Location>
+		<Home_Location> Empire, Coruscant </Home_Location>
+
+		<Starting_Active_Player> Empire </Starting_Active_Player>
+		<Galactic_Control_Percentage_For_Victory> 0.65 </Galactic_Control_Percentage_For_Victory>
+
+		<Starting_Credits> Rebel,  400000 </Starting_Credits>
+		<Starting_Tech_Level> Rebel, 4 </Starting_Tech_Level>                                               
+		<Starting_Forces> Rebel, Yavin, R_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, R_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Ground_Cantina_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Power_Generator_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Star_Base_3 </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Ground_Ion_Cannon </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_Tank_Buster_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Corellian_Corvette </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Calamari_Cruiser </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Y-Wing_Squadron </Starting_Forces>
+
+		<!-- All major and minor heroes for the Rebels -->
+
+		<Starting_Forces> Rebel, Yavin, Luke_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Tani_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Wedge_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Home_One </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Obi_Wan_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Mon_Mothma_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Katarn_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Han_Solo_Team </Starting_Forces>
+		
+		<Starting_Forces> Rebel, Yavin, Field_Com_Rebel_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Fleet_Com_Rebel_Team </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Bounty_Hunter_Team_R </Starting_Forces>
+		<Starting_Forces> Rebel, Yavin, Smuggler_Team_R </Starting_Forces>
+		
+		<Starting_Forces> Rebel, Alderaan, R_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, R_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Ground_Cantina_R </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_X-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Y-Wing_Squadron </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Alliance_Assault_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Alliance_Assault_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Nebulon_B_Frigate </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+		<Starting_Forces> Rebel, Alderaan, Rebel_Infantry_Squad </Starting_Forces>
+
+		<Starting_Credits> Empire,  400000 </Starting_Credits>
+		<Starting_Tech_Level> Empire, 5 </Starting_Tech_Level>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Barracks </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Officer_Academy </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Ground_Cantina_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Power_Generator_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, E_Ground_Light_Vehicle_Factory </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Empire_Star_Base_5 </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Imperial_Stormtrooper_Squad </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Imperial_Stormtrooper_Squad </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Fighter_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Fighter_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, TIE_Bomber_Squadron </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Star_Destroyer </Starting_Forces>	
+		<Starting_Forces> Empire, Coruscant, Death_Star </Starting_Forces>
+
+		<!-- All major and minor heroes for Empire -->
+		
+		<Starting_Forces> Empire, Coruscant, Emperor_Palpatine_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Accuser_Star_Destroyer </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Mara_Jade_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Grand_Moff_Tarkin_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, General_Veers_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Darth_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Boba_Fett_Team </Starting_Forces>
+				
+		<Starting_Forces> Empire, Coruscant, Field_Com_Empire_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Fleet_Com_Empire_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Bounty_Hunter_Team_E </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Probe_Droid_Team </Starting_Forces>
+		<Starting_Forces> Empire, Coruscant, Smuggler_Team_E </Starting_Forces>
+
+	</Campaign>
+
+
+</Campaigns>

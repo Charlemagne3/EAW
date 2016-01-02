@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+
+<AIPlayerType>
+
+	<!-- This AI player has full tactical AI but does nothing in galactic except remove corruption -->
+	<Name>AI_Player_UnderworldStoryOpponent</Name>
+
+	<!--Yay for meaningless numbers-->
+	<Personality>
+		<Focus> 1.0 </Focus>
+		<Aggressiveness> 1.0 </Aggressiveness>
+	</Personality>
+
+	<SpaceFreeStoreScript>BusyTacticalFreeStore</SpaceFreeStoreScript>
+	<LandFreeStoreScript>BusyTacticalFreeStore</LandFreeStoreScript>
+
+	<GoalProposalFunctionSets>
+		BasicOffensiveSpaceSet
+		BasicLandGoalSet
+		AI_GoalSet_ExpansionGeneric_Land
+		AI_GoalSet_ExpansionGeneric_Galactic
+	</GoalProposalFunctionSets>
+    <Templates>
+        <Space>
+            Test_Space
+        </Space>
+        <Land>
+            Test_Land
+        </Land>
+        <Galactic>
+            Remove_Corruption_Only_Template
+        </Galactic>
+    </Templates>
+	
+	<Difficulty_Adjustments>
+		<Easy>Easy_Default</Easy>
+		<Normal>Normal_Default</Normal>
+		<Hard>Hard_Default</Hard>
+	</Difficulty_Adjustments>
+		
+</AIPlayerType>

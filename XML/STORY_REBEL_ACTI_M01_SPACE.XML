@@ -1,0 +1,1063 @@
+<?xml version="1.0" ?>
+
+
+<Story>
+
+
+<!-- Mission start setup -->
+
+	<Event Name="Rebel_A1_M01_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M01_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+   <Event Name="Rebel_A1_M01_Turn_Off_Space_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Rebel_A1_M01_Begin</Prereq>
+   </Event>
+
+	<Event Name="Rebel_A1_M01_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A1_M01_Prevent_Retreat_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_Act1_M01_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_Act1_M01_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Counter_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+    <!-- STARTING Fresia space cinematic dialog here-->
+
+    <!-- Cinematic line 01
+    TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_21
+    Rebel Pilot: There’s no way we’re getting past that star destroyer.  You’d think the Fresians would have warned us.-->
+    <Event Name="Rebel_A01_IntroCine_Dialog_Line_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_REBELPILOT_01</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_21</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_21</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_01_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_21</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_21</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_01</Prereq>
+            </Event>
+
+                        
+
+     <!-- Cinematic line 02
+    TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_22
+    Antilles: It’s not their fault.  The nationalization wasn’t announced.  The Emperor likes his surprises.-->
+    <Event Name="Rebel_A01_IntroCine_Dialog_Line_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_ANTILLES_01</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_22</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_22</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_02_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_22</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_22</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_02</Prereq>
+            </Event>
+
+
+     <!-- Cinematic line 03
+    TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_23
+    Rebel Pilot: So what now?-->
+      <Event Name="Rebel_A01_IntroCine_Dialog_Line_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_REBELPILOT_02</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_23</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_23</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_03_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_23</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_23</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_03</Prereq>
+            </Event>
+
+<!-- Cinematic line 04
+    TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_24
+    Antilles: If the Tyranny is here, then it’s not at its normal station…and the Tyranny is normally stationed at…-->
+    <Event Name="Rebel_A01_IntroCine_Dialog_Line_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_ANTILLES_02</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_24</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_04_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_24</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_24</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_04</Prereq>
+            </Event>
+
+                        
+  <!-- Cinematic line 05
+    TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_25
+    Rebel Pilot: Kuat!  The Imperial shipyards.-->
+      <Event Name="Rebel_A01_IntroCine_Dialog_Line_05">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_REBELPILOT_03</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_25</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_05_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_25</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_25</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_05</Prereq>
+            </Event>
+
+                        
+
+<!-- Cinematic line 06
+   TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_26
+    Antilles: If the Tyranny is here, then it’s not at its normal station…and the Tyranny is normally stationed at…-->
+    <Event Name="Rebel_A01_IntroCine_Dialog_Line_06">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CUE_INTROCINE_DIALOG_ANTILLES_03</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_CAMPAIGN_INTRO_26</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+            <Event Name="Rebel_A01_IntroCine_Dialog_Line_06_Remove_Text">
+            	<Event_Type>STORY_SPEECH_DONE</Event_Type>
+            	<Event_Param1>REBEL_CAMPAIGN_INTRO_26</Event_Param1>
+            	<Reward_Type>SCREEN_TEXT</Reward_Type>
+            	<Reward_Param1>TEXT_SPEECH_REBEL_CAMPAIGN_INTRO_26</Reward_Param1>
+            	<Reward_Param4>Remove</Reward_Param4>	
+            	<Prereq>Rebel_A01_IntroCine_Dialog_Line_06</Prereq>
+            </Event>
+
+                         
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_03
+	Antilles: Okay, we have to cause as much destruction as we can.  Hit the smaller ships, 
+	larger ships – whatever you can take out.  And be quick about it. Threepio?-->
+	
+	 <Event Name="Rebel_A1_M01_Intro_Speech_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>RA1M1_INTRO_DIALOGUE_GO</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_03</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_03</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+	
+			
+			<Event Name="Rebel_A1_M01_Intro_Speech_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_03</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_03</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Intro_Speech_00</Prereq>
+			</Event>
+
+	<!-- C-3P0 Speaks 
+	TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_04
+	C3PO: Yes, sir?-->
+	<Event Name="Rebel_A1_M01_Intro_Speech_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>RA1M1_THREEPIO_DIALOGUE_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_04</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Intro_Speech_00_Remove_Text</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A1_M01_Intro_Speech_01_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_04</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_04</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Intro_Speech_01</Prereq>
+			</Event>
+
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_05
+	Antilles:  Have Artoo monitor Imperial comm. 
+	channels and scan for any chatter about our mission us.-->
+	<Event Name="Rebel_A1_M01_Intro_Speech_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>RA1M1_ANTILLES_DIALOGUE_2_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_05</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Intro_Speech_01_Remove_Text</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A1_M01_Intro_Speech_02_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_05</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_05</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Intro_Speech_02</Prereq>
+			</Event>
+			
+	<Event Name="Rebel_A1_M01_Intro_Speech_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>RA1M1_R2_DIALOGUE_1_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_06</Reward_Param8>
+		<Prereq>Rebel_A1_M01_Intro_Speech_02_Remove_Text</Prereq>
+	</Event>
+	
+			<Event Name="Rebel_A1_M01_Intro_Speech_03_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_06</Event_Param1>
+				<Prereq>Rebel_A1_M01_Intro_Speech_03</Prereq>
+			</Event>
+
+	<!-- Antilles Speaks 
+	TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_28
+	Antilles: The alarm will sound almost immediately, and reinforcements won’t be far behind.  
+	We’ve got to cause enough damage to get the Tyranny back here!-->
+	<Event Name="Rebel_A1_M01_Intro_Speech_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>RA1M1_ANTILLES_DIALOGUE_3_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_28</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A1_M01_Intro_Speech_03_Remove_Text</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A1_M01_Intro_Speech_04_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_28</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_28</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Intro_Speech_04</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_Intro_Speech_04_Remove_Vid">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_Intro_Speech_04_Remove_Text</Prereq>
+			</Event>
+			
+			
+<!-- Give Hints on location and task for the first mission 
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_17
+Task: Destroy as many Imperial ships and satellites as possible to attract the attention of the Tyrrany.-->
+
+
+	<Event Name="Rebel_A1_M01_Mission_Start">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>MISSION_START</Event_Param2>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>	
+<!-- jdg new task line 
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_102
+Task: Destroy the Imperial shipyards.-->
+
+	<Event Name="Rebel_A1_M01_Give_Task_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_102</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Rebel_A1_M01_Mission_Start</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A1_M01_Remove_Task_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_102</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Rebel_A1_M01_Mission_Start</Prereq>
+	</Event>
+	
+	<!-- HINT 
+	TEXT_STORY_REBEL_ACT01_MISSION_ONE_100
+	 Hint: Use Captain Antilles' "Weaken Enemy" to reduce the 
+	 fire-power of groups of enemy ships. (AE)-->
+	<Event Name="Rebel_A1_M01_Give_Weaken_Enemy_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_100</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Prereq>Rebel_A1_M01_Remove_Task_00</Prereq>
+	</Event>
+				
+					<Event Name="Rebel_A1_M01_FLASH_Weaken_Enemy_BUTTON">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>WEAKEN_ENEMY</Reward_Param1>
+                        <Reward_Param2>flash_antilles_weakenenemy</Reward_Param2>
+                        <Prereq>Rebel_A1_M01_Give_Weaken_Enemy_Hint</Prereq>
+					 </Event>
+					 
+					 <Event Name="Rebel_A1_M01_REMOVEFLASH_Weaken_Enemy_BUTTON">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>5</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_antilles_weakenenemy</Reward_Param1>
+                        <Prereq>Rebel_A1_M01_FLASH_Weaken_Enemy_BUTTON</Prereq>
+					 </Event>
+					 
+	<!-- HINT 
+	TEXT_STORY_REBEL_ACT01_MISSION_ONE_101
+	Hint: Use "All Power to Engines" to quickly escape enemies.-->
+	<Event Name="Rebel_A1_M01_Give_Runaway_Hint">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M01_RUNAWAY_HINT_GO</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_101</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+		<Branch>Give_Runaway_Hint</Branch>
+	</Event>
+				
+					<Event Name="Rebel_A1_M01_FLASH_Runaway_Hint">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>TURBO</Reward_Param1>
+                        <Reward_Param2>flash_TURBO</Reward_Param2>
+                        <Prereq>Rebel_A1_M01_Give_Runaway_Hint</Prereq>
+                        <Branch>Give_Runaway_Hint</Branch>
+					 </Event>
+					 
+					 <Event Name="Rebel_A1_M01_REMOVEFLASH_Runaway_Hint">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>5</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_TURBO</Reward_Param1>
+                        <Prereq>Rebel_A1_M01_FLASH_Runaway_Hint</Prereq>
+                        <Branch>Give_Runaway_Hint</Branch>
+					 </Event>
+					 
+					 <!-- jdg this callsback to lua to allow the hint to replay -->
+					 <Event Name="Rebel_A1_M01_RESET_Runaway_Hint">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>20</Event_Param1>
+						<Reward_Type>RESET_BRANCH</Reward_Type>
+						<Reward_Param1>Give_Runaway_Hint</Reward_Param1>
+                        <Prereq>Rebel_A1_M01_Give_Runaway_Hint</Prereq>
+                        <Branch>Give_Runaway_Hint</Branch>
+					 </Event>
+
+
+<!-- mission objectives here
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_30
+Captain Antilles must survive.
+
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_103
+Destroy the Imperial shipyards.-->
+			<Event Name="Rebel_A1_M01_ADD_OBJECTIVE_Antilles_Must_Survive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_30</Reward_Param1>
+				<Prereq>Rebel_A1_M01_Mission_Start</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A1_M01_ADD_OBJECTIVE_Cause_Havoc">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_103</Reward_Param1>
+				<Prereq>Rebel_A1_M01_Mission_Start</Prereq>
+			</Event>
+
+
+<!-- Proximity to Space Station Warning 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_18
+Antilles: Keep your distance from that space station - 
+we can't hope to match its firepower with our current forces!-->
+	<Event Name="Rebel_A1_M01_Too_Close_To_Station_00">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Empire_Star_Base_3</Event_Param2>
+		<Event_Param3>3000</Event_Param3>		
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_18</Reward_Param8>
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+			<Event Name="Rebel_A1_M01_To_Close_To_Station_01">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_18</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_18</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Too_Close_To_Station_00</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_To_Close_To_Station_02">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_To_Close_To_Station_01</Prereq>
+			</Event>
+
+
+
+
+<!-- COMBAT -->
+
+	<Event Name="Rebel_A1_M01_Combat_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>DRYDOCK_TIE_FIGHTER</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_01">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>DRYDOCK_TIE_BOMBER</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_02">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>DEFENSE_SATELLITE_LASER_SMALL</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_03">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>EMPIRE_STAR_BASE_3</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>20</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_04">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Drydock_Star_Destroyer_Construction</Event_Param1>
+		<Event_Param3>10</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>15</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_05">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Orbital_Resource_Container</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_Combat_06">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Drydock_Tyderium_Shuttle</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Act1_M01_Damage_Count</Reward_Param1>
+		<Reward_Param2>2</Reward_Param2>
+		<Prereq>Rebel_A1_M01_Counter_Flag_Set</Prereq>
+      <Perpetual>True</Perpetual>
+	</Event>
+
+<!-- First wave of reinforcements -->
+
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_00">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Act1_M01_Damage_Count</Event_Param1>
+		<Event_Param2>7</Event_Param2><!-- WAS 15 -->
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+<!-- Imperial Officer Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07
+Imperial Officer: This is the Kuat shipyard.  
+We have come under Rebel attack.  Requesting assistance. -->
+<Event Name="Rebel_A1_M01_First_Speech_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_07</Reward_Param8>
+	<Reward_Param9>Commander_Moff_Loop</Reward_Param9> 
+	<Reward_Param10>1</Reward_Param10>
+	<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_00</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_First_Speech_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_07</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_First_Speech_00</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_First_Speech_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_First_Speech_00_Remove_Text</Prereq>
+			</Event>
+			
+		
+
+<!-- Tyranny Captain Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_08
+Imperial Captain: This is the Tyranny.  
+Your satellite defenses should be adequate for any Rebel fleet, activate them!-->
+<Event Name="Rebel_A1_M01_First_Speech_01">
+	<Event_Type>STORY_ELAPSED</Event_Type>
+	<Event_Param1>2</Event_Param1>		
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_08</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_08</Reward_Param8>
+	<Reward_Param9>Piett_Loop</Reward_Param9>
+	<Reward_Param10>1</Reward_Param10>
+	<Prereq>Rebel_A1_M01_First_Speech_00_Remove_Movie</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_First_Speech_01_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_08</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_08</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_First_Speech_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_First_Speech_01_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_First_Speech_01_Remove_Text</Prereq>
+			</Event>
+
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_00</Prereq>
+	</Event>
+
+<!-- Second wave of reinforcements -->
+
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_10">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Act1_M01_Damage_Count</Event_Param1>
+		<Event_Param2>100</Event_Param2><!-- WAS 100 -->
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+		<Event Name="Rebel_A1_M01_COMPLETE_OBJECTIVE_Destroy_More">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+			<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_33</Reward_Param1>
+			<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_10</Prereq>
+		</Event>
+
+
+<Event Name="M01_CUE_SECOND_DISTRESS_CALL">
+	<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>M01_CUE_SECOND_DISTRESS_CALL</Event_Param2>	
+</Event>
+
+
+<!-- Imperial Officer Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07
+Imperial Officer: This is the Kuat shipyard.  
+We have come under Rebel attack.  Requesting assistance. -->
+<Event Name="Rebel_A1_M01_Second_Speech_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>		
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_07</Reward_Param8>
+	<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+	<Reward_Param10>1</Reward_Param10>
+	<Prereq>M01_CUE_SECOND_DISTRESS_CALL Rebel_A1_M01_First_Speech_01_Remove_Movie</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_Second_Speech_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_07</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_07</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Second_Speech_00</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_Second_Speech_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_Second_Speech_00_Remove_Text</Prereq>
+			</Event>
+			
+<!-- Tyranny Captain Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_09
+Imperial Captain: The Tyranny is on Imperial Security assignment.  
+Maintain channel silence for ceremony communications.  -->
+<Event Name="Rebel_A1_M01_Second_Speech_01">
+	<Event_Type>STORY_TRIGGER</Event_Type>	
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_09</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_09</Reward_Param8>
+	<Reward_Param9>Piett_Loop</Reward_Param9>
+	<Reward_Param10>1</Reward_Param10>
+	<Prereq>Rebel_A1_M01_Second_Speech_00_Remove_Movie</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_Second_Speech_01_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_09</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_09</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Second_Speech_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_Second_Speech_01_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_Second_Speech_01_Remove_Text</Prereq>
+			</Event>
+			
+				
+
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_11">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_10</Prereq>
+	</Event>
+
+<!-- Third wave of reinforcements -->
+
+   <!-- Player has killed enough.  Show text saying Tyrrany is on its way
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_20">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Act1_M01_Damage_Count</Event_Param1>
+		<Event_Param2>250</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event> -->
+	
+	<!-- jdg CHANGING VICTORY CONDITIONS -->
+	<Event Name="Rebel_M01_CUE_ENDING_CINE_GO">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M01_CUE_ENDING_CINE_GO</Event_Param2>		
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+	
+	
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_20">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>	
+		<Prereq>Rebel_M01_CUE_ENDING_CINE_GO</Prereq>
+	</Event>
+	
+	<!-- jdg these are safety things for testing/cheating thru -->
+				<Event Name="M01_Cheat_Safety_01">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Rebel_A1_M01_First_Speech_00</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				</Event>
+				
+				<Event Name="M01_Cheat_Safety_02">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Rebel_A1_M01_First_Speech_01</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				</Event>
+				
+				<Event Name="M01_Cheat_Safety_03">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Rebel_A1_M01_Second_Speech_00</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				</Event>
+				
+				<Event Name="M01_Cheat_Safety_04">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Rebel_A1_M01_Second_Speech_01</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				</Event>
+				
+				<Event Name="Rebel_A01_MISSION_END_Turn_Off_SpaceStation_Prox">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+					<Reward_Param1>Rebel_A1_M01_Too_Close_To_Station_00</Reward_Param1>
+					<Reward_Param2>1</Reward_Param2>
+					<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				</Event>
+
+
+<!-- Imperial Officer Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_10
+Imperial Officer: Kuat shipyard to all Imperial units!  We are under siege by significant Rebel forces!  
+All ships in the area, respond!  Emergency code zero!-->
+<Event Name="Rebel_A1_M01_Third_Speech_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>		
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_10</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_10</Reward_Param8>
+	<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+	<Reward_Param10>1</Reward_Param10>
+	<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20 Rebel_A1_M01_Second_Speech_01_Remove_Movie</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_Third_Speech_00_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_10</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_10</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_Third_Speech_00</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_Third_Speech_00_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_Third_Speech_00_Remove_Text</Prereq>
+			</Event>
+
+<!-- Tyranny Captain Speaks 
+TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_11
+Imperial Captain: This is the Tyranny.  Responding to code zero.  
+Be aware that you are altering plans set by Lord Vader himself, 
+and you will answer to him if this code has been invoked lightly.  --> 
+<Event Name="Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01">
+	<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>M01_ENDCINE_TYRRANY_LINE_01_GO</Event_Param2>		
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_11</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT01_MISSION_ONE_11</Reward_Param8>
+	<!--<Reward_Param9>Piett_Loop</Reward_Param9>
+	<Reward_Param10>1</Reward_Param10>-->
+	<Prereq>Rebel_A1_M01_Begin</Prereq>
+</Event>
+
+			<Event Name="Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_11</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_11</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01_Remove_Text</Prereq>
+			</Event>
+			
+			
+
+	<!-- Antilles text saying the mission is complete 
+	TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_14
+	Antilles: Looks like we got their attention.  
+	Now lets get out of here.  -->
+	<Event Name="Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>	
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT01_MISSION_ONE_14</Reward_Param8>
+		<Prereq>Rebel_A1_M01_ENDCINE_TYRRANY_LINE_01_Remove_Text</Prereq>
+	</Event>
+
+
+			<Event Name="Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT01_MISSION_ONE_14</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_14</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02</Prereq>
+			</Event>
+
+			<Event Name="Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+				<Prereq>Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02_Remove_Text</Prereq>
+			</Event>
+
+
+
+
+
+	<Event Name="Rebel_A01_M02_LUA_MISSION_END">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>LUA_MISSION_END</Event_Param2>
+	</Event>
+	
+	<!-- jdg turning off lose events/messages here-->
+			<Event Name="Rebel_A01_MISSION_END_Turn_Off_Lose">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Rebel_A1_M01_All_Rebel_Destroyed</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Rebel_A01_M02_LUA_MISSION_END</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A1_M01_ReEnable_Retreat_Player">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_RETREAT</Reward_Type>
+				<Reward_Param1>REBEL</Reward_Param1>
+				<Reward_Param2>0</Reward_Param2>
+				<Prereq>Rebel_A01_M02_LUA_MISSION_END</Prereq>
+			</Event>
+			
+			<!-- jdg this is a safety script to ensure the mission ends -->
+			<Event Name="Rebel_M01_SAFETY_END_MISSION">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>10</Event_Param1>	
+				<Reward_Type>VICTORY</Reward_Type>
+				<Reward_Param1>REBEL</Reward_Param1>
+				<Prereq>Rebel_A01_M02_LUA_MISSION_END</Prereq>
+			</Event>
+			
+			
+
+
+<!-- WIN CONDITION -->
+
+   <!-- Force a win when the player has finished retreating.  This hits before retreat coordinator forces loss -->
+	<Event Name="Rebel_A1_M01_Check_Destroyed_Flag_30">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Rebel_A01_M02_LUA_MISSION_END Rebel_A1_M01_ENDCINE_ANTILLES_LINE_02_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A1_M01_All_Empire_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Empire</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_Act1_M109_05">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A01M01_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+	<!-- jdg COMPLETING mission objectives here
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_30
+Captain Antilles must survive.
+
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_103
+Destroy the Imperial shipyards.-->
+			<Event Name="Rebel_A1_M01_COMPLETE_OBJECTIVE_Antilles_Must_Survive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_30</Reward_Param1>
+				<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_30</Prereq>
+				<Prereq>Rebel_A1_M01_All_Empire_Destroyed</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A1_M01_COMPLETE_OBJECTIVE_Cause_Havoc">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_103</Reward_Param1>
+				<Prereq>Rebel_A1_M01_Check_Destroyed_Flag_20</Prereq>
+				<Prereq>Rebel_A1_M01_All_Empire_Destroyed</Prereq>
+			</Event>
+
+	
+	
+	
+	<!--TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_16
+	Antilles: I've taken heavy damage during the fight. 
+	I'll need to repair the Sundered Heart before I can rejoin you.-->
+	
+	<Event Name="Rebel_A1_M01_All_Rebel_Destroyed">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Sundered_Heart</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Prereq>Rebel_A1_M01_Begin</Prereq>
+	</Event>
+	
+					<Event Name="Rebel_A1_M01_Antilles_Dies_Speech_01">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_16</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>	
+						<Reward_Param8>REBEL_ACT01_MISSION_ONE_16</Reward_Param8> <!-- Put speech file name here -->
+						<Reward_Param9>Antillies_Loop</Reward_Param9>
+						<Reward_Param10>1</Reward_Param10>
+						<Prereq>Rebel_A1_M01_All_Rebel_Destroyed</Prereq>
+					</Event>
+			
+					<Event Name="Rebel_A1_M01_Antilles_Dies_Speech_01_Remove_Text">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>REBEL_ACT01_MISSION_ONE_16</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_16</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>	
+						<Prereq>Rebel_A1_M01_Antilles_Dies_Speech_01</Prereq>
+					</Event>
+					
+					
+	<!--TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_15
+	Antilles: It looks like we didn't cause enough damage to pull their attention away from Fresia. 
+	Prepare the ships. We'll need to try it again.-->				
+					<Event Name="Rebel_A1_M01_Antilles_Dies_Speech_02">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>MULTIMEDIA</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_15</Reward_Param1>
+						<Reward_Param2>-1</Reward_Param2>	
+						<Reward_Param8>REBEL_ACT01_MISSION_ONE_15</Reward_Param8> <!-- Put speech file name here -->
+						<Prereq>Rebel_A1_M01_Antilles_Dies_Speech_01_Remove_Text</Prereq>
+					</Event>
+			
+					<Event Name="Rebel_A1_M01_Antilles_Dies_Speech_02_Remove_Text">
+						<Event_Type>STORY_SPEECH_DONE</Event_Type>
+						<Event_Param1>REBEL_ACT01_MISSION_ONE_15</Event_Param1>
+						<Reward_Type>SCREEN_TEXT</Reward_Type>
+						<Reward_Param1>TEXT_SPEECH_REBEL_ACT01_MISSION_ONE_15</Reward_Param1>
+						<Reward_Param4>remove</Reward_Param4>	
+						<Prereq>Rebel_A1_M01_Antilles_Dies_Speech_02</Prereq>
+					</Event>
+					
+					<Event Name="Rebel_A1_M01_Antilles_Dies_Speech_02_Remove_Movie">
+						<Event_Type>STORY_TRIGGER</Event_Type>
+						<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>						
+						<Prereq>Rebel_A1_M01_Antilles_Dies_Speech_02_Remove_Text</Prereq>
+					</Event>
+					
+	
+<!--FAILING ingame objective text for keeping Antilles alive 
+TEXT_STORY_REBEL_ACT01_MISSION_ONE_30
+Captain Antilles must survive. -->
+			<Event Name="Rebel_A1_M01_Misson_Goal_Failed_AntillesDead">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_REBEL_ACT01_MISSION_ONE_30</Reward_Param1>
+				<Prereq>Rebel_A1_M01_All_Rebel_Destroyed</Prereq>
+			</Event>
+			
+<Event Name="Rebel_A1_M01_All_Rebel_Destroyed_PlayerLoss">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A1_M01_Antilles_Dies_Speech_02_Remove_Text</Prereq>
+</Event> 
+
+
+</Story>

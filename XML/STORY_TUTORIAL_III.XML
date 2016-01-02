@@ -1,0 +1,466 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- 
+	LINK_TACTICAL
+	<Reward_Param1> = Planet name
+	<Reward_Param2> = Planet location (space,land)
+	<Reward_Param3> = Attacking faction
+	<Reward_Param4> = Map name
+	<Reward_Param5> = Defending faction
+	<Reward_Param6> = Hero pathfinder name
+	<Reward_Param7> = Tactical script name
+	<Reward_Param8> = Use sandbox units
+	<Reward_Param9> = Enable Prebattle Cinematic
+	<Reward_Param10>= Start Scene Faded Out
+	<Reward_Param11>= Start Scene Letterboxed
+-->
+
+	<Event Name="Tutorial_III_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Tutorial_III_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Reveal_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+<!-- Center camera -->
+	<Event Name="Tutorial_III_Center_Camera">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>0,-80,0</Reward_Param2>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Scroll lock -->
+	<Event Name="Tutorial_III_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Turn on objective display -->
+	<Event Name="Tutorial_III_Enable_Objectives">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Disable zoom -->
+	<Event Name="Tutorial_III_Disable_Zoom">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+	<Event Name="Tutorial_III_Turn_Off_Advisor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_ADVISOR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+<!-- Set tutorial mode -->
+	<Event Name="Tutorial_III_Tutorial_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+<!-- Turn off tutorial cursor on mouse clicks -->
+	<Event Name="Tutorial_III_Turn_Off_Cursor">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+	<!-- locking out player control -->
+	<Event Name="Tutorial_III_Lock_Controls_For_Intro">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Lock all available tech -->
+	<Event Name="Tutorial_III_Lock_Tartan_Patrol_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Tartan_Patrol_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Lock_Broadside_Class_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Broadside_Class_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_III_Lock_Acclamator_Assault_Ship">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_III_Lock_Probe_Droid_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_III_Lock_E_Ground_Research_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_III_Lock_Communications_Array_E">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Communications_Array_E</Reward_Param1>
+		<Prereq>Tutorial_III_Begin</Prereq>
+	</Event>
+
+<!-- Do the mission intro VO -->	
+	<Event Name="Tutorial_III_Start_VO">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Prereq>Tutorial_III_Reveal_NalHutta</Prereq>
+	</Event>
+
+<!-- Hint: Before you can complete your training, you must also learn how to command space forces 
+in battle.  Let's examine another conflict, this time from the perspective of the Empire.  
+In this case, the Empire faction is attempting to eliminate a Rebel space station located in 
+orbit above Kashyyyk. -->
+	<Event Name="Tutorial_III_Intro_To_Empire_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_56</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_56</Reward_Param8>
+		<Prereq>Tutorial_III_Start_VO</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_III_Intro_To_Empire_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_56</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_56</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_III_Intro_To_Empire_01</Prereq>
+		</Event>
+
+<!-- TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_01
+Station Officer: An Imperial peace-keeping envoy deployed to Kashyyyk was assaulted by an 
+unusually organized dissident group.  This warrants our full attention.  
+I am sending you to investigate a derelict space station being used as a haven by these… Rebels.-->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_01</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_III_Intro_To_Empire_02</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+	
+		<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_01</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_01</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_01</Prereq>
+		</Event>
+
+<!-- Station Officer: Direct this space fleet to Kashyyyk and reinforce the 
+Imperial units already en route. 
+Eliminate all resistance, and report back to me at once. -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_44">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_02</Reward_Param8>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_02</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+
+		<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_04">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_02</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_02</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_44</Prereq>
+		</Event>
+	
+		<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_04</Prereq>
+		</Event>
+		
+		
+	
+<!-- Flash the fleet to be moved -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_03a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_FLEET_WITH_UNIT</Reward_Type>
+		<Reward_Param1>Tartan_Patrol_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_44</Prereq>
+	</Event>
+			
+<!-- Stop flashing the fleet -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_04a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_04</Prereq>
+	</Event>
+
+<!-- Hint: To attack the Rebel space forces located above Kashyyyk, 
+drag the Imperial fleet from Nal Hutta to Kashyyyk.  
+Moving a fleet into orbit above an enemy planet will initiate a space battle. -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_05">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT03_04</Reward_Param8>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_04</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+
+		<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_06">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT03_04</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT03_04</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_05</Prereq>
+			<Branch>pre_link_tactical</Branch>
+		</Event>
+		
+ 	<!-- first holocron entry re: move fleet into orbit above kashyyyk -->
+	<Event Name="Tutorial_III_Move_Fleet_To_Kashyyyk_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_03</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_III_Move_Fleet_To_Kashyyyk_Entry</Story_Tag>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_06</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_III_Unlock_Controls">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>LOCK_CONTROLS</Reward_Type>
+			<Reward_Param1>0</Reward_Param1>
+			<Prereq>Tutorial_III_Move_Fleet_To_Kashyyyk_Entry</Prereq>
+		</Event>
+
+<!-- Task: Initiate a space battle at Kashyyyk -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_44</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_06</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_03</Reward_Param1>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_05</Prereq>
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_Flash">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>KASHYYYK</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_Objective</Prereq> 
+		<Branch>pre_link_tactical</Branch>
+	</Event>
+	
+	<Event Name="Tutorial_III_Link_Tactical">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Kashyyyk</Event_Param1>
+		<Event_Param2>FILTER_NONE</Event_Param2>
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>SPACE</Reward_Param2>
+		<Reward_Param3>Empire</Reward_Param3>
+		<Reward_Param4>TM03_Empire_at_War.ted</Reward_Param4>
+		<Reward_Param5>Rebel</Reward_Param5>
+		<Reward_Param7>Story_Plots_Tutorial_M03_SPACE.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<Prereq>Tutorial_III_Begin</Prereq>
+		<Branch>BRANCH_TUTORIAL_M03</Branch>
+	</Event>
+
+<!-- Objective finished -->
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT03_03</Reward_Param1>
+		<Prereq>Tutorial_III_Link_Tactical</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_III_Move_Fleet_To_Kashyyyk_Entry_Completed">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+        <Reward_Param1>Tutorial_III_Move_Fleet_To_Kashyyyk_Entry</Reward_Param1>
+        <Prereq>Tutorial_III_Task_Fleet_To_Kashyyyk_Done</Prereq>
+   	</Event>
+
+	<Event Name="Tutorial_III_Task_Fleet_To_Kashyyyk_Stop_Flashing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_III_Link_Tactical</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_III_Disable_Pre_Tactical_Events">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>pre_link_tactical</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_III_Link_Tactical</Prereq>
+	</Event>
+
+<!-- Wait until the battle summary dialog is closed -->
+	<Event Name="Tutorial_III_Returned_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>battle_end_closed</Event_Param1>
+		<Prereq>Tutorial_III_Link_Tactical</Prereq>
+		<Branch>BRANCH_TUTORIAL_M03</Branch>
+	</Event>
+
+<!-- Tutorial 1 failed -->
+<!-- Detect mission 1 being lost.  Display text telling the player to try again -->
+	<Event Name="Tutorial_III_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Tutorial_M03_SPACE.XML</Event_Param1>
+		<Prereq>Tutorial_III_Returned_01</Prereq>
+		<Branch>BRANCH_TUTORIAL_M03</Branch>
+	</Event>
+
+<!-- Re-enable mission -->
+	<Event Name="Tutorial_III_Failed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>RESET_BRANCH</Reward_Type>
+		<Reward_Param1>BRANCH_TUTORIAL_M03</Reward_Param1>
+		<Prereq>Tutorial_III_Failed</Prereq>
+		<Branch>BRANCH_TUTORIAL_M03</Branch>
+	</Event>
+
+<!-- Mission 3 ends successfully -->
+	<Event Name="Tutorial_III_Completed">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Tutorial_M03_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Tutorial_III_Returned_01</Prereq>
+	</Event>
+
+<!--
+<Event Name="Tutorial_III_Completed_01">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+	<Reward_Param1>Rebel_A02M04_Mission</Reward_Param1>
+	<Prereq>Tutorial_III_Completed</Prereq>
+</Event>
+-->
+
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_III_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_THREE</Reward_Param1>
+	<Prereq>Tutorial_III_Completed</Prereq>
+</Event>
+
+<!-- Link to next tutorial -->
+<Event Name="Tutorial_III_Next_Tutorial_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+	<Reward_Param1>TEXT_TUTORIAL_3_COMPLETE</Reward_Param1>
+	<Prereq>Tutorial_III_Completed</Prereq>
+</Event>
+
+<!--
+<Event Name="Tutorial_III_Next_Tutorial_00">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>DISABLE_MOVIES</Reward_Type>
+	<Reward_Param1>0</Reward_Param1>
+	<Prereq>Tutorial_III_Next_Tutorial_00</Prereq>
+</Event>
+-->
+
+<Event Name="Tutorial_III_Next_Tutorial_01">
+	<Event_Type>STORY_GENERIC</Event_Type>
+	<Event_Param1>Continue_Tutorial</Event_Param1>
+	<Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+	<Reward_Param1>Tutorial_Four</Reward_Param1>
+	<Reward_Param2>1</Reward_Param2>
+</Event>
+
+</Story>

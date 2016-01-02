@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" ?>
+
+
+<Story>
+
+
+<!-- Preliminary Setup -->
+
+	<Event Name="Empire_A03M09_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M09_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A03M09_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A03M09_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A03M09_Prevent_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Reward_Param2>EMPIRE</Reward_Param2>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+	<!-- <Event Name="Empire_A03M09_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event> -->
+
+	<Event Name="Empire_A03M09_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A03M09_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+
+<!-- Emperor task and hint -->
+
+	<Event Name="Empire_ActIII_M09_Emperor_Hint">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>MISSION_BEGINNING_HINT</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_20</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+<!-- INITIAL DIALOG SEQUENCE -->
+
+	<!-- Waiting for Lua to finish processing its State_Empire_A03M09_Begin function -->
+	<Event Name="Empire_ActIII_M09_Dialog_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>LUA_EM09_BEGIN_FINISHED</Event_Param2>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>		
+	
+
+	<!-- Bothan Female Speaks 1 -->
+	<Event Name="Empire_ActIII_M09_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Prereq>Empire_ActIII_M09_Dialog_Go</Prereq>
+	</Event>
+
+			<Event Name="Empire_ActIII_M09_00a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>EMPIRE_ACT03_MISSION_NINE_04</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_00</Prereq>
+			</Event>
+
+
+	<!-- Emperor Speaks -->
+	<Event Name="Empire_ActIII_M09_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_04</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_04</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_ActIII_M09_00a</Prereq>
+	</Event>
+
+			<Event Name="Empire_ActIII_M09_01a">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_05</Reward_Param1>
+				<Reward_Param2>-1</Reward_Param2>
+				<Prereq>Empire_ActIII_M09_01</Prereq>
+			</Event>
+
+			<Event Name="Empire_ActIII_M09_01b">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>SPEECH</Reward_Type>
+				<Reward_Param1>EMPIRE_ACT03_MISSION_NINE_05</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_01</Prereq>
+			</Event>
+
+	<!-- End of Dialog -->
+	<Event Name="Empire_ActIII_M09_03">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_05</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_05</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_ActIII_M09_01b</Prereq>
+	</Event>
+	
+
+
+<!-- jdg ADDING mission objectives here 
+TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18
+Emperor Palpatine must survive.
+
+TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_19
+Destroy all Bothan structures and units.
+-->
+
+
+			<Event Name="Empire_ActIII_M09_ADD_OBJECTIVE_Keep_Emperor_Alive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_03</Prereq>
+			</Event>
+			
+			<Event Name="Empire_ActIII_M09_ADD_OBJECTIVE_Destroy_All_Bothans">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_19</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_03</Prereq>
+			</Event>
+
+
+
+
+<!-- Win Condition -->
+
+
+	<Event Name="Empire_ActIII_M09_WIN_CONDITION">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Prereq>Empire_ActIII_M09_03</Prereq>
+	</Event>
+
+	<Event Name="Empire_ActIII_M09_Lua_Start_End">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>LUA_EM09_START_END</Event_Param2>
+		<Prereq>Empire_ActIII_M09_WIN_CONDITION</Prereq>
+	</Event>	
+
+
+	<Event Name="Empire_ActIII_M09_WIN_CONDITION_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT03_MISSION_NINE_06</Reward_Param8>
+		<Prereq>Empire_ActIII_M09_Lua_Start_End</Prereq>
+	</Event>
+	
+	<!-- jdg COMPLETING mission objectives here 
+TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18
+Emperor Palpatine must survive.
+
+TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_19
+Destroy all Bothan structures and units.
+-->
+
+
+			<Event Name="Empire_ActIII_M09_COMPLETE_OBJECTIVE_Keep_Emperor_Alive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_WIN_CONDITION</Prereq>
+			</Event>
+			
+			<Event Name="Empire_ActIII_M09_COMPLETE_OBJECTIVE_Destroy_All_Bothans">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_19</Reward_Param1>
+				<Prereq>Empire_ActIII_M09_WIN_CONDITION</Prereq>
+			</Event>
+
+
+
+	<!-- End of Dialog -->
+	<Event Name="Empire_ActIII_M09_Final_Speech_Done">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT03_MISSION_NINE_06</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_06</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_ActIII_M09_WIN_CONDITION_01</Prereq>
+	</Event>
+
+
+	<Event Name="Empire_ActIII_M09_Lua_Finish_End">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>LUA_EM09_FINISHED_END</Event_Param2>
+		<Prereq>Empire_ActIII_M09_Lua_Start_End</Prereq>
+	</Event>	
+
+	<Event Name="Empire_A03M09_Unlock_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Reward_Param2>EMPIRE</Reward_Param2>
+		<Prereq>Empire_ActIII_M09_Lua_Finish_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_ActIII_M09_Empire_Wins">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Empire_ActIII_M09_Lua_Finish_End Empire_ActIII_M09_Final_Speech_Done</Prereq>
+	</Event>
+
+	<Event Name="Empire_A03M09_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A03M09_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+
+
+
+
+
+<!-- LOSS CONDITION: Emperor Dies -->
+
+
+	<!-- <Event Name="Empire_ActIII_M09_LOSS_CONDITION">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Emperor_Palpatine</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>BOTHAN</Reward_Param1>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>-->
+	
+	<!-- Loss Condition: Emperor dies
+TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_11
+Imperial Officer: I'm not receiving a signal from the Emperor's shuttle! 
+Something must have gone wrong - order the evacuation!-->
+	
+	<Event Name="Empire_M09_Emperor_Dies_Speech_01">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Emperor_Palpatine</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT03_MISSION_NINE_11</Reward_Param8> <!-- Put speech file name here -->
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+	
+
+				<Event Name="Empire_M09_Emperor_Dies_Speech_01_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>EMPIRE_ACT03_MISSION_NINE_11</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT03_MISSION_NINE_11</Reward_Param1>
+				<Reward_Param4>remove</Reward_Param4>
+				<Prereq>Empire_M09_Emperor_Dies_Speech_01</Prereq>
+			</Event>
+			
+	
+	
+	<Event Name="Empire_M09_Emperor_Dies_PlayerLoss">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_M09_Emperor_Dies_Speech_01_Remove_Text</Prereq>
+	</Event>
+	
+	
+	<!-- jdg FAILING mission objectives here 
+TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18
+Emperor Palpatine must survive.
+-->
+
+
+			<Event Name="Empire_ActIII_M09_FAIL_OBJECTIVE_Keep_Emperor_Alive">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT03_MISSION_NINE_18</Reward_Param1>
+				<Prereq>Empire_M09_Emperor_Dies_Speech_01</Prereq>
+			</Event>
+			
+
+	<Event Name="Empire_A03M09_Imperial_Officer">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>REBELS_ARE_SPAWNING</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param8>
+		<Reward_Param9></Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A03M09_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A03M09_Imperial_Officer_Cleanup">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_20</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A03M09_Imperial_Officer</Prereq>
+	</Event>
+
+</Story>

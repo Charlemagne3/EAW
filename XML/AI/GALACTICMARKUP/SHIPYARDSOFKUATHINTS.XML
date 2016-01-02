@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Galactic_Markup>
+
+	<Planets HintSet="Galactic_Hints">
+		<Corellia>
+			<Chokepoint>2.0</Chokepoint>
+		</Corellia>
+		
+		<Corulag>
+			<Chokepoint>2.0</Chokepoint>
+		</Corulag>
+		
+		<Fresia>
+			<Chokepoint>1.0</Chokepoint>
+			<PriorityTarget>5.0</PriorityTarget>
+		</Fresia>
+		
+		<Fondor>
+			<Chokepoint>1.0</Chokepoint>
+			<PriorityTarget>5.0</PriorityTarget>
+		</Fondor>
+		
+		<AetenII>
+			<Chokepoint>1.0</Chokepoint>
+		</AetenII>
+		
+		<Kuat>
+			<PriorityTarget>7.0</PriorityTarget>
+		</Kuat>
+	</Planets>
+	
+</Galactic_Markup>

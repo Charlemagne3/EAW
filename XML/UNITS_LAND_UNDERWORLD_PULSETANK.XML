@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+
+
+
+<Pulse_Cannon_Tank_Data>
+
+
+
+
+
+
+
+
+	<GroundVehicle Name="MZ8_Pulse_Cannon_Tank">
+
+		<Text_ID>TEXT_UNIT_MZ8_PC_TANK</Text_ID>
+		<Encyclopedia_Good_Against> M1_Repulsor_Tank R_Ground_Heavy_Vehicle_Factory E_Ground_Turbolaser_Tower </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> T4B_Tank AT_AT_Walker </Encyclopedia_Vulnerable_To>
+  		<Encyclopedia_Text>TEXT_TOOLTIP_MZ8_PC_TANK</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_LIGHT_VEHICLE</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_uv_mz8 pulse cannon.tga</Icon_Name>
+
+		<Select_Box_Scale>90</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+
+		<Land_Model_Name>UV_MZ8MOBILEPULSECANNON.ALO</Land_Model_Name>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>1.0</Max_Rate_Of_Turn>
+		<Movement_Animation_Speed> 1.0 </Movement_Animation_Speed>
+
+		<Mass>1.0</Mass>
+		<Scale_Factor>0.85</Scale_Factor>
+		<Affiliation>Underworld</Affiliation>
+		<Political_Control>0</Political_Control>	
+        <Ranking_In_Category>7</Ranking_In_Category>
+
+		<Space_Layer> Land </Space_Layer>
+		<UnitCollisionClass> Vehicle </UnitCollisionClass>
+		<OverrideAcceleration> .2 </OverrideAcceleration>
+		<OverrideDeceleration> .2 </OverrideDeceleration>
+		<FormationSpacing> 1.5 </FormationSpacing>
+		<FormationOrder> 4 </FormationOrder>
+		<FormationGrouping> Standard </FormationGrouping>
+		<FormationRaggedness> 0.5 </FormationRaggedness>
+		<MaxJiggleDistance> 0 </MaxJiggleDistance>
+		<MinimumPushReturnDistance> 100 </MinimumPushReturnDistance>
+
+		<UseSecondaryFacing> false </UseSecondaryFacing>
+		<SecondaryTurnInPlaceROTCoefficient> .5 </SecondaryTurnInPlaceROTCoefficient>
+		<SecondaryTurnAngle> 90 </SecondaryTurnAngle>
+		<MinSecondaryTurnROTCoefficient> .01 </MinSecondaryTurnROTCoefficient>
+		<MaxSecondaryTurnROTCoefficient> .7 </MaxSecondaryTurnROTCoefficient>
+		<SecondaryTurnLookaheadDistance> 0 </SecondaryTurnLookaheadDistance>
+
+		<Custom_Hard_XExtent> 20.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 10.0 </Custom_Hard_YExtent>
+		<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+
+		<Behavior> SELECTABLE </Behavior>
+		<LandBehavior> SHIELDED, ABILITY_COUNTDOWN, AFFECTED_BY_SHIELD, TREAD_SCROLL, WALK_LOCOMOTOR, IDLE, TARGETING, WEAPON, POWERED, REVEAL, HIDE_WHEN_FOGGED, SQUASH, SURFACE_FX, UNIT_AI, TELEKINESIS_TARGET, STUNNABLE, WIND_DISTURBANCE,DAMAGE_TRACKING, SELF_DESTRUCT</LandBehavior>
+
+		<Is_Squashable_By_Supercrusher>Yes</Is_Squashable_By_Supercrusher>
+		<SurfaceFX_Name>Generic_Track</SurfaceFX_Name>
+		<Property_Flags>GoodInfantryCrusher</Property_Flags>
+
+		<Size_Value>70</Size_Value>
+		<Damage>6</Damage>
+		<Armor_Type> Armor_2M </Armor_Type>
+		<Tactical_Health>200</Tactical_Health>
+	
+		<Shield_Points>300</Shield_Points>
+		<Shield_Refresh_Rate>18</Shield_Refresh_Rate>
+		<Energy_Capacity>999</Energy_Capacity>
+		<Energy_Refresh_Rate>999</Energy_Refresh_Rate>
+
+		<Land_FOW_Reveal_Range>320.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>320.0</Targeting_Max_Attack_Distance>
+		<Ranged_Target_Z_Adjust>13.0</Ranged_Target_Z_Adjust>
+
+		<Projectile_Types>Proj_Mobile_Pulse_Cannon_Blast</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>5.3</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 30 </Projectile_Appearance_Delay_Frames>
+	
+		<Targeting_Fire_Inaccuracy> Infantry, 10.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Vehicle, 1.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Air, 70.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Structure, 1.0 </Targeting_Fire_Inaccuracy>
+		<Fire_Category_Restrictions> Air </Fire_Category_Restrictions>	
+
+		<Turret_Rotate_Extent_Degrees>10</Turret_Rotate_Extent_Degrees>
+		<Turret_Elevate_Extent_Degrees>45</Turret_Elevate_Extent_Degrees>
+
+		<Death_Explosions>Large_Explosion_Land</Death_Explosions>
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<Collidable_By_Projectile_Dead>Yes</Collidable_By_Projectile_Dead>
+
+		<Land_Damage_Thresholds>1, 0.66, 0.33</Land_Damage_Thresholds>
+		<Land_Damage_Alternates>0, 1, 2</Land_Damage_Alternates>
+		<Land_Damage_SFX>null,SFX_Grenade_Detonation, SFX_Grenade_Detonation</Land_Damage_SFX>
+        <Remove_Upon_Death>true</Remove_Upon_Death>
+
+		<Wind_Disturbance_Radius>50</Wind_Disturbance_Radius>
+		<Wind_Disturbance_Strength>10</Wind_Disturbance_Strength>
+		<Wind_Disturbance_Sphere_Alpha>0.4</Wind_Disturbance_Sphere_Alpha>
+		<Base_Shield_Penetration_Particle>Shield_Penetration_Effect_Particle</Base_Shield_Penetration_Particle>
+
+		<SFXEvent_Fire></SFXEvent_Fire>
+		<SFXEvent_Select>Unit_Select_Pulse_Cannon</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Pulse_Cannon</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Pulse_Cannon</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Pulse_Cannon</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Pulse_Cannon</SFXEvent_Guard>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Pulse_Cannon </SFXEvent_Assist_Move>		
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Pulse_Cannon</SFXEvent_Assist_Attack>
+		<SFXEvent_Engine_Idle_Loop> Unit_T2B_Idle_Engine_Loop </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop> Unit_T2B_Moving_Engine_Loop </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Unit_Lost> UHD_Unit_Destroyed </SFXEvent_Unit_Lost>
+		<SFXEvent_Tactical_Build_Started> UHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> UHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> UHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+		<Death_SFXEvent_Start_Die>Unit_Tank_Death_SFX</Death_SFXEvent_Start_Die>
+
+		<Selt_Destruct_SFXEvent_Start_Die> Unit_ZC_Self_Destruct </Selt_Destruct_SFXEvent_Start_Die> <!-- When self destruct sequence begins -->
+		<Death_SFXEvent_Start_Die> Unit_Tank_Death_SFX </Death_SFXEvent_Start_Die> <!-- When self destructs -->
+
+		<No_Reflection_Below_Detail_Level>99</No_Reflection_Below_Detail_Level>
+		<No_Refraction_Below_Detail_Level>3</No_Refraction_Below_Detail_Level>
+		<Occlusion_Silhouette_Enabled>1</Occlusion_Silhouette_Enabled>
+
+		<Blob_Shadow_Below_Detail_Level>2</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>65.0, 50.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+
+		<CategoryMask> Vehicle </CategoryMask>
+		<MovementClass>Tracked</MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<Ground_Vehicle_Turret_Target> Yes </Ground_Vehicle_Turret_Target>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Overall_Length>45.0</Overall_Length> <!-- For vehicle pitching up and down on terrain -->
+		<Overall_Width>20.0</Overall_Width> <!-- For vehicle rolling left and right on terrain value (20 by geometry)-->
+		<Has_Land_Evaluator>Yes</Has_Land_Evaluator>
+		<AI_Combat_Power>80</AI_Combat_Power>
+
+		<Idle_Chase_Range>0.0</Idle_Chase_Range>
+		<Guard_Chase_Range>200.0</Guard_Chase_Range>
+		<Attack_Move_Response_Range>150.0</Attack_Move_Response_Range>
+		<Targeting_Stickiness_Time_Threshold>5.0</Targeting_Stickiness_Time_Threshold>
+		<Targeting_Priority_Set>AntiVehicleStructure</Targeting_Priority_Set>
+		<Autonomous_Move_Extension_Vs_Attacker>150.0</Autonomous_Move_Extension_Vs_Attacker>
+        <Converted_To_Enemy_Die_Time_Seconds>45</Converted_To_Enemy_Die_Time_Seconds>
+		<Weather_Category>Tracked</Weather_Category>
+
+		<Score_Cost_Credits>1500</Score_Cost_Credits>
+		<Influences_Capture_Point> False </Influences_Capture_Point>
+		<Vehicle_Thief_Inside_Clone>MZ8_Pulse_Cannon_Tank_Captured</Vehicle_Thief_Inside_Clone>
+
+		<Tactical_Bribe_Cost>1000</Tactical_Bribe_Cost>
+		<Lua_Script>ObjectScript_SelfDestructLand</Lua_Script>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SELF_DESTRUCT</Type>
+				<Alternate_Description_Text>TEXT_TOOLTIP_PULSE_TANK_DESTRUCT_DESCRIPTION</Alternate_Description_Text>
+				<Expiration_Seconds>2</Expiration_Seconds>
+				<Recharge_Seconds>10</Recharge_Seconds> 
+				<Spawned_Object_Type> MZ8_Tank_Self_Destruct_Blast </Spawned_Object_Type>
+                <Owner_Attachment_Bone>b_overheat_00</Owner_Attachment_Bone>
+                <Particle_Effect>Pulse_Cannon_Tank_Overheat</Particle_Effect>
+                <Stop_When_Activated>No</Stop_When_Activated>
+                <Max_Secs_For_AE_Delayed_Damage>0</Max_Secs_For_AE_Delayed_Damage> 
+                <GUI_Activated_Ability_Name>Pulse_Tank_Self_Destruct</GUI_Activated_Ability_Name>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+				<Supports_Autofire>True</Supports_Autofire>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+	</GroundVehicle>
+
+
+	<GroundVehicle Name="MZ8_Pulse_Cannon_Tank_Captured">
+		<Variant_Of_Existing_Type>MZ8_Pulse_Cannon_Tank</Variant_Of_Existing_Type>
+		<Icon_Name>i_button_chewbacca_uv_mz8.tga</Icon_Name>
+	
+		<!-- MUST have same abilities PLUS EJECT_THIEF -->
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SELF_DESTRUCT</Type>
+				<Expiration_Seconds>2</Expiration_Seconds>
+				<Recharge_Seconds>10</Recharge_Seconds> 
+				<Spawned_Object_Type> MZ8_Tank_Self_Destruct_Blast </Spawned_Object_Type>
+                <Owner_Attachment_Bone>b_overheat_00</Owner_Attachment_Bone>
+                <Particle_Effect>Pulse_Cannon_Tank_Overheat</Particle_Effect>
+                <Stop_When_Activated>No</Stop_When_Activated>
+                <GUI_Activated_Ability_Name>Pulse_Tank_Self_Destruct</GUI_Activated_Ability_Name> 
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+			</Unit_Ability>
+			
+			<Unit_Ability>
+				<Type>EJECT_VEHICLE_THIEF</Type>
+				<Recharge_Seconds>10</Recharge_Seconds>
+			</Unit_Ability>
+			
+		</Unit_Abilities_Data>
+
+	</GroundVehicle>
+
+	<GroundCompany Name="MZ8_Pulse_Cannon_Tank_Company">
+		<Text_ID>TEXT_UNIT_MZ8_PC_TANK_COMPANY</Text_ID>
+		<Encyclopedia_Good_Against> M1_Repulsor_Tank R_Ground_Heavy_Vehicle_Factory E_Ground_Turbolaser_Tower </Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> T4B_Tank AT_AT_Walker </Encyclopedia_Vulnerable_To>
+		<Encyclopedia_Text>TEXT_TOOLTIP_MZ8_PC_TANK</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_LIGHT_VEHICLE</Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_uv_mz8 pulse cannon.tga</Icon_Name>
+
+		<GUI_Row> 1 </GUI_Row>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>20</Damage>
+		<Autoresolve_Health>100</Autoresolve_Health>
+		
+		<Affiliation>Underworld</Affiliation>
+		<Build_Cost_Credits>1800</Build_Cost_Credits>
+		<Build_Time_Seconds>23</Build_Time_Seconds>
+		<Build_Time_Reduced_By_Multiple_Factories> Yes </Build_Time_Reduced_By_Multiple_Factories>
+		<Build_Tab_Land_Units>Yes</Build_Tab_Land_Units>
+		<Tech_Level>0</Tech_Level>
+		<Required_Timeline>0</Required_Timeline>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures>U_Ground_Vehicle_Factory</Required_Special_Structures>
+		<Required_Planets />
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Formation_Priority>2</Formation_Priority>
+		<Is_Escort>yes</Is_Escort>
+		<Ship_Class>tank</Ship_Class>
+		<Company_Transport_Unit>Underworld_Vehicle_Transport</Company_Transport_Unit>
+		<Company_Units>MZ8_Pulse_Cannon_Tank, MZ8_Pulse_Cannon_Tank, MZ8_Pulse_Cannon_Tank, MZ8_Pulse_Cannon_Tank</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+		<Score_Cost_Credits>180</Score_Cost_Credits>
+		<Population_Value>1</Population_Value>
+		<Maintenance_Cost>0.05</Maintenance_Cost>
+
+		<Cheap_Bribe_Cost>9</Cheap_Bribe_Cost>
+		<Expensive_Bribe_Cost>18</Expensive_Bribe_Cost>
+
+		<SFXEvent_Build_Started>UHD_Build_Vehicle</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Vehicle_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Complete_Pulse_Cannon</SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Pulse_Cannon</SFXEvent_Fleet_Move>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
+		<Tactical_Build_Cost_Multiplayer>1350</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>16</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>UC_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<!--<Build_Limit_Current_Per_Player>0</Build_Limit_Current_Per_Player>-->
+		<!--<Build_Limit_Lifetime_Per_Player>0</Build_Limit_Lifetime_Per_Player>-->  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+		
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SELF_DESTRUCT</Type>
+				<Expiration_Seconds>3.0</Expiration_Seconds>
+				<Recharge_Seconds>10</Recharge_Seconds> 
+				<Spawned_Object_Type> MZ8_Tank_Self_Destruct_Blast </Spawned_Object_Type>
+                <Owner_Attachment_Bone>b_overheat_00</Owner_Attachment_Bone>
+                <Particle_Effect>Pulse_Cannon_Tank_Overheat</Particle_Effect>
+                <Stop_When_Activated>No</Stop_When_Activated>
+                <GUI_Activated_Ability_Name>Pulse_Tank_Self_Destruct</GUI_Activated_Ability_Name>
+                <Must_Be_Bought_On_Black_Market>Yes</Must_Be_Bought_On_Black_Market>
+			</Unit_Ability>
+			
+		</Unit_Abilities_Data>
+
+	</GroundCompany>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Pulse_Cannon_Tank_Data>

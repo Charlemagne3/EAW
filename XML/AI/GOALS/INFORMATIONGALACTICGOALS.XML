@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<Goals>
+
+	<!-- Deploy a scout force on a specific planet -->
+	<Scout_Planet>
+		<AIGoalApplicationFlags> Enemy | Neutral </AIGoalApplicationFlags>
+		<GameMode> Galactic </GameMode>
+		<Category> Information </Category>
+		<Reachability> Any </Reachability>
+		<Time_Limit> 200.0 </Time_Limit>
+		<Build_Time_Delay_Tolerance>2.0</Build_Time_Delay_Tolerance>
+	</Scout_Planet>
+	
+</Goals>

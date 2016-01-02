@@ -1,0 +1,280 @@
+<?xml version="1.0" ?>
+<MOV_Cinematics>
+	
+	<MOV_Cinematic Name="Dead_Bothan">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Land_Model_Name>W_Prop_DeadBothan.alo</Land_Model_Name>
+		<Is_Decoration>No</Is_Decoration>
+		<Scale_Factor>1.5</Scale_Factor>
+				
+	</MOV_Cinematic>
+	
+	<MOV_Cinematic Name="Shuttle_Tyderium_Lua_Cinematic">
+		<Variant_Of_Existing_Type>Shuttle_Tyderium</Variant_Of_Existing_Type>
+		<Land_Model_Name>MOV_Empire_Intro_Shuttle.ALO</Land_Model_Name>
+		<Space_Model_Name>MOV_Empire_Intro_Shuttle.ALO</Space_Model_Name>
+		<Behavior>HINT</Behavior>
+		<Scale_Factor>.25</Scale_Factor>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<User_Bound_Min>10000, 10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Cinematic_Object_Only> Yes </Cinematic_Object_Only>
+	</MOV_Cinematic> 
+	
+	<MOV_Cinematic Name="MOV_Rebel_Cinematic_Intro">
+		
+		<Land_Model_Name>MOV_REBEL_INTRO.ALO</Land_Model_Name>
+		<Space_Model_Name>MOV_REBEL_INTRO.ALO</Space_Model_Name>
+		<Behavior>HINT</Behavior>
+		<Scale_Factor>.25</Scale_Factor>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<User_Bound_Min>-1, -1, -1</User_Bound_Min>
+		<User_Bound_Max>1, 1, 1</User_Bound_Max>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Cinematic_Object_Only> Yes </Cinematic_Object_Only>
+		<SpaceBehavior> SIMPLE_SPACE_LOCOMOTOR </SpaceBehavior>
+		<SFXEvent_Engine_Idle_Loop> </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop>  </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Engine_Cinematic_Focus_Loop>  </SFXEvent_Engine_Cinematic_Focus_Loop>
+
+	</MOV_Cinematic>
+
+     <MOV_Cinematic Name="MOV_Princess_Leia">
+		
+		<Variant_Of_Existing_Type>Tantive_IV</Variant_Of_Existing_Type>
+		<Land_Model_Name>RV_CORVETTE.ALO</Land_Model_Name>
+		<Space_Model_Name>RV_CORVETTE.ALO</Space_Model_Name>
+		<Behavior>HINT</Behavior>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<User_Bound_Min>10000, 10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Cinematic_Object_Only> Yes </Cinematic_Object_Only>
+        	<Layer_Z_Adjust>-400.0</Layer_Z_Adjust>
+		
+	</MOV_Cinematic>
+
+	
+	<!--jdg added for EM01 cines-->
+
+	<MOV_Cinematic Name="MOV_FIELD_COMMANDER_EMPIRE">
+		<Variant_Of_Existing_Type>Generic_Field_Commander_Empire</Variant_Of_Existing_Type>
+		<Land_Model_Name>Mov_EI_FieldCommander.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>Mov_EI_FieldCommander.alo</Land_Model_Anim_Override_Name>
+		<Behavior>HINT</Behavior>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<!--<User_Bound_Min>10000, 10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>-->
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Death_Fade_Time> 0.25 </Death_Fade_Time>
+		<Death_Persistence_Duration>120.0</Death_Persistence_Duration>
+	</MOV_Cinematic>
+
+
+
+	<MOV_Cinematic Name="EM6_Prison_Wookies">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Land_Model_Name>MOV_EM6_Prison_Wookies.alo</Land_Model_Name>
+		<Is_Decoration>No</Is_Decoration>
+		<Scale_Factor>1.5</Scale_Factor>
+		<Variant_Of_Existing_Type>Han_Solo</Variant_Of_Existing_Type>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<!-- Variant_Of_Existing_Type>Prop_Rock_Cluster_00</Variant_Of_Existing_Type -->
+		<Avoidance_Disabled> true </Avoidance_Disabled>
+
+		<Pause_During_Cinematic_Anim>no</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+
+		
+	</MOV_Cinematic>
+
+	<MOV_Cinematic Name="EM6_Captured_Wookies">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Wookie_Warrior_Unarmed</Variant_Of_Existing_Type>
+		<Land_Model_Name>RI_Wookiee_Captured.alo</Land_Model_Name>	
+
+		
+	</MOV_Cinematic>
+
+	<MOV_Cinematic Name="EM6_Captured_Wookies_Party">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Kashyyyk_Wookie_War_Party_Unarmed</Variant_Of_Existing_Type>
+			
+		<Company_Units>EM6_Captured_Wookies, EM6_Captured_Wookies, EM6_Captured_Wookies, EM6_Captured_Wookies, EM6_Captured_Wookies, EM6_Captured_Wookies</Company_Units>
+		
+	</MOV_Cinematic>
+
+
+	<MOV_Cinematic Name="EM11_HyperVader">
+		<!-- Changed from Carrack-Class Cruiser -->
+		<Text_ID>TEXT_UNIT_TARTAN_CRUISER</Text_ID>
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<GUI_Row> 1 </GUI_Row>
+		<Space_Model_Name>EV_TIEADVANCED.ALO</Space_Model_Name>
+		<Select_Box_Scale>370</Select_Box_Scale>
+		<Select_Box_Z_Adjust>-30</Select_Box_Z_Adjust>
+		<Mass>0.9995</Mass>
+		<Scale_Factor>0.56</Scale_Factor>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+		<Dense_FOW_Reveal_Range_Multiplier>0.2</Dense_FOW_Reveal_Range_Multiplier>
+
+		<Ranged_Target_Z_Adjust>0</Ranged_Target_Z_Adjust>
+		
+		<Max_Speed>5.0</Max_Speed>
+		<Max_Rate_Of_Turn>1.4</Max_Rate_Of_Turn>
+		<MovementClass> Space </MovementClass>
+		<Space_Layer> Corvette </Space_Layer>
+		<Layer_Z_Adjust>0</Layer_Z_Adjust>
+		<Max_Rate_Of_Roll>0.2</Max_Rate_Of_Roll>
+		<Bank_Turn_Angle>15</Bank_Turn_Angle>
+		<OverrideAcceleration> .065 </OverrideAcceleration>
+		<OverrideDeceleration> .065 </OverrideDeceleration>
+
+		<Armor_Type> Armor_Tartan </Armor_Type>
+		<Max_Thrust>0.8</Max_Thrust>
+		<Hyperspace>Yes</Hyperspace>
+		<Hyperspace_Speed>1.5</Hyperspace_Speed>
+		<Maintenance_Cost>0.05</Maintenance_Cost>
+
+		<Affiliation>Empire</Affiliation>
+		<Tech_Level>0</Tech_Level>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>2</Required_Star_Base_Level>
+		<Shield_Points>800</Shield_Points>
+		<Tactical_Health>500</Tactical_Health>
+		<Damage>20</Damage>
+		<Autoresolve_Health>900</Autoresolve_Health> 
+		<Shield_Refresh_Rate>12</Shield_Refresh_Rate>
+		<Energy_Capacity>4500</Energy_Capacity>
+		<Energy_Refresh_Rate>30</Energy_Refresh_Rate>
+		<Ship_Class>corvette</Ship_Class>
+		<Formation_Priority>3</Formation_Priority>
+		<Is_Escort>Yes</Is_Escort>
+		<Is_Bomber>no</Is_Bomber>
+		<Political_Control>0</Political_Control>
+		<Squadron_Capacity>5</Squadron_Capacity>
+		<Transport_Capacity>4</Transport_Capacity>
+		<Number_per_Squadron>1</Number_per_Squadron>
+		<Build_Cost_Credits>1250</Build_Cost_Credits>
+		<AI_Combat_Power>1250</AI_Combat_Power>
+		<Build_Time_Seconds>15</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Size_Value>120</Size_Value>
+		<Behavior>ABILITY_COUNTDOWN, DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED</Behavior>
+		<SpaceBehavior> SIMPLE_SPACE_LOCOMOTOR, TARGETING, SELECTABLE, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<Death_Explosions>Large_Explosion_Space_Empire</Death_Explosions>
+
+		<Death_Clone>Damage_Normal, Tartan_Patrol_Cruiser_Death_Clone</Death_Clone>
+		<Space_FOW_Reveal_Range>1200.0</Space_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>2000.0</Targeting_Max_Attack_Distance>
+		
+
+		<Space_FOW_Reveal_Range>1200.0</Space_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>800.0</Targeting_Max_Attack_Distance>
+
+		<Asteroid_Damage_Hit_Particles>Small_Damage_Space</Asteroid_Damage_Hit_Particles>
+
+		<CategoryMask> Corvette | AntiFighter</CategoryMask>
+		<Icon_Name>i_button_carrack_cruiser.tga</Icon_Name>
+		<GUI_Model_Name>EV_TartanCruiser.alo</GUI_Model_Name>
+		<GUI_Distance>900</GUI_Distance>
+		<GUI_Offset>0 0 0</GUI_Offset>
+		<GUI_Velocity>45</GUI_Velocity>
+		<Victory_Relevant>yes</Victory_Relevant>
+		<Has_Space_Evaluator>True</Has_Space_Evaluator>
+
+		<SFXEvent_Build_Started>EHD_Build_Vehicle</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Unit_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Complete_Tartan</SFXEvent_Build_Complete>
+		<SFXEvent_Ambient_Loop>Unit_Carrack_Moving_Engine_Loop</SFXEvent_Ambient_Loop>
+		<SFXEvent_Select>Unit_Select_Tartan</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Tartan</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Tartan</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Tartan</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Tartan</SFXEvent_Guard>
+		<SFXEvent_Stop>Unit_Stop_Tartan</SFXEvent_Stop>
+		<SFXEvent_Barrage>Unit_Barrage_Tartan</SFXEvent_Barrage>
+		<SFXEvent_Move_Into_Asteroid_Field> Unit_Asteroids_Tartan </SFXEvent_Move_Into_Asteroid_Field>
+		<SFXEvent_Move_Into_Nebula> Unit_Nebula_Tartan </SFXEvent_Move_Into_Nebula>
+		<SFXEvent_Damaged_By_Asteroid> SFX_Asteroid_Detonation </SFXEvent_Damaged_By_Asteroid>
+
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_LASER, Unit_HP_LASER_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_MISSILE, Unit_HP_MISSILE_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_TORPEDO, Unit_HP_TORP_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_ION_CANNON, Unit_HP_ION_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_SHIELD_GENERATOR, Unit_HP_SHIELDS_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_ENGINE, Unit_HP_ENGINES_Tartan </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_GRAVITY_WELL, Unit_HP_GRAV_Tartan </SFXEvent_Attack_Hardpoint>
+
+		<SFXEvent_Engine_Idle_Loop> Unit_Tartan_Idle_Engine_Loop </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop> Unit_Tartan_Moving_Engine_Loop </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_Tartan_Cinematic_Engine_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
+
+		<Death_SFXEvent_Start_Die>Unit_Corvette_Death_SFX</Death_SFXEvent_Start_Die>
+
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		 
+		<MovementClass> Space </MovementClass>
+		<Guard_Chase_Range>1000.0</Guard_Chase_Range>
+		<Idle_Chase_Range>400.0</Idle_Chase_Range>
+		<Attack_Move_Response_Range>400.0</Attack_Move_Response_Range>
+		<Targeting_Stickiness_Time_Threshold>5.0</Targeting_Stickiness_Time_Threshold>
+		<Targeting_Priority_Set>Corvette</Targeting_Priority_Set>
+		<Autonomous_Move_Extension_Vs_Attacker>300.0</Autonomous_Move_Extension_Vs_Attacker>
+
+	</MOV_Cinematic>
+
+
+	<MOV_Cinematic Name="MOV_Mothma">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Land_Model_Name>MOV_Mothma.alo</Land_Model_Name>
+		<Is_Decoration>No</Is_Decoration>
+		<Scale_Factor>1.55</Scale_Factor>
+		<Variant_Of_Existing_Type>Han_Solo</Variant_Of_Existing_Type>
+		<!-- Variant_Of_Existing_Type>Prop_Rock_Cluster_00</Variant_Of_Existing_Type -->
+		<Avoidance_Disabled> true </Avoidance_Disabled>
+
+		<Pause_During_Cinematic_Anim>No</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+				
+	</MOV_Cinematic>
+
+	<MOV_Cinematic Name="MOV_R2D3">
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Han_Solo</Variant_Of_Existing_Type>
+		<Land_Model_Name>RI_R2D3.alo</Land_Model_Name>
+		
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>	
+				
+	</MOV_Cinematic>
+	
+	<MOV_Cinematic Name="MOV_Millenium_Falcon">
+		<Variant_Of_Existing_Type>Shuttle_Tyderium</Variant_Of_Existing_Type>
+		<Land_Model_Name>RV_MFalcon.ALO</Land_Model_Name>
+		<Space_Model_Name>RV_MFalcon.ALO</Space_Model_Name>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<Cinematic_Object_Only> Yes </Cinematic_Object_Only>
+	</MOV_Cinematic> 
+	
+</MOV_Cinematics>
+ 

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Conquer_Planet_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Conquer_Planet_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Conquer_Planet_01">
+		<Event_Type>STORY_CONQUER</Event_Type>
+		<Prereq>Conquer_Planet_00</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Conquer_Planet_Tag_00</Reward_Param1>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+	
+	<Event Name="Conquer_Planet_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Conquer_Planet_01</Prereq>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+	</Event>	
+	
+	<Event Name="Conquer_Planet_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Conquer_Planet_02</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>CONQUER_PLANET_NOTIFICATION_00</Reward_Param1>
+	</Event>
+</Story>

@@ -1,0 +1,821 @@
+<?xml version="1.0" ?>
+<Story>
+
+<!-- Setup -->
+	<Event Name="Rebel_A3_M10_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M10_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M10_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+<!-- Intro Cut-scene.  Plays in the dark through and including Rebel_A3_M10_Mission_Intro_Cinematic_02 -->
+<!-- Cinematic line 01
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_17
+Han Solo: How did I know she'd ask us to do this!  I know it's hot in here!  Try not to breathe so much!  -->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_01">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_01</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_17</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_17</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_01_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_17</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_17</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_01</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_01_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_01_Remove_Text</Prereq>
+    </Event>
+
+<!-- Cinematic line 02
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_18
+Han Solo: Ow!  Chewie, you ok?  I think we've landed.    -->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_02">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_02</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_18</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_18</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_02_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_18</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_18</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_02</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_02_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_02_Remove_Text</Prereq>
+    </Event>
+
+<!-- Cinematic line 03
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_19
+Han Solo: Sounds like we're clear.  Help me with this door, will you?   -->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_03">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_03</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_19</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_19</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_03_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_19</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_19</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_03</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_03_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_03_Remove_Text</Prereq>
+    </Event>
+
+<!-- Cinematic line 04
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_20
+Han Solo: No amount of money is worth this!   -->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_04">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_04</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_20</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_20</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_04_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_20</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_20</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_04</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_04_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_04_Remove_Text</Prereq>
+    </Event>
+
+<!-- Cinematic line 05
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_21
+Han Solo: We're in the middle of an Imperial city - how are we ever going to find the schematics?  -->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_05">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_05</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_21</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_21</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_05_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_21</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_21</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_05</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_05_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_05_Remove_Text</Prereq>
+    </Event>
+
+<!-- Cinematic line 06
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_22
+Han Solo: Hmm… looks like that storage area is our best bet.  
+You said it Chewie - I've got a bad feeling about this too.  
+Looks like we'll have to be a bit creative in how we get over there… .-->
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_06">
+        <Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_06</Event_Param2>
+        <Reward_Type>MULTIMEDIA</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_22</Reward_Param1>
+        <Reward_Param2>-1</Reward_Param2>	
+        <Reward_Param8>REBEL_ACT03_MISSION_TEN_22</Reward_Param8>
+        <Reward_Param9>Han_Loop</Reward_Param9>
+        <Reward_Param10>1</Reward_Param10>
+        <Prereq>Rebel_A3_M10_Begin</Prereq>
+    </Event>
+
+    <Event Name="Rebel_M10_IntroCine_Dialog_Line_06_Remove_Text">
+        <Event_Type>STORY_SPEECH_DONE</Event_Type>
+        <Event_Param1>REBEL_ACT03_MISSION_TEN_22</Event_Param1>
+        <Reward_Type>SCREEN_TEXT</Reward_Type>
+        <Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_22</Reward_Param1>
+        <Reward_Param4>Remove</Reward_Param4>	
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_06</Prereq>
+    </Event>
+
+        <Event Name="Rebel_M10_IntroCine_Dialog_Line_06_Remove_Movie">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+        <Prereq>Rebel_M10_IntroCine_Dialog_Line_06_Remove_Text</Prereq>
+    </Event>
+                        
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_41 
+Han Solo: There's no way we're getting close to the storage area with those active.  
+Let's look for a way to shut off the power.  -->
+	<Event Name="Rebel_A3_M10_Turbolaser_Prox_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_DIALOG_HANSOLO_07</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_41</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_41</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>			
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Turbolaser_Prox_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_41</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_41</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Turbolaser_Prox_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Turbolaser_Prox_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Turbolaser_Prox_00a</Prereq>
+	</Event>	
+
+	<Event Name="Rebel_A3_M10_Set_Power_Goal_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_49</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Turbolaser_Prox_00a_Remove_Movie</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Set_Goal_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_23</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Turbolaser_Prox_00a_Remove_Movie</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Set_Goal_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_48</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Turbolaser_Prox_00a_Remove_Movie</Prereq>
+	</Event>
+	
+<!-- Event when Tie Maulers are spotted by Han or Chewie. -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_26
+Han Solo: Hey Chewie - one of those TIE Maulers may come in handy.  
+Why don't you go borrow it?-->
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_DIALOG_TIE_MAULER_INTRO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_26</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_26</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_26</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_28</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_00a</Prereq>
+	</Event>
+
+<!-- Event when Chewie enters the Tie Mauler -->
+
+	<Event Name="Rebel_A3_M10_Player_Selects_Mauler">
+		<Event_Type>STORY_SELECT_UNIT</Event_Type>
+		<Event_Param1>TIE_CRAWLER_CAPTURED</Event_Param1>	
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_00</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_29
+Han Solo: Yeah, I bet it's cramped!  
+I doubt they had Wookiees in mind as the pilots, pal.  -->
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_29</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_Player_Selects_Mauler</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_29</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_29</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_02</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_02a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_02a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Vehicle_Thief_Intro_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_30</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_A3_M10_Vehicle_Thief_Intro_02a_Remove_Movie</Prereq>
+	</Event>
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_32
+ Han Solo: Ugh.  That's a bit too many to take head-on.  
+ Let me shut 'em down before you move in, Chewie.  -->
+	<Event Name="Rebel_A3_M10_EMP_Ability_Intro_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_DIALOG_HAN_EMP_NOTICE</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_32</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_32</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_EMP_Ability_Intro_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_32</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_32</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_EMP_Ability_Intro_00</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_A3_M10_EMP_Ability_Intro_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_EMP_Ability_Intro_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_EMP_Ability_Intro_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_33</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_A3_M10_EMP_Ability_Intro_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_EMP_Ability_Intro_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>CHANGE_OWNER</Reward_Type>
+		<Reward_Param1>Reveal_Marker_02</Reward_Param1>
+		<Reward_Param2>Rebel</Reward_Param2>
+		<Prereq>Rebel_A3_M10_EMP_Ability_Intro_00</Prereq>
+	</Event>
+
+<!-- Stormtrooper Notice Event -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_34 
+Han Solo: Those troopers should be easy pickings with the right weapon… .-->
+	<Event Name="Rebel_A3_M10_Lots_of_Stormtroopers_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_DIALOG_NOTICE_STORMTROOPERS</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_34</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_34</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Lots_of_Stormtroopers_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_34</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_34</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Lots_of_Stormtroopers_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Lots_of_Stormtroopers_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Lots_of_Stormtroopers_00a</Prereq>
+	</Event>
+
+
+<!-- Notification of AT-STs and need to defeat them -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_35 
+Han Solo: Wow.  That's a lot of firepower.  
+Those AT-STs will be a problem unless we can find something more powerful to use on 'em.  -->
+	<Event Name="Rebel_A3_M10_ATST_Woes_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_DIALOG_NOTICE_ATSTS</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_35</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_35</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_ATST_Woes_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_35</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_35</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_ATST_Woes_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_ATST_Woes_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_ATST_Woes_00a</Prereq>
+	</Event>	
+
+<!-- Notice of Imeprial tanks -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_36 
+Han Solo: Hey Chewie, Imperial tanks!  Why don't you take one for a drive?-->
+	<Event Name="Rebel_A3_M10_Imperial_Tanks_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_DIALOG_NOTICE_TANKS</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_36</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_36</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Imperial_Tanks_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_36</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_36</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Imperial_Tanks_00</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_A3_M10_Imperial_Tanks_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Imperial_Tanks_00a</Prereq>
+	</Event>	
+			
+	<Event Name="Rebel_A3_M10_Imperial_Tanks_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_37</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_A3_M10_Imperial_Tanks_00a_Remove_Movie</Prereq>
+	</Event>
+
+<!-- Smart remark from Han once AT-STs have been dealt with -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_38 
+Han Solo: That wasn't so hard, was it?  I thought they'd put up more of a fight!  -->
+	<Event Name="Rebel_A3_M10_Destroy_ATSTs_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>AT_ST_Walker</Event_Param1>
+		<Event_Param3>4</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_38</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_38</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_ATST_Woes_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Destroy_ATSTs_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_38</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_38</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Destroy_ATSTs_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Destroy_ATSTs_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Destroy_ATSTs_00a</Prereq>
+	</Event>	
+
+<!-- Get near Power Generator -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_42
+ Han Solo: There she is!  We take that power generator off-line, 
+ and we'll be able to walk right past those turbolaser turrets. -->
+	<Event Name="Rebel_A3_M10_Kill_the_Power_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_NOTICE_POWER_PLANT</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_42</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_42</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Kill_the_Power_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_42</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_42</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Kill_the_Power_00</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A3_M10_Kill_the_Power_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Kill_the_Power_00a</Prereq>
+	</Event>	
+
+<!-- Blow up generator -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_24
+ Han Solo: That should do it!  Now let's go get the ship schematics!  -->
+	<Event Name="Rebel_A3_M10_Generator_Destroyed_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>POWER_GENERATOR_E</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_24</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Generator_Destroyed_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_24</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_24</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Generator_Destroyed_00</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_A3_M10_Generator_Destroyed_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Generator_Destroyed_00a</Prereq>
+	</Event>	
+
+	<Event Name="Rebel_A3_M10_Finish_Power_Goal_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_49</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Generator_Destroyed_00</Prereq>
+	</Event>
+
+<!-- Han and Chewie reach cargo area, tell about shuttles -->
+
+<!-- TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_25
+Han Solo: Finally!  This looks like the right stuff to me.  
+Let's get it and get out of here!  -->
+	<Event Name="Rebel_A3_M10_Reached_Cargo_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_REACH_CARGO_AREA</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_25</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Cargo_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_25</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_25</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Reached_Cargo_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Cargo_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_43</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_43</Reward_Param8>
+		<!-- Han's movie loop continues from above -->
+		<Prereq>Rebel_A3_M10_Reached_Cargo_01a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Cargo_01b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_43</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_43</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Reached_Cargo_01</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_A3_M10_Reached_Cargo_01b_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Reached_Cargo_01b</Prereq>
+	</Event>	
+
+	<Event Name="Rebel_A3_M10_Reached_Cargo_00a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_23</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Reached_Cargo_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Cargo_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_44</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Reached_Cargo_01b</Prereq>
+	</Event>
+
+<!-- WIN CONDITION: Returned to shuttle after ambush -->
+
+<!-- RICH: This feeds back to Lua for the ending cine and then the victory gets
+called via a storyevent/ai_notification...
+BUT its currently triggered off the two prox events right above here, so if you yank the 
+Story_Trigger_Zone_10 this will have to trigger somewhere else...thanks,Joe
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_45 
+Han Solo: Alright, we're through with this Rebellion after this, Chewie.  That cause is a one-way ticket to getting us killed.  -->
+
+	<Event Name="Rebel_A3_M10_Reached_Falcon_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M10_REACHED_SHUTTLE</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_45</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_45</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Falcon_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_45</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_45</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>	
+		<Prereq>Rebel_A3_M10_Reached_Falcon_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Falcon_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_Reached_Falcon_00a</Prereq>
+	</Event>	
+
+	<Event Name="Rebel_A3_M10_Reached_Falcon_00b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_44</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Reached_Falcon_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_Reached_Falcon_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_48</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Reached_Falcon_00</Prereq>
+	</Event>
+
+<!-- This is triggered in LUA after/during the ending cine  -->
+	<Event Name="Rebel_A3_M10_Enable_Victory">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+        <Event_Param2>CUE_M10_PLAYER_WINS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+<!-- REBEL VICTORY: Set Flag -->
+	<Event Name="Rebel_A3_M10_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A03M10_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+<!-- Rebel Loss: Han or Chewie got wacked -->
+
+<!-- Han Solo Killed -->
+	<Event Name="Rebel_A3_M10_LAND_HanSolo_Killed_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Han_Solo</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_46</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_HanSolo_Killed_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_46</Event_Param1>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+		<Prereq>Rebel_A3_M10_LAND_HanSolo_Killed_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_HanSolo_Killed_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_48</Reward_Param1>
+		<Prereq>Rebel_A3_M10_LAND_HanSolo_Killed_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_HanSolo_Killed_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A3_M10_LAND_HanSolo_Killed_00a</Prereq>
+	</Event>
+
+<!-- Chewbacca Killed 
+TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_47
+Han Solo: Chewie?  Chewie?! -->
+	<Event Name="Rebel_A3_M10_LAND_Chewbacca_Killed_00">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Chewbacca</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_47</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT03_MISSION_TEN_47</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A3_M10_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_Chewbacca_Killed_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT03_MISSION_TEN_47</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT03_MISSION_TEN_47</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>
+		<Prereq>Rebel_A3_M10_LAND_Chewbacca_Killed_00</Prereq>
+	</Event>
+			
+	<Event Name="Rebel_A3_M10_LAND_Chewbacca_Killed_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Rebel_A3_M10_LAND_Chewbacca_Killed_00a</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_Chewbacca_Killed_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT03_MISSION_TEN_48</Reward_Param1>
+		<Prereq>Rebel_A3_M10_LAND_Chewbacca_Killed_00</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A3_M10_LAND_Chewbacca_Killed_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A3_M10_LAND_Chewbacca_Killed_00a_Remove_Movie</Prereq>
+	</Event>
+
+</Story>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<GameConstants>
+
+	<Pay_As_You_Go>true</Pay_As_You_Go>
+    <!--
+    	<Starting_Credits_Rebel>250000</Starting_Credits_Rebel>
+    	<Starting_Credits_Empire>250000</Starting_Credits_Empire>
+    	<Credits_Accumulation_Factor_Rebel>.0005</Credits_Accumulation_Factor_Rebel>
+    	<Credits_Accumulation_Factor_Empire>.0005</Credits_Accumulation_Factor_Empire>
+    	<Hyperspace_Speed_Factor_Rebel>10.0</Hyperspace_Speed_Factor_Rebel>
+    	<Hyperspace_Speed_Factor_Empire>10.0</Hyperspace_Speed_Factor_Empire>
+    -->
+	<Starting_Galactic_Camera_Position>0.0, 0.0, 0.0</Starting_Galactic_Camera_Position>
+	<Main_Menu_Score_Name>./Data/Music/UND_Underworld_Theme.mp3</Main_Menu_Score_Name>
+	<Galactic_Map_Score_Name>./Data/Music/Credits.mp3</Galactic_Map_Score_Name>
+	<Camera_Stop_Left>-50.0f</Camera_Stop_Left>
+	<Camera_Stop_Right>50.0f</Camera_Stop_Right>
+	<Camera_Z_Position>-80.0</Camera_Z_Position>
+	<Fleet_Movement_Line_Texture_Name>fleetmoveline.tga</Fleet_Movement_Line_Texture_Name>
+	<Fleet_Hyperspace_Band_Texture_Name>fleetmoveline.tga</Fleet_Hyperspace_Band_Texture_Name>
+	<Good_Fleet_Maintenance_Cost_Factor>.2</Good_Fleet_Maintenance_Cost_Factor>
+	<Evil_Fleet_Maintenance_Cost_Factor>1.0</Evil_Fleet_Maintenance_Cost_Factor>
+	<Good_Starship_Maintenance_Cost_Factor>0.000</Good_Starship_Maintenance_Cost_Factor>
+	<Evil_Starship_Maintenance_Cost_Factor>0.001</Evil_Starship_Maintenance_Cost_Factor>
+	<Fleet_Maintenance_Update_Delay_Seconds>1.0</Fleet_Maintenance_Update_Delay_Seconds>
+	<Space_Auto_Resolve_Delay_Seconds>0.01</Space_Auto_Resolve_Delay_Seconds>
+	<Land_Auto_Resolve_Delay_Seconds>0.01</Land_Auto_Resolve_Delay_Seconds>
+	<Production_Speed_Factor>.01</Production_Speed_Factor>
+	<Political_Control_Change_Time_Seconds>10</Political_Control_Change_Time_Seconds>
+	<TacticalEdgeScrollRegion>2</TacticalEdgeScrollRegion>
+	<TacticalMaxScrollSpeed>2000</TacticalMaxScrollSpeed>
+	<TacticalMinScrollSpeed>1000</TacticalMinScrollSpeed>
+	<TacticalOffscreenScrollRegion>50</TacticalOffscreenScrollRegion>
+	<Landbase_Health_Quadratic>0,30,50</Landbase_Health_Quadratic>
+	<Landbase_Damage_Quadratic>0,10,10</Landbase_Damage_Quadratic>
+	<Starbase_Health_Quadratic>0,30,50</Starbase_Health_Quadratic>
+	<Starbase_Damage_Quadratic>0,10,10</Starbase_Damage_Quadratic>
+	<Political_Income_Quadratic>0,1,0</Political_Income_Quadratic>
+	<Political_Income_Curve>0,0, 1,1, 5,3</Political_Income_Curve>
+	<Progressive_Taxation>1,0, 3,.1, 20,.5, 30,.7, 40,.8, 50,.8</Progressive_Taxation>
+	<Income_Redistribution>0.1</Income_Redistribution>
+	<GMC_InitialiLookatDistanceFromOrigin>250.0</GMC_InitialiLookatDistanceFromOrigin>
+	<GMC_InitialLookdownPullbackDistance>1100.0</GMC_InitialLookdownPullbackDistance>
+	<GMC_InitialDesiredLookdownPullbackDistance>1100.0</GMC_InitialDesiredLookdownPullbackDistance>
+	<GMC_InitialLookdownAngleDegrees>-160.0</GMC_InitialLookdownAngleDegrees>
+	<GMC_InitialDiscRotationAngleDegrees>100.0</GMC_InitialDiscRotationAngleDegrees>
+	<GMC_MinLookdownAngle>45.0</GMC_MinLookdownAngle>
+	<GMC_MaxLookdownAngle>45.0</GMC_MaxLookdownAngle>
+	<GMC_MinRollAngle>345.0</GMC_MinRollAngle>
+	<GMC_MaxRollAngle>345.0</GMC_MaxRollAngle>
+	<GMC_MinPullbackDistance>0.0</GMC_MinPullbackDistance>
+	<GMC_MaxPullbackDistance>1100.0</GMC_MaxPullbackDistance>
+	<GMC_PullbackFromOriginDistFactor>100.0</GMC_PullbackFromOriginDistFactor>
+	<GMC_LookdownPullbackRate>5.0</GMC_LookdownPullbackRate>
+	<GMC_EdgeHorizontalRotateRate>0.0</GMC_EdgeHorizontalRotateRate>
+	<GMC_EdgeVerticalTiltRate>0.010</GMC_EdgeVerticalTiltRate>
+	<MaximumPoliticalControl> 5 </MaximumPoliticalControl>
+	<MaximumStarbaseLevel> 5 </MaximumStarbaseLevel>
+	<MaximumGroundbaseLevel> 5 </MaximumGroundbaseLevel>
+	<MaximumSpecialStructures> 5 </MaximumSpecialStructures>
+	<MaximumFleetMovementDistance> 150.0 </MaximumFleetMovementDistance>
+	<TradeRouteMovementFactor> 1.0 </TradeRouteMovementFactor>
+	<AIUsesFogOfWar> false </AIUsesFogOfWar>
+	<AutomaticAutoResolve>true</AutomaticAutoResolve>
+    <Projectile_Grenade_Gravity>0.05</Projectile_Grenade_Gravity>
+    <Projectile_Grenade_Gravity_Lob_Mod>1.35</Projectile_Grenade_Gravity_Lob_Mod>
+    <Default_Hero_Respawn_Time>5.0</Default_Hero_Respawn_Time>
+
+    <UNUSED_Max_Non_Hero_Ground_Forces_On_Planet> 10 </UNUSED_Max_Non_Hero_Ground_Forces_On_Planet>     <!--Combining -->
+    <UNUSED_Max_Hero_Ground_Forces_On_Planet> 5 </UNUSED_Max_Hero_Ground_Forces_On_Planet>                     <!--Combining -->
+    <Max_Ground_Forces_On_Planet> 14 </Max_Ground_Forces_On_Planet>
+
+</GameConstants>

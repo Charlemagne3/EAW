@@ -1,0 +1,1065 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!-- Mission start setup -->
+
+	<Event Name="Rebel_A2_M04_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+	</Event>
+
+	<Event Name="Rebel_M04_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A02M04_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+
+<!-- Multimedia tag:
+	Param1 – Text string to display
+	Param2 – Duration to display text (-1 is inifinite)
+	Param3 – Object to include in text (such as a planet)
+	Param4 – Remove text? (1 = yes, default = no)
+	Param5 – Use teletype display for text (0 = no, default = yes)
+	Param6 – Text color
+	Param7 – Is the text a subtitle (1 = yes, default = no)
+	Param8 – Speech file to play
+	Param9 – Commandbar movie to play
+	Param10 – Loop movie (1 = yes, default = no)
+-->
+
+<!-- Mission opening dialog - Antilles Speaks 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_31
+Antilles: Looks like the convoy is already on the move.  Those shuttles are our targets.  
+Y-wings squads, use your ion cannons to disable them!-->
+	<Event Name="Rebel_A2_M04_Mission_Start_Antilles_Speech_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M04_INTRO_DIALOG_01_GO</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_31</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_31</Reward_Param8> <!-- Put CORRECT speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Mission_Start_Antilles_Speech_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_31</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_31</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Mission_Start_Antilles_Speech_01</Prereq>
+	</Event>
+				
+<!-- Mission opening dialog - Rebel Pilot Speaks 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_32
+Rebel Pilot: Yes, sir!-->
+	<Event Name="Rebel_A2_M04_Mission_Start_Pilot_Speech_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_32</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_32</Reward_Param8> <!-- Put CORRECT speech file name here -->
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Mission_Start_Antilles_Speech_01_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Mission_Start_Pilot_Speech_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_32</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_32</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Mission_Start_Pilot_Speech_01</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Mission_Start_Pilot_Speech_01_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Mission_Start_Pilot_Speech_01_Remove_Text</Prereq>
+	</Event>
+				
+<!-- Mission hint
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_SCREEN_02
+Hint: Use the Y-wings' ION ATTACK to disable the shuttles, 
+then use the Sundered Heart to pick up the prisoners.-->
+	<Event Name="Rebel_A2_M04_Ion_Use_Text">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M04_INTRO_DIALOG_02_GO</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_SCREEN_02</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+				
+<!-- ADDING objectives here
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_34
+Liberate the six shuttels.
+
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35
+The Sundered Heart must survive.
+
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36
+All shuttles must survive.-->
+	<Event Name="Rebel_A2_M04_ADD_OBJECTIVE_Liberate_Six_Shuttles">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_34</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Ion_Use_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_ADD_OBJECTIVE_Keep_Shuttles_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Ion_Use_Text</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_ADD_OBJECTIVE_Keep_SunderedHeart_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Ion_Use_Text</Prereq>
+	</Event>
+
+
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>DESTROYERS_INBOUND</Event_Param2>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+<!-- Mothma Speaks 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_01
+Mon Mothma: Two Star Destroyers have just entered the system. 
+You must finish the rescue before they engage our forces.-->
+
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_Disable_Secondary_Dialog">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Secondary_Dialog</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_AI_Notification</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_01</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_AI_Notification</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_01</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_01</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound</Prereq>
+	</Event>
+	
+<!-- Antilles 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_02
+ Antilles: And I suppose that's the good news? -->
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_02</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_01</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_03">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_02</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_02</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_02</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_03_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>   
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_03</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Destroyers_Inbound_ReEnable_Secondary_Dialog">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>RESET_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Secondary_Dialog</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Destroyers_Inbound_03_Remove_Movie</Prereq>
+	</Event>
+	
+
+<!-- R. Pilot Speaks: Shuttle Disabled!
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_05
+ Rebel Pilot: Got one!-->
+ 
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_AI_Notification_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_DISABLED1</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_05</Reward_Param8>
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_AI_Notification_01</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_05</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_05</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_00</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>   
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_00a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+
+
+<!-- R. Pilot Speaks: Shuttle Disabled! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_06
+Rebel Pilot: Shuttle disabled!-->
+
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_AI_Notification_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_DISABLED2</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_06</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_AI_Notification_02 Rebel_A2_M04_Shuttle_Disabled_00a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_06</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_06</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_02</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+			
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_02a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_02a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+
+			
+<!-- R. Pilot Speaks: Shuttle Disabled! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_07
+Rebel Pilot: That one's shut down.-->
+
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_AI_Notification_03">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_DISABLED3</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_07</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_AI_Notification_03 Rebel_A2_M04_Shuttle_Disabled_02a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_04a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_07</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_07</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_04</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+					
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_04a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_04a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+					
+
+				
+<!-- R. Pilot Speaks: Shuttle Disabled! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_08
+Rebel Pilot: They're not going anywhere!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_AI_Notification_04">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_DISABLED4</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_08</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Wedge_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_AI_Notification_04 Rebel_A2_M04_Shuttle_Disabled_04a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_06a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_08</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_08</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_06</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Disabled_06a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Disabled_06a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+						
+						
+						
+<!-- JDG - ai notifications for the six shuttles getting rescued-->						
+	<Event Name="Rebel_A2_M04_First_Shuttle_Rescued">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>1_SHUTTLE_RESCUED</Event_Param2>
+	</Event>	
+	
+	<Event Name="Rebel_A2_M04_Second_Shuttle_Rescued">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>2_SHUTTLES_RESCUED</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Third_Shuttle_Rescued">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>3_SHUTTLES_RESCUED</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Forth_Shuttle_Rescued">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>4_SHUTTLES_RESCUED</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Fifth_Shuttle_Rescued">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>5_SHUTTLES_RESCUED</Event_Param2>
+	</Event>					
+						
+							
+<!-- FIRST SHUTTLE RESCUED VO EVENT
+Antillies Speaks: Shuttle Rescued! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09
+Antilles: Got 'em on board!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_09</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_First_Shuttle_Rescued</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_09</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_00</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_00a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+<!-- SECOND SHUTTLE RESCUED VO EVENT
+Antillies Speaks: Shuttle Rescued! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_10
+Antilles: We've got the prisoners!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_10</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Second_Shuttle_Rescued Rebel_A2_M04_Shuttle_Rescued_00a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>	
+	</Event>
+			
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_10</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_10</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_02</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+			
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_02a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_02a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+			
+<!-- THIRD SHUTTLE RESCUED VO EVENT
+Antillies Speaks: Shuttle Rescued! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_11
+Antilles: Prisoners rescued!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_11</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Third_Shuttle_Rescued Rebel_A2_M04_Shuttle_Rescued_02a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_04a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_11</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_04</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+					
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_04a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_04a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+				
+<!-- FORTH SHUTTLE RESCUED VO EVENT
+Antillies 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_12
+Antilles: Okay, we got 'em. -->
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_12</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Forth_Shuttle_Rescued Rebel_A2_M04_Shuttle_Rescued_04a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>	
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_06a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_12</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_12</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_06</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_06a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_06a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+<!-- FIFTH SHUTTLE RESCUED VO EVENT
+Antillies Speaks: Shuttle Rescued! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09
+Antilles: Got 'em on board!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_09</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Fifth_Shuttle_Rescued Rebel_A2_M04_Shuttle_Rescued_06a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_07a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_09</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_09</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_07</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Rescued_07a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Rescued_07a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+
+
+<!-- Antillies Speaks: Shuttle Escaped! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_13
+Antilles: A shuttle has reached Kessel!  
+Disable them out before they get out of range!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Escaped_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_ESCAPED</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Escaped_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_13</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Escaped_AI_Notification</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Shuttle_Escaped_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_13</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_13</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Escaped_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+
+			<Event Name="Rebel_A2_M04_Shuttle_Escaped_00a_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A2_M04_Shuttle_Escaped_00a</Prereq>
+				<Branch>Branch_Player_Loses</Branch>
+			</Event>
+
+
+
+
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_AI_Notification_01">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_NEEDS_RESCUE_1</Event_Param2>
+	</Event>
+
+<!-- Shuttle Needs Rescue #1
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_16
+Antilles: We've got to get in there and pick up the prisoners!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_16</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_AI_Notification_01</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_16</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_16</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_00</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_00a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_AI_Notification_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLE_NEEDS_RESCUE_2</Event_Param2>
+	</Event>
+<!-- Antillies Speaks: Shuttle Needs Rescue! 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_17
+Antilles: Get to those shuttles before the empire blows them away!-->
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_17</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_17</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_AI_Notification_02 Rebel_A2_M04_Shuttle_Needs_Rescue_00a_Remove_Movie</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_02a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_17</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_17</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_02</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+			
+	<Event Name="Rebel_A2_M04_Shuttle_Needs_Rescue_02a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttle_Needs_Rescue_02a</Prereq>
+		<Branch>Branch_Secondary_Dialog</Branch>
+	</Event>
+
+<!-- Retreat Warning 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_19
+Antilles: We haven't rescued enough of the prisoners.  If we retreat now, this mission is a failure!-->
+	<Event Name="Rebel_A2_MO4_Retreat_Warning">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>retreat_clicked</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_19</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	</Event>
+
+	<Event Name="Rebel_A2_MO4_Retreat_Warning_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_19</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_19</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_MO4_Retreat_Warning</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_MO4_Retreat_Warning_01_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_MO4_Retreat_Warning_01</Prereq>
+	</Event>
+
+
+
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ALL_SHUTTLES_RESCUED</Event_Param2>
+	</Event>
+	
+	
+<!-- WIN CONDITION: Enough Shuttles were rescued 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_15
+Antilles: We've picked up all of the prisoners!  Everyone, retreat to hyperspace!  
+Let's get out of here before the Empire brings in the big guns.-->
+
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_Disable_Secondary_Dialog">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Secondary_Dialog</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_AI_Notification</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_Disable_Lose_Events">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Player_Loses</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_AI_Notification</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_15</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_Disable_Secondary_Dialog</Prereq>
+	</Event>
+	
+			<Event Name="Rebel_A2_M04_All_Disable_Antilles_Killed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Rebel_A2_M04_Antillies_Destroyed_00</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+			</Event>
+			
+			<Event Name="Rebel_A2_M04_All_Disable_All_YWings_Destroyed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+				<Reward_Param1>Rebel_A2_M04_Not_Enough_YWings</Reward_Param1>
+				<Reward_Param2>1</Reward_Param2>
+				<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+			</Event>
+	
+<!-- COMPLETING objective here 
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_34
+Liberate the six shuttels.
+
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35
+The Sundered Heart must survive.
+
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36
+All shuttles must survive.-->
+
+	<Event Name="Rebel_A2_M04_COMPLETE_OBJECTIVE_Liberate_Six_Shuttles">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_34</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_COMPLETE_OBJECTIVE_Keep_Shuttles_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_COMPLETE_OBJECTIVE_Keep_SunderedHeart_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_15</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_15</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_01_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_01</Prereq>
+	</Event>
+		
+		
+	<!-- jdg apparently this enable victory script is not needed
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>3</Event_Param1>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_01</Prereq>
+	</Event>
+		
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_02</Prereq>
+	</Event>-->
+	
+	<Event Name="Rebel_A2_M04_All_Shuttles_Rescued_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Rebel</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Shuttles_Rescued_01_Remove_Movie</Prereq>
+	</Event>
+
+<!-- LOSS CONDITION: Rebels wiped out 
+	<Event Name="Rebel_A2_M04_All_Rebels_Destroyed">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+		
+	<Event Name="Rebel_A2_M04_All_Rebels_Destroyed_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Rebel_A2_M04_All_Rebels_Destroyed</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>-->
+
+<!-- LOSS CONDITION: Too many of the shuttles were lost 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_14
+Antilles: We've lost too many of the shuttles!  Abort the mission!-->
+
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>SHUTTLES_LOST</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_14</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Antillies_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_AI_Notification</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+
+
+
+<!--  FAILING objective here 
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36
+All shuttles must survive.-->		
+	<Event Name="Rebel_A2_M04_FAIL_OBJECTIVE_Keep_Shuttles_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_36</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_00a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_14</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_14</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_00a_Remove_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>    
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_00a</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+		
+	<Event Name="Rebel_A2_M04_Shuttles_Lost_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Shuttles_Lost_01</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+	
+<!-- LOSS CONDITION: Captain Antillies (Sundered Heart) Destroyed 
+TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_18
+Mon Mothma: Captain Antilles has been incapacitated.  Abort the mission.-->
+	<Event Name="Rebel_A2_M04_Antillies_Destroyed_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>ANTILLIES_DESTROYED</Event_Param2>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Antillies_Destroyed_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_18</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>REBEL_ACT02_MISSION_FOUR_18</Reward_Param8> <!-- Put speech file name here -->
+		<Reward_Param9>Mon_Mothma_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Rebel_A2_M04_Antillies_Destroyed_AI_Notification</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+
+<!-- jdg FAILING objective here 
+TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35
+The Sundered Heart must survive.-->	
+	<Event Name="Rebel_A2_M04_FAIL_OBJECTIVE_Keep_SunderedHeart_Alive">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_35</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Antillies_Destroyed_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_Antillies_Destroyed_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>REBEL_ACT02_MISSION_FOUR_18</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_FOUR_18</Reward_Param1>
+		<Reward_Param4>Remove</Reward_Param4>     
+		<Prereq>Rebel_A2_M04_Antillies_Destroyed_00</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>	
+	
+			<Event Name="Rebel_A2_M04_Antillies_Destroyed_01_Remove_Movie">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>	
+				<Prereq>Rebel_A2_M04_Antillies_Destroyed_01</Prereq>
+				<Branch>Branch_Player_Loses</Branch>
+			</Event>
+		
+	
+	<Event Name="Rebel_A2_M04_Antillies_Destroyed_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>4</Event_Param1>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Antillies_Destroyed_01</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+		
+	<Event Name="Rebel_A2_M04_Antillies_Destroyed_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Antillies_Destroyed_02</Prereq>
+		<Branch>Branch_Player_Loses</Branch>
+	</Event>
+
+<!-- REBEL VICTORY: Set Flag -->
+	<Event Name="Rebel_A2_M04_VICTORY">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Rebel_A02M04_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+
+<!-- Notice: You do not have enough Y-wings to immobilize the remaining shuttles. -->
+	<Event Name="Rebel_A2_M04_Not_Enough_YWings_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>NOT_ENOUGH_YWINGS</Event_Param2>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_A2_M04_CANCEL_Not_Enough_YWings_AI_Notification">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>CANCEL_NOT_ENOUGH_YWINGS</Event_Param2>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>Branch_Not_Enough_YWings</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Rebel_A2_M04_Begin</Prereq>
+	</Event>
+	
+	
+	<Event Name="Rebel_A2_M04_Not_Enough_YWings">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_701</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>System</Reward_Param7>
+		<Prereq>Rebel_A2_M04_Not_Enough_YWings_AI_Notification</Prereq>
+		<Branch>Branch_Not_Enough_YWings</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Not_Enough_YWings_Fail_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_REBEL_ACT02_MISSION_FOUR_34</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Not_Enough_YWings</Prereq>
+		<Branch>Branch_Not_Enough_YWings</Branch>
+	</Event>
+
+	<Event Name="Rebel_A2_M04_Not_Enough_YWings_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Not_Enough_YWings</Prereq>
+		<Branch>Branch_Not_Enough_YWings</Branch>
+	</Event>
+		
+	<Event Name="Rebel_A2_M04_Not_Enough_YWings_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Rebel_A2_M04_Not_Enough_YWings_02</Prereq>
+		<Branch>Branch_Not_Enough_YWings</Branch>
+	</Event>
+	
+</Story>

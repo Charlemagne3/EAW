@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+
+<MousePointers>
+
+	<!-- Note all MousePointer Names are mapped to enumerations in MousePointer.h -->
+	<!-- New entires can be added, but none should be deleted unless the enums are updated -->
+
+	<MousePointer Name="POINTER_NORMAL">
+		<Base_Texture> DEFAULTPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_WAIT">
+		<Base_Texture> waitpointer_00.TGA </Base_Texture>	 
+		<Hot_X> 0 </Hot_X>												
+		<Hot_Y> 0 </Hot_Y>												
+		<Anim_Frame_Delay> 15 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_SELECT">
+		<Base_Texture> SELECTPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_MOVE">
+		<Base_Texture> MOVETOPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CAN_GRAB">
+		<Base_Texture> CANGRABPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_GRABBING">
+		<Base_Texture> GRABPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_DRAG">
+		<Base_Texture> DEFAULTPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_DROP">
+		<Base_Texture> DEFAULTPOINTER_00.TGA </Base_Texture>		
+		<Hot_X> 0 </Hot_X>													
+		<Hot_Y> 0 </Hot_Y>													
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>						
+	</MousePointer>
+
+	<MousePointer Name="POINTER_COMBINE">
+		<Base_Texture> COMBINEPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_SELECT">
+		<Base_Texture> cantpointer.tga </Base_Texture>		
+		<Hot_X> 0 </Hot_X>													
+		<Hot_Y> 0 </Hot_Y>													
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>						
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_MOVE">
+		<Base_Texture> cantpointer.tga </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_DROP">
+		<Base_Texture> cantpointer.tga </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_GRAB">
+		<Base_Texture> cantpointer.tga </Base_Texture>		
+		<Hot_X> 0 </Hot_X>													
+		<Hot_Y> 0 </Hot_Y>													
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>						
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_COMBINE">
+		<Base_Texture> cantpointer.tga </Base_Texture>		
+		<Hot_X> 0 </Hot_X>													
+		<Hot_Y> 0 </Hot_Y>													
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>						
+	</MousePointer>
+
+	<MousePointer Name="POINTER_CANT_ATTACK">
+		<Base_Texture> cantpointer.tga </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK">
+		<Base_Texture> ATTACKPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_MOVE">
+		<Base_Texture> MOVE_ATTACK_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_OUT_OF_RANGE">
+		<Base_Texture> ATTACKPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_WITH_SPECIAL_WEAPON_0">
+		<Base_Texture> HYPERVELOCITY_GUN_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_WITH_SPECIAL_WEAPON_1">
+		<Base_Texture> ION_CANNON_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_WITH_SPECIAL_WEAPON_2">
+		<Base_Texture> MAGNEPULSE_CANNON_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_WITH_SPECIAL_WEAPON_INVALID">
+		<Base_Texture> NOMOVEPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_DRAG_SELECT_MODE">
+		<Base_Texture> DRAGSELECTPOINTER_00.TGA </Base_Texture>	 	
+		<Hot_X> 0 </Hot_X>														
+		<Hot_Y> 0 </Hot_Y>														
+	</MousePointer>
+
+	<MousePointer Name="POINTER_MAP_SCROLLING_MODE">
+		<Base_Texture> MAP_SCROLLING_MODE_POINTER_00.TGA </Base_Texture>	 	
+		<Hot_X> 16 </Hot_X>																	
+		<Hot_Y> 16 </Hot_Y>																	
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+	
+	<MousePointer Name="POINTER_MAP_ROTATING_MODE">
+		<Base_Texture> MAP_ROTATING_MODE_POINTER_00.TGA </Base_Texture>	
+		<Hot_X> 16 </Hot_X>																
+		<Hot_Y> 16 </Hot_Y>													  			
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_MOVIE_MODE">
+		<Base_Texture> MOVIEPOINTER.TGA </Base_Texture>	
+		<Hot_X> 16 </Hot_X>												
+		<Hot_Y> 16 </Hot_Y>												
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_WAYPOINT_FOLLOW">
+		<Base_Texture> WAYPOINT_FOLLOW_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 31 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_WAYPOINT_PLACEMENT">
+		<Base_Texture> WAYPOINT_PLACEMENT_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 31 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_TACTICAL_BUILD">
+		<Base_Texture> TACTICALBUILDPOINTER_00.TGA </Base_Texture>  
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_TACTICAL_SELL">
+		<Base_Texture> TACTICALSELLPOINTER_00.TGA </Base_Texture>	
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_GUARD">
+		<Base_Texture> GUARDPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_BARRAGE">
+		<Base_Texture> BARRAGEPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_PLACE_BEACON">
+		<Base_Texture> beacon_pointer_00.tga </Base_Texture>	
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_BOMBING_RUN_TARGET">
+		<Base_Texture> BOMBPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 4 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_REINFORCEMENTS_LANDING_POINT">
+		<Base_Texture> REINFORCEMENTS_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 31 </Hot_Y>
+		<Anim_Frame_Delay> 8 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_ONLY_MODE_UNIT_TARGETED">
+		<Base_Texture> ATTACKPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_ATTACK_ONLY_MODE_NO_UNIT_TARGETED">
+		<Base_Texture> ATTACK_OUT_OF_RANGE_POINTER_00.TGA </Base_Texture>
+		<Hot_X> 16 </Hot_X>
+		<Hot_Y> 16 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_MOVE_ONLY_MODE_PASSABLE_TARGETED">
+		<Base_Texture> MOVETOPOINTER_00.TGA </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<MousePointer Name="POINTER_MOVE_ONLY_MODE_NO_PASSABLE_TARGETED">
+		<Base_Texture> cantpointer.tga </Base_Texture>
+		<Hot_X> 0 </Hot_X>
+		<Hot_Y> 0 </Hot_Y>
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and over valid target enemy object -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_ENEMY_OBJECT">
+		<Base_Texture> special_abilities_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X> 	                            
+		<Hot_Y> 16 </Hot_Y>	                            
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and NOT over valid target enemy object -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_ENEMY_OBJECT_INVALID">
+		<Base_Texture> attack_illegal_pointer_00.tga </Base_Texture>		
+		<Hot_X> 16 </Hot_X>																
+		<Hot_Y> 16 </Hot_Y>                                               
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and over valid target friendly object -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_FRIENDLY_OBJECT">
+		<Base_Texture> special_abilities_friendly_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X>                              
+		<Hot_Y> 16 </Hot_Y>                              
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and NOT over valid target friendly object -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_FRIENDLY_OBJECT_INVALID">
+		<Base_Texture> SPECIAL_ABILITY_TO_FRIENDLY_OBJECT_INVALID.tga </Base_Texture>	
+		<Hot_X> 16 </Hot_X>                                            
+		<Hot_Y> 16 </Hot_Y>                                             
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and over valid target passable location -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_PASSABLE_TERRAIN">
+		<Base_Texture> special_abilities_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X>                              
+		<Hot_Y> 16 </Hot_Y>                              
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and NOT over valid target passable location -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_PASSABLE_TERRAIN_INVALID">
+		<Base_Texture> attack_illegal_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X>                                             
+		<Hot_Y> 16 </Hot_Y>                                             
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and over valid target space location -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_SPACE_POSITION">
+		<Base_Texture> special_abilities_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X>                              
+		<Hot_Y> 16 </Hot_Y>                              
+		<Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+	</MousePointer>
+
+	<!-- Targeting with special ability, and NOT over valid target space location -->
+	<MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_SPACE_POSITION_INVALID">
+		<Base_Texture> attack_illegal_pointer_00.tga </Base_Texture>	 
+		<Hot_X> 16 </Hot_X>                                             
+		<Hot_Y> 16 </Hot_Y>                                            
+		<Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+	</MousePointer>
+    
+    <MousePointer Name="POINTER_GARRISON_IN">
+        <Base_Texture> reinforcements_pointer_00.tga </Base_Texture>
+        <Hot_X> 16 </Hot_X>
+        <Hot_Y> 31 </Hot_Y>
+        <Anim_Frame_Delay> 4 </Anim_Frame_Delay>
+    </MousePointer>
+
+    <MousePointer Name="POINTER_GARRISON_OUT">
+        <Base_Texture> reinforcements_pointer_00.tga </Base_Texture>
+        <Hot_X> 16 </Hot_X>
+        <Hot_Y> 31 </Hot_Y>
+        <Anim_Frame_Delay> 4 </Anim_Frame_Delay>
+    </MousePointer>
+
+    <!-- Targeting with special ability, and over valid target enemy object -->
+    <MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_TO_BRIBE_ENEMY_OBJECT">
+        <Base_Texture> TACTICALSELLPOINTER_00.TGA </Base_Texture>	 
+        <Hot_X> 0 </Hot_X> 	                            
+        <Hot_Y> 0 </Hot_Y>	                            
+        <Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+    </MousePointer>
+
+    <!-- Targeting with special ability, and over valid target enemy object -->
+    <MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_CANT_BRIBE_ENEMY_OBJECT">
+        <Base_Texture> SPECIAL_ABILITY_TO_FRIENDLY_OBJECT_INVALID.tga </Base_Texture>	 
+        <Hot_X> 16 </Hot_X> 	                            
+        <Hot_Y> 16 </Hot_Y>	                            
+        <Anim_Frame_Delay> 5 </Anim_Frame_Delay>
+    </MousePointer>
+
+    <MousePointer Name="POINTER_TARGET_SPECIAL_ABILITY_BLAST">
+        <Base_Texture> special_abilities_pointer_00.tga </Base_Texture>	 
+        <Hot_X> 16 </Hot_X> 	                            
+        <Hot_Y> 16 </Hot_Y>	                            
+        <Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+    </MousePointer>
+
+    <MousePointer Name="POINTER_REPAIR_HARDPOINT">
+        <Base_Texture> repair_pointer_00.tga </Base_Texture>	 
+        <Hot_X> 0 </Hot_X> 	                            
+        <Hot_Y> 0 </Hot_Y>	                            
+        <Anim_Frame_Delay> 10 </Anim_Frame_Delay>
+    </MousePointer>
+    
+
+
+</MousePointers>

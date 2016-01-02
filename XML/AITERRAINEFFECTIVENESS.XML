@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<Terrain_Effectiveness>
+
+	<Temperate>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Temperate>
+
+	<Arctic>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Arctic>
+
+	<Desert>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Desert>
+	
+	<Forest>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Forest>	
+	
+	<Swamp>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Swamp>
+	
+	<Volcanic>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Volcanic>
+	
+	<Urban>
+		<Infantry>1.0</Infantry>
+		<Wheeled>1.0</Wheeled>
+		<Walker>1.0</Walker>
+		<Flying>1.0</Flying>
+		<Tracked>1.0</Tracked>
+		<Hover>1.0</Hover>
+		<LargeWalker>1.0</LargeWalker>
+	</Urban>	
+
+	<!-- Note: No entry for <Space>, since is not considered a land-based terrain -->
+
+</Terrain_Effectiveness>

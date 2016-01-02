@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<Equations>
+
+	<Should_Remove_Corruption>
+		50.0
+		*
+		Variable_Target.IsCorrupted
+		*
+		(Variable_Target.TimeSinceCorruptionChange > 180.0)
+	</Should_Remove_Corruption>
+
+	<Roaming_Empire_Fleet_Target>
+		Variable_Target.IsHumanControlled
+		*
+		Variable_Target.EnemyForce.SpaceTotal
+	</Roaming_Empire_Fleet_Target>
+
+</Equations>

@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+
+
+
+<Story>
+
+
+<!-- Preliminary setup -->
+
+	<Event Name="Underworld_Exec_Demo_Endor_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<!--*****************Give player all black market tech*****************-->
+				<Event Name="Underworld_Exec_Demo_Give_Disruption">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Disruptor_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Destruct">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Strategic_Demolitions</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Weapon_Sync">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Weapon_Sync</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Point_Defense">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Point_Defense_System</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Sensor_Jamming">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Sensor_Jamming</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Concussion_Grenade">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Advanced_Concussion_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Defensive_Mine">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Defensive_Mine_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Shield_Leech">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Shield_Redistribution</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Remote_Weapon">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Remote_Weapon_Systems</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+				
+				<Event Name="Underworld_Exec_Demo_Give_Cloaking_Tech">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>GIVE_BLACK_MARKET</Reward_Type>
+					<Reward_Param1>Cloaking_Tech</Reward_Param1>
+					<Prereq>Underworld_Exec_Demo_Endor_Begin</Prereq>
+				</Event>
+
+				
+</Story>

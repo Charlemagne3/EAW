@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+
+
+
+<!--****** This story file is used to automatically set some things that would normally happen ******-->
+<!--****** in story mode for the full campaign.  This file should be generic enough to use for  ******-->
+<!--****** any sandbox campaign set.                                                           ******-->
+
+
+
+<Story>
+
+	<Event Name="Universal_Story_Start">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Dialog>Dialog_R_Sandbox_Demo_Intro</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Tag>Intro_Tag</Story_Tag>
+	</Event>
+
+	
+	<!-- Hide all planets except Hoth, Vergesso Asteroids and Tatooine -->
+	
+	<Event Name="Demo_Campaign_Lock_Out_INVASION">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_DIRECT_INVASION</Reward_Type>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<Event Name="Demo_Campaign_Reveal_Hoth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Hoth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<Event Name="Demo_Campaign_Reveal_VergessoAsteroids">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>VergessoAsteroids</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+	
+	<Event Name="Demo_Campaign_Reveal_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Universal_Story_Start</Prereq>
+	</Event>
+
+   <!-- Focusing on Hoth to start the campaign -->
+	<Event Name="Demo_Campaign_Look_At_Hoth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>POSITION_CAMERA</Reward_Type>
+		<Reward_Param1>Hoth</Reward_Param1>
+		<Prereq>Demo_Campaign_Reveal_Hoth</Prereq>
+	</Event>
+
+</Story>

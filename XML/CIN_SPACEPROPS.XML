@@ -1,0 +1,469 @@
+<?xml version="1.0" ?>
+<CIN_SpaceProps>
+
+
+	<CIN_SpaceProp Name="Tatooine_Backdrop_Large 3x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Space_Model_Name>w_planet_tatooine_high.alo</Space_Model_Name>
+		<Is_Decoration>Yes</Is_Decoration>
+        	<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+        	<Idle_Anim_00_Rate_Mod>0.00</Idle_Anim_00_Rate_Mod>
+		<Scale_Factor>700.0</Scale_Factor>
+		<Behavior>IDLE</Behavior>
+		<Sort_Order_Adjust>-1</Sort_Order_Adjust>
+		<In_Background>yes</In_Background>
+		<Layer_Z_Adjust>-2500.0</Layer_Z_Adjust>
+		<Radar_Icon_Name>i_radar_planet.tga</Radar_Icon_Name> 
+	</CIN_SpaceProp>
+
+
+	<CIN_SpaceProp Name="Tatooine_Backdrop_Large 6x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Idle_Anim_00_Rate_Mod>0.00</Idle_Anim_00_Rate_Mod>
+		<Text_ID />
+		<Variant_Of_Existing_Type>Tatooine_Backdrop_Large 3x</Variant_Of_Existing_Type>
+		<Scale_Factor>1400.0</Scale_Factor>
+		
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Corusant_Backdrop_Large 6x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Tatooine_Backdrop_Large 3x</Variant_Of_Existing_Type>
+		<Space_Model_Name>Cin_Coruscant.alo</Space_Model_Name>
+		<Scale_Factor>2000.0</Scale_Factor>
+		<Is_Decoration>No</Is_Decoration>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Alderaan_Backdrop_Large 6x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Tatooine_Backdrop_Large 3x</Variant_Of_Existing_Type>
+		<Space_Model_Name>Cin_Planet_Alderaan_High.alo</Space_Model_Name>
+		<Scale_Factor>1100.0</Scale_Factor>
+		<Is_Decoration>No</Is_Decoration>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Hoth_Backdrop_Large 6x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Tatooine_Backdrop_Large 3x</Variant_Of_Existing_Type>
+		<Space_Model_Name>Cin_Planet_Hoth_High.alo</Space_Model_Name>
+		<Scale_Factor>1100.0</Scale_Factor>
+		<Is_Decoration>No</Is_Decoration>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Kessel_Backdrop_Large 3x">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Kessel_Backdrop_Large</Variant_Of_Existing_Type>
+		<Scale_Factor>900.0</Scale_Factor>
+		
+	</CIN_SpaceProp>
+	
+
+	
+	<Cin_SpaceProp Name="Star_Destroyer_Warp" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+
+		<Text_ID />
+		<Space_Model_Name> Cin_EV_Stardestroyer_Warp.alo </Space_Model_Name>
+		<Is_Decoration> No </Is_Decoration>
+		<Scale_Factor> 1.0 </Scale_Factor>
+		<Sort_Order_Adjust> -1 </Sort_Order_Adjust>
+		<Tactical_Health> 100 </Tactical_Health>
+		<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+        	<Idle_Anim_00_Rate_Mod>1.0</Idle_Anim_00_Rate_Mod>
+		<Behavior>IDLE</Behavior>
+		<Layer_Z_Adjust>0</Layer_Z_Adjust>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Imperial_Bridge" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+
+		<Text_ID />
+		<Space_Model_Name> Cin_bridge.alo </Space_Model_Name>
+		<Is_Decoration> No </Is_Decoration>
+		<Scale_Factor> 1.0 </Scale_Factor>
+		<Sort_Order_Adjust> -1 </Sort_Order_Adjust>
+		<Tactical_Health> 100 </Tactical_Health>
+		<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+        	<Idle_Anim_00_Rate_Mod>1.0</Idle_Anim_00_Rate_Mod>
+		<Behavior>IDLE</Behavior>
+		<Layer_Z_Adjust>0</Layer_Z_Adjust>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Cine_Vader" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+
+		<Text_ID />
+		<Space_Model_Name> EI_VADER.alo </Space_Model_Name>
+		<Is_Decoration> No </Is_Decoration>
+		<Scale_Factor> 1.0 </Scale_Factor>
+		<Sort_Order_Adjust> -1 </Sort_Order_Adjust>
+		<Tactical_Health> 100 </Tactical_Health>
+		<Loop_Idle_Anim_00>Yes</Loop_Idle_Anim_00>
+        	<Idle_Anim_00_Rate_Mod>1.0</Idle_Anim_00_Rate_Mod>
+		<Behavior>IDLE</Behavior>
+		<Layer_Z_Adjust>0</Layer_Z_Adjust>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	</Cin_SpaceProp>
+
+
+	<Cin_SpaceProp Name="FIN_Vader" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Cine_Vader</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>
+
+	</Cin_SpaceProp>
+
+	
+	<Cin_SpaceProp Name="FIN_Officer" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>FIN_Vader</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_Officer.alo </Space_Model_Name>
+		
+	</Cin_SpaceProp>
+
+
+
+	<Cin_SpaceProp Name="Death_Star_Whole" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Imperial_Bridge</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Space_Model_Name> Cin_DeathStar_High.alo </Space_Model_Name>
+		<Scale_Factor>1200.0</Scale_Factor>
+		<User_Bound_Min>-10000, -10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+
+		
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Death_Star_Whole_small" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Imperial_Bridge</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Space_Model_Name> Cin_DeathStar_High.alo </Space_Model_Name>
+		<Scale_Factor>600.0</Scale_Factor>
+		
+
+	</Cin_SpaceProp>
+
+
+	<Cin_SpaceProp Name="Forest_Backdrop_Smaller" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Forest_Backdrop_Large</Variant_Of_Existing_Type>
+		<Scale_Factor>200.0</Scale_Factor>
+		<Space_Model_Name> W_planet_hoth_high.alo </Space_Model_Name>
+		
+
+	</Cin_SpaceProp>
+
+
+	<Cin_SpaceProp Name="Death_Star_Whole_Vsmall" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Imperial_Bridge</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Space_Model_Name> Cin_DeathStar_High.alo </Space_Model_Name>
+		<Scale_Factor>100.0</Scale_Factor>
+
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+	
+	</Cin_SpaceProp>
+
+
+	<Cin_SpaceProp Name="Death_Star_Dish_Close" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Death_Star_Whole_Vsmall</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_DStar_Dish_close.alo </Space_Model_Name>
+		<Scale_Factor>1</Scale_Factor>
+		
+
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Death_Star_LeverPanel" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Death_Star_Whole_Vsmall</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_DStar_LeverPanel.alo </Space_Model_Name>
+		<Scale_Factor>1</Scale_Factor>		
+
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Death_Star_Hangar_Outside" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Imperial_Bridge</Variant_Of_Existing_Type>
+		<Text_ID />
+		<Space_Model_Name> Cin_DeathStar_Wall.alo </Space_Model_Name>
+		<Scale_Factor>50.0</Scale_Factor>
+
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="X_Wing_DStar_Xplode" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Variant_Of_Existing_Type>Cine_Vader</Variant_Of_Existing_Type>
+		<Space_Model_Name> RV_Xwing.alo </Space_Model_Name>
+		
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>01</Cinematic_Anim_Index>
+
+		
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="X_Wing_DStar_Xplode_02" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Variant_Of_Existing_Type>X_Wing_DStar_Xplode</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>02</Cinematic_Anim_Index>
+
+		
+	</Cin_SpaceProp>
+
+
+	<Cin_SpaceProp Name="X_Wing_DStar_Xplode_03" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Variant_Of_Existing_Type>X_Wing_DStar_Xplode</Variant_Of_Existing_Type>
+		<Cinematic_Anim_Index>03</Cinematic_Anim_Index>
+
+		<User_Bound_Min>-10000, -10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+		
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="Protons_DStar_Xplode" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Variant_Of_Existing_Type>Cine_Vader</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_DStar_protons.alo </Space_Model_Name>
+		
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		
+	</Cin_SpaceProp>
+
+	<Cin_SpaceProp Name="TurretLasers_DStar_Xplode" >
+		
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+
+		<Text_ID />
+		<Variant_Of_Existing_Type>Protons_DStar_Xplode</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_DStar_TurretLasers.alo </Space_Model_Name>
+		
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		
+	</Cin_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Calamari">
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Calamari_Cruiser</Variant_Of_Existing_Type>
+		<Max_Speed>3</Max_Speed>
+		<Max_Thrust>1</Max_Thrust>
+		<OverrideAcceleration> .1 </OverrideAcceleration>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Star_Destroyer">
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Star_Destroyer</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>2</Max_Speed>
+		<SpaceBehavior> SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING </SpaceBehavior>
+		<Shield_Points>2000</Shield_Points>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Corvette">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Corellian_Corvette</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>4</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Nebulon_B">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Nebulon_B_Frigate</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>3</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_A_Assault_Frigate">
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Alliance_Assault_Frigate</Variant_Of_Existing_Type>
+		<Max_Speed>3.5</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+	
+	<CIN_SpaceProp Name="Fin_Acclamator">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Acclamator_Assault_Ship</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>4</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+
+
+	<CIN_SpaceProp Name="Fin_Home_One">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Home_One</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>2</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Vader_TIE">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>TIE_Prototype</Variant_Of_Existing_Type>
+		<Max_Speed>7</Max_Speed>
+		<Shield_Points>2000</Shield_Points>
+		<Tactical_Health>4000</Tactical_Health>
+
+		<Space_Model_Name> Cin_EV_TieAdvanced.alo </Space_Model_Name>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+
+		<Is_Editor_Placed>false</Is_Editor_Placed>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Fin_Millennium_Falcon">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Millennium_Falcon</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Max_Speed>9</Max_Speed>
+
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Intro2_ImperialCraft">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Imperial_Landing_Craft</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_ImperialCraft.alo </Space_Model_Name>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+		<User_Bound_Min>-10000, -10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+				
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Intro2_Shuttle_Tyderium">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Shuttle_Tyderium</Variant_Of_Existing_Type>
+		<Space_Model_Name> Cin_Shuttle_Tyderium.alo </Space_Model_Name>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<Pause_During_Cinematic_Anim>yes</Pause_During_Cinematic_Anim>
+		<Cinematic_Anim_Speed>1.0</Cinematic_Anim_Speed> 
+		<Cinematic_Anim_Blend_Seconds>1.0</Cinematic_Anim_Blend_Seconds>
+		<Cinematic_Anim_Index>00</Cinematic_Anim_Index>
+		<User_Bound_Min>-10000, -10000, 10000</User_Bound_Min>
+		<User_Bound_Max>10000, 10000, 10000</User_Bound_Max>
+		
+	</CIN_SpaceProp>
+
+	<CIN_SpaceProp Name="Intro2_Acclamator">
+
+		<Cinematic_Object_Only> YES </Cinematic_Object_Only>
+		<Variant_Of_Existing_Type>Acclamator_Assault_Ship</Variant_Of_Existing_Type>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
+		<SpaceBehavior> SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT </SpaceBehavior>
+				
+	</CIN_SpaceProp>
+	
+
+
+</CIN_SpaceProps>

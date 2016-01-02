@@ -1,0 +1,1347 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- Preliminary setup -->
+
+	<Event Name="Empire_M02_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M02_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+   <Event Name="Empire_M02_Turn_Off_Land_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Empire_M02_Begin</Prereq>
+   </Event>
+
+	<Event Name="Empire_M02_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Allow_Replay">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>USE_RETRY_DIALOG</Reward_Type>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+     <Event Name="Empire_M02_Comm_Center_Destroyed_Flag">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Comm_Center_Destroyed_Flag</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+      <Event Name="Empire_M02_ALL_REBEL_DESTROYED_Flag">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Rebels_Destroyed_Flag</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+    <Event Name="Empire_M02_POWER_GENERATOR_Flag">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Power_Generator_Flag</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+
+
+	<Event Name="Empire_M02_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M02_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+<!-- jdg 9/02/05 removing player reinforcement ability here -->
+	<Event Name="Empire_A01M02_Deny_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Prevent_Player_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+	
+
+<!-- Mission Start TASK (triggered in LUA) 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_70
+Task: Select your units, and assault the Rebel base to the north.-->
+	<Event Name="Empire_A01_M02_Mission_Start_Hint">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_START_HINT</Event_Param2>
+	</Event>
+	
+	<Event Name="Empire_A01_M02_Mission_Start_Hint_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_70</Reward_Param1>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Reward_Param2>10</Reward_Param2>
+		<Prereq>Empire_A01_M02_Mission_Start_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A01_M02_Mission_Start_Hint_Marker">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>1000</Reward_Param3>	
+		<Prereq>Empire_A01_M02_Mission_Start_Hint_Text</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A01_M02_Mission_Start_Hint_RemoveMarker">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>30</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>R_GROUND_BASE_SHIELD_SMALL</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>1000</Reward_Param3>		
+		<Prereq>Empire_A01_M02_Mission_Start_Hint_Marker</Prereq>
+	</Event>
+	
+
+<!-- Intro discussion -->
+
+	<Event Name="Empire_A01_M02_00">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_INTRO_DIALOGUE_GO</Event_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+<!-- Officer Speaks 1 -->
+	<Event Name="Empire_A01_M02_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_24</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_24</Reward_Param8>
+		<Prereq>Empire_A01_M02_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_01a">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_24</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_24</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_01</Prereq>
+	</Event>
+
+<!-- Vader speaks 1 -->
+
+	<Event Name="Empire_A01_M02_02_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_VADER_DIALOGUE_1_GO</Event_Param2>
+		<Prereq>Empire_A01_M02_01a</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_25</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_25</Reward_Param8>
+		<Prereq>Empire_A01_M02_02_Go</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_02b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_25</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_25</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_02</Prereq>
+	</Event>
+
+<!-- Officer Speaks 2 -->
+	<Event Name="Empire_A01_M02_03_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_OFFICER_DIALOGUE_2_GO</Event_Param2>
+		<Prereq>Empire_A01_M02_02b</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_26</Reward_Param8>
+		<Prereq>Empire_A01_M02_03_Go</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_03b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_26</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_26</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_03</Prereq>
+	</Event>
+
+<!-- Vader speaks 2 -->
+
+	<Event Name="Empire_A01_M02_04_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_VADER_DIALOGUE_2_GO</Event_Param2>
+		<Prereq>Empire_A01_M02_03b</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A01_M02_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_27</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_27</Reward_Param8>
+		<Prereq>Empire_A01_M02_04_Go</Prereq>
+	</Event>
+			
+	<Event Name="Empire_A01_M02_04b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_27</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_27</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_04</Prereq>
+	</Event>		
+			
+<!-- Officer speaks 3 -->
+
+	<Event Name="Empire_A01_M02_05_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_OFFICER_DIALOGUE_3_GO</Event_Param2>
+		<Prereq>Empire_A01_M02_04b</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_28</Reward_Param8>
+		<Prereq>Empire_A01_M02_05_Go</Prereq>
+	</Event>
+
+	<Event Name="Empire_A01_M02_05b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_28</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_28</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_05</Prereq>
+	</Event>	
+
+<!-- changing to ingame objective thingy	
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_65
+Destroy all Rebel buildings and units.-->
+
+	<Event Name="Empire_A01_M02_Start_Mission">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_START_MISSION</Event_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+
+	<Event Name="Empire_A01_M02_State_Misson_Goal">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_65</Reward_Param1>
+		<Prereq>Empire_A01_M02_Start_Mission</Prereq>
+	</Event>
+
+<!-- changing to ingame objective thingy	
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66
+Darth Vader must survive.-->
+	<Event Name="Empire_A01_M02_State_Misson_Goal_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+		<Prereq>Empire_A01_M02_State_Misson_Goal</Prereq>
+	</Event>
+
+<!-- Move to trigger location for build pad info 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_12
+Hint: Destroy the turret, then click on the Build Pad 
+to construct something of your own.  
+Proximity to an uncontested Build Pad will put it under your control.  
+Build Pads cannot be controlled if occupied.  -->
+	<Event Name="Empire_M02_Build_Pad_Info_00">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_00</Event_Param2>
+		<Event_Param3>180</Event_Param3>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_12</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+<!-- JDG 8/16 - hint "Arrow" is shown at "Story_trigger_zone_02" object-->
+	<Event Name="Empire_M02_Build_Pad_Info_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>2000</Reward_Param3>		
+		<Prereq>Empire_M02_Build_Pad_Info_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Build_Pad_Info_02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Story_Trigger_Zone_02</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>2000</Reward_Param3>		
+		<Prereq>Empire_M02_Build_Pad_Info_01</Prereq>
+	</Event>
+
+
+<!--TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_74 
+Hint: Use Darth Vader's Force Push ability to quickly destroy groups of enemy  infantry.-->
+	<Event Name="Empire_M02_Vader_Hint_01_ForcePush">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_03</Event_Param2>
+		<Event_Param3>150</Event_Param3>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_74</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_A01_M02_State_Misson_Goal</Prereq>
+	</Event>
+	
+					<Event Name="Empire_M02_Vader_Hint_01_FLASH_ForcePush">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>FORCE_WHIRLWIND</Reward_Param1>
+                        <Reward_Param2>flash_vader_forcepush</Reward_Param2>
+                        <Prereq>Empire_M02_Vader_Hint_01_ForcePush</Prereq>
+					 </Event>
+					 
+					 <Event Name="Empire_M02_Vader_Hint_01_REMOVEFLASH_ForcePush">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>3</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_vader_forcepush</Reward_Param1>
+                        <Prereq>Empire_M02_Vader_Hint_01_FLASH_ForcePush</Prereq>
+					 </Event>
+					 
+					 
+	
+	
+	
+<!--TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_75 
+Hint: Use Darth Vader's Force Crush ability to quickly destroy enemy vehicles.-->
+	<Event Name="Empire_M02_Vader_Hint_02_ForceCrush">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_04</Event_Param2>
+		<Event_Param3>150</Event_Param3>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_75</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_A01_M02_State_Misson_Goal</Prereq>
+	</Event>
+					<Event Name="Empire_M02_Vader_Hint_01_FLASH_ForceCrush">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>.5</Event_Param1>
+                        <Reward_Type>FLASH_SPECIAL_ABILITY</Reward_Type>
+                        <Reward_Param1>FORCE_TELEKINESIS</Reward_Param1>
+                        <Reward_Param2>flash_vader_forcecrush</Reward_Param2>
+                        <Prereq>Empire_M02_Vader_Hint_02_ForceCrush</Prereq>
+					 </Event>
+					 
+					 <Event Name="Empire_M02_Vader_Hint_01_REMOVEFLASH_ForceCrush">
+                        <Event_Type>STORY_ELAPSED</Event_Type>
+						<Event_Param1>3</Event_Param1>
+                        <Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+                        <Reward_Param1>flash_vader_forcecrush</Reward_Param1>
+                        <Prereq>Empire_M02_Vader_Hint_01_FLASH_ForceCrush</Prereq>
+					 </Event>
+	
+	
+	
+	
+	
+	
+<!-- jdg - 8/17 - adding Vader's line regarding reinforcement point 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_11
+Darth Vader: Secure and fortify that location to bring in reinforcements.  -->
+	<Event Name="Empire_M02_Reinforcement_Pad_Info_00">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_05</Event_Param2>
+		<Event_Param3>180</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_11</Reward_Param8>
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Reinforcement_Pad_Info_00b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_11</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Reinforcement_Pad_Info_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Reinforcement_Pad_Info_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Reinforcement_Pad_Info_00b</Prereq>
+	</Event>
+
+<!-- JDG 8/17 - hint "Arrow" is shown at "Reinforcement_Point" object-->
+	<Event Name="Empire_M02_Reinforcement_Pad_Info_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>REINFORCEMENT_POINT_PLUS10_CAP</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>3000</Reward_Param3>		
+		<Prereq>Empire_M02_Reinforcement_Pad_Info_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Reinforcement_Point_Remove_Blip">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>30</Event_Param1>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>REINFORCEMENT_POINT_PLUS10_CAP</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>3000</Reward_Param3>		
+		<Prereq>Empire_M02_Reinforcement_Pad_Info_01</Prereq>
+	</Event>
+
+
+
+
+
+
+<!-- Vader 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_71
+Darth Vader: Here is the power generator.  Attack it at once.
+-->
+	<Event Name="Empire_M02_Power_Generator_01">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_08</Event_Param2>
+		<Event_Param3>200</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_71</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_71</Reward_Param8>
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Power_Generator_02">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_71</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_71</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Power_Generator_01</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Power_Generator_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Power_Generator_02</Prereq>
+	</Event>
+
+
+<!-- Disabling various speech events on victory
+-->
+
+     <Event Name="Empire_Cancel_PowerGenerator_Message">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Empire_M02_Power_Generator_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+
+      <Event Name="Empire_Cancel_Reinforcement_Dialog_00_Message">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Empire_A01_M02_Reinforcement_Dialog_00</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+			
+<!-- jdg - 8/17 - adding reinforcements dialog here -->
+	<Event Name="Empire_A01_M02_Reinforcement_DialogCue">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_REINFORCE_DIALOG_GO</Event_Param2>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A01_M02_Reinforcement_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_52</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_52</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A01_M02_Reinforcement_DialogCue</Prereq>
+	</Event>	
+
+	<Event Name="Empire_A01_M02_Reinforcement_Dialog_00c">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_52</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_52</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A01_M02_Reinforcement_Dialog_00</Prereq>
+	</Event>
+	
+				<Event Name="Empire_A01_M02_Reinforcement_Dialog_RemoveMovie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Empire_A01_M02_Reinforcement_Dialog_00c</Prereq>
+				</Event>
+
+
+<!--TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_76
+Hint: Maulers can run over infantry.--> 
+	 <Event Name="Empire_A01_M02_Reinforcement_Dialog02">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>15</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_76</Reward_Param1>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param2>10</Reward_Param2>	
+		<Prereq>Empire_A01_M02_Reinforcement_Dialog_00c</Prereq>
+	</Event>
+		
+	
+<!-- jdg - 8/17 - adding powerplant destroyed event here -->
+	<Event Name="Empire_M02_Shield_Is_Dead">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Power_Generator_R</Event_Param1>			
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+    <Event Name="Empire_M02_POWER_GENERATOR_Flag_True">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Power_Generator_Flag</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Shield_Is_Dead</Prereq>
+	</Event>
+	
+<!--COMPLETING ingame objective text for destroying powerplant here 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_68
+Destroy the Power Generator. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Complete_PowerGenerator">
+        <Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<!--<Event_Type>STORY_TRIGGER</Event_Type>-->
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_68</Reward_Param1>
+		<Prereq>Empire_M02_Shield_Is_Dead</Prereq>
+	</Event>
+	
+<!-- jdg - 8/20 - dialog line regarding powerplant destroyed event here -->
+	<Event Name="Empire_M02_Shield_Is_Dead_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_50</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_50</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Shield_Is_Dead</Prereq>
+	</Event>
+		
+	<Event Name="Empire_M02_Shield_Is_Dead_Dialog_00b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_50</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_50</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Shield_Is_Dead_Dialog_00</Prereq>
+	</Event>
+				
+	<Event Name="Empire_M02_Shield_Is_Dead_Dialog_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Shield_Is_Dead_Dialog_00b</Prereq>
+	</Event>
+		
+<!-- jdg - 8/17 - adding comm array destroyed event here -->
+
+	<Event Name="Empire_M02_CommArray_Is_Dead">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Uplink_Station_Abandoned</Event_Param1>			
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+   <Event Name="Empire_M02_Comm_Center_Destroyed_Flag_True">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Comm_Center_Destroyed_Flag</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_CommArray_Is_Dead</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Comm_Center_Destroyed_Lua_Notification">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>.5</Event_Param1>
+		<Prereq>Empire_M02_CommArray_Is_Dead</Prereq>
+	</Event>
+	
+<!--COMPLETING ingame objective text for destroying comm center here 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_67
+Destroy the Communication Array. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Complete_CommCenter">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_67</Reward_Param1>
+		<Prereq>Empire_M02_CommArray_Is_Dead</Prereq>
+	</Event>
+	
+<!-- jdg - 8/20 - dialog line regarding commarray destroyed event here -->
+	<Event Name="Empire_M02_CommArray_Is_Dead_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_49</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_49</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_CommArray_Is_Dead</Prereq>
+	</Event>
+			
+	<Event Name="Empire_M02_CommArray_Is_Dead_Dialog_00b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_49</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_49</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_CommArray_Is_Dead_Dialog_00</Prereq>
+	</Event>
+				
+	<Event Name="Empire_M02_CommArray_Is_Dead_Dialog_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_CommArray_Is_Dead_Dialog_00b</Prereq>
+	</Event>
+
+<!-- Proximity to comm center gives goal hint -->
+	<Event Name="Empire_M02_Comm_Center_Info_00">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Uplink_Station_Abandoned</Event_Param2>
+		<Event_Param3>600</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_35</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_35</Reward_Param8>
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Comm_Center_Info_00b">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_35</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_35</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Comm_Center_Info_00</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Comm_Center_Info_00c">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Comm_Center_Info_00b</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Comm_Center_Info_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Uplink_Station_Abandoned</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>4000</Reward_Param3>		
+		<Prereq>Empire_M02_Comm_Center_Info_00</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Comm_Center_Info_RemoveBlip">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Uplink_Station_Abandoned</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Uplink_Station_Abandoned</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>4000</Reward_Param3>			
+		<Prereq>Empire_M02_Comm_Center_Info_01</Prereq>
+	</Event>
+			
+<!--Adding ingame objective text for destroying comm center here 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_67
+Destroy the Communication Array. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Destroy_CommCenter">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_67</Reward_Param1>
+		<Prereq>Empire_M02_Comm_Center_Info_01</Prereq>
+	</Event>
+						
+
+
+<!-- Move to first trigger location for Shield info 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_13
+Darth Vader: We must take down this shield before we attack.  
+Destroy the power source before we advance on the base.  -->
+	<Event Name="Empire_M02_Shield_Info_00">
+		<Event_Type>STORY_UNIT_PROXIMITY</Event_Type>
+		<Event_Param2>Story_Trigger_Zone_01</Event_Param2>
+		<Event_Param3>120</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_13</Reward_Param8>
+		<Reward_Param9>Vader_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Shield_Info_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_13</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_13</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Shield_Info_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Shield_Info_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Shield_Info_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Shield_Info_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>		
+		<Reward_Param3>5000</Reward_Param3>		
+		<Prereq>Empire_M02_Shield_Info_02</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Shield_Info_RemoveBlip">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Power_Generator_R</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>		
+		<Reward_Param3>5000</Reward_Param3>			
+		<Prereq>Empire_M02_Shield_Info_03</Prereq>
+	</Event>
+
+					
+<!-- changing to ingame objective thingy	
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_68
+Destroy the Power Generator.-->
+	<Event Name="Empire_A01_M02_State_Misson_Goal_PowerGenerator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_68</Reward_Param1>
+		<Prereq>Empire_M02_Shield_Info_03</Prereq>
+	</Event>
+
+<!-- BATTLE CHATTER TIMER xxx-->
+	<Event Name="EM02_Reset_Battle_Chatter_Timer_Start">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_RESET_BATTLE_CHATTER</Event_Param2>
+	</Event>
+			<!-- feeds back to lua-->
+			<Event Name="EM02_Reset_Battle_Chatter_Timer_Stop">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>10</Event_Param1>
+				<Prereq>EM02_Reset_Battle_Chatter_Timer_Start</Prereq> 
+			</Event>
+	
+<!-- BATTLE CHATTER TIMER 02-->
+	<Event Name="EM02_Reset_Battle_Chatter_Timer02_Start">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_RESET_BATTLE_CHATTER02</Event_Param2>
+	</Event>
+			<!-- feeds back to lua-->
+			<Event Name="EM02_Reset_Battle_Chatter_Timer02_Stop">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>10</Event_Param1>
+				<Prereq>EM02_Reset_Battle_Chatter_Timer02_Start</Prereq> 
+			</Event>
+			
+<!-- BATTLE CHATTER TIMER 03-->
+	<Event Name="EM02_Reset_Battle_Chatter_Timer03_Start">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_RESET_BATTLE_CHATTER03</Event_Param2>
+	</Event>
+			<!-- feeds back to lua-->
+			<Event Name="EM02_Reset_Battle_Chatter_Timer03_Stop">
+				<Event_Type>STORY_ELAPSED</Event_Type>
+				<Event_Param1>10</Event_Param1>
+				<Prereq>EM02_Reset_Battle_Chatter_Timer03_Start</Prereq> 
+			</Event>
+			
+<!-- BATTLE CHATTER 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_61
+Rebel Soldier: That's Darth Vader! Let's get out of here!  -->
+	<Event Name="Empire_M02_REBELS_SEE_VADER">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_BATTLE_CHATTER_REBELS_SEE_VADER</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_61</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_61</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_VADER_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>EMPIRE_ACT01_MISSION_TWO_61</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_61</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Empire_M02_REBELS_SEE_VADER</Prereq>
+				</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_VADER_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Empire_M02_REBELS_SEE_VADER_Remove_Text</Prereq>
+				</Event>
+				
+<!-- BATTLE CHATTER 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_46
+Rebel Soldier:  Imperial walkers! Engage them immediately!  -->
+	<Event Name="Empire_M02_REBELS_SEE_ATST">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_BATTLE_CHATTER_REBELS_SEE_ATST</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_46</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_46</Reward_Param8>
+		<Reward_Param9>Rebel_Trooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_ATST_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>EMPIRE_ACT01_MISSION_TWO_46</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_46</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Empire_M02_REBELS_SEE_ATST</Prereq>
+				</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_ATST_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Empire_M02_REBELS_SEE_ATST_Remove_Text</Prereq>
+				</Event>
+				
+<!-- BATTLE CHATTER 
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_48
+Stormtrooper:  There they are.  Blast 'em!  -->
+	<Event Name="Empire_M02_REBELS_SEE_STORMTROOPERS">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_BATTLE_CHATTER_REBELS_SEE_STORMTROOPERS</Event_Param2>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_48</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_48</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_STORMTROOPERS_Remove_Text">
+					<Event_Type>STORY_SPEECH_DONE</Event_Type>
+					<Event_Param1>EMPIRE_ACT01_MISSION_TWO_48</Event_Param1>
+					<Reward_Type>SCREEN_TEXT</Reward_Type>
+					<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_48</Reward_Param1>
+					<Reward_Param4>remove</Reward_Param4>
+					<Prereq>Empire_M02_REBELS_SEE_STORMTROOPERS</Prereq>
+				</Event>
+
+				<Event Name="Empire_M02_REBELS_SEE_STORMTROOPERS_Remove_Movie">
+					<Event_Type>STORY_TRIGGER</Event_Type>
+					<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+					<Prereq>Empire_M02_REBELS_SEE_STORMTROOPERS_Remove_Text</Prereq>
+				</Event>
+
+
+
+
+
+<!-- End video and Victory -->
+
+<Event Name="Empire_M02_All_Rebels_Dead_Check">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>Rebel</Event_Param1>
+		<Event_Param2>DESTROY_ALL</Event_Param2>
+	  <!-- <Prereq>Empire_M02_Comm_Center_Info_02</Prereq> -->
+	</Event>
+
+ <Event Name="Empire_M02_ALL_REBEL_DESTROYED_Flag_True">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>M02_Rebels_Destroyed_Flag</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_All_Rebels_Dead_Check</Prereq>
+	</Event>
+
+
+	<Event Name="Empire_M02_Final_Dialog_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+	  <Prereq>Empire_M02_ALL_REBEL_DESTROYED_Flag_True, Empire_M02_Comm_Center_Destroyed_Flag_True, Empire_M02_POWER_GENERATOR_Flag_True</Prereq>
+	</Event>
+
+    
+	
+<!--COMPLETING ingame objective text for destroying all rebels 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_65
+Destroy all Rebel buildings and units. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Complete_RebelsDead">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_65</Reward_Param1>
+		<Prereq>Empire_M02_All_Rebels_Dead_Check</Prereq>
+	</Event>
+			
+<!--COMPLETING ingame objective text for destroying all rebels 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66
+Darth Vader must survive. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Complete_VaderSurvived">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Lock_Input">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_Cancel_Loss_Condition">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_STORY_EVENT</Reward_Type>
+		<Reward_Param1>Empire_M02_Vader_Dies_Speech_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+
+
+
+<!-- vader talking
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_53
+Darth Vader: Your incompetence is troubling. The Rebels were clearly alerted to our presence.-->
+
+	<!-- Lock for camera setup & cinematic for ending -->
+	<Event Name="Empire_M02_Final_Wait">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Final_Dialog_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_53</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_53</Reward_Param8>
+		<Prereq>Empire_M02_Final_Wait</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_01_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_53</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_53</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_01</Prereq>
+		</Event>	
+
+	
+
+<!-- officer talking
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_54
+Imperial Officer: My Lord, someone must have informed them of our arrival. 
+It is likely we have a trai… (choke)-->
+	<Event Name="Empire_M02_Final_Dialog_02_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_02_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_01_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_54</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_54</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_02_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_02_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_54</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_54</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_02</Prereq>
+		</Event>	
+
+<!-- Begin choke anim here...  TAKEN OUT AND HANDLED WHEN VADERS SPEECH ENDS>
+	<Event Name="Empire_M02_Choke_Pause">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_54</Event_Param1>
+		<Prereq>Empire_M02_Final_Dialog_02_End</Prereq>
+	</Event -->
+
+	<!-- Vader Speaks 2
+	TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_55 
+	Darth Vader: It is likely you will not fail me again, Captain.-->
+	<Event Name="Empire_M02_Final_Dialog_03_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_03_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_02_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_55</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_55</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_03_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_03_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_55</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_55</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_03</Prereq>
+		</Event>	
+	
+<!-- Vader Speaks 3 once stormtrooper shows up 
+Darth Vader: Did you find anything in your search?-->
+
+	<Event Name="Empire_M02_Final_Dialog_04_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_04_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_03_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_32</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_32</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_04_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_04_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_32</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_32</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_04</Prereq>
+		</Event>	
+
+<!-- Stormtrooper Speaks 1 
+Stormtrooper: Some of the equipment we’ve found carries pirate insignias.  
+The r-rebels may be working with them.-->
+	<Event Name="Empire_M02_Final_Dialog_05_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_05_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_04_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_33</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_33</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_05_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_05_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_33</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_33</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_05</Prereq>
+		</Event>	
+
+
+<!-- Vader Speaks 4 Darth Vader: They must be trading information on our cargo routes for supplies from the pirates.  
+Reconstruct their communications.  They will lead us to the rebellion.-->
+	<Event Name="Empire_M02_Final_Dialog_06_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_06_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_05_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_06">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_34</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_34</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_06_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_06_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_34</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_34</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_06</Prereq>
+		</Event>		
+
+
+<!-- Stormtrooper Speaks 2 
+Stormtrooper: Yes sir!-->
+	<Event Name="Empire_M02_Final_Dialog_07_Go">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DIALOG_07_GO</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_06_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Final_Dialog_07">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_19</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>1</Reward_Param7>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_19</Reward_Param8>
+		<Prereq>Empire_M02_Final_Dialog_07_Go</Prereq>
+	</Event>
+
+		<Event Name="Empire_M02_Final_Dialog_07_End">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>EMPIRE_ACT01_MISSION_TWO_19</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_19</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Empire_M02_Final_Dialog_07</Prereq>
+		</Event>		
+
+	<Event Name="Empire_M02_Allow_Win">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>M1_FINAL_DONE</Event_Param2>
+		<Prereq>Empire_M02_Final_Dialog_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Unlock_Input">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M02_Allow_Win</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Remove_Last_Text_Line">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_19</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Allow_Win</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Force_Win">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_M02_Allow_Win</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A01M02_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+	<!-- jdg 9/04/05 giving player his reinforcement ability back here -->
+	<Event Name="Empire_A01M02_Allow_Reinforcements">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_REINFORCEMENTS</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_M02_Increment_Win</Prereq>
+		<Prereq>Empire_M02_Force_Win</Prereq>
+	</Event>
+	
+	<!-- giving player his retreat ability back here -->
+	<Event Name="Empire_M02_Allow_Player_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_M02_Increment_Win</Prereq>
+		<Prereq>Empire_M02_Force_Win</Prereq>
+	</Event>
+
+<!-- Loss Condition: Vader dies
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56
+Stormtrooper: Lord Vader has retreated! Fall back!-->
+	<Event Name="Empire_M02_Vader_Dies_Speech_01">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Darth_Vader</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_56</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_M02_Begin</Prereq>
+	</Event>
+	
+<!--FAILING ingame objective text for keeping vader alive 
+TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_68
+Destroy the Power Generator. -->
+	<Event Name="Empire_A01_M02_Misson_Goal_Failed_VaderDead">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT01_MISSION_TWO_66</Reward_Param1>
+		<Prereq>Empire_M02_Vader_Dies_Speech_01</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Vader_Dies_Speech_01_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_56</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_56</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Vader_Dies_Speech_01</Prereq>
+	</Event>
+
+<!-- Loss Condition: Vader dies
+TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_57
+Emperor: I expect more from my apprentice, Vader. Surely a handful of Rebels is not such a burden?-->
+	<Event Name="Empire_M02_Vader_Dies_Speech_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_57</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param9>Emperor_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Reward_Param8>EMPIRE_ACT01_MISSION_TWO_57</Reward_Param8> <!-- Put speech file name here -->
+		<Prereq>Empire_M02_Vader_Dies_Speech_01_Remove_Text</Prereq>
+	</Event>
+	
+	<Event Name="Empire_M02_Vader_Dies_Speech_02_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT01_MISSION_TWO_57</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT01_MISSION_TWO_57</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_M02_Vader_Dies_Speech_02</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Vader_Dies_Speech_02_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_M02_Vader_Dies_Speech_02_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Empire_M02_Vader_Dies">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_M02_Vader_Dies_Speech_02_Stop_Movie</Prereq>
+	</Event>
+
+</Story>

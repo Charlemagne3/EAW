@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<Equations>
+	<!-- Any perception equations that are hero specific will go here -->
+
+
+										<!-- EMPIRE -->
+
+	<!-- When not in an active plan, Ackbar likes to sit on systems where he can add the most
+		defensive bonus or where he can apply his Calamari Cruiser Discount -->
+	<Park_Ackbar>
+		0.0
+	</Park_Ackbar>
+
+	<!-- When not in an active plan, Veers likes to sit on planets
+		which require high defense
+		bonus for being able to build walkers there
+		-->
+	<Park_Veers>
+		Function_GroundDefensiveValue.Evaluate
+		+
+		Variable_Target.GroundbaseLevelUnnormalized
+	</Park_Veers>
+
+										<!-- REBEL -->
+
+</Equations>

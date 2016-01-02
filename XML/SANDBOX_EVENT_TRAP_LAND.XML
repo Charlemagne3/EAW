@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Trap_Land_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+</Story>

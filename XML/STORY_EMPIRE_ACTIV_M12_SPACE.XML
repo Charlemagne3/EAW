@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" ?>
+
+
+
+<Story>
+
+	<Event Name="Empire_A04M12_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+	<Event Name="Empire_M12_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_A04M12_Begin</Prereq>
+	</Event>
+
+
+</Story>

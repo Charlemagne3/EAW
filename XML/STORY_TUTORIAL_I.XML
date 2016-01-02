@@ -1,0 +1,501 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+	<Event Name="Tutorial_I_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+   <!-- Pre Center camera -->
+   <Event Name="Tutorial_I_Pre_Center_Camera">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Reward_Param2>0,-80,0</Reward_Param2>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+   
+   <Event Name="Tutorial_I_Reveal_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+
+   <!-- Select Nal Hutta -->
+   <Event Name="Tutorial_I_Select_Nal_Hutta">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>0</Event_Param1>
+      <Reward_Type>SELECT_PLANET</Reward_Type>
+      <Reward_Param1>NalHutta</Reward_Param1>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+   
+	<!-- Scroll lock -->
+	<Event Name="Tutorial_I_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+   <!-- Set tutorial mode -->
+   <Event Name="Tutorial_I_Tutorial_Player">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+      <Reward_Param1>Rebel</Reward_Param1>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+
+
+	
+<!-- Lock all available tech -->
+
+	<Event Name="Tutorial_I_Lock_Barracks">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Shield_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Base_Shield</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Mining_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Ground_Mining_Facility</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Corellian_Corvette">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Corellian_Corvette</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Rebel_Infantry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Infantry_Squad</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Rebel_Tank_Buster_Squad">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Tank_Buster_Squad</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Communications_Array">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Communications_Array_R</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Z95_Headhunter_Rebel_Squadron">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Z95_Headhunter_Rebel_Squadron</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Rebel_Star_Base_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_I_Lock_Rebel_Star_Base_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_Star_Base_2</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Light_Vehicle_Factory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Light_Vehicle_Factory</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>R_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Power_Generator">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Power_Generator_R</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_X-Wing">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Rebel_X-Wing_Squadron</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Lock_Smuggler">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Smuggler_Team_R</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+   
+	<Event Name="Tutorial_I_Lock_Controls_For_Intro">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>LOCK_CONTROLS</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+   
+
+<!-- ============================================================================================================== -->
+<!-- IMPORTED FROM TUTORIAL 0																													  -->
+<!-- ============================================================================================================== -->
+
+<!-- Galactic Tour -->
+
+	<!-- Welcome to galactic mode. This mode represents the state of the Star Wars... -->
+	<Event Name="Tutorial_I_Welcome_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - Green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_01</Reward_Param8>
+		<Prereq>Tutorial_I_Begin</Prereq> 
+	</Event>	
+
+		<!-- Go into galactic tour mode -->
+		<Event Name="Tutorial_I_Galactic_Tour_01">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>START_CINEMATIC_MODE</Reward_Type>
+			<Prereq>Tutorial_I_Welcome_01</Prereq>
+		</Event>
+
+		<!-- Remove text string -->
+		<Event Name="Tutorial_I_Welcome_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_REBEL_ACT00_01</Event_Param1>
+			<Reward_Type>MULTIMEDIA</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_01</Reward_Param1>
+			<Reward_Param4>1</Reward_Param4>	
+			<Prereq>Tutorial_I_Welcome_01</Prereq>
+		</Event>
+
+		<!-- End Galactic Tour -->
+		<Event Name="Tutorial_I_Galactic_Tour_02">
+			<Event_Type>STORY_ELAPSED</Event_Type>
+			<Event_Param1>0.125</Event_Param1>
+			<Reward_Type>STOP_CINEMATIC_MODE</Reward_Type>
+			<Prereq>Tutorial_I_Welcome_02</Prereq>
+		</Event>
+		
+	<Event Name="Tutorial_I_Ready_For_Tactical_Battle">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<!-- <Reward_Type>SHOW_COMMAND_BAR</Reward_Type>
+		<Reward_Param1>0</Reward_Param1> -->
+		<Prereq>Tutorial_I_Galactic_Tour_02</Prereq>
+	</Event>
+
+
+
+	<!-- Turn off advisor -->
+   <Event Name="Tutorial_I_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+
+<!-- Reveal Planets -->
+
+	<Event Name="Tutorial_I_Reveal_Tatooine">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Tatooine</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_Bothawui">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Bothawui</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_Kuat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kuat</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_Corellia">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Corellia</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_I_Reveal_Geonosis">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Geonosis</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+   <!-- Center camera -->
+   <Event Name="Tutorial_I_Center_Camera">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Reward_Param2>-20,-70,0</Reward_Param2>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+
+
+<!-- ============================================================================================================== -->
+<!-- END - IMPORTED FROM TUTORIAL 0																											  -->
+<!-- ============================================================================================================== -->
+
+
+<!-- Old Start to tutorial I - - >
+	<Event Name="Tutorial_I_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_I_Begin</Prereq>
+	</Event>
+	
+   < ! - - Turn off advisor - - >
+   <Event Name="Tutorial_I_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_I_Begin</Prereq>
+   </Event>
+-->
+	
+<!-- 
+	 LINK_TACTICAL
+	 <Reward_Param1> = Planet name
+	 <Reward_Param2> = Planet location (space,land)
+	 <Reward_Param3> = Attacking faction
+	 <Reward_Param4> = Map name
+	 <Reward_Param5> = Defending faction
+	 <Reward_Param6> = Hero pathfinder name
+	 <Reward_Param7> = Tactical script name
+	 <Reward_Param8> = Use sandbox units
+	 <Reward_Param9> = Enable Prebattle Cinematic
+	 <Reward_Param10>= Start Scene Faded Out
+	 <Reward_Param11>= Start Scene Letterboxed
+-->
+
+   <!-- Select Kashyyyk -->
+   <Event Name="Tutorial_I_Select_Kashyyyk">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>1.5</Event_Param1>
+      <Reward_Type>SELECT_PLANET</Reward_Type>
+      <Reward_Param1>Kashyyyk</Reward_Param1>
+      <Prereq>Tutorial_I_Ready_For_Tactical_Battle</Prereq>
+   </Event>
+   
+   <Event Name="Tutorial_I_Scroll_To_Nal_Hutta">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>0.5</Event_Param1>
+      <Reward_Type>SCROLL_CAMERA</Reward_Type>
+      <Reward_Param1>NalHutta</Reward_Param1>
+      <Prereq>Tutorial_I_Select_Kashyyyk</Prereq>
+   </Event>   
+   
+	<!-- Hint: The Empire is launching an assault on the Rebel land base at Kashyyyk -->
+	<Event Name="Tutorial_I_Intro_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>	<!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_REBEL_ACT00_04</Reward_Param8>
+		<Prereq>Tutorial_I_Select_Kashyyyk</Prereq>
+	</Event>
+	
+	<!-- Remove the text -->
+	<Event Name="Tutorial_I_Intro_02">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>TUTORIAL_REBEL_ACT00_04</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_REBEL_ACT00_04</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Tutorial_I_Intro_01</Prereq>
+	</Event>
+   
+
+	<!-- Fly a fleet over to Kashyyyk for extra dramatic effect! -->
+   <Event Name="Tutorial_I_Move_Kashyyk_Attack_Fleet">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>1</Event_Param1>
+      <Reward_Type>MOVE_FLEET</Reward_Type>
+      <Reward_Param1>NalHutta</Reward_Param1>
+      <Reward_Param2>Kashyyyk</Reward_Param2>
+      <Reward_Param3>FILTER_ENEMY_ONLY</Reward_Param3>
+      <Prereq>Tutorial_I_Intro_02</Prereq>
+   </Event>
+
+	<!-- Change faction of Kashyyyk -->
+	<Event Name="Tutorial_I_Reset_Kashyyyk_Faction">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Kashyyyk</Event_Param1>
+		<Reward_Type>PLANET_FACTION</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>Neutral</Reward_Param2>
+		<Prereq>Tutorial_I_Move_Kashyyk_Attack_Fleet</Prereq>
+	</Event>
+	
+	
+	<Event Name="Tutorial_I_Link_Tactical">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<!--<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Kashyyyk</Event_Param1>
+		<Event_Param2>FILTER_ENEMY_ONLY</Event_Param2>-->
+		<Reward_Type>LINK_TACTICAL</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>LAND</Reward_Param2>
+		<Reward_Param3>Rebel</Reward_Param3>
+		<Reward_Param4>TM01_Gaining_Ground.ted</Reward_Param4>
+		<Reward_Param5>Empire</Reward_Param5>
+		<Reward_Param7>Story_Plots_Tutorial_M01_LAND.XML</Reward_Param7>
+		<Reward_Param8>1</Reward_Param8>
+		<!-- Do we want the prebattle cinematic to play?-->
+		<Reward_Param9>0</Reward_Param9>
+		<!-- Do we want to start the scene faded out?-->
+		<Reward_Param10>1</Reward_Param10>
+		<!-- Do we want to start the scene in letter box mode-->
+		<Reward_Param11>1</Reward_Param11>
+		<!-- Show the Battle Pending dialog? -->
+		<Reward_Param13>0</Reward_Param13>
+		<Prereq>Tutorial_I_Reset_Kashyyyk_Faction</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+	
+	
+	<!-- Click the Begin button -->	
+	<Event Name="Tutorial_I_Auto_Click_Begin">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+      <Reward_Param1>choice_button_left</Reward_Param1>
+		<Prereq>Tutorial_I_Link_Tactical</Prereq>
+	</Event>
+	
+	
+	
+   <!-- Wait until the battle summary dialog is closed -->
+	<Event Name="Tutorial_I_Returned_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>battle_end_closed</Event_Param1>
+		<Prereq>Tutorial_I_Link_Tactical</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+
+
+<!-- Tutorial 1 failed -->
+
+   <!-- Detect mission 1 being lost.  Display text telling the player to try again -->
+	<Event Name="Tutorial_I_Failed">
+		<Event_Type>STORY_MISSION_LOST</Event_Type>
+		<Event_Param1>Story_Plots_Tutorial_M01_LAND.XML</Event_Param1>
+      <Prereq>Tutorial_I_Returned_01</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+
+   <!-- Re-enable mission -->
+	<Event Name="Tutorial_I_Failed_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>RESET_BRANCH</Reward_Type>
+      <Reward_Param1>BRANCH_TUTORIAL_M01</Reward_Param1>
+		<Prereq>Tutorial_I_Failed</Prereq>
+      <Branch>BRANCH_TUTORIAL_M01</Branch>
+	</Event>
+
+
+
+<!-- Mission 4 ends successfully -->
+
+	<Event Name="Tutorial_I_Completed">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Tutorial_M01_Win</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+      <Prereq>Tutorial_I_Returned_01</Prereq>
+	</Event>
+
+
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_I_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_ONE</Reward_Param1>
+	<Prereq>Tutorial_I_Completed</Prereq>
+</Event>
+
+<!-- Link to next tutorial -->
+
+   <Event Name="Tutorial_I_Next_Tutorial_00">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+      <Reward_Param1>TEXT_TUTORIAL_1_COMPLETE</Reward_Param1>
+      <Prereq>Tutorial_I_Completed</Prereq>
+   </Event>
+
+
+   <Event Name="Tutorial_I_Next_Tutorial_01">
+      <Event_Type>STORY_GENERIC</Event_Type>
+      <Event_Param1>Continue_Tutorial</Event_Param1>
+      <Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+      <Reward_Param1>Tutorial_Two</Reward_Param1>
+      <Reward_Param2>0</Reward_Param2>
+   </Event>
+
+
+</Story>

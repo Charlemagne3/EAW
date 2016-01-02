@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Build_Generic_Structure_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Reward_Type>CREDITS</Reward_Type>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Build_Generic_Structure_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Build_Generic_Structure_01">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Prereq>Build_Generic_Structure_00</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>BUILD_GENERIC_STRUCTURE_NOTIFICATION_00</Reward_Param1>
+	</Event>
+	
+	<Event Name="Build_Generic_Structure_02">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>BUILD_GENERIC_STRUCTURE_NOTIFICATION_01</Event_Param2>
+		<Prereq>Build_Generic_Structure_01</Prereq>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Build_Generic_Structure_Tag_00</Reward_Param1>		
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+	
+	<Event Name="Build_Generic_Structure_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Build_Generic_Structure_02</Prereq>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+	</Event>	
+	
+	<Event Name="Build_Generic_Structure_04">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Prereq>Build_Generic_Structure_03</Prereq>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>BUILD_GENERIC_STRUCTURE_NOTIFICATION_02</Reward_Param1>
+	</Event>
+		
+</Story>

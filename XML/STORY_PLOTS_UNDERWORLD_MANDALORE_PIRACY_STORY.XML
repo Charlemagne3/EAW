@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<Story_Mode_Plots>
+
+	<Lua_Script>Story_Underworld_Mandalore_Piracy_Story</Lua_Script>
+	<Active_Plot>Story_Underworld_Mandalore_Piracy_Story.xml</Active_Plot>
+
+</Story_Mode_Plots>

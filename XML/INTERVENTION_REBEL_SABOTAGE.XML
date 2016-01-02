@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<Story>
+	<Event Name="Rebel_Sabotage_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+		<Story_Dialog>Dialog_E_Intervention_Rebel_Sabotage</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Rebel_Sabotage_Tag_00</Story_Tag>
+	</Event>
+	
+	<Event Name="Rebel_Sabotage_01">
+		<Event_Type>STORY_DEPLOY</Event_Type>
+		<Event_Param1>BOBA_FETT</Event_Param1>
+		<Event_Param2></Event_Param2>
+		<Prereq>Rebel_Sabotage_00</Prereq>
+		<Reward_Type>CREDITS</Reward_Type>
+		<Reward_Param1></Reward_Param1>
+		<Story_Dialog>Dialog_E_Intervention_Rebel_Sabotage</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+	</Event>
+		
+	<Event Name="Rebel_Sabotage_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TRIGGER_AI</Reward_Type>
+		<Reward_Param1>REBEL_SABOTAGE_NOTIFICATION_00</Reward_Param1>
+		<Prereq>Rebel_Sabotage_01</Prereq>
+	</Event>
+	
+	<Event Name="Rebel_Sabotage_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+		<Reward_Param1>Rebel_Sabotage_Tag_00</Reward_Param1>
+		<Prereq>Rebel_Sabotage_02</Prereq>
+	</Event>
+	
+</Story>

@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+-->
+
+<!-- Preliminary Setup -->
+
+	<Event Name="Empire_A02M05_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+	
+	<Event Name="Empire_M05_Autoresolve_Off">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_AUTORESOLVE</Reward_Type>
+		<Prereq>Empire_A02M05_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Prevent_Retreat">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_RETREAT</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_A02M05_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Prevent_Victory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_VICTORY</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A02M05_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Win_Flag_Set">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A02M05_Win</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_A02M05_Begin</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Prison_Counter">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>Prison_Destroyed</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+<!-- Intro Cinematic -->
+
+	<Event Name="Empire_A02M05_Cinematic_Start">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>ENABLE_FOW</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A02M05_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Cinematic_End">
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>A02M05_INTRO_CINEMATIC_DONE</Event_Param2>
+		<Reward_Type>ENABLE_FOW</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Empire_A02M05_Cinematic_Start</Prereq>
+	</Event>
+
+<!-- Intro dialog lines -->
+	<Event Name="Empire_A02M05_Stormtrooper_Intro">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_11</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Stormtrooper_Intro_Dialog">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_11</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_11</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Stormtrooper_Intro</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Solo_Intro">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_12</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_12</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Stormtrooper_Intro_Dialog</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_Intro_Dialog">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_12</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_12</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Solo_Intro</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Solo_Intro_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Solo_Intro_Dialog</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Imperial_Response">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param8>
+		<Reward_Param9>Commander_Moff_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Solo_Intro_Cleanup</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Imperial_Response_Remove_Text">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_20</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_20</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Imperial_Response</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Imperial_Response_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Imperial_Response_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_ADD_OBJECTIVE_Prisons">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_6_102</Reward_Param1>
+		<Prereq>Empire_A02M05_Imperial_Response_Stop_Movie</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_ADD_OBJECTIVE_Han">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FIVE_22</Reward_Param1>
+		<Prereq>Empire_A02M05_Imperial_Response_Stop_Movie</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Reinforcement_Point_Hint">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>10</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_6_101</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+
+<!-- PRISON COUNTER AND LOSS CONDITION -->
+	<Event Name="Empire_A02M05_Prison__Destroy_Counter">
+		<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+		<Event_Param1>Imperial_Prison_Kashyyyk</Event_Param1>
+		<Event_Param3>1</Event_Param3>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Prison_Destroyed</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Empire_A02M05_Prison_Counter</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+<!-- One prison lost -->
+	<Event Name="Empire_A02M05_Anounce_Death_00">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Prison_Destroyed</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>EQUAL_TO</Event_Param3>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+<!-- Stormtrooper Speaks -->
+	<Event Name="Empire_A02M05_One_Down_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Anounce_Death_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_One_Down_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_05</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_One_Down_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_One_Down">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_13</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_13</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_One_Down_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_One_Down_Cleanup">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_13</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_13</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Solo_One_Down</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Solo_One_Down_Cleanup_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Solo_One_Down_Cleanup</Prereq>
+	</Event>
+
+<!-- Two prisons lost -->
+	<Event Name="Empire_A02M05_Anounce_Death_01">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Prison_Destroyed</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>EQUAL_TO</Event_Param3>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+<!-- Stormtrooper Speaks -->
+	<Event Name="Empire_A02M05_Two_Down_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Anounce_Death_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Two_Down_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_05</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_05</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Two_Down_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_Two_Down">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_14</Reward_Param8>
+		<Reward_Param9>Han_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Two_Down_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_Two_Down_Dialog">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_14</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_14</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Solo_Two_Down</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Solo_Two_Down_Dialog_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Solo_Two_Down_Dialog</Prereq>
+	</Event>
+
+<!-- Three prisons lost -->
+	<Event Name="Empire_A02M05_Anounce_Death_02">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Prison_Destroyed</Event_Param1>
+		<Event_Param2>3</Event_Param2>
+		<Event_Param3>EQUAL_TO</Event_Param3>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+<!-- Stormtrooper Speaks -->
+	<Event Name="Empire_A02M05_Three_Down_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_06</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Anounce_Death_02</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Three_Down_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_06</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_06</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Three_Down_00</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Three_Down_01_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Three_Down_01</Prereq>
+	</Event>
+
+<!-- Four prisons lost -->
+	<Event Name="Empire_A02M05_Anounce_Death_03">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>Prison_Destroyed</Event_Param1>
+		<Event_Param2>4</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+<!-- Stormtrooper Speaks -->
+	<Event Name="Empire_A02M05_Four_Down_00">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_07</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>EMPIRE_ACT02_MISSION_FIVE_07</Reward_Param8>
+		<Reward_Param9>Stormtrooper_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Empire_A02M05_Anounce_Death_03</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Four_Down_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_07</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_07</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Four_Down_00</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Four_Down_01_Stop_Movie">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq>Empire_A02M05_Four_Down_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Prison_LOSS">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_A02M05_Four_Down_01</Prereq>
+	</Event>
+
+<!-- LOSS BY LOSING ALL TROOPS -->
+	<Event Name="Empire_A02M05_All_Destroyed_LOSS">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Event_Param2>DESTROY_ALL_UNITS</Event_Param2>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>REBEL</Reward_Param1>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+			<Event Name="Empire_A02M05_Prisons_Failed">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_FAILED</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FIVE_22</Reward_Param1>
+				<Prereq>Empire_A02M05_All_Destroyed_LOSS</Prereq>
+				<Prereq>Empire_A02M05_Prison_LOSS</Prereq>
+			</Event>
+
+<!-- WIN BY DESTROYING ALL REBELS -->
+	<Event Name="Empire_A02M05_All_Rebel_Destroyed_WIN">
+		<Event_Type>STORY_CHECK_DESTROYED</Event_Type>
+		<Event_Param1>REBEL</Event_Param1>
+		<Event_Param2>DESTROY_ALL_UNITS</Event_Param2>
+		<Reward_Type>ENABLE_FOW</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+			<Event Name="Empire_A02M05_Prisons_Complete">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FIVE_22</Reward_Param1>
+				<Prereq>Empire_A02M05_All_Rebel_Destroyed_WIN</Prereq>
+			</Event>
+
+			<Event Name="Empire_A02M05_Han_Defeat_Complete">
+				<Event_Type>STORY_TACTICAL_DESTROY</Event_Type>
+				<Event_Param1>Han_Solo</Event_Param1>
+				<Event_Param3>1</Event_Param3>
+				<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+				<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_6_102</Reward_Param1>
+				<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+			</Event>
+	
+	<Event Name="Empire_A02M05_Win_Dialog_00">	
+		<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+		<Event_Param2>A02M05_TRIGGER_OUTRO_DIALOG</Event_Param2>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_15</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Prereq>Empire_A02M05_Cinematic_End</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Win_Dialog_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPEECH</Reward_Type>
+		<Reward_Param1>EMPIRE_ACT02_MISSION_FIVE_15</Reward_Param1>
+		<Prereq>Empire_A02M05_Win_Dialog_00</Prereq>
+	</Event>
+			
+	<Event Name="Empire_A02M05_Win_Cleanup_01">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_15</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_15</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Win_Dialog_01</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Win_Dialog_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_16</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Prereq>Empire_A02M05_Win_Cleanup_01</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Win_Dialog_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SPEECH</Reward_Type>
+		<Reward_Param1>EMPIRE_ACT02_MISSION_FIVE_16</Reward_Param1>
+		<Prereq>Empire_A02M05_Win_Dialog_02</Prereq>
+	</Event>
+			
+	<Event Name="Empire_A02M05_Win_Cleanup_02">
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1>EMPIRE_ACT02_MISSION_FIVE_16</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_EMPIRE_ACT02_MISSION_FIVE_16</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Win_Dialog_02a</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Actual_Win">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>VICTORY</Reward_Type>
+		<Reward_Param1>EMPIRE</Reward_Param1>
+		<Prereq>Empire_A02M05_Win_Cleanup_02</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Increment_Win">
+		<Event_Type>STORY_VICTORY</Event_Type>
+		<Event_Param1>EMPIRE</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>Empire_A02M05_Win</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+	
+<!-- jdg - new dialog for when han exits stage left
+ TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_13 -
+ Han Solo: I think it's time to make a hasty retreat!  Chewie, warm up the Falcon!-->
+ 
+ <Event Name="Empire_A02M05_HAN_SOLO_ESCAPE_DIALOG">
+	<Event_Type>STORY_AI_NOTIFICATION</Event_Type>
+	<Event_Param2>CUE_HAN_SOLO_ESCAPE_DIALOG</Event_Param2>		
+	<Reward_Type>MULTIMEDIA</Reward_Type>
+	<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_13</Reward_Param1>
+	<Reward_Param2>-1</Reward_Param2>	
+	<Reward_Param8>REBEL_ACT02_MISSION_SIX_13</Reward_Param8>
+	<!--In cinematic...no need for hologram-->
+	<Prereq>Empire_A02M05_Begin</Prereq>
+</Event>
+
+			<Event Name="Empire_A02M05_HAN_SOLO_ESCAPE_DIALOG_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>REBEL_ACT02_MISSION_SIX_13</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_REBEL_ACT02_MISSION_SIX_13</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Empire_A02M05_HAN_SOLO_ESCAPE_DIALOG</Prereq>
+			</Event>
+
+
+
+<!-- MARKERS AND HINTS FOR SHOWING PRISONS -->
+	<Event Name="Empire_A02M05_Prison_Hint">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FIVE_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Empire_A02M05_Imperial_Response_Stop_Movie</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Prison_Hint_Cleanup">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5</Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_ACT02_MISSION_FIVE_10</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Highlight_Prison00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_00</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>0</Reward_Param3>	
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Highlight_Prison01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_01</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Highlight_Prison02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_02</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Highlight_Prison03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_03</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>3</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+	
+	<Event Name="Empire_A02M05_Highlight_Prison05">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_06</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Reward_Param3>5</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Highlight_Prison00_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_00</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>0</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint_Cleanup</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Highlight_Prison01_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_01</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>1</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint_Cleanup</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Highlight_Prison02_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_02</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>2</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint_Cleanup</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Highlight_Prison03_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_03</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>3</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint_Cleanup</Prereq>
+	</Event>
+
+	<Event Name="Empire_A02M05_Highlight_Prison05_Cleanup">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIGHLIGHT_OBJECT</Reward_Type>
+		<Reward_Param1>STORY_TRIGGER_ZONE_06</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Reward_Param3>5</Reward_Param3>		
+		<Prereq>Empire_A02M05_Prison_Hint_Cleanup</Prereq>
+	</Event>
+
+</Story>

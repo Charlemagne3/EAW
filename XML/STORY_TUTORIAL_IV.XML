@@ -1,0 +1,2516 @@
+<?xml version="1.0" ?>
+
+<Story>
+
+<!--
+	<Event Name="">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+		<Prereq></Prereq>
+	</Event>
+
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8></Reward_Param8>
+		<Reward_Param9>_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+
+		<Event_Type>STORY_SPEECH_DONE</Event_Type>
+		<Event_Param1></Event_Param1>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_</Reward_Param1>
+		<Reward_Param4>remove</Reward_Param4>
+
+		<Reward_Param7>Hint</Reward_Param7>< ! - - HINT color coding - green - - >
+-->
+
+	<Event Name="Tutorial_IV_Begin">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0</Event_Param1>
+	</Event>
+
+<!-- Turn on tutorial player -->
+	<Event Name="Tutorial_IV_Tutorial_Player">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_PLAYER</Reward_Type>
+		<Reward_Param1>Empire</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+<!-- Center camera -->
+   <Event Name="Tutorial_IV_Center_Camera">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>POSITION_CAMERA</Reward_Type>
+      <Reward_Param1>Bothawui</Reward_Param1>
+      <Reward_Param2>0,-80,0</Reward_Param2>
+      <Prereq>Tutorial_IV_Reveal_NalHutta</Prereq>
+   </Event>
+   
+<!-- Disable zoom -->
+   <Event Name="Tutorial_IV_Reveal_Kashyyyk_03">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>DISABLE_EVENT</Reward_Type>
+      <Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+      <Prereq>Tutorial_IV_Begin</Prereq>
+   </Event>
+   
+<!-- Lock Scrolling -->
+	<Event Name="Tutorial_IV_Scroll_Lock">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCROLL_LOCK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+<!-- Reveal Planets -->
+	<Event Name="Tutorial_IV_Reveal_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Reveal_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+<!-- Turn off advisor -->
+   <Event Name="Tutorial_IV_Turn_Off_Advisor">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>SET_ADVISOR</Reward_Type>
+      <Reward_Param1>0</Reward_Param1>
+      <Prereq>Tutorial_IV_Begin</Prereq>
+   </Event>
+		
+<!-- Turn on objective display -->
+   <Event Name="Tutorial_IV_Enable_Objectives">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ENABLE_OBJECTIVE_DISPLAY</Reward_Type>
+      <Prereq>Tutorial_IV_Begin</Prereq>
+   </Event>
+   
+<!-- Lock planet selection -->
+   <Event Name="Tutorial_IV_Lock_Planet_Selection">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>LOCK_PLANET_SELECTION</Reward_Type>
+      <Reward_Param1>1</Reward_Param1>
+      <Prereq>Tutorial_IV_Begin</Prereq>
+   </Event>
+
+<!-- Turn off tutorial cursor on mouse clicks -->
+	<Event Name="Tutorial_IV_Turn_Off_Cursor_On_Click">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+<!-- Restrict NalHutta -->
+	<Event Name="Tutorial_IV_Restrict_NalHutta">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+
+<!-- Lock all available tech -->
+	<Event Name="Tutorial_IV_Lock_Tartan_Patrol_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Tartan_Patrol_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Acclamator_Assault_Ship">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Fleet_Com_Empire_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Fleet_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Broadside_Class_Cruiser">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Broadside_Class_Cruiser</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Probe_Droid">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Empire_Star_Base_1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_1</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Empire_Star_Base_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_2</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Empire_Star_Base_3">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_3</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Bounty_Hunter_Team_E">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Bounty_Hunter_Team_E</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Field_Com_Empire_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Field_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_E_Ground_Research_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_E_Ground_Light_Vehicle_Factory">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Light_Vehicle_Factory</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Imperial_Light_Scout_Squad">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Imperial_Light_Scout_Squad</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Imperial_Stormtrooper_Squad">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Imperial_Stormtrooper_Squad</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_E_Ground_Base_Shield">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Base_Shield</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Ground_Magnepulse_Cannon">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Ground_Magnepulse_Cannon</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Barracks">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Barracks</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+		
+	<Event Name="Tutorial_IV_Lock_Mining_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Empire_Ground_Mining_Facility</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Lock_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Turbolaser_Towers">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Galactic_Turbolaser_Tower_Defenses</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Tech_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>DS_Primary_Hyperdrive</Reward_Param1>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+	
+
+<!-- Intro -->
+<!-- Hint: Since there are no Rebel forces on Kashyyyk, the Empire can capture
+the planet without entering into a land battle.  Whenever you capture a planet,
+you will be rewarded with credits, as well as the ability to support more units. 
+The more planets that you capture, the larger your forces can become. -->
+	<Event Name="Tutorial_IV_Intro_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_64</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_64</Reward_Param8>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_IV_Intro_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_64</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_64</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Intro_01</Prereq>
+		</Event>
+
+<!-- ReCapture Kashyyyk -->
+<!-- Station Officer: Hmph…  It appears the Rebels we encountered on Kashyyyk have
+fled the system.  Clearly, this petty Rebellion is far less organized than I had
+originally thought. -->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_01</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_01</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Intro_02</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Capture_Kashyyyk_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_01</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_01</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Text</Prereq>
+		</Event>
+
+<!-- Station Officer: Take these forces, capture Kashyyyk, and report back to me immediately.
+Considering that there is absolutely no resistance on Kashyyyk, even you should have no
+problem with this simple task. -->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Text_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_02</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_02</Reward_Param8>
+	    <Prereq>Tutorial_IV_Capture_Kashyyyk_Text_Remove_Text</Prereq>
+    </Event>	
+
+		<Event Name="Tutorial_IV_Capture_Kashyyyk_Text_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_02</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_02</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Capture_Kashyyyk_Text_01_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01_Remove_Text</Prereq>
+		</Event>
+
+<!-- Spawn the player's units -->
+	<Event Name="Tutorial_IV_Spawn_Units_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Imperial_Light_Scout_Squad</Reward_Param1>
+		<Reward_Param2>NalHutta_Tutorial_4</Reward_Param2>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_IV_Spawn_Units_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Imperial_Stormtrooper_Squad</Reward_Param1>
+		<Reward_Param2>NalHutta_Tutorial_4</Reward_Param2>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_IV_Spawn_Units_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>UNIQUE_UNIT</Reward_Type>
+		<Reward_Param1>Imperial_Stormtrooper_Squad</Reward_Param1>
+		<Reward_Param2>NalHutta_Tutorial_4</Reward_Param2>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01</Prereq>
+	</Event>	
+         
+	<Event Name="Tutorial_IV_Flash_NalHutta_Units">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01</Prereq> 
+	</Event>
+         
+<!-- Task: Capture the Kashyyyk system. -->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_52</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Hint_Remove_Text</Prereq>
+		<Branch>CAPTURE_KASHYYYK</Branch>
+	</Event>
+
+<!-- Stop flashing the nal hutta units -->
+	<Event Name="Tutorial_IV_Stop_Flash_NalHutta_Units">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Task</Prereq>
+	</Event>
+
+<!-- Flash Kashyyyk -->
+	<Event Name="Tutorial_IV_Flash_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>FLASH_TROOPS</Reward_Param2>
+		<Prereq>Tutorial_IV_Stop_Flash_NalHutta_Units</Prereq> 
+	</Event>
+		
+<!-- Add objective -->
+    <Event Name="Tutorial_IV_Capture_Kashyyyk_Task_a">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+        <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_03</Reward_Param1>
+        <Prereq>Tutorial_IV_Capture_Kashyyyk_Task</Prereq>
+        <Prereq>Tutorial_IV_Capture_Kashyyyk</Prereq>
+    </Event>
+
+<!--
+Hint:  To move a fleet across the galaxy, drag the fleet icon to the space slot above a planet.
+Once your fleet is in orbit above Kashyyyk you can then drag them to the surface of the planet to capture it. 
+-->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Hint">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_04</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_04</Reward_Param8>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text_01_Stop_Movie</Prereq>
+		<Branch>CAPTURE_KASHYYYK</Branch>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Capture_Kashyyyk_Hint_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_04</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_04</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Hint</Prereq>
+		</Event>
+		
+		<!-- first holocron entry -->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Holocron_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>0</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Capture_Kashyyyk_Holocron_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Hint_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Capture_Kashyyyk">
+		<Event_Type>STORY_CONQUER</Event_Type>
+		<Event_Param1>Kashyyyk</Event_Param1>
+		<Event_Param3>FILTER_NONE</Event_Param3>
+		<Reward_Type>DISABLE_BRANCH</Reward_Type>
+		<Reward_Param1>CAPTURE_KASHYYYK</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Text</Prereq>
+	</Event>
+
+
+<!-- Objective complete -->
+   <Event Name="Tutorial_IV_Capture_Kashyyyk_Task_Complete">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_03</Reward_Param1>
+      <Prereq>Tutorial_IV_Capture_Kashyyyk Tutorial_IV_Capture_Kashyyyk_Task_a</Prereq>
+   </Event>
+   
+		<Event Name="Tutorial_IV_Capture_Kashyyyk_Holocron_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Capture_Kashyyyk_Holocron_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Task_Complete</Prereq>
+		</Event> 
+
+<!-- Stop flashing kashyyyk -->
+	<Event Name="Tutorial_IV_Stop_Flash_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_IV_Capture_Kashyyyk_Task_Complete</Prereq>
+	</Event>
+
+<!-- Build Lvl 2 Starbase -->
+<!-- Station Officer: Excellent… -->
+	<Event Name="Tutorial_IV_Level_2_Star_Base_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+ 		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_06</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_06</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	    <Prereq>Tutorial_IV_Capture_Kashyyyk Tutorial_IV_Capture_Kashyyyk_Text_01_Remove_Text</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_06</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_06</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Remove_Text</Prereq>
+		</Event>
+
+<!-- Hint: Capturing Kashyyyk has increased the total number of units that you can build,
+as well as the number of credits that you collect at the end of every Galactic Day. -->
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Hint_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_05</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_05</Reward_Param8>
+		<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Stop_Movie</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_IV_Capture_Kashyyyk_Hint_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_05</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_05</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Capture_Kashyyyk_Hint_01</Prereq>
+		</Event>	
+
+<!-- Hint: A trade route now connects Kashyyyk and Nal Hutta, increasing the total number of
+credits generated by the connected planets.  Trade routes also increase the movement speed of
+any friendly fleets traveling along their path. -->
+   <Event Name="Tutorial_IV_Level_2_Star_Base_Text_Hint">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_07</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7>
+      <Reward_Param8>TUTORIAL_EMPIRE_ACT04_07</Reward_Param8>
+      <Prereq>Tutorial_IV_Capture_Kashyyyk_Hint_01_Remove_Text</Prereq>
+   </Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_Hint_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_07</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_07</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Hint</Prereq>
+		</Event>	
+
+<!-- Station Officer: Now that we control Kashyyyk we can use our newfound credits to
+improve our assets on Nal Hutta.  See to it, at once -->
+	<Event Name="Tutorial_IV_Level_2_Star_Base_Text_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_08</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_08</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	    <Prereq>Tutorial_IV_Level_2_Star_Base_Text_Hint_Remove_Text</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_08</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_08</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text_01</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_01_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text_01_Remove_Text</Prereq>
+		</Event>
+
+<!-- Task: Upgrade space station on Nal Hutta. -->
+	<Event Name="Tutorial_IV_Level_2_Star_Base_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_53</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Hint_01_a</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+    <Event Name="Tutorial_IV_Level_2_Star_Base_Task_a">
+        <Event_Type>STORY_TRIGGER</Event_Type>
+        <Reward_Type>ADD_OBJECTIVE</Reward_Type>
+        <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_09</Reward_Param1>
+        <Prereq>Tutorial_IV_Level_2_Star_Base_Task</Prereq>
+        <Prereq>Tutorial_IV_Level_2_Star_Base</Prereq>
+    </Event>
+         
+<!-- Give the starbase tech -->
+   <Event Name="Tutorial_IV_Give_Empire_Star_Base_2">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+      <Reward_Param1>Empire_Star_Base_2</Reward_Param1>
+      <Prereq>Tutorial_IV_Level_2_Star_Base_Task</Prereq>
+   </Event>	
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Star_Base">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Empire_Star_Base_2</Prereq>
+	</Event>
+      
+<!-- Select space production -->
+	<Event Name="Tutorial_IV_Build_Star_Base_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Star_Base</Prereq>
+	</Event>
+      
+<!-- Highlight space production tab -->
+	<Event Name="Tutorial_IV_Build_Star_Base_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Reward_Param2>SPACE_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Star_Base_a</Prereq>
+	</Event>
+
+<!-- Stop hilite space tab -->
+	<Event Name="Tutorial_IV_Build_Star_Base_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>SPACE_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Star_Base_b</Prereq>
+	</Event>
+      
+<!-- Hilite star base -->
+	<Event Name="Tutorial_IV_Build_Star_Base_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PRODUCTION_CHOICE</Reward_Type>
+		<Reward_Param1>Empire_Star_Base_2</Reward_Param1>
+		<Reward_Param2>BASE_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Star_Base_c</Prereq>
+	</Event>
+      
+<!-- Stop hilite star base -->
+	<Event Name="Tutorial_IV_Build_Star_Base_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_01</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>BASE_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Star_Base_d</Prereq>
+	</Event>
+      
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Build_Star_Base_f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Star_Base_a</Prereq>
+	</Event>
+      
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Star_Base_g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_01</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Star_Base_f</Prereq>
+	</Event>
+
+<!-- Give hint -->
+	<Event Name="Tutorial_IV_Level_2_Star_Base_Text_Hint_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_10</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_10</Reward_Param8>
+		<Prereq>Tutorial_IV_Level_2_Star_Base_Text_01_Stop_Movie</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Level_2_Star_Base_Text_Hint_01_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_10</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_10</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Hint_01</Prereq>
+		</Event>
+		
+		<!-- second holocron entry -->
+	<Event Name="Tutorial_IV_Upgrade_Space_Station_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>1</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Upgrade_Space_Station_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Level_2_Star_Base_Text_Hint_01_a</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Level_2_Star_Base">
+		<Event_Type>STORY_CONSTRUCT_LEVEL</Event_Type>
+		<Event_Param1>NalHutta_Tutorial_4</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>SPACE</Event_Param3>
+		<Event_Param4>EMPIRE</Event_Param4>
+		<Prereq>Tutorial_IV_Level_2_Star_Base_Text</Prereq>
+	</Event>	
+
+<!-- Objective complete -->
+   <Event Name="Tutorial_IV_Level_2_Star_Base_01">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_09</Reward_Param1>
+      <Prereq>Tutorial_IV_Level_2_Star_Base Tutorial_IV_Level_2_Star_Base_Task_a</Prereq>
+   </Event>
+   
+		<Event Name="Tutorial_IV_Upgrade_Space_Station_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Upgrade_Space_Station_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Level_2_Star_Base_01</Prereq>
+		</Event> 
+
+<!-- Construct Research Center -->
+<!-- Station Officer: Unlike those vile Rebels, we do not poach technology from others,
+nor do we kidnap scientists.  Construct a Research Facility, and begin research on technology level 2.-->
+	<Event Name="Tutorial_IV_Construct_Research_Text">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_11</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_11</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+      <Prereq>Tutorial_IV_Level_2_Star_Base Tutorial_IV_Level_2_Star_Base_Text_Hint_01_a</Prereq>
+   </Event>	
+
+		<Event Name="Tutorial_IV_Construct_Research_Text_a">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_11</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_11</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Construct_Research_Text</Prereq>
+		</Event>
+
+		<Event Name="Tutorial_IV_Construct_Research_Text_a_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Construct_Research_Text_a</Prereq>
+		</Event>
+
+<!-- Give task -->
+   <Event Name="Tutorial_IV_Construct_Research_Task">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_54</Reward_Param1>
+      <Reward_Param2>5</Reward_Param2>
+      <Reward_Param7>Task</Reward_Param7>
+      <Prereq>Tutorial_IV_Construct_Research_Hint_02</Prereq>
+   </Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_IV_Construct_Research_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_12</Reward_Param1>
+		<Prereq>Tutorial_IV_Construct_Research_Task</Prereq>
+		<Prereq>Tutorial_IV_Construct_Research</Prereq>
+	</Event>
+
+<!-- Give the Research Facility tech -->
+	<Event Name="Tutorial_IV_Give_E_Ground_Research_Facility">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Prereq>Tutorial_IV_Construct_Research_Task</Prereq>
+	</Event>	
+
+	<Event Name="Tutorial_IV_Turn_Off_Cursor_On_Click_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>0</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_E_Ground_Research_Facility</Prereq>
+	</Event>
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Research">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_E_Ground_Research_Facility</Prereq>
+	</Event>
+      
+<!-- Select land production -->
+	<Event Name="Tutorial_IV_Build_Research_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Research</Prereq>
+	</Event>
+      
+<!-- Hilite land production tab -->
+	<Event Name="Tutorial_IV_Build_Research_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Reward_Param2>LAND_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Research_a</Prereq>
+	</Event>
+      
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_IV_Build_Research_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Research_b</Prereq>
+	</Event>
+      
+<!-- Hilite research facility -->
+	<Event Name="Tutorial_IV_Build_Research_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_PRODUCTION_CHOICE</Reward_Type>
+		<Reward_Param1>E_Ground_Research_Facility</Reward_Param1>
+		<Reward_Param2>RESEARCH_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Research_c</Prereq>
+	</Event>
+      
+<!-- Stop hilite research facility -->
+	<Event Name="Tutorial_IV_Build_Research_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_09</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>RESEARCH_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Research_d</Prereq>
+	</Event>
+      
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Build_Research_f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Research_a</Prereq>
+	</Event>
+      
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Research_g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_09</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Research_f</Prereq>
+	</Event>
+
+<!-- Hint: Unlike the Rebels, all Empire base technology is dependent -->
+	<Event Name="Tutorial_IV_Construct_Research_Hint_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_14</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_14</Reward_Param8>
+		<Prereq>Tutorial_IV_Construct_Research_Text_a_Stop_Movie</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_IV_Construct_Research_Hint_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_14</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_14</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Construct_Research_Hint_01</Prereq>
+		</Event>
+		
+		
+	<!-- third holocron entry re: building research station-->
+	<Event Name="Tutorial_IV_Build_Research_Facility_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>2</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Build_Research_Facility_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Construct_Research_Hint_02</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Construct_Research">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>E_Ground_Research_Facility</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_IV_Construct_Research_Text</Prereq>
+	</Event>
+		<!-- lock the tech 2 button 
+			<Event Name="Tutorial_IV_LockOut_Tech_2_Button">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>DISABLE_EVENT</Reward_Type>
+				<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+				<Prereq>Tutorial_IV_Construct_Research</Prereq>
+			</Event>-->
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Construct_Research_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_12</Reward_Param1>
+		<Prereq>Tutorial_IV_Construct_Research Tutorial_IV_Construct_Research_Task_a</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Build_Research_Facility_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Build_Research_Facility_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Construct_Research_01</Prereq>
+		</Event> 
+
+	<Event Name="Tutorial_IV_Turn_Off_Cursor_On_Click_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_CURSOR_ON_CLICK</Reward_Type>
+		<Reward_Param1>1</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Research_Facility_Entry_Completed</Prereq>
+	</Event>
+
+<!-- Advance Empire Tech to Lvl 2 -->
+<!-- Give task -->
+	<Event Name="Tutorial_IV_Tech_Level_2_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SCREEN_TEXT</Reward_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_55</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Tech_Level_2_Text_02</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_IV_Tech_Level_2_Text_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_13</Reward_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2_Text</Prereq>
+		<Prereq>Tutorial_IV_Tech_Level_2</Prereq>
+	</Event>
+         
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Tech_Level">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2_Text</Prereq>
+	</Event>
+
+<!-- Select land production -->
+	<Event Name="Tutorial_IV_Build_Tech_Level_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_land_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Tech_Level</Prereq>
+	</Event>
+            
+<!-- Hilite tech level upgrade -->
+	<Event Name="Tutorial_IV_Build_Tech_Level_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_01</Reward_Param1>
+		<Reward_Param2>TECH_LEVEL_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Tech_Level_a</Prereq>
+	</Event>
+	
+	<!-- unlock the tech 2 button 
+			<Event Name="Tutorial_IV_LockOut_Tech_2_Button">
+				<Event_Type>STORY_TRIGGER</Event_Type>
+				<Reward_Type>ENABLE_EVENT</Reward_Type>
+				<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+				<Reward_Param2>b_Create_01</Reward_Param2>
+				<Prereq>Tutorial_IV_Build_Tech_Level_d</Prereq>
+			</Event>-->
+      
+<!-- Stop hilite research facility -->
+	<Event Name="Tutorial_IV_Build_Tech_Level_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_01</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>TECH_LEVEL_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Tech_Level_d</Prereq>
+	</Event>
+
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Build_Tech_Level_f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Tech_Level_a</Prereq>
+	</Event>
+      
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Tech_Level_g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_01</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Tech_Level_f</Prereq>
+	</Event>
+
+<!-- Give hint 
+Hint: Upgrading your technology level will provide you with access to new units, structures, and upgrades.  
+Switch to land production mode by selecting the land production tab.  
+Then, upgrade your technology level by clicking on the Upgrade Technology icon.-->
+   <Event Name="Tutorial_IV_Tech_Level_2_Text_01">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>2</Event_Param1>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_65</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7>
+      <Reward_Param8>TUTORIAL_EMPIRE_ACT04_65</Reward_Param8>
+      <Prereq>Tutorial_IV_Construct_Research</Prereq>
+   </Event>	
+
+		<Event Name="Tutorial_IV_Tech_Level_2_Text_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_65</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_65</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Tech_Level_2_Text_01</Prereq>
+		</Event>
+		
+	<!-- forth holocron entry re: upgrading to tech 2-->
+	<Event Name="Tutorial_IV_Upgrade_Tech_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>3</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Upgrade_Tech_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Tech_Level_2_Text_02</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_UnLock_Tech_2">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>DS_Primary_Hyperdrive</Reward_Param1>
+		<Prereq>Tutorial_IV_Upgrade_Tech_Entry</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Tech_Level_2">
+		<Event_Type>STORY_TECH_LEVEL</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2_Text</Prereq>
+	</Event>	
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Tech_Level_2_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_13</Reward_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2 Tutorial_IV_Tech_Level_2_Text_a</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Upgrade_Tech_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Upgrade_Tech_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Tech_Level_2_01</Prereq>
+		</Event> 
+
+<!-- Unlock the buttons -->
+	<Event Name="Tutorial_IV_Tech_Level_2_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2_01</Prereq>
+	</Event>
+   
+<!-- Keep zoom disabled -->
+	<Event Name="Tutorial_IV_Tech_Level_2_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_IV_Tech_Level_2_02</Prereq>
+	</Event>
+   
+<!-- Remove Smuggler -->
+<!-- Station Officer: Apparently, a Moff on Coruscant has detected an anomaly within our
+quarterly reserve reports.  Considering that I personally oversee all of your credit
+transactions, there can only be one explanation: there is a smuggler in our midst!
+Direct a Bounty Hunter from the local Hutt Palace to eliminate the smuggler on Nal Hutta. -->
+	<Event Name="Tutorial_IV_Remove_Smuggler_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_20</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_20</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Tech_Level_2</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Remove_Smuggler_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_20</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_20</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Remove_Smuggler_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Remove_Smuggler_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Remove_Smuggler_Text_Remove_Text</Prereq>
+		</Event>
+
+<!-- Hilite smuggled icon -->
+	<Event Name="Tutorial_IV_Hilite_Smuggled">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>FLASH_PLANET_GUI</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Reward_Param2>FLASH_SMUGGLED</Reward_Param2>
+		<Reward_Param4>SMUGGLED_ICON</Reward_Param4>
+		<Prereq>Tutorial_IV_Remove_Smuggler_Text_Stop_Movie</Prereq>
+	</Event>
+      
+<!-- Stop hilite smuggled icon -->
+	<Event Name="Tutorial_IV_Hilite_Smuggled_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>SMUGGLED_ICON</Reward_Param1>
+		<Prereq>Tutorial_IV_Enemy_Smuggler_Display_02 Tutorial_IV_Hilite_Smuggled</Prereq>
+	</Event>
+
+
+
+<!-- Add objective 
+Recruit a Bounty Hunter on Nal Hutta.-->
+	<Event Name="Tutorial_IV_Remove_Smuggler_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_66</Reward_Param1>
+		<Prereq>Tutorial_IV_Remove_Smuggler_Task</Prereq>
+		<Prereq>Tutorial_IV_Remove_Smuggler_01</Prereq>
+	</Event>
+         
+<!-- Hint: Whenever the total credit value of a planet is modified it will be visible
+at the planet itself.  In this case, the credits generated at Nal Hutta have been reduced
+by the presence of an enemy smuggler. -->
+	<Event Name="Tutorial_IV_Enemy_Smuggler_Display_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_22</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_22</Reward_Param8>
+		<Prereq>Tutorial_IV_Hilite_Smuggled</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_IV_Enemy_Smuggler_Display_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_22</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_22</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Enemy_Smuggler_Display_01</Prereq>
+		</Event>
+		
+	<!-- fifth holocron entry re: eliminating smuggler-->
+	<Event Name="Tutorial_IV_Kill_Smuggler_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>4</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Kill_Smuggler_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Enemy_Smuggler_Display_02</Prereq>
+	</Event>
+
+<!-- Give the Bounty Hunter -->
+	<Event Name="Tutorial_IV_Give_Bounty_Hunter_Team_E">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Bounty_Hunter_Team_E</Reward_Param1>
+		<Prereq>Tutorial_IV_Enemy_Smuggler_Display_02</Prereq>
+	</Event>	
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Bounty_Hunter_Team_E</Prereq>
+	</Event>
+      
+<!-- Select land production -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter</Prereq>
+	</Event>
+      
+<!-- Hilite land production tab -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Reward_Param2>LAND_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_a</Prereq>
+	</Event>
+      
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_b</Prereq>
+	</Event>
+      
+<!-- Hilite bounty hunter -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_04</Reward_Param1>
+		<Reward_Param2>BOUNTY_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_c</Prereq>
+	</Event>
+
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_d1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_04</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_d</Prereq>
+	</Event>
+      
+<!-- Stop hilite bounty hunter -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_04</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>BOUNTY_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_d</Prereq>
+	</Event>
+      
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Bounty_Hunter_a</Prereq>
+	</Event>
+      
+<!-- Construct the Bounty Hunter -->
+	<Event Name="Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_04</Event_Param1>
+		<Prereq>Tutorial_IV_Give_Bounty_Hunter_Team_E</Prereq>
+	</Event>	
+
+<!-- Wait for the build to start and then remove bounty hunter tech -->
+	<Event Name="Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>0.001</Event_Param1>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Bounty_Hunter_Team_E</Reward_Param1>
+		<Prereq>Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again</Prereq>
+	</Event>	
+	
+<!-- Don't let the player cancel production -->
+	<Event Name="Tutorial_IV_Build_Bounty_Hunter_No_Cancel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>queue05</Reward_Param2>
+		<Prereq>Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01</Prereq>
+	</Event>	
+	
+	
+	
+<!-- Give task -->
+	<Event Name="Tutorial_IV_Remove_Smuggler_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_67</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Enemy_Smuggler_Display_02</Prereq>
+	</Event>	
+		
+	
+
+<!-- 
+
+TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_63
+Hint: Bounty Hunters are spy units that can be used to neutralize enemy hero units.  
+A Bounty Hunter is available on Nal Hutta because a Hutt Palace is present on this planet.  
+To Neutralize the enemy Smuggler, drag the Bounty Hunter to the Neutralize Hero slot located on Nal Hutta, 
+and then select the unit to be neutralized.
+
+-->
+<Event Name="Tutorial_IV_Bounty_Hunter_Use_Hint">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5.5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_63</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_63</Reward_Param8>
+		<Prereq>Tutorial_IV_Enemy_Smuggler_Display_02</Prereq>
+	</Event>
+
+			<Event Name="Tutorial_IV_Bounty_Hunter_Use_Hint_Remove_Text">
+				<Event_Type>STORY_SPEECH_DONE</Event_Type>
+				<Event_Param1>TUTORIAL_EMPIRE_ACT04_63</Event_Param1>
+				<Reward_Type>SCREEN_TEXT</Reward_Type>
+				<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_63</Reward_Param1>
+				<Reward_Param4>Remove</Reward_Param4>	
+				<Prereq>Tutorial_IV_Bounty_Hunter_Use_Hint</Prereq>
+			</Event>
+			
+			
+			
+	<Event Name="Tutorial_IV_Smuggler_Built">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Bounty_Hunter_Team_E</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+	</Event>		
+
+	<!-- Restrict Kashyyyk -->
+	<Event Name="Tutorial_IV_Restrict_Kashyyyk">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Kashyyyk</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Smuggler_Built</Prereq>
+	</Event>
+	
+	<!-- Objective complete 
+Recruit a Bounty Hunter on Nal Hutta.-->
+	<Event Name="Tutorial_IV_Neutralize_Smuggler_Task_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_66</Reward_Param1>
+		<Prereq>Tutorial_IV_Smuggler_Built</Prereq>
+	</Event>	
+	
+	<!-- Add objective 
+	Neutralize smuggler on Nal Hutta.-->
+	<Event Name="Tutorial_IV_Neutralize_Smuggler_Task_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_21</Reward_Param1>
+		<Prereq>Tutorial_IV_Neutralize_Smuggler_Task_01</Prereq>
+	</Event>
+
+	<!-- Allow Bounty Hunters on NalHutta -->
+	<Event Name="Tutorial_IV_Allow_Bounty_Hunter">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>NalHutta_Tutorial_4</Event_Param1>
+		<Event_Param3>Bounty_Hunter_Team_E</Event_Param3>
+		<Prereq>Tutorial_IV_Neutralize_Smuggler_Task_02</Prereq>
+	</Event>
+	
+
+
+<!-- Give task 
+TEXT_STORY_TUTORIAL_EMPIRE_ACT04_56
+Task: Neutralize smuggler on Nal Hutta.-->
+	<Event Name="Tutorial_IV_Neutralize_Smuggler_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_56</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Smuggler_Built Tutorial_IV_Bounty_Hunter_Use_Hint_Remove_Text</Prereq>
+	</Event>
+
+
+	
+
+
+<!-- Unlock the smuggler button in the dialog box -->
+	<Event Name="Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01A">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_0000</Reward_Param2>
+		<Prereq>Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01</Prereq>
+	</Event>
+
+<!-- Unlock the cancel button in the dialog box -->
+	<Event Name="Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01B">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>h_close</Reward_Param2>
+		<Prereq>Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again_01</Prereq>
+	</Event>
+   
+	<Event Name="Tutorial_IV_Remove_Smuggler_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>hero_neutralized</Event_Param1>
+		<Prereq>Tutorial_IV_Lock_Bounty_Hunter_Team_E_Again</Prereq>
+	</Event>	
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Smuggler_Gone">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_21</Reward_Param1>
+		<Prereq>Tutorial_IV_Remove_Smuggler_01</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Kill_Smuggler_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Kill_Smuggler_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Smuggler_Gone</Prereq>
+		</Event> 
+
+<!-- Unlock the buttons -->
+	<Event Name="Tutorial_IV_Smuggler_Gone_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Smuggler_Gone</Prereq>
+	</Event>
+   
+<!-- Keep zoom disabled -->
+	<Event Name="Tutorial_IV_Smuggler_Gone_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_IV_Smuggler_Gone_01</Prereq>
+	</Event>
+   
+<!-- Scan Rebel planets with probe droids -->
+<!-- Station Officer: The captured smuggler has proven to be… uncooperative.
+Regardless, his ship logs reveal he could only have originated from a nearby system.
+Deploy as many Probe Droids as needed to locate his employers! -->
+	<Event Name="Tutorial_IV_Send_Probe_Droids">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>5.5</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_23</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_23</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Remove_Smuggler_01 Tutorial_IV_Bounty_Hunter_Use_Hint_Remove_Text Tutorial_IV_Neutralize_Smuggler_Task</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Send_Probe_Droids_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_23</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_23</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Send_Probe_Droids</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Send_Probe_Droids_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Send_Probe_Droids_Remove_Text</Prereq>
+		</Event>
+
+   	<Event Name="Tutorial_IV_Reveal_Corellia">
+   		<Event_Type>STORY_TRIGGER</Event_Type>
+   		<Reward_Type>REVEAL_PLANET</Reward_Type>
+   		<Reward_Param1>Corellia</Reward_Param1>
+   		<Reward_Param2>1</Reward_Param2>
+   		<Prereq>Tutorial_IV_Send_Probe_Droids</Prereq>
+   	</Event>
+
+<!-- Restrict Corellia -->
+	<Event Name="Tutorial_IV_Restrict_Corellia">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Corellia</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Reveal_Corellia</Prereq>
+	</Event>
+
+<!-- Bounce message, should work for all bounce cases 
+jdg text line missing...commenting out-->
+	<Event Name="Tutorial_IV_Bounce">
+		<Event_Type>STORY_FLEET_BOUNCED</Event_Type>
+		<!--<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_EMPIRE_INVALID_ACTION</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>-->
+		<Prereq>Tutorial_IV_Send_Probe_Droids</Prereq>
+		<Perpetual>True</Perpetual>
+	</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_IV_Send_Probe_Droids_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_69</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Send_Probe_Droids_02_Remove_Text</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_IV_Send_Probe_Droids_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_68</Reward_Param1>
+		<Prereq>Tutorial_IV_Send_Probe_Droids_01</Prereq>
+	</Event>
+         
+<!-- Give the Probe Droid -->
+	<Event Name="Tutorial_IV_Give_Probe_Droid_Team">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Send_Probe_Droids_01</Prereq>
+	</Event>	
+	
+<!-- Don't let the player cancel production -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_No_Cancel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>queue00</Reward_Param2>
+		<Prereq>Tutorial_IV_Give_Probe_Droid_Team</Prereq>
+	</Event>	
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Probe_Droid_Team</Prereq>
+	</Event>
+      
+<!-- Select space production -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Probe_Droid</Prereq>
+	</Event>
+      
+<!-- Hilite space production tab -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Reward_Param2>SPACE_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_a</Prereq>
+	</Event>
+      
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>SPACE_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_b</Prereq>
+	</Event>
+
+<!-- Enable the button -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_c1">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_06</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_c</Prereq>
+	</Event>
+
+<!-- Disable sell -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_Stop_Sell">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>g_ground_sell</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_c1</Prereq>
+	</Event>
+      
+<!-- Hilite probe droid -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_06</Reward_Param1>
+		<Reward_Param2>PROBE_DROID_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_c</Prereq>
+	</Event>
+      
+<!-- Stop hilite probe droid -->
+	<Event Name="Tutorial_IV_Build_Probe_Droid_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_06</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>PROBE_DROID_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_d</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Lock_Probe_Droid_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Probe_Droid_e</Prereq>
+	</Event>
+
+<!-- Give hint -->
+   <Event Name="Tutorial_IV_Send_Probe_Droids_02">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>2</Event_Param1>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_25</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7>
+      <Reward_Param8>TUTORIAL_EMPIRE_ACT04_25</Reward_Param8>
+      <Prereq>Tutorial_IV_Send_Probe_Droids_Stop_Movie</Prereq>
+   </Event>	
+
+		<Event Name="Tutorial_IV_Send_Probe_Droids_02_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_25</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_25</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Send_Probe_Droids_02</Prereq>
+		</Event>	
+		
+	<!-- sixth holocron entry re: probe droids-->
+	<Event Name="Tutorial_IV_Deploy_Probe_Droids_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>5</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Deploy_Probe_Droids_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Send_Probe_Droids_02_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Wait_For_Corellia_Probe">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Corellia</Event_Param1>
+		<Event_Param3>Probe_Droid_Team</Event_Param3>
+		<Prereq>Tutorial_IV_Send_Probe_Droids</Prereq>
+	</Event>
+
+<!-- Ryloth -->
+<!-- Station Officer: Failure is unacceptable.  Keep searching… 
+	<Event Name="Tutorial_IV_Probe_Ryloth_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_26</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_26</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Wait_For_Corellia_Probe</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Probe_Ryloth_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_26</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_26</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Probe_Ryloth_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Probe_Ryloth_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Probe_Ryloth_Text_Remove_Text</Prereq>
+		</Event>-->
+
+
+
+<!-- Hint: You have found Pirates.  While they are hostile to the Empire, these aren't
+the Rebels you're looking for.  Gather more information about nearby enemy planets, by
+deploying Imperial Probe Droids to the ground slot of each planet. -->
+	<Event Name="Tutorial_IV_Probe_Ryloth_03">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_70</Reward_Param1>
+		<Reward_Param2>10</Reward_Param2>	
+		<Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_70</Reward_Param8>
+		<Prereq>Tutorial_IV_Wait_For_Corellia_Probe</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Probe_Ryloth_03_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_70</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_70</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Probe_Ryloth_03</Prereq>
+		</Event>
+		
+<!-- 
+“Station Officer: We will extend the search radius to other, nearby planets.
+Find them - do not fail me again!”
+  -->
+	<Event Name="Tutorial_IV_Extend_Search_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_28</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_28</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Probe_Ryloth_03_Remove_Text</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Extend_Search_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_28</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_28</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Extend_Search_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Extend_Search_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Extend_Search_Text_Remove_Text</Prereq>
+		</Event>
+		
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Probe_Corellia_Done">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_68</Reward_Param1>
+		<Prereq>Tutorial_IV_Probe_Ryloth_03</Prereq>
+	</Event>   
+   
+<!-- Give task -->
+	<Event Name="Tutorial_IV_Probe_Ryloth_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_48</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Extend_Search_Text_Stop_Movie</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_IV_Probe_Ryloth_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_51</Reward_Param1>
+		<Prereq>Tutorial_IV_Probe_Ryloth_01</Prereq>
+	</Event>
+		
+
+	
+	
+
+<!-- Reveal Ryloth -->
+	<Event Name="Tutorial_IV_Reveal_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>REVEAL_PLANET</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Probe_Ryloth_02</Prereq>
+	</Event>
+
+<!-- Restrict Ryloth -->
+	<Event Name="Tutorial_IV_Restrict_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_PLANET_RESTRICTED</Reward_Type>
+		<Reward_Param1>Ryloth</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Prereq>Tutorial_IV_Reveal_Ryloth</Prereq>
+	</Event>
+	
+	
+	
+	<!-- Give the Probe Droid xxxx-->
+	<Event Name="Tutorial_IV_Give_Probe_Droid_Team_Ryloth">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Restrict_Ryloth</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Disable_Probe_Ryloth">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_06</Event_Param1>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Probe_Droid_Team_Ryloth</Prereq>
+	</Event>
+	
+	
+
+<!-- Detect probe entering Ryloth -->			
+	<Event Name="Tutorial_IV_Wait_For_Ryloth_Probe">
+		<Event_Type>STORY_ENTER</Event_Type>
+		<Event_Param1>Ryloth</Event_Param1>
+		<Event_Param3>Probe_Droid_Team</Event_Param3>
+		<Prereq>Tutorial_IV_Reveal_Ryloth</Prereq>
+	</Event>
+
+<!-- Station Officer: Unbelievable!  More dissidents?!  Prepare our forces; we must stamp out this new uprising immediately! -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_29</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_29</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Wait_For_Ryloth_Probe Tutorial_IV_Extend_Search_Text_Stop_Movie</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_29</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_29</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text_Remove_Text</Prereq>
+		</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Text_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_51</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators_Text</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Deploy_Probe_Droids_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Deploy_Probe_Droids_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text_a</Prereq>
+		</Event> 
+
+<!-- Remove probe driod production 
+	<Event Name="Tutorial_IV_Lock_Probe_Droid_Again">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Probe_Droid_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators_Text</Prereq>
+	</Event>-->
+
+<!-- Station Officer: If we are to succeed in our assault we will need to employ a
+strategy of my own making… one that requires both skill and cunning… one that will
+assure us a victory with minimal risk… -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Text_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_30</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_30</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+	    <Prereq>Tutorial_IV_Build_Acclamators_Text_Stop_Movie</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Text_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_30</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_30</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text_01</Prereq>
+		</Event>	
+
+<!-- Station Officer: We will direct our Acclamator ships to unleash their bomber squadrons
+upon the Rebels until they submit, and then - when they march, arms-raised,
+from their pitiful, smoldering base we will bomb them again! -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Text_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_31</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_31</Reward_Param8>
+		<Prereq>Tutorial_IV_Build_Acclamators_Text_01_Remove_Text</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Text_02_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_31</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_31</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text_02</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Text_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Build_Acclamators_Text_02_Remove_Text</Prereq>
+		</Event>
+
+<!-- Give task -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Task">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_58</Reward_Param1>
+		<Reward_Param2>5</Reward_Param2>
+		<Reward_Param7>Task</Reward_Param7><!-- TASK color coding - Blue -->
+		<Prereq>Tutorial_IV_Build_Acclamators_Task_01_Remove_Text</Prereq>
+	</Event>	
+
+<!-- Add objective -->
+	<Event Name="Tutorial_IV_Build_Acclamators_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_32</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators_Task</Prereq>
+	</Event>
+
+<!-- Give Acclamator Tech -->
+	<Event Name="Tutorial_IV_Give_Acclamators">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators_Task</Prereq>
+	</Event>	
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Acclamator">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Acclamators</Prereq>
+	</Event>
+
+<!-- Select space production -->
+	<Event Name="Tutorial_IV_Build_Acclamator_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamator</Prereq>
+	</Event>
+
+<!-- Hilite space production tab -->
+	<Event Name="Tutorial_IV_Build_Acclamator_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_space_tab</Reward_Param1>
+		<Reward_Param2>SPACE_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Acclamator_a</Prereq>
+	</Event>
+
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_IV_Build_Acclamator_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>SPACE_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamator_b</Prereq>
+	</Event>
+      
+<!-- Hilite acclamator -->
+	<Event Name="Tutorial_IV_Build_Acclamator_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_04</Reward_Param1>
+		<Reward_Param2>ACCLAMATOR_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Acclamator_c</Prereq>
+	</Event>
+      
+<!-- Stop hilite acclamator -->
+	<Event Name="Tutorial_IV_Build_Acclamator_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_04</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>ACCLAMATOR_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamator_d</Prereq>
+	</Event>
+      
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Build_Acclamator_f">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamator_a</Prereq>
+	</Event>
+      
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Acclamator_g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_04</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Acclamator_f</Prereq>
+	</Event>
+
+<!-- Lock Acclamator Tech -->
+	<Event Name="Tutorial_IV_Lock_Acclamators_Again">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>SET_FLAG</Reward_Type>
+		<Reward_Param1>ACC_COUNTER</Reward_Param1>
+		<Reward_Param2>0</Reward_Param2>
+		<Prereq>Tutorial_IV_Begin</Prereq>
+	</Event>
+
+<!-- Count clicks of the acclamator production -->
+	<Event Name="Tutorial_IV_Lock_Acclamators_Again_a">
+	    <Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_04</Event_Param1>
+		<Reward_Type>INCREMENT_FLAG</Reward_Type>
+		<Reward_Param1>ACC_COUNTER</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+		<Perpetual>True</Perpetual>
+		<Prereq>Tutorial_IV_Build_Acclamator_g</Prereq>
+	</Event>
+
+<!-- Remove acclamator production -->
+	<Event Name="Tutorial_IV_Lock_Acclamators_Again_b">
+		<Event_Type>STORY_FLAG</Event_Type>
+		<Event_Param1>ACC_COUNTER</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>GREATER_THAN_EQUAL_TO</Event_Param3>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_IV_Lock_Acclamators_Again</Prereq>
+	</Event>
+
+<!-- Hint: Most Imperial ships, such as Acclamator ships, contain bomber units.  
+Whenever bomber units are positioned in orbit above an enemy planet, 
+bombing run attacks may be used while you are involved in a land battle at that planet. -->
+   <Event Name="Tutorial_IV_Build_Acclamators_Task_01">
+      <Event_Type>STORY_ELAPSED</Event_Type>
+      <Event_Param1>2</Event_Param1>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_33</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7>
+      <Reward_Param8>TUTORIAL_EMPIRE_ACT04_33</Reward_Param8>
+      <Prereq>Tutorial_IV_Build_Acclamators_Text_02_Stop_Movie</Prereq>
+   </Event>
+
+		<Event Name="Tutorial_IV_Build_Acclamators_Task_01_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_33</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_33</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Build_Acclamators_Task_01</Prereq>
+		</Event>
+		
+	<!-- seventh holocron entry re: build acclamtors-->
+	<Event Name="Tutorial_IV_Build_Acclamators_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>6</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Build_Acclamators_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Build_Acclamators_Task_01_Remove_Text</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Build_Acclamators">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Acclamator_Assault_Ship</Event_Param1>
+		<Event_Param2>2</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_IV_Build_Acclamators_Text</Prereq>
+	</Event>
+
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Build_Acclamators_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_32</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Build_Acclamators_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Build_Acclamators_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Build_Acclamators_01</Prereq>
+		</Event> 
+
+	<Event Name="Tutorial_IV_Lock_Be_Sure_Acclamators_Locked">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Acclamator_Assault_Ship</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Acclamators</Prereq>
+	</Event>
+
+<!-- Hint:  Larger ships, like Acclamators, have a significant impact towards the maximum
+unit capacity provided by planets and space stations. Once that limit is reached,
+you cannot create new units until more planets are aquired -->
+	<Event Name="Tutorial_IV_Unit_Cap_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_45</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>
+		<Reward_Param7>Hint</Reward_Param7>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_45</Reward_Param8>
+		<Prereq>Tutorial_IV_Build_Acclamators_01</Prereq>
+	</Event>
+
+		<Event Name="Tutorial_IV_Unit_Cap_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_45</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_45</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Unit_Cap_01</Prereq>
+		</Event>
+
+<!-- Hilite unit cap -->
+	<Event Name="Tutorial_IV_Unit_Cap_01a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>Text_Pop_Cap</Reward_Param1>
+		<Prereq>Tutorial_IV_Unit_Cap_01</Prereq>
+	</Event>
+
+<!-- Stop flashing -->
+	<Event Name="Tutorial_IV_Unit_Cap_02a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Prereq>Tutorial_IV_Unit_Cap_02</Prereq>
+	</Event>
+
+<!-- Station Officer: To ensure a certain level of… competence on this mission,
+I require a senior officer to accompany you.  
+Recruit a Field Commander from the Officer Academy on Nal Hutta. -->
+	<Event Name="Tutorial_IV_Recruit_Field_Commander_Text">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_34</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_34</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Unit_Cap_02</Prereq>
+	</Event>	
+
+		<Event Name="Tutorial_IV_Recruit_Field_Commander_Text_Remove_Text">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_34</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_34</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Recruit_Field_Commander_Text</Prereq>
+		</Event>	
+
+		<Event Name="Tutorial_IV_Recruit_Field_Commander_Text_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_IV_Recruit_Field_Commander_Text_Remove_Text</Prereq>
+		</Event>
+		
+<!-- Hint: Field Commanders provide combat bonuses to all friendly units within a battle.
+You must have access to an Officer Academy in order to recruit a Field Commander.
+Switch to land production mode by selecting the land production tab.  Then, build a Officer
+Academy and Field Commander by clicking on the appropriate icons. -->
+   <Event Name="Tutorial_IV_Recruit_Field_Commander_Hint">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_36</Reward_Param1>
+      <Reward_Param2>-1</Reward_Param2>
+      <Reward_Param7>Hint</Reward_Param7><!-- HINT color coding - green -->
+      <Reward_Param8>TUTORIAL_EMPIRE_ACT04_36</Reward_Param8>
+      <Prereq>Tutorial_IV_Recruit_Field_Commander_Text_Stop_Movie</Prereq>
+   </Event>	
+   
+  		<Event Name="Tutorial_IV_Recruit_Field_Commander_Hint_01">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_36</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_36</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_IV_Recruit_Field_Commander_Hint</Prereq>
+		</Event>
+		
+	<!-- eigth holocron entry re: officer accademy and field commander-->
+	<Event Name="Tutorial_IV_Build_Field_Commander_Entry">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Story_Dialog>Dialog_Tutorial_04</Story_Dialog>
+		<Story_Chapter>7</Story_Chapter>
+		<Story_Dialog_Popup>False</Story_Dialog_Popup>	
+		<Story_Tag>Tutorial_IV_Build_Field_Commander_Entry</Story_Tag>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_Hint_01</Prereq>
+	</Event>
+
+<!-- officer academy text stuff 
+   TEXT_STORY_TUTORIAL_EMPIRE_ACT04_76		Task: Construct an Officer Academy.
+   TEXT_STORY_TUTORIAL_EMPIRE_ACT04_75		Construct an Officer Academy.--> 
+
+<!-- TEXT_STORY_TUTORIAL_EMPIRE_ACT04_76 
+Task: Construct an Officer Academy.-->
+   <Event Name="Tutorial_IV_Build_Officer_Academy_Task">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_76</Reward_Param1>
+      <Reward_Param2>5</Reward_Param2>
+      <Reward_Param7>Task</Reward_Param7>
+      <Prereq>Tutorial_IV_Recruit_Field_Commander_Hint_01</Prereq>
+   </Event>	
+
+<!-- TEXT_STORY_TUTORIAL_EMPIRE_ACT04_75 
+Construct an Officer Academy. -->
+	<Event Name="Tutorial_IV_Build_Officer_Academy_Objective">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_75</Reward_Param1>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_Hint_01</Prereq>
+	</Event>     
+	
+	<Event Name="Tutorial_IV_Give_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Officer_Academy_Objective</Prereq>
+	</Event>
+
+<!-- Select NalHutta -->
+	<Event Name="Tutorial_IV_Build_Field_Officer">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1</Event_Param1>
+		<Reward_Type>SELECT_PLANET</Reward_Type>
+		<Reward_Param1>NalHutta_Tutorial_4</Reward_Param1>
+		<Prereq>Tutorial_IV_Give_Officer_Academy</Prereq>
+	</Event>
+      
+<!-- Select land production -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FORCE_CLICK_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Field_Officer</Prereq>
+	</Event>
+      
+<!-- Hilite land production tab -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_b">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_planet_tab</Reward_Param1>
+		<Reward_Param2>LAND_PROD_TAB</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Field_Officer_a</Prereq>
+	</Event>
+      
+<!-- Stop hilite land tab -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_c">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>1.0</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>LAND_PROD_TAB</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Field_Officer_b</Prereq>
+	</Event>
+	
+	<Event Name="Tutorial_IV_Build_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_13</Reward_Param1>
+		<Reward_Param2>ACADEMY_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Field_Officer_c</Prereq>
+	</Event>
+	
+<!-- Unlock the buttons -->
+	<Event Name="Tutorial_IV_Unlock_Buttons_For_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Academy</Prereq>
+	</Event>
+	
+<!-- Stop hilite officer academy -->
+	<Event Name="Tutorial_IV_Officer_Academy_Button_Click">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_13</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>ACADEMY_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Unlock_Buttons_For_Officer_Academy</Prereq>
+	</Event>
+      
+<!-- Disable buttons -->
+	<Event Name="Tutorial_IV_Lock_Buttons_After_Officer_Academy">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Officer_Academy_Button_Click</Prereq>
+	</Event>
+	
+<!-- Remove Academy -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_h">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>E_Ground_Officer_Academy</Reward_Param1>
+		<Prereq>Tutorial_IV_Officer_Academy_Button_Click</Prereq>
+	</Event>
+      
+ <!-- Player has built an Officer Academy -->    
+   <Event Name="Tutorial_IV_Officer_Academy_Built">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>E_Ground_Officer_Academy</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+	</Event>   
+	
+<!-- TEXT_STORY_TUTORIAL_EMPIRE_ACT04_75 
+Construct an Officer Academy.-->
+	<Event Name="Tutorial_IV_Build_Officer_Academy_Objective_Complete">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_75</Reward_Param1>
+		<Prereq>Tutorial_IV_Officer_Academy_Built</Prereq>
+	</Event>    
+     
+<!-- Task: Recruit a Field Commander.  TASK AND OBJECTIVE -->
+   <Event Name="Tutorial_IV_Recruit_Field_Commander_Task">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>MULTIMEDIA</Reward_Type>
+      <Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_59</Reward_Param1>
+      <Reward_Param2>5</Reward_Param2>
+      <Reward_Param7>Task</Reward_Param7>
+      <Prereq>Tutorial_IV_Officer_Academy_Built</Prereq>
+   </Event>	
+
+	<Event Name="Tutorial_IV_Recruit_Field_Commander_Task_a">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ADD_OBJECTIVE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_35</Reward_Param1>
+		<Prereq>Tutorial_IV_Officer_Academy_Built</Prereq>
+	</Event>    
+     
+<!-- Give Field Officer Tech -->
+	<Event Name="Tutorial_IV_Give_Field_Com_Empire_Teams">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Field_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_Task_a</Prereq>
+	</Event>	
+	
+<!-- hilite the field commander -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_d">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>FLASH_GUI</Reward_Type>
+		<Reward_Param1>b_Create_06</Reward_Param1>
+		<Reward_Param2>FIELD_COMMANDER_PROD</Reward_Param2>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_Task_a</Prereq>
+	</Event>
+
+<!-- Unlock the build button -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_g">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_CLICK_GUI</Reward_Param1>
+		<Reward_Param2>b_Create_06</Reward_Param2>
+		<Prereq>Tutorial_IV_Build_Field_Officer_d</Prereq>
+	</Event>
+
+<!-- Unlock the buttons
+	<Event Name="Tutorial_IV_Unlock_Buttons_For_GroundOfficer">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Field_Officer_d</Prereq>
+	</Event> -->
+
+<!-- Disable zoom -->
+   <Event Name="Tutorial_IV_Unlock_Officer_Disable_Zoom">
+      <Event_Type>STORY_TRIGGER</Event_Type>
+      <Reward_Type>DISABLE_EVENT</Reward_Type>
+      <Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+      <Prereq>Tutorial_IV_Build_Field_Officer_g</Prereq>
+   </Event>
+
+<!-- Stop hilite field officer -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_e">
+		<Event_Type>STORY_CLICK_GUI</Event_Type>
+		<Event_Param1>b_Create_06</Event_Param1>
+		<Reward_Type>HIDE_TUTORIAL_CURSOR</Reward_Type>
+		<Reward_Param1>FIELD_COMMANDER_PROD</Reward_Param1>
+		<Prereq>Tutorial_IV_Unlock_Officer_Disable_Zoom</Prereq>
+	</Event>
+
+<!-- Don't let the player cancel production -->
+	<Event Name="Tutorial_IV_Build_Field_Officer_No_Cancel">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Field_Officer_e</Prereq>
+	</Event>
+
+<!-- Remove Field Officer Tech -->
+	<Event Name="Tutorial_IV_Disable_Build_Field_Officer">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_BUILDABLE</Reward_Type>
+		<Reward_Param1>Field_Com_Empire_Team</Reward_Param1>
+		<Prereq>Tutorial_IV_Build_Field_Officer_e</Prereq>
+	</Event>	
+
+<!-- Detect Construction of Field Commander -->
+	<Event Name="Tutorial_IV_Recruit_Field_Commander">
+		<Event_Type>STORY_CONSTRUCT</Event_Type>
+		<Event_Param1>Field_Com_Empire_Team</Event_Param1>
+		<Event_Param2>1</Event_Param2>
+		<Event_Param3>FILTER_FRIENDLY_ONLY</Event_Param3>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_Text</Prereq>
+	</Event>	
+	
+<!-- Objective complete -->
+	<Event Name="Tutorial_IV_Recruit_Field_Commander_01">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>OBJECTIVE_COMPLETE</Reward_Type>
+		<Reward_Param1>TEXT_STORY_TUTORIAL_EMPIRE_ACT04_35</Reward_Param1>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander</Prereq>
+	</Event>
+	
+		<Event Name="Tutorial_IV_Build_Field_Commander_Entry_Completed">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STORY_GOAL_COMPLETED</Reward_Type>
+			<Reward_Param1>Tutorial_IV_Build_Field_Commander_Entry</Reward_Param1>
+			<Prereq>Tutorial_IV_Recruit_Field_Commander_01</Prereq>
+		</Event> 
+
+<!-- Unlock the buttons -->
+	<Event Name="Tutorial_IV_Recruit_Field_Commander_02">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>ENABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ALL</Reward_Param1>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_01</Prereq>
+	</Event>
+   
+<!-- Keep zoom disabled -->
+	<Event Name="Tutorial_IV_Recruit_Field_Commander_03">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>DISABLE_EVENT</Reward_Type>
+		<Reward_Param1>TUTORIAL_ZOOM</Reward_Param1>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_02</Prereq>
+	</Event>
+   
+<!-- Station Officer: Yes… good!  All of the necessary components are finally in place.
+The Rebels won't know what hit them.  Ryloth will be mine! -->
+	<Event Name="Tutorial_M05_End_Text_01">
+		<Event_Type>STORY_ELAPSED</Event_Type>
+		<Event_Param1>2</Event_Param1>
+		<Reward_Type>MULTIMEDIA</Reward_Type>
+		<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_44</Reward_Param1>
+		<Reward_Param2>-1</Reward_Param2>	
+		<Reward_Param8>TUTORIAL_EMPIRE_ACT04_44</Reward_Param8>
+		<Reward_Param9>Piett_Loop</Reward_Param9>
+		<Reward_Param10>1</Reward_Param10>
+		<Prereq>Tutorial_IV_Recruit_Field_Commander_01 Tutorial_IV_Recruit_Field_Commander_Hint_01</Prereq>
+	</Event>
+		
+		<Event Name="Tutorial_M05_End_Text_02">
+			<Event_Type>STORY_SPEECH_DONE</Event_Type>
+			<Event_Param1>TUTORIAL_EMPIRE_ACT04_44</Event_Param1>
+			<Reward_Type>SCREEN_TEXT</Reward_Type>
+			<Reward_Param1>TEXT_SPEECH_TUTORIAL_EMPIRE_ACT04_44</Reward_Param1>
+			<Reward_Param4>remove</Reward_Param4>
+			<Prereq>Tutorial_M05_End_Text_01</Prereq>
+		</Event>
+		
+		<Event Name="Tutorial_M05_End_Text_02_Stop_Movie">
+			<Event_Type>STORY_TRIGGER</Event_Type>
+			<Reward_Type>STOP_COMMANDBAR_MOVIE</Reward_Type>
+			<Prereq>Tutorial_M05_End_Text_02</Prereq>
+		</Event>
+   
+<!-- Mark tutorial as completed -->
+<Event Name="Tutorial_IV_Finished">
+	<Event_Type>STORY_TRIGGER</Event_Type>
+	<Reward_Type>FINISHED_TUTORIAL</Reward_Type>
+	<Reward_Param1>TUTORIAL_FOUR</Reward_Param1>
+	<Prereq>Tutorial_M05_End_Text_02_Stop_Movie</Prereq>
+</Event>
+   
+<!-- Link to next tutorial -->
+	<Event Name="Tutorial_IV_Next_Tutorial_00">
+		<Event_Type>STORY_TRIGGER</Event_Type>
+		<Reward_Type>TUTORIAL_DIALOG</Reward_Type>
+		<Reward_Param1>TEXT_TUTORIAL_4_COMPLETE</Reward_Param1>
+		<Prereq>Tutorial_M05_End_Text_02_Stop_Movie</Prereq>
+	</Event>
+
+	<Event Name="Tutorial_IV_Next_Tutorial_01">
+		<Event_Type>STORY_GENERIC</Event_Type>
+		<Event_Param1>Continue_Tutorial</Event_Param1>
+		<Reward_Type>LOAD_CAMPAIGN</Reward_Type>
+		<Reward_Param1>Tutorial_Five</Reward_Param1>
+		<Reward_Param2>1</Reward_Param2>
+	</Event>
+   
+</Story>

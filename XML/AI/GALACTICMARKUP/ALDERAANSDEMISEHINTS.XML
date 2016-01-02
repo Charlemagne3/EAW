@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Galactic_Markup>
+
+	<Planets HintSet="Galactic_Hints">
+		<Eriadu>
+			<Chokepoint>1.0</Chokepoint>
+		</Eriadu>
+		
+		<Alderann>
+			<Chokepoint>1.0</Chokepoint>
+		</Alderann>
+		
+		<Geonosis>
+			<Chokepoint>1.0</Chokepoint>
+		</Geonosis>
+	
+		<Ryloth>
+			<Chokepoint>1.0</Chokepoint>
+		</Ryloth>
+	
+		<Sullust>
+			<PriorityTarget>3.0</PriorityTarget>
+		</Sullust>
+		
+		<MonCalamari>
+			<PriorityTarget>3.0</PriorityTarget>
+		</MonCalamari>
+	
+	</Planets>
+</Galactic_Markup>
