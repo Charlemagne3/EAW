@@ -664,7 +664,7 @@
 		<Is_Bomber>no</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>6</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Size_Value>8</Size_Value>
 		<!-- <Behavior>TRANSPORT </Behavior> AJA 11/18/2005: These units are not transports, and this tag was breaking the hero respawn logic. -->
 		<SpaceBehavior>FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, SHIELDED, HIDE_WHEN_FOGGED, AMBIENT_SFX, NEBULA, DAMAGE_TRACKING </SpaceBehavior>
@@ -1851,7 +1851,7 @@
 		<Is_Bomber>no</Is_Bomber>
 
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 
 		<SpaceBehavior> FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, SHIELDED, HIDE_WHEN_FOGGED, AMBIENT_SFX, NEBULA, DAMAGE_TRACKING </SpaceBehavior>
 		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>

@@ -240,7 +240,7 @@
 		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
-		
+
 		<FormationOrder>2</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
 		<Guard_Chase_Range>500.0</Guard_Chase_Range>

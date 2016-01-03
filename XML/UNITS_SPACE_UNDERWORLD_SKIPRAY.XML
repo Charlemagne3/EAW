@@ -53,7 +53,7 @@
 		<Is_Bomber>yes</Is_Bomber>
 		<Damage>5</Damage>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 
 		<SpaceBehavior>ABILITY_COUNTDOWN, FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, POWERED, SHIELDED, HIDE_WHEN_FOGGED, AMBIENT_SFX, DAMAGE_TRACKING, REVEAL, NEBULA </SpaceBehavior>
 		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
@@ -203,7 +203,7 @@
 		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
-		<Max_Squad_Size>12</Max_Squad_Size>
+
 		<SFXEvent_Build_Started>UHD_Build_Vehicle</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>UHD_Unit_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete>Unit_Complete_Skipray</SFXEvent_Build_Complete>
@@ -218,7 +218,7 @@
 		<Population_Value>1</Population_Value>
 		<Score_Cost_Credits> 700</Score_Cost_Credits>
 
-     	<Max_Squad_Size> 3 </Max_Squad_Size>
+     	<Max_Squad_Size> 12 </Max_Squad_Size>
 
 		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
 		<Tactical_Build_Cost_Multiplayer>700</Tactical_Build_Cost_Multiplayer>

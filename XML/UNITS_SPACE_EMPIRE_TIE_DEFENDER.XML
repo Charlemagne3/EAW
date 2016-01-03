@@ -229,7 +229,7 @@
 		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
-		<Max_Squad_Size>12</Max_Squad_Size>
+
 		<SFXEvent_Build_Started>EHD_Build_Vehicle</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>EHD_Unit_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete>Unit_Complete_Tie_Defender</SFXEvent_Build_Complete>
@@ -246,7 +246,7 @@
 		<Score_Cost_Credits> 1000</Score_Cost_Credits>
 
 		<Create_Team_Type>TIE_Defender_Squadron_Container</Create_Team_Type>
-     	<Max_Squad_Size> 3 </Max_Squad_Size>
+     	<Max_Squad_Size> 12 </Max_Squad_Size>
 
 		<Tactical_Bribe_Cost>600</Tactical_Bribe_Cost>
 
