@@ -117,10 +117,25 @@
 		<Required_Star_Base_Level>2</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
-		<Squadron_Units>Y-Wing, Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
+		<Squadron_Units>Y-Wing, Y-Wing</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_y_wing.tga</Icon_Name>
 		<GUI_Model_Name>RV_ywing.ALO</GUI_Model_Name>
 		<GUI_Distance>120</GUI_Distance>
@@ -187,10 +202,25 @@
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
-		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
+		<Squadron_Units>Y-Wing_No_Ability, Y-Wing_No_Ability</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_y_wing.tga</Icon_Name>
 		<GUI_Model_Name>RV_ywing.ALO</GUI_Model_Name>
 		<GUI_Distance>120</GUI_Distance>
@@ -331,10 +361,23 @@
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
 		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
 		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
+		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
+		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
+		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
+		<Squadron_Units>TIE_Bomber, TIE_Bomber</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,60.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,0.0,0.0</Squadron_Offsets>		
-		<Squadron_Offsets>0.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_tie_bomber.tga</Icon_Name>
 		<GUI_Model_Name>EV_TieBomber.ALO</GUI_Model_Name>
 		<GUI_Distance>120</GUI_Distance>
@@ -395,12 +438,25 @@
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
-		<Squadron_Units>A-Wing, A-Wing, A-Wing, A-Wing, A-Wing</Squadron_Units>
-		<Squadron_Offsets>30.0,0.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,-15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,30.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Units>A-Wing, A-Wing</Squadron_Units>
+		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_a_wing.tga</Icon_Name>
 		<GUI_Model_Name>RV_awing.ALO</GUI_Model_Name>
 		<GUI_Distance>115</GUI_Distance>
@@ -467,10 +523,24 @@
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
 		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
-		<Squadron_Units>TIE_Scout</Squadron_Units>
+		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
+		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
+		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
+		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
+		<Squadron_Units>TIE_Scout, TIE_Scout</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_tie_scout.tga</Icon_Name>
 		<GUI_Model_Name>EV_TieScout.ALO</GUI_Model_Name>
 		<GUI_Distance>115</GUI_Distance>
@@ -537,13 +607,25 @@
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
 		<Required_Tech_Structure />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>Z-95_Headhunter, X-95_Headhunter</Squadron_Units>
 		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
-		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter, Z-95_Headhunter</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<FormationOrder>1</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
@@ -592,13 +674,25 @@
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>Z-95_Headhunter_Rebel, X-95_Headhunter_Rebel</Squadron_Units>
 		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
-		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
-		<Squadron_Offsets>30.0,0.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,-15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,30.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Rebel, Z-95_Headhunter_Rebel</Squadron_Units>
+		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<GUI_Model_Name>RV_xwing.ALO</GUI_Model_Name>
 		<GUI_Distance>95</GUI_Distance>
@@ -664,13 +758,25 @@
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>Z-95_Headhunter_Empire, X-95_Headhunter_Empire</Squadron_Units>
 		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
-		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
-		<Squadron_Offsets>30.0,0.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,-15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,30.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Empire, Z-95_Headhunter_Empire</Squadron_Units>
+		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<GUI_Model_Name>RV_xwing.ALO</GUI_Model_Name>
 		<GUI_Distance>95</GUI_Distance>
@@ -734,13 +840,25 @@
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
 		<Required_Special_Structures />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>Z-95_Headhunter_Underworld, X-95_Headhunter_Underworld</Squadron_Units>
 		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
-		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
-		<Squadron_Offsets>30.0,0.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>0.0,-15.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,30.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
+		<Squadron_Units>Z-95_Headhunter_Underworld, Z-95_Headhunter_Underworld</Squadron_Units>
+		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<GUI_Model_Name>RV_xwing.ALO</GUI_Model_Name>
 		<GUI_Distance>95</GUI_Distance>
@@ -807,13 +925,25 @@
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Tech_Structure />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>V-wing_Fighter_E, X-wing_Fighter_E</Squadron_Units>
 		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
-		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_E, V-wing_Fighter_E</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<FormationOrder>1</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
@@ -873,13 +1003,25 @@
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Tech_Structure />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>V-wing_Fighter_R, X-wing_Fighter_R</Squadron_Units>
 		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
-		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_R, V-wing_Fighter_R</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<FormationOrder>1</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
@@ -939,13 +1081,25 @@
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Tech_Structure />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
+		<Squadron_Units>V-wing_Fighter_P, X-wing_Fighter_P</Squadron_Units>
 		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
-		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
+		<Squadron_Units>V-wing_Fighter_P, V-wing_Fighter_P</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<Icon_Name>i_button_z95_headhunter.tga</Icon_Name>
 		<FormationOrder>1</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
@@ -996,12 +1150,24 @@
 		<Required_Tech_Structure />
 		<Behavior>DUMMY_SPACE_FIGHTER_SQUADRON</Behavior>
 		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
-		<Squadron_Units>Pirate_Fighter, Pirate_Fighter, Pirate_Fighter</Squadron_Units>
+		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
+		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
+		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
+		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
+		<Squadron_Units>Pirate_Fighter, Pirate_Fighter</Squadron_Units>
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
+		<Max_Squad_Size>12</Max_Squad_Size>
 		<FormationOrder>1</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
 		<Guard_Chase_Range>1000.0</Guard_Chase_Range>
@@ -1113,16 +1279,24 @@
 		<Squadron_Units> Red_Leader_XWing,Wedge_XWing </Squadron_Units>
 		<Squadron_Units> Biggs_XWing, Hobbie_XWing </Squadron_Units>
 		<Squadron_Units> Luke_XWing, Porkins_XWing </Squadron_Units>
-		
+		<Squadron_Units>X-Wing, X-Wing</Squadron_Units>
+		<Squadron_Units>X-Wing, X-Wing</Squadron_Units>
+		<Squadron_Units>X-Wing, X-Wing</Squadron_Units>
 		<Create_Team_Type>Red_Squadron_Container </Create_Team_Type>
-     	<Max_Squad_Size> 6 </Max_Squad_Size>
+     	<Max_Squad_Size>12</Max_Squad_Size>
 	
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
 
 		<FormationOrder>2</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>
@@ -1198,12 +1372,16 @@
 	<Squadron Name="Darth_Vader_TIE_Fighter_Squadron">
 		<Variant_Of_Existing_Type>TIE_Fighter_Squadron</Variant_Of_Existing_Type>
 		<Encyclopedia_Text> TEXT_TOOLTIP_TIE_ADVANCED </Encyclopedia_Text>
-		<Squadron_Units>TIE_Prototype, Escort_TIE_Fighter, Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
-		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>TIE_Prototype, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
+		<Squadron_Units>Escort_TIE_Fighter, Escort_TIE_Fighter</Squadron_Units>
 		<Create_Team_Type>Darth_Vader_TIE_Fighter_Container </Create_Team_Type>
 		<Icon_Name>i_button_darth_vader.tga</Icon_Name>
 		<Score_Cost_Credits> 15000 </Score_Cost_Credits>
-     	<Max_Squad_Size> 8 </Max_Squad_Size>
+     	<Max_Squad_Size> 12 </Max_Squad_Size>
 	</Squadron>
 	
 
