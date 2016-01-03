@@ -167,11 +167,11 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>515</Autoresolve_Health>
 		<Damage>25</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>375</Build_Cost_Credits>
+		<Build_Cost_Credits>565</Build_Cost_Credits>
 		<Build_Time_Seconds>15</Build_Time_Seconds>
 		<Build_Tab_Space_Units>No</Build_Tab_Space_Units>
 		<Tech_Level>4</Tech_Level>

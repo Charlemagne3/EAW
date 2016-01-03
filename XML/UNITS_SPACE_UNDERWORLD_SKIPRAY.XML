@@ -167,12 +167,12 @@
 		<Formation_Priority>2</Formation_Priority>
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
-		<Autoresolve_Health>200</Autoresolve_Health>
+		<Autoresolve_Health>800</Autoresolve_Health>
 		<Damage>15</Damage>
 		
 		<Affiliation>Underworld</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>500</Build_Cost_Credits>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
 		<Build_Time_Seconds>14</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Tech_Level>0</Tech_Level>

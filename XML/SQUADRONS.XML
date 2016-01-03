@@ -11,12 +11,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>25</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>300</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>420</Build_Cost_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
@@ -101,12 +101,12 @@
 		<Formation_Priority>2</Formation_Priority>
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
-		<Autoresolve_Health>200</Autoresolve_Health>
+		<Autoresolve_Health>800</Autoresolve_Health>
 		<Damage>15</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>210</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>420</Build_Cost_Credits>
+		<Piracy_Value_Credits>200</Piracy_Value_Credits>
 		<Build_Time_Seconds>20</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
@@ -190,7 +190,7 @@
 		<Formation_Priority>2</Formation_Priority>
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
-		<Autoresolve_Health>200</Autoresolve_Health>
+		<Autoresolve_Health>800</Autoresolve_Health>
 		<Damage>15</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
@@ -262,12 +262,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>515</Autoresolve_Health>
 		<Damage>25</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>300</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>515</Build_Cost_Credits>
+		<Piracy_Value_Credits>85</Piracy_Value_Credits>
 		<Build_Time_Seconds>15</Build_Time_Seconds>
 		<Build_Tab_Space_Units>No</Build_Tab_Space_Units>
 		<Tech_Level>0</Tech_Level>
@@ -346,12 +346,12 @@
 		<Formation_Priority>2</Formation_Priority>
 		<Is_Escort>No</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
-		<Autoresolve_Health>150</Autoresolve_Health>
+		<Autoresolve_Health>450</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>150</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>450</Build_Cost_Credits>
+		<Piracy_Value_Credits>150</Piracy_Value_Credits>
 		<Build_Time_Seconds>20</Build_Time_Seconds>
 		<Build_Tab_Space_Units>No</Build_Tab_Space_Units>
 		<Tech_Level>0</Tech_Level>
@@ -422,12 +422,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>35</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>300</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>720</Build_Cost_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>25</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
@@ -509,12 +509,12 @@
 		<Formation_Priority>3</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>150</Autoresolve_Health>
+		<Autoresolve_Health>900</Autoresolve_Health>
 		<Damage>9</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>240</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>960</Build_Cost_Credits>
+		<Piracy_Value_Credits>200</Piracy_Value_Credits>
 		<Build_Time_Seconds>25</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Tech_Level>3</Tech_Level>
@@ -596,12 +596,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Pirates</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>250</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>600</Build_Cost_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Required_Timeline />
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
@@ -659,12 +659,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>250</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>600</Build_Cost_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
@@ -743,12 +743,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>250</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Build_Cost_Credits>600</Build_Cost_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
@@ -826,11 +826,11 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Underworld</Affiliation>
 		<Political_Control>0</Political_Control>
-		<Build_Cost_Credits>250</Build_Cost_Credits>
+		<Build_Cost_Credits>600</Build_Cost_Credits>
 		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
@@ -914,12 +914,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Required_Timeline />
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
@@ -992,12 +992,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Required_Timeline />
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
@@ -1070,12 +1070,12 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Pirates</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
-		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<Piracy_Value_Credits>120</Piracy_Value_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Required_Timeline />
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
@@ -1138,7 +1138,7 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>300</Autoresolve_Health>
+		<Autoresolve_Health>720</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Affiliation>Pirates, Empire, Rebel</Affiliation> <!-- Modded by Chris R. for MP-->
 		<Tech_Level>6</Tech_Level> <!-- Modded by Chris R. for MP-->
@@ -1261,14 +1261,14 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>1600</Autoresolve_Health>
+		<Autoresolve_Health>3200</Autoresolve_Health>
 		<Damage>50</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
 		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
 		<Tech_Level>5</Tech_Level>
 
-		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Cost_Credits>10000</Build_Cost_Credits>
 
 		<SFXEvent_Build_Started>RHD_Request_Assistance</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>RHD_Request_Canceled</SFXEvent_Build_Cancelled>
