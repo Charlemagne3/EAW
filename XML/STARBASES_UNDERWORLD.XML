@@ -193,9 +193,9 @@
 		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 2</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
-		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
-		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
-
+		<Starting_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, 2</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, -1</Reserve_Spawned_Units_Tech_0>
+		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
 		<Tactical_Buildable_Objects_Campaign>
@@ -337,7 +337,6 @@
 		
 		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
-		
 		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
@@ -487,12 +486,12 @@
 		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
-		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
 
 		<Starting_Spawned_Units_Tech_0>Interceptor4_Frigate, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Interceptor4_Frigate, -1</Reserve_Spawned_Units_Tech_0>
-
+		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
 		<Tactical_Buildable_Objects_Campaign>
@@ -652,11 +651,14 @@
 		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 6</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
-		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
 
-		<Starting_Spawned_Units_Tech_0>Interceptor4_Frigate, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Interceptor4_Frigate, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Interceptor4_Frigate, -1</Reserve_Spawned_Units_Tech_0>
+		
+		<Starting_Spawned_Units_Tech_0>Vengeance_Frigate, 1</Starting_Spawned_Units_Tech_0>	
+		<Reserve_Spawned_Units_Tech_0>Vengeance_Frigate, -1</Reserve_Spawned_Units_Tech_0>
 		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 

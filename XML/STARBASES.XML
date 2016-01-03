@@ -202,7 +202,7 @@
 		
 		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 2</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
-
+		
 		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
@@ -362,6 +362,9 @@
 		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
+		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
 		<Tactical_Buildable_Objects_Campaign> 
@@ -520,12 +523,21 @@
 		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 4</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>A_Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 2</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>B-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+
+		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
+		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
 		<Starting_Spawned_Units_Tech_0>Nebulon_B_Frigate, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Nebulon_B_Frigate, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
-
+		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
 		<Tactical_Buildable_Objects_Campaign> 
@@ -694,12 +706,24 @@
 		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 6</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 5</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>A_Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>B-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+
+		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Nebulon_B_Frigate, 2</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>Nebulon_B_Frigate, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Nebulon_B_Frigate, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
-
+		
+		<Starting_Spawned_Units_Tech_0>Alliance_Assault_Frigate, 1</Starting_Spawned_Units_Tech_0>	
+		<Reserve_Spawned_Units_Tech_0>Alliance_Assault_Frigate, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
 		<Tactical_Buildable_Objects_Campaign> 
@@ -867,6 +891,9 @@
 
 		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 2</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+				
+		<Starting_Spawned_Units_Tech_0>Empire_Pirate_IPV, 1</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Empire_Pirate_IPV, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 
@@ -1304,7 +1331,16 @@
 		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 3</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 2</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Scout_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Phantom_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+				
+		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Defender_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 1</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
 		<Starting_Spawned_Units_Tech_0>Acclamator_Assault_Ship, 1</Starting_Spawned_Units_Tech_0>
@@ -1457,12 +1493,21 @@
 
 		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 3</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+
+		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Scout_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 2</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Phantom_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+				
+		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>TIE_Defender_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
+		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 1</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Acclamator_Assault_Ship, 2</Starting_Spawned_Units_Tech_0>
-		<Reserve_Spawned_Units_Tech_0>Acclamator_Assault_Ship, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		<Starting_Spawned_Units_Tech_0>Victory_Destroyer, 1</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Victory_Destroyer, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
 		
