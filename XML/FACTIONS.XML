@@ -32,7 +32,7 @@
 		<Can_Win_By_Destroying_Super_Weapon>Yes</Can_Win_By_Destroying_Super_Weapon>
 		<Faction_Super_Weapon>  </Faction_Super_Weapon>
 		<Skirmish_Land_Bomber> Y-Wing_Bombing_Run </Skirmish_Land_Bomber>
-		<Space_Tactical_Unit_Cap>25</Space_Tactical_Unit_Cap>
+		<Space_Tactical_Unit_Cap>40</Space_Tactical_Unit_Cap>
 		<Maintenance_Cost>0.25</Maintenance_Cost>
 		<Scatters_From_Crushers> true </Scatters_From_Crushers>
 		
@@ -826,7 +826,7 @@
 		<Basic_AI>BasicEmpire</Basic_AI>
 		<Faction_Super_Weapon> Death_Star </Faction_Super_Weapon>
 		<Skirmish_Land_Bomber> TIE_Bomber_Bombing_Run </Skirmish_Land_Bomber>
-		<Space_Tactical_Unit_Cap>20</Space_Tactical_Unit_Cap>
+		<Space_Tactical_Unit_Cap>40</Space_Tactical_Unit_Cap>
 		<Maintenance_Cost>0.25</Maintenance_Cost>
 
 		<!-- Gameplay effects of planetary corruption on this faction. -->
