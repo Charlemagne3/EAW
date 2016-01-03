@@ -223,14 +223,20 @@
 		<Squadron_Units> Rogue_10_XWing, Rogue_11_XWing </Squadron_Units>
 		
 		<Create_Team_Type> Rogue_Squadron_Space_Container </Create_Team_Type>
-     	<Max_Squad_Size> 6 </Max_Squad_Size>
+     	<Max_Squad_Size> 12 </Max_Squad_Size>
 	
 		<Squadron_Offsets>60.0,0.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
 
 		<FormationOrder>2</FormationOrder>
 		<Squadron_Formation_Error_Tolerance>25.0</Squadron_Formation_Error_Tolerance>

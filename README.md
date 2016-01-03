@@ -28,3 +28,7 @@ FACTIONS.XML
 Where do I edit squadron compositions?
 
 SQUADRONS.XML
+
+Some space units are in here:
+
+UNIQUEUNITS.XML

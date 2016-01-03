@@ -49,7 +49,7 @@
 		<Is_Bomber>no</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>60</Build_Cost_Credits>
 		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Size_Value>4</Size_Value>  <!-- 8 -->
@@ -528,7 +528,7 @@
 		<Land_Bomber_Type>TIE_Bomber_Bombing_Run</Land_Bomber_Type>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>6</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>30</Build_Cost_Credits>
 		<Build_Time_Seconds>5</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -652,7 +652,7 @@
 		<Land_Bomber_Type>Y-Wing_Bombing_Run</Land_Bomber_Type>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>3</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>70</Build_Cost_Credits>
 		<Build_Time_Seconds>13</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -785,7 +785,7 @@
 		<Is_Bomber>yes</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>3</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>70</Build_Cost_Credits>
 		<Build_Time_Seconds>13</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -913,7 +913,7 @@
 		<Is_Bomber>no</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>3</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>80</Build_Cost_Credits>
 		<Build_Time_Seconds>15</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -1059,7 +1059,7 @@
 		<Surface_Bombardment_Capable>no</Surface_Bombardment_Capable>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -1185,7 +1185,7 @@
 		<Surface_Bombardment_Capable>no</Surface_Bombardment_Capable>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Build_Cost_Credits>50</Build_Cost_Credits>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Size_Value>8</Size_Value>
@@ -1329,7 +1329,7 @@
 		<Is_Bomber>no</Is_Bomber>
 		<Political_Control>0</Political_Control>
 		<Squadron_Capacity>0</Squadron_Capacity>
-		<Number_per_Squadron>5</Number_per_Squadron>
+		<Number_per_Squadron>12</Number_per_Squadron>
 		<Size_Value>8</Size_Value>
 		<SpaceBehavior>HUNT, FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, SHIELDED, HIDE_WHEN_FOGGED, AMBIENT_SFX, DAMAGE_TRACKING, NEBULA </SpaceBehavior>
 		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
