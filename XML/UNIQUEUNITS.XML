@@ -14,6 +14,12 @@
 		<Encyclopedia_Text> TEXT_TOOLTIP_PIETT </Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_FLEET_COMMANDER </Encyclopedia_Unit_Class>
 
+		<Starting_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		<Reserve_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 3</Reserve_Spawned_Units_Tech_0> 
+		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 1</Reserve_Spawned_Units_Tech_0> 
+
 		<SpaceBehavior> ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA, SPAWN_SQUADRON, DAMAGE_TRACKING </SpaceBehavior>
 
         <Ranking_In_Category>3</Ranking_In_Category>
@@ -442,9 +448,8 @@
 
 		<Damage>80</Damage>
 		<Autoresolve_Health>3000</Autoresolve_Health>
-		<Tactical_Health>8000</Tactical_Health>
 		<Shield_Points>5000</Shield_Points>
-		<Tactical_Health>10000</Tactical_Health>
+		<Tactical_Health>11000</Tactical_Health>
 		
 		<Shield_Refresh_Rate>80</Shield_Refresh_Rate>
 		<Energy_Capacity>10000</Energy_Capacity>
@@ -462,14 +467,25 @@
 		<Number_per_Squadron>1</Number_per_Squadron>
 		<AI_Combat_Power>4000</AI_Combat_Power>
 		<Size_Value>360</Size_Value>
+		
+		<Starting_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		<Reserve_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 2</Reserve_Spawned_Units_Tech_0> 
+		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, 2</Reserve_Spawned_Units_Tech_0> 
+		<Reserve_Spawned_Units_Tech_0>A_Wing_Squadron, 1</Reserve_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>B-Wing_Squadron, 1</Reserve_Spawned_Units_Tech_0>
+
 		<Behavior> SELECTABLE, DUMMY_STARSHIP </Behavior>
-		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA, DAMAGE_TRACKING </SpaceBehavior>
+		<SpaceBehavior>SPAWN_SQUADRON, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA, DAMAGE_TRACKING </SpaceBehavior>
 		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
 		<Space_FOW_Reveal_Range>1500.0</Space_FOW_Reveal_Range>
 		<Dense_FOW_Reveal_Range_Multiplier>0.2</Dense_FOW_Reveal_Range_Multiplier>
 		<Targeting_Max_Attack_Distance>2000.0</Targeting_Max_Attack_Distance>
 		<HardPoints>
-				HP_HomeOne_Shield_Generator, HP_HomeOne_Engines, HP_HomeOne_TBL_BL, HP_HomeOne_TBL_BR, HP_HomeOne_TBL_FL, HP_HomeOne_TBL_FR, HP_HomeOne_IC_BL, HP_HomeOne_IC_BR, HP_HomeOne_IC_FL, HP_HomeOne_IC_FR
+				HP_HomeOne_Fighter_Bay, HP_HomeOne_Shield_Generator, HP_HomeOne_Engines, HP_HomeOne_TBL_BL, HP_HomeOne_TBL_BR, HP_HomeOne_TBL_FL, HP_HomeOne_TBL_FR, HP_HomeOne_IC_BL, HP_HomeOne_IC_BR, HP_HomeOne_IC_FL, HP_HomeOne_IC_FR
 		</HardPoints>
 		<Death_Explosions>Large_Explosion_Space</Death_Explosions>
 		<Asteroid_Damage_Hit_Particles>Large_Damage_Space</Asteroid_Damage_Hit_Particles>
@@ -1785,9 +1801,9 @@
 		<Build_Time_Seconds>30</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 		
-		<Starting_Spawned_Units_Tech_0>VWing_Squadron_E, 2</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>VWing_Squadron_E, 3</Starting_Spawned_Units_Tech_0>
 		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
-		<Reserve_Spawned_Units_Tech_0>VWing_Squadron_E, 2</Reserve_Spawned_Units_Tech_0> 
+		<Reserve_Spawned_Units_Tech_0>VWing_Squadron_E, 32</Reserve_Spawned_Units_Tech_0> 
 		
 		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
 		<SFXEvent_Tactical_Build_Complete> EHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		

@@ -608,12 +608,8 @@
 		<Tech_Level>2</Tech_Level>
 		<!-- Fighter complement -->
 		<Starting_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 1</Starting_Spawned_Units_Tech_0>
-		<Starting_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 1</Starting_Spawned_Units_Tech_0>
 		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 1</Starting_Spawned_Units_Tech_0>
 		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
-		<Reserve_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 1</Reserve_Spawned_Units_Tech_0> 
-		<Reserve_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 1</Reserve_Spawned_Units_Tech_0> 
-		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 1</Reserve_Spawned_Units_Tech_0>
 		<SpaceBehavior>SPAWN_SQUADRON, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
 		<Population_Value>3</Population_Value>
 		
@@ -861,7 +857,7 @@
 		<Autoresolve_Health>800</Autoresolve_Health>
 		<Damage>20</Damage>
 		<Shield_Points>800</Shield_Points>
-		<Tactical_Health>700</Tactical_Health>
+		<Tactical_Health>775</Tactical_Health>
 		<Shield_Refresh_Rate>60</Shield_Refresh_Rate>
 		<Energy_Capacity>10000</Energy_Capacity>
 		<Energy_Refresh_Rate>400</Energy_Refresh_Rate>
@@ -882,7 +878,7 @@
 		<Disallows_Hyperspace_Retreat> No </Disallows_Hyperspace_Retreat>  <!-- gravity_well ability will take care of this -->
 		<Size_Value>120</Size_Value>
 		<Behavior>DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED</Behavior>
-		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		<SpaceBehavior>SPAWN_SQUADRON, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
 		<Lua_Script>Interdictor</Lua_Script>
 
 		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
@@ -893,8 +889,12 @@
 		<Space_FOW_Reveal_Range>1000.0</Space_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>800.0</Targeting_Max_Attack_Distance>
 
+		<Starting_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		<Reserve_Spawned_Units_Tech_0>TIE_Fighter_Squadron, 1</Reserve_Spawned_Units_Tech_0> 
+		
 		<HardPoints>
-			HP_Interdictor_Weapon_01, HP_Interdictor_Weapon_02, HP_Interdictor_Weapon_03, HP_Interdictor_Weapon_04,HP_Interdictor_GravWell_01, HP_Interdictor_Shields_01, HP_Interdictor_Engines_01
+			HP_Interdictor_Fighter_Bay, HP_Interdictor_Weapon_01, HP_Interdictor_Weapon_02, HP_Interdictor_Weapon_03, HP_Interdictor_Weapon_04,HP_Interdictor_GravWell_01, HP_Interdictor_Shields_01, HP_Interdictor_Engines_01
 		</HardPoints>
 
 		<Asteroid_Damage_Hit_Particles>Large_Damage_Space</Asteroid_Damage_Hit_Particles>

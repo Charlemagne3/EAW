@@ -320,6 +320,22 @@
 
 <!-- Mon Calamari Cruiser Hard Points -->
 	
+	<HardPoint Name="HP_Calamari_Cruiser_Fighter_Bay">
+			<Type> HARD_POINT_FIGHTER_BAY </Type>
+            <Is_Targetable>Yes</Is_Targetable>
+            <Is_Destroyable>Yes</Is_Destroyable>
+            <Tooltip_Text>TEXT_FIGHTER_BAY_HARDPOINT</Tooltip_Text>
+            <Health>490.0</Health>
+			<Death_Explosion_Particles> Large_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_SFXEvent>Unit_Hardpoint_Bay_Death</Death_Explosion_SFXEvent>
+
+			<Model_To_Attach/>
+            <Attachment_Bone>HP_B-L_BLAST01</Attachment_Bone>
+            <Collision_Mesh>HP_B-L_BLAST01</Collision_Mesh>
+            <Damage_Decal>HP_B-L_BLAST01</Damage_Decal>
+            <Damage_Particles>HP_B-L_BLAST01</Damage_Particles>
+    </HardPoint>
+	
     <HardPoint Name="HP_Calamari_Cruiser_Weapon_FL">
 			<Type> HARD_POINT_WEAPON_ION_CANNON </Type>
             <Is_Targetable>Yes</Is_Targetable>
@@ -1795,6 +1811,22 @@
 
 <!-- Interdictor Cruiser Hard Points -->
 
+	<HardPoint Name="HP_Interdictor_Fighter_Bay">
+			<Type> HARD_POINT_FIGHTER_BAY </Type>
+            <Is_Targetable>Yes</Is_Targetable>
+            <Is_Destroyable>Yes</Is_Destroyable>
+            <Tooltip_Text>TEXT_FIGHTER_BAY_HARDPOINT</Tooltip_Text>
+            <Health>75.0</Health>
+			<Death_Explosion_Particles> Medium_Explosion_Space_Empire </Death_Explosion_Particles>
+			<Death_Explosion_SFXEvent>Unit_Hardpoint_Bay_Death</Death_Explosion_SFXEvent>
+
+			<Model_To_Attach/>
+            <Attachment_Bone>INTERDICTOR_HULK</Attachment_Bone>
+            <Collision_Mesh>INTERDICTOR_HULK</Collision_Mesh>
+            <Damage_Decal>INTERDICTOR_HULK</Damage_Decal>
+            <Damage_Particles>INTERDICTOR_HULK</Damage_Particles>
+    </HardPoint>
+	
     <HardPoint Name="HP_Interdictor_Weapon_01">
 			<Type> HARD_POINT_WEAPON_LASER </Type>
             <Is_Targetable>Yes</Is_Targetable>
@@ -4269,6 +4301,22 @@
 
 <!-- Hard points for Home One -->
 
+    <HardPoint Name="HP_HomeOne_Fighter_Bay">
+			<Type> HARD_POINT_FIGHTER_BAY </Type>
+            <Is_Targetable>Yes</Is_Targetable>
+            <Is_Destroyable>Yes</Is_Destroyable>
+            <Tooltip_Text>TEXT_FIGHTER_BAY_HARDPOINT</Tooltip_Text>
+            <Health>1000.0</Health>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
+			<Death_Explosion_SFXEvent>Unit_Hardpoint_Bay_Death</Death_Explosion_SFXEvent>
+
+			<Model_To_Attach/>
+            <Attachment_Bone>FP_TBL_BR_01</Attachment_Bone>
+            <Collision_Mesh>FP_TBL_BR_01</Collision_Mesh>
+            <Damage_Decal>FP_TBL_BR_01</Damage_Decal>
+            <Damage_Particles>FP_TBL_BR_01</Damage_Particles>
+    </HardPoint>
+
     <HardPoint Name="HP_HomeOne_Shield_Generator">
 			<Type> HARD_POINT_SHIELD_GENERATOR </Type>
             <Is_Targetable>Yes</Is_Targetable>
@@ -4651,10 +4699,10 @@
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Bay_Death</Death_Explosion_SFXEvent>
 
 			<Model_To_Attach/>
-			<Attachment_Bone>P_HP_STARDESTROYER_DAMAGE</Attachment_Bone>
-			<Collision_Mesh>P_HP_STARDESTROYER_DAMAGE</Collision_Mesh>
-			<Damage_Decal>P_HP_STARDESTROYER_DAMAGE</Damage_Decal>
-			<Damage_Particles>P_HP_STARDESTROYER_DAMAGE</Damage_Particles>
+			<Attachment_Bone>COLLISION</Attachment_Bone>
+			<Collision_Mesh>COLLISION</Collision_Mesh>
+			<Damage_Decal>COLLISION</Damage_Decal>
+			<Damage_Particles>COLLISION</Damage_Particles>
     </HardPoint>
 
     <HardPoint Name="HP_Jedi_Cruiser_Shield_Gen">

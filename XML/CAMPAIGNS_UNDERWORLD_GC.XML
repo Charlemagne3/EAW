@@ -1437,6 +1437,7 @@
 		<Starting_Forces> Rebel, Hoth, Rebel_X-Wing_Squadron </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Y-Wing_Squadron </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Corellian_Corvette </Starting_Forces>
+		<Starting_Forces> Rebel, Hoth, Calamari_Cruiser </Starting_Forces>		
         <!-- Hoth Land Forces -->
 		<Starting_Forces> Rebel, Hoth, R_Ground_Barracks </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Rebel_Tank_Buster_Squad </Starting_Forces>
@@ -2217,7 +2218,7 @@
 		<Starting_Forces> Rebel, Hoth, Y-Wing_Squadron </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Corellian_Corvette </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Corellian_Corvette </Starting_Forces>
-		
+		<Starting_Forces> Rebel, Hoth, Calamari_Cruiser </Starting_Forces>		
         <!-- Hoth Land Forces -->
 		<Starting_Forces> Rebel, Hoth, R_Ground_Barracks </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Rebel_Tank_Buster_Squad </Starting_Forces>
@@ -2980,6 +2981,7 @@
 		<Starting_Forces> Rebel, Hoth, Rebel_X-Wing_Squadron </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Y-Wing_Squadron </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Corellian_Corvette </Starting_Forces>
+		<Starting_Forces> Rebel, Hoth, Calamari_Cruiser </Starting_Forces>		
         <!-- Hoth Land Forces -->
 		<Starting_Forces> Rebel, Hoth, R_Ground_Barracks </Starting_Forces>
 		<Starting_Forces> Rebel, Hoth, Rebel_Tank_Buster_Squad </Starting_Forces>
