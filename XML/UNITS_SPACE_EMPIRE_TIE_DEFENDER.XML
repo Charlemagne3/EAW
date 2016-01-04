@@ -201,7 +201,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>1600</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Damage>200</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>2600</Build_Cost_Credits>

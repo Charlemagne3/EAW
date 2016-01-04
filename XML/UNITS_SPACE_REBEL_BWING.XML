@@ -174,7 +174,7 @@
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>800</Autoresolve_Health>
-		<Damage>15</Damage>
+		<Damage>60</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>1200</Build_Cost_Credits>

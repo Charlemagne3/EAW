@@ -206,7 +206,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>1600</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Damage>100</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
 		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
@@ -311,7 +311,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>1600</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Damage>100</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<AI_Combat_Power>3000</AI_Combat_Power>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>

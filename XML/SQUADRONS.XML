@@ -12,7 +12,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>25</Damage>
+		<Damage>60</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>420</Build_Cost_Credits>
@@ -102,7 +102,7 @@
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>800</Autoresolve_Health>
-		<Damage>15</Damage>
+		<Damage>60</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>420</Build_Cost_Credits>
@@ -191,7 +191,7 @@
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>800</Autoresolve_Health>
-		<Damage>15</Damage>
+		<Damage>60</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Tab_Space_Units>No</Build_Tab_Space_Units>
@@ -263,7 +263,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>515</Autoresolve_Health>
-		<Damage>25</Damage>
+		<Damage>43</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>515</Build_Cost_Credits>
@@ -347,7 +347,7 @@
 		<Is_Escort>No</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>450</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>60</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>450</Build_Cost_Credits>
@@ -423,7 +423,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>35</Damage>
+		<Damage>84</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>720</Build_Cost_Credits>
@@ -510,7 +510,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>900</Autoresolve_Health>
-		<Damage>9</Damage>
+		<Damage>36</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>960</Build_Cost_Credits>
@@ -597,7 +597,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Pirates</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>600</Build_Cost_Credits>
@@ -660,7 +660,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>600</Build_Cost_Credits>
@@ -744,7 +744,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>600</Build_Cost_Credits>
@@ -827,7 +827,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Underworld</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>600</Build_Cost_Credits>
@@ -915,7 +915,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
@@ -993,7 +993,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
@@ -1071,7 +1071,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Pirates</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>0</Build_Cost_Credits>
@@ -1139,7 +1139,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>720</Autoresolve_Health>
-		<Damage>20</Damage>
+		<Damage>48</Damage>
 		<Affiliation>Pirates, Empire, Rebel</Affiliation> <!-- Modded by Chris R. for MP-->
 		<Tech_Level>6</Tech_Level> <!-- Modded by Chris R. for MP-->
 		<Political_Control>0</Political_Control>
@@ -1262,7 +1262,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>3200</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Damage>100</Damage>
 		<Affiliation>Rebel</Affiliation>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
 		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>

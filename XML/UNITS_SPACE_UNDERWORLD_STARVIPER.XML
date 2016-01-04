@@ -242,7 +242,7 @@
 		<Is_Escort>No</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>480</Autoresolve_Health>
-		<Damage>15</Damage>
+		<Damage>36</Damage>
 		<Affiliation>Underworld</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>600</Build_Cost_Credits>

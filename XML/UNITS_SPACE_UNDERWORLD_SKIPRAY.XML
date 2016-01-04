@@ -168,7 +168,7 @@
 		<Is_Escort>Nos</Is_Escort>
 		<Is_Bomber>yes</Is_Bomber>
 		<Autoresolve_Health>800</Autoresolve_Health>
-		<Damage>15</Damage>
+		<Damage>60</Damage>
 		
 		<Affiliation>Underworld</Affiliation>
 		<Political_Control>0</Political_Control>

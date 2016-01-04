@@ -68,10 +68,10 @@
 		<Formation_Priority>1</Formation_Priority>
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
-		<Autoresolve_Health>1600</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Autoresolve_Health>3200</Autoresolve_Health>
+		<Damage>100</Damage>
 		<Affiliation>Rebel</Affiliation>
-		<AI_Combat_Power>3000</AI_Combat_Power>
+		<AI_Combat_Power>6000</AI_Combat_Power>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
 		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
 		<Tech_Level>5</Tech_Level>
@@ -106,7 +106,13 @@
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
 
 		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
 		<Tactical_Build_Cost_Multiplayer>15000</Tactical_Build_Cost_Multiplayer>
@@ -217,10 +223,10 @@
 				
 		
 		<Formation_Priority>1</Formation_Priority>
-		<Autoresolve_Health>1600</Autoresolve_Health>
-		<Damage>50</Damage>
+		<Autoresolve_Health>2750</Autoresolve_Health>
+		<Damage>85</Damage>
 		<Affiliation>Rebel</Affiliation>
-		<AI_Combat_Power>3000</AI_Combat_Power>
+		<AI_Combat_Power>5200</AI_Combat_Power>
 		<Build_Initially_Locked>Yes</Build_Initially_Locked>
 		<Build_Can_Be_Unlocked_By_Slicer>No</Build_Can_Be_Unlocked_By_Slicer>
 		<Tech_Level>5</Tech_Level>
@@ -250,7 +256,13 @@
 		<Squadron_Offsets>0.0,-30.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,60.0,0.0</Squadron_Offsets>
 		<Squadron_Offsets>-60.0,-60.0,0.0</Squadron_Offsets>
-		<Squadron_Offsets>-30.0,0.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-120.0,-90.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,120.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-180.0,-120.0,0.0</Squadron_Offsets>	
+		<Squadron_Offsets>-240.0,150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,-150.0,0.0</Squadron_Offsets>
+		<Squadron_Offsets>-240.0,0.0,0.0</Squadron_Offsets>
 
 		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
 		<Tactical_Build_Cost_Multiplayer>15000</Tactical_Build_Cost_Multiplayer>

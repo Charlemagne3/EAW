@@ -168,7 +168,7 @@
 		<Is_Escort>Yes</Is_Escort>
 		<Is_Bomber>no</Is_Bomber>
 		<Autoresolve_Health>515</Autoresolve_Health>
-		<Damage>25</Damage>
+		<Damage>43</Damage>
 		<Affiliation>Empire</Affiliation>
 		<Political_Control>0</Political_Control>
 		<Build_Cost_Credits>565</Build_Cost_Credits>
