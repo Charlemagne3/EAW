@@ -1935,6 +1935,15 @@
 		<FormationRaggedness> .2 </FormationRaggedness>
 		<MaxJiggleDistance> 2 </MaxJiggleDistance>
 	</GroundInfantry>
+	
+	<GroundInfantry Name="Squad_Stormtrooper_Sergeant">
+		<Variant_Of_Existing_Type>Squad_Stormtrooper</Variant_Of_Existing_Type>
+		<Text_ID>TEXT_UNIT_STORMTROOPER</Text_ID>
+		<Tactical_Health>70</Tactical_Health>
+		<Projectile_Fire_Recharge_Seconds>0.6</Projectile_Fire_Recharge_Seconds>
+		<Score_Cost_Credits> 250 </Score_Cost_Credits>
+		<Create_Team>Yes</Create_Team>
+	</GroundInfantry>
 
 	<GroundInfantry Name="Squad_Rebel_Trooper">
 		<Variant_Of_Existing_Type>Rebel_Trooper</Variant_Of_Existing_Type>

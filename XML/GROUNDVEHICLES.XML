@@ -173,7 +173,7 @@
 				<Type>DEPLOY_TROOPERS</Type>
 				<Recharge_Seconds>20</Recharge_Seconds>
 				<Spawned_Object_Type>Veers_Deployed_Imperial_Stormtrooper_Squad</Spawned_Object_Type>
-				<Max_Num_Spawned_Objects>2</Max_Num_Spawned_Objects>
+				<Max_Num_Spawned_Objects>4</Max_Num_Spawned_Objects>
 				<Owner_Attachment_Bone>B_Trooper_00, B_Trooper_01, B_Trooper_02 </Owner_Attachment_Bone>
 				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Deploy_AT_AT</SFXEvent_GUI_Unit_Ability_Activated>
 				</Unit_Ability>

@@ -1,6 +1,8 @@
 # EAW
 Star Wars: Empire at War mods
 
+Max_Squad_Size will split whatever is in Company_Units into multiple squads if the limit is surpassed
+
 Where do I edit the Death Stars?
 
 SPACEUNITSSUPERS.XML
