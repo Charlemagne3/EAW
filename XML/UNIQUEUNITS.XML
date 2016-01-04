@@ -1605,11 +1605,12 @@
 		<Damage>30</Damage>
 		<Autoresolve_Health>3200</Autoresolve_Health>
 		<Shield_Points>650</Shield_Points>
-		<Tactical_Health>3200</Tactical_Health>
+		<Tactical_Health>3300</Tactical_Health>
 		<Shield_Refresh_Rate>40</Shield_Refresh_Rate>
 		<Energy_Capacity>3000</Energy_Capacity>
 		<Energy_Refresh_Rate>500</Energy_Refresh_Rate>
-
+		
+		<Population_Value>3</Population_Value>
 		<MovementClass> Space </MovementClass>
 		<Space_Layer> Frigate </Space_Layer>
 		<Max_Speed>2.2</Max_Speed>
@@ -1644,7 +1645,7 @@
 		<Build_Tab_Space_Units>No</Build_Tab_Space_Units>
 		<Size_Value>8</Size_Value>
 		<Behavior> DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED </Behavior>
-		<SpaceBehavior> ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA, DAMAGE_TRACKING</SpaceBehavior>
+		<SpaceBehavior> SPAWN_SQUADRON, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA, DAMAGE_TRACKING</SpaceBehavior>
 
 		<Space_FOW_Reveal_Range>1200.0</Space_FOW_Reveal_Range>
 		<Dense_FOW_Reveal_Range_Multiplier>0.24</Dense_FOW_Reveal_Range_Multiplier>
@@ -1656,7 +1657,7 @@
 		<Death_Clone />
 
 		<HardPoints>
-			HP_Jedi_Cruiser_Shield_Gen, HP_Jedi_Cruiser_Engines, HP_Jedi_Cruiser_FL, HP_Jedi_Cruiser_FR, HP_Jedi_Cruiser_ML, HP_Jedi_Cruiser_MR, HP_Jedi_Cruiser_BL, HP_Jedi_Cruiser_BR
+			HP_Jedi_Cruiser_Fighter_Bay, HP_Jedi_Cruiser_Shield_Gen, HP_Jedi_Cruiser_Engines, HP_Jedi_Cruiser_FL, HP_Jedi_Cruiser_FR, HP_Jedi_Cruiser_ML, HP_Jedi_Cruiser_MR, HP_Jedi_Cruiser_BL, HP_Jedi_Cruiser_BR
 		</HardPoints>
 
 		<CategoryMask> Frigate | AntiCorvette </CategoryMask>
@@ -1766,7 +1767,28 @@
 
 	<UniqueUnit Name="Jedi_Cruiser_E">
 		<Variant_Of_Existing_Type>Jedi_Cruiser</Variant_Of_Existing_Type>
-		<Affiliation>Empire</Affiliation>
+		<Encyclopedia_Good_Against> Corellian_Corvette Marauder_Missile_Cruiser Crusader_Gunship</Encyclopedia_Good_Against>
+		<Encyclopedia_Vulnerable_To> Calamari_Cruiser Alliance_Assault_Frigate Y-Wing </Encyclopedia_Vulnerable_To>
+		<GUI_Row> 1 </GUI_Row>
+
+        <Tech_Level>0</Tech_Level>
+		<Required_Timeline>0</Required_Timeline>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>2</Required_Star_Base_Level>
+					
+		<Affiliation>Empire</Affiliation>		
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Build_Cost_Credits>3150</Build_Cost_Credits>
+		<Piracy_Value_Credits>50</Piracy_Value_Credits>
+		<AI_Combat_Power>1800</AI_Combat_Power>
+		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		
+		<Starting_Spawned_Units_Tech_0>VWing_Squadron_E, 2</Starting_Spawned_Units_Tech_0>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		<Reserve_Spawned_Units_Tech_0>VWing_Squadron_E, 2</Reserve_Spawned_Units_Tech_0> 
+		
 		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
 		<SFXEvent_Tactical_Build_Complete> EHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		
 		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>

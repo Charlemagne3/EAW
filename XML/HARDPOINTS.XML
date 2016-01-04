@@ -4640,6 +4640,23 @@
 
 <!-- Hard points for Jedi Cruiser -->
 
+    <HardPoint Name="HP_Jedi_Cruiser_Fighter_Bay">
+			<Type> HARD_POINT_FIGHTER_BAY </Type>
+			<Is_Targetable>Yes</Is_Targetable>
+			<Is_Destroyable>Yes</Is_Destroyable>
+			<Tooltip_Text>TEXT_FIGHTER_BAY_HARDPOINT</Tooltip_Text>
+			<Health>100.0</Health>
+
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
+			<Death_Explosion_SFXEvent>Unit_Hardpoint_Bay_Death</Death_Explosion_SFXEvent>
+
+			<Model_To_Attach/>
+			<Attachment_Bone>P_HP_STARDESTROYER_DAMAGE</Attachment_Bone>
+			<Collision_Mesh>P_HP_STARDESTROYER_DAMAGE</Collision_Mesh>
+			<Damage_Decal>P_HP_STARDESTROYER_DAMAGE</Damage_Decal>
+			<Damage_Particles>P_HP_STARDESTROYER_DAMAGE</Damage_Particles>
+    </HardPoint>
+
     <HardPoint Name="HP_Jedi_Cruiser_Shield_Gen">
 			<Type> HARD_POINT_SHIELD_GENERATOR </Type>
             <Is_Targetable>Yes</Is_Targetable>
@@ -4647,7 +4664,7 @@
             <Tooltip_Text>TEXT_SHIELD_GENERATOR_HARDPOINT</Tooltip_Text>
             <Health>400.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Shields_Death</Death_Explosion_SFXEvent>
 
 			<Death_Breakoff_Prop> Hardpoint_Breakoff_Jedi_Cruiser_ShieldGen </Death_Breakoff_Prop>
@@ -4666,7 +4683,7 @@
             <Tooltip_Text>TEXT_ENGINE_HARDPOINT</Tooltip_Text>
             <Health>300.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Engines_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach />
@@ -4684,7 +4701,7 @@
             <Tooltip_Text>TEXT_WEAPON_IONCANNON</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Ion_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_F-L.alo</Model_To_Attach>
@@ -4724,7 +4741,7 @@
             <Tooltip_Text>TEXT_WEAPON_IONCANNON</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Ion_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_F-R.alo</Model_To_Attach>
@@ -4764,7 +4781,7 @@
             <Tooltip_Text>TEXT_WEAPON_CONCUSSIONMISSILE</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Missile_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_M-L.alo</Model_To_Attach>
@@ -4795,7 +4812,7 @@
             <Tooltip_Text>TEXT_WEAPON_CONCUSSIONMISSILE</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Missile_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_M-R.alo</Model_To_Attach>
@@ -4826,7 +4843,7 @@
             <Tooltip_Text>TEXT_WEAPON_LASERCANNON</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Laser_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_B-L.alo</Model_To_Attach>
@@ -4866,7 +4883,7 @@
             <Tooltip_Text>TEXT_WEAPON_LASERCANNON</Tooltip_Text>
             <Health>220.0</Health>
 
-			<Death_Explosion_Particles> Medium_Explosion_Space </Death_Explosion_Particles>
+			<Death_Explosion_Particles> Large_Explosion_Space_Empire </Death_Explosion_Particles>
 			<Death_Explosion_SFXEvent>Unit_Hardpoint_Laser_Death</Death_Explosion_SFXEvent>
 
             <Model_To_Attach>NV_JediCruiser_hp_B-R.alo</Model_To_Attach>
