@@ -484,7 +484,7 @@
 	<Terrain_Resurface_Rand>2</Terrain_Resurface_Rand>
 	<Terrain_Resurface_Tolerance>.03</Terrain_Resurface_Tolerance>
 
-	<Max_Ground_Forces_On_Planet> 10 </Max_Ground_Forces_On_Planet>
+	<Max_Ground_Forces_On_Planet> 40 </Max_Ground_Forces_On_Planet>
 	<!-- UNUSED - unit cap is now per faction in Factions.xml
 	<Space_Tactical_Unit_Cap>40</Space_Tactical_Unit_Cap> -->
 	<Allow_Reinforcement_Percentage_Normalized> 0.0 </Allow_Reinforcement_Percentage_Normalized> 

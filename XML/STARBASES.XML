@@ -362,7 +362,7 @@
 		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Corellian_Gunboat, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Spawned_Squadron_Delay_Seconds>10</Spawned_Squadron_Delay_Seconds>
@@ -517,22 +517,22 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 6</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 4</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>A_Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 2</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>B-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
 		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Corellian_Gunboat, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Starting_Spawned_Units_Tech_0>Nebulon_B_Frigate, 1</Starting_Spawned_Units_Tech_0>	
@@ -700,22 +700,22 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 		
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 10</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Rebel_X-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 6</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Y-Wing_Squadron, 5</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Y-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
 		<Starting_Spawned_Units_Tech_0>A_Wing_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>A_Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>B-Wing_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>B-Wing_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
 		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Corvette, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>Corellian_Corvette, 1</Starting_Spawned_Units_Tech_0>	
+		<Starting_Spawned_Units_Tech_0>Corellian_Gunboat, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Corellian_Gunboat, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Starting_Spawned_Units_Tech_0>Nebulon_B_Frigate, 1</Starting_Spawned_Units_Tech_0>	
@@ -1325,19 +1325,19 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 		
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Scout_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Phantom_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 				
-		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Defender_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 1</Starting_Spawned_Units_Tech_0>
@@ -1488,19 +1488,19 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 		
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Interceptor_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Bomber_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Bomber_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Scout_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Scout_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
-		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Phantom_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Phantom_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 				
-		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>TIE_Defender_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>TIE_Defender_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 		
 		<Starting_Spawned_Units_Tech_0>Tartan_Patrol_Cruiser, 1</Starting_Spawned_Units_Tech_0>
@@ -1728,23 +1728,24 @@
 		<Armor_Type> Armor_Station </Armor_Type>
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 
-
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
 		<Starting_Spawned_Units_Tech_0>Pirate_Fighter_Squadron, 3</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Pirate_Fighter_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
-		
-		<Starting_Spawned_Units_Tech_0>IPV1_System_Patrol_Craft, 1</Starting_Spawned_Units_Tech_0>	
-		<Reserve_Spawned_Units_Tech_0>IPV1_System_Patrol_Craft, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
+		<Starting_Spawned_Units_Tech_0>VWing_Squadron_P, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>VWing_Squadron_P, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+
+		<Starting_Spawned_Units_Tech_0>Z95_Headhunter_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Z95_Headhunter_Squadron, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
+		
 		<Starting_Spawned_Units_Tech_0>Pirate_Frigate, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Pirate_Frigate, -1</Reserve_Spawned_Units_Tech_0> <!-- -1 == no limit -->
 
-		<Spawned_Squadron_Delay_Seconds>20</Spawned_Squadron_Delay_Seconds>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
 
-
-		<Autoresolve_Health>750</Autoresolve_Health>
-		<Damage>35</Damage>
-		<Shield_Points>300</Shield_Points>
+		<Autoresolve_Health>1000</Autoresolve_Health>
+		<Damage>50</Damage>
+		<Shield_Points>1000</Shield_Points>
 		<Tactical_Health>1600</Tactical_Health>
 		<Shield_Refresh_Rate>50</Shield_Refresh_Rate>
 		<Energy_Capacity>5000</Energy_Capacity>

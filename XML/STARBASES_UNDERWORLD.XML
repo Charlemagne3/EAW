@@ -335,6 +335,9 @@
 		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 3</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
+		<Starting_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, 3</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, -1</Reserve_Spawned_Units_Tech_0>
+		
 		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
 		
@@ -480,11 +483,14 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>StarViper_Squadron, 6</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>StarViper_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>StarViper_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 
 		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 4</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
+		
+		<Starting_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, 4</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
 		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>
@@ -645,11 +651,14 @@
 		<Shield_Armor_Type>Shield_Capital</Shield_Armor_Type>
 		
 		<!-- Set to contuously spawn until fighter bay hard point is destroyed -->
-		<Starting_Spawned_Units_Tech_0>StarViper_Squadron, 10</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>StarViper_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>StarViper_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 
-		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 6</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Skipray_Squadron, 5</Starting_Spawned_Units_Tech_0>
 		<Reserve_Spawned_Units_Tech_0>Skipray_Squadron, -1</Reserve_Spawned_Units_Tech_0>
+		
+		<Starting_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, 5</Starting_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Underworld_Pirate_Fighter_Squadron, -1</Reserve_Spawned_Units_Tech_0>
 		
 		<Starting_Spawned_Units_Tech_0>Crusader_Gunship, 1</Starting_Spawned_Units_Tech_0>	
 		<Reserve_Spawned_Units_Tech_0>Crusader_Gunship, -1</Reserve_Spawned_Units_Tech_0>

@@ -61,9 +61,9 @@
 		<Fighter_Icon_Name>i_button_virago.tga</Fighter_Icon_Name>
 		<Tech_Tree_Dialog_Name>IDD_TECH_TREE_BLACKMARKET</Tech_Tree_Dialog_Name>
 		<Helper_Icon_Name>i_underworld_help_droid.tga</Helper_Icon_Name>
-		<Space_Retreat_Countdown_Seconds> 4.99 </Space_Retreat_Countdown_Seconds>
+		<Space_Retreat_Countdown_Seconds> 29.99 </Space_Retreat_Countdown_Seconds>
 		<Space_Retreat_Pursue_Max_Speed_Mod_Factor> 2.0 </Space_Retreat_Pursue_Max_Speed_Mod_Factor>
-		<Space_Retreat_Units_Damaged_Mod_Factor> 2.0 </Space_Retreat_Units_Damaged_Mod_Factor>
+		<Space_Retreat_Units_Damaged_Mod_Factor> 1.0 </Space_Retreat_Units_Damaged_Mod_Factor>
 		<Space_Retreat_Flight_Move_Increment> 500.0 </Space_Retreat_Flight_Move_Increment>
 		<Space_Retreat_Unit_Increment_Wait_Frames> 1 </Space_Retreat_Unit_Increment_Wait_Frames>
 		<Space_Retreat_Off_Map_Dest_Pos> 12000.0, 12000.0, 0.0 </Space_Retreat_Off_Map_Dest_Pos> <!-- WARNING: For some reason, non-0.0 Z can cause problems? -->
@@ -132,9 +132,9 @@
 			Underworld_Merc_Squad, Underworld_Merc_Squad
 		</Land_Skirmish_AI_Default_Forces>
 		<Land_Skirmish_Unit_Cap_By_Player_Count>
-			0,10,
-			1,10,
-			8,5,
+			0,41,
+			1,41,
+			8,41,
 		</Land_Skirmish_Unit_Cap_By_Player_Count>
 		<Debug_Ground_Structures>
 			U_Ground_Barracks

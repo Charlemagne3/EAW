@@ -888,37 +888,37 @@
     <Marker Name="Reinforcement_Point_Plus1_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_1.alo</Land_Model_Name>
-		<Additional_Population_Capacity>1</Additional_Population_Capacity>
+		<Additional_Population_Capacity>10</Additional_Population_Capacity>
 	</Marker>
 
     <Marker Name="Reinforcement_Point_Plus2_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_2.alo</Land_Model_Name>
-		<Additional_Population_Capacity>2</Additional_Population_Capacity>
+		<Additional_Population_Capacity>20</Additional_Population_Capacity>
 	</Marker>
 
     <Marker Name="Reinforcement_Point_Plus3_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_3.alo</Land_Model_Name>
-		<Additional_Population_Capacity>3</Additional_Population_Capacity>
+		<Additional_Population_Capacity>30</Additional_Population_Capacity>
 	</Marker>
 	 
     <Marker Name="Reinforcement_Point_Plus4_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_4.alo</Land_Model_Name>
-		<Additional_Population_Capacity>4</Additional_Population_Capacity>
+		<Additional_Population_Capacity>40</Additional_Population_Capacity>
 	 </Marker>
 
 	<Marker Name="Reinforcement_Point_Plus5_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_5.alo</Land_Model_Name>
-		<Additional_Population_Capacity>5</Additional_Population_Capacity>
+		<Additional_Population_Capacity>50</Additional_Population_Capacity>
 	</Marker>
 	 
 	<Marker Name="Reinforcement_Point_Plus10_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point</Variant_Of_Existing_Type>
 		<Land_Model_Name>W_Pedistal_faction_10.alo</Land_Model_Name>
-		<Additional_Population_Capacity>10</Additional_Population_Capacity>
+		<Additional_Population_Capacity>100</Additional_Population_Capacity>
 	</Marker>
 	 
 	 
@@ -968,7 +968,7 @@
 	 
 	<Marker Name="Reinforcement_Point_Rebel_Plus4_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point_Rebel</Variant_Of_Existing_Type>
-		<Additional_Population_Capacity>4</Additional_Population_Capacity>
+		<Additional_Population_Capacity>40</Additional_Population_Capacity>
 	</Marker>
 	 
 	<Marker Name="Reinforcement_Point_Empire">
@@ -1016,7 +1016,7 @@
 	 
 	<Marker Name="Reinforcement_Point_Empire_Plus4_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point_Empire</Variant_Of_Existing_Type>
-		<Additional_Population_Capacity>4</Additional_Population_Capacity>
+		<Additional_Population_Capacity>40</Additional_Population_Capacity>
 	</Marker>
 
 
@@ -1065,7 +1065,7 @@
 	 
 	 <Marker Name="Reinforcement_Point_Underworld_Plus4_Cap">
 		<Variant_Of_Existing_Type>Reinforcement_Point_Underworld</Variant_Of_Existing_Type>
-		<Additional_Population_Capacity>4</Additional_Population_Capacity>
+		<Additional_Population_Capacity>40</Additional_Population_Capacity>
 	</Marker>
 
 

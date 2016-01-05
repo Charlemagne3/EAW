@@ -432,8 +432,13 @@
 		<Ship_Class>infantry</Ship_Class>
 		<Company_Transport_Unit>Imperial_Landing_Craft</Company_Transport_Unit>
 		<Create_Team_Type> Stormtrooper_Team </Create_Team_Type>
-        <!-- AI  Changed to 18 troopers in squads of 9 -->
-		<Company_Units> Squad_Stormtrooper_Sergeant, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper</Company_Units>
+        <!-- 1 platoon of troopers  -->
+		<Company_Units>
+			Squad_Stormtrooper_Sergeant, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper
+			Squad_Stormtrooper_Sergeant, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper	
+			Squad_Stormtrooper_Sergeant, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper
+			Squad_Stormtrooper_Sergeant, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper, Squad_Stormtrooper		
+		</Company_Units>
 		<Max_Squad_Size> 9 </Max_Squad_Size>
 		<Icon_Name>i_button_storm_trooper.tga</Icon_Name>
 		<GUI_Model_Name>EI_TROOPER.ALO</GUI_Model_Name>
